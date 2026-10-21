@@ -1,0 +1,21 @@
+{
+  "checked_date": "2026-10-21",
+  "timezone": "Asia/Taipei",
+  "phase_report_checkpoint_sha": "92b5906088ab533277c85faa89ab667ff0e5c850",
+  "working_tree_clean_before_fetch": true,
+  "underworld_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+  "underworld_origin_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+  "underworld_upstream_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+  "main_vs_upstream_ahead_behind": [0, 0],
+  "origin_feature_before_push": "d471bcd1c28a330b9efaab0fcc676f2272936e6b",
+  "feature_vs_origin_at_checkpoint_ahead_behind": [1, 0],
+  "exhume_pin": "a34316463c230bafa3d4f0aa3b894a574e5fc738",
+  "exhume_upstream_master": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+  "exhume_backlog_from_pin": 7,
+  "underworld_upstream_changed_during_phase": false,
+  "exhume_upstream_changed_during_phase": false,
+  "merge_required": false,
+  "submodule_reconciliation_required": false,
+  "regression_after_merge": "not applicable: no merge or source change at boundary",
+  "result": "NO CHANGE"
+}
