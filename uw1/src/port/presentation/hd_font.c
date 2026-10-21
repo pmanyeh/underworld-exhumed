@@ -201,18 +201,25 @@ int hd_text_measure_logical(HdFont *f, const PlatOverlay *p, const char *text, s
 static void paint(const PlatOverlay *p, const Glyph *g, double x, double baseline, HdColor c)
 {
     int ox, oy, row, col;
-    x = floor(x + g->left + .5); baseline = floor(baseline - g->top + .5);
+    /* Bound before converting, then round to the nearest output pixel. C casts
+       truncate toward zero, so the negative fraction needs one extra step.
+       This small integer operation needs no separate libm link dependency. */
+    x += g->left + .5; baseline += .5 - g->top;
     if (x >= p->width || baseline >= p->height || x + g->width <= 0 || baseline + g->height <= 0) return;
     ox = (int)x; oy = (int)baseline;
+    if (x < ox) ox--;
+    if (baseline < oy) oy--;
     for (row = 0; row < g->height; row++) {
-        if (oy + row < 0 || oy + row >= p->height) continue;
+        int64_t dy = (int64_t)oy + row;
+        if (dy < 0 || dy >= p->height) continue;
         for (col = 0; col < g->width; col++) {
             uint8_t *d;
             unsigned a, da, oa;
-            if (ox + col < 0 || ox + col >= p->width) continue;
+            int64_t dx = (int64_t)ox + col;
+            if (dx < 0 || dx >= p->width) continue;
             a = (g->mask[(size_t)row * g->width + col] * c.a + 127u) / 255u;
             if (!a) continue;
-            d = p->rgba + (size_t)(oy + row) * p->pitch + (size_t)(ox + col) * 4;
+            d = p->rgba + (size_t)dy * p->pitch + (size_t)dx * 4;
             da = d[3]; oa = a * 255 + da * (255 - a);
             d[0] = (uint8_t)((c.r * a * 255 + d[0] * da * (255 - a) + oa / 2) / oa);
             d[1] = (uint8_t)((c.g * a * 255 + d[1] * da * (255 - a) + oa / 2) / oa);

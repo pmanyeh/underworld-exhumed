@@ -14,6 +14,7 @@ def main():
     parser.add_argument("--font", type=Path, default=uw1 / "tools/fonts/NotoSansCJKtc-Regular.otf")
     parser.add_argument("--sanitize", action="store_true")
     parser.add_argument("--window", action="store_true", help="also run actual SDL resize/fullscreen checks")
+    parser.add_argument("--no-freetype", action="store_true", help="compile/link/run the optional dependency stub")
     args = parser.parse_args()
     root = uw1.parent
     out = uw1 / "build/hd-text"
@@ -22,10 +23,13 @@ def main():
     env = dict(os.environ)
     pc = str(uw1 / "tools/libs/lib/pkgconfig")
     env["PKG_CONFIG_PATH"] = pc + os.pathsep + env.get("PKG_CONFIG_PATH", "")
-    flags = shlex.split(subprocess.check_output(["pkg-config", "--cflags", "--libs", "freetype2"] +
-                                    (["sdl3"] if args.window else []), text=True, env=env))
-    source = "hd_window_test.c" if args.window else "hd_font_test.c"
-    stem = "window" if args.window else "font"
+    if args.no_freetype and args.window:
+        parser.error("--no-freetype and --window are separate checks")
+    flags = [] if args.no_freetype else shlex.split(subprocess.check_output(
+        ["pkg-config", "--cflags", "--libs", "freetype2"] +
+        (["sdl3"] if args.window else []), text=True, env=env))
+    source = "hd_stub_test.c" if args.no_freetype else "hd_window_test.c" if args.window else "hd_font_test.c"
+    stem = "stub" if args.no_freetype else "window" if args.window else "font"
     stem += "-asan" if args.sanitize else ""
     exe = out / (stem + (".exe" if os.name == "nt" else ""))
     common = [str(uw1 / "src/port" / n) for n in
@@ -33,13 +37,15 @@ def main():
     if args.window:
         common += [str(uw1 / "src/port/presentation" / n) for n in ["hd_demo.c", "overlay_demo.c"]]
     command = [cc, "-std=c11", "-g", "-O1", "-Wall", "-Wextra", "-Werror", "-Wno-unused-function",
-               "-DUW1_HAVE_FREETYPE", "-I" + str(uw1 / "src/port"),
+               "-I" + str(uw1 / "src/port"),
                "-I" + str(root / "exhume/runtime/port/platform"),
                "-I" + str(root / "exhume/runtime/port"),
                str(Path(__file__).with_name(source))] + common + [
                str(root / "exhume/runtime/port/platform/png.c"), "-o", str(exe)]
     if args.sanitize:
         command += ["-fsanitize=address,undefined", "-fno-omit-frame-pointer"]
+    if not args.no_freetype:
+        command += ["-DUW1_HAVE_FREETYPE"]
     subprocess.run(command + flags + (["-lm"] if os.name != "nt" else []), check=True)
     env["ASAN_OPTIONS"] = "halt_on_error=1:detect_leaks=" + ("0" if os.name == "nt" else "1")
     env["UBSAN_OPTIONS"] = "halt_on_error=1:print_stacktrace=1"
@@ -49,7 +55,8 @@ def main():
     print(result.stdout, end="", flush=True)
     print(result.stderr, end="", flush=True)
     result.check_returncode()
-    print("PASS FreeType compile/link/render" + (" with ASan/UBSan" if args.sanitize else ""))
+    print("PASS " + ("optional stub" if args.no_freetype else "FreeType compile/link/render") +
+          (" with ASan/UBSan" if args.sanitize else ""))
 
 
 if __name__ == "__main__":
