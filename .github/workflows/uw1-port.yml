@@ -42,7 +42,7 @@ jobs:
       - name: System packages
         run: |
           sudo apt-get update -qq
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends clang ninja-build pkg-config >/dev/null
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends clang ninja-build pkg-config libfreetype6-dev >/dev/null
       - name: Cache SDL3 and libmt32emu
         uses: actions/cache@v6
         with:
@@ -55,6 +55,10 @@ jobs:
           PKG_CONFIG_PATH=$PWD/uw1/tools/libs/lib/pkgconfig sh exhume/tools/setup-sound.sh uw1/tools/nuked-opl3
       - run: make -C uw1 port
       - run: make -C uw1 port-check
+      - name: FreeType CJK render and cache checks (no game assets)
+        run: |
+          python3 uw1/tools/i18n/fetch_font.py
+          LD_LIBRARY_PATH="$PWD/uw1/tools/libs/lib:${LD_LIBRARY_PATH:-}" python3 uw1/tools/i18n/test_hd_font.py
 
   web:
     runs-on: ubuntu-24.04
@@ -88,7 +92,8 @@ jobs:
       - run: make -C uw1 web
 
   macos:
-    runs-on: macos-latest
+    # ARM hosted capacity repeatedly cancelled the prior build before any step.
+    runs-on: macos-15-intel
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
@@ -99,10 +104,14 @@ jobs:
         env:
           HOMEBREW_NO_AUTO_UPDATE: "1"
           HOMEBREW_NO_INSTALL_CLEANUP: "1"
-        run: brew install sdl3 mt32emu pkgconf
+        run: brew install sdl3 mt32emu pkgconf freetype
       - run: sh exhume/tools/setup-sound.sh uw1/tools/nuked-opl3
       - run: make -C uw1 port
       - run: make -C uw1 port-check
+      - name: FreeType CJK render and cache checks (no game assets)
+        run: |
+          python3 uw1/tools/i18n/fetch_font.py
+          python3 uw1/tools/i18n/test_hd_font.py
 
   windows:
     runs-on: windows-latest
@@ -125,7 +134,11 @@ jobs:
           msystem: CLANG64
           update: false
           install: make curl
-          pacboy: clang:p llvm:p pkgconf:p sdl3:p python:p
+          pacboy: clang:p llvm:p pkgconf:p sdl3:p python:p freetype:p
       - run: sh exhume/tools/setup-sound.sh uw1/tools/nuked-opl3
       - run: make -C uw1 PY=python port
       - run: make -C uw1 PY=python port-check
+      - name: FreeType CJK render and cache checks (no game assets)
+        run: |
+          python uw1/tools/i18n/fetch_font.py
+          python uw1/tools/i18n/test_hd_font.py

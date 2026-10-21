@@ -1,13 +1,47 @@
-# Native localization / layout / overlay (Phases 1–4)
+# Native localization / layout / HD text (Phases 1–5)
 
 目前已完成文字盤點、翻譯資料、Native UTF-8 lookup 與獨立的文字排版核心。
 查找以記錄驗證，排版以 renderer-independent tests 驗證；畫面仍走原本英文路徑。
-Phase 4 已加入選用的通用 RGBA overlay 與幾何示範；FreeType 與中文顯示留待後續階段。
+Phase 4 已加入選用的通用 RGBA overlay；Phase 5 加入 FreeType 高解析度繁中示範。
 驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md)、[Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)
 與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)、[Phase 4](../docs/i18n/OVERLAY-FOUNDATION.md)。
 
 目前依使用者更新採 [Native-only 驗收](../docs/i18n/VALIDATION.md)：不需要 Borland 或 DOS 驗證。
 先前報告的 DOS NOT RUN 是歷史紀錄，不是待解決的阻礙。
+
+## FreeType HD text
+
+先安裝 FreeType development package（pkg-config 名稱 `freetype2`）：
+Linux `libfreetype6-dev`、macOS `brew install freetype`、MSYS2 CLANG64
+`pacman -S mingw-w64-clang-x86_64-freetype`。再在 `uw1/`：
+
+```sh
+python3 tools/i18n/fetch_font.py
+make port
+build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" \
+  --test-hd-text --font tools/fonts/NotoSansCJKtc-Regular.otf
+```
+
+Windows 使用 `uw1port.exe`，MSYS2 可用 `make PY=python port`。
+font path 相對目前工作目錄；可傳入絕對路徑。預設不啟用 HD text，也不搜尋 OS fonts。
+設定畫面關閉後可見三句指定的中文／中英混合文字；F11 Display 可調整大小與 fullscreen。
+`--test-overlay` 可同時啟用 Phase 4 幾何框。
+
+字型為 Noto Sans CJK TC Regular 2.004，原檔不修改、依 SHA-256 驗證；字型與 OFL 1.1
+授權下載到 ignored `tools/fonts/`，不提交 16 MB font binary。沒有 FreeType 的 build 可繼續使用
+原英文路徑；明示要求 HD text 時會診斷失敗，不會悄悄拿低解析 bitmap 代替。
+Web 保留 no-FreeType stub；web target 的 pkg-config 只搜尋 web libraries，避免誤連結 host FreeType。
+
+不需遊戲 assets 的實際 C renderer 測試：
+
+```sh
+python3 tools/i18n/test_hd_font.py
+python3 tools/i18n/test_hd_font.py --sanitize
+python3 tools/i18n/test_hd_font.py --window
+```
+
+測試需已下載字型；`--window` 額外需要 SDL3，會短暫開窗並切換 fullscreen。
+API、cache、字型授權與本階段驗收見 [Phase 5 report](../docs/i18n/HD-TEXT.md)。
 
 ## Generic HD Overlay Foundation
 

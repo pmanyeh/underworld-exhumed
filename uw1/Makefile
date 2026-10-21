@@ -125,7 +125,9 @@ port-release:
 	@$(PORT)/portbuild.py --config exhume.toml --release $(PORT_ARCHS)
 
 web:
-	@PATH="$(HOME)/emsdk:$(HOME)/emsdk/upstream/emscripten:$$PATH"; $(PORT)/portbuild.py --config exhume.toml --web
+	@PATH="$(HOME)/emsdk:$(HOME)/emsdk/upstream/emscripten:$$PATH"; \
+	 PKG_CONFIG_PATH="$(CURDIR)/tools/libs-web/lib/pkgconfig" \
+	 PKG_CONFIG_LIBDIR="$(CURDIR)/tools/libs-web/lib/pkgconfig" $(PORT)/portbuild.py --config exhume.toml --web
 
 webcheck: web port
 	@EXHUME_EXIT_AFTER=3600000 EXHUME_PORT=$(CURDIR)/build/web-node/uw1port EXHUME_CHEAT_PORT=$(CURDIR)/build/port/uw1port $(PORT)/replay.py --config exhume.toml verify all

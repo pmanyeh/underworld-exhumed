@@ -86,3 +86,21 @@ USED, NOT SHIPPED
 NAMES AND REFERENCES
 
 - UW1 has no build with symbols. Its function names come from UW2Decomp's matched sources through Exhume's tools/kin.py; UW2's are the FM Towns release's originals, through the symbol list published in UWReverseEngineering (https://github.com/hankmorgan/UWReverseEngineering), whose IDA listings are also the map's starting point.
+
+OPTIONAL NATIVE HD TEXT (PoC Phase 5)
+
+FreeType (https://freetype.org/), FreeType License (FTL).
+The optional native HD text module links the FreeType shared library when pkg-config
+finds freetype2. The local PoC uses unmodified source tag VER-2-14-3; system/CI package
+versions may differ. Portions of this software are copyright (c) The FreeType Project
+(www.freetype.org). All rights reserved. The full license is docs/i18n/licenses/FTL.txt.
+Library source and binaries are not committed. Any future package containing this
+library must include its license and the required attribution.
+
+Noto Sans CJK TC Regular, Version 2.004 (https://github.com/notofonts/noto-cjk).
+Copyright (c) 2014-2021 Adobe (http://www.adobe.com/). SIL Open Font License 1.1.
+Unmodified font used for HD text tests and the opt-in demo. tools/i18n/fetch_font.py
+fetches a pinned revision and verifies SHA-256, with LICENSE.txt beside the font in
+ignored tools/fonts/. No font binary is committed or packaged by this PoC. The full
+license is docs/i18n/licenses/Noto-OFL.txt; redistribution must preserve copyright and
+license, and the font may not be sold by itself. See docs/i18n/HD-TEXT.md.

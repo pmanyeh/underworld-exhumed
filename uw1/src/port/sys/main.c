@@ -23,6 +23,7 @@
 #include "ui/settings.h"
 #include "i18n/localization.h"
 #include "presentation/overlay_demo.h"
+#include "presentation/hd_demo.h"
 
 extern const struct enhance_flag enhance_table[];   /* src/port/sys/enhtab.c */
 extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a test's cheats */
@@ -243,6 +244,8 @@ static const char help_text[] =
     "  --screenshot FILE      that PNG's name (uw1port.png)\n"
     "  --window-shot FILE     with --screenshot-after, also the window's scaled contents\n"
     "  --test-overlay         native RGBA geometry/alpha probe (no text)\n"
+    "  --test-hd-text         FreeType Chinese text probe on the native RGBA layer\n"
+    "  --font FILE            scalable Unicode font for --test-hd-text\n"
     "  --shot-at-flip K:FILE  write the screen right after the game's K-th page flip\n"
     "  --exit-after MS        quit MS milliseconds after start\n"
     "  --exit-on-halt         quit (status 3) where the port stops instead of leaving the window up\n"
@@ -353,6 +356,9 @@ int main(int argc, char *argv[])
     const char *enh_on[16], *enh_off[16];   /* --enhance and --no-enhance lists, in order */
     int n_on = 0, n_off = 0, enh_list = 0;
     int settings_list = 0, test_overlay = 0;
+    int test_hd_text = 0;
+    const char *font_path = "tools/fonts/NotoSansCJKtc-Regular.otf";
+    HdDemo hd_demo = {0};
     int cl_scale = 0, cl_aspect = 0, cl_integer = 0;   /* given on the command line: the settings file does not override them */
     const char *input_script = NULL;    /* --input-script: keys and mouse at set times (inscript.c) */
     static char spec_buf[16];
@@ -380,6 +386,8 @@ int main(int argc, char *argv[])
             mouse = argv[++i];
         else if (!strcmp(a, "--hidden")) cfg.hidden = 1;
         else if (!strcmp(a, "--test-overlay")) test_overlay = 1;
+        else if (!strcmp(a, "--test-hd-text")) test_hd_text = 1;
+        else if (!strcmp(a, "--font") && i + 1 < argc) font_path = argv[++i];
         else if (!strcmp(a, "--locale") && i + 1 < argc) {
             locale = argv[++i];
             if (strcmp(locale, "en") && strcmp(locale, "zh-TW")) usage(0);
@@ -574,6 +582,14 @@ int main(int argc, char *argv[])
                         cl_integer ? NULL : &cfg.integer_scale);
     port_settings_roms(roms);
     port_settings_seed(cfg.fullscreen, cfg.scale, cfg.aspect, cfg.integer_scale, cfg.mouse_lock);
+    if (test_hd_text) {
+        int result = hd_font_init(&hd_demo.font, font_path);
+        if (result) {
+            fprintf(stderr, "uw1port: HD text: %s: %s\n", hd_font_error(result), font_path);
+            return 1;
+        }
+        hd_demo.geometry = test_overlay;
+    }
     pit_start();
     memset(&hooks, 0, sizeof hooks);
     hooks.scanout = vga_scanout;
@@ -581,6 +597,7 @@ int main(int argc, char *argv[])
     hooks.pointer = mouse_event;
     hooks.lifecycle = on_lifecycle;
     if (test_overlay) hooks.overlay = overlay_demo_draw;
+    if (test_hd_text) { hooks.overlay = hd_demo_draw; hooks.overlay_data = &hd_demo; }
     if (input_script) hooks.tick = inscript_tick;
     if (interactive) {
         port_home = home;
@@ -596,6 +613,14 @@ int main(int argc, char *argv[])
         }
     }
     status = plat_run(&cfg, &hooks, game, NULL);
+    if (hd_demo.font) {
+        HdFontStats stats;
+        hd_font_stats(hd_demo.font, &stats);
+        fprintf(stderr, "uw1port: HD text cache: %llu hits, %llu rasterizations, %zu entries, %zu bytes\n",
+                (unsigned long long)stats.hits, (unsigned long long)stats.rasterizations,
+                stats.entries, stats.bitmap_bytes);
+        hd_font_shutdown(hd_demo.font);
+    }
     /* the window closed (or --exit-after) with the game still running: the recording's last
        runs and chunks, which only the game's own exit or a fault wrote before, so that a
        replay of it does not end at a stream it never got */
