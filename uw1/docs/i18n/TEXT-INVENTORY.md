@@ -129,10 +129,20 @@ Literal 的 UNKNOWN 與物品名稱文法仍需各自階段追蹤，不可批次
 
 ## Git / Branch State / Upstream Sync Gate
 
-Current branch: `feature/zh-tw-native`。main / origin/main / upstream/main 均保持 `e5deadd...`。
-Exhume pin 為 `a343164...`，未修改。完成 Phase 工作的 commit 後，於 clean working tree
-執行 phase-boundary fetch，再記錄 sync 結果；不作 mid-phase merge、rebase 或 force push。
-最終 SHA 與 clean-state 結果以本節的 boundary sync evidence 為準。
+Current branch: `feature/zh-tw-native`。Phase 工作與報告 checkpoint：
+`f659e05544310fbf1fca3a03c9b4051a6402f948`。main / origin/main / upstream/main
+均保持 `e5deadd6945b492636aadccc14f52caa908b4186`。
+
+**NO CHANGE** — checkpoint 後確認 working tree clean，再 fetch Underworld origin / upstream、Exhume origin。
+兩個 upstream SHA 均與 Phase 開始相同，main 對 upstream ahead/behind 為 0/0。
+當時 feature 對 origin 為 1/0，唯一新增 commit 即本階段工作，沒有雲端競爭提交。
+Exhume pin 仍為 `a343164...`、origin/master 仍為 `c54e00e...`，既有 backlog 維持 7 commits。
+沒有 merge required、沒有 submodule reconciliation，也沒有 mid-phase merge、rebase 或 force push。
+因 fetch 未引入來源變更，無 merge 後回歸需求；本階段實測結果保持有效。
+[Boundary sync metadata](evidence/p1/upstream-sync.json) 記錄完整 SHA。
+
+Boundary 記錄以獨立文件 commit 收尾，之後建立 annotated `zh-tw-native-p1` 並推送 feature 與 tag。
+最終 checkpoint 由 tag 指向，避免在文件內自我引用 commit SHA；提交後再次確認 working tree clean。
 
 ## Recommended Next Step
 
