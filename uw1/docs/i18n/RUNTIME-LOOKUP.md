@@ -164,9 +164,19 @@ fallback 保留原版 bytes，後續 presentation 亦須正確處理其 encoding
 
 ## Git / Upstream Sync Gate
 
-Current branch: `feature/zh-tw-native`。main / origin/main / upstream/main 保持 `e5deadd...`，
-Exhume pin 保持 `a343164...`。Phase 工作提交後，從 clean working tree 執行 boundary fetch，
-記錄結果並推送 feature / milestone tag；無 mid-phase merge、rebase 或 force push。
+Current branch: `feature/zh-tw-native`。Phase 工作與報告 checkpoint：
+`eb47037cf2083cef1714116eb0dd61f1f1f714ed`。
+
+**NO CHANGE** — checkpoint 後確認 working tree clean，再 fetch Underworld origin / upstream、Exhume origin。
+main / origin/main / upstream/main 均為 `e5deadd6945b492636aadccc14f52caa908b4186`，
+main 對 upstream ahead/behind 為 0/0；feature 對 origin 為 1/0，僅本階段工作尚未推送。
+Exhume pin 仍為 `a343164...`，origin/master 仍為 `c54e00e...`，既有 backlog 為 7 commits。
+沒有新雲端提交、merge required 或 submodule reconciliation；沒有 mid-phase merge、rebase 或 force push。
+Fetch 沒有引入來源變更，無 merge 後回歸需求；本輪 Native 結果保持有效。
+[Sync metadata](evidence/p2/upstream-sync.json) 記錄完整 SHA 與 clean-state gate。
+
+本節與 boundary 記錄以獨立文件 commit 收尾，之後建立 annotated `zh-tw-native-p2`，推送 feature 與 tag。
+最終 checkpoint 由 tag 指向；文件不自我引用 commit SHA。提交後再次確認 working tree clean。
 
 ## Recommended Next Step
 
