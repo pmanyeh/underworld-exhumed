@@ -154,4 +154,19 @@ DOS validation：**NOT APPLICABLE — Native-only PoC**。
 ## Git / Sync Gate
 
 實作 `c45c5a1`，portable rounding 修正 `06def21`，最終 renderer tests `55db77f` 已 push。
-本輪報告與 evidence 提交後，在 clean working tree 執行 Phase boundary fetch，結果另記錄於本節。
+本輪報告與 evidence checkpoint：`c9a67d6b3a4660eb921a463e40ca4268857bea41`。
+該提交後兩個 working trees 均 clean，才執行 Phase boundary fetch：
+
+| 檢查 | 結果 |
+| --- | --- |
+| Underworld main / origin/main / upstream/main | 全部 `e5deadd6945b492636aadccc14f52caa908b4186`，main vs upstream `0/0` |
+| Underworld feature vs origin（結案 push 前） | `1/0`，唯一未 push 提交為上述 evidence checkpoint |
+| Exhume main / origin/main / upstream/master | 全部 `c54e00e9176c14d0913b5806318a30f85a8f4636`，`0/0` |
+| Exhume feature / origin feature / submodule pin | 全部 `89278495bb0b8b224b5bb58e53da2fd367c0d8c0`，`0/0` |
+| Exhume feature vs upstream/master | `1/7`，沿用 P4 的 overlay commit 與既有 tooling/profile backlog |
+
+**UPSTREAM_SYNC = NO CHANGE。** 本輪沒有新的上游變更、沒有 merge/rebase，也沒有修改 Exhume。
+Backlog 仍為 B（build/tooling）、I（其他 compiler profiles）及文件，不混入本階段已驗證 baseline。
+完整同步紀錄見 [sync.json](evidence/p5/sync.json)。
+`zh-tw-native-p5` annotated tag 指向最終文件同步提交，與 feature branch 一同 push。
+Phase 5 到此結束；Phase 6 HD Cursor Overlay 尚未開始。

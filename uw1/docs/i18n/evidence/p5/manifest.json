@@ -121,8 +121,10 @@
     "resize.png": "1f9c1467835d046577fd1c9f299b34811bd717dbac710c4c1b38fbf3dd5a989f",
     "runtime-tests.log": "9de2566d68c17d69c7f5ae80cdc53356d0e12e3c0e0ee319deb1b5985f813bdd",
     "stub-tests.log": "007e556cb21bb728953d097f4520d2d9d9b1659f3d888764f66070acc0363241",
+    "sync.json": "d407f49b5ff581e1a366ba5b55d4f1a6968f23e06fe9628f5c306dcd9f3afbcb",
     "window-sanitizers.log": "8b46c75cc205b9d0b7e98780afeedd653ab9db9306062c9708ba9431f3ffc84d",
     "window-tests.log": "94d3ccef3493e2d0e6d649ac1b11ff0084aadd4c9f9f9519cf6dea5b3013c662"
   },
-  "repository_checks": "PASS: syntax, Markdown links, payload scan and whitespace"
+  "repository_checks": "PASS: syntax, Markdown links, payload scan and whitespace",
+  "phase5_evidence_checkpoint": "c9a67d6b3a4660eb921a463e40ca4268857bea41"
 }

@@ -1,0 +1,40 @@
+{
+  "checked_utc": "2026-10-21T15:19:01.522314+00:00",
+  "status": "UPSTREAM_SYNC = NO CHANGE",
+  "clean_boundary": true,
+  "underworld": {
+    "upstream_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "main_and_origin_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "evidence_checkpoint": "c9a67d6b3a4660eb921a463e40ca4268857bea41",
+    "origin_feature_before_final_push": "55db77f62e17a7d9ebff020036da95e149737dc9",
+    "main_vs_upstream": [
+      0,
+      0
+    ],
+    "feature_vs_origin_before_push": [
+      1,
+      0
+    ]
+  },
+  "exhume": {
+    "upstream_master_and_mirrors": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "feature_origin_and_pin": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0",
+    "main_vs_upstream": [
+      0,
+      0
+    ],
+    "feature_vs_origin": [
+      0,
+      0
+    ],
+    "feature_vs_upstream": [
+      1,
+      7
+    ],
+    "new_upstream_commits": 0,
+    "changed_in_phase5": false,
+    "backlog": "same 7 compiler-profile/tooling/doc commits; B/I; not merged"
+  },
+  "milestone": "zh-tw-native-p5 annotated tag on final documentation sync commit",
+  "stop": "Phase 5; no Phase 6 started"
+}
