@@ -1,0 +1,26 @@
+{
+  "phase": 6,
+  "status": "UPSTREAM_SYNC = NO CHANGE",
+  "evidence_checkpoint": "673d9ac5583da682672fa59b6dd7f56a56f00a21",
+  "working_trees_clean_before_fetch": true,
+  "fetch": "git fetch --all --prune; main repo and Exhume",
+  "underworld": {
+    "main_origin_main_upstream_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "main_vs_upstream": [0, 0],
+    "feature_before_closing_commit": "673d9ac5583da682672fa59b6dd7f56a56f00a21",
+    "origin_feature_before_final_push": "72da1625d223141b46ee68f4f4c8687ba81d4b78",
+    "feature_vs_origin_before_final_push": [1, 0]
+  },
+  "exhume": {
+    "main_origin_main_upstream_master": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "feature_origin_feature_submodule_pin": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0",
+    "main_vs_upstream": [0, 0],
+    "feature_vs_origin": [0, 0],
+    "feature_vs_upstream": [1, 7],
+    "backlog": "existing build/tooling, other compiler profiles and documentation; unchanged from P4/P5"
+  },
+  "merge_or_rebase": false,
+  "exhume_changed": false,
+  "closing_tag": "zh-tw-native-p6",
+  "phase_7_started": false
+}

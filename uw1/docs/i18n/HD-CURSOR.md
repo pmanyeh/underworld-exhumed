@@ -129,3 +129,20 @@ Linux/macOS game-only port-check 各有 46 個既有 warnings、0 errors，Windo
 
 本階段未修改 Exhume；cursor policy、state bridge 與 tests 都在 UW1。
 尚未開始 Phase 7，conversation／scroll 仍使用原英文顯示路徑。
+
+## Phase boundary sync
+
+驗收 evidence checkpoint：`673d9ac5583da682672fa59b6dd7f56a56f00a21`。
+該提交後，主 repository 與 Exhume working trees 都 clean，才執行兩邊 `fetch --all --prune`。
+
+| 檢查 | 結果 |
+| --- | --- |
+| Underworld main / origin/main / upstream/main | 全部 `e5deadd6945b492636aadccc14f52caa908b4186`，main vs upstream `0/0` |
+| Underworld feature vs origin（結案 push 前） | `1/0`，未 push 的唯一提交為上述 evidence checkpoint |
+| Exhume main / origin/main / upstream/master | 全部 `c54e00e9176c14d0913b5806318a30f85a8f4636`，`0/0` |
+| Exhume feature / origin feature / submodule pin | 全部 `89278495bb0b8b224b5bb58e53da2fd367c0d8c0`，`0/0` |
+| Exhume feature vs upstream/master | `1/7`，沿用 P4 的 overlay commit 與既有 tooling/profile/documentation backlog |
+
+**UPSTREAM_SYNC = NO CHANGE。** 沒有新上游變更，也沒有 merge/rebase 或改動 submodule pin。
+詳見 [sync.json](evidence/p6/sync.json)。`zh-tw-native-p6` annotated tag 指向本輪結案提交，
+與 `feature/zh-tw-native` 一同 push。Phase 6 到此結束。
