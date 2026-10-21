@@ -39,6 +39,7 @@ class RuntimeTests(unittest.TestCase):
         if os.name != "nt":
             command += ["-fPIC"]
         subprocess.run(command + ["-I", str(UW1 / "src/port"), str(UW1 / "src/port/i18n/localization.c"),
+                                  str(UW1 / "src/port/i18n/utf8.c"),
                                   "-o", str(library)], check=True)
         cls.lib = ctypes.CDLL(str(library))
         cls.lib.port_i18n_init.argtypes = [ctypes.c_char_p, ctypes.c_char_p]

@@ -1,11 +1,54 @@
-# Native localization data / lookup (Phases 1–2)
+# Native localization / layout (Phases 1–3)
 
-目前已完成文字盤點、翻譯資料與 Native UTF-8 lookup。Phase 2 透過記錄驗證查找，
-畫面仍走原本英文路徑；中文 layout / FreeType / overlay 留待後續階段。
-驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md) 與 [Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)。
+目前已完成文字盤點、翻譯資料、Native UTF-8 lookup 與獨立的文字排版核心。
+查找以記錄驗證，排版以 renderer-independent tests 驗證；畫面仍走原本英文路徑。
+FreeType / overlay 與遊戲畫面的接入留待後續階段。
+驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md)、[Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)
+與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)。
 
 目前依使用者更新採 [Native-only 驗收](../docs/i18n/VALIDATION.md)：不需要 Borland 或 DOS 驗證。
 先前報告的 DOS NOT RUN 是歷史紀錄，不是待解決的阻礙。
+
+## UTF-8 / Chinese Layout Core
+
+Native C API 位於 [utf8.h](../src/port/i18n/utf8.h) 與 [layout.h](../src/port/i18n/layout.h)，
+無 SDL / FreeType dependency。`utf8_next/prev/validate/count/boundary_before` 使用明示長度與 byte offset，
+嚴格拒絕 malformed / truncated UTF-8。`layout_text` 將來源轉成 scalar、newline 與原子控制碼 units，
+以 caller 的整數 pixel/fixed-point advance callback 換行；輸出保留每個 unit 的原始 byte span。
+
+```c
+/* Callback may use an actual font in a later phase; same units as max_width. */
+static int sample_width(uint32_t cp, void *context) {
+    (void)context;
+    return cp < 128 ? 1 : 2; /* Synthetic metrics, not a font. */
+}
+struct text_layout text = {0};
+size_t error_byte;
+if (layout_text(utf8_text, byte_length, 32, sample_width, NULL,
+                &text, &error_byte) == LAYOUT_OK) {
+    /* Consume lines/units; skip advancing TRIMMED spaces, process controls
+       separately. LAYOUT_OVERFLOW is explicit; never silently cut bytes. */
+    layout_free(&text);
+}
+```
+
+ASCII 優先在空白換行，長單字依 codepoint fallback；中文採字間換行與基本行首／行尾禁則。
+禁則無法與窄欄寬並存時，保留完整字元並標記 `LAYOUT_OVERFLOW`。
+`\p`、`\P`、`\m`、`\0..\6` 是零寬、兩個 bytes 的 control units，核心不執行它們。
+ASCII edge spaces/tabs 保留為 `LAYOUT_TRIMMED` units；CR/LF/CRLF 保留明示換行，末尾 newline 產生空行。
+完整 API/error/lifetime 與政策界線見 Phase 3 報告；目前不處理完整 grapheme shaping 或 kerning。
+
+在 Native compiler 環境、不需遊戲 assets、SDL 或 FreeType：
+
+```sh
+python3 tools/i18n/test_layout.py -v
+python3 tools/i18n/test_runtime.py -v
+python3 -m unittest discover -s tools/i18n -p test_i18n.py -v
+python3 tools/i18n/verify_layout_sanitizers.py
+```
+
+Sanitizer driver 需要 Clang 的 ASan / UBSan runtime；一般 core tests 只需 C11 compiler。
+本機已通過兩者。`localization.c` 現在共用相同的 UTF-8 validator，另保留 catalog 的 NUL 拒絕規則。
 
 ## Run the Phase 2 lookup
 

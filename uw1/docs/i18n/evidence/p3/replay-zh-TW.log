@@ -1,0 +1,104 @@
+Native-only PoC: using committed goldens; no DOS reference rebuild
+  setup/headless: port run (a setup session DOS cannot replay) done in 11.9 s
+  setup/tidy-heavy: port run (a setup session DOS cannot replay) done in 12.2 s
+  setup/trader: port run (a setup session DOS cannot replay) done in 12.3 s
+== verify: 16 sessions in the port against the goldens, 19.0 s
+newgame    1.3 s  ok    identical to DOS at all 41 checkpoints
+walk       3.9 s  ok    identical to DOS at all 66 checkpoints
+sound      3.4 s  ok    identical to DOS at all 70 checkpoints
+soundfm    3.3 s  ok    identical to DOS at all 70 checkpoints
+soundmt    5.0 s  ok    identical to DOS at all 93 checkpoints
+items      2.9 s  ok    identical to DOS at all 100 checkpoints, saves identical
+talk       8.9 s  ok    identical to DOS at all 627 checkpoints
+load       0.9 s  ok    identical to DOS at all 17 checkpoints, saves identical
+intro      3.7 s  ok    identical to DOS at all 73 checkpoints
+savecursor   2.7 s  ok    identical to DOS at all 79 checkpoints, saves identical
+female     1.0 s  ok    identical to DOS at all 47 checkpoints
+fallrestore   5.6 s  ok    identical to DOS at all 312 checkpoints, saves identical
+tooheavy   1.9 s  ok    identical to DOS at all 40 checkpoints, saves identical
+fallpause   1.3 s  ok    identical to DOS at all 33 checkpoints, saves identical
+overpay    6.6 s  ok    identical to DOS at all 43 checkpoints, saves identical
+powerkill   1.5 s  ok    identical to DOS at all 75 checkpoints, saves identical
+verify: all sessions identical to DOS
+{
+  "status": "PASS",
+  "locale": "zh-TW",
+  "sessions": {
+    "newgame": [],
+    "walk": [],
+    "sound": [],
+    "soundfm": [],
+    "soundmt": [],
+    "items": [],
+    "talk": [
+      [
+        1,
+        5
+      ],
+      [
+        7,
+        83
+      ],
+      [
+        3651,
+        1
+      ],
+      [
+        3651,
+        3
+      ],
+      [
+        3651,
+        4
+      ],
+      [
+        3651,
+        5
+      ],
+      [
+        3651,
+        6
+      ],
+      [
+        3651,
+        7
+      ],
+      [
+        3651,
+        10
+      ],
+      [
+        3651,
+        11
+      ],
+      [
+        3651,
+        12
+      ],
+      [
+        3651,
+        16
+      ]
+    ],
+    "load": [],
+    "intro": [],
+    "savecursor": [],
+    "female": [],
+    "fallrestore": [
+      [
+        1,
+        5
+      ]
+    ],
+    "tooheavy": [],
+    "fallpause": [],
+    "overpay": [],
+    "powerkill": []
+  },
+  "session_count": 16,
+  "distinct_translation_hits": 12,
+  "translation_text_checked_against_tsv": true,
+  "legacy_state_and_saves": "identical to committed DOS goldens",
+  "dos_reference_rebuild": "NOT APPLICABLE - Native-only PoC",
+  "display": "legacy English path; UTF-8 lookup verified via JSONL"
+}

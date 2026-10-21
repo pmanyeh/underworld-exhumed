@@ -1,0 +1,21 @@
+test_pack_repeat_and_order (test_runtime.PackerTests.test_pack_repeat_and_order) ... ok
+test_reject_bad_keys_text_and_tokens (test_runtime.PackerTests.test_reject_bad_keys_text_and_tokens) ... ok
+test_counts_and_file_limits (test_runtime.RuntimeTests.test_counts_and_file_limits) ... ok
+test_invalid_utf8_and_embedded_nul (test_runtime.RuntimeTests.test_invalid_utf8_and_embedded_nul) ... ok
+test_load_actual_poc_all_52_keys (test_runtime.RuntimeTests.test_load_actual_poc_all_52_keys) ... ok
+test_locale_off_and_null (test_runtime.RuntimeTests.test_locale_off_and_null) ... ok
+test_missing_drift_and_dynamic_keys_return_pointer (test_runtime.RuntimeTests.test_missing_drift_and_dynamic_keys_return_pointer) ... ok
+test_reinitialize_and_shutdown (test_runtime.RuntimeTests.test_reinitialize_and_shutdown) ... ok
+test_sorted_unique_static_keys_only (test_runtime.RuntimeTests.test_sorted_unique_static_keys_only) ... ok
+test_stable_immutable_result_and_long_utf8 (test_runtime.RuntimeTests.test_stable_immutable_result_and_long_utf8) ... ok
+test_trace_deduplicates_and_preserves_utf8 (test_runtime.RuntimeTests.test_trace_deduplicates_and_preserves_utf8) ... ok
+test_trace_json_control_escaping (test_runtime.RuntimeTests.test_trace_json_control_escaping) ... ok
+test_trace_off_or_unwritable (test_runtime.RuntimeTests.test_trace_off_or_unwritable) ... ok
+test_truncation_every_byte_and_bad_magic (test_runtime.RuntimeTests.test_truncation_every_byte_and_bad_magic) ... ok
+test_unsupported_or_missing_catalog (test_runtime.RuntimeTests.test_unsupported_or_missing_catalog) ... ok
+test_valid_utf8_boundaries (test_runtime.RuntimeTests.test_valid_utf8_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.259s
+
+OK

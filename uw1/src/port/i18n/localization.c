@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "i18n/localization.h"
+#include "i18n/utf8.h"
 
 #define MAX_CATALOG (4u * 1024u * 1024u)
 #define MAX_ENTRIES 4096u
@@ -36,28 +37,10 @@ static int static_key(unsigned block, unsigned index)
     return block && block <= 0x7FFF && block != 0x7C && block != 0x7D && index < 512;
 }
 
-/* Input-format validation only; text iteration/layout belongs to Phase 3.
-   Reject NUL, overlong encodings, surrogates and values beyond U+10FFFF. */
+/* Catalogs contain C strings: additionally reject embedded NUL. */
 static int valid_target(const unsigned char *p, size_t n)
 {
-    size_t i = 0;
-    while (i < n) {
-        unsigned c = p[i++], value, minimum, extra, j;
-        if (!c) return 0;
-        if (c < 0x80) continue;
-        if (c >= 0xC2 && c <= 0xDF) { value = c & 31; minimum = 0x80; extra = 1; }
-        else if (c >= 0xE0 && c <= 0xEF) { value = c & 15; minimum = 0x800; extra = 2; }
-        else if (c >= 0xF0 && c <= 0xF4) { value = c & 7; minimum = 0x10000; extra = 3; }
-        else return 0;
-        if (n - i < extra) return 0;
-        for (j = 0; j < extra; j++) {
-            c = p[i++];
-            if ((c & 0xC0) != 0x80) return 0;
-            value = (value << 6) | (c & 63);
-        }
-        if (value < minimum || value > 0x10FFFF || (value >= 0xD800 && value <= 0xDFFF)) return 0;
-    }
-    return 1;
+    return !memchr(p, 0, n) && utf8_validate((const char *)p, n, NULL);
 }
 
 void port_i18n_shutdown(void)

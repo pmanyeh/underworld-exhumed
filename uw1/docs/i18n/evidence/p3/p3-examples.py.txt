@@ -1,0 +1,22 @@
+from pathlib import Path
+import json
+import sys
+workspace=Path(__file__).resolve().parent.parent
+uw1=workspace/'underworld-exhumed/uw1'
+sys.path.insert(0,str(uw1/'tools/i18n'))
+from test_layout import CoreTests
+CoreTests.setUpClass()
+test=CoreTests()
+samples=[]
+for text,width in [('hello world',5),('繁體中文測試',4),('UW1 中文測試',5),
+                   ('甲，乙',2),('甲「乙」丙',4),('甲\\1乙\\m丙',2),('中😀𠀀文',2),('甲\r\n乙\n',4)]:
+    lines,units,metadata,calls=test.render(text,width)
+    samples.append(dict(source=text,max_width=width,lines=lines,
+                        line_widths=[line.width for line in metadata],
+                        overflow=[bool(line.flags&2) for line in metadata],
+                        units=[dict(offset=u.byte_offset,bytes=u.byte_length,scalar=u.scalar,kind=u.kind,flags=u.flags) for u in units]))
+lines,_,metadata,_=test.render('WiWi',11,lambda cp:{ord('W'):9,ord('i'):2}[cp])
+samples.append(dict(source='WiWi',max_width=11,metric='W=9, i=2',lines=lines,line_widths=[line.width for line in metadata]))
+path=uw1/'build/i18n/p3-layout-examples.json'
+path.write_text(json.dumps({'metric':'ASCII=1, non-ASCII=2 unless noted; synthetic callback, no font loaded','samples':samples},ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+print('Wrote',path)

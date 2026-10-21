@@ -1,0 +1,2 @@
+PASS: 100000 exact-length random-byte inputs + 10000 mixed-layout inputs; seed 303
+ASan + UBSan PASS (Windows: leak detection unavailable)

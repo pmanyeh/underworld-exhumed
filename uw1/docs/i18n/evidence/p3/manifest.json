@@ -1,0 +1,76 @@
+{
+  "status": "Native P3 PASS",
+  "date": "2026-10-21",
+  "plan": "v2.2 with user Native-only override",
+  "baseline": {
+    "underworld_upstream": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "underworld_feature": "d471bcd1c28a330b9efaab0fcc676f2272936e6b",
+    "exhume_upstream": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "exhume_pin": "a34316463c230bafa3d4f0aa3b894a574e5fc738"
+  },
+  "platform": {
+    "os": "Windows",
+    "compiler": "Clang 23.1.3 / MSYS2 CLANG64",
+    "SDL3": "3.4.18",
+    "Python": "3.12.10",
+    "FreeType": "not used"
+  },
+  "code_sha256": {
+    "uw1/src/port/i18n/layout.c": "66d9057f5f668dad7eb89b61a4c69a7055cabcd041d943533c291321a8679df9",
+    "uw1/src/port/i18n/layout.h": "009cae127f7dfdd4ab6dbcf493f6bb7c1e642b8b14d422c5c11316ae44fdfde6",
+    "uw1/src/port/i18n/localization.c": "24324d438f57853edcf4c6d35957dcda857d270e121d55a105411a5f0d62c969",
+    "uw1/src/port/i18n/localization.h": "b763867c2ea22abfd55d12618455bc15fb47485d61f567d6577cacb1ed5be1e3",
+    "uw1/src/port/i18n/utf8.c": "b6a0083aebc4bc82fbb9e913b760859a2c487088dd9da2557d79748728b9c912",
+    "uw1/src/port/i18n/utf8.h": "b7e48d1436710916b2aaf271af4e7590c9d998becd44a1794d9f120246d7d89c",
+    "uw1/tools/i18n/layout_stress.c": "302efb6bb51fab9cc629159f1cb91b7350a01923f4f68b041dedf1f680da3724",
+    "uw1/tools/i18n/test_layout.py": "4ffd464fba652951c5a51f8b702aeaef9a94b7f51ff792f21d0d55b7c6f0af83",
+    "uw1/tools/i18n/test_runtime.py": "7d6d38e988b380a8d8d949ecdf1d286447d75f8a1738c8ab6e897e4163115821",
+    "uw1/tools/i18n/verify_layout_sanitizers.py": "b5e8ca863d75a972257c6da4a8ca5c00b410d9609e753bcc1c0f0c82a2d8aaad"
+  },
+  "native_exe_sha256": "e810beac542fffafd1f38cabf4111f7bd1722fe7e414682e70df6a759d385364",
+  "tests": {
+    "layout_core": 29,
+    "runtime_packer": 16,
+    "inventory": 22,
+    "total_unit_tests": 67,
+    "unicode_scalars_checked": 1112064,
+    "random_scalar_seed": 3629,
+    "random_scalar_draws": 4096,
+    "random_byte_oracle_cases": 10000,
+    "random_layout_seed": 303,
+    "random_layout_cases": 100,
+    "poc_translations": 53,
+    "poc_widths": [
+      18,
+      32,
+      64,
+      160
+    ],
+    "poc_layout_cases": 212,
+    "long_text_scalars": 90000,
+    "sanitizer_random_byte_cases": 100000,
+    "sanitizer_mixed_layout_cases": 10000,
+    "sanitizers": [
+      "AddressSanitizer",
+      "UndefinedBehaviorSanitizer"
+    ],
+    "windows_leak_detection": "not available"
+  },
+  "regression": {
+    "native_build": "PASS",
+    "game_sources": 89,
+    "port_sources": 95,
+    "port_check": "0 errors, 0 warnings",
+    "english_replay_sessions": 16,
+    "english_checkpoints": 1786,
+    "zh_tw_replay_sessions": 16,
+    "zh_tw_checkpoints": 1786,
+    "translation_hits": 12,
+    "native_decoder_comparisons": 10984,
+    "missing_key_cases": 2,
+    "ring_dynamic_and_block0": "PASS"
+  },
+  "dos_validation": "NOT APPLICABLE - Native-only PoC; no DOS rebuild or branch guard executed",
+  "scope": "scalar layout only; no game renderer, SDL, FreeType, shaping, kerning or full grapheme/UAX14 implementation",
+  "cross_platform": "Windows tested; macOS/Linux/Web not executed this phase"
+}
