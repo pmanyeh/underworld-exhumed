@@ -1,7 +1,75 @@
-# Native localization data (Phase 1)
+# Native localization data / lookup (Phases 1–2)
 
-這裡目前只有文字盤點與翻譯資料；遊戲尚未讀取這些 TSV，也尚未繪製中文。
-Phase 1 的驗收與證據見 [TEXT-INVENTORY.md](../docs/i18n/TEXT-INVENTORY.md)。
+目前已完成文字盤點、翻譯資料與 Native UTF-8 lookup。Phase 2 透過記錄驗證查找，
+畫面仍走原本英文路徑；中文 layout / FreeType / overlay 留待後續階段。
+驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md) 與 [Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)。
+
+## Run the Phase 2 lookup
+
+在 `uw1/`，以原有 Native compiler 環境建置，再編譯譯表與執行遊戲：
+
+```sh
+make port
+python3 tools/i18n/pack_translations.py i18n/zh-TW/poc.tsv build/i18n/zh-TW.uwloc
+build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" \
+  --locale zh-TW --i18n-file build/i18n/zh-TW.uwloc --i18n-log build/i18n/hits.jsonl
+```
+
+Windows executable 名稱為 `uw1port.exe`。`--locale en` 為預設，不讀取譯表。
+缺少／損毀的 catalog 會發出診斷並使用英文。未命中、source drift、unresolved block 0 與
+dynamic keys 皆回傳 caller 原本的 fallback pointer；不複製或修改它。
+`--i18n-log` 每個實際命中的 key 記錄一次 UTF-8 JSONL，包含 resolved block、index 與完整譯文。
+
+`get_string` 的 Native hook 在查找 made blocks 之後解析 block 0、解出原文並呼叫 observer；
+observer 取得真正的 UTF-8 translation，但回傳原始可修改英文 pointer。
+這是計劃允許的 logging 驗證路徑：直接替換會把 UTF-8 送進會修改字串的文法函式、
+固定容量 buffer 與低解析 renderer，因此本階段不在 legacy path 直接回傳譯文。
+新 API 的 caller 可直接使用 `port_i18n_lookup` 回傳的 UTF-8；未來 presentation integration
+需在適當邊界使用它，不能直接把這個 const pointer 當成原版 mutable buffer。
+
+兩個參數的 `port_i18n_init(locale, catalog_path)` 明確指定資源位置，避免依賴工作目錄或
+程序內的隱藏環境變數。catalog 在 game thread 啟動時載入，init/shutdown/trace 僅由該 thread 操作，
+lookup 本身只讀取資料。平台 loop 可能在 game thread 仍存活時返回，所以主執行緒不釋放 catalog；
+正常 game wrapper 返回才 shutdown，parked exits 由程序結束回收。沒有新增 live reload 或跨 thread 讀寫。
+
+譯文獨立儲存並保持 immutable，直到 shutdown；再多次讀取原版 string ring 也不會覆寫它。
+呼叫 shutdown 前須確保所有讀者已停止。原版八個 512-byte slots、動態 pointer、control/template
+展開與物品命名行為維持原樣。
+
+### Catalog contract
+
+可編輯來源仍為 UTF-8 TSV。`.uwloc` 是可重建的 build artifact，不能手動編輯或提交。
+格式使用固定 little-endian，不序列化任何 C struct / pointer：
+
+```text
+8 bytes magic: UW1LOC1 + NUL
+uint32 entry count
+per entry, sorted by (block,index):
+  uint16 block, uint16 index, uint32 source_bytes, uint32 target_bytes
+  CP437 source bytes + NUL
+  UTF-8 target bytes + NUL
+```
+
+每筆原文最多 511 bytes、譯文最多 16,384 bytes；總數最多 4,096 筆、整檔最多 4 MiB。
+本次 pack 為 52 static entries / 8,990 bytes；一個 literal sample 保留到相應 UI 階段。
+loader 先檢查整檔，拒絕截斷、重複／未排序 key、額外尾端資料、非法 key、NUL 與損毀 UTF-8，
+通過後才公開整份 catalog。UTF-8 format check 是 loader 的局部輸入驗證，不是 Phase 3 layout API。
+
+### Verify Phase 2
+
+```sh
+python3 tools/i18n/test_runtime.py -v
+python3 tools/i18n/verify_native.py "$UW1_EXE" "$UW1_DATA/DATA/STRINGS.PAK" \
+  --catalog build/i18n/zh-TW.uwloc --report build/i18n/native-comparison.json
+python3 tools/i18n/verify_dos_branch.py
+python3 tools/i18n/verify_localized_replay.py --config exhume.toml \
+  --catalog build/i18n/zh-TW.uwloc --poc i18n/zh-TW/poc.tsv --report build/i18n/replay-zh-TW.json
+```
+
+第一項使用真實 C module 建立 shared library，不需 SDL 或原版遊戲資料。
+最後一項使用 upstream 原本的 replay verifier 加上 locale CLI options；沒有更動 inputs 或 goldens。
+Windows 本機回歸使用 Phase 0 的 `build/poc/native-v22.toml`，處理沒有 symlink 權限的測試資料路徑。
+DOS branch token guard 僅比較 headers 排除後的預處理結果，不能代替 Borland exact-match。
 
 ## Reproduce with your own game data
 

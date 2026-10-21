@@ -1,0 +1,27 @@
+test_bad_conversation_bounds (test_i18n.DecoderTests.test_bad_conversation_bounds) ... ok
+test_categories (test_i18n.DecoderTests.test_categories) ... ok
+test_conversation_uses_header_not_slot (test_i18n.DecoderTests.test_conversation_uses_header_not_slot) ... ok
+test_cycle_and_invalid_child (test_i18n.DecoderTests.test_cycle_and_invalid_child) ... ok
+test_directory_overlap (test_i18n.DecoderTests.test_directory_overlap) ... ok
+test_duplicate_block (test_i18n.DecoderTests.test_duplicate_block) ... ok
+test_game_512_character_limit (test_i18n.DecoderTests.test_game_512_character_limit) ... ok
+test_high_bit_relative (test_i18n.DecoderTests.test_high_bit_relative) ... ok
+test_invalid_node_count (test_i18n.DecoderTests.test_invalid_node_count) ... ok
+test_missing_keys (test_i18n.DecoderTests.test_missing_keys) ... ok
+test_msb_offsets_and_both_terminators (test_i18n.DecoderTests.test_msb_offsets_and_both_terminators) ... ok
+test_signed_game_header_limits (test_i18n.DecoderTests.test_signed_game_header_limits) ... ok
+test_truncated_headers_and_tables (test_i18n.DecoderTests.test_truncated_headers_and_tables) ... ok
+test_truncated_stream (test_i18n.DecoderTests.test_truncated_stream) ... ok
+test_uint16_seek_wrap (test_i18n.DecoderTests.test_uint16_seek_wrap) ... ok
+test_c_escapes_and_line_splice (test_i18n.TextTests.test_c_escapes_and_line_splice) ... ok
+test_classification_conservative (test_i18n.TextTests.test_classification_conservative) ... ok
+test_escape_roundtrip_and_invalid_escape (test_i18n.TextTests.test_escape_roundtrip_and_invalid_escape) ... ok
+test_lexer_comments_chars_and_adjacent_literals (test_i18n.TextTests.test_lexer_comments_chars_and_adjacent_literals) ... ok
+test_literal_key_stable_across_line_change (test_i18n.TextTests.test_literal_key_stable_across_line_change) ... ok
+test_templates_controls_and_nested_indexes (test_i18n.TextTests.test_templates_controls_and_nested_indexes) ... ok
+test_tsv_roundtrip (test_i18n.TextTests.test_tsv_roundtrip) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.015s
+
+OK

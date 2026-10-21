@@ -20,8 +20,11 @@ def main():
     parser.add_argument("exe", type=Path)
     parser.add_argument("pak", type=Path)
     parser.add_argument("--report", required=True, type=Path)
+    parser.add_argument("--catalog", type=Path, help="also test the Phase 2 hook and ring lifetime")
     args = parser.parse_args()
     args.report = args.report.resolve()
+    if args.catalog:
+        args.catalog = args.catalog.resolve()
     exe, pak_path = args.exe.resolve(), args.pak.resolve()
     sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "exhume/tools"))
     import portbuild
@@ -51,7 +54,11 @@ def main():
     pak = StringsPak(pak_path.read_bytes())
     keys = [(r["block"], r["index"]) for r in pak.rows()]
     keys += [(0xBEEF, 0), (1, 65535)]  # Both missing-key paths in the original.
-    result = subprocess.run([str(probe), str(exe), str(pak_path)],
+    command = [str(probe), str(exe), str(pak_path)]
+    trace = out / "native-hook.jsonl"
+    if args.catalog:
+        command += [str(args.catalog), str(trace)]
+    result = subprocess.run(command,
                             input="".join(f"{b} {i}\n" for b, i in keys),
                             text=True, capture_output=True, check=True)
     actual = {}
@@ -70,6 +77,14 @@ def main():
               "block0_resolution": "PASS: get_string(3), context 3651, compared to read_string(3651,3)",
               "dynamic_blocks": "PASS: make_string/get_string pointer identity for 0x7C and 0x7D",
               "categories": sorted(set(r["category"] for r in pak.rows()))}
+    if args.catalog:
+        hits = [json.loads(line) for line in trace.read_text(encoding="utf-8").splitlines()]
+        if {(r["block"], r["index"]) for r in hits} != {(3651, 3), (1, 2), (1, 5)}:
+            raise AssertionError(f"unexpected hook trace keys: {hits}")
+        report["runtime_hook"] = {"status": "PASS", "trace": hits,
+                                  "checks": ["resolved Bragit block", "untranslated cutscene fallback",
+                                             "both dynamic pointers bypass lookup", "eight-slot ring lifetime",
+                                             "legacy strings unchanged", "UTF-8 pointer survives ring reuse"]}
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))

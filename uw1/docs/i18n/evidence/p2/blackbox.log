@@ -1,0 +1,24 @@
+ok   two sessions: two folders under recordings/, named YYYYMMDD-HHMMSS
+ok   20261021-180254: RECORD.OUT, not empty
+ok   20261021-180254: its RECORD.OUT is a recording with the game's clock in it
+ok   20261021-180254: stage/
+ok   20261021-180257: RECORD.OUT, not empty
+ok   20261021-180257: its RECORD.OUT is a recording with the game's clock in it
+ok   20261021-180257: stage/
+ok   no RECORDIN/ in the home directory
+ok   the second session's stage/ has neither recordings/ nor RECORDIN/
+ok   seven sessions: the newest 5 are kept (the two oldest planted ones gone)
+ok   the planted sessions kept are as they were
+ok   an old RECORDIN/ is left as it was
+ok   with an old RECORDIN/ there, the newest stage/ has neither recordings/ nor RECORDIN/
+ok   the newest session's RECORD.OUT is a recording
+ok   the newest stage/ has the saved game (SAVE1/) as it is in the home directory
+ok   the newest stage/ has DATA/UW.CFG as it is in the home directory
+ok   the newest stage/ has the override file DATA/STRINGS.PAK as it is in the home directory
+ok   the newest stage/ leaves out gog-cd/, roms/, mt32-roms/, UW1/, UW2/ and a stray file
+ok   the newest stage/ holds nothing but SAVE0 to SAVE4 and DATA/
+blackboxcheck: this host makes no symbolic links here; the link checks are skipped
+ok   a script with the fault event is refused without EXHUME_TEST_FAULT=1, and nothing faults
+ok   a fault on the game's thread ends the run, reported as a host fault
+ok   after the fault the recording is whole: call count FFFFFFFFh, the MISC stream and the clock
+blackboxcheck: 22 of 22 checks pass

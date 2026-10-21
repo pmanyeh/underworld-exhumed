@@ -1,0 +1,10 @@
+ok   roundtrip Speech: changed on the screen, the file holds 2
+ok   roundtrip Speech: the saved value shows on the screen (differs from the default's)
+ok   roundtrip Mouse-look speed: changed on the screen, the file holds 110
+ok   roundtrip Mouse-look speed: the saved value shows on the screen (differs from the default's)
+ok   roundtrip 4:3 aspect: changed on the screen, the file holds 0
+ok   roundtrip 4:3 aspect: the saved value shows on the screen (differs from the default's)
+ok   roundtrip Show this at start: changed on the screen, the file holds 1
+ok   roundtrip Show this at start: the saved value shows on the screen (differs from the default's)
+setcheck: roundtrip:1/3 took 31.3 s
+setcheck: 8 of 8 checks pass

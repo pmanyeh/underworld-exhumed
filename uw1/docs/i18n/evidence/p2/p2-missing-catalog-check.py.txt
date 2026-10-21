@@ -1,0 +1,21 @@
+from pathlib import Path
+import json
+import sys
+workspace=Path(__file__).resolve().parent.parent
+repo=workspace/'underworld-exhumed'
+sys.path.insert(0,str(repo/'exhume/tools'))
+import replay as R
+import golden as G
+out=Path(R.OUT)/'i18n-missing-catalog'
+out.mkdir(parents=True,exist_ok=True)
+trace=out/'hits.jsonl'
+if trace.exists(): trace.unlink()
+result=R.run_port(G.rec_of('newgame'),str(out),['--locale','zh-TW','--i18n-file',str(out/'missing.uwloc'),'--i18n-log',str(trace)],quiet=True)
+assert result==0,result
+ok, lines=G.compare_golden('newgame',G.load_golden('newgame'),str(out),'port')
+assert ok,lines
+assert 'catalog unavailable or invalid; using English' in (out/'port.log').read_text()
+assert not trace.exists()
+report={'status':'PASS','missing_catalog':'English fallback','newgame_checkpoints':41,'compared_to':'committed DOS golden','no_translation_trace_created':True}
+(repo/'uw1/build/i18n/p2-missing-catalog.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2))

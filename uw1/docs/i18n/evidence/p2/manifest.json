@@ -1,0 +1,86 @@
+{
+  "status": "Native P2 PASS",
+  "date": "2026-10-21",
+  "plan_version": "2.2",
+  "start_baseline": {
+    "underworld_upstream": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "underworld_feature": "8b7f4d618fb691cc430bb552f10b64941c0baeac",
+    "exhume_upstream": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "exhume_pin": "a34316463c230bafa3d4f0aa3b894a574e5fc738"
+  },
+  "platform": {
+    "os": "Windows",
+    "compiler": "Clang 23.1.3 / MSYS2 CLANG64",
+    "SDL3": "3.4.18",
+    "Python": "3.12.10",
+    "FreeType": "not used"
+  },
+  "catalog": {
+    "format": "UW1LOC1",
+    "static_entries": 52,
+    "reserved_literals": 1,
+    "bytes": 8990,
+    "sha256": "fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98",
+    "repeat_identical": true,
+    "tsv_sha256": "fef857593dafa1c1128e5f5bf93762a9486f18f095d27678da1292b5a3978c3f"
+  },
+  "code_sha256": {
+    "uw1/src/port/i18n/localization.c": "84a5cd822c84d5a55eadeebe7a69441497bec68abc7a03155e982f3cfb9a2e62",
+    "uw1/src/port/i18n/localization.h": "b763867c2ea22abfd55d12618455bc15fb47485d61f567d6577cacb1ed5be1e3",
+    "uw1/src/port/sys/main.c": "19938a66bcdfdbd35037088b885af5b11624f8c6d76581f81f7a73758240d869",
+    "uw1/src/ui/GAMESTRN.C": "d9b4306ef6abc8cc46a5971acd6fbb4fd92feefbb742f609e53f2d2a93c92874",
+    "uw1/tools/i18n/extract_strings.py": "5f67d83fb52be7e3b28c2174cc4bef7fedf1613b5298cfcee9e7f61a9be3a9dd",
+    "uw1/tools/i18n/native_probe.c": "2a57b2e51655d15651c1fa93b14d2c84aa103662d667483ffe2d3a9865a8e4d9",
+    "uw1/tools/i18n/pack_translations.py": "b2f85fb042b9348506589526842d0e1dce7612a8824c14c190227ee0e825d1f4",
+    "uw1/tools/i18n/scan_literals.py": "6f12db5c9c7863003a4fdca65197fccf21cd1d6c125e95f5ffff21338b7c2d29",
+    "uw1/tools/i18n/test_i18n.py": "8c1276f6ed092e040081c5d8c0ed780c481750b51e8836c9589da4b24f3d30bd",
+    "uw1/tools/i18n/test_runtime.py": "78a96af29e45464c968ce80ca078fb144896dd88d4d22a2f145517cb186d80b5",
+    "uw1/tools/i18n/validate_poc.py": "4e5a9fe81c3936d51b9eb29a6cbf261d4d3e1c7bc05f2ba4d22c769738b77a51",
+    "uw1/tools/i18n/verify_dos_branch.py": "1c0e3b0050f702dcee83aaf77e0398cb11a398c304e7453134852e09f5e863c3",
+    "uw1/tools/i18n/verify_localized_replay.py": "1f158d28dafb5ae4d1b4d6c61c66e3c46030f0c4cf3009fc1653a4ac8675cbc5",
+    "uw1/tools/i18n/verify_native.py": "e2dca0c85b4a0110ee5b14100a7b03e7ae4d676dd3ced94fea78b06e2719719b"
+  },
+  "native_executable_sha256": "d9248b4d4f6d3ba83934d39c44329e46bcce5cfc57289fda5e13da695b025bf6",
+  "unit_tests": {
+    "inventory": 22,
+    "runtime_and_packer": 16,
+    "actual_poc_keys_checked": 52
+  },
+  "native_decoder_entries_compared": 10984,
+  "public_replays": {
+    "english_sessions": 16,
+    "english_checkpoints": 1786,
+    "zh_tw_sessions": 16,
+    "zh_tw_checkpoints": 1786,
+    "distinct_translation_hits": 12,
+    "bragit_checkpoints_per_locale": 627,
+    "missing_catalog_newgame_checkpoints": 41
+  },
+  "native_matrix": {
+    "aggregate": "PASS after targeted host-tool repair",
+    "raw_exit_codes": {
+      "fuzz-host-link": 0,
+      "fuzz": 0,
+      "enhancements": 0,
+      "settings": 1,
+      "movement": 0,
+      "blackbox": 0,
+      "mapnotes": 0
+    },
+    "settings_supplement_exit": 0,
+    "settings_distinct_assertions": 72,
+    "settings_initial_assertions_passed": 68,
+    "settings_supplement_assertions_passed": 8,
+    "settings_duplicate_assertions": 4,
+    "settings_raw_failure": "WinError 267 in upstream subprocess temp label rt-4:3_aspect",
+    "enhancements": 120,
+    "movement": 15,
+    "blackbox": 22,
+    "mapnotes": 4,
+    "fuzz_cases": 5680
+  },
+  "dos_exact_match": "NOT RUN — Borland reference toolchain not installed",
+  "display": "English legacy rendering; real UTF-8 lookup verified via API and trace",
+  "thread_ownership": "game thread init/trace/shutdown; immutable catalog kept until process exit on parked exits",
+  "cross_platform": "Windows tested; macOS/Linux/Web not rerun this phase"
+}

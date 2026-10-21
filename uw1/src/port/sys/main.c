@@ -21,6 +21,7 @@
 #include "sys/cheat.h"
 #include "sys/inscript.h"
 #include "ui/settings.h"
+#include "i18n/localization.h"
 
 extern const struct enhance_flag enhance_table[];   /* src/port/sys/enhtab.c */
 extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a test's cheats */
@@ -114,11 +115,22 @@ void port_on_flip(void)
 
 static int game_argc;
 static char **game_argv;
+static const char *locale = "en", *i18n_file, *i18n_log;
 
 static int game(void *arg)
 {
+    int status;
     (void)arg;
-    return uw1_main(game_argc, game_argv);
+    /* All localization writes are on this thread, before/after game calls.
+       plat_run can return while this thread is still running: main must not
+       free the catalog. Parked-exit paths keep it for the process lifetime. */
+    if (port_i18n_init(locale, i18n_file) < 0)
+        fputs("uw1port: i18n: catalog unavailable or invalid; using English\n", stderr);
+    if (port_i18n_trace_open(i18n_log) < 0)
+        fputs("uw1port: i18n: cannot open lookup log\n", stderr);
+    status = uw1_main(game_argc, game_argv);
+    port_i18n_shutdown();
+    return status;
 }
 
 static void on_lifecycle(int ev)
@@ -222,6 +234,9 @@ static const char help_text[] =
     "                         lock: a click captures the pointer, as in DOSBox, and Ctrl+F10\n"
     "                         releases it; kept until changed\n"
     "Testing and debugging:\n"
+    "  --locale en|zh-TW      lookup locale (default en); display remains English in Phase 2\n"
+    "  --i18n-file FILE       catalog compiled with tools/i18n/pack_translations.py\n"
+    "  --i18n-log FILE        UTF-8 JSONL lookup hits (one per key, game thread only)\n"
     "  --hidden               no window; the scan-out still runs\n"
     "  --screenshot-after MS  write the screen to a PNG MS milliseconds after start\n"
     "  --screenshot FILE      that PNG's name (uw1port.png)\n"
@@ -362,6 +377,12 @@ int main(int argc, char *argv[])
         else if (!strcmp(a, "--mouse") && i + 1 < argc && (!strcmp(argv[i + 1], "follow") || !strcmp(argv[i + 1], "lock")))
             mouse = argv[++i];
         else if (!strcmp(a, "--hidden")) cfg.hidden = 1;
+        else if (!strcmp(a, "--locale") && i + 1 < argc) {
+            locale = argv[++i];
+            if (strcmp(locale, "en") && strcmp(locale, "zh-TW")) usage(0);
+        }
+        else if (!strcmp(a, "--i18n-file") && i + 1 < argc) i18n_file = argv[++i];
+        else if (!strcmp(a, "--i18n-log") && i + 1 < argc) i18n_log = argv[++i];
         else if (!strcmp(a, "--screenshot-after") && i + 1 < argc) cfg.screenshot_after_ms = atol(argv[++i]);
         else if (!strcmp(a, "--screenshot") && i + 1 < argc) cfg.screenshot_path = argv[++i];
         else if (!strcmp(a, "--window-shot") && i + 1 < argc) cfg.window_shot_path = argv[++i];

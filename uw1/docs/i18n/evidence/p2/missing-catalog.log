@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "missing_catalog": "English fallback",
+  "newgame_checkpoints": 41,
+  "compared_to": "committed DOS golden",
+  "no_translation_trace_created": true
+}
