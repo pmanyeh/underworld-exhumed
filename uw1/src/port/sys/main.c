@@ -24,6 +24,8 @@
 #include "i18n/localization.h"
 #include "presentation/overlay_demo.h"
 #include "presentation/hd_demo.h"
+#include "presentation/presentation.h"
+#include "presentation/hd_cursor.h"
 
 extern const struct enhance_flag enhance_table[];   /* src/port/sys/enhtab.c */
 extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a test's cheats */
@@ -118,6 +120,7 @@ void port_on_flip(void)
 static int game_argc;
 static char **game_argv;
 static const char *locale = "en", *i18n_file, *i18n_log;
+static const char *cursor_log;
 
 static int game(void *arg)
 {
@@ -130,7 +133,9 @@ static int game(void *arg)
         fputs("uw1port: i18n: catalog unavailable or invalid; using English\n", stderr);
     if (port_i18n_trace_open(i18n_log) < 0)
         fputs("uw1port: i18n: cannot open lookup log\n", stderr);
+    if (hd_cursor_trace_open(cursor_log) < 0) fputs("uw1port: cannot open cursor log\n", stderr);
     status = uw1_main(game_argc, game_argv);
+    hd_cursor_trace_close();
     port_i18n_shutdown();
     return status;
 }
@@ -245,6 +250,8 @@ static const char help_text[] =
     "  --window-shot FILE     with --screenshot-after, also the window's scaled contents\n"
     "  --test-overlay         native RGBA geometry/alpha probe (no text)\n"
     "  --test-hd-text         FreeType Chinese text probe on the native RGBA layer\n"
+    "  --hd-cursor            original cursor bitmap on the native RGBA layer\n"
+    "  --cursor-log FILE      diagnostic cursor snapshots (with --hd-cursor)\n"
     "  --font FILE            scalable Unicode font for --test-hd-text\n"
     "  --shot-at-flip K:FILE  write the screen right after the game's K-th page flip\n"
     "  --exit-after MS        quit MS milliseconds after start\n"
@@ -359,6 +366,8 @@ int main(int argc, char *argv[])
     int test_hd_text = 0;
     const char *font_path = "tools/fonts/NotoSansCJKtc-Regular.otf";
     HdDemo hd_demo = {0};
+    PortPresentation presentation = {0};
+    int hd_cursor = 0;
     int cl_scale = 0, cl_aspect = 0, cl_integer = 0;   /* given on the command line: the settings file does not override them */
     const char *input_script = NULL;    /* --input-script: keys and mouse at set times (inscript.c) */
     static char spec_buf[16];
@@ -387,6 +396,8 @@ int main(int argc, char *argv[])
         else if (!strcmp(a, "--hidden")) cfg.hidden = 1;
         else if (!strcmp(a, "--test-overlay")) test_overlay = 1;
         else if (!strcmp(a, "--test-hd-text")) test_hd_text = 1;
+        else if (!strcmp(a, "--hd-cursor")) hd_cursor = 1;
+        else if (!strcmp(a, "--cursor-log") && i + 1 < argc) cursor_log = argv[++i];
         else if (!strcmp(a, "--font") && i + 1 < argc) font_path = argv[++i];
         else if (!strcmp(a, "--locale") && i + 1 < argc) {
             locale = argv[++i];
@@ -590,6 +601,15 @@ int main(int argc, char *argv[])
         }
         hd_demo.geometry = test_overlay;
     }
+    if (hd_cursor && ENHANCED(ENH_MOUSE_LOOK)) {
+        fputs("uw1port: HD cursor: mouse-look is not supported; use compatibility cursor or disable mouse-look\n", stderr);
+        hd_font_shutdown(hd_demo.font);
+        return 1;
+    }
+    hd_cursor_enable(hd_cursor);
+    presentation.demo = hd_demo;
+    presentation.demo.geometry = test_overlay;
+    presentation.cursor = hd_cursor;
     pit_start();
     memset(&hooks, 0, sizeof hooks);
     hooks.scanout = vga_scanout;
@@ -598,6 +618,11 @@ int main(int argc, char *argv[])
     hooks.lifecycle = on_lifecycle;
     if (test_overlay) hooks.overlay = overlay_demo_draw;
     if (test_hd_text) { hooks.overlay = hd_demo_draw; hooks.overlay_data = &hd_demo; }
+    if (hd_cursor) {
+        hooks.scanout = presentation_scanout;
+        hooks.overlay = presentation_draw;
+        hooks.overlay_data = &presentation;
+    }
     if (input_script) hooks.tick = inscript_tick;
     if (interactive) {
         port_home = home;

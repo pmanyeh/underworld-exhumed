@@ -1,7 +1,8 @@
 # The native port builds on Linux, macOS and Windows (docs/BUILDING.md, "Continuous
 # integration"): make port (compile and link with SDL3) and make port-check (the compile-only
 # measurement). Only the sources are needed: no game data, no Borland toolchain and no secrets,
-# so this runs on every push and every pull request, forks included. Nothing is run.
+# so this runs on every push and every pull request, forks included. Standalone
+# font/cursor tests run without game assets; the full game is compile/link only.
 name: uw1-port
 on:
   push:
@@ -59,6 +60,10 @@ jobs:
         run: |
           python3 uw1/tools/i18n/fetch_font.py
           LD_LIBRARY_PATH="$PWD/uw1/tools/libs/lib:${LD_LIBRARY_PATH:-}" python3 uw1/tools/i18n/test_hd_font.py
+      - name: HD cursor pixels, publication and original mouse state machine
+        run: |
+          LD_LIBRARY_PATH="$PWD/uw1/tools/libs/lib:${LD_LIBRARY_PATH:-}" python3 uw1/tools/i18n/test_hd_cursor.py
+          python3 uw1/tools/i18n/test_mouse_cursor.py
 
   web:
     runs-on: ubuntu-24.04
@@ -112,6 +117,10 @@ jobs:
         run: |
           python3 uw1/tools/i18n/fetch_font.py
           python3 uw1/tools/i18n/test_hd_font.py
+      - name: HD cursor pixels, publication and original mouse state machine
+        run: |
+          python3 uw1/tools/i18n/test_hd_cursor.py
+          python3 uw1/tools/i18n/test_mouse_cursor.py
 
   windows:
     runs-on: windows-latest
@@ -142,3 +151,7 @@ jobs:
         run: |
           python uw1/tools/i18n/fetch_font.py
           python uw1/tools/i18n/test_hd_font.py
+      - name: HD cursor pixels, publication and original mouse state machine
+        run: |
+          python uw1/tools/i18n/test_hd_cursor.py
+          python uw1/tools/i18n/test_mouse_cursor.py
