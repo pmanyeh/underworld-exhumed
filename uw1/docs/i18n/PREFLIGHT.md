@@ -213,13 +213,18 @@ Raw state dumps、遊戲資料、工具鏈、DLL、save、暫存設定均只留�
 | main / origin/main / upstream/main（受測 baseline） | `e5deadd6945b492636aadccc14f52caa908b4186` |
 | Exhume | `a34316463c230bafa3d4f0aa3b894a574e5fc738`，detached、未修改 |
 | Feature source | 以 main 為基底；本輪及先前 feature commit 僅文件與 evidence |
-| Working tree | 驗證前 clean；本輪文件 / evidence 提交後再做 Sync Gate |
-| Milestone | Native P0 PASS；同步檢查完成後可建立 `zh-tw-native-p0` |
+| Working tree | 驗證前 clean；報告 commit `9df006e...` 後以 clean working tree 完成 Sync Gate，最終文件提交後再確認 clean |
+| Milestone | Native P0 PASS；本輪完成 checkpoint 為 `zh-tw-native-p0` |
 
 ## Upstream Sync Gate
 
-PENDING — 本報告與 evidence 提交後，在 clean working tree 執行 phase-boundary fetch，結果將補記。
-沒有進行 mid-phase merge。
+**NO CHANGE** — 報告 commit `9df006e3e8a83ea41d555c6de0b29c2ff0567243` 後，確認 working tree clean，再執行 phase-boundary fetch。
+
+- Underworld：已 fetch upstream 與 origin；main / origin/main / upstream/main 全部為 `e5deadd...`，兩組 ahead/behind 均為 `0 / 0`。
+- Exhume：已 fetch origin；origin/master 仍為 `c54e00e...`，相對本輪開始時無更新。
+- Exhume pin 仍為 `a343164...`；與 origin/master 的 7-commit tooling / profile backlog 已在 v2.1 記錄，維持 Underworld 指定 pin。
+- 沒有 merge required、沒有 submodule reconciliation、沒有 mid-phase merge；只有 fetch，無來源變更，不需 merge 後回歸。
+- [Sync metadata](evidence/v2.2/upstream-sync.json) 記錄完整 SHA 與 clean-state gate。
 
 ## Recommended next step
 
