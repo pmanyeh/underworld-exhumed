@@ -62,6 +62,19 @@ int main(int argc, char **argv)
     CHECK(hd_text_draw(f,&p,text,strlen(text),10,10,8,268,white) == HD_OK);
     CHECK(!memcmp(first,p.rgba,bytes));
     save(&p,argv[2]);
+    /* One game unit moves exactly three output pixels with this X scale.
+       Compare the complete image, not a copy of the coordinate formula. */
+    memset(p.rgba,0,bytes);
+    CHECK(hd_text_draw(f,&p,text,strlen(text),11,10,8,268,white)==HD_OK);
+    for(row=0;row<p.height;row++)for(col=0;col<p.width;col++) {
+        static const uint8_t zero[4]={0};
+        const uint8_t *expected=col>=3?first+(size_t)row*p.pitch+(col-3)*4:zero;
+        CHECK(!memcmp(p.rgba+(size_t)row*p.pitch+col*4,expected,4));
+    }
+    memset(p.rgba,0,bytes);
+    { HdColor half={255,240,190,128};
+      CHECK(hd_text_draw(f,&p,text,strlen(text),10,10,8,268,half)==HD_OK); }
+    for(i=0;i<bytes;i+=4)CHECK(abs(p.rgba[i+3]-(int)((first[i+3]*128u+127)/255))<=1);
     /* Compositing over an existing translucent layer: compare against the
        independently captured mask alpha; RGB must stay straight, not premultiplied. */
     for (i = 0; i < bytes; i += 4) { p.rgba[i]=10; p.rgba[i+1]=30; p.rgba[i+2]=70; p.rgba[i+3]=90; }
