@@ -1,0 +1,13 @@
+{
+  "fuzz-host-link": 1,
+  "fuzz": 1,
+  "enhancements": 0,
+  "settings": 0,
+  "movement": 0,
+  "blackbox": 0,
+  "mapnotes": 0,
+  "initial_fuzz_failures": "old ignored config lacked FreeType package entry; see original logs",
+  "fuzz_relink_rerun": 0,
+  "fuzz_rerun": 0,
+  "final_status": "PASS after local config correction"
+}

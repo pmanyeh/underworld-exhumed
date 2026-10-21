@@ -1,8 +1,9 @@
-# Native localization / layout / HD text (Phases 1–5)
+# Native localization / layout / HD text / cursor (Phases 1–6)
 
 目前已完成文字盤點、翻譯資料、Native UTF-8 lookup 與獨立的文字排版核心。
 查找以記錄驗證，排版以 renderer-independent tests 驗證；畫面仍走原本英文路徑。
 Phase 4 已加入選用的通用 RGBA overlay；Phase 5 加入 FreeType 高解析度繁中示範。
+Phase 6 加入原版 bitmap 的 Native 游標 overlay；驗收見 [HD cursor](../docs/i18n/HD-CURSOR.md)。
 驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md)、[Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)
 與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)、[Phase 4](../docs/i18n/OVERLAY-FOUNDATION.md)。
 

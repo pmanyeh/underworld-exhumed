@@ -1,0 +1,10 @@
+runtime: D:\git\Ultima Underworld\underworld-exhumed\exhume
+compiled 89 game sources and 100 port sources (layout flags: -mno-ms-bitfields)
+..\..\..\Ultima Underworld\underworld-exhumed\exhume\runtime\port\sound\mt32roms.c: warnings
+D:\git\Ultima Underworld\underworld-exhumed\exhume\runtime\port\sound\mt32roms.c:236:17: warning: unused variable 'h' [-Wunused-variable]
+1 warning generated.
+third-party: Nuked OPL3, libmt32emu, FreeType HD text
+portbuild.py: Windows target; icon tools\dist\icon\uw1.ico, resource compiler D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\llvm-windres.EXE
+link failed: 0 undefined names
+ld.lld: error: failed to write output 'D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\uw1port.exe': Permission denied
+clang: error: linker command failed with exit code 1 (use -v to see invocation)

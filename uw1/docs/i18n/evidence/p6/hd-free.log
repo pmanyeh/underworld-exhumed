@@ -1,0 +1,10 @@
+EMS allocated
+
+uw1port: mt32: no ROMs
+uw1port: enhance: skip-intro (not as DOS)
+uw1port: mouse: follow
+uw1port: renderer direct3d11, display 120 Hz, vsync requested
+uw1port: wrote D:\git\uw1-native-poc\underworld-exhumed\uw1\build\hd-cursor\game\hd-free-scanout.png (320x200) at 1809 ms
+uw1port: wrote D:\git\uw1-native-poc\underworld-exhumed\uw1\build\hd-cursor\game\hd-free.png (640x400, the window)
+uw1port: 288 presents, 81 paced, 0 passes with the window hidden
+uw1port: HD text cache: 25856 hits, 64 rasterizations, 64 entries, 5225 bytes

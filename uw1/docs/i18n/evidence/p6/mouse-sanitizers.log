@@ -1,0 +1,5 @@
+In file included from D:\git\Ultima Underworld\underworld-exhumed\uw1\tools\i18n\mouse_cursor_test.c:3:
+In file included from D:\git\Ultima Underworld\underworld-exhumed\uw1\tools\i18n/../../src/ui/MOUSE.C:49:
+In file included from D:\git\uw1-native-poc\underworld-exhumed\uw1\src\include/sys.h:15:
+D:\git\uw1-native-poc\underworld-exhumed\uw1\src\include/view3d.h:5:11: warning: '/*' within block comment [-Wcomment]
+PASS actual MOUSE.C: 39 assertions; nesting, save-under, regions, force stack, object, both raster paths

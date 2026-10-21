@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "runs": {
+    "hd-window": {
+      "output": [
+        960,
+        720
+      ],
+      "snapshot_count": 9,
+      "at_test_anchor": true
+    },
+    "hd-free": {
+      "output": [
+        640,
+        400
+      ],
+      "snapshot_count": 9,
+      "at_test_anchor": true
+    },
+    "hd-fullscreen": {
+      "output": [
+        2880,
+        1800
+      ],
+      "snapshot_count": 9,
+      "at_test_anchor": true
+    },
+    "compat-window": {
+      "output": [
+        960,
+        720
+      ],
+      "snapshot_count": 0,
+      "at_test_anchor": false
+    }
+  },
+  "mouse_look_rejected": true
+}

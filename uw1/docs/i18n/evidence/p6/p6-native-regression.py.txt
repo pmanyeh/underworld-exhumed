@@ -1,0 +1,47 @@
+"""Run the remaining Native matrix, preserving upstream checks and assertions."""
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+workspace = Path(__file__).resolve().parent.parent
+repo = workspace / 'underworld-exhumed'
+uw1 = repo / 'uw1'
+out = uw1 / 'build/i18n'
+config = uw1 / 'build/poc/native-v22.toml'
+if '--settings' in sys.argv or '--settings-slice' in sys.argv:
+    slice_name = sys.argv[sys.argv.index('--settings-slice')+1] if '--settings-slice' in sys.argv else None
+    sys.argv[:] = [sys.argv[0], '--config', str(config)]
+    sys.path.insert(0,str(repo/'exhume/tools'))
+    import setcheck
+    original = setcheck.fresh
+    def fresh(work, name, *args, **kwargs):
+        return original(work,name.replace(':','_'),*args,**kwargs)
+    setcheck.fresh = fresh
+    if slice_name:
+        raise SystemExit(setcheck.main([slice_name]))
+    import time
+    def job(name, env):
+        start = time.time()
+        r = subprocess.run([sys.executable, str(Path(__file__)), '--settings-slice', name], capture_output=True, text=True, errors='replace', env=env, timeout=1200)
+        return name, time.time()-start, r.returncode, r.stdout+r.stderr
+    setcheck.job = job
+    raise SystemExit(setcheck.main(['all']))
+commands = [
+ ('fuzz-host-link', [str(workspace/'.poc-tools/prepare-fuzzhost-link.py'),'--config',str(config)]),
+ ('fuzz', [str(repo/'exhume/tools/fuzzasm.py'),'--config',str(config)]),
+ ('enhancements', [str(repo/'exhume/tools/enhcheck.py'),'--config',str(config),'all']),
+ ('settings', [str(Path(__file__)), '--settings']),
+ ('movement', [str(repo/'exhume/tools/movecheck.py'),'--config',str(config)]),
+ ('blackbox', [str(repo/'exhume/tools/blackboxcheck.py'),'--config',str(config)]),
+ ('mapnotes', [str(uw1/'tools/notescheck.py'),'--config',str(config)]),
+]
+results={}
+for name, args in commands:
+    print('Running',name,flush=True)
+    with (out/f'p6-{name}.log').open('wb') as log:
+        run = subprocess.run([sys.executable]+args,cwd=uw1,stdout=log,stderr=subprocess.STDOUT)
+    results[name]=run.returncode
+    print(name,run.returncode,flush=True)
+(out/'p6-native-matrix.json').write_text(json.dumps(results,indent=2)+'\n')
+raise SystemExit(any(results.values()))

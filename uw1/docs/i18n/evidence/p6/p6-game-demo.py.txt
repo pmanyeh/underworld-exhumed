@@ -1,0 +1,22 @@
+from pathlib import Path
+import subprocess,os,json
+from PIL import Image
+root=Path(r'D:\git\uw1-native-poc\underworld-exhumed\uw1');out=root/'build/hd-cursor/game';out.mkdir(parents=True,exist_ok=True)
+env=dict(os.environ);env['PATH']=str(root/'tools/libs/bin')+os.pathsep+r'D:\git\uw1-native-poc\.poc-tools\msys64\clang64\bin'+os.pathsep+env['PATH']
+results={}
+for name,options in [('hd-window',['--scale','3','--hd-cursor']),('hd-free',['--scale','2','--no-integer','--no-aspect','--hd-cursor']),('hd-fullscreen',['--hd-cursor']),('compat-window',['--scale','3'])]:
+ home=out/name;home.mkdir(exist_ok=True)
+ if name=='hd-fullscreen':(home/'uw1port.cfg').write_text('fullscreen=1\n')
+ script=home/'cursor.script';script.write_text('500 move 80 60\n')
+ cmd=[str(root/'build/port/uw1port.exe'),'--data',r'D:\git\uw1-native-poc\.poc-private\game\UW','--home',str(home),'--record','--no-audio','--sound','0,0','--enhance','skip-intro','--input-script',str(script),'--test-hd-text','--font',str(root/'tools/fonts/NotoSansCJKtc-Regular.otf'),'--screenshot-after','1800','--screenshot',str(out/(name+'-scanout.png')),'--window-shot',str(out/(name+'.png')),'--exit-after','2500','--cursor-log',str(out/(name+'.jsonl'))]+options
+ r=subprocess.run(cmd,capture_output=True,text=True,env=env,timeout=40)
+ (out/(name+'.log')).write_text(r.stdout+r.stderr,encoding='utf-8');assert r.returncode==0,(name,r.stderr)
+ rows=[json.loads(s) for s in (out/(name+'.jsonl')).read_text().splitlines()];visible=[r for r in rows if r['visible']]
+ if name!='compat-window':assert any(r['x']==80 and r['y']==60 for r in visible),(name,visible[-1:])
+ results[name]={'output':Image.open(out/(name+'.png')).size,'snapshot_count':len(rows),'at_test_anchor':any(r['x']==80 and r['y']==60 for r in visible)}
+# The explicit unsupported combination must refuse to run.
+home=out/'reject-look';home.mkdir(exist_ok=True)
+r=subprocess.run([str(root/'build/port/uw1port.exe'),'--data',r'D:\git\uw1-native-poc\.poc-private\game\UW','--home',str(home),'--record','--hd-cursor','--enhance','mouse-look'],env=env,capture_output=True,text=True,timeout=15)
+assert r.returncode==1 and 'HD cursor: mouse-look is not supported' in r.stderr
+(out/'reject-look.log').write_text(r.stderr)
+(out/'comparison.json').write_text(json.dumps({'status':'PASS','runs':results,'mouse_look_rejected':True},indent=2)+'\n');print(json.dumps(results,indent=2))

@@ -1,0 +1,48 @@
+fuzzasm.py: fuzzhost does not link:
+ld.lld: error: undefined symbol: pthread_once
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(lock)
+
+ld.lld: error: undefined symbol: pthread_mutex_lock
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(lock)
+
+ld.lld: error: undefined symbol: pthread_mutex_unlock
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(unlock)
+
+ld.lld: error: undefined symbol: pthread_mutexattr_init
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(mx_init)
+
+ld.lld: error: undefined symbol: pthread_mutexattr_settype
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(mx_init)
+
+ld.lld: error: undefined symbol: pthread_mutex_init
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(mx_init)
+
+ld.lld: error: undefined symbol: FT_Init_FreeType
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(hd_font_init)
+
+ld.lld: error: undefined symbol: FT_New_Face
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(hd_font_init)
+
+ld.lld: error: undefined symbol: FT_Select_Charmap
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(hd_font_init)
+
+ld.lld: error: undefined symbol: FT_Done_Face
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(hd_font_shutdown)
+
+ld.lld: error: undefined symbol: FT_Done_FreeType
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(hd_font_shutdown)
+
+ld.lld: error: undefined symbol: FT_Set_Pixel_Sizes
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(prepare)
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(glyph)
+
+ld.lld: error: undefined symbol: FT_Get_Char_Index
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(glyph)
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(glyph)
+
+ld.lld: error: undefined symbol: FT_Load_Glyph
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(glyph)
+
+ld.lld: error: undefined symbol: FT_Render_Glyph
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\presentation_hd_font.o:(glyph)
+clang: error: linker command failed with exit code 1 (use -v to see invocation)

@@ -1,0 +1,152 @@
+{
+  "status": "Native P6 PASS",
+  "date": "2026-10-21",
+  "tested_code_and_tests": "72da1625d223141b46ee68f4f4c8687ba81d4b78",
+  "baseline": {
+    "underworld_upstream": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "underworld_feature": "7132c6f731c3aea01c00d900f1d691efe0bb4e5b",
+    "exhume_upstream": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "exhume_overlay_pin": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0"
+  },
+  "platform": "Windows / Clang 23.1.3 / SDL3 3.4.18 / FreeType 2.14.3 / Python 3.12.10",
+  "source_sha256": {
+    ".github/workflows/uw1-port.yml": "5b35d3e1c04dbf8dd99817361b08689956aae925ba931af381efd645a9f71a3d",
+    "uw1/src/port/presentation/hd_cursor.c": "e20705c76d8649cd5048b89115a9e903328eba5e24b3553c710661eb5e464915",
+    "uw1/src/port/presentation/hd_cursor.h": "6d2bca3db7c3d66636349e8b874cac5c6d3f91a3d210ea005c6bf5a6a432c524",
+    "uw1/src/port/presentation/presentation.c": "002b40962ab87bf9ca3166dfb5cd8d4180d064a8a10d2780031926a1a502c027",
+    "uw1/src/port/presentation/presentation.h": "e32cc1cabd597278dd4d3f16d722489acac60dbc8aa9972505e6ccc3701d91b6",
+    "uw1/src/port/sys/main.c": "31d38ff79db242e034c689eb0b1f57d26d133424e36d7c9e96e4d4ec977bb9ef",
+    "uw1/src/ui/MOUSE.C": "3b8edbe10ed07e5554f8b4fa3e7e11b6e61917c38101181e675e6d70e5cce590",
+    "uw1/tools/i18n/cursor_window_test.c": "0cdeea168dddd6a59e78a46322b942c6d4a51508b99199b740a0f9964d6145e5",
+    "uw1/tools/i18n/hd_cursor_test.c": "39efa40e24d698065267b805c1064ff69a464573f7a0567a3a4c9f2826cd86a4",
+    "uw1/tools/i18n/mouse_cursor_test.c": "8294094ce5d11cdd97224defa90461837f7f53c91c70ee19b573cd7fc7dac7e3",
+    "uw1/tools/i18n/test_hd_cursor.py": "e9c983f39c12254e455c4b32668ec5922260503bbdc790c6996384d9b577b4aa",
+    "uw1/tools/i18n/test_mouse_cursor.py": "30112aea12ee914f7af1e4dc361429264f0f458aa9c1465f8545a5aa0e6c3677",
+    "uw1/tools/i18n/verify_cursor_replay.py": "6068bfc932777fa352143553ff5efbe42f6f4eb6118cd6b0bd08730c5402bac0"
+  },
+  "native_exe_sha256": "713d25235979ca81c39fe609ad1575a90c1875624d7a251ba064ab65031becc5",
+  "ci": "https://github.com/pmanyeh/underworld-exhumed/actions/runs/39629282507",
+  "tests": {
+    "cursor_reference_geometries": 5,
+    "concurrent_publications": 50000,
+    "actual_MOUSE_C_assertions": 39,
+    "SDL_cursor_scenarios": 8,
+    "sanitizers": "ASan/UBSan core, MOUSE.C and SDL compositor PASS; no Windows leak detection",
+    "compat_replay": {
+      "English": [
+        16,
+        1786
+      ],
+      "zh-TW": [
+        16,
+        1786
+      ],
+      "saves": "identical"
+    },
+    "HD_replay": {
+      "public_sessions": 16,
+      "checkpoints": 1786,
+      "native_only_setups": 3,
+      "excluded_presentation": [
+        "VGA",
+        "FBUF",
+        "GFX"
+      ],
+      "other_sections_headers_saves": "identical to committed goldens"
+    },
+    "layout_runtime_inventory_tests": [
+      29,
+      16,
+      22
+    ],
+    "native_decoder_strings": 10984,
+    "native_decoder_missing_keys": 2,
+    "font_assertions": 4411580,
+    "enhancements": [
+      120,
+      120
+    ],
+    "settings": [
+      72,
+      72
+    ],
+    "movement": [
+      15,
+      15
+    ],
+    "blackbox": [
+      22,
+      22
+    ],
+    "map_notes": [
+      4,
+      4
+    ],
+    "graphics_fuzz": {
+      "routines": 34,
+      "cases": 5680,
+      "differ": 0,
+      "initial_link_failure": "preserved; corrected local config and rerun"
+    }
+  },
+  "limitations": [
+    "mouse-look explicitly refused with HD cursor; unchanged in compatibility mode",
+    "physical multi-monitor DPI transfer not tested; synthetic HiDPI pixels tested",
+    "Linux/macOS compile/link and standalone tests only; no actual game/window run",
+    "unknown VRAM cursor slots use legacy fallback; not encountered in public sessions",
+    "no Phase 7 conversation/scroll translation binding"
+  ],
+  "dos_validation": "NOT APPLICABLE - Native-only PoC",
+  "images": {
+    "compat-window.png": {
+      "size": [
+        960,
+        720
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "1991fb91fb517de6e18af69cd873dd5a28c2a4caa9251c2b6c61f63ebdb7ff1c",
+      "png_sha256": "df7c9e464b7d0f5c4485827276858645bda7714a68b4d0d344d63b6a927f77a6",
+      "lossless_recompression": true
+    },
+    "hd-free.png": {
+      "size": [
+        640,
+        400
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "0239ad7de10ff691589a8da5a6f0e90718f3b75608035e83b237464c0116fcb2",
+      "png_sha256": "c15035706474dec8ab8cd99e5c2d149f8f06d9ca52d2ecd729eea6c190bea930",
+      "lossless_recompression": true
+    },
+    "hd-fullscreen.png": {
+      "size": [
+        2880,
+        1800
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "7633978b4a100615d375a36576e85df90568df28be87718d854b41afcb1203c7",
+      "png_sha256": "741dbae838326016fae96fa4c7d9838137a2eac5e8c52db3519974e51b4f9b5c",
+      "lossless_recompression": true
+    },
+    "hd-window.png": {
+      "size": [
+        960,
+        720
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "93519f1133312cf2b757e8ba0128cb26a111b0ac88758c1a78a1ad1ca90781e7",
+      "png_sha256": "2d0f27f76ea73cad8d63c68e490c80cfc56e32b3920675bab73b6ea15f995444",
+      "lossless_recompression": true
+    },
+    "resize.png": {
+      "size": [
+        853,
+        517
+      ],
+      "mode": "RGB",
+      "pixel_sha256": "ab145b9133d03d248cda8cab755cddb3daf450f7668685171d55c3db65b32881",
+      "png_sha256": "9ee360d017665e79be4f81ddf2569d22369d742dc18cf5da85d6d4f9905e021d",
+      "lossless_recompression": true
+    }
+  }
+}

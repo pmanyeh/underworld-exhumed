@@ -1,0 +1,69 @@
+89 C sources: 89 compile, 0 fail; 89 with no diagnostic in the file itself
+0 errors and 0 warnings (each counted once)
+
+category                                      errors  warnings
+
+file                              errors  warnings  top categories
+
+295 unresolved names for a link, by where they come from:
+  asm: src\3d\INSTANCE.ASM: 1
+    seg051_28A0
+  asm: src\3d\PGCACHE.ASM: 2
+    grs_off obj_tab
+  asm: src\3d\SETPNT.ASM: 1
+    SetPnt
+  asm: src\3d\TMAPOPS.ASM: 4
+    crit_fpage first_anim seg051_C376 seg051_C460
+  asm: src\gfx\GRCORE.ASM: 33
+    Color_data_ptr background_color box bytefont clear_window copy_hidden_to_visible copy_visible_to_hidden cur_font fbshow fbuf_setcolor foreground_color grPageFlip grSoftPageFlip gr_read_pixel init_colors init_graphics palette pixel_color rectangle seg003_581E set_the_color set_the_window setup_font show string_to_screen string_width uhline vcopy vcopyfb wbot wleft wright wtop
+  asm: src\gfx\LPFDELTA.ASM: 1
+    seg002_A
+  asm: src\gfx\MODEX.ASM: 14
+    FindStringDelimiter grab local_do_palette mem_set seg015_1F9B_25A seg015_1F9B_2A7 seg015_1F9B_325 seg015_1F9B_366 seg015_1F9B_E8 str_cmp str_copy str_len str_ncopy str_str
+  asm: src\gfx\SCALEBM.ASM: 3
+    ShowClip Transparency cXfer
+  asm: src\gfx\SPRITE.ASM: 8
+    change_sprite create_sprite draw_mask draw_sprite erase_sprite move_sprite set_yoff update_sprites
+  asm: src\gfx\VALLOC.ASM: 5
+    restore_rect save_rect seg001_023B_C valloc vfree
+  asm: src\lib\OVERLAY.ASM: 1
+    _OvrInitEms
+  asm: src\sound\AIL.ASM: 32
+    AIL_default_timbre_cache_size AIL_define_timbre_cache AIL_describe_driver AIL_detect_device AIL_index_VOC_block AIL_init_driver AIL_install_timbre AIL_lock_channel AIL_register_driver AIL_register_sequence AIL_register_sound_buffer AIL_register_timer AIL_release_channel AIL_release_sequence_handle AIL_release_timer_handle AIL_send_channel_voice_message AIL_sequence_status AIL_set_relative_tempo AIL_set_relative_volume AIL_set_timer_frequency AIL_shutdown AIL_sound_buffer_status AIL_start_digital_playback AIL_start_sequence AIL_start_timer AIL_startup AIL_state_table_size AIL_stop_digital_playback AIL_stop_sequence AIL_stop_timer AIL_timbre_request AIL_timbre_status
+  asm: src\sys\C3DENTRY.ASM: 19
+    cAtan2 cDbase cDbbase cEntryStrt cFBtoScreen cFillFB cFrmtoRaw cFstSinCos cInit3d cLightTabs cPixXferStuff cPlaceFB cPlayer cRender cSinCos cSqRt cZoom seg019_CB7 seg019_CEA
+  asm: src\sys\FARDATA.ASM: 3
+    cmpbuf1_start seg_5DFD stdat
+  asm: src\sys\INT0TRAP.ASM: 3
+    int0_sp int0_ss int0_trap
+  asm: src\sys\SYSENTRY.ASM: 21
+    Alt Asc CapsLock Ctrl MouseDx MouseDy MouseOn Shift Time cExitMessage cPerror joy_buttons joy_position key key_on mbuttons mouse seg019_755 seg019_791 seg019_7CD seg019_809
+  Borland library (alloc.h): 4
+    coreleft farcoreleft farfree farmalloc
+  Borland library (compat.h): 4
+    _ctype itoa ltoa strupr
+  Borland library (dir.h): 3
+    findfirst findnext getcurdir
+  Borland library (dos.h): 9
+    delay getdfree getvect int86 intdosx movedata nosound setvect sound
+  Borland library (io.h): 2
+    eof filelength
+  C replaced by the port (dos-only): src\sys\EMS.C: 9
+    crit_inpage ems_frame seg012_10F seg012_141 seg012_15E seg012_1B1 seg012_A6 seg012_B seg012_BB
+  no source: DGROUP gaps placed by tools/extract.py: 11
+    CutsceneOrConversationStringBlock (DOS: CutsceneOrConversationStringBlo) Inventory StringsPak_Address_Indices StringsPak_FileHandle StringsPak_NoOfNodes curelem dseg_5c99_12B6 dseg_5c99_7178 plyregen realDScheck string_bits
+  no source: far data taken from the EXE, or a name inside another array (3963): 3
+    smooth_base smooth_div smooth_lowpass
+  no source: far data taken from the EXE, or a name inside another array (3F4B): 1
+    ATM_Strings
+  no source: far data taken from the EXE, or a name inside another array (4423): 1
+    fade_buffer
+  no source: far data taken from the EXE, or a name inside another array (4723): 17
+    CmapCache CmapFrm CmaptoPg EmsBuff PgtoCmap _dblen bmhgtoff bmsegoff crit_nlpages obj_inpage1 seg051_C10F seg051_C375 seg051_C377 seg051_C378 seg051_C3B2 seg051_C3EC tmap_inpage
+  port layer (compat.h: port_, bc_): 57
+    bc_access bc_chdir bc_close bc_exit bc_fgetc bc_fgets bc_fopen bc_fread bc_fseek bc_ftell bc_fwrite bc_geninterrupt bc_lseek bc_mkdir bc_open bc_open_host bc_rand bc_read bc_rename bc_srand bc_sscanf bc_stat bc_time bc_unlink bc_write port_cheat_point port_clock_read port_far_copy port_file_records port_file_records_end port_fp_off port_fp_seg port_hole_mark port_hole_report port_i18n_observe port_idle port_key_attack port_key_bag port_key_compass port_key_flasks port_key_interact port_key_open_map port_key_panel port_key_pitch port_key_rune port_mk_fp port_null_copy port_null_far port_null_far_record port_null_near port_pause_wait port_rand_seed port_render_tag port_sound_moment port_sound_read port_sp port_ss
+  unknown (not in symbols.tsv): 23
+    __imp___acrt_iob_func __imp__errno __imp_isalpha __imp_isdigit __imp_islower __imp_ispunct __imp_isspace __imp_isupper __imp_tolower __imp_toupper __mingw_fprintf __mingw_printf cheat_scripted enhance_names enhance_on fileno hd_cursor_enabled hd_cursor_hide hd_cursor_publish mouse_look_mode vga_get_dac vga_plane vga_reg_crtc
+
+1 names the game defines that the host C library also has (the game's definition wins in the link, but the port should rename them):
+    norm

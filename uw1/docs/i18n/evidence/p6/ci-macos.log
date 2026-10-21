@@ -1,0 +1,10 @@
+2026-10-21T15:51:10.9050290Z compiled 89 game sources and 100 port sources (layout flags: none)
+2026-10-21T15:51:10.9051430Z third-party: Nuked OPL3, libmt32emu, FreeType HD text
+2026-10-21T15:51:10.9052270Z linked build/port/uw1port (5023672 bytes)
+2026-10-21T15:51:20.3825760Z 0 errors and 46 warnings (each counted once)
+2026-10-21T15:51:20.3880730Z category                                      errors  warnings
+2026-10-21T15:51:20.4023290Z file                              errors  warnings  top categories
+2026-10-21T15:51:22.6028340Z PASS 4411580 assertions: CJK/AA, metrics, cache hit/eviction/face/size, alpha, malformed input, wrapping, clipping
+2026-10-21T15:51:22.6191010Z PASS FreeType compile/link/render
+2026-10-21T15:51:23.2910010Z PASS 4251541 assertions: nearest pixels, hotspot, alpha/z-order, aspect/letterbox/HiDPI, clipping, 50000 concurrent snapshots
+2026-10-21T15:51:24.1556280Z PASS actual MOUSE.C: 39 assertions; nesting, save-under, regions, force stack, object, both raster paths

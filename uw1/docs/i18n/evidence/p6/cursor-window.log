@@ -1,0 +1,9 @@
+PASS cursor window 0: 320x200, viewport 0.0 0.0 320.0 200.0
+PASS cursor window 1: 960x720, viewport 0.0 0.0 960.0 720.0
+PASS cursor window 2: 640x480, viewport 0.0 0.0 640.0 480.0
+PASS cursor window 3: 853x517, viewport 81.8 0.0 689.3 517.0
+PASS cursor window 4: 640x480, viewport 0.0 40.0 640.0 400.0
+PASS cursor window 5: 853x517, viewport 12.9 0.0 827.2 517.0
+PASS cursor window 6: 2880x1800, viewport 0.0 0.0 2880.0 1800.0
+PASS cursor window 7: 640x480, viewport 0.0 0.0 640.0 480.0
+PASS 8 SDL cursor scenarios: 1x/3x click hotspot, HD text order, settings, hide, resize, fullscreen

@@ -1,0 +1,336 @@
+{
+  "status": "PASS",
+  "sessions": {
+    "newgame": {
+      "checkpoints": 41,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "walk": {
+      "checkpoints": 66,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "sound": {
+      "checkpoints": 70,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "soundfm": {
+      "checkpoints": 70,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "soundmt": {
+      "checkpoints": 93,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "items": {
+      "checkpoints": 100,
+      "golden_compared": true,
+      "pictures": [
+        128,
+        4204,
+        4209,
+        4210,
+        4215,
+        4216,
+        4218
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1,
+        2
+      ]
+    },
+    "talk": {
+      "checkpoints": 627,
+      "golden_compared": true,
+      "pictures": [
+        130,
+        262,
+        4204,
+        4205,
+        4209,
+        4211,
+        4212,
+        4215
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1,
+        4
+      ]
+    },
+    "load": {
+      "checkpoints": 17,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "intro": {
+      "checkpoints": 73,
+      "golden_compared": true,
+      "pictures": [
+        4204
+      ],
+      "paths": [
+        0
+      ],
+      "modes": [
+        0
+      ]
+    },
+    "savecursor": {
+      "checkpoints": 79,
+      "golden_compared": true,
+      "pictures": [
+        128,
+        4204,
+        4209,
+        4215
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "female": {
+      "checkpoints": 47,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "fallrestore": {
+      "checkpoints": 312,
+      "golden_compared": true,
+      "pictures": [
+        130,
+        262,
+        4204,
+        4205,
+        4209,
+        4215
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "setup/tidy-heavy": {
+      "checkpoints": 48,
+      "golden_compared": false,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "tooheavy": {
+      "checkpoints": 40,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209,
+        4215
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "fallpause": {
+      "checkpoints": 33,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "setup/trader": {
+      "checkpoints": 53,
+      "golden_compared": false,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "overpay": {
+      "checkpoints": 43,
+      "golden_compared": true,
+      "pictures": [
+        162,
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1,
+        4
+      ]
+    },
+    "setup/headless": {
+      "checkpoints": 52,
+      "golden_compared": false,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    },
+    "powerkill": {
+      "checkpoints": 75,
+      "golden_compared": true,
+      "pictures": [
+        4204,
+        4209
+      ],
+      "paths": [
+        0,
+        1
+      ],
+      "modes": [
+        0,
+        1
+      ]
+    }
+  },
+  "public_sessions": 16,
+  "ignored_presentation_sections": [
+    "FBUF",
+    "GFX",
+    "VGA"
+  ],
+  "compared": "all other canonical sections, headers and saved file hashes",
+  "dos_execution": false
+}

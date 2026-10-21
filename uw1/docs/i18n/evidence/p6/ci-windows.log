@@ -1,0 +1,11 @@
+2026-10-21T15:52:02.0027819Z compiled 89 game sources and 100 port sources (layout flags: -mno-ms-bitfields)
+2026-10-21T15:52:02.0028293Z ../exhume/runtime/port/sound/mt32roms.c: warnings
+2026-10-21T15:52:02.0030291Z third-party: Nuked OPL3, no libmt32emu (brew install mt32emu, or make setup-libs), FreeType HD text
+2026-10-21T15:52:02.0032050Z linked build/port/uw1port.exe (5129216 bytes)
+2026-10-21T15:52:11.7897330Z 0 errors and 0 warnings (each counted once)
+2026-10-21T15:52:11.7897886Z category                                      errors  warnings
+2026-10-21T15:52:11.7898479Z file                              errors  warnings  top categories
+2026-10-21T15:52:13.4109966Z PASS 4411580 assertions: CJK/AA, metrics, cache hit/eviction/face/size, alpha, malformed input, wrapping, clipping
+2026-10-21T15:52:13.4111008Z PASS FreeType compile/link/render
+2026-10-21T15:52:14.4999900Z PASS 3834574 assertions: nearest pixels, hotspot, alpha/z-order, aspect/letterbox/HiDPI, clipping, 50000 concurrent snapshots
+2026-10-21T15:52:15.1126744Z PASS actual MOUSE.C: 39 assertions; nesting, save-under, regions, force stack, object, both raster paths

@@ -1,0 +1,3 @@
+uw1port: mt32: no ROMs
+uw1port: enhance: mouse-look (not as DOS)
+uw1port: HD cursor: mouse-look is not supported; use compatibility cursor or disable mouse-look
