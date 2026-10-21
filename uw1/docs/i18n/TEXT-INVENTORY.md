@@ -1,5 +1,8 @@
 # Phase 1 — Text Inventory / Translation Data
 
+目前依 [使用者更新的 Native-only 規則](VALIDATION.md)，不要求 Borland / DOS 驗收。
+以下 DOS NOT RUN 為本階段當時的歷史紀錄，不再列為驗證缺口或待解決事項。
+
 ## Result
 
 **PASS — Acceptance Gate P1，依計劃 v2.2，2026-10-21。**

@@ -1,5 +1,8 @@
 # Phase 0 Report — Native Baseline / Fork Pre-flight
 
+目前依 [使用者更新的 Native-only 規則](VALIDATION.md)，不要求 Borland / DOS 驗收。
+以下 DOS deferred / NOT RUN 為本階段當時的歷史紀錄，不再列為待解決事項。
+
 ## Result
 
 依工作區計劃 **v2.2** 重新驗收，日期：2026-10-21（Asia/Taipei）。

@@ -4,6 +4,9 @@
 畫面仍走原本英文路徑；中文 layout / FreeType / overlay 留待後續階段。
 驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md) 與 [Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)。
 
+目前依使用者更新採 [Native-only 驗收](../docs/i18n/VALIDATION.md)：不需要 Borland 或 DOS 驗證。
+先前報告的 DOS NOT RUN 是歷史紀錄，不是待解決的阻礙。
+
 ## Run the Phase 2 lookup
 
 在 `uw1/`，以原有 Native compiler 環境建置，再編譯譯表與執行遊戲：
@@ -61,7 +64,6 @@ loader 先檢查整檔，拒絕截斷、重複／未排序 key、額外尾端資
 python3 tools/i18n/test_runtime.py -v
 python3 tools/i18n/verify_native.py "$UW1_EXE" "$UW1_DATA/DATA/STRINGS.PAK" \
   --catalog build/i18n/zh-TW.uwloc --report build/i18n/native-comparison.json
-python3 tools/i18n/verify_dos_branch.py
 python3 tools/i18n/verify_localized_replay.py --config exhume.toml \
   --catalog build/i18n/zh-TW.uwloc --poc i18n/zh-TW/poc.tsv --report build/i18n/replay-zh-TW.json
 ```
@@ -69,7 +71,7 @@ python3 tools/i18n/verify_localized_replay.py --config exhume.toml \
 第一項使用真實 C module 建立 shared library，不需 SDL 或原版遊戲資料。
 最後一項使用 upstream 原本的 replay verifier 加上 locale CLI options；沒有更動 inputs 或 goldens。
 Windows 本機回歸使用 Phase 0 的 `build/poc/native-v22.toml`，處理沒有 symlink 權限的測試資料路徑。
-DOS branch token guard 僅比較 headers 排除後的預處理結果，不能代替 Borland exact-match。
+此 PoC wrapper 不嘗試 DOS rebuild，直接以已提交 goldens 驗證 Native 結果。
 
 ## Reproduce with your own game data
 

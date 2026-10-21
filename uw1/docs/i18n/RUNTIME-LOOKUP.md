@@ -120,7 +120,10 @@ Windows settings 暫存資料夾將 label 的冒號換成底線，保持所有 t
 本輪同時更新 fuzz host 的 suffixless hardlink，使測試確實使用重新連結的目前 objects。
 這些處理僅在本機測試 helper，沒有改動 Exhume 或 Native product implementation。
 
-### DOS Exact-Match
+### DOS Exact-Match（歷史紀錄；目前不適用）
+
+使用者已於本階段完成後取消 DOS 驗收要求；目前採 [Native-only 規則](VALIDATION.md)，
+Borland 缺失不再列為驗證缺口、blocker 或後續工作。以下保留當時的執行事實。
 
 Toolchain available: **NO**。
 

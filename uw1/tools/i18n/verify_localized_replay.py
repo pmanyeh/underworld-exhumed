@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Exercise zh-TW lookup during the public native replays, against DOS goldens.
 
-Uses upstream's verifier with extra documented CLI options. Original inputs,
+Uses upstream's Native verifier with extra documented CLI options, without
+rebuilding a DOS reference. Original inputs,
 assertions and goldens are unchanged. Work directories are separate from the
 ordinary English verify run; every trace hit is checked against the source TSV.
 """
@@ -38,6 +39,13 @@ def main():
         return original(rec, out, options, **kwargs)
 
     R.run_port = run_port
+    # Native-only PoC: cmd_verify otherwise tries a Borland/DOS rebuild just
+    # to refresh a reference hash. Keep committed goldens and every Native
+    # assertion, but do not invoke that out-of-scope build/toolchain.
+    def no_dos_build(*_args, **_kwargs):
+        print("Native-only PoC: using committed goldens; no DOS reference rebuild", flush=True)
+
+    R.build = no_dos_build
     result = G.cmd_verify(G.SESSIONS, jobs=None)
     if result:
         raise SystemExit(result)
@@ -72,6 +80,7 @@ def main():
               "session_count": len(G.SESSIONS), "distinct_translation_hits": len(all_keys),
               "translation_text_checked_against_tsv": True,
               "legacy_state_and_saves": "identical to committed DOS goldens",
+              "dos_reference_rebuild": "NOT APPLICABLE - Native-only PoC",
               "display": "legacy English path; UTF-8 lookup verified via JSONL"}
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
