@@ -1,0 +1,34 @@
+from pathlib import Path
+import json,os,subprocess
+from PIL import Image
+root=Path(r'D:\git\uw1-native-poc\underworld-exhumed\uw1')
+out=root/'build/i18n/p4-demo';out.mkdir(parents=True,exist_ok=True)
+env=dict(os.environ)
+env['PATH']=str(root/'tools/libs/bin')+os.pathsep+r'D:\git\uw1-native-poc\.poc-tools\msys64\clang64\bin'+os.pathsep+env['PATH']
+rows={}
+for name,extra in [('off-en',[]),('off-zh',['--locale','zh-TW','--i18n-file',str(root/'build/i18n/zh-TW.uwloc')]),('demo',['--test-overlay'])]:
+    home=out/name;home.mkdir(exist_ok=True)
+    command=[str(root/'build/port/uw1port.exe'),'--data',r'D:\git\uw1-native-poc\.poc-private\game\UW','--home',str(home),'--record','--sound','0,0','--no-audio','--enhance','skip-intro','--scale','3','--screenshot-after','6000','--screenshot',str(out/(name+'-scanout.png')),'--window-shot',str(out/(name+'.png')),'--exit-after','6600']+extra
+    result=subprocess.run(command,capture_output=True,text=True,env=env,timeout=30)
+    (out/(name+'.log')).write_text(result.stdout+result.stderr)
+    if result.returncode: raise RuntimeError(result.returncode)
+    rows[name]=Image.open(out/(name+'.png')).convert('RGB')
+a,b,c=rows['off-en'],rows['off-zh'],rows['demo']
+assert a.size==b.size==c.size
+for name in ('off-en','off-zh'):
+    native = Image.open(out/(name+'-scanout.png')).convert('RGB').resize(rows[name].size,Image.Resampling.NEAREST)
+    assert rows[name].tobytes()==native.tobytes(),name+' changes native scanout pixels'
+base_demo=Image.open(out/'demo-scanout.png').convert('RGB').resize(c.size,Image.Resampling.NEAREST)
+scans=[Image.open(out/(n+'-scanout.png')).convert('RGB').tobytes() for n in rows]
+# Menu palette animation makes wall-clock samples across runs non-identical.
+w,h=a.size
+assert c.getpixel((w//2,h//2))==(255,255,255)
+assert c.getpixel((w//2+1,h//2+1))==base_demo.getpixel((w//2+1,h//2+1))
+assert c.getpixel((w//8,h//8))==(255,220,0)
+x,y=w//8+10,h//8+10
+base=base_demo.getpixel((x,y)); actual=c.getpixel((x,y)); expected=tuple((s*128+d*127)//255 for s,d in zip((0,160,255),base))
+assert all(abs(v-e)<=2 for v,e in zip(actual,expected)),(actual,expected)
+report={'status':'PASS','size':a.size,'overlay_off_each_locale_matches_own_native_scanout':True,'animated_menu_cross_run_identity':'not asserted; palette animation advances with game clock','native_crosshair_and_logical_box':'PASS','demo_alpha':'PASS','commands':'--record --sound 0,0 --no-audio --enhance skip-intro --scale 3 --screenshot-after 6000 --exit-after 6600, isolated homes'}
+(out/'comparison.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2))
+

@@ -1,0 +1,126 @@
+{
+  "status": "Native P4 PASS with isolated settings retries",
+  "date": "2026-10-21",
+  "baseline": {
+    "underworld_upstream": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "underworld_feature": "1adbb73176120c1a4c106787262574d83a3eb71b",
+    "exhume_upstream": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "exhume_pin": "a34316463c230bafa3d4f0aa3b894a574e5fc738"
+  },
+  "exhume_overlay_commit": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0",
+  "exhume_fork": "https://github.com/pmanyeh/Exhume",
+  "platform": {
+    "os": "Windows",
+    "compiler": "Clang 23.1.3 / MSYS2 CLANG64",
+    "SDL3": "3.4.18",
+    "Python": "3.12.10",
+    "FreeType": "not used"
+  },
+  "code_sha256": {
+    "uw1/src/port/sys/main.c": "db49242a3899d3be8ab2b3651b71d2be080b89dc767996180307d5541b8a8739",
+    "uw1/src/port/presentation/overlay_demo.c": "e6f74ba4c68e7759906acd605176acca1d1333fc11c6084e85fa7c73e84dbc81",
+    "uw1/src/port/presentation/overlay_demo.h": "58e34f70d23d3525f10929af2e3a184bed734742d485b740598b9a39dab2000a",
+    "exhume/runtime/port/platform/plat.h": "6d8d403ce80660c72e0005341a392d1b5dec91edce83aaf334e4e9e9a24616d9",
+    "exhume/runtime/port/platform/sdl3/plat_sdl3.c": "39f42da04967b2a9116225a8fc1b8f0942367f3d6971e207a21d7d4cfb27c9e6",
+    "exhume/tools/overlaycheck.py": "ab684a8ca32f37ba2318c751a8e2f841782a0851f3b82db319eea98ab67393b8",
+    "exhume/tools/tests/overlay/portgame.h": "77a77cd4004d9e5cb72e6a3e1e57538c7085d8dba5e65ace450339ee086e1119",
+    "exhume/tools/tests/overlay/presentation.c": "3b350193b47fcaed8a9c576a1593f91e34cff38cbd5b640cf02bf8036054b6d0"
+  },
+  "native_exe_sha256": {
+    "uw1": "2cafe7013413ff385aa5e42dd707df182295791899e22b79bf19aeee98b6d3b5",
+    "uw2": "07689fbee8e26c58f3f24f926d8d706bb69bba86b9fabe9f6cae1735c9188d19"
+  },
+  "tests": {
+    "generic_composition_scenarios": 26,
+    "hidden_mode": "PASS; zero allocation and callbacks",
+    "asan_ubsan": "PASS; hidden and 26 scenarios",
+    "leak_detection": "unavailable on Windows",
+    "native_builds": {
+      "uw1": [
+        89,
+        96
+      ],
+      "uw2": [
+        99,
+        94
+      ]
+    },
+    "port_check": "89 C, 0 errors, 0 warnings",
+    "english_sessions": 16,
+    "english_checkpoints": 1786,
+    "zh_tw_sessions": 16,
+    "zh_tw_checkpoints": 1786,
+    "translation_hits": 12,
+    "decoder_entries": 10984,
+    "missing_keys": 2,
+    "fuzz_routines": 34,
+    "fuzz_cases": 5680,
+    "fuzz_differences": 0,
+    "enhancements": 120,
+    "movement": 15,
+    "blackbox": 22,
+    "mapnotes": 4,
+    "settings_distinct_assertions": 72,
+    "settings_initial_pass": 70,
+    "settings_initial_fail": 2,
+    "settings_initial_exit_code": 1,
+    "settings_isolated_rerun_cases": [
+      "wclick",
+      "lostup"
+    ],
+    "settings_rerun_pass": 5,
+    "settings_rerun_duplicates": 3,
+    "settings_final": "PASS with retries; preserve initial raw status/log"
+  },
+  "scope": "Generic RGBA contract and compositor; opt-in geometry demo; no font, Chinese rendering or cursor replacement",
+  "limits": [
+    "Windows tested; Linux/macOS/Web not executed",
+    "Synthetic HiDPI covered; physical cross-monitor DPI change not tested",
+    "UW2 compile only; no UW2 assets for runtime/replay",
+    "Whole-game sanitizers not claimed",
+    "Timing-sensitive settings cases passed isolated retry"
+  ],
+  "dos_validation": "NOT APPLICABLE - Native-only PoC",
+  "evidence_sha256": {
+    "blackbox.log": "c9de86423ce86f8ab9e28dd008cc1225c0efb488e33229b3344e81629315bae5",
+    "demo-comparison.json": "2d859f1221e1ba43a2bbd4c95b7d6b8bb79d65ab8c4153043dbc71b6c57e9114",
+    "demo-scanout.png": "59b1435279a6c51a9d707a246140971f9c718f7ee07bacf7eaa1d902151998e4",
+    "demo.log": "d8df614cd0eeb895f40e72388bc2e9b4b05ceb85e17fd8d21e2c3bc2cbe8e9bc",
+    "demo.png": "dfb1927bc518ca6a2528f3c2a0a53dc4207709f9785bf7d4a022d521ceb19b50",
+    "enhancements.log": "7c3e32687dd788a83cb41965e3e6f707e88d6da52563fd5231e334c271d023b5",
+    "exhume-repocheck.log": "0d6a390434e473b878ad18afb1a2bf6f783765d01630b86cc7785302b1c4cf37",
+    "fuzz-host-link.log": "3b166ebcc7d48e842ca727bab3d329216e4855fa46885e06dc9be79e1bc32762",
+    "fuzz.log": "e0780beceab12fdffc747aae15fff2a7e47c864635344e54426e7ee0fbd6fee4",
+    "generic-composition.png": "25055a6c606e1eef660177758782ee1e1213fd54a344e13a2eb327d29c2dde10",
+    "mapnotes.log": "53afcef63b645130297a861028d25eed9908a312f8baefb4fd349e736d40e586",
+    "matrix.log": "3e09e3fd2f572bdea8b15b5e047a5c68ff0d421fd20511748aeb009efc5c645f",
+    "movement.log": "0a0357542e032c704d09987c762edc9f192efe085b6ad1273e74fa5c84877f5d",
+    "native-build.log": "4a45a8415e9aadeb0ba3fe8b056e4d0d976191c1498c4523efee5462fd760c89",
+    "native-comparison.json": "210f501092bfb658346199d8099a051efd0f00da26f064fbcc06c2ca6e9e1e16",
+    "native-matrix.json": "c93581d3055d0b809ba6d5858488ea10ebd390c15cbf807b0dd3a7a81bb97e82",
+    "off-en-scanout.png": "59b1435279a6c51a9d707a246140971f9c718f7ee07bacf7eaa1d902151998e4",
+    "off-en.log": "e3a3b061c312da2e58c8ff5e381da323f94d88900bc32916c67cf81635cbfdea",
+    "off-en.png": "70b84be56214bd7f1ae539759a8f673914e412f640c3cfdff1a8018584b97c4e",
+    "off-zh-scanout.png": "bd4c09498481cbff3b65f3d1b1add12a9cdc0bb8ca6e1b180d96103d10f38058",
+    "off-zh.log": "1b1939b4f75eea8898c47739f18f61650b98b2bda4f66ab223817272c6ee9485",
+    "off-zh.png": "6ffea2d4107af799026035ede49b2ae12ce78da2b245d504e5c9c1a54cd2acf9",
+    "overlay-sanitizers.log": "ef1f490fa1dec6cad6077b9b1f80f4b8b7e79a640da76860449829092d634b24",
+    "overlay-tests.log": "bf7710b5650522b7227ce151cb61df4dbb39414b93150087d774d757da4cc63a",
+    "p4-demo.py.txt": "1a19233a447d099407f6273a9db088f8dfa6ddbcd2882c7850350263d3212c37",
+    "p4-native-regression.py.txt": "4f8c1b0d82f792935a0d4f83f990dc482c10bcb3bcb0dbe84bee08f2237331f5",
+    "p4-replay-en.py.txt": "17439228a239dcb80beaadca708d9e6fd0b79aac91883ef473ee5ba7b17d0bc9",
+    "p4-settings-rerun.py.txt": "85796fa833f38b709502b4098233ff11d672e99594ec0c3ed4f4d006f6bc4fab",
+    "port-check.log": "96b5d42ddf87261c15dd25f66095b193347194457fdc3dbaee81351d9364af07",
+    "replay-en.log": "befaf7d5b37fb858d7bf1706b0a85f6c5a032f4182ba5f0ec68be7bfbace0eb4",
+    "replay-zh-TW.json": "e10ecf535c051dad01e6954b63a5e789d2d641d7f0645b710afa2e53c4be8d91",
+    "replay-zh-TW.log": "6086bce5182452d101e0a7183a72032eee2c5a58184be8c9a983778455f5bdea",
+    "repocheck.log": "f812439bb125e6f7e61e45cd18605f70b8f57d816ebd4396279b264a69ac8ef8",
+    "settings-rerun.log": "81e2f436edb835eb6ffec1dfc7f92c221a9d4378bfb930dbe20251ab67abc27e",
+    "settings.log": "19d4224cf56cb81ac3b63265560ad8e0df9c59c82b0f20843ee74b2789031a1d",
+    "uw2-native-build.log": "9e4f77da30ce3304f038172ab763d54459d0369f3a41ef35b2a7b34faba2c092"
+  },
+  "repository_checks": {
+    "main": "PASS syntax, markdown links, payload scan, whitespace",
+    "exhume": "PASS syntax, markdown links, payload scan, whitespace"
+  }
+}

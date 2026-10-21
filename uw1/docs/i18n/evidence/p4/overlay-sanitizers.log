@@ -1,0 +1,5 @@
+PASS hidden: no overlay allocation or callback
+overlay-test: mouse: follow
+PASS 26 composition scenarios: alpha, native pixel, mapping, clear, off, settings, resize, fullscreen
+overlay-test: wrote overlay-scanout.png (320x200) at 1343 ms
+overlay-test: wrote D:\git\Ultima Underworld\underworld-exhumed\exhume\build\overlaycheck-asan\composition.png (640x480, the window)

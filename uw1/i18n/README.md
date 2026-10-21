@@ -1,13 +1,37 @@
-# Native localization / layout (Phases 1–3)
+# Native localization / layout / overlay (Phases 1–4)
 
 目前已完成文字盤點、翻譯資料、Native UTF-8 lookup 與獨立的文字排版核心。
 查找以記錄驗證，排版以 renderer-independent tests 驗證；畫面仍走原本英文路徑。
-FreeType / overlay 與遊戲畫面的接入留待後續階段。
+Phase 4 已加入選用的通用 RGBA overlay 與幾何示範；FreeType 與中文顯示留待後續階段。
 驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md)、[Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)
-與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)。
+與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)、[Phase 4](../docs/i18n/OVERLAY-FOUNDATION.md)。
 
 目前依使用者更新採 [Native-only 驗收](../docs/i18n/VALIDATION.md)：不需要 Borland 或 DOS 驗證。
 先前報告的 DOS NOT RUN 是歷史紀錄，不是待解決的阻礙。
+
+## Generic HD Overlay Foundation
+
+Exhume 的 `PlatHooks.overlay` 在 presentation thread 提供清為透明的 native-output RGBA buffer，
+以及與遊戲相同的 viewport／logical dimensions。RGBA bytes 採 straight alpha；settings layer 在它上方。
+未指定 callback 時不配置 overlay，hidden 模式不呼叫；resize／fullscreen／output DPI 尺寸變更會重建資源。
+契約詳見 Exhume 的 `docs/presentation-overlay.md` 與 `runtime/port/platform/plat.h`。
+
+UW1 預設關閉。使用原有 Native launcher 或 executable 加上 `--test-overlay`：
+
+```sh
+build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" --test-overlay
+```
+
+關閉啟動時的設定畫面後，可見半透明藍色塊、黃色 logical reference box 與一個 output pixel 寬的白色準星。
+F11 設定畫面會覆蓋示範；可在 Display 頁切換 aspect／integer scaling／fullscreen。
+示範只讀 callback metadata，不讀 game-thread mutable state，也不繪製文字或更換遊戲游標。
+
+通用 backend pixel tests（在 Exhume 根目錄、需 SDL3 compiler 環境，無需遊戲 assets）：
+
+```sh
+python3 tools/overlaycheck.py
+python3 tools/overlaycheck.py --sanitize --output build/overlaycheck-asan
+```
 
 ## UTF-8 / Chinese Layout Core
 

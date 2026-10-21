@@ -1,0 +1,8 @@
+ok   wclick: after Right on Window scale the file says scale=3
+ok   wclick: a click at the row's new place in the window turns Whole-number scaling off
+ok   wclick: the check can tell (the same click at scale 2 changes nothing)
+setcheck: wclick took 5.9 s
+ok   lostup: a click on a folder row after a lost release opens its picker at once
+ok   lostup: and with no lost release, as before
+setcheck: lostup took 5.8 s
+PASS isolated reruns: 5 assertions

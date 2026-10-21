@@ -1,0 +1,10 @@
+EMS allocated
+
+uw1port: mt32: no ROMs
+uw1port: enhance: skip-intro (not as DOS)
+uw1port: mouse: follow
+uw1port: renderer direct3d11, display 120 Hz, vsync requested
+uw1port: 600 presents in 5.0 s, 0 paced (vsync holds)
+uw1port: wrote D:\git\uw1-native-poc\underworld-exhumed\uw1\build\i18n\p4-demo\off-en-scanout.png (320x200) at 6007 ms
+uw1port: wrote D:\git\uw1-native-poc\underworld-exhumed\uw1\build\i18n\p4-demo\off-en.png (960x720, the window)
+uw1port: 787 presents, 68 paced, 0 passes with the window hidden

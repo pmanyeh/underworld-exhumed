@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "size": [
+    960,
+    720
+  ],
+  "overlay_off_each_locale_matches_own_native_scanout": true,
+  "animated_menu_cross_run_identity": "not asserted; palette animation advances with game clock",
+  "native_crosshair_and_logical_box": "PASS",
+  "demo_alpha": "PASS",
+  "commands": "--record --sound 0,0 --no-audio --enhance skip-intro --scale 3 --screenshot-after 6000 --exit-after 6600, isolated homes"
+}

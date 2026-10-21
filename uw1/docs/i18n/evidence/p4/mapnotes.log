@@ -1,0 +1,5 @@
+ok    the port ran the script to its end and exited by itself (status 0)
+ok    no host fault
+ok    the map was drawn three times (level 1, level 2, level 1 again)
+ok    SAVE0\LEV.ARK still has the notes of levels 1 and 2 aliasing level 3's automap
+notescheck: 4 of 4 checks pass

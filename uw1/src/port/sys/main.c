@@ -22,6 +22,7 @@
 #include "sys/inscript.h"
 #include "ui/settings.h"
 #include "i18n/localization.h"
+#include "presentation/overlay_demo.h"
 
 extern const struct enhance_flag enhance_table[];   /* src/port/sys/enhtab.c */
 extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a test's cheats */
@@ -241,6 +242,7 @@ static const char help_text[] =
     "  --screenshot-after MS  write the screen to a PNG MS milliseconds after start\n"
     "  --screenshot FILE      that PNG's name (uw1port.png)\n"
     "  --window-shot FILE     with --screenshot-after, also the window's scaled contents\n"
+    "  --test-overlay         native RGBA geometry/alpha probe (no text)\n"
     "  --shot-at-flip K:FILE  write the screen right after the game's K-th page flip\n"
     "  --exit-after MS        quit MS milliseconds after start\n"
     "  --exit-on-halt         quit (status 3) where the port stops instead of leaving the window up\n"
@@ -350,7 +352,7 @@ int main(int argc, char *argv[])
     int i, dropped = 0, first_run = 0;
     const char *enh_on[16], *enh_off[16];   /* --enhance and --no-enhance lists, in order */
     int n_on = 0, n_off = 0, enh_list = 0;
-    int settings_list = 0;
+    int settings_list = 0, test_overlay = 0;
     int cl_scale = 0, cl_aspect = 0, cl_integer = 0;   /* given on the command line: the settings file does not override them */
     const char *input_script = NULL;    /* --input-script: keys and mouse at set times (inscript.c) */
     static char spec_buf[16];
@@ -377,6 +379,7 @@ int main(int argc, char *argv[])
         else if (!strcmp(a, "--mouse") && i + 1 < argc && (!strcmp(argv[i + 1], "follow") || !strcmp(argv[i + 1], "lock")))
             mouse = argv[++i];
         else if (!strcmp(a, "--hidden")) cfg.hidden = 1;
+        else if (!strcmp(a, "--test-overlay")) test_overlay = 1;
         else if (!strcmp(a, "--locale") && i + 1 < argc) {
             locale = argv[++i];
             if (strcmp(locale, "en") && strcmp(locale, "zh-TW")) usage(0);
@@ -577,6 +580,7 @@ int main(int argc, char *argv[])
     hooks.key = kbd_byte;
     hooks.pointer = mouse_event;
     hooks.lifecycle = on_lifecycle;
+    if (test_overlay) hooks.overlay = overlay_demo_draw;
     if (input_script) hooks.tick = inscript_tick;
     if (interactive) {
         port_home = home;

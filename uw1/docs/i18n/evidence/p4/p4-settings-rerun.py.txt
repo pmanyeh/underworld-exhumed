@@ -1,0 +1,13 @@
+from pathlib import Path
+import sys
+repo=Path(__file__).resolve().parent.parent/'underworld-exhumed'
+sys.argv=[sys.argv[0],'--config',str(repo/'uw1/build/poc/native-v22.toml')]
+sys.path.insert(0,str(repo/'exhume/tools'))
+import setcheck
+# Original assertions/inputs; only Windows-invalid scratch directory ':' becomes '_'.
+original=setcheck.fresh
+setcheck.fresh=lambda work,name,*a,**k:original(work,name.replace(':','_'),*a,**k)
+for name in ['wclick','lostup']:
+    setcheck.timed(name)
+assert all(setcheck.E.results)
+print('PASS isolated reruns:',len(setcheck.E.results),'assertions')
