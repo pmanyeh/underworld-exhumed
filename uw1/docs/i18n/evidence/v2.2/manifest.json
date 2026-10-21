@@ -1,0 +1,67 @@
+{
+  "plan": "ULTIMA_UNDERWORLD_NATIVE_ZHTW_HD_POC_PLAN_v2.2.md",
+  "plan_sha256": "e89b21953b2c9bd8bbfd113bad5ec1079e888dba5d402e5719a2111abb89ca4e",
+  "underworld_upstream_sha": "e5deadd6945b492636aadccc14f52caa908b4186",
+  "underworld_feature_tested_sha": "569e36f7a3670deb82d6ae59699a997b1d0c588f",
+  "exhume_pin": "a34316463c230bafa3d4f0aa3b894a574e5fc738",
+  "source_config_sha256": "95c0ceab15de1ea11ad3573e7a13eaafe3225138e8efe0391dac97a703f3fb25",
+  "native_steps": [
+    [
+      "port build",
+      "{python} {exhume}/tools/portbuild.py --config {config}"
+    ],
+    [
+      "fuzzing, quick",
+      "{python} {exhume}/tools/fuzzasm.py --config {config}",
+      "port build"
+    ],
+    [
+      "sessions against the goldens",
+      "{python} {exhume}/tools/replay.py --config {config} verify all",
+      "port build"
+    ],
+    [
+      "enhancements",
+      "{python} {exhume}/tools/enhcheck.py --config {config} all",
+      "port build"
+    ],
+    [
+      "settings screen",
+      "{python} {exhume}/tools/setcheck.py --config {config} all",
+      "port build"
+    ],
+    [
+      "player movement",
+      "{python} {exhume}/tools/movecheck.py --config {config}",
+      "port build"
+    ],
+    [
+      "the black box",
+      "{python} {exhume}/tools/blackboxcheck.py --config {config}",
+      "port build"
+    ],
+    [
+      "map notes",
+      "{python} tools/notescheck.py --config {config}",
+      "port build"
+    ]
+  ],
+  "excluded_reference_step": "the gate",
+  "data_skip_override": [],
+  "original_fast_tier_preserved": true,
+  "executable_bytes": 5108224,
+  "executable_sha256": "6232ece5fdb170d7ded96474296b84a394f0042d73a9c6478d1070f617f58941",
+  "initial_native_tier_exit": 1,
+  "fuzz_retest_exit": 0,
+  "settings_retest_exit": 0,
+  "settings_initial_passed": 68,
+  "settings_retest_passed": 8,
+  "settings_combined_distinct_passed": 72,
+  "settings_new_assertions": [
+    "ok   roundtrip 4:3 aspect: changed on the screen, the file holds 0",
+    "ok   roundtrip 4:3 aspect: the saved value shows on the screen (differs from the default's)",
+    "ok   roundtrip Show this at start: changed on the screen, the file holds 1",
+    "ok   roundtrip Show this at start: the saved value shows on the screen (differs from the default's)"
+  ],
+  "dos_exact_match_check": "NOT RUN - Borland reference toolchain not installed"
+}

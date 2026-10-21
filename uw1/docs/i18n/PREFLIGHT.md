@@ -2,182 +2,206 @@
 
 ## Result
 
-**BLOCKED — 原生基線可用，但 DOS exact-match gate 尚未通過。**
+依工作區計劃 **v2.2** 重新驗收，日期：2026-10-21（Asia/Taipei）。
 
-日期：2026-10-21（Asia/Taipei）。依工作區計劃 v2.1 的 Phase 0 執行。
-本輪只建立與驗證 upstream baseline，未新增中文化、FreeType、overlay 或 gameplay 修改。
+| 驗收 | 結果 |
+| --- | --- |
+| Native Build | **PASS** — MSYS2 CLANG64 / Clang，含 libmt32emu |
+| Native Runtime | **PASS** — 原生啟動、3D、新角色、Bragit、mouse/cursor、save/load 與 Native/public 測試 |
+| DOS Exact-Match | **NOT RUN / DEFERRED** — 本輪未執行 make check |
+| Overall Phase 0 | **PASS（Native gate）** |
 
-Windows 原生建置、獨立啟動、16 組 native replay 均成功。使用者確認目前沒有
-Turbo C++ 1.01 / TASM 2.0；本機也尚未完成 Exhume DOS 執行環境設定。
-`make check` 因此無法完成物件檔與 exact link 比對。這是未完成的驗收，不能以 native replay 的成功替代。
+```text
+DOS_EXACT_MATCH_CHECK:
+NOT RUN — Borland reference toolchain not installed
+```
+
+v2.2 將 Borland reference toolchain 從 Native PoC 前置條件移除。
+本輪沒有尋找、安裝或執行 Turbo C++ / TASM，未新增中文化或 HD 功能。
+[v2.1 歷史報告](PREFLIGHT-v2.1.md) 與其 gate 失敗紀錄保留；該輪的 BLOCKED 判定不沿用為 v2.2 的 Native blocker。
+
+**測試結果的界線：** 初次 Native test tier 的程序 exit 1，原因為 Windows 測試工具的 pthread 連結與暫存目錄命名問題。
+本輪保留原始 log，修正測試工具的執行環境後，只補跑受影響項目，均通過。
+下表是完整 Native 元件矩陣的合併驗收結果；未宣稱未修改的 upstream `make test` 整個 target 回傳成功。
 
 ## Baseline
 
-| 項目 | SHA |
+| 項目 | SHA / 狀態 |
 | --- | --- |
 | Underworld upstream/main | `e5deadd6945b492636aadccc14f52caa908b4186` |
-| Underworld feature/zh-tw-native（本輪受測原始碼） | `e5deadd6945b492636aadccc14f52caa908b4186` |
-| Exhume upstream baseline（Underworld 指定的 submodule） | `a34316463c230bafa3d4f0aa3b894a574e5fc738` |
-| Exhume feature baseline | `a34316463c230bafa3d4f0aa3b894a574e5fc738`；未建立 overlay feature，沿用未修改的 upstream pin |
-| Exhume origin/master（preflight 與結束時觀察到的 upstream 最新版本） | `c54e00e9176c14d0913b5806318a30f85a8f4636` |
+| Underworld feature/zh-tw-native（本輪受測 checkout） | `569e36f7a3670deb82d6ae59699a997b1d0c588f` |
+| Exhume upstream baseline / submodule pin | `a34316463c230bafa3d4f0aa3b894a574e5fc738` |
+| Exhume feature baseline | `a34316463c230bafa3d4f0aa3b894a574e5fc738`；尚未建立 overlay feature，使用未修改的 upstream pin |
+| Exhume origin/master（phase 開始時觀察） | `c54e00e9176c14d0913b5806318a30f85a8f4636` |
 
-報告與證據 commit 會使 feature branch 前進；上述 feature SHA 指實際建置與測試的程式碼版本。
-後續 commit 只有本報告與驗證證據。未變更 submodule pointer。
+受測 feature checkout 與 upstream 的差異只有先前的報告和 evidence。
+本次新增內容也限文件與 evidence；遊戲、Exhume、build scripts、CI workflows、generated source 與 submodule pointer 均未變更。
+本報告之後的文件 commit 不改變受測程式碼。
 
 ## Platform
 
 | 項目 | 實際環境 |
 | --- | --- |
-| OS | Windows 11 Pro x64，10.0.26200 / build 26200 |
+| OS | Windows 11 Pro x64，10.0.26200 |
 | Native compiler | MSYS2 CLANG64 clang 23.1.3，`x86_64-w64-windows-gnu` |
 | SDL3 | 3.4.18 |
-| Python | 3.12.10，工作區隔離 venv |
-| Python dependencies | iced-x86 1.21.0、unicorn 2.1.4、Pillow 13.0.0 |
-| Sound | Nuked OPL3；與 upstream Windows port CI 相同，未連結 libmt32emu |
-| FreeType | Phase 0 未使用 |
+| libmt32emu | 2.8.3，upstream setup-port recipe 指定的版本 |
+| OPL | Nuked OPL3，upstream pin `765ec96` |
+| Python | 工作區 venv，3.12.10；iced-x86 1.21.0、unicorn 2.1.4、Pillow 13.0.0 |
+| FreeType | 未使用；不在 Phase 0 範圍 |
+| Borland reference toolchain | 未正確安裝；已有壓縮檔不等於可用的 TC / TASM / DOS reference 環境 |
 
-工具安裝在工作區的 `.poc-tools/`，不在 Git 倉庫內，未變更系統 PATH。
-MSYS2 base 使用官方 2026-09-27 archive，SHA-256：
-`ea2f31a0b6ade63914ce441ffb022f0f6aa96982bfefa2326460a26d5fb01322`，
-與 [官方 release asset digest](https://github.com/msys2/msys2-installer/releases/tag/2026-09-27) 相符。
+## Changes / Files changed
 
-## Changes
-
-- 重用既有 `pmanyeh/underworld-exhumed` fork，設定 `upstream`。
-- 在開始 Phase 0 驗證前，將落後 13 commits 的 fork/main 以 fast-forward 同步至 upstream。
-- 從同步後的 main 建立 `feature/zh-tw-native`，初始化 recursive submodule。
-- 將兩個新 clone 的本機 `core.autocrlf` 設為 false，依 index 重新 checkout LF 內容；Git 內容無差異。
-- 建立隔離的 Windows 編譯工具與 Python 環境，編譯 UW1 native executable。
-- 從使用者提供的 GOG `game.gog`，以 7-Zip 僅解出 `UW/` 到 Git 外的 `.poc-private/game/UW`。
-- 原始 `UW.EXE` MD5：`8afc3c29ef5667a3ab6667e8cbc8d63a`，符合 `exhume.toml` 記載的 GOG 版本。
-- 遊戲資料、工具鏈、執行檔、save 與原始 replay state dump 均未加入 Git。
-- 工作區外層另附 `Start-UW1-PoC.ps1`，以獨立 player home 啟動已編譯的原生程式。
-
-## Files changed
-
-- 本報告：`uw1/docs/i18n/PREFLIGHT.md`。
-- 驗證 logs、CI metadata、checkpoint metadata 與五張基線截圖：`uw1/docs/i18n/evidence/`。
-- 遊戲原始碼、Exhume、generated source、build scripts 與 CI workflow：無修改。
+- 依 v2.2 重新執行完整 upstream `setup-port`，補裝 CMake / Ninja 等依賴並建置 libmt32emu。
+- 使用既有 `feature/zh-tw-native`；main 維持 upstream mirror，沒有 rebase、force push 或 mid-phase merge。
+- 本報告取代 v2.1 的現行結論，原報告另存為 `PREFLIGHT-v2.1.md`。
+- 新證據在 `uw1/docs/i18n/evidence/v2.2/`；舊證據完整保留。
+- 工作區外層 `Start-UW1-PoC.ps1` 增加本機 `tools/libs/bin` 的程序 PATH，讓新 executable 找到 MT-32 DLL；已實際測試啟動。
+- 遊戲資料沿用使用者 GOG image 解出的 `.poc-private/game/UW/`，存檔與設定使用隔離 home，未加入 Git。
+- 沒有修改 runtime C、gameplay、Exhume source、翻譯資料或 generated source。
 
 ## Commands run
 
-主要 Git 流程：
+主要 upstream 命令：
 
 ```sh
-git clone --recursive https://github.com/pmanyeh/underworld-exhumed.git
-git remote add upstream https://github.com/abedegno/underworld-exhumed.git
-git fetch upstream
-git merge --ff-only upstream/main
-git push origin main
-git switch -c feature/zh-tw-native
-git submodule update --init --recursive
+make GAME=uw1 setup-port
+make GAME=uw1 PY=../../.poc-tools/python/Scripts/python.exe port
+make -C uw1 PY=../../.poc-tools/python/Scripts/python.exe port-check
 ```
 
-從 MSYS2 CLANG64 shell，在 `uw1/` 下執行：
+CLANG64 shell 使用 `MSYS2_PATH_TYPE=inherit` 取得本機 Git / Node.js。
+Windows 路徑含空白時，upstream `portbuild.py` 的 pkg-config 輸出以 `.split()` 解析，會拆開路徑。
+完整 setup-port 裝好 libmt32emu 後暴露此問題，最初 build 失敗的原始紀錄見
+[setup / initial build](evidence/v2.2/v22-native-setup-build.log) 與
+[dependency alias probe](evidence/v2.2/v22-native-build.log)。
+
+本輪使用本機 NTFS junction 作為**建置環境別名**：
+
+| 別名 | 實際目錄 |
+| --- | --- |
+| `D:/git/uw1-native-poc` | 工作區 `D:/git/Ultima Underworld` |
+| `D:/git/uw1-poc-libs` | `underworld-exhumed/uw1/tools/libs` |
+
+以 upstream generator 在無空白 dependency prefix 重新產生安裝設定，再從 workspace alias 建置。
+未手改 generated `.pc`，也未將 Windows API 或 workaround 塞進遊戲來源。
 
 ```sh
-sh ../exhume/tools/setup-sound.sh tools/nuked-opl3
-make PY=../../.poc-tools/python/Scripts/python.exe port
-make PY=../../.poc-tools/python/Scripts/python.exe port-check
+SETUP_LIBS=mt32emu sh exhume/tools/setup-libs.sh /d/git/uw1-poc-libs
+export UW1DECOMP=D:/git/uw1-native-poc/underworld-exhumed/uw1
+cd /d/git/uw1-native-poc/underworld-exhumed
+make GAME=uw1 PY=../../.poc-tools/python/Scripts/python.exe port
+make -C uw1 PY=../../.poc-tools/python/Scripts/python.exe port-check
 ```
 
-原生回歸：
+Native/public tests 沿用 upstream `test.py`：
 
 ```sh
-python ../exhume/tools/replay.py --config build/poc/replay.toml verify all -j 4
+cd /d/git/uw1-native-poc/underworld-exhumed/uw1
+export UW1_DATA=D:/git/uw1-native-poc/.poc-private/game/UW
+export UW1_EXE=$UW1_DATA/UW.EXE
+export PATH="$PWD/tools/libs/bin:$PATH"
+../../.poc-tools/python/Scripts/python.exe ../../.poc-tools/prepare-native-v22.py
+../../.poc-tools/python/Scripts/python.exe ../exhume/tools/test.py --config build/poc/native-v22.toml native
 ```
 
-此命令使用 `UW1DECOMP` 指向 `uw1/`，`UW1_DATA` 指向解出的合法遊戲資料，
-`UW1_EXE` 指向其中的 `UW.EXE`；native DLL 目錄放入該程序的 PATH。
-
-**Windows staging 調整：** 此帳號建立 symlink 會回傳 WinError 1314。
-暫存的 `build/poc/replay.toml` 複製原設定，只將 `data_skip` 改為 `[]`。
-先確認本輪解出的資料目錄沒有 `SAVE1`–`SAVE4`，因此不需再略過既有 saves，
-且可避免 upstream staging 的 symlink 需求。所有受測遊戲程式、recordings、goldens、比較規則皆維持原樣。
-這份暫存設定在 ignored build 目錄，未改動 `exhume.toml`。
-
-獨立啟動測試使用 absolute paths：
-
-```sh
-uw1port.exe --data <workspace>/.poc-private/game/UW --home <workspace>/.poc-private/smoke-home --hidden --no-audio --screenshot-after 3000 --screenshot <workspace>/.poc-evidence/native-title.png --exit-after 4000
-```
-
-exact-match gate（在 CLANG64 shell 補上既有 Node.js 的 PATH 後執行）：
-
-```sh
-make PY=../../.poc-tools/python/Scripts/python.exe check
-```
+[準備腳本快照](evidence/v2.2/prepare-native-v22.py.txt) 記錄設定產生方式。
+暫存設定僅在 ignored `build/poc/`：從 upstream `test.fast` 複製八個 Native steps 為 `test.native`，
+只排除 `the gate`（DOS reference）；原本 `test.fast` / `test.full` 保持原樣。
+因抽出的資料沒有 SAVE1–SAVE4，將暫存設定的 `data_skip` 設為 `[]`，避免本機無 symlink 權限的 staging 問題。
+遊戲輸入、goldens、比較規則與 Native assertions 都維持 upstream。
 
 ## Tests
 
-| 項目 | 結果 / 證據 |
+### Native — Mandatory
+
+| 項目 | 最終結果 / 證據 |
 | --- | --- |
-| Windows native build | **PASS**；89 個 game sources、92 個 port sources，成功 link 5,101,568-byte executable；[build log](evidence/windows-build.log) |
-| Compile-only port-check | **PASS**；上述同一命令鏈 exit 0；log 包含 upstream 的 unresolved/category 分析，並非 link failure |
-| 不執行 DOSBox 的 native launch | **PASS**；hidden SDL scanout 執行 4 秒，exit 0 並產生截圖；[launch log](evidence/native-launch.log) |
-| legal data | **PASS**；由使用者提供的 GOG image 解出，EXE fingerprint 符合，native 讀取成功 |
-| newgame / 進入 3D | **PASS**；41 checkpoints 與 DOS golden 相同 |
-| walk | **PASS**；66 checkpoints 相同 |
-| items / save / load | **PASS**；items 100、load 17 checkpoints；存檔內容相同 |
-| Bragit 多輪英文對話 | **PASS**；talk 的 627 checkpoints 相同 |
-| mouse / cursor 自動回歸 | **PASS**；walk、items、talk、savecursor 覆蓋移動、點擊、物品持取、游標狀態；savecursor 79 checkpoints 與 saves 相同 |
-| 全部 native replay | **PASS**；16 sessions、1,786 checkpoints，所有 golden state 與適用的 saves 相同；[完整 log](evidence/native-replay-verify.log) |
-| make repocheck | **PASS**；新增報告後的來源語法、Markdown 連結與禁止散布檔案檢查通過；[log](evidence/repocheck.log)。CLANG64 shell 使用 `MSYS2_PATH_TYPE=inherit` 以取得既有 Git / Node.js |
-| 現場視窗中的人工 mouse move / click / drag 驗收 | **未驗證**；本輪是自動 replay 與 hidden scanout，仍需人工互動確認 |
-| make check / DOS exact-match | **BLOCKED / 命令 exit 2**；143 sources 均未取得待比對物件，exact link 未產生；[gate log](evidence/make-check.log) |
-| make test | **未執行完整套件**；必要的 make check 已失敗，依 P0 停止規則保留阻礙；未宣稱完整測試通過 |
+| setup-port | **PASS**；完整 recipe 執行成功，依賴路徑問題已以環境別名處理 |
+| Native build / port-check | **PASS**；89 game sources、92 port sources，linked 5,108,224-byte executable，Nuked OPL3 + libmt32emu；[成功 log](evidence/v2.2/v22-native-build-no-space.log) |
+| Native launch / local launcher | **PASS**；隔離 home、無 DOSBox，實際執行並產生 screenshot，exit 0；[log](evidence/v2.2/v22-native-launch.log) |
+| legal data | **PASS**；使用者 GOG `UW.EXE` MD5 `8afc3c29ef5667a3ab6667e8cbc8d63a`，native 讀取成功 |
+| 全部 public native replay | **PASS**；16 sessions、1,786 checkpoints 與既有 DOS goldens 相同，適用的 saves 相同 |
+| new game / 3D world | **PASS**；newgame 的 41 checkpoints 相同 |
+| Bragit | **PASS**；talk 的 627 checkpoints 相同，多輪對話與回應選擇可達 |
+| mouse / cursor / items / save-load | **PASS**；walk、items、talk、savecursor、load 的 recorded mouse / button / item / save state 比對相同；設定測試另驗證 SDL window click、held-button 與 resize 後座標 |
+| Differential fuzz | **PASS after host-link repair**；34 routines、5,680 cases、0 differ；[補測 log](evidence/v2.2/v22-native-fuzz.log) |
+| Enhancements | **PASS**；120/120 checks |
+| Settings screen | **PASS after scratch-path repair**；初次 68 checks 通過，受影響切片補跑 8/8；去除重複後共 72 個不同 assertions 通過；[補測 log](evidence/v2.2/v22-settings-roundtrip.log) |
+| Player movement | **PASS**；15/15，包括五個朝向下的側移 / 後退與 frame pacing |
+| Session black box | **PASS**；22/22，包括 recording retention、stage content 與 fault 後記錄完整性 |
+| Map notes | **PASS**；4/4，原生程式在測試構造的無 terminator note 下完成地圖切換，無 host fault |
+| make repocheck | **PASS**；文件連結、來源語法與禁止散布檔案檢查通過；[log](evidence/v2.2/repocheck.log) |
 
-`verify` 嘗試重建 replay DOS build 時也未取得物件檔，因此跳過 golden 與該次 DOS build hash 的 freshness 檢查。
-它仍確實執行全部 native sessions，逐 checkpoint 比對**倉庫既有** DOS goldens。
-本輪未重新產生 DOS goldens，亦未證明 exact-match build。
+[完整初次 Native tier log](evidence/v2.2/v22-native-public-tests.log) 保留所有輸出與其 exit-1 summary。
+不是將兩個錯誤刪掉或忽略：只重跑受影響項目後，才以上列合併矩陣判定 Native gate PASS。
 
-Native executable SHA-256：
-`b0042f92818ead32c32c86fd132c9ba6d3fe19204b6dd762e079c2da45e47d9d`。
+兩項 Windows 測試工具處理如下：
+
+1. **fuzzhost 缺少 `-pthread`。** 正式 port link 本來有此參數，但 upstream fuzzhost link 未帶入。
+   使用同一批 upstream 產生的 object，加上相同 thread link flag 重連結測試 host，並補上 Windows `.exe` 的 cache 路徑，
+   然後原樣執行 `fuzzasm.py` 的全部 5,680 cases。未更動 routines 或 expected results。
+   [執行腳本快照](evidence/v2.2/prepare-fuzzhost-link.py.txt)。
+2. **Settings slice 的 `rt-4:3_aspect` 不是合法 Windows 目錄名。** 初次是建立 scratch directory 的 exception，沒有執行到後續 assertions。
+   在補測 wrapper 中，只將傳入 `fresh()` 的暫存目錄名稱冒號換為底線，重跑原始 `roundtrip:1/3`。
+   UI labels、導航輸入、預期設定值、screenshots 與 assertions 都未更動，8/8 通過。
+   [wrapper 快照](evidence/v2.2/setcheck-safe-tempnames.py.txt)。
+
+### DOS Exact-Match — Optional / Deferred
+
+Toolchain available: **NO**。
+
+```text
+DOS_EXACT_MATCH_CHECK:
+NOT RUN — Borland reference toolchain not installed
+```
+
+本輪未執行 `make check`，未重新產生 DOS EXE / goldens，也未宣稱 byte-for-byte rebuild 已獲驗證。
+`verify` 工具內部嘗試取得 replay DOS build 的 freshness hash 時，因 reference 依賴缺少而跳過該檢查；
+Native sessions 仍完整執行，與**倉庫既有** DOS goldens 比對。此項明確列為 reference coverage deferred。
+
+未修改的 `make test` target 包含 DOS gate，因此本輪不把整個 target 稱為 PASS；
+已執行與其 fast tier 相同的全部八個 Native steps，並保存兩項 host-tool 修正後的補測證據。
 
 ## Cross-platform
 
-同一受測 SHA `e5deadd...` 的 [fork baseline CI run](https://github.com/pmanyeh/underworld-exhumed/actions/runs/39553234590)
-已完成；[留存 metadata](evidence/upstream-baseline-ci.json)。
+Native C 與 runtime 來源相對原 baseline 無差異。相同來源的
+[baseline CI](https://github.com/pmanyeh/underworld-exhumed/actions/runs/39553234590)
+與[留存 metadata](evidence/upstream-baseline-ci.json) 顯示：
 
 | 平台 | 結果 |
 | --- | --- |
-| Windows | 本機 native build / port-check / replay PASS；baseline CI build PASS |
-| macOS | 同一 baseline SHA 的 CI build / port-check PASS；未在本機執行 |
-| Linux | 同一 baseline SHA 的 CI build / port-check PASS；未在本機執行 DOS gate |
-| Web | 同一 baseline SHA 的 CI web build PASS；本輪沒有修改 Web API |
+| Windows | 本輪本機 Clang build / runtime / Native matrix PASS，含 libmt32emu |
+| macOS | 相同 C / runtime baseline 的 CI build / port-check PASS；本輪未在 macOS 執行 |
+| Linux | 相同 C / runtime baseline 的 CI build / port-check PASS；本輪未在 Linux 執行 |
+| Web | 相同 baseline 的 CI build PASS；無 API 或 Web source 變更 |
 
-這是 upstream 原始碼的基線證據，並非未來 zh-TW 功能的跨平台驗收。
+這些是英文 Native baseline 的證據；不是尚未實作的 zh-TW / FreeType 功能驗收。
 
 ## Screenshots / Evidence
 
-以下圖片取自**本機 native replay 的 STATE.OUT**，使用 upstream `replay.py` 的
-`read_dump` / `scanout` / `write_png` 匯出，沒有複製 golden PNG 當成新執行結果。
-[checkpoint metadata](evidence/checkpoints.json) 記錄 session、索引、事件數與遊戲時鐘。
-這些是 Phase 0 的 320×200 英文基線，尚非 HD 中文成果。
+- [本輪 launcher 的 native title](evidence/v2.2/native-title.png)。
+- [New game / 3D world](evidence/newgame-ck0040.png)。
+- [物品持在游標上](evidence/savecursor-ck0060.png)。
+- [Bragit 回應選項](evidence/talk-ck0550.png)與[後續對話](evidence/talk-ck0626.png)。
+- 後四張為先前從本機 Native dump 匯出的基線；本輪再次通過相同 checkpoints 比對。
+- [本輪 manifest](evidence/v2.2/manifest.json) 記錄計劃 / executable hash、設定選擇與補測的去重計數。
 
-| 圖片 | 證明範圍 |
-| --- | --- |
-| [Native title](evidence/native-title.png) | 獨立原生啟動的 scanout screenshot |
-| [New game / 3D world](evidence/newgame-ck0040.png) | native 新角色與地下城畫面 |
-| [Item on cursor](evidence/savecursor-ck0060.png) | 物品持取時的游標及原版操作限制 |
-| [Bragit / player choices](evidence/talk-ck0550.png) | 已到 Bragit，玩家有三個回應選項 |
-| [Bragit / later dialogue](evidence/talk-ck0626.png) | 同次多輪對話的後續段落與 MORE 提示 |
+![Bragit from the verified native baseline](evidence/talk-ck0550.png)
 
-![Bragit choices from native replay](evidence/talk-ck0550.png)
+Native executable SHA-256：
+`6232ece5fdb170d7ded96474296b84a394f0042d73a9c6478d1070f617f58941`。
+Raw state dumps、遊戲資料、工具鏈、DLL、save、暫存設定均只留本機，不提交 Git。
 
-![Bragit later dialogue from native replay](evidence/talk-ck0626.png)
+## Regressions / Remaining limits
 
-原始 replay dumps 留在本機 `uw1/build/replay/verify/`，包含遊戲狀態，不提交 Git。
-
-## Regressions
-
-16 組 native replay 未觀察到與既有 DOS goldens 的差異。DOS exact-match 與完整 make test 未獲驗證。
-原生 build 的 upstream warnings 保留在 log，本輪沒有為消除警告而修改來源。
-
-另外觀察到：將 `--data` 直接指定到只含 `game.gog` 的 GOG 安裝父目錄會啟動失敗，
-雖然 help 宣稱可以接受該種路徑。[probe log](evidence/gog-parent-folder-probe.log) 保存失敗結果。
-檢視 `main.c` 後確認 explicit `--data` 直接傳入檔案層，未走 `port_game_in` 搜尋；
-本輪以解出後、實際含 UW.EXE 的 `UW/` 作為正確資料路徑完成啟動，沒有修補 upstream。
+- 未觀察到受測 Native state、save、movement、settings、recording、map note 的剩餘 regression。
+- 實體滑鼠人工操作未另作驗收；本輪 mouse / cursor 的結論來自原生 recorded inputs、完整 state 比對與 SDL window-event 自動測試。
+- private MT-32 ROMs 的「找到 ROM」分支未執行；無 ROM 的分支已驗證。本輪不宣稱 MT-32 音訊 digest / 聲音品質驗收。
+- Windows 無 symlink 權限，blackbox 工具自行略過 symlink 專項；正常 recording / stage / fault 的 22 checks 已執行。
+- 路徑空白、pthread link 與冒號 temp-name 是既有 host tooling 問題，本輪以本機設定 / 補測處理，沒有為此修改 Exhume。
+- v2.1 已記錄的 `--data` 指向僅含 game.gog 父目錄的行為維持原樣；啟動腳本指定含 UW.EXE 的解出資料目錄。
 
 ## Git / Branch State
 
@@ -186,37 +210,23 @@ Native executable SHA-256：
 | Current branch | `feature/zh-tw-native` |
 | origin | `https://github.com/pmanyeh/underworld-exhumed.git` |
 | upstream | `https://github.com/abedegno/underworld-exhumed.git` |
-| main / origin/main / upstream/main | 均為 `e5deadd6945b492636aadccc14f52caa908b4186` |
-| Feature branch 起點 | 與上述 main 相同；無中文化 commit |
-| Exhume submodule | `a34316463c230bafa3d4f0aa3b894a574e5fc738`，detached HEAD、未修改 |
-| Working tree | 驗證前 clean；本輪新增內容限本報告與 evidence，commit 後 clean |
-| Tags | P0 未 PASS，因此沒有建立 PASS milestone tag |
+| main / origin/main / upstream/main（受測 baseline） | `e5deadd6945b492636aadccc14f52caa908b4186` |
+| Exhume | `a34316463c230bafa3d4f0aa3b894a574e5fc738`，detached、未修改 |
+| Feature source | 以 main 為基底；本輪及先前 feature commit 僅文件與 evidence |
+| Working tree | 驗證前 clean；本輪文件 / evidence 提交後再做 Sync Gate |
+| Milestone | Native P0 PASS；同步檢查完成後可建立 `zh-tw-native-p0` |
 
 ## Upstream Sync Gate
 
-- 已在本輪驗證與報告階段邊界 fetch Underworld upstream 與 Exhume origin。
-- Underworld：相對 preflight baseline **NO CHANGE**，feature source 與 upstream/main ahead/behind `0 / 0`。
-- Exhume：相對本輪初次觀察到的 origin/master **NO CHANGE**。
-- Exhume origin/master 原本就比 Underworld 指定 pin 多 7 commits，為 tooling / profiles / skills 與 merge commits；不是本輪中途出現的 runtime 更新。
-- 未 merge 此 backlog，維持 Underworld 經 upstream 指定的 runtime pin。沒有 submodule reconciliation，也沒有 mid-phase merge。
-- P0 gate BLOCKED，未執行 feature upstream merge，無 merge 後回歸項目。
-
-## Blockers / Risks
-
-1. **缺少 Turbo C++ 1.01 / TASM 2.0。** 使用者已確認目前沒有；未下載或散布未授權工具。
-2. **DOS gate 環境尚未就緒。** 初次 CLANG64 shell 未包含 Node.js PATH；補上既有 Node 後 gate 仍無物件檔產出。
-   Exhume 的 Node dependencies / DOS backend 也尚未完整 setup，故不能把 `0/143` 解讀成 143 個實際二進位碼不符。
-3. **仍需人工互動驗收。** 已證明 recorded input / cursor states 與 DOS 相同，但未以真實滑鼠在可見視窗逐項驗收。
-4. 本機 Windows port 未連結 libmt32emu；soundmt replay 的 state comparison 不等於 MT-32 音訊品質驗證。
+PENDING — 本報告與 evidence 提交後，在 clean working tree 執行 phase-boundary fetch，結果將補記。
+沒有進行 mid-phase merge。
 
 ## Recommended next step
 
-取得合法工具鏈後，依 [共用建置文件](../../../docs/BUILDING.md) 與
-[UW1 建置文件](../BUILDING.md) 完成 DOS gate 環境，設定 `UW1_EXE` / `UW1_DATA`，
-重跑 `make check`，通過後再跑完整 `make test`。在可見 native 視窗補做滑鼠 move / click / drag / cursor switching。
+Phase 0 Native baseline 已按 v2.2 驗收。下次執行 **Phase 1 — Text Inventory / Translation Data**，
+先盤點 STRINGS.PAK、resolved block/index、control escapes、hard-coded text 與 Bragit key set。
+Borland reference environment 保持 deferred，無需為開始 Native Phase 1 而安裝。
 
-本機可由工作區外層執行 `./Start-UW1-PoC.ps1` 開啟目前的英文 native baseline；
-它使用 `.poc-private/player-home/` 儲存新 save，不寫入 GOG 安裝目錄。
-P0 全部驗收通過後，才進入 Phase 1 text inventory。
+本機可執行工作區外層的 `Start-UW1-PoC.ps1` 體驗目前的英文原生版；仍未實作中文與 HD overlay。
 
 **STOPPED HERE. Phase 1 was not started.**

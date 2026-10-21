@@ -1,0 +1,442 @@
+
+==== port build
+runtime: D:\git\Ultima Underworld\underworld-exhumed\exhume
+compiled 89 game sources and 92 port sources (layout flags: -mno-ms-bitfields)
+..\..\..\Ultima Underworld\underworld-exhumed\exhume\runtime\port\sound\mt32roms.c: warnings
+D:\git\Ultima Underworld\underworld-exhumed\exhume\runtime\port\sound\mt32roms.c:236:17: warning: unused variable 'h' [-Wunused-variable]
+1 warning generated.
+third-party: Nuked OPL3, libmt32emu
+portbuild.py: Windows target; icon tools\dist\icon\uw1.ico, resource compiler D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\llvm-windres.EXE
+linked build\port\uw1port.exe (5108224 bytes)
+portbuild.py: resources in the program: 1 icon
+
+==== fuzzing, quick
+fuzzasm.py: fuzzhost does not link:
+ld.lld: error: undefined symbol: pthread_once
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(lock)
+
+ld.lld: error: undefined symbol: pthread_mutex_lock
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(lock)
+
+ld.lld: error: undefined symbol: pthread_mutex_unlock
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(unlock)
+
+ld.lld: error: undefined symbol: pthread_mutexattr_init
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(mx_init)
+
+ld.lld: error: undefined symbol: pthread_mutexattr_settype
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(mx_init)
+
+ld.lld: error: undefined symbol: pthread_mutex_init
+>>> referenced by D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port\port\rt_sound_ail.o:(mx_init)
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+==== sessions against the goldens
+replay build: compiling 26 sources with -DREPLAY or -DNULLTRAP
+replay.py verify: the replay DOS build failed (replay build failed:
+DRAWOBJ: no object written
+VIEW3D: no object written
+COMBAT: no object written
+BABL: no object written
+BARTER: no object written
+AI: no object written
+TRIGGER: no object written
+SKILLS: no object written
+UWEDIT: no object written
+CUTS: no object written
+GRFX: no object written
+LOADGR: no object written
+BAGS: no object written
+INVDATA: no object written
+PHYSICS: no object written
+PLAYMOVE: no object written
+COMBINE: no object written
+USEITEMS: no object written
+SOUND: no object written
+UTIL: no object written
+INTERACT: no object written
+MAINMENU: no object written
+MOUSE: no object written
+PANELS: no object written
+SCROLLIO: no object written
+REPLAY: no object written); not checking the goldens against it
+  setup/headless: port run (a setup session DOS cannot replay) done in 14.5 s
+  setup/tidy-heavy: port run (a setup session DOS cannot replay) done in 14.9 s
+  setup/trader: port run (a setup session DOS cannot replay) done in 14.9 s
+== verify: 16 sessions in the port against the goldens, 20.0 s
+newgame    2.4 s  ok    identical to DOS at all 41 checkpoints
+walk       5.4 s  ok    identical to DOS at all 66 checkpoints
+sound      4.8 s  ok    identical to DOS at all 70 checkpoints
+soundfm    4.7 s  ok    identical to DOS at all 70 checkpoints
+soundmt    6.9 s  ok    identical to DOS at all 93 checkpoints
+items      2.9 s  ok    identical to DOS at all 100 checkpoints, saves identical
+talk       9.3 s  ok    identical to DOS at all 627 checkpoints
+load       1.0 s  ok    identical to DOS at all 17 checkpoints, saves identical
+intro      4.0 s  ok    identical to DOS at all 73 checkpoints
+savecursor   2.7 s  ok    identical to DOS at all 79 checkpoints, saves identical
+female     1.1 s  ok    identical to DOS at all 47 checkpoints
+fallrestore   6.5 s  ok    identical to DOS at all 312 checkpoints, saves identical
+tooheavy   2.0 s  ok    identical to DOS at all 40 checkpoints, saves identical
+fallpause   1.1 s  ok    identical to DOS at all 33 checkpoints, saves identical
+overpay    5.0 s  ok    identical to DOS at all 43 checkpoints, saves identical
+powerkill   1.6 s  ok    identical to DOS at all 75 checkpoints, saves identical
+verify: all sessions identical to DOS
+
+==== enhancements
+ok   format 4: no enhancements
+ok   format 5: its enhancements read
+ok   DOS replays format 4
+ok   DOS refuses format 5, saying why
+ok   format 6: its cheats read, with their safe points
+ok   format 6: no enhancements, its chunk empty
+ok   DOS refuses format 6, naming its cheats
+ok   the port replays format 6 with EXHUME_TEST_CHEATS=1 (replay.py sets it)
+ok   only the screen differs: passes
+ok   a state section differs: caught
+ok   a missing checkpoint: caught
+ok   a section only one side has: caught
+ok   the renderer sections are ignored with the screen
+ok   a checkpoint header differs: caught
+-- selftest: 0.0 s (0 port runs, 0.0 s of them)
+ok   --enhance list: skip-intro, timing
+ok   an unknown enhancement stops the run, listing the names
+ok   subtitles: another game's, refused as such
+ok   skill-messages: another game's, refused as such
+ok   UW1 lists neither UW2-only flag
+ok   none by default: no enhance line
+ok   --enhance skip-intro: logged, not as DOS
+ok   a player's run saves it
+ok   the next player's run has it
+ok   a hidden run ignores the settings file
+ok   --no-enhance turns it off and saves that
+ok   an unknown enhancement in the settings: a warning, the game runs
+ok   a recording with an enhancement is format 5 and names it
+ok   read_log reads its enhancements
+ok   its replay restores them
+ok   a replay of it refuses --enhance and --no-enhance
+ok   a recording naming an enhancement this build lacks: refused
+ok   a recording with none stays format 4
+ok   a replay of a format 4 recording refuses a timing enhancement
+-- registry: 17.1 s (18 port runs, 16.4 s of them)
+ok   a bad script line stops the run, naming it
+ok   a missing script stops the run
+ok   a bad script stops a player's run before it saves anything
+ok   a cheat line is refused without EXHUME_TEST_CHEATS=1, naming it
+ok   an unknown cheat stops the run, listing the cheats
+ok   a recording whose script has cheats is format 6
+ok   its replay is refused without EXHUME_TEST_CHEATS=1
+ok   wrap-menu: up from the first item opens the last, not the first
+ok   a scripted key reaches the game (the recording holds it)
+ok   a scripted look reaches the game as mouse motion (the recording holds 10, 0)
+-- script: 30.4 s (12 port runs, 29.9 s of them)
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: fallrestore keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: female keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: intro keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: items keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: newgame keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: savecursor keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: sound keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: soundfm keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: soundmt keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: talk keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: walk keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: fallpause keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: load keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: overpay keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: powerkill keeps DOS's game state
+ok   wrap-menu,perspective,full-sprites,invert-look,rune-keys: tooheavy keeps DOS's game state
+-- presentation: 52.9 s (20 port runs, 91.8 s of them)
+ok   perspective covers the original mappers' pixels exactly (walk, 66 checkpoints)
+-- coverage: 5.2 s (2 port runs, 8.8 s of them)
+ok   the hole probe reports nothing when off
+ok   the hole mark (42) is a colour the session never draws
+ok   wide-pitch: the session looks beyond the original pitch, the same frames with and without the back pass
+ok   wide-pitch: the back pass leaves no steep frame with more holes than without it
+ok   wide-pitch: the back pass fills the holes (steep frames with any, a tenth or fewer of those without it)
+-- holes: 25.3 s (3 port runs, 27.4 s of them)
+ok   mouse-look: after the ` key the mouse turns the view (unlike the same motion without it)
+ok   invert-look: the same motion pitches the view the other way
+ok   mouse-look: look-speed is clamped to 10..400 (0 turns as 10, 100000 as 400, and 10 unlike 400)
+-- looking: 28.1 s (7 port runs, 3.5 s of them)
+ok   modern-keys: s backs (as the original x)
+ok   modern-keys: a slides left (as the original z)
+ok   modern-keys: d slides right (as the original c)
+ok   modern-keys: left turns left (as the original a)
+ok   modern-keys: x walks (as the original s)
+ok   modern-keys: Shift+W runs as W does (Shift flies only when flying)
+ok   modern-keys: Shift jumps (as the original J)
+ok   modern-keys: z opens the map
+ok   modern-keys: r flips to the rune bag
+ok   modern-keys: f flips to the character panel
+ok   modern-keys: up pitches the view
+ok   modern-keys: g clicks the compass (its lines in the scroll)
+ok   modern-keys: h clicks the flasks (their lines in the scroll)
+ok   modern-keys: q looks at what is under the cursor (a line in the scroll)
+ok   modern-keys: S on the map shows the next level (its label at least)
+ok   modern-keys: Z on the map does nothing (bound for the view only)
+ok   modern-keys: Space swings, as ; does
+ok   rune-keys: runes the player lacks are refused (the screen as it was)
+ok   rune-keys: Ctrl+Alt+W does not move (with modern-keys, where Ctrl alone would not stop it)
+ok   rune-keys: a rune the player has goes on the shelf
+ok   rune-keys: a fourth rune pushes the oldest off (as the last three)
+ok   rune-keys: Backspace clears the shelf
+-- keys: 30.0 s (58 port runs, 32.9 s of them)
+ok   fast-panels: made by the port, labelled so
+ok   fast-panels: its recording unchanged
+ok   fast-panels: the port as its baseline
+ok   free-heading: made by the port, labelled so
+ok   free-heading: its recording unchanged
+ok   free-heading: the port as its baseline
+ok   modern-keys: made by the port, labelled so
+ok   modern-keys: its recording unchanged
+ok   modern-keys: the port as its baseline
+ok   mouse-look: made by the port, labelled so
+ok   mouse-look: its recording unchanged
+ok   mouse-look: the port as its baseline
+ok   restore-at-rest: made by the port, labelled so
+ok   restore-at-rest: its recording unchanged
+ok   restore-at-rest: the port as its baseline
+ok   skip-intro: made by the port, labelled so
+ok   skip-intro: its recording unchanged
+ok   skip-intro: the port as its baseline
+ok   tidy-objects: made by the port, labelled so
+ok   tidy-objects: its recording unchanged
+ok   tidy-objects: the port as its baseline
+ok   wide-pitch: made by the port, labelled so
+ok   wide-pitch: its recording unchanged
+ok   wide-pitch: the port as its baseline
+-- baseline: 31.6 s (11 port runs, 59.6 s of them)
+ok   setup/headless: a format 6 recording whose cheats ran
+ok   setup/headless: replayed twice, the same saved game
+ok   setup/tidy-heavy: a format 6 recording whose cheats ran
+ok   setup/tidy-heavy: replayed twice, the same saved game
+ok   setup/trader: a format 6 recording whose cheats ran
+ok   setup/trader: replayed twice, the same saved game
+-- setup: 50.9 s (6 port runs, 83.6 s of them)
+enhcheck: times, 8 replays at once (the groups overlap: each its own wall time; its port runs and their time)
+  selftest          0.0 s     0 runs     0.0 s
+  registry         17.1 s    18 runs    16.4 s
+  script           30.4 s    12 runs    29.9 s
+  presentation     52.9 s    20 runs    91.8 s
+  coverage          5.2 s     2 runs     8.8 s
+  holes            25.3 s     3 runs    27.4 s
+  looking          28.1 s     7 runs     3.5 s
+  keys             30.0 s    58 runs    32.9 s
+  baseline         31.6 s    11 runs    59.6 s
+  setup            50.9 s     6 runs    83.6 s
+  all              52.9 s   138 runs   353.9 s
+enhcheck: 120 of 120 checks pass
+
+==== settings screen
+--- roundtrip:0/3 (pool, 32.3 s)
+ok   the table lists rows in all of the tabs but the generated one
+ok   the Window scale row is a cycle, 1x to 8x (no drag resizes the window)
+ok   roundtrip Music: changed on the screen, the file holds 4
+ok   roundtrip: the check can tell (two shots of the same state are identical)
+ok   roundtrip Music: the saved value shows on the screen (differs from the default's)
+ok   roundtrip Mouse: changed on the screen, the file holds lock
+ok   roundtrip Mouse: the saved value shows on the screen (differs from the default's)
+ok   roundtrip Window scale: changed on the screen, the file holds 3
+ok   roundtrip Window scale: the saved value shows on the screen (differs from the default's)
+ok   roundtrip Record sessions: changed on the screen, the file holds 0
+ok   roundtrip Record sessions: the saved value shows on the screen (differs from the default's)
+setcheck: roundtrip:0/3 took 32.1 s
+setcheck: 11 of 11 checks pass
+--- roundtrip:1/3 (pool, 14.8 s)
+ok   roundtrip Speech: changed on the screen, the file holds 2
+ok   roundtrip Speech: the saved value shows on the screen (differs from the default's)
+ok   roundtrip Mouse-look speed: changed on the screen, the file holds 110
+ok   roundtrip Mouse-look speed: the saved value shows on the screen (differs from the default's)
+Traceback (most recent call last):
+  File "D:\git\Ultima Underworld\underworld-exhumed\exhume\tools\setcheck.py", line 756, in <module>
+    sys.exit(main(R.ARGV))
+             ^^^^^^^^^^^^
+  File "D:\git\Ultima Underworld\underworld-exhumed\exhume\tools\setcheck.py", line 748, in main
+    timed(cmd)
+  File "D:\git\Ultima Underworld\underworld-exhumed\exhume\tools\setcheck.py", line 689, in timed
+    globals()[base](*(int(x) for x in part.split('/'))) if '/' in part else globals()[base](part)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\git\Ultima Underworld\underworld-exhumed\exhume\tools\setcheck.py", line 372, in roundtrip
+    h = start_home('rt-' + label.replace(' ', '_'))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\git\Ultima Underworld\underworld-exhumed\exhume\tools\setcheck.py", line 348, in start_home
+    h = fresh(work, name, 'scale=2\n')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\git\Ultima Underworld\underworld-exhumed\exhume\tools\setcheck.py", line 76, in fresh
+    shutil.rmtree(h, ignore_errors=True); os.makedirs(h)
+                                          ^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+NotADirectoryError: [WinError 267] 目錄名稱無效。: 'D:\\git\\Ultima Underworld\\.poc-tools\\msys64\\tmp\\setcheck-p40pth5f\\rt-4:3_aspect'
+--- roundtrip:2/3 (pool, 23.5 s)
+ok   roundtrip Volume: changed on the screen, the file holds 90
+ok   roundtrip Volume: the saved value shows on the screen (differs from the default's)
+ok   roundtrip Fullscreen: changed on the screen, the file holds 1
+ok   roundtrip Fullscreen: the saved value shows on the screen (differs from the default's)
+ok   roundtrip Whole-number scaling: changed on the screen, the file holds 0
+ok   roundtrip Whole-number scaling: the saved value shows on the screen (differs from the default's)
+setcheck: roundtrip:2/3 took 23.2 s
+setcheck: 6 of 6 checks pass
+--- scale (pool, 19.2 s)
+ok   scale: scale=2 with aspect off makes the window 640x400
+ok   scale: scale=2 with aspect on makes the window 640x480
+ok   scale: at scale 1 the window is 640 wide with the screen open
+ok   scale: at scale 1 the window is 320 wide with the screen closed
+ok   scale: --scale 3 beats the file's 2 (960 wide)
+ok   scale: and the file still says scale=2
+ok   scale: scale=8 on a 1024x768 display opens the largest that fits, 960x720
+ok   scale: and the file still says scale=8
+ok   scale: so does --scale 6
+setcheck: scale took 19.0 s
+setcheck: 9 of 9 checks pass
+--- stage (pool, 3.1 s)
+setcheck: stage took 2.9 s
+setcheck: 0 of 0 checks pass
+--- f11 (pool, 9.0 s)
+ok   F11: the layer shows (its title's gold pixels are in the window)
+ok   no F11: no gold pixels in the window
+setcheck: f11 took 8.8 s
+setcheck: 2 of 2 checks pass
+--- firstrun:gold (pool, 9.0 s)
+ok   first run: a fresh home shows the screen with no key pressed
+ok   first run: settings-at-start=0 does not
+ok   first run: turning "Show this at start" off in the screen is kept
+setcheck: firstrun:gold took 8.8 s
+setcheck: 3 of 3 checks pass
+--- folder (pool, 8.3 s)
+ok   folder: an empty folder is refused and the file's data= is unchanged
+ok   folder: the screen shows "That folder does not hold the game"
+ok   folder: the game's own folder is accepted
+setcheck: folder took 8.1 s
+setcheck: 3 of 3 checks pass
+--- cmdline (pool, 8.9 s)
+ok   cmdline: --mouse lock locks the run
+ok   cmdline: the file's mouse setting stands with no option
+ok   cmdline: mouse=lock in the file locks a run
+ok   cmdline: --scale 3 over scale=2 stays at scale 3 after the screen toggles aspect (960x600)
+ok   cmdline: and the file still says scale=2 (aspect=0 written)
+setcheck: cmdline took 8.7 s
+setcheck: 5 of 5 checks pass
+--- wclick (pool, 5.8 s)
+ok   wclick: after Right on Window scale the file says scale=3
+ok   wclick: a click at the row's new place in the window turns Whole-number scaling off
+ok   wclick: the check can tell (the same click at scale 2 changes nothing)
+setcheck: wclick took 5.6 s
+setcheck: 3 of 3 checks pass
+--- lostup (pool, 5.8 s)
+ok   lostup: a click on a folder row after a lost release opens its picker at once
+ok   lostup: and with no lost release, as before
+setcheck: lostup took 5.5 s
+setcheck: 2 of 2 checks pass
+--- restart (pool, 4.2 s)
+ok   restart: skip-intro turned on in the screen does not apply in that run (no enhance: line)
+ok   restart: and the file says enhance=skip-intro
+ok   restart: the next start logs enhance: skip-intro
+setcheck: restart took 4.0 s
+setcheck: 3 of 3 checks pass
+--- roms (pool, 2.7 s)
+ok   roms: with no ROMs anywhere the row says "not found"
+roms: SETCHECK_ROMS is not set, so "found" is not checked
+setcheck: roms took 2.4 s
+setcheck: 1 of 1 checks pass
+--- held (timed, 33.8 s)
+ok   held: X held across the screen stops (closer to the view let go after half a second than to the held-on view)
+ok   held: the check can tell (X held on to the end differs)
+setcheck: held took 33.5 s
+setcheck: 2 of 2 checks pass
+--- pause (timed, 29.5 s)
+ok   pause: no step of the game clock over 100 ms (no jump across the pause)
+ok   pause: the run reached past the pause (clock ran on after it)
+ok   pause: the clock stood still while it was open (about 4 s less than without F11)
+ok   pause: its replay twice is identical
+setcheck: pause took 29.2 s
+setcheck: 4 of 4 checks pass
+--- textentry (timed, 22.5 s)
+ok   textentry (through): the save's description is ab
+ok   textentry (plain): the save's description is ab
+setcheck: textentry took 22.3 s
+setcheck: 2 of 2 checks pass
+--- heldbutton (timed, 19.6 s)
+ok   held button (through): the hold reached the game, and the last read is 0 (let go)
+ok   held button (plain): the hold reached the game, and the last read is 0 (let go)
+setcheck: heldbutton took 19.4 s
+setcheck: 2 of 2 checks pass
+--- firstrun:resume (timed, 13.4 s)
+ok   first run: Esc closes the screen (no gold in the window afterwards)
+ok   first run: and the game resumes (its picture differs from the paused first frame)
+setcheck: firstrun:resume took 13.0 s
+setcheck: 2 of 2 checks pass
+--- volume (timed, 11.1 s)
+ok   volume: volume=50 plays at 0.4 to 0.6 of the full RMS
+setcheck: volume took 10.9 s
+setcheck: 1 of 1 checks pass
+--- badvalues (timed, 8.2 s)
+ok   badvalues: scale=99 starts at the screen's reading, the default 3 (960x720)
+ok   badvalues: volume=abc plays (the screen reads it as 100, not 0)
+ok   badvalues: --scale 0 is taken as 1 (320x240)
+setcheck: badvalues took 8.0 s
+setcheck: 3 of 3 checks pass
+setcheck: the pool took 49.7 s, the timed checks 138.0 s
+setcheck: 68 of 69 checks pass in 187.7 s
+
+==== player movement
+ok   the port reports the player's position (UW1PORT_POS_LOG)
+ok   standing still: the player stays put (2000 ms later, still at the same place and facing)
+ok   the saved game faces about north-east
+ok   facing north-east (the saved game's) (45 degrees), Z slides left: it moves 32 or more within 25 degrees of 315
+ok   facing north-east (the saved game's) (45 degrees), C slides right: it moves 32 or more within 25 degrees of 135
+ok   facing north-east (the saved game's) (45 degrees), X walks backwards: it moves 32 or more within 25 degrees of 225
+ok   facing north (359 degrees), Z slides left: it moves 32 or more within 25 degrees of 269
+ok   facing north (357 degrees), C slides right: it moves 32 or more within 25 degrees of 87
+ok   facing north (357 degrees), X walks backwards: it moves 32 or more within 25 degrees of 177
+ok   facing east (93 degrees), Z slides left: it moves 32 or more within 25 degrees of 3
+ok   facing east (89 degrees), C slides right: it moves 32 or more within 25 degrees of 179
+ok   facing east (92 degrees), X walks backwards: it moves 32 or more within 25 degrees of 272
+ok   facing west (263 degrees), X walks backwards: it moves 32 or more within 25 degrees of 83
+ok   facing south (187 degrees), X walks backwards: it moves 32 or more within 25 degrees of 7
+ok   the 3D frames come 8 or more ticks apart (at most 5% early, 8 ticks a frame on average)
+movecheck: 15 of 15 checks pass
+
+==== the black box
+ok   two sessions: two folders under recordings/, named YYYYMMDD-HHMMSS
+ok   20261021-151230: RECORD.OUT, not empty
+ok   20261021-151230: its RECORD.OUT is a recording with the game's clock in it
+ok   20261021-151230: stage/
+ok   20261021-151232: RECORD.OUT, not empty
+ok   20261021-151232: its RECORD.OUT is a recording with the game's clock in it
+ok   20261021-151232: stage/
+ok   no RECORDIN/ in the home directory
+ok   the second session's stage/ has neither recordings/ nor RECORDIN/
+ok   seven sessions: the newest 5 are kept (the two oldest planted ones gone)
+ok   the planted sessions kept are as they were
+ok   an old RECORDIN/ is left as it was
+ok   with an old RECORDIN/ there, the newest stage/ has neither recordings/ nor RECORDIN/
+ok   the newest session's RECORD.OUT is a recording
+ok   the newest stage/ has the saved game (SAVE1/) as it is in the home directory
+ok   the newest stage/ has DATA/UW.CFG as it is in the home directory
+ok   the newest stage/ has the override file DATA/STRINGS.PAK as it is in the home directory
+ok   the newest stage/ leaves out gog-cd/, roms/, mt32-roms/, UW1/, UW2/ and a stray file
+ok   the newest stage/ holds nothing but SAVE0 to SAVE4 and DATA/
+blackboxcheck: this host makes no symbolic links here; the link checks are skipped
+ok   a script with the fault event is refused without EXHUME_TEST_FAULT=1, and nothing faults
+ok   a fault on the game's thread ends the run, reported as a host fault
+ok   after the fault the recording is whole: call count FFFFFFFFh, the MISC stream and the clock
+blackboxcheck: 22 of 22 checks pass
+
+==== map notes
+ok    the port ran the script to its end and exited by itself (status 0)
+ok    no host fault
+ok    the map was drawn three times (level 1, level 2, level 1 again)
+ok    SAVE0\LEV.ARK still has the notes of levels 1 and 2 aliasing level 3's automap
+notescheck: 4 of 4 checks pass
+
+==== test native: 438 s
+  port build                          6.2 s  ok
+  fuzzing, quick                      0.9 s  FAILED (exit 1)
+  sessions against the goldens       21.1 s  ok
+  enhancements                       53.2 s  ok
+  settings screen                   188.0 s  FAILED (exit 1)
+  player movement                   124.2 s  ok
+  the black box                       9.8 s  ok
+  map notes                          34.3 s  ok
+FAILED: fuzzing, quick, settings screen

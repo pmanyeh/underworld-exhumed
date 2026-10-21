@@ -1,0 +1,14 @@
+warning: refs/tags/libmt32emu_2_8_3 008feb32227a16bad343573b33da2196656b8e93 is not a commit!
+mt32emu: libmt32emu_2_8_3 installed in /d/git/uw1-poc-libs
+PKG_CONFIG_PATH=/d/git/uw1-poc-libs/lib/pkgconfig
+==== uw1: make port
+make[1]: Entering directory '/d/git/Ultima Underworld/underworld-exhumed/uw1'
+..\exhume\runtime\port\sound\audio.c: does not compile
+D:\git\Ultima Underworld\underworld-exhumed\exhume\runtime\port\sound\audio.c:34:10: fatal error: 'mt32emu/c_interface/c_interface.h' file not found
+1 error generated.
+..\exhume\runtime\port\sound\mt32roms.c: does not compile
+D:\git\Ultima Underworld\underworld-exhumed\exhume\runtime\port\sound\mt32roms.c:33:10: fatal error: 'mt32emu/c_interface/c_interface.h' file not found
+1 error generated.
+make[1]: *** [Makefile:119: port] Error 1
+make[1]: Leaving directory '/d/git/Ultima Underworld/underworld-exhumed/uw1'
+make: *** [Makefile:18: port] Error 2

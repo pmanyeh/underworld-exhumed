@@ -1,0 +1,37 @@
+"""Relink the upstream-generated fuzz host with its required pthread dependency."""
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+workspace = Path(__file__).absolute().parent.parent
+sys.path.insert(0, str(workspace / "underworld-exhumed/exhume/tools"))
+import fuzzasm
+import portbuild
+import portcfg
+import portcheck
+import sources
+
+cfg = fuzzasm.CFG
+os.chdir(cfg.root)
+port = portcfg.port(cfg)
+fuzz = portcfg.fuzz(cfg)
+out = portcfg.variant_out(cfg, "")
+objects = [os.path.join(out, sources.stem(p) + ".o") for p in portcfg.game_sources(cfg)]
+for path in portbuild.port_sources():
+    if path.endswith(os.sep + fuzz.main.replace("/", os.sep)):
+        continue
+    objects.append(portbuild.port_object(out, path))
+_, libraries, extra = portbuild.sound_deps()
+objects += [os.path.join(out, "deps", os.path.basename(p)[:-2] + ".o") for p in extra]
+host = Path(cfg.build) / "fuzz/fuzzhost"
+binary = host.with_suffix(".exe") if os.name == "nt" else host
+threads = [] if sys.platform == "darwin" else ["-pthread"]
+command = [portcheck.host_cc(), "-o", str(binary), str(host) + ".o"] + objects + portbuild.pkg_config("--libs") + libraries + threads
+print("Relinking original fuzz host objects with", threads, flush=True)
+subprocess.run(command, check=True)
+if os.name == "nt" and not host.exists():
+    # Upstream's cache checks a suffix-free path; Windows clang emits .exe.
+    os.link(binary, host)
+Path(str(host) + ".glue").write_text("\n".join([fuzz.host_glue, ""]), encoding="utf-8")
+print("Prepared:", binary)

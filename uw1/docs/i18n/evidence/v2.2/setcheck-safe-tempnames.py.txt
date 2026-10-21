@@ -1,0 +1,17 @@
+"""Run the failed upstream settings slice with Windows-valid temporary folder names."""
+from pathlib import Path
+import sys
+
+workspace = Path(__file__).absolute().parent.parent
+sys.path.insert(0, str(workspace / "underworld-exhumed/exhume/tools"))
+import setcheck
+
+original_fresh = setcheck.fresh
+
+def fresh(work, name, *args, **kwargs):
+    # Only the test's scratch-directory component changes. Labels, inputs,
+    # expected values, screenshots and assertions remain upstream's.
+    return original_fresh(work, name.replace(":", "_"), *args, **kwargs)
+
+setcheck.fresh = fresh
+raise SystemExit(setcheck.main(["roundtrip:1/3"]))

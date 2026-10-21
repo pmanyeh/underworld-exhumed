@@ -1,0 +1,30 @@
+"""Derive a native test tier from upstream without changing tracked configuration."""
+import json
+import os
+from pathlib import Path
+import tomllib
+
+workspace = Path(__file__).resolve().parent.parent
+game = workspace / "underworld-exhumed/uw1"
+data = workspace / ".poc-private/game/UW"
+source = (game / "exhume.toml").read_text(encoding="utf-8")
+parsed = tomllib.loads(source)
+if any((data / name).exists() for name in ("SAVE1", "SAVE2", "SAVE3", "SAVE4")):
+    raise SystemExit("Expected a pristine extracted game without player save slots")
+old_skip = 'data_skip = ["SAVE1/", "SAVE2/", "SAVE3/", "SAVE4/"]'
+if source.count(old_skip) != 1:
+    raise SystemExit("Unexpected upstream staging configuration")
+native = [step for step in parsed["test"]["fast"] if step[0] != "the gate"]
+if len(native) != len(parsed["test"]["fast"]) - 1:
+    raise SystemExit("Expected exactly one optional DOS reference gate")
+derived = source.replace(old_skip, "data_skip = []")
+derived = derived.replace("[test]\n", "[test]\nnative = " + json.dumps(native, ensure_ascii=False, indent=4) + "\n", 1)
+check = tomllib.loads(derived)
+assert check["test"]["native"] == native
+assert check["test"]["fast"] == parsed["test"]["fast"]
+out = game / "build/poc/native-v22.toml"
+out.parent.mkdir(parents=True, exist_ok=True)
+out.write_bytes(derived.encode("utf-8"))
+print("Config:", out)
+print("DOS_EXACT_MATCH_CHECK:\nNOT RUN — Borland reference toolchain not installed")
+print("Native steps:", ", ".join(step[0] for step in native))
