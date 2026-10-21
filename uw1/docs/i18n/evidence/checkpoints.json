@@ -1,0 +1,30 @@
+[
+  {
+    "session": "newgame",
+    "checkpoint": 40,
+    "events": 18780267,
+    "time": 14943,
+    "png": "newgame-ck0040.png"
+  },
+  {
+    "session": "talk",
+    "checkpoint": 550,
+    "events": 87734843,
+    "time": 85912,
+    "png": "talk-ck0550.png"
+  },
+  {
+    "session": "talk",
+    "checkpoint": 626,
+    "events": 96717328,
+    "time": 97845,
+    "png": "talk-ck0626.png"
+  },
+  {
+    "session": "savecursor",
+    "checkpoint": 60,
+    "events": 22829899,
+    "time": 17858,
+    "png": "savecursor-ck0060.png"
+  }
+]

@@ -1,0 +1,49 @@
+replay build: compiling 26 sources with -DREPLAY or -DNULLTRAP
+replay.py verify: the replay DOS build failed (replay build failed:
+DRAWOBJ: no object written
+VIEW3D: no object written
+COMBAT: no object written
+BABL: no object written
+BARTER: no object written
+AI: no object written
+TRIGGER: no object written
+SKILLS: no object written
+UWEDIT: no object written
+CUTS: no object written
+GRFX: no object written
+LOADGR: no object written
+BAGS: no object written
+INVDATA: no object written
+PHYSICS: no object written
+PLAYMOVE: no object written
+COMBINE: no object written
+USEITEMS: no object written
+SOUND: no object written
+UTIL: no object written
+INTERACT: no object written
+MAINMENU: no object written
+MOUSE: no object written
+PANELS: no object written
+SCROLLIO: no object written
+REPLAY: no object written); not checking the goldens against it
+  setup/headless: port run (a setup session DOS cannot replay) done in 12.2 s
+  setup/tidy-heavy: port run (a setup session DOS cannot replay) done in 12.6 s
+  setup/trader: port run (a setup session DOS cannot replay) done in 12.7 s
+== verify: 16 sessions in the port against the goldens, 25.2 s
+newgame    2.1 s  ok    identical to DOS at all 41 checkpoints
+walk       3.6 s  ok    identical to DOS at all 66 checkpoints
+sound      3.1 s  ok    identical to DOS at all 70 checkpoints
+soundfm    3.2 s  ok    identical to DOS at all 70 checkpoints
+soundmt    4.7 s  ok    identical to DOS at all 93 checkpoints
+items      2.8 s  ok    identical to DOS at all 100 checkpoints, saves identical
+talk       8.4 s  ok    identical to DOS at all 627 checkpoints
+load       0.7 s  ok    identical to DOS at all 17 checkpoints, saves identical
+intro      3.8 s  ok    identical to DOS at all 73 checkpoints
+savecursor   2.4 s  ok    identical to DOS at all 79 checkpoints, saves identical
+female     0.9 s  ok    identical to DOS at all 47 checkpoints
+fallrestore   5.4 s  ok    identical to DOS at all 312 checkpoints, saves identical
+tooheavy   1.8 s  ok    identical to DOS at all 40 checkpoints, saves identical
+fallpause   1.1 s  ok    identical to DOS at all 33 checkpoints, saves identical
+overpay    4.7 s  ok    identical to DOS at all 43 checkpoints, saves identical
+powerkill   1.5 s  ok    identical to DOS at all 75 checkpoints, saves identical
+verify: all sessions identical to DOS
