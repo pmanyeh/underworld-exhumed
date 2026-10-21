@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "strings_compared": 10984,
+  "missing_keys_compared": 2,
+  "blocks": 122,
+  "pak_sha256": "e8c9848a14c49620095ae180bdccbe9c6bf2942e3ad8def4a38a8a7d23004b0d",
+  "decoder": "unchanged native src/ui/GAMESTRN.C read_string",
+  "block0_resolution": "PASS: get_string(3), context 3651, compared to read_string(3651,3)",
+  "dynamic_blocks": "PASS: make_string/get_string pointer identity for 0x7C and 0x7D",
+  "categories": [
+    "books",
+    "chargen",
+    "conversation",
+    "conversation_common",
+    "cutscene",
+    "game",
+    "object_look",
+    "object_names",
+    "spells",
+    "textures",
+    "trap_text",
+    "unknown_static",
+    "writings"
+  ]
+}

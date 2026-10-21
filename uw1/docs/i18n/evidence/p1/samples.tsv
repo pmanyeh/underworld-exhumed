@@ -1,0 +1,27 @@
+block	index	category	excerpt	bytes	sha256	native_match
+3	0	books	The pages are blank.	20	92498841397273b396687a0e6238b7b398566583355188f6b258ba134ee5abe8	PASS
+3	2	books	My dearest Alfred:\nGo into the Abyss knowing that I will not for	248	72490e8d2f08b186b688157f1cba32111eb38344aba77d9728c2c38364edfc6f	PASS
+2	1	chargen	Choose character sex:	21	8bf3e285bc0af636cdcce58ce2dc44bbdb7e1ea3441c6e3f68405479611869a8	PASS
+2	2	chargen	Select handedness:	18	425c3f39c2039f3beeb99eb5066f2d2e33f1c16b56b5ebf9a0af4e2bac70866d	PASS
+3651	3	conversation	Hail, stranger!  What be thy business?  I have not seen thee in 	82	d432ede95023399e87ade8c791956bc66bad5b0da3bbbbf1bd237a6b70e7d464	PASS
+3651	4	conversation	I am merely exploring the Abyss.	32	d3bbed82c89b0532f5f1c1c724cf04ad7cc2b0badfcb978542d9d21ef8f6ad34	PASS
+7	0	conversation_common	You cannot talk to that!\n	25	f71e90d787d4406d805af3d4fe4a87144cc4410d8981825902c66fcdd95622a6	PASS
+7	1	conversation_common	You get no response.\n	21	d0a21149b0b2ef0822a85bbc671dd6803c35b38e25762f0f956c65fd25593f19	PASS
+3072	0	cutscene	At last, you are asleep.	24	37b01098027ce85fc79b5ab8be54cb4ab997ae880831051cccc30ad99dbdc839	PASS
+3072	1	cutscene	For three nights, each attempt to sleep has brought you starting	130	f5b26a431b18468eb6cb88fbad716638e8e3b05f6aeaab757f62d926c0c1869d	PASS
+1	2	game	The key does not fit.\n	22	31d190a0704d9efed5116d57a04a58851200e61f0f37b9989eac7f8318288711	PASS
+1	5	game	The key unlocks the lock.\n	26	c1423871b6aafb4c9ec8cd95c2ee839520b952396990ebeb4c5e841e46ff0c79	PASS
+5	0	object_look	broken	6	f526795c95399cea27c055c842c3d6ab018ed0fa4f66f701c28ab22dec28237b	PASS
+5	1	object_look	badly damaged	13	d7f231a9a19cf2ac6128ec2d70b10188f4ef2306d369edbe1d852dc4babb2615	PASS
+4	0	object_names	a_hand axe	10	1ae02dd504bd1f90c58099ccdf0800643071a82d2ffb7045c5174a534388f136	PASS
+4	1	object_names	a_battle axe	12	49d9cd46d1b9a8e6338127dba1481b67ae46dca89c54b24643a5b24648b199a9	PASS
+6	0	spells	Darkness	8	9ab31dcb2ffd3b365769d0ac3aaa2ad6ff610028546a1c9b96c43bb35ae84cce	PASS
+6	1	spells	Burning Match	13	5e42b8fb7ee0c2875f1672d9aff765c15a6631ccfcd7df5008ba35464875e4fc	PASS
+10	0	textures	a stone wall	12	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	PASS
+10	1	textures	a mossy stone wall	18	7c4eaa6b9f5b3fa60cd153953bfca56fcbef193c6912329496421840510986ea	PASS
+9	1	trap_text	Peering into the crystal ball, a vision of a strange world appea	235	35f427b71e7c2d5ae93c1e6c47efb35b4085b25d7ccd002aafeca5ead4878388	PASS
+9	2	trap_text	Welcome to the Underworld...\n	29	43d085ccb64038fa6466c979c10510a3c0cb54cff362d0d748e068da969bc402	PASS
+24	0	unknown_static	 for level 	11	73d3d442afebf7ee785b6d1b7565c55dc00f54976416e05ab57bee8ceb502be0	PASS
+24	1	unknown_static	Dungeon Report as of 	21	3e4921f5a8e59d39dc588d14d1ac4673ff4d913f34622b29c1bca2c552a5eba6	PASS
+8	0	writings	Something indecipherable	24	a135540ebb60551f6e9d0067854f5a7c194985c3204d8934ccb242f254c04b1c	PASS
+8	33	writings	The empty grave of Garamon	26	5567a9a6f465a6f03c2a6010c8450dd176389aaf9008c0079fd9921188092b6d	PASS
