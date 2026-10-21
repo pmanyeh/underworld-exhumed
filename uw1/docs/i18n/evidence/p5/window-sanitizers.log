@@ -1,0 +1,8 @@
+PASS window 0: 640x480, viewport 0.0 0.0 640.0 480.0, ppem 19, rasters 32
+PASS window 1: 853x517, viewport 81.8 0.0 689.3 517.0, ppem 21, rasters 64
+PASS window 2: 640x480, viewport 0.0 40.0 640.0 400.0, ppem 16, rasters 96
+PASS window 3: 853x517, viewport 12.9 0.0 827.2 517.0, ppem 21, rasters 96
+PASS window 4: 2880x1800, viewport 0.0 0.0 2880.0 1800.0, ppem 72, rasters 128
+PASS window 5: 640x480, viewport 0.0 0.0 640.0 480.0, ppem 19, rasters 128
+PASS 6 native-window HD text scenarios: resize, aspect, integer, fullscreen, cache reuse
+PASS FreeType compile/link/render with ASan/UBSan

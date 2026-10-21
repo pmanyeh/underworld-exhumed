@@ -1,0 +1,22 @@
+Native-only English baseline: no DOS reference rebuild
+  setup/headless: port run (a setup session DOS cannot replay) done in 14.7 s
+  setup/tidy-heavy: port run (a setup session DOS cannot replay) done in 14.7 s
+  setup/trader: port run (a setup session DOS cannot replay) done in 15.8 s
+== verify: 16 sessions in the port against the goldens, 21.8 s
+newgame    1.9 s  ok    identical to DOS at all 41 checkpoints
+walk       5.3 s  ok    identical to DOS at all 66 checkpoints
+sound      4.7 s  ok    identical to DOS at all 70 checkpoints
+soundfm    5.0 s  ok    identical to DOS at all 70 checkpoints
+soundmt    6.6 s  ok    identical to DOS at all 93 checkpoints
+items      4.7 s  ok    identical to DOS at all 100 checkpoints, saves identical
+talk      11.0 s  ok    identical to DOS at all 627 checkpoints
+load       1.5 s  ok    identical to DOS at all 17 checkpoints, saves identical
+intro      5.2 s  ok    identical to DOS at all 73 checkpoints
+savecursor   4.2 s  ok    identical to DOS at all 79 checkpoints, saves identical
+female     1.7 s  ok    identical to DOS at all 47 checkpoints
+fallrestore   6.4 s  ok    identical to DOS at all 312 checkpoints, saves identical
+tooheavy   2.4 s  ok    identical to DOS at all 40 checkpoints, saves identical
+fallpause   1.6 s  ok    identical to DOS at all 33 checkpoints, saves identical
+overpay    5.8 s  ok    identical to DOS at all 43 checkpoints, saves identical
+powerkill   2.1 s  ok    identical to DOS at all 75 checkpoints, saves identical
+verify: all sessions identical to DOS

@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "source_commit": "55db77f62e17a7d9ebff020036da95e149737dc9",
+  "runtime_code_commit": "06def21d14dd591904af5d6f7eca0e80ce0425d2",
+  "run_id": 39623506142,
+  "url": "https://github.com/pmanyeh/underworld-exhumed/actions/runs/39623506142",
+  "jobs": {
+    "linux": {
+      "id": 119302791342,
+      "conclusion": "success",
+      "url": "https://github.com/pmanyeh/underworld-exhumed/actions/runs/39623506142/job/119302791342"
+    },
+    "macos": {
+      "id": 119302791759,
+      "conclusion": "success",
+      "url": "https://github.com/pmanyeh/underworld-exhumed/actions/runs/39623506142/job/119302791759"
+    },
+    "web": {
+      "id": 119302791904,
+      "conclusion": "success",
+      "url": "https://github.com/pmanyeh/underworld-exhumed/actions/runs/39623506142/job/119302791904"
+    },
+    "windows": {
+      "id": 119302791938,
+      "conclusion": "success",
+      "url": "https://github.com/pmanyeh/underworld-exhumed/actions/runs/39623506142/job/119302791938"
+    }
+  },
+  "native_render_assertions_per_platform": 4411580,
+  "native_game_sources": 89,
+  "native_port_sources": 98,
+  "linux_macos_portcheck": "0 errors; 46 existing game warnings each",
+  "windows_portcheck": "0 errors; 0 warnings",
+  "web": "no FreeType fallback compile/link; no Web HD rendering claimed",
+  "initial_linux_failure": {
+    "run": 39622701578,
+    "commit": "c45c5a1cc47a69cabf523abb71f1c9f7bf2f3a64",
+    "cause": "floor/libm missing from native link",
+    "fix": "bounded integer output rounding; no platform branch"
+  },
+  "p4_macos_failure": "runner capacity; no runner acquired; P5 uses macos-15-intel and passes"
+}

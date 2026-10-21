@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "game_window_runs": {
+    "hd-window": {
+      "output": [
+        960,
+        720
+      ],
+      "cache_hits": 21536,
+      "rasterizations": 64
+    },
+    "hd-free": {
+      "output": [
+        640,
+        400
+      ],
+      "cache_hits": 21986,
+      "rasterizations": 64
+    },
+    "hd-fullscreen": {
+      "output": [
+        2880,
+        1800
+      ],
+      "cache_hits": 14548,
+      "rasterizations": 32
+    }
+  },
+  "native_text": "PASS visual inspection: windowed and fullscreen CJK/English samples clear",
+  "no_gameplay_or_translation_binding": true
+}

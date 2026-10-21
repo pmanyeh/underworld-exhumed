@@ -1,0 +1,2 @@
+PASS 4411580 assertions: CJK/AA, metrics, cache hit/eviction/face/size, alpha, malformed input, wrapping, clipping
+PASS FreeType compile/link/render with ASan/UBSan

@@ -1,0 +1,9 @@
+runtime: D:\git\Ultima Underworld\underworld-exhumed\exhume
+compiled 89 game sources and 98 port sources (layout flags: -mno-ms-bitfields)
+..\..\..\Ultima Underworld\underworld-exhumed\exhume\runtime\port\sound\mt32roms.c: warnings
+D:\git\Ultima Underworld\underworld-exhumed\exhume\runtime\port\sound\mt32roms.c:236:17: warning: unused variable 'h' [-Wunused-variable]
+1 warning generated.
+third-party: Nuked OPL3, libmt32emu, FreeType HD text
+portbuild.py: Windows target; icon tools\dist\icon\uw1.ico, resource compiler D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\llvm-windres.EXE
+linked build\port\uw1port.exe (5132288 bytes)
+portbuild.py: resources in the program: 1 icon

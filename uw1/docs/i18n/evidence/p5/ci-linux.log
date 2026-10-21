@@ -1,0 +1,10 @@
+2026-10-21T15:12:14.0513600Z [36;1msudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends clang ninja-build pkg-config libfreetype6-dev >/dev/null[0m
+2026-10-21T15:12:39.8095637Z compiled 89 game sources and 98 port sources (layout flags: none)
+2026-10-21T15:12:39.8096073Z third-party: Nuked OPL3, libmt32emu, FreeType HD text
+2026-10-21T15:12:39.8096408Z linked build/port/uw1port (5136968 bytes)
+2026-10-21T15:12:48.4827320Z 89 C sources: 89 compile, 0 fail; 71 with no diagnostic in the file itself
+2026-10-21T15:12:48.4828113Z 0 errors and 46 warnings (each counted once)
+2026-10-21T15:12:48.7316305Z Verified NotoSansCJKtc-Regular.otf: dce08bd4fd91aa8aa76ed8fea4b694c2dfb8550f67871e326843212ddbeb88b4
+2026-10-21T15:12:48.7317474Z Verified LICENSE.txt: 6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2
+2026-10-21T15:12:49.3846960Z PASS 4411580 assertions: CJK/AA, metrics, cache hit/eviction/face/size, alpha, malformed input, wrapping, clipping
+2026-10-21T15:12:49.3847589Z PASS FreeType compile/link/render

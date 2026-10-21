@@ -22,7 +22,8 @@ int hd_font_init(HdFont **out, const char *path);
 void hd_font_shutdown(HdFont *font); /* NULL is safe */
 const char *hd_font_error(int status);
 void hd_font_stats(const HdFont *font, HdFontStats *out);
-/* Native: pixel_size 1..256, max_width in native pixels; <=0 means unwrapped.
+/* Native: pixel_size 1..256, max_width in native pixels; <=0 selects the widest
+   32-bit 26.6 layout limit (INT_MAX/64 pixels, rather than an infinite line).
    Logical: em and wrap_width are game units. The backend's viewport provides
    independent X/Y scales. Font ppem follows Y; glyphs remain square in output.
    Measures use Phase 3 layout, 26.6 additive advances, no kerning or shaping.

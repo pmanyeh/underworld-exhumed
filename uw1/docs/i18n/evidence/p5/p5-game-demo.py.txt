@@ -1,0 +1,19 @@
+from pathlib import Path
+import json,subprocess,os,re
+from PIL import Image
+root=Path(r'D:\git\uw1-native-poc\underworld-exhumed\uw1');out=root/'build/hd-text/game';out.mkdir(exist_ok=True)
+env=dict(os.environ);env['PATH']=str(root/'tools/libs/bin')+os.pathsep+r'D:\git\uw1-native-poc\.poc-tools\msys64\clang64\bin'+os.pathsep+env['PATH']
+results={}
+for name,options in [('hd-window',['--scale','3']),('hd-free',['--scale','2','--no-integer','--no-aspect']),('hd-fullscreen',[])]:
+ home=out/name;home.mkdir(exist_ok=True)
+ if name=='hd-fullscreen':(home/'uw1port.cfg').write_text('fullscreen=1\n')
+ command=[str(root/'build/port/uw1port.exe'),'--data',r'D:\git\uw1-native-poc\.poc-private\game\UW','--home',str(home),'--record','--no-audio','--sound','0,0','--enhance','skip-intro','--test-hd-text','--font',str(root/'tools/fonts/NotoSansCJKtc-Regular.otf'),'--screenshot-after','1500','--screenshot',str(out/(name+'-scanout.png')),'--window-shot',str(out/(name+'.png')),'--exit-after','2100']+options
+ r=subprocess.run(command,capture_output=True,text=True,env=env,timeout=30)
+ (out/(name+'.log')).write_text(r.stdout+r.stderr,encoding='utf-8')
+ assert not r.returncode,(name,r.stderr)
+ assert 'HD text:' not in r.stderr,(name,r.stderr)
+ match=re.search(r'HD text cache: (\d+) hits, (\d+) rasterizations',r.stderr)
+ assert match and int(match[1])>100 and 0 < int(match[2]) <= 128 and int(match[1]) > 100 * int(match[2]),(name,r.stderr)
+ im=Image.open(out/(name+'.png'));results[name]={'output':im.size,'cache_hits':int(match[1]),'rasterizations':int(match[2])}
+(out/'comparison.json').write_text(json.dumps({'status':'PASS','game_window_runs':results,'native_text':'visual inspection required','no_gameplay_or_translation_binding':True},indent=2)+'\n')
+print(json.dumps(results,indent=2))
