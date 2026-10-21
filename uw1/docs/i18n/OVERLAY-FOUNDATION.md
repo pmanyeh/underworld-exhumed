@@ -113,4 +113,22 @@ DOS validation 為 **NOT APPLICABLE — Native-only PoC**。
 
 Exhume feature commit：`89278495bb0b8b224b5bb58e53da2fd367c0d8c0`。
 已先 push 到 fork，再更新主專案 `.gitmodules` URL/pin，讓新 clone 能取得該 commit。
-Phase 4 的最終 SHAs、clean-boundary fetch 與標籤將於結案同步紀錄填入。
+Underworld Phase 4 implementation / report checkpoint：`e59dcb303e08b50c31271e1c699099b48e5d231e`。
+
+測試與報告提交後，兩個工作樹 clean，才執行 boundary fetch：
+
+| 檢查 | 結果 |
+| --- | --- |
+| Underworld main / origin/main / upstream/main | 全部 `e5deadd6945b492636aadccc14f52caa908b4186`，ahead/behind `0/0` |
+| Underworld feature vs origin（結案 push 前） | `1/0`，即上述 P4 checkpoint，沒有遠端新提交 |
+| Exhume main / origin/main / upstream/master | 全部 `c54e00e9176c14d0913b5806318a30f85a8f4636`，`0/0` |
+| Exhume feature vs origin feature | 全部 `89278495bb0b8b224b5bb58e53da2fd367c0d8c0`，`0/0` |
+| Exhume feature vs upstream/master | `1/7`；1 為 overlay，7 為開始前即有的 backlog |
+
+**UPSTREAM_SYNC = NO CHANGE。** 沒有新的 upstream commits，無需 merge/rebase。
+Exhume 既有 backlog 分類為 B（build/tooling）、I（其他 compiler profiles）與文件；
+不涉及此次 SDL renderer/runtime。保留本輪已驗證 baseline，沒有將 backlog 混入。
+詳細紀錄見 [sync evidence](evidence/p4/sync.json)。
+
+結案使用文件同步 commit，`zh-tw-native-p4` annotated tag 指向該提交；
+feature branch 與 tag 一同 push。停在 Phase 4，不自動開始 Phase 5。

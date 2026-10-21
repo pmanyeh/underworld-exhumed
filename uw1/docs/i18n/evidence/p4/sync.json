@@ -1,0 +1,40 @@
+{
+  "checked_utc": "2026-10-21T14:32:38.221393+00:00",
+  "gate": "clean working trees after Phase 4 implementation/report commit; fetched all remotes",
+  "status": "UPSTREAM_SYNC = NO CHANGE",
+  "underworld": {
+    "upstream_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "main_and_origin_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "feature_checkpoint": "e59dcb303e08b50c31271e1c699099b48e5d231e",
+    "origin_feature_before_final_push": "1adbb73176120c1a4c106787262574d83a3eb71b",
+    "main_vs_upstream": [
+      0,
+      0
+    ],
+    "feature_vs_origin_before_push": [
+      1,
+      0
+    ]
+  },
+  "exhume": {
+    "upstream_master": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "main_and_origin_main": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "feature_and_origin_feature": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0",
+    "main_vs_upstream": [
+      0,
+      0
+    ],
+    "feature_vs_origin": [
+      0,
+      0
+    ],
+    "feature_vs_upstream": [
+      1,
+      7
+    ],
+    "existing_backlog": "7 tooling/profile/doc commits present before this phase; not merged",
+    "new_upstream_commits_since_phase_start": 0
+  },
+  "release": "zh-tw-native-p4 annotated tag on final documentation sync commit; feature branch/tag pushed together",
+  "stop": "Phase 4; Phase 5 not started"
+}

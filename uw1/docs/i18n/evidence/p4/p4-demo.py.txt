@@ -31,4 +31,3 @@ assert all(abs(v-e)<=2 for v,e in zip(actual,expected)),(actual,expected)
 report={'status':'PASS','size':a.size,'overlay_off_each_locale_matches_own_native_scanout':True,'animated_menu_cross_run_identity':'not asserted; palette animation advances with game clock','native_crosshair_and_logical_box':'PASS','demo_alpha':'PASS','commands':'--record --sound 0,0 --no-audio --enhance skip-intro --scale 3 --screenshot-after 6000 --exit-after 6600, isolated homes'}
 (out/'comparison.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))
-

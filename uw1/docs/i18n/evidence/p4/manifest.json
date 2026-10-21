@@ -106,7 +106,7 @@
     "off-zh.png": "6ffea2d4107af799026035ede49b2ae12ce78da2b245d504e5c9c1a54cd2acf9",
     "overlay-sanitizers.log": "ef1f490fa1dec6cad6077b9b1f80f4b8b7e79a640da76860449829092d634b24",
     "overlay-tests.log": "bf7710b5650522b7227ce151cb61df4dbb39414b93150087d774d757da4cc63a",
-    "p4-demo.py.txt": "1a19233a447d099407f6273a9db088f8dfa6ddbcd2882c7850350263d3212c37",
+    "p4-demo.py.txt": "1db9ad8fa5cb3b37a189f17fd9cb5b9f90dc34be8fc92440da23f3e96bb1b2cf",
     "p4-native-regression.py.txt": "4f8c1b0d82f792935a0d4f83f990dc482c10bcb3bcb0dbe84bee08f2237331f5",
     "p4-replay-en.py.txt": "17439228a239dcb80beaadca708d9e6fd0b79aac91883ef473ee5ba7b17d0bc9",
     "p4-settings-rerun.py.txt": "85796fa833f38b709502b4098233ff11d672e99594ec0c3ed4f4d006f6bc4fab",
@@ -117,10 +117,12 @@
     "repocheck.log": "f812439bb125e6f7e61e45cd18605f70b8f57d816ebd4396279b264a69ac8ef8",
     "settings-rerun.log": "81e2f436edb835eb6ffec1dfc7f92c221a9d4378bfb930dbe20251ab67abc27e",
     "settings.log": "19d4224cf56cb81ac3b63265560ad8e0df9c59c82b0f20843ee74b2789031a1d",
+    "sync.json": "1578eb3fc64652695d680c9f510eb6157c437d1a9b9365492cba3f2fbbc18a03",
     "uw2-native-build.log": "9e4f77da30ce3304f038172ab763d54459d0369f3a41ef35b2a7b34faba2c092"
   },
   "repository_checks": {
     "main": "PASS syntax, markdown links, payload scan, whitespace",
     "exhume": "PASS syntax, markdown links, payload scan, whitespace"
-  }
+  },
+  "underworld_phase4_checkpoint": "e59dcb303e08b50c31271e1c699099b48e5d231e"
 }
