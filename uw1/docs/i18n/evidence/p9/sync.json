@@ -1,0 +1,30 @@
+{
+  "phase": 9,
+  "date": "2026-10-23",
+  "status": "UPSTREAM_SYNC = NO NEW CHANGES; existing Exhume backlog remains DEFERRED",
+  "phase_work_commit": "f28292c8ca4a5cdfa39fd9c538c2e2e2f4d6a5d8",
+  "fetch": "git fetch --all --prune; main repo and Exhume, at phase start and after the phase work push",
+  "underworld": {
+    "main_origin_main_upstream_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "main_vs_upstream": [0, 0],
+    "feature_at_phase_start": "ae8a69122f498cde55a7f0b9a3cff9a7695d08f3",
+    "feature_vs_origin_after_work_push": [0, 0]
+  },
+  "exhume": {
+    "main_origin_main": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "upstream_master": "aa2353a2442c9cb9ef2267aabd9398abb8aac42d",
+    "feature_origin_feature_submodule_pin": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0",
+    "main_vs_upstream": [0, 4],
+    "feature_vs_upstream": [1, 11],
+    "new_upstream_commits_since_P8": [],
+    "changed_in_P9": false
+  },
+  "merge_or_rebase": false,
+  "fork_main_updated": false,
+  "ci_run": "https://github.com/pmanyeh/underworld-exhumed/actions/runs/39821060821",
+  "ci_jobs": {"linux": "success", "macos": "success", "windows": "success", "web": "success"},
+  "closing_tag": "zh-tw-native-p9",
+  "Native_P9": "PASS",
+  "human_review": "pending: dataset schema, English source distribution policy, coverage classification, workflow ergonomics, special-string inventory",
+  "phase_10_started": false
+}

@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "strings_compared": 10984,
+  "missing_keys_compared": 2,
+  "blocks": 122,
+  "pak_sha256": "e8c9848a14c49620095ae180bdccbe9c6bf2942e3ad8def4a38a8a7d23004b0d",
+  "decoder": "unchanged native src/ui/GAMESTRN.C read_string",
+  "block0_resolution": "PASS: get_string(3), context 3651, compared to read_string(3651,3)",
+  "dynamic_blocks": "PASS: make_string/get_string pointer identity for 0x7C and 0x7D",
+  "categories": [
+    "books",
+    "chargen",
+    "conversation",
+    "conversation_common",
+    "cutscene",
+    "game",
+    "object_look",
+    "object_names",
+    "spells",
+    "textures",
+    "trap_text",
+    "unknown_static",
+    "writings"
+  ],
+  "runtime_hook": {
+    "status": "PASS",
+    "trace": [
+      {
+        "block": 3651,
+        "index": 3,
+        "text": "\u4f60\u597d\uff0c\u964c\u751f\u4eba\uff01\u4f60\u4f86\u9019\u88e1\u6709\u4f55\u8cb4\u5e79\uff1f\u6211\u4ee5\u524d\u6c92\u5728\u9019\u5730\u65b9\u898b\u904e\u4f60\u3002"
+      },
+      {
+        "block": 1,
+        "index": 2,
+        "text": "\u9019\u628a\u9470\u5319\u4e0d\u5408\u3002\n"
+      },
+      {
+        "block": 1,
+        "index": 5,
+        "text": "\u9470\u5319\u6253\u958b\u4e86\u9396\u3002\n"
+      }
+    ],
+    "checks": [
+      "resolved Bragit block",
+      "untranslated cutscene fallback",
+      "both dynamic pointers bypass lookup",
+      "eight-slot ring lifetime",
+      "legacy strings unchanged",
+      "UTF-8 pointer survives ring reuse"
+    ]
+  }
+}

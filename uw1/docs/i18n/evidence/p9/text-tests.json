@@ -1,0 +1,15 @@
+{
+  "inventory": 0,
+  "l10n": 0,
+  "layout": 0,
+  "runtime": 0,
+  "font": 0,
+  "no-freetype": 0,
+  "cursor": 0,
+  "mouse": 0,
+  "flow": 0,
+  "render": 0,
+  "window": 0,
+  "native-probe": 0,
+  "port-check": 0
+}

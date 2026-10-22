@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "poc_tsv_sha256_at_HEAD": "fef857593dafa1c1128e5f5bf93762a9486f18f095d27678da1292b5a3978c3f",
+  "poc_rows": 53,
+  "pak_rows_to_master": 52,
+  "literal_rows_to_literals": 1,
+  "fields_preserved": [
+    "source",
+    "target",
+    "note->notes",
+    "role->context \"PoC role: ...\"",
+    "key"
+  ],
+  "status_assigned": "draft",
+  "flags_added": {
+    "showcase": "Bragit 3651:* and 7:83",
+    "grammar-sensitive": "role template_fragment"
+  },
+  "poc_subset_catalog_sha256": "fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98",
+  "poc_subset_entries": 52,
+  "p8_catalog_sha256": "fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98",
+  "catalog_identical_to_p8": true
+}

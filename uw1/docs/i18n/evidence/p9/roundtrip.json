@@ -1,0 +1,46 @@
+{
+  "steps": {
+    "export": {
+      "exit": 0,
+      "output": "408 rows -> build\\i18n\\p9\\roundtrip\\wb.tsv"
+    },
+    "import": {
+      "exit": 0,
+      "output": "1 rows changed; 53 master rows -> build\\i18n\\p9\\roundtrip\\master.tsv"
+    },
+    "validate": {
+      "exit": 0,
+      "output": "PASS: 53 master rows, 1 literal rows, 0 problems, 0 drift"
+    },
+    "build": {
+      "exit": 0,
+      "output": "53 entries, 9052 bytes, sha256 252e9acefb0568db9c44b245713febfbdcef5fa8dd81786b490d0111dfd38c67 -> build\\i18n\\p9\\roundtrip\\a.uwloc"
+    },
+    "build_again": {
+      "exit": 0,
+      "output": "53 entries, 9052 bytes, sha256 252e9acefb0568db9c44b245713febfbdcef5fa8dd81786b490d0111dfd38c67 -> build\\i18n\\p9\\roundtrip\\b.uwloc"
+    },
+    "import_invalid": {
+      "exit": 1,
+      "output": "master:? (1:3): explicit newline count differs"
+    },
+    "import_stale": {
+      "exit": 1,
+      "output": "workbook:2 (1:3): workbook source differs from current data (stale export)"
+    },
+    "import_revert": {
+      "exit": 0,
+      "output": "1 rows changed; 52 master rows -> build\\i18n\\p9\\roundtrip\\master.tsv"
+    },
+    "build_reverted": {
+      "exit": 0,
+      "output": "52 entries, 8990 bytes, sha256 fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98 -> build\\i18n\\p9\\roundtrip\\c.uwloc"
+    }
+  },
+  "edited_key": "1:3",
+  "deterministic_rebuild": true,
+  "edited_catalog_sha256": "252e9acefb0568db9c44b245713febfbdcef5fa8dd81786b490d0111dfd38c67",
+  "reverted_master_identical": true,
+  "reverted_catalog_sha256": "fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98",
+  "status": "PASS"
+}

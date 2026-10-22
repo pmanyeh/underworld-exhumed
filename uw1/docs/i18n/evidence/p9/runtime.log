@@ -1,0 +1,24 @@
+test_pack_repeat_and_order (__main__.PackerTests.test_pack_repeat_and_order) ... ok
+test_reject_bad_keys_text_and_tokens (__main__.PackerTests.test_reject_bad_keys_text_and_tokens) ... ok
+test_counts_and_file_limits (__main__.RuntimeTests.test_counts_and_file_limits) ... ok
+test_full_game_sized_catalog (__main__.RuntimeTests.test_full_game_sized_catalog) ... ok
+test_invalid_utf8_and_embedded_nul (__main__.RuntimeTests.test_invalid_utf8_and_embedded_nul) ... ok
+test_load_actual_master_all_keys (__main__.RuntimeTests.test_load_actual_master_all_keys) ... ok
+test_locale_off_and_null (__main__.RuntimeTests.test_locale_off_and_null) ... ok
+test_missing_drift_and_dynamic_keys_return_pointer (__main__.RuntimeTests.test_missing_drift_and_dynamic_keys_return_pointer) ... ok
+test_qa_trace_classifies_every_lookup (__main__.RuntimeTests.test_qa_trace_classifies_every_lookup) ... ok
+test_qa_trace_in_english_records_misses (__main__.RuntimeTests.test_qa_trace_in_english_records_misses) ... ok
+test_reinitialize_and_shutdown (__main__.RuntimeTests.test_reinitialize_and_shutdown) ... ok
+test_sorted_unique_static_keys_only (__main__.RuntimeTests.test_sorted_unique_static_keys_only) ... ok
+test_stable_immutable_result_and_long_utf8 (__main__.RuntimeTests.test_stable_immutable_result_and_long_utf8) ... ok
+test_trace_deduplicates_and_preserves_utf8 (__main__.RuntimeTests.test_trace_deduplicates_and_preserves_utf8) ... ok
+test_trace_json_control_escaping (__main__.RuntimeTests.test_trace_json_control_escaping) ... ok
+test_trace_off_or_unwritable (__main__.RuntimeTests.test_trace_off_or_unwritable) ... ok
+test_truncation_every_byte_and_bad_magic (__main__.RuntimeTests.test_truncation_every_byte_and_bad_magic) ... ok
+test_unsupported_or_missing_catalog (__main__.RuntimeTests.test_unsupported_or_missing_catalog) ... ok
+test_valid_utf8_boundaries (__main__.RuntimeTests.test_valid_utf8_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.412s
+
+OK

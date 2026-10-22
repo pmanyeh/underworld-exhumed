@@ -1,0 +1,45 @@
+"""Archive count-only Phase 9 evidence (no English game text) into docs/i18n/evidence/p9."""
+from collections import Counter
+import json
+from pathlib import Path
+import shutil
+
+workspace = Path('D:/git/uw1-native-poc')
+root = workspace / 'underworld-exhumed/uw1'
+build = root / 'build/i18n'
+p9 = build / 'p9'
+dest = root / 'docs/i18n/evidence/p9'
+dest.mkdir(parents=True, exist_ok=True)
+
+copies = {
+    p9 / 'inventory.json': 'inventory.json', p9 / 'validate.json': 'validate.json',
+    p9 / 'catalog.json': 'catalog.json', p9 / 'coverage.json': 'coverage.json', p9 / 'coverage.md': 'coverage.md',
+    p9 / 'roundtrip.json': 'roundtrip.json', p9 / 'migration.json': 'migration.json',
+    p9 / 'native-build.log': 'native-build.log', p9 / 'port-check.log': 'port-check.log',
+    p9 / 'repocheck.log': 'repocheck.log', p9 / 'replay-en.log': 'replay-en.log',
+    p9 / 'replay-zh-TW.log': 'replay-zh-TW.log', p9 / 'replay-zh-TW.json': 'replay-zh-TW.json',
+    build / 'p9-text-tests.json': 'text-tests.json', build / 'p9-native-matrix.json': 'native-matrix.json',
+    build / 'p9-native-probe.json': 'native-probe.json',
+}
+for name in ('walk', 'dialogue', 'restore', 'english', 'resize'):
+    copies[p9 / f'p8-{name}-replay.json'] = f'p8-{name}-replay.json'
+    copies[p9 / f'p8-{name}.log'] = f'p8-{name}-replay.log'
+for name in ('inventory', 'l10n', 'layout', 'runtime', 'font', 'no-freetype', 'cursor', 'mouse', 'flow', 'render',
+             'window', 'native-probe', 'fuzz-host-link', 'fuzz', 'enhancements', 'settings', 'movement',
+             'blackbox', 'mapnotes'):
+    copies[build / f'p9-{name}.log'] = f'{name}.log'
+for source, name in copies.items():
+    if source.exists():
+        shutil.copyfile(source, dest / name)
+    else:
+        print('missing', source)
+
+traces = {}
+for path in sorted((root / 'build/replay/verify-i18n').glob('*/port/i18n-trace.jsonl')):
+    events = Counter(json.loads(line)['event'] for line in path.read_text(encoding='utf-8').splitlines())
+    keys = {(r['block'], r['index']) for r in map(json.loads, path.read_text(encoding='utf-8').splitlines())}
+    traces[path.parts[-3]] = {'events': dict(sorted(events.items())), 'distinct_keys': len(keys)}
+(dest / 'trace-summary.json').write_text(json.dumps(traces, indent=2) + '\n', encoding='utf-8')
+for helper in ('p9-regression.py', 'p9-replay-en.py', 'p9-text-regression.py', 'p9-native-regression.py', 'p9-archive.py'):
+    shutil.copyfile(workspace / '.poc-tools' / helper, dest / (helper + '.txt'))
+print('archived', len(list(dest.iterdir())), 'files ->', dest)

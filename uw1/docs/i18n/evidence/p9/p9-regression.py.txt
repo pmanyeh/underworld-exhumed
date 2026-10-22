@@ -1,0 +1,58 @@
+"""Phase 9 Native regression: catalog from master, English + zh-TW public replays
+(zh-TW also writes QA traces), and the five P8 player recordings replayed twice."""
+from pathlib import Path
+import json
+import os
+import subprocess
+import sys
+
+workspace = Path('D:/git/uw1-native-poc')
+repo = workspace / 'underworld-exhumed'
+root = repo / 'uw1'
+out = root / 'build/i18n/p9'
+slice_dir = root / 'build/vertical-slice'
+data = workspace / '.poc-private/game/UW'
+py = sys.executable
+env = dict(os.environ)
+env.update(UW1DECOMP=str(root), UW1_DATA=str(data), UW1_EXE=str(data / 'UW.EXE'))
+env['PATH'] = os.pathsep.join([str(workspace / '.poc-tools/msys64/clang64/bin'),
+                               str(root / 'tools/libs/bin'), env['PATH']])
+config = root / 'build/poc/native-v22.toml'
+env['EXHUME_CONFIG'] = str(config)
+catalog = root / 'build/i18n/zh-TW.uwloc'
+font = root / 'tools/fonts/NotoSansCJKtc-Regular.otf'
+only = sys.argv[1:]
+
+commands = [
+    ('catalog', [py, 'tools/i18n/l10n.py', 'build', '--pak', str(data / 'DATA/STRINGS.PAK'),
+                 '--cnv', str(data / 'DATA/CNV.ARK'), '--output', str(catalog),
+                 '--manifest', str(out / 'catalog.json')]),
+    ('replay-en', [py, str(workspace / '.poc-tools/p9-replay-en.py')]),
+    ('replay-zh-TW', [py, 'tools/i18n/verify_localized_replay.py', '--config', str(config),
+                      '--catalog', str(catalog), '--master', 'i18n/zh-TW/master.tsv',
+                      '--report', str(out / 'replay-zh-TW.json')]),
+]
+for name, home, stage, modern in [('walk', 'walk-01', None, True), ('dialogue', 'dialogue-01', 'dialogue', True),
+                                   ('restore', 'restore-01', 'restore', True),
+                                   ('english', 'english-01', 'dialogue', False),
+                                   ('resize', 'resize-02', 'dialogue', True)]:
+    command = [py, 'tools/i18n/verify_native_recording.py', '--config', str(config),
+               '--recording', str(slice_dir / home / 'RECORD.OUT'), '--original', str(slice_dir / home),
+               '--output', str(out / 'p8-replay' / name), '--report', str(out / f'p8-{name}-replay.json')]
+    if stage:
+        command += ['--stage', str(slice_dir / 'stages' / stage)]
+    if modern:
+        command += ['--modern', '--catalog', str(catalog), '--font', str(font)]
+    commands.append((f'p8-{name}', command))
+
+results = {}
+for name, command in commands:
+    if only and name not in only:
+        continue
+    print('Running', name, flush=True)
+    with (out / f'{name}.log').open('wb') as log:
+        run = subprocess.run(command, cwd=root, env=env, stdout=log, stderr=subprocess.STDOUT)
+    results[name] = run.returncode
+    print(name, run.returncode, flush=True)
+(out / ('regression-' + ('-'.join(only) if only else 'all') + '.json')).write_text(json.dumps(results, indent=2) + '\n')
+raise SystemExit(any(results.values()))

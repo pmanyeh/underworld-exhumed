@@ -1,0 +1,2 @@
+PASS optional build: no FreeType link; explicit HD_UNAVAILABLE; unchanged metrics
+PASS optional stub

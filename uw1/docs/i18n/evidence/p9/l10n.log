@@ -1,0 +1,22 @@
+test_compare_baseline (__main__.BaselineTests.test_compare_baseline) ... ok
+test_deterministic_and_status_filtered (__main__.CatalogTests.test_deterministic_and_status_filtered) ... ok
+test_layout_matches_runtime_contract (__main__.CatalogTests.test_layout_matches_runtime_contract) ... ok
+test_context (__main__.ClassificationTests.test_context) ... ok
+test_derived_flags (__main__.ClassificationTests.test_derived_flags) ... ok
+test_handling_classes (__main__.ClassificationTests.test_handling_classes) ... ok
+test_committed_master_round_trips_byte_for_byte (__main__.DatasetTests.test_committed_master_round_trips_byte_for_byte) ... ok
+test_normalize_is_canonical_and_idempotent (__main__.DatasetTests.test_normalize_is_canonical_and_idempotent) ... ok
+test_poc_migration_is_lossless (__main__.DatasetTests.test_poc_migration_is_lossless) ... ok
+test_row_rules (__main__.DatasetTests.test_row_rules) ... ok
+test_source_drift_and_missing_key_need_inventory (__main__.DatasetTests.test_source_drift_and_missing_key_need_inventory) ... ok
+test_strict_reader (__main__.DatasetTests.test_strict_reader) ... ok
+test_trailing_pause_must_stay_trailing (__main__.DatasetTests.test_trailing_pause_must_stay_trailing) ... ok
+test_valid_rows (__main__.DatasetTests.test_valid_rows) ... ok
+test_export_edit_import (__main__.RoundTripTests.test_export_edit_import) ... ok
+test_coverage_matrix (__main__.TraceCoverageTests.test_coverage_matrix) ... ok
+test_trace_aggregation_and_rejection (__main__.TraceCoverageTests.test_trace_aggregation_and_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.041s
+
+OK

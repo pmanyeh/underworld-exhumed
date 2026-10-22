@@ -1,0 +1,103 @@
+{
+  "fallpause": {
+    "events": {
+      "miss": 6
+    },
+    "distinct_keys": 3
+  },
+  "fallrestore": {
+    "events": {
+      "hit": 1,
+      "miss": 71
+    },
+    "distinct_keys": 47
+  },
+  "female": {
+    "events": {
+      "miss": 57
+    },
+    "distinct_keys": 38
+  },
+  "intro": {
+    "events": {
+      "miss": 42
+    },
+    "distinct_keys": 42
+  },
+  "items": {
+    "events": {
+      "miss": 79
+    },
+    "distinct_keys": 47
+  },
+  "load": {
+    "events": {
+      "miss": 6
+    },
+    "distinct_keys": 3
+  },
+  "newgame": {
+    "events": {
+      "miss": 57
+    },
+    "distinct_keys": 38
+  },
+  "overpay": {
+    "events": {
+      "dynamic": 1,
+      "miss": 34
+    },
+    "distinct_keys": 24
+  },
+  "powerkill": {
+    "events": {
+      "miss": 6
+    },
+    "distinct_keys": 3
+  },
+  "savecursor": {
+    "events": {
+      "miss": 72
+    },
+    "distinct_keys": 46
+  },
+  "sound": {
+    "events": {
+      "miss": 56
+    },
+    "distinct_keys": 37
+  },
+  "soundfm": {
+    "events": {
+      "miss": 57
+    },
+    "distinct_keys": 38
+  },
+  "soundmt": {
+    "events": {
+      "miss": 57
+    },
+    "distinct_keys": 38
+  },
+  "talk": {
+    "events": {
+      "dynamic": 1,
+      "hit": 11,
+      "miss": 77,
+      "template": 1
+    },
+    "distinct_keys": 54
+  },
+  "tooheavy": {
+    "events": {
+      "miss": 19
+    },
+    "distinct_keys": 8
+  },
+  "walk": {
+    "events": {
+      "miss": 57
+    },
+    "distinct_keys": 38
+  }
+}
