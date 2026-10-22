@@ -27,8 +27,11 @@ python3 tools/i18n/l10n.py export $D --trace build/i18n/p9/play.jsonl --runtime 
 source drift、重複 key、非法 UTF-8 或格式錯誤都拒絕產生 catalog；同一輸入永遠得到相同 bytes 與 SHA-256。
 `--i18n-trace` 在任何 locale 都記錄每次 lookup：`hit`、`template`（已譯但仍以英文 BABL 展開顯示）、
 `miss`、`drift`、`invalid`、`dynamic`；coverage／export 會彙總同一 key 的重複次數。
-`export` 與 `inventory.tsv` 含原版英文，只放在 ignored `build/`；committed 的只有翻譯資料、
-不含文字的 [inventory fingerprint](inventory-baseline.json) 與計數報告。
+`export` 與 `inventory.tsv` 含原版英文，只放在 ignored `build/`；committed 的只有翻譯資料
+（master 只存 `source_hash`，不存英文）、不含文字的 [inventory fingerprint](inventory-baseline.json) 與計數報告。
+Coverage 的完成率只計 **production scope**（排除 empty、unaddressable 與 block 24 debug report），
+另列 all-inventory 數字；分類規則見 [zh-TW/README.md](zh-TW/README.md) 與
+[P9 review fixup](../docs/i18n/LOCALIZATION-PRODUCTION.md#p9-review-fixup--pre-p10-gate)。
 
 目前已完成文字盤點、翻譯資料、Native UTF-8 lookup 與獨立的文字排版核心。
 預設保留原英文 renderer；`--hd-scroll` 可選用繁中 scroll／conversation 顯示。
@@ -170,7 +173,7 @@ Sanitizer driver 需要 Clang 的 ASan / UBSan runtime；一般 core tests 只�
 
 ```sh
 make port
-python3 tools/i18n/pack_translations.py build/i18n/zh-TW.uwloc   # 不讀原版資料、不檢查 source drift
+python3 tools/i18n/pack_translations.py --pak "$UW1_DATA/DATA/STRINGS.PAK" build/i18n/zh-TW.uwloc
 build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" \
   --locale zh-TW --i18n-file build/i18n/zh-TW.uwloc --i18n-log build/i18n/hits.jsonl
 ```
@@ -279,11 +282,15 @@ newline、CR、tab、NUL。其他反斜線 escape 拒絕接受；不得用 `eval
 
 | 檔案 | 欄位 | identity |
 | --- | --- | --- |
-| `zh-TW/master.tsv` | `block, index, category, source, target_zh_TW, status, context, notes, flags` | resolved `(block,index)`，例如 `3651`／`3` |
+| `zh-TW/master.tsv` | `block, index, category, source_hash, target_zh_TW, status, context, notes, flags` | resolved `(block,index)`，例如 `3651`／`3` |
 | `zh-TW/literals.tsv` | `key, source, target_zh_TW, status, context, notes, flags` | `literal:<repo path>:<call>:<text SHA256 前16碼>:<occurrence>` |
 
 Literal identity 不依賴行號；path、call、內容或同值出現次序改動會使 key 改變，需重新審查。
-`source` 是 drift check，來源有變時拒絕套用舊翻譯。欄位語意、status 與 flags 見 [zh-TW/README.md](zh-TW/README.md)。
+master 的 `source_hash` 是 `SHA-256(遊戲解出的 CP437 原文 bytes)`，只用於 drift check，
+**不提交英文原文**；catalog 需要的英文 bytes 在 build 時從玩家的 STRINGS.PAK 取得並逐筆核對 hash。
+literals 的 `source` 是本 repository C 程式碼中的字串，不屬於遊戲資料，仍保留原文。
+欄位語意、status 與 flags 見 [zh-TW/README.md](zh-TW/README.md)。
+P9 fixup 前的 master 曾含 `source` 英文欄；新 schema 由目前的 master 開始，歷史提交與 evidence 不改寫。
 PoC 的 `poc.tsv`（`kind, block, index, source_key, role, source_en, zh_tw, note`）已在 Phase 9 遷移：
 `role` 成為 `context` 的 `PoC role: …`，`note` 成為 `notes`，狀態一律 `draft`。
 

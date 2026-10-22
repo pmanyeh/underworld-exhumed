@@ -1,0 +1,34 @@
+test_all_bracket_pairs_and_nesting (__main__.CoreTests.test_all_bracket_pairs_and_nesting) ... ok
+test_all_game_controls_are_atomic_zero_width (__main__.CoreTests.test_all_game_controls_are_atomic_zero_width) ... ok
+test_all_translations_at_four_widths (__main__.CoreTests.test_all_translations_at_four_widths) ... ok
+test_all_unicode_scalars_validate_and_count (__main__.CoreTests.test_all_unicode_scalars_validate_and_count) ... ok
+test_argument_limits_and_zero_width_glyphs (__main__.CoreTests.test_argument_limits_and_zero_width_glyphs) ... ok
+test_ascii_chinese_mixed_and_empty (__main__.CoreTests.test_ascii_chinese_mixed_and_empty) ... ok
+test_ascii_punctuation_policy (__main__.CoreTests.test_ascii_punctuation_policy) ... ok
+test_ascii_word_wrap_and_long_unbroken (__main__.CoreTests.test_ascii_word_wrap_and_long_unbroken) ... ok
+test_boundary_before_every_byte_and_malformed_prefix (__main__.CoreTests.test_boundary_before_every_byte_and_malformed_prefix) ... ok
+test_chinese_and_mixed (__main__.CoreTests.test_chinese_and_mixed) ... ok
+test_closing_punctuation_never_begins_soft_line (__main__.CoreTests.test_closing_punctuation_never_begins_soft_line) ... ok
+test_controls_attach_right_and_do_not_hide_punctuation (__main__.CoreTests.test_controls_attach_right_and_do_not_hide_punctuation) ... ok
+test_explicit_newlines_empty_and_trailing_lines (__main__.CoreTests.test_explicit_newlines_empty_and_trailing_lines) ... ok
+test_invalid_and_truncated_sequences (__main__.CoreTests.test_invalid_and_truncated_sequences) ... ok
+test_long_text_callback_once_per_scalar (__main__.CoreTests.test_long_text_callback_once_per_scalar) ... ok
+test_malformed_nul_and_callback_failure (__main__.CoreTests.test_malformed_nul_and_callback_failure) ... ok
+test_measure_callback_can_reenter_with_independent_layout (__main__.CoreTests.test_measure_callback_can_reenter_with_independent_layout) ... ok
+test_null_arguments_and_nonempty_output_not_modified (__main__.CoreTests.test_null_arguments_and_nonempty_output_not_modified) ... ok
+test_oversized_glyph_and_wide_accumulator (__main__.CoreTests.test_oversized_glyph_and_wide_accumulator) ... ok
+test_pixel_metrics_not_character_count (__main__.CoreTests.test_pixel_metrics_not_character_count) ... ok
+test_prev_rejects_interior_and_invalid_sequence (__main__.CoreTests.test_prev_rejects_interior_and_invalid_sequence) ... ok
+test_random_bytes_match_python_strict_decoder (__main__.CoreTests.test_random_bytes_match_python_strict_decoder) ... ok
+test_scalar_encoding_boundaries (__main__.CoreTests.test_scalar_encoding_boundaries) ... ok
+test_seeded_mixed_wrap_invariants (__main__.CoreTests.test_seeded_mixed_wrap_invariants) ... ok
+test_seeded_scalar_roundtrip (__main__.CoreTests.test_seeded_scalar_roundtrip) ... ok
+test_spaces_tabs_retained_but_trimmed_at_edges (__main__.CoreTests.test_spaces_tabs_retained_but_trimmed_at_edges) ... ok
+test_three_and_four_byte_units (__main__.CoreTests.test_three_and_four_byte_units) ... ok
+test_unknown_and_trailing_backslash_remain_glyphs (__main__.CoreTests.test_unknown_and_trailing_backslash_remain_glyphs) ... ok
+test_utf8_null_and_cursor_contract (__main__.CoreTests.test_utf8_null_and_cursor_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.617s
+
+OK

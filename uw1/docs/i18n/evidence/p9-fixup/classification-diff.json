@@ -1,0 +1,3475 @@
+{
+  "note": "handling of the inventory (no manual flags); coverage adds master flags (lad/lass grammar-sensitive)",
+  "inventory_handling_before": {
+    "bitmap-ui": 196,
+    "debug-report": 43,
+    "direct": 5739,
+    "empty": 3852,
+    "grammar": 546,
+    "object-name": 413,
+    "template": 154,
+    "unaddressable": 41
+  },
+  "inventory_handling_after": {
+    "bitmap-ui": 261,
+    "debug-report": 101,
+    "direct": 5446,
+    "empty": 3852,
+    "grammar": 690,
+    "input-token": 26,
+    "object-name": 413,
+    "template": 154,
+    "unaddressable": 41
+  },
+  "direct_before": 5739,
+  "direct_after": 5446,
+  "bitmap_ui_before": 196,
+  "bitmap_ui_after": 261,
+  "coverage_direct_before": 5737,
+  "coverage_direct_after": 5444,
+  "coverage_special_before": 1354,
+  "coverage_special_after": 1546,
+  "production_translatable_before": 7091,
+  "production_translatable_after": 6990,
+  "debug_excluded": 101,
+  "transitions": {
+    "bitmap-ui->input-token": 26,
+    "direct->bitmap-ui": 87,
+    "direct->grammar": 206,
+    "grammar->bitmap-ui": 4,
+    "grammar->debug-report": 58
+  },
+  "reclassified_count": 381,
+  "reclassified_direct_to_bitmap_ui": 87,
+  "reclassified_keys": [
+    {
+      "block": 1,
+      "index": 169,
+      "category": "game",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "MAINMENU.C do_journey: restore failure, fontbig string_to_screen"
+    },
+    {
+      "block": 1,
+      "index": 187,
+      "category": "game",
+      "before": "grammar",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "SKILLS.C game_stats end screen: \"A level \" + class, string_to_screen"
+    },
+    {
+      "block": 1,
+      "index": 188,
+      "category": "game",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "SKILLS.C game_stats end screen: string_to_screen"
+    },
+    {
+      "block": 1,
+      "index": 189,
+      "category": "game",
+      "before": "grammar",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "SKILLS.C game_stats end screen: \"after \" + days, string_to_screen"
+    },
+    {
+      "block": 1,
+      "index": 190,
+      "category": "game",
+      "before": "grammar",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "SKILLS.C game_stats end screen: \" days in the Abyss\", string_to_screen"
+    },
+    {
+      "block": 1,
+      "index": 256,
+      "category": "game",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CHARGEN.C end of creation: string_to_screen beside the name"
+    },
+    {
+      "block": 1,
+      "index": 257,
+      "category": "game",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "MAINMENU.C restore: fontbig string_to_screen"
+    },
+    {
+      "block": 2,
+      "index": 7,
+      "category": "chargen",
+      "before": "grammar",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CHARGEN.C/STATS.C/SKILLS.C game_stats: string_to_screen"
+    },
+    {
+      "block": 2,
+      "index": 51,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 52,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 53,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 54,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 55,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 56,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 57,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 58,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 59,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 60,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 61,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 62,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 63,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 64,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 65,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 66,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 67,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 68,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 69,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 70,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 71,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 72,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 73,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 74,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 75,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 2,
+      "index": 76,
+      "category": "chargen",
+      "before": "bitmap-ui",
+      "after": "input-token",
+      "scope": "production",
+      "reason": "SKILLS.C: mantras are compared with the player's typed text"
+    },
+    {
+      "block": 6,
+      "index": 0,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 1,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 2,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 3,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 4,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 5,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 6,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 7,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 17,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 18,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 19,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 20,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 21,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 34,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 35,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 37,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 49,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 50,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 51,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 52,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 53,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 54,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 55,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 56,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 57,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 64,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 65,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 66,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 67,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 68,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 69,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 70,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 71,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 72,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 73,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 74,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 75,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 76,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 77,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 78,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 79,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 81,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 82,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 83,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 97,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 98,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 99,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 100,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 113,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 114,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 115,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 116,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 117,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 129,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 130,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 131,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 132,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 144,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 145,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 146,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 147,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 148,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 149,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 150,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 151,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 152,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 153,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 154,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 155,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 156,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 157,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 158,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 159,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 160,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 161,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 162,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 163,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 164,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 165,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 166,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 167,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 168,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 169,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 170,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 171,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 172,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 173,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 174,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 175,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 176,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 177,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 178,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 179,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 180,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 181,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 182,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 183,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 184,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 185,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 186,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 187,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 188,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 190,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 191,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 211,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 212,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 213,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 256,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 257,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 258,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 259,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 260,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 261,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 262,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 263,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 264,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 265,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 266,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 267,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 268,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 269,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 270,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 271,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 272,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 273,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 274,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 275,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 276,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 277,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 278,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 279,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 280,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 281,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 282,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 283,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 284,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 285,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 286,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 287,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 288,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 289,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 290,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 291,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 292,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 293,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 294,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 295,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 296,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 297,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 298,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 299,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 300,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 301,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 302,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 303,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 304,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 305,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 306,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 307,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 308,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 448,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 449,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 450,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 451,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 452,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 453,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 454,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 455,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 456,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 457,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 458,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 459,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 460,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 461,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 462,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 463,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 464,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 465,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 466,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 467,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 468,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 469,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 470,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 471,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 472,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 473,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 474,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 475,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 476,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 477,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 478,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 6,
+      "index": 479,
+      "category": "spells",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "LOOK.C: composed into \"... of <spell>\""
+    },
+    {
+      "block": 7,
+      "index": 3,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 4,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 5,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 6,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 7,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 8,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 9,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 10,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 11,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 12,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 13,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 14,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 15,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 16,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "grammar",
+      "scope": "production",
+      "reason": "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    },
+    {
+      "block": 7,
+      "index": 17,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 18,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 19,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 20,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 21,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 22,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 23,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 24,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 25,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 26,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 27,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 28,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 29,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 30,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 31,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 32,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 33,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 34,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 35,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 36,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 37,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 38,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 39,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 40,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 41,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 42,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 43,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 44,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 80,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 81,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 82,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 83,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 104,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 105,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 106,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 107,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 128,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 129,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 130,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 152,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 153,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 154,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 155,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 156,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 157,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 158,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 159,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 160,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 162,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 163,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 164,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 165,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 177,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 178,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 200,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 201,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 202,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 203,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 204,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 205,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 206,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 207,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 208,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 209,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 210,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 223,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 224,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 225,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 226,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 227,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 228,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 229,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 230,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 231,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 232,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 233,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 234,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 235,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 236,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 237,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 238,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 247,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 7,
+      "index": 248,
+      "category": "conversation_common",
+      "before": "direct",
+      "after": "bitmap-ui",
+      "scope": "production",
+      "reason": "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    },
+    {
+      "block": 24,
+      "index": 0,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 1,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 4,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 7,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 10,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 12,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 13,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 18,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 22,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 26,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 27,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 28,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 29,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 32,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 34,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 35,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 37,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 38,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 41,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 42,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 43,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 44,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 45,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 47,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 48,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 50,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 51,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 54,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 55,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 57,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 58,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 59,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 60,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 63,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 65,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 66,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 67,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 68,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 69,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 72,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 75,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 77,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 78,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 79,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 81,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 82,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 85,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 86,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 87,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 88,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 89,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 90,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 91,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 92,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 94,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 96,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 98,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    },
+    {
+      "block": 24,
+      "index": 99,
+      "category": "dungeon_report",
+      "before": "grammar",
+      "after": "debug-report",
+      "scope": "debug",
+      "reason": "no game code reads block 24 (developer dungeon report)"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "steps": {
+    "export": {
+      "exit": 0,
+      "last": "408 rows -> D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\i18n\\p9-fixup\\roundtrip\\wb.tsv"
+    },
+    "import": {
+      "exit": 0,
+      "last": "1 rows changed; 53 master rows -> D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\i18n\\p9-fixup\\roundtrip\\master.tsv"
+    },
+    "validate": {
+      "exit": 0,
+      "last": "PASS: 53 master rows, 1 literal rows, 0 problems, 0 drift"
+    },
+    "build": {
+      "exit": 0,
+      "last": "53 entries, 9052 bytes, sha256 252e9acefb0568db9c44b245713febfbdcef5fa8dd81786b490d0111dfd38c67 -> D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\i18n\\p9-fixup\\roundtrip\\a.uwloc"
+    },
+    "build_again": {
+      "exit": 0,
+      "last": "53 entries, 9052 bytes, sha256 252e9acefb0568db9c44b245713febfbdcef5fa8dd81786b490d0111dfd38c67 -> D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\i18n\\p9-fixup\\roundtrip\\b.uwloc"
+    },
+    "import_target_only": {
+      "exit": 0,
+      "last": "1 rows changed; 53 master rows -> D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\i18n\\p9-fixup\\roundtrip\\master.tsv"
+    },
+    "import_invalid": {
+      "exit": 1,
+      "last": "master:? (1:3): explicit newline count differs"
+    },
+    "import_stale": {
+      "exit": 1,
+      "last": "workbook:2 (1:3): workbook source differs from current data (stale export)"
+    },
+    "validate_drift": {
+      "exit": 1,
+      "last": "master:2 (1:2): SOURCE_DRIFT (source_hash differs from the current data; re-import the row or normalize --accept-source-drift after review)"
+    },
+    "build_drift": {
+      "exit": 1,
+      "last": "master:2 (1:2): SOURCE_DRIFT (source_hash differs from the current data; re-import the row or normalize --accept-source-drift after review)"
+    },
+    "normalize_without_accept": {
+      "exit": 0,
+      "last": "52 master rows written -> D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\i18n\\p9-fixup\\roundtrip\\drift.tsv"
+    },
+    "normalize_accept": {
+      "exit": 0,
+      "last": "52 master rows written -> D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\i18n\\p9-fixup\\roundtrip\\drift.tsv"
+    },
+    "validate_after_accept": {
+      "exit": 0,
+      "last": "PASS: 52 master rows, 1 literal rows, 0 problems, 0 drift"
+    },
+    "build_committed": {
+      "exit": 0,
+      "last": "52 entries, 8990 bytes, sha256 fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98 -> D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\i18n\\p9-fixup\\roundtrip\\c.uwloc"
+    }
+  },
+  "workbook_has_english_source_and_context": true,
+  "new_row_source_hash_from_current_data": true,
+  "existing_hashes_unchanged_by_import": true,
+  "target_only_change_kept_source_hash": true,
+  "master_unchanged_after_rejected_imports": true,
+  "normalize_without_accept_kept_drifted_hash": true,
+  "deterministic_rebuild": true,
+  "edited_catalog_sha256": "252e9acefb0568db9c44b245713febfbdcef5fa8dd81786b490d0111dfd38c67",
+  "committed_master_catalog_sha256": "fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98",
+  "committed_master_untouched": true,
+  "status": "PASS"
+}

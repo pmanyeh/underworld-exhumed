@@ -1,0 +1,21 @@
+from pathlib import Path
+import os,sys,subprocess,json
+workspace=Path(__file__).resolve().parent.parent
+repo=workspace/'underworld-exhumed';root=repo/'uw1';out=root/'build/i18n'
+commands=[('inventory',['tools/i18n/test_i18n.py','-v']),('l10n',['tools/i18n/test_l10n.py','-v']),('layout',['tools/i18n/test_layout.py','-v']),
+ ('runtime',['tools/i18n/test_runtime.py','-v']),('font',['tools/i18n/test_hd_font.py','--sanitize']),
+ ('no-freetype',['tools/i18n/test_hd_font.py','--no-freetype']),
+ ('cursor',['tools/i18n/test_hd_cursor.py','--sanitize']),('mouse',['tools/i18n/test_mouse_cursor.py','--sanitize']),
+ ('flow',['tools/i18n/test_scroll_text.py','--sanitize']),('render',['tools/i18n/test_scroll_text.py','--render','--sanitize']),
+ ('window',['tools/i18n/test_scroll_text.py','--window','--sanitize']),
+ ('native-probe',['tools/i18n/verify_native.py',str(workspace/'.poc-private/game/UW/UW.EXE'),str(workspace/'.poc-private/game/UW/DATA/STRINGS.PAK'),
+ '--report',str(out/'p9fix-native-probe.json'),'--catalog',str(root/'build/i18n/zh-TW.uwloc')]),
+ ('port-check',[str(repo/'exhume/tools/portcheck.py')])]
+results={}
+for name,command in commands:
+ print('Running',name,flush=True)
+ with (out/f'p9fix-{name}.log').open('wb') as log:r=subprocess.run([sys.executable]+command,cwd=root,stdout=log,stderr=subprocess.STDOUT)
+ results[name]=r.returncode;print(name,r.returncode,flush=True)
+ if r.returncode:break
+(out/'p9fix-text-tests.json').write_text(json.dumps(results,indent=2)+'\n')
+raise SystemExit(any(results.values()))

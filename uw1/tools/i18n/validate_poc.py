@@ -57,15 +57,15 @@ def validate_tokens(source, target):
 
 def validate(master, literal_rows, pak, cnv, literals):
     """The 53 PoC translations survive in the Phase 9 master/literal datasets."""
-    from l10n import check_literals, check_master
+    from l10n import check_literals, check_master, source_hash
     headers = {r["slot"]: r for r in conversation_headers(cnv)}
     if headers[67]["resolved_block"] != 3651:
         raise ValueError("this PoC expects Bragit slot 67 / string block 3651")
     problems = check_master(master)[0] + check_literals(literal_rows, literals)
     for row in master:
         b, i = int(row["block"]), int(row["index"])
-        if pak.read(b, i).decode("cp437") != row["source"]:
-            problems.append(f"source drift {b}:{i}")
+        if source_hash(pak.read(b, i).decode("cp437")) != row["source_hash"]:
+            problems.append(f"SOURCE_DRIFT {b}:{i}")
     if problems:
         raise ValueError("\n".join(problems))
     translated = {(int(r["block"]), int(r["index"])) for r in master if r["target_zh_TW"]}

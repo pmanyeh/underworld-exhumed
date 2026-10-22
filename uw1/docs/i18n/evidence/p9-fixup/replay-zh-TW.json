@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "locale": "zh-TW",
+  "sessions": {
+    "newgame": [],
+    "walk": [],
+    "sound": [],
+    "soundfm": [],
+    "soundmt": [],
+    "items": [],
+    "talk": [
+      [
+        1,
+        5
+      ],
+      [
+        7,
+        83
+      ],
+      [
+        3651,
+        1
+      ],
+      [
+        3651,
+        3
+      ],
+      [
+        3651,
+        4
+      ],
+      [
+        3651,
+        5
+      ],
+      [
+        3651,
+        6
+      ],
+      [
+        3651,
+        7
+      ],
+      [
+        3651,
+        10
+      ],
+      [
+        3651,
+        11
+      ],
+      [
+        3651,
+        12
+      ],
+      [
+        3651,
+        16
+      ]
+    ],
+    "load": [],
+    "intro": [],
+    "savecursor": [],
+    "female": [],
+    "fallrestore": [
+      [
+        1,
+        5
+      ]
+    ],
+    "tooheavy": [],
+    "fallpause": [],
+    "overpay": [],
+    "powerkill": []
+  },
+  "session_count": 16,
+  "distinct_translation_hits": 12,
+  "translation_text_checked_against_master": true,
+  "qa_traces": [
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\newgame\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\walk\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\sound\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\soundfm\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\soundmt\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\items\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\talk\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\load\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\intro\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\savecursor\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\female\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\fallrestore\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\tooheavy\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\fallpause\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\overpay\\port\\i18n-trace.jsonl",
+    "D:\\git\\uw1-native-poc\\underworld-exhumed\\uw1\\build\\replay\\verify-i18n\\powerkill\\port\\i18n-trace.jsonl"
+  ],
+  "legacy_state_and_saves": "identical to committed DOS goldens",
+  "dos_reference_rebuild": "NOT APPLICABLE - Native-only PoC",
+  "display": "legacy English path; UTF-8 lookup verified via JSONL"
+}

@@ -1,0 +1,12 @@
+#!/bin/sh
+# P9 review fixup: rebuild, then the whole Native regression set.
+set -u
+cd /d/git/uw1-native-poc/underworld-exhumed/uw1
+export PATH="/d/git/uw1-native-poc/.poc-tools/msys64/clang64/bin:/d/git/uw1-native-poc/underworld-exhumed/uw1/tools/libs/bin:/d/git/uw1-native-poc/.poc-tools/msys64/usr/bin:$PATH"
+export UW1DECOMP=D:/git/uw1-native-poc/underworld-exhumed/uw1 UW1_DATA=D:/git/uw1-native-poc/.poc-private/game/UW UW1_EXE=D:/git/uw1-native-poc/.poc-private/game/UW/UW.EXE EXHUME_CONFIG=D:/git/uw1-native-poc/underworld-exhumed/uw1/build/poc/native-v22.toml
+PY=../../.poc-tools/python/Scripts/python.exe
+O=build/i18n/p9-fixup
+$PY ../exhume/tools/portbuild.py --config exhume.toml > $O/native-build.log 2>&1; echo "build $?"
+$PY ../../.poc-tools/p9fix-regression.py; echo "replays $?"
+$PY ../../.poc-tools/p9fix-text-regression.py; echo "text $?"
+$PY ../../.poc-tools/p9fix-native-regression.py; echo "matrix $?"

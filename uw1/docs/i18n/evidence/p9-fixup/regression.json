@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "exit_codes": {
+    "regression-all": {
+      "catalog": 0,
+      "replay-en": 0,
+      "replay-zh-TW": 0,
+      "p8-walk": 0,
+      "p8-dialogue": 0,
+      "p8-restore": 0,
+      "p8-english": 0,
+      "p8-resize": 0
+    },
+    "p9fix-text-tests": {
+      "inventory": 0,
+      "l10n": 0,
+      "layout": 0,
+      "runtime": 0,
+      "font": 0,
+      "no-freetype": 0,
+      "cursor": 0,
+      "mouse": 0,
+      "flow": 0,
+      "render": 0,
+      "window": 0,
+      "native-probe": 0,
+      "port-check": 0
+    },
+    "p9fix-native-matrix": {
+      "fuzz-host-link": 0,
+      "fuzz": 0,
+      "enhancements": 0,
+      "settings": 0,
+      "movement": 0,
+      "blackbox": 0,
+      "mapnotes": 0
+    }
+  }
+}

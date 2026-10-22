@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Phase 9 localization production pipeline for UW1 zh-TW.
 
-Identity is the resolved (block, index); source text is only a drift check,
-context and translator reference. Legal game data is read locally. Full
-English inventories and translator exports stay in ignored build/; only the
-master dataset, literal namespace, count-only reports and fingerprints are
-committed. Standard library only.
+Identity is the resolved (block, index). The committed master keeps only a
+SHA-256 source_hash of each English source, for drift detection; English is
+read from the player's legal STRINGS.PAK and appears only in ignored build/
+outputs (inventory, translator workbook). Standard library only.
 
   inventory  refresh STRINGS.PAK/CNV.ARK inventory, compare the baseline
   validate   master + literals against the current inventory
@@ -22,6 +21,7 @@ import hashlib
 import io
 import json
 from pathlib import Path
+import re
 import struct
 import sys
 
@@ -33,7 +33,10 @@ MASTER = UW1 / "i18n/zh-TW/master.tsv"
 LITERALS = UW1 / "i18n/zh-TW/literals.tsv"
 BASELINE = UW1 / "i18n/inventory-baseline.json"
 
-MASTER_FIELDS = ["block", "index", "category", "source", "target_zh_TW", "status", "context", "notes", "flags"]
+# The committed master stores source_hash (see source_hash), never the English
+# text; translators get English from the local export workbook.
+MASTER_FIELDS = ["block", "index", "category", "source_hash", "target_zh_TW", "status", "context", "notes", "flags"]
+HASH = re.compile(r"[0-9a-f]{64}")
 LITERAL_FIELDS = ["key", "source", "target_zh_TW", "status", "context", "notes", "flags"]
 STATUSES = ("untranslated", "draft", "reviewed", "approved", "blocked")
 PACKED = {"draft": 0, "reviewed": 1, "approved": 2}
@@ -45,9 +48,10 @@ DYNAMIC_BLOCKS = (0x7C, 0x7D)
 # Same bounds as src/port/i18n/localization.c.
 MAGIC = b"UW1LOC1\0"
 MAX_ENTRIES, MAX_TARGET, MAX_CATALOG = 32768, 16384, 16 * 1024 * 1024
-HANDLING = ("direct", "template", "object-name", "grammar", "bitmap-ui", "hardcoded",
-            "debug-report", "empty", "unaddressable")
+HANDLING = ("direct", "template", "object-name", "grammar", "bitmap-ui", "input-token", "hardcoded",
+            "needs-context", "debug-report", "empty", "unaddressable")
 SPECIAL = set(HANDLING) - {"direct", "empty", "unaddressable"}
+SCOPES = ("production", "debug", "empty", "unaddressable")
 EVENTS = ("hit", "template", "miss", "drift", "dynamic", "invalid")
 
 
@@ -87,8 +91,58 @@ def derived_flags(block, index, source):
     return flags
 
 
+# Verified against the Native sources (P9 review fixup, docs/i18n/LOCALIZATION-PRODUCTION.md).
+# The question each rule answers: can this string reach the HD scroll path as the
+# decoded string itself? The HD path matches a translation by the decoded ring
+# pointer, so strings copied/concatenated first, or drawn by string_to_screen,
+# cannot.
+BITMAP_KEYS = {
+    (1, 169): "MAINMENU.C do_journey: restore failure, fontbig string_to_screen",
+    (1, 256): "CHARGEN.C end of creation: string_to_screen beside the name",
+    (1, 257): "MAINMENU.C restore: fontbig string_to_screen",
+    (1, 187): "SKILLS.C game_stats end screen: \"A level \" + class, string_to_screen",
+    (1, 188): "SKILLS.C game_stats end screen: string_to_screen",
+    (1, 189): "SKILLS.C game_stats end screen: \"after \" + days, string_to_screen",
+    (1, 190): "SKILLS.C game_stats end screen: \" days in the Abyss\", string_to_screen",
+}
+
+
+def rule(block, index):
+    """(handling, reason) for a verified per-key/range rule, else None."""
+    if block == 24:
+        return "debug-report", "no game code reads block 24 (developer dungeon report)"
+    if (block, index) in BITMAP_KEYS:
+        return "bitmap-ui", BITMAP_KEYS[block, index]
+    if block == 2 and 0x33 <= index < 0x33 + 0x1A:
+        return "input-token", "SKILLS.C: mantras are compared with the player's typed text"
+    if block == 2:
+        return "bitmap-ui", "CHARGEN.C/STATS.C/SKILLS.C game_stats: string_to_screen"
+    if category(block) == "cutscene":
+        return "bitmap-ui", "CUTS.C: text_lines drawn by string_to_screen"
+    if block == 7 and 3 <= index <= 16:
+        return "grammar", "BARTER.C appraisal: str_copy/str_cat pieces before npc_say"
+    if block == 7 and 17 <= index < 256:
+        return "bitmap-ui", "CONVERSE.C title (get_name, string_to_screen); LOOK.C composes it too"
+    if block == 6 and 0x180 <= index < 0x1C0:
+        return "direct", "RUNES.C: scroll_print of the decoded string"
+    if block == 6:
+        return "grammar", "LOOK.C: composed into \"... of <spell>\""
+    return None
+
+
+def scope(block, index, source):
+    """production, debug, empty or unaddressable: the completion metric counts production."""
+    if index > 511:
+        return "unaddressable"
+    if not source:
+        return "empty"
+    if block == 24:
+        return "debug"
+    return "production"
+
+
 def classify(block, index, source, flags=()):
-    """First-pass handling class; manual flags can only make an entry special."""
+    """Handling class; manual flags can only make an entry special."""
     flags = set(flags) | derived_flags(block, index, source)
     if index > 511:
         return "unaddressable"
@@ -98,17 +152,17 @@ def classify(block, index, source, flags=()):
         return "template"
     if "object-name" in flags:
         return "object-name"
+    verified = rule(block, index)
+    if verified and verified[0] != "direct":
+        return verified[0]
     # Adjective/texture fragments are composed with hard-coded "You see ...";
     # edge whitespace marks a fragment concatenated at runtime.
-    if ("grammar-sensitive" in flags or block in (5, 10) or source != source.strip(" ")):
+    if "grammar-sensitive" in flags or block in (5, 10) or source != source.strip(" "):
         return "grammar"
-    # CHARGEN.C, STATS.C and CUTS.C draw these with string_to_screen.
-    if block == 2 or category(block) == "cutscene":
-        return "bitmap-ui"
     if "hardcoded-related" in flags:
         return "hardcoded"
-    if block == 24:
-        return "debug-report"
+    if "needs-context" in flags:
+        return "needs-context"
     return "direct"
 
 
@@ -152,9 +206,10 @@ class Inventory:
         return h.hexdigest()
 
     def summary(self):
-        cats, handling = Counter(), defaultdict(Counter)
+        cats, handling, scopes = Counter(), defaultdict(Counter), Counter()
         for (block, index), source in self.entries.items():
             cats[category(block)] += 1
+            scopes[scope(block, index, source)] += 1
             handling[category(block)][classify(block, index, source)] += 1
         conversation_blocks = sorted(b for b in self.pak.blocks if b >= 0xE00)
         referenced = sorted(set(self.slot_of_block) & set(conversation_blocks))
@@ -163,6 +218,7 @@ class Inventory:
             "block_count": len(self.pak.blocks), "entry_count": len(self.entries),
             "category_count": len(cats), "categories": dict(sorted(cats.items())),
             "handling": {c: dict(sorted(h.items())) for c, h in sorted(handling.items())},
+            "scopes": dict(sorted(scopes.items())),
             "empty_entries": sum(not s for s in self.entries.values()),
             "unaddressable_entries": sorted([b, i] for b, i in self.entries if i > 511),
             "unaddressable_nonempty": sorted([b, i] for (b, i), s in self.entries.items() if i > 511 and s),
@@ -260,21 +316,34 @@ def text_problems(text, what):
         problems.append(f"{what} contains NUL")
     if any(0xD800 <= ord(c) <= 0xDFFF for c in text):
         problems.append(f"{what} contains a surrogate (not a Unicode scalar value)")
-    if "﻿" in text:
+    if chr(0xFEFF) in text:
         problems.append(f"{what} contains U+FEFF")
     if any(ord(c) < 32 and c != "\n" for c in text):
         problems.append(f"{what} contains a control character other than LF")
     return problems
 
 
+def source_hash(source):
+    """SHA-256 of the exact bytes the game decodes (first NUL ends, at most 511),
+    i.e. the CP437 bytes STRINGS.PAK yields and the catalog's runtime check uses."""
+    return hashlib.sha256(source.encode("cp437")).hexdigest()
+
+
 def check_target(source, target):
+    """Target rules; source None (no player data) checks the target text alone."""
     problems = text_problems(target, "target")
+    if len(target.encode("utf-8", "surrogatepass")) > MAX_TARGET:
+        problems.append(f"target exceeds {MAX_TARGET} UTF-8 bytes")
+    if source is None:
+        try:
+            template_tokens(target)
+        except ValueError as error:
+            problems.append(f"target: {error}")
+        return problems
     try:
         validate_tokens(source, target)
     except ValueError as error:
         problems.append(str(error))
-    if len(target.encode("utf-8", "surrogatepass")) > MAX_TARGET:
-        problems.append(f"target exceeds {MAX_TARGET} UTF-8 bytes")
     # \m and \p pause for MORE; a trailing pause must stay trailing.
     for code in ("\\m", "\\p"):
         if source.endswith(code) != target.endswith(code):
@@ -325,34 +394,41 @@ def check_master(rows, inventory=None):
             problems.append(f"{where}: unknown flag in {row['flags']!r}")
         elif row["flags"] != join_flags(set(flags)):
             problems.append(f"{where}: flags are not canonical; run normalize")
-        source, target = row["source"], row["target_zh_TW"]
-        problems += [f"{where}: {p}" for p in text_problems(source, "source")]
+        target = row["target_zh_TW"]
+        if not HASH.fullmatch(row["source_hash"]):
+            problems.append(f"{where}: source_hash must be 64 lowercase hex digits (SHA-256)")
+        if target:
+            if row["status"] == "untranslated":
+                problems.append(f"{where}: untranslated row has a target; set draft or clear it")
+        elif row["status"] in PACKED:
+            problems.append(f"{where}: status {row['status']} needs a target")
+        # Without the player's data only text-level rules apply; source-dependent
+        # rules (drift, tokens, derived flags) need the current STRINGS.PAK.
+        source = inventory.source(block, index) if inventory is not None else None
+        if inventory is None:
+            if target:
+                problems += [f"{where}: {p}" for p in check_target(None, target)]
+            if is_default(row, set(DERIVED)):
+                problems.append(f"{where}: row carries no translator work; remove it or run normalize")
+            continue
+        if source is None:
+            problems.append(f"{where}: key does not exist in the current STRINGS.PAK")
+            continue
         if not source:
             problems.append(f"{where}: empty source entries cannot be translated")
-        try:
-            source.encode("cp437")
-        except UnicodeEncodeError:
-            problems.append(f"{where}: source is not representable in CP437")
-        if len(source.encode("utf-8")) > 511:
-            problems.append(f"{where}: source exceeds the game's 511-byte string")
+            continue
+        if row["source_hash"] != source_hash(source):
+            drift.append({"block": block, "index": index, "line": row.get("_line")})
+            problems.append(f"{where}: SOURCE_DRIFT (source_hash differs from the current data; "
+                            "re-import the row or normalize --accept-source-drift after review)")
+            continue
         missing = derived_flags(block, index, source) - set(flags)
         if missing:
             problems.append(f"{where}: derived flags missing {sorted(missing)}; run normalize")
         if target:
-            if row["status"] == "untranslated":
-                problems.append(f"{where}: untranslated row has a target; set draft or clear it")
             problems += [f"{where}: {p}" for p in check_target(source, target)]
-        elif row["status"] in PACKED:
-            problems.append(f"{where}: status {row['status']} needs a target")
         if is_default(row, derived_flags(block, index, source)):
             problems.append(f"{where}: row carries no translator work; remove it or run normalize")
-        if inventory is not None:
-            current = inventory.source(block, index)
-            if current is None:
-                problems.append(f"{where}: key does not exist in the current STRINGS.PAK")
-            elif current != source:
-                drift.append({"block": block, "index": index, "line": row.get("_line")})
-                problems.append(f"{where}: source drift (master source differs from current data)")
     return problems, drift
 
 
@@ -386,17 +462,25 @@ def check_literals(rows, literals=None):
     return problems
 
 
-def normalize_master(rows, inventory=None):
-    """Canonical order, derived flags, category; drop rows carrying no work."""
+def normalize_master(rows, inventory=None, accept_drift=False):
+    """Canonical order, category; with an inventory also derived flags and a
+    missing source_hash. A differing hash is kept (validate reports SOURCE_DRIFT)
+    unless accept_drift, the explicit reviewed update. Rows carrying no work go."""
     out = []
     for row in rows:
         block, index = int(row["block"]), int(row["index"])
-        derived = derived_flags(block, index, row["source"])
-        flags = set(split_flags(row["flags"])) | derived
         new = {k: row[k] for k in MASTER_FIELDS}
+        flags = set(split_flags(row["flags"]))
+        derived = set(DERIVED)
+        source = inventory.source(block, index) if inventory is not None else None
+        if source:
+            current = source_hash(source)
+            if not new["source_hash"] or (accept_drift and new["source_hash"] != current):
+                new["source_hash"] = current
+            if new["source_hash"] == current:
+                derived = derived_flags(block, index, source)
+                flags |= derived
         new.update(block=str(block), index=str(index), category=category(block), flags=join_flags(flags))
-        if inventory is not None and not new["source"]:
-            new["source"] = inventory.source(block, index) or ""
         if not is_default(new, derived):
             out.append(new)
     out.sort(key=lambda r: (int(r["block"]), int(r["index"])))
@@ -423,13 +507,20 @@ def packed_rows(rows, min_status="draft"):
 
 # ---------------------------------------------------------------- catalog
 
-def pack(rows, min_status="draft"):
-    """Deterministic UW1LOC1 catalog; same rows produce the same bytes."""
-    entries = []
+def pack(rows, inventory, min_status="draft"):
+    """Deterministic UW1LOC1 catalog; same rows and data produce the same bytes.
+    The runtime's source check needs the English bytes, which come from the
+    player's STRINGS.PAK (never the master) and must match each source_hash."""
+    entries, problems = [], []
     for row in packed_rows(rows, min_status):
         block, index = int(row["block"]), int(row["index"])
-        source, target = row["source"].encode("cp437"), row["target_zh_TW"].encode("utf-8")
-        entries.append((block, index, source, target))
+        current = inventory.source(block, index)
+        if not current or source_hash(current) != row["source_hash"]:
+            problems.append(f"{block}:{index}: SOURCE_DRIFT or missing source; not packed")
+            continue
+        entries.append((block, index, current.encode("cp437"), row["target_zh_TW"].encode("utf-8")))
+    if problems:
+        raise DatasetError(problems)
     entries.sort()
     if len({(b, i) for b, i, _, _ in entries}) != len(entries):
         raise DatasetError(["duplicate (block,index) in packed rows"])
@@ -469,10 +560,12 @@ def read_traces(paths):
 def coverage(inventory, master, literal_rows=(), literal_scan=None, traces=None, problems=()):
     by_key = {(int(r["block"]), int(r["index"])): r for r in master}
     traces = traces or {}
-    cols = ("total", "empty", "unaddressable", "direct", "special", "untranslated", "draft",
+    # direct/special/status columns count the production scope only; debug,
+    # empty and unaddressable entries are inventory, not player localization.
+    cols = ("total", "empty", "unaddressable", "debug", "direct", "special", "untranslated", "draft",
             "reviewed", "approved", "blocked", "runtime_seen", "runtime_hit", "runtime_fallback")
     table = defaultdict(Counter)
-    lists = Counter()
+    lists, handlings, debug_done = Counter(), Counter(), Counter()
     runtime_untranslated, runtime_fallback, dynamic = set(), set(), set()
     for (block, index), source in inventory.entries.items():
         row = by_key.get((block, index))
@@ -481,9 +574,13 @@ def coverage(inventory, master, literal_rows=(), literal_scan=None, traces=None,
         all_flags = flags | derived_flags(block, index, source)
         t = table[category(block)]
         t["total"] += 1
-        if handling in ("empty", "unaddressable"):
-            t[handling] += 1
+        where = scope(block, index, source)
+        if where != "production":
+            t[where] += 1
+            if where == "debug" and row and row["target_zh_TW"]:
+                debug_done[row["status"]] += 1
         else:
+            handlings[handling] += 1
             t["special" if handling in SPECIAL else "direct"] += 1
             status = row["status"] if row and row["target_zh_TW"] else "untranslated"
             if row and row["status"] == "blocked":
@@ -511,18 +608,28 @@ def coverage(inventory, master, literal_rows=(), literal_scan=None, traces=None,
     for t in table.values():
         totals.update(t)
     scan = Counter(r["classification"] for r in literal_scan) if literal_scan is not None else None
+    production = totals["direct"] + totals["special"]
+    done = sum(totals[s] for s in ("draft", "reviewed", "approved"))
     return {
         "columns": list(cols),
         "categories": {c: {k: table[c][k] for k in cols} for c in sorted(table)},
         "total": {k: totals[k] for k in cols},
+        "production": {"translatable": production, "translated_draft_or_better": done,
+                       "reviewed_or_better": totals["reviewed"] + totals["approved"],
+                       "approved": totals["approved"],
+                       "completion_percent": round(100 * done / production, 2) if production else None,
+                       "handling": dict(sorted(handlings.items()))},
+        "all_inventory": {"entries": totals["total"], "non_empty_addressable": production + totals["debug"],
+                          "empty": totals["empty"], "unaddressable": totals["unaddressable"],
+                          "debug": totals["debug"], "debug_translated": dict(debug_done)},
         "special_strings": {
             "untranslated": lists["untranslated"], "template": lists["template"],
             "grammar_sensitive": lists["grammar-sensitive"], "bitmap_ui": lists["bitmap-ui"],
             "hardcoded_related": lists["hardcoded-related"],
             "runtime_untranslated": len(runtime_untranslated), "runtime_fallback": len(runtime_fallback),
             "runtime_dynamic_or_invalid_keys": len(dynamic),
-            "source_drift": sum("source drift" in p for p in problems),
-            "invalid_target": sum("source drift" not in p for p in problems),
+            "source_drift": sum("SOURCE_DRIFT" in p for p in problems),
+            "invalid_target": sum("SOURCE_DRIFT" not in p for p in problems),
             "hardcoded_literal_candidates": (scan["PLAYER_VISIBLE"] + scan["UNKNOWN"]) if scan else None,
             "hardcoded_literals_translated": sum(bool(r["target_zh_TW"]) for r in literal_rows),
         },
@@ -537,27 +644,32 @@ def coverage(inventory, master, literal_rows=(), literal_scan=None, traces=None,
 
 
 def coverage_markdown(report):
-    head = ("Category", "Total", "Empty", "Unaddr.", "Direct", "Special", "Untransl.", "Draft",
+    head = ("Category", "Total", "Empty", "Unaddr.", "Debug", "Direct", "Special", "Untransl.", "Draft",
             "Reviewed", "Approved", "Blocked", "Runtime seen", "Runtime hit", "Runtime fallback")
+    prod, inv = report["production"], report["all_inventory"]
     lines = ["# UW1 zh-TW localization coverage", "",
-             f"PAK `{report['pak_sha256'][:16]}…`. Direct + Special = translatable non-empty, addressable entries.", "",
+             f"PAK `{report['pak_sha256'][:16]}...`. Direct + Special = the production scope: player-facing,",
+             "non-empty, addressable entries. Debug (block 24 dungeon report) is inventory only.", "",
+             f"**Production completion (draft or better): {prod['translated_draft_or_better']} / "
+             f"{prod['translatable']} ({prod['completion_percent']}%)**; reviewed or better "
+             f"{prod['reviewed_or_better']}, approved {prod['approved']}.", "",
+             f"All inventory: {inv['entries']} entries = {prod['translatable']} production + {inv['debug']} debug "
+             f"+ {inv['empty']} empty + {inv['unaddressable']} unaddressable.", "",
              "| " + " | ".join(head) + " |", "| --- |" + " ---: |" * (len(head) - 1)]
     for name, row in list(report["categories"].items()) + [("**total**", report["total"])]:
         lines.append("| " + " | ".join([name] + [str(row[c]) for c in report["columns"]]) + " |")
+    lines += ["", "| Production handling | Count |", "| --- | ---: |"]
+    lines += [f"| {k} | {v} |" for k, v in prod["handling"].items()]
     lines += ["", "| Special list | Count |", "| --- | ---: |"]
     lines += [f"| {k} | {v} |" for k, v in report["special_strings"].items()]
-    translatable = report["total"]["direct"] + report["total"]["special"]
-    done = sum(report["total"][s] for s in ("draft", "reviewed", "approved"))
-    lines += ["", f"Translated (draft or better): {done} / {translatable} "
-                  f"({100 * done / translatable:.2f}%)." if translatable else ""]
     return "\n".join(lines) + "\n"
 
 
 # ---------------------------------------------------------------- export / import
 
-EXPORT_FIELDS = ["key", "block", "index", "category", "handling", "flags", "status", "source",
+EXPORT_FIELDS = ["key", "block", "index", "category", "scope", "handling", "flags", "status", "source",
                  "target_zh_TW", "context", "notes", "auto_context", "runtime_hits", "runtime_events",
-                 "previous_source", "next_source"]
+                 "previous_source", "next_source", "source_drift"]
 EDITABLE = ("target_zh_TW", "status", "context", "notes", "flags")
 
 
@@ -573,7 +685,7 @@ def export_rows(inventory, master, traces=None, select=None):
         handling = classify(block, index, source, flags)
         events = traces.get((block, index), Counter())
         out = {"key": f"{block}:{index}", "block": block, "index": index, "category": category(block),
-               "handling": handling, "flags": join_flags(flags | derived),
+               "scope": scope(block, index, source), "handling": handling, "flags": join_flags(flags | derived),
                "status": row["status"] if row else "untranslated", "source": source,
                "target_zh_TW": row["target_zh_TW"] if row else "",
                "context": row["context"] if row else "", "notes": row["notes"] if row else "",
@@ -581,7 +693,10 @@ def export_rows(inventory, master, traces=None, select=None):
                "runtime_hits": sum(events.values()),
                "runtime_events": ",".join(f"{e}={events[e]}" for e in EVENTS if events[e]),
                "previous_source": inventory.source(block, index - 1) or "",
-               "next_source": inventory.source(block, index + 1) or ""}
+               "next_source": inventory.source(block, index + 1) or "",
+               # The master's translation was made for different English; review it,
+               # then importing this row records the current source_hash.
+               "source_drift": "yes" if row and row["source_hash"] != source_hash(source) else ""}
         if select is None or select(out):
             yield out
 
@@ -600,11 +715,16 @@ def merge(master, edits, inventory):
         if edit["source"] != current:
             problems.append(f"{where}: workbook source differs from current data (stale export)")
             continue
-        derived = derived_flags(*key, current)
+        derived, current_hash = derived_flags(*key, current), source_hash(current)
         base = by_key.get(key) or {"block": str(key[0]), "index": str(key[1]), "category": category(key[0]),
-                                   "source": current, "target_zh_TW": "", "status": "untranslated",
+                                   "source_hash": current_hash, "target_zh_TW": "", "status": "untranslated",
                                    "context": "", "notes": "", "flags": join_flags(derived)}
-        new = dict(base, **{k: edit[k] for k in EDITABLE}, source=current)
+        if base["source_hash"] != current_hash and edit["source_drift"] == "yes":
+            # A drifted row is accepted only once the reviewer clears source_drift.
+            continue
+        new = dict(base, **{k: edit[k] for k in EDITABLE}, source_hash=current_hash)
+        if base["source_hash"] != current_hash:
+            changed += 1
         if all(f in FLAGS for f in split_flags(new["flags"])):
             new["flags"] = join_flags(set(split_flags(new["flags"])) | derived)
         if any(new[k] != base[k] for k in EDITABLE):
@@ -666,7 +786,7 @@ def add_dataset(parser):
 def cmd_inventory(args):
     inventory = Inventory.load(args.pak, args.cnv)
     summary = inventory.summary()
-    rows = [{"block": b, "index": i, "category": category(b), "handling": classify(b, i, s),
+    rows = [{"block": b, "index": i, "category": category(b), "scope": scope(b, i, s), "handling": classify(b, i, s),
              "flags": join_flags(derived_flags(b, i, s)), "source_en": s}
             for (b, i), s in sorted(inventory.entries.items())]
     write_bytes(args.out / "inventory.tsv", render_tsv(rows, list(rows[0])))
@@ -698,8 +818,11 @@ def cmd_validate(args):
 
 
 def cmd_normalize(args):
+    if args.accept_source_drift and not args.pak:
+        print("--accept-source-drift needs --pak", file=sys.stderr)
+        return 2
     inventory = Inventory.load(args.pak, args.cnv) if args.pak else None
-    rows = normalize_master(load_master(args.master), inventory)
+    rows = normalize_master(load_master(args.master), inventory, args.accept_source_drift)
     write_bytes(args.master, render_tsv(rows, MASTER_FIELDS))
     if args.literals.exists():
         literal_rows = [dict(r, flags=join_flags(set(split_flags(r["flags"]))))
@@ -717,7 +840,7 @@ def cmd_build(args):
             print(p, file=sys.stderr)
         print(f"FAIL: catalog not built ({len(problems)} problems, {len(drift)} drift)")
         return 1
-    data, count = pack(master, args.min_status)
+    data, count = pack(master, inventory, args.min_status)
     write_bytes(args.output, data)
     manifest = {"catalog_sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data), "entries": count,
                 "min_status": args.min_status,
@@ -752,6 +875,7 @@ def cmd_export(args):
         return ((not args.category or row["category"] in args.category)
                 and (not args.block or row["block"] in args.block)
                 and (not args.handling or row["handling"] in args.handling)
+                and (not args.scope or row["scope"] in args.scope)
                 and (not args.untranslated or not row["target_zh_TW"])
                 and (not args.runtime or row["runtime_hits"] > 0))
     rows = list(export_rows(inventory, master, traces, select))
@@ -795,6 +919,8 @@ def main(argv=None):
     p = sub.add_parser("normalize", help="rewrite master/literals canonically")
     add_data(p, required=False)
     add_dataset(p)
+    p.add_argument("--accept-source-drift", action="store_true",
+                   help="after review, record the current source_hash for drifted rows")
     p.set_defaults(run=cmd_normalize)
 
     p = sub.add_parser("build", help="validate against current data and pack the runtime catalog")
@@ -820,6 +946,7 @@ def main(argv=None):
     p.add_argument("--category", action="append")
     p.add_argument("--block", type=int, action="append")
     p.add_argument("--handling", action="append", choices=HANDLING)
+    p.add_argument("--scope", action="append", choices=SCOPES[:2], help="production or debug")
     p.add_argument("--untranslated", action="store_true")
     p.add_argument("--runtime", action="store_true", help="only keys seen in the given traces")
     p.set_defaults(run=cmd_export)

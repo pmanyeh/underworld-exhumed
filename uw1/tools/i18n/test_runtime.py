@@ -12,8 +12,8 @@ import subprocess
 import tempfile
 import unittest
 
-from l10n import MAGIC, MASTER, MASTER_FIELDS, DatasetError, load_master, render_tsv
-from pack_translations import pack
+from l10n import MAGIC, MASTER_FIELDS, DatasetError, check_master, load_master, pack as pack_rows, source_hash
+from test_l10n import inventory as fixture_inventory
 
 UW1 = Path(__file__).resolve().parents[2]
 OUT = UW1 / "build/i18n"
@@ -91,14 +91,15 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(self.init(locale=b"fr"), -1)
 
     def test_load_actual_master_all_keys(self):
-        data, n = pack(MASTER)
+        # The master holds no English; stand-in sources exercise every real target.
         rows = [r for r in load_master() if r["target_zh_TW"]]
-        self.assertEqual(n, len(rows))
-        self.assertGreaterEqual(n, 52)
-        self.assertEqual(self.init(data), 0)
+        self.assertGreaterEqual(len(rows), 52)
+        stand_in = {(r["block"], r["index"]): f"S{r['block']}:{r['index']}".encode() for r in rows}
+        self.assertEqual(self.init(catalog([(int(r["block"]), int(r["index"]), stand_in[r["block"], r["index"]],
+                                             r["target_zh_TW"].encode()) for r in rows])), 0)
         self.assertEqual(self.lib.port_i18n_enabled(), 1)
         for row in rows:
-            buffer, pointer = self.lookup(row["source"].encode("cp437"), int(row["block"]), int(row["index"]))
+            buffer, pointer = self.lookup(stand_in[row["block"], row["index"]], int(row["block"]), int(row["index"]))
             self.assertNotEqual(pointer, ctypes.addressof(buffer))
             self.assertEqual(ctypes.string_at(pointer), row["target_zh_TW"].encode())
 
@@ -230,29 +231,38 @@ class RuntimeTests(unittest.TestCase):
 
 
 class PackerTests(unittest.TestCase):
-    def test_pack_repeat_and_order(self):
-        self.assertEqual(pack(MASTER), pack(MASTER))
-        data, count = pack(MASTER)
-        self.assertEqual(data[:12], MAGIC + struct.pack("<I", count))
+    """The master packed against a fixture inventory (no game data in CI)."""
+    SOURCE = "Hi @SS1" + chr(92) + "m"
 
-    def test_reject_bad_keys_text_and_tokens(self):
-        row = dict(zip(MASTER_FIELDS, ["3651", "3", "conversation", "Hi @SS1\\m", "你好 @SS1\\m",
-                                       "draft", "", "", "dynamic-template,control-code"]))
-        with tempfile.TemporaryDirectory(dir=OUT) as tmp:
-            path = Path(tmp) / "input.tsv"
-            path.write_bytes(render_tsv([row], MASTER_FIELDS))
-            self.assertEqual(pack(path)[1], 1)
-            for change in ({"block": "0"}, {"block": "124"}, {"index": "512"}, {"index": "03"},
-                           {"category": "game"}, {"source": "a\0b"}, {"status": "done"},
-                           {"target_zh_TW": ""}, {"target_zh_TW": "你好 @SS2\\m"},
-                           {"target_zh_TW": "你好 @SS1"}, {"flags": "control-code"}):
-                with self.subTest(change=change):
-                    path.write_bytes(render_tsv([dict(row, **change)], MASTER_FIELDS))
-                    with self.assertRaises(DatasetError):
-                        pack(path)
-            path.write_bytes(render_tsv([row, row], MASTER_FIELDS))
-            with self.assertRaises(DatasetError):
-                pack(path)
+    def setUp(self):
+        self.inventory = fixture_inventory({(3651, 3): self.SOURCE})
+        self.row = dict(zip(MASTER_FIELDS, ["3651", "3", "conversation", source_hash(self.SOURCE),
+                                            "你好 @SS1" + chr(92) + "m", "draft", "", "",
+                                            "dynamic-template,control-code"]))
+
+    def build(self, rows):
+        problems, _ = check_master(rows, self.inventory)
+        if problems:
+            raise DatasetError(problems)
+        return pack_rows(rows, self.inventory)
+
+    def test_pack_repeat_and_source_bytes_from_data(self):
+        data, count = self.build([self.row])
+        self.assertEqual((data, count), self.build([self.row]))
+        self.assertEqual(data[:12], MAGIC + struct.pack("<I", 1))
+        self.assertIn(self.SOURCE.encode("cp437") + b"\0", data)
+
+    def test_reject_bad_keys_hash_text_and_tokens(self):
+        for change in ({"block": "0"}, {"block": "124"}, {"index": "512"}, {"index": "03"},
+                       {"category": "game"}, {"source_hash": "0" * 64}, {"source_hash": "abc"},
+                       {"status": "done"}, {"target_zh_TW": ""},
+                       {"target_zh_TW": "你好 @SS2" + chr(92) + "m"}, {"target_zh_TW": "你好 @SS1"},
+                       {"flags": "control-code"}):
+            with self.subTest(change=change):
+                with self.assertRaises(DatasetError):
+                    self.build([dict(self.row, **change)])
+        with self.assertRaises(DatasetError):
+            self.build([self.row, self.row])
 
 
 if __name__ == "__main__":

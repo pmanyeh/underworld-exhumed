@@ -1,0 +1,73 @@
+"""Archive the P9 review fixup evidence (keys, hashes and counts only; no English
+game text) into docs/i18n/evidence/p9-fixup."""
+import json
+from pathlib import Path
+import re
+import shutil
+import sys
+
+workspace = Path('D:/git/uw1-native-poc')
+root = workspace / 'underworld-exhumed/uw1'
+build = root / 'build/i18n'
+fix = build / 'p9-fixup'
+dest = root / 'docs/i18n/evidence/p9-fixup'
+dest.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(root / 'tools/i18n'))
+import l10n
+
+
+def save(name, value):
+    (dest / name).write_bytes((json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode('utf-8'))
+
+
+save('schema.json', {
+    'master_file': 'uw1/i18n/zh-TW/master.tsv', 'master_fields': l10n.MASTER_FIELDS,
+    'literal_fields': l10n.LITERAL_FIELDS, 'statuses': list(l10n.STATUSES),
+    'packed_statuses': list(l10n.PACKED), 'blocked_packed': False,
+    'flags': list(l10n.FLAGS), 'derived_flags': list(l10n.DERIVED),
+    'handling': list(l10n.HANDLING), 'scopes': list(l10n.SCOPES),
+    'source_hash': 'SHA-256 of the decoded game string bytes (first NUL ends, at most 511, no normalization), '
+                   'the CP437 bytes STRINGS.PAK yields and the runtime catalog compares; 64 lowercase hex',
+    'english_source_in_committed_master': False,
+    'catalog_format': 'UW1LOC1 (unchanged)', 'export_fields': l10n.EXPORT_FIELDS,
+})
+copies = {'source-hash-migration.json': 'migration.json', 'roundtrip.json': 'roundtrip.json',
+          'coverage-before.json': 'coverage-before.json', 'coverage-after.json': 'coverage-after.json',
+          'coverage-after.md': 'coverage-after.md', 'classification-diff.json': 'classification-diff.json',
+          'inventory.json': 'inventory.json', 'catalog.json': 'catalog.json',
+          'native-build.log': 'native-build.log', 'replay-en.log': 'replay-en.log',
+          'replay-zh-TW.json': 'replay-zh-TW.json', 'replay-zh-TW.log': 'replay-zh-TW.log',
+          'test_l10n-with-data.log': 'test_l10n-with-data.log'}
+for name in ('walk', 'dialogue', 'restore', 'english', 'resize'):
+    copies[f'p8-{name}-replay.json'] = f'p8-{name}-replay.json'
+for source, name in copies.items():
+    shutil.copyfile(fix / source, dest / name)
+for name in ('inventory', 'l10n', 'layout', 'runtime', 'font', 'no-freetype', 'cursor', 'mouse', 'flow', 'render',
+             'window', 'native-probe', 'port-check', 'fuzz', 'enhancements', 'settings', 'movement', 'blackbox',
+             'mapnotes'):
+    shutil.copyfile(build / f'p9fix-{name}.log', dest / f'{name}.log')
+
+log = (fix / 'test_l10n-with-data.log').read_text(encoding='utf-8')
+tests = re.findall(r'^(test_\w+) \(__main__\.(\w+)\.\w+\) \.\.\. (\w+)', log, re.M)
+save('source-hash-tests.json', {
+    'run': 'UW1_DATA=<player data> python tools/i18n/test_l10n.py -v', 'total': len(tests),
+    'all_ok': all(r == 'ok' for _, _, r in tests),
+    'source_hash_policy': {t: r for t, c, r in tests if c in ('SourceHashTests', 'RoundTripTests') or
+                           t in ('test_committed_master_holds_no_english', 'test_poc_catalog_equals_p8_with_player_data',
+                                 'test_source_drift_and_missing_key_need_inventory')},
+    'all_tests': {f'{c}.{t}': r for t, c, r in tests}})
+
+results = {}
+for name in ('regression-all', 'p9fix-text-tests', 'p9fix-native-matrix'):
+    path = fix / f'{name}.json' if name.startswith('regression') else build / f'{name}.json'
+    results[name] = json.loads(path.read_text(encoding='utf-8'))
+save('regression.json', {'status': 'PASS' if not any(v for r in results.values() for v in r.values()) else 'FAIL',
+                         'exit_codes': results})
+for helper in ('p9fix-regression.py', 'p9fix-replay-en.py', 'p9fix-text-regression.py', 'p9fix-native-regression.py',
+               'p9fix-classification.py', 'p9fix-roundtrip.py', 'p9fix-archive.py', 'p9fix-all.sh'):
+    shutil.copyfile(workspace / '.poc-tools' / helper, dest / (helper + '.txt'))
+for path in dest.iterdir():
+    raw = path.read_bytes()
+    if b'\r\n' in raw:
+        path.write_bytes(raw.replace(b'\r\n', b'\n'))
+print('archived', len(list(dest.iterdir())), 'files ->', dest)

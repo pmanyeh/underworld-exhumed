@@ -1,53 +1,53 @@
-block	index	category	source	target_zh_TW	status	context	notes	flags
-1	2	game	The key does not fit.\n	這把鑰匙不合。\n	draft	PoC role: scroll	PoC draft	
-1	5	game	The key unlocks the lock.\n	鑰匙打開了鎖。\n	draft	PoC role: scroll	PoC draft	
-7	83	conversation_common	Bragit	布拉吉特	draft	PoC role: npc_name	PoC draft	showcase
-3651	1	conversation	lad	小伙子	draft	PoC role: template_fragment	PoC draft; native rendering pending	grammar-sensitive,showcase
-3651	2	conversation	lass	姑娘	draft	PoC role: template_fragment	PoC draft; native rendering pending	grammar-sensitive,showcase
-3651	3	conversation	Hail, stranger!  What be thy business?  I have not seen thee in this place before.	你好，陌生人！你來這裡有何貴幹？我以前沒在這地方見過你。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	4	conversation	I am merely exploring the Abyss.	我只是在探索深淵。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	5	conversation	I am attempting to rescue an innocent girl.	我正試著救出一名無辜的女孩。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	6	conversation	I was thrown in here as punishment for a crime I did not commit.	我被丟進這裡，為一樁並非我所犯的罪受罰。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	7	conversation	Exploring, eh?  Ha, that's a good one.  But if thou dost not wish to speak of thy crime, 'tis not my business to ask.\\m	探索，是嗎？哈，這藉口真不錯。不過，你要是不願說自己犯了什麼罪，我也無意過問。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	control-code,showcase
-3651	8	conversation	Ah, a rescue mission, is it?  Should the Baron's guards not be with thee, to aid thee in thy search?  More likely one of them threw thee in here, eh?\\m	啊，是來救人的？男爵的衛兵怎麼沒跟著你，幫忙找人呢？依我看，倒比較像是其中一人把你丟進來的吧？\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	control-code,showcase
-3651	9	conversation	Ah, unjustly imprisoned, art thou?  'Tis the usual story, my @SS1, but that is not to say it may not be true in thy case, I suppose.\\m	啊，你是冤枉入獄的？我的@SS1，大家都這麼說，但也不表示你的話就是假的。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	dynamic-template,control-code,showcase
-3651	10	conversation	Thou needst not be ashamed of thy misfortune, @SS1; thou art in the same pot with all of us now.  If thou art to have a chance of surviving in the Abyss for long, thou must learn the lay of the land.	@SS1，別為自己的遭遇感到羞恥；如今你和我們都在同一條船上了。你若想在深淵裡多活些時日，就得先熟悉這裡的情況。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	dynamic-template,showcase
-3651	11	conversation	Indeed, I would be eager to learn of this area.	的確，我很想多了解這一帶。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	12	conversation	I will be able to manage by myself.	我自己應付得來。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	13	conversation	Perhaps thou wilt.  I have heard many say the same as thee, and a few are still alive today.	也許吧。我聽過許多人說出和你一樣的話，其中倒也有幾個至今還活著。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	14	conversation	Well, what useful information dost thou have?	那麼，你有什麼實用的消息？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	15	conversation	Farewell, then.	那麼，告辭了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	16	conversation	First off, I would suggest picking up anything thou dost find that seems of use.  Items here are scarce enough - thou wouldst be well advised to take what thou can.\n Scavenge all you want, but stealing is ill-advised. Most of the Abyss' inhabitants guard jealously the few possessions that they have.\n Battlesites are the best for scavenging. That's why I'm here - A battle took place here not long ago - a battle between the Goblins and the above-worlders.	首先，我勸你把找到的有用東西都撿起來。這裡的物資十分稀少，能拿多少就拿多少。\n 你儘管搜集散落的東西，但最好別偷竊。深淵裡多數居民都會嚴加看守自己僅有的那點財物。\n 戰場是搜集物資的好地方。我就是為此而來。不久前，哥布林和地面上的人在這裡打了一仗。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	17	conversation	What inhabitants are there?	這裡住著哪些人？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	18	conversation	What was the cause of this battle?	那場戰役是怎麼引起的？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	19	conversation	I do not know.  It is rare that the Baron sends his men into the Abyss.  It must have been important.  Though, by the looks of it, the Goblins defeated them handily.\\m	我不知道。男爵很少派人進入深淵，想必是有要事。不過，看樣子哥布林輕易就打敗了他們。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	control-code,showcase
-3651	20	conversation	The Goblins control most of these upper caves.  Two races there are, the Green and the Gray.  If they do not destroy each other, it is not for lack of trying.\n Be thou especially careful of the Gray Goblins.  I was recently imprisoned by them for trespassing.	哥布林控制著上層洞穴的大部分地區。牠們分成兩族：綠哥布林與灰哥布林。兩族至今還沒消滅彼此，可不是因為不夠賣力。\n 你要特別小心灰哥布林。我前不久才因為闖入牠們的地盤而被關起來。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	21	conversation	It must have been awful!	那一定很可怕！	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	22	conversation	How didst thou escape?	你是怎麼逃出來的？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	23	conversation	My prison cell was evidently a converted storeroom, for it had a stock of useful items, including a long pole.  Using the pole, I was able to reach a button which opened the door to my cell.  I sneaked away and returned to my people.  I do not think I will venture there again.	我的牢房顯然是儲藏室改建的，裡面還放著不少有用的東西，包括一根長竿。我用長竿碰到了開門的按鈕，偷偷溜走，回到自己人那裡。我想，我不會再去那地方冒險了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	24	conversation	And what of the other inhabitants of the Abyss?	深淵裡還有哪些居民？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	25	conversation	Tell me of thy people.	跟我說說你的同伴吧。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	26	conversation	The humans, like thee and myself, have staked out a small area in which we live in relative peace.  Below us are the Mountainmen, and after that I do not know.	像你我這樣的人類，在一小塊地方落腳，日子還算平靜。我們下面住著山民，再往下我就不清楚了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	27	conversation	Where is this enclave of humans?	這個人類聚落在哪裡？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	28	conversation	Are all races but ours hostile?	除了人類以外，其他種族都懷有敵意嗎？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	29	conversation	A nasty place this is, thou canst be certain of that.  In the parts of the upper caves, uninhabited by Goblins, there are giant spiders and worms.  Our small group is one of the few devoted to peace.\\m	這是個險惡的地方，這點你大可相信。上層洞穴裡沒有哥布林佔據的地方，也有巨大的蜘蛛和蠕蟲。我們這一小群人，是少數崇尚和平的居民之一。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	control-code,showcase
-3651	30	conversation	Thou canst find my people by going west from the entrance to the Abyss, and then north. There is a small chasm to jump over, but thou dost seem to be a dextrous @SS1.  Past the chasm is the sign of civilization everywhere throughout the Abyss: the Banner of Cabirus, marked with an ankh, the sign of the Avatar.\n Outside of areas marked with the Banner, thou shouldst watch thyself most carefully.  Most creatures who do not respect Cabirus' legacy are not particularly friendly.	從深淵入口往西走，再往北，就能找到我的同伴。途中有一道小裂谷要跳過，不過你看起來是個身手靈活的@SS1。過了裂谷，就會看到深淵各處代表文明的標誌：卡比魯斯的旗幟，上面繪著聖者的符號——生命十字。\n 在沒有旗幟標示的地方，你可得格外小心。多數不尊重卡比魯斯遺志的生物，都不怎麼友善。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	dynamic-template,showcase
-3651	31	conversation	Perhaps I will seek this area out.	也許我會去找找這地方。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	32	conversation	I thank thee for thy help.	謝謝你的幫助。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	33	conversation	Good luck in thy travels.	祝你旅途順利。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	34	conversation	Greetings again!  I am glad to see that thou hast lived this long. It is not easy for one to survive in the Abyss without the help of others.	又見面了！真高興你還活著。在深淵裡，沒有他人的幫助，要活下來可不容易。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	35	conversation	It is easy for me.  I have no need of thy help.	對我來說很容易。我不需要你的幫助。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	36	conversation	Well then, what helpful information canst thou tell me?	那麼，你有什麼實用的消息可以告訴我？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	37	conversation	Greetings!  Hast thou visited our group?	你好！你去過我們的聚落了嗎？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	38	conversation	Nay, I have not had the time.	還沒有，我抽不出時間。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	39	conversation	I have not been able to find it.	我一直找不到。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	40	conversation	Yes, I have.	是的，我去過了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	41	conversation	Well, 'tis thy decision.  I am sure they would welcome thee.	好吧，這由你決定。我相信他們會歡迎你的。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	42	conversation	Go west from the entrance chamber, past a door, and then north over a chasm. Remember, the Banner of Cabirus -- with the mark of the ankh on it -- is the mark of civilization in the Abyss.	從入口的大廳往西走，穿過一道門，再往北跳過裂谷。記住，卡比魯斯的旗幟——上面繪有生命十字——就是深淵裡文明的標誌。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	43	conversation	I am glad to hear it.  If thou growest weary of thy travels, thou art welcome to stay with us.	很高興聽你這麼說。你若厭倦了四處奔波，隨時歡迎來和我們一起住。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	44	conversation	I thank thee kindly.	非常感謝。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	45	conversation	I thank thee, but my destiny lies elsewhere.	謝謝你，不過我的命運另有安排。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	46	conversation	Ah, 'tis thee again.  Hast thou decided to stay with us?	啊，又是你。決定留下來和我們一起住了嗎？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	47	conversation	I think not.	我想還是不了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	48	conversation	No, I have much to do.	不，我還有許多事要做。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	49	conversation	Perhaps I will, for a time.	也許我會暫時住上一陣子。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+block	index	category	source_hash	target_zh_TW	status	context	notes	flags
+1	2	game	31d190a0704d9efed5116d57a04a58851200e61f0f37b9989eac7f8318288711	這把鑰匙不合。\n	draft	PoC role: scroll	PoC draft	
+1	5	game	c1423871b6aafb4c9ec8cd95c2ee839520b952396990ebeb4c5e841e46ff0c79	鑰匙打開了鎖。\n	draft	PoC role: scroll	PoC draft	
+7	83	conversation_common	6e2438a46d02f906a83dfef80fd9d898f2faf4ddfbd7904b7b292cfa27aad77b	布拉吉特	draft	PoC role: npc_name	PoC draft	showcase
+3651	1	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d	小伙子	draft	PoC role: template_fragment	PoC draft; native rendering pending	grammar-sensitive,showcase
+3651	2	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c	姑娘	draft	PoC role: template_fragment	PoC draft; native rendering pending	grammar-sensitive,showcase
+3651	3	conversation	d432ede95023399e87ade8c791956bc66bad5b0da3bbbbf1bd237a6b70e7d464	你好，陌生人！你來這裡有何貴幹？我以前沒在這地方見過你。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	4	conversation	d3bbed82c89b0532f5f1c1c724cf04ad7cc2b0badfcb978542d9d21ef8f6ad34	我只是在探索深淵。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	5	conversation	e444a0be5971517562e708be0465fbd6e9e8af02ee8e1e40d97680970444935b	我正試著救出一名無辜的女孩。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	6	conversation	406eb93854960bf58cec875bbc908dda3b005c414dd21ba2aaca4c5cb3d67253	我被丟進這裡，為一樁並非我所犯的罪受罰。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	7	conversation	4b0ab750c6425bd9313e76bf30ca943667d78921b6e34769171fec7766274544	探索，是嗎？哈，這藉口真不錯。不過，你要是不願說自己犯了什麼罪，我也無意過問。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	control-code,showcase
+3651	8	conversation	c3e0b1a49600381795ad7460b35497e81d153d7661c4fe78c49f7ceb93524a5d	啊，是來救人的？男爵的衛兵怎麼沒跟著你，幫忙找人呢？依我看，倒比較像是其中一人把你丟進來的吧？\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	control-code,showcase
+3651	9	conversation	6a68b078d8e6641664000bea0d186b7b3f67497b44b83994ac3257d1cf46f10a	啊，你是冤枉入獄的？我的@SS1，大家都這麼說，但也不表示你的話就是假的。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	dynamic-template,control-code,showcase
+3651	10	conversation	287bfb9bbe6508004c771cdc12eb23cbc1cf00544fbd8bbb016ee4778a86b86e	@SS1，別為自己的遭遇感到羞恥；如今你和我們都在同一條船上了。你若想在深淵裡多活些時日，就得先熟悉這裡的情況。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	dynamic-template,showcase
+3651	11	conversation	98c755504300666080e79c5e012dab18166ed37ff92bd6bd919ce4eeb692b19a	的確，我很想多了解這一帶。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	12	conversation	f651b98088243754179170649dc8ca8df2994a078a4d15e9c08b685301943e2e	我自己應付得來。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	13	conversation	f91b1089d14969662ad795fd43c10e159af7a5f1b088e49e7e71524ac8d36ca0	也許吧。我聽過許多人說出和你一樣的話，其中倒也有幾個至今還活著。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	14	conversation	eae088b57f10a9bc1b437b495a300a75b7d75cfe5bada8aba25d27e7f96d1b24	那麼，你有什麼實用的消息？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	15	conversation	f294f1ce8c1f695441c8203ae6d4269dc07c676c102297d0b686df0ae3530324	那麼，告辭了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	16	conversation	48bfdac64e2528a401ef1709916577d75bc263b9625f89e24202d6efd16b8633	首先，我勸你把找到的有用東西都撿起來。這裡的物資十分稀少，能拿多少就拿多少。\n 你儘管搜集散落的東西，但最好別偷竊。深淵裡多數居民都會嚴加看守自己僅有的那點財物。\n 戰場是搜集物資的好地方。我就是為此而來。不久前，哥布林和地面上的人在這裡打了一仗。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	17	conversation	f30e65846e68f1566d1a5c5500895fefd440f00bd7bfdd0ac217d27ff363b400	這裡住著哪些人？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	18	conversation	c6f6e2e6af93327e70e7fde5287ef3dbbc1129fc756ba2d2f966e1e297b9dc56	那場戰役是怎麼引起的？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	19	conversation	3ad873af13e29a0a4c85be2c1895e3d7e9f300b8a3c5745fe7c2a3a44ec052b4	我不知道。男爵很少派人進入深淵，想必是有要事。不過，看樣子哥布林輕易就打敗了他們。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	control-code,showcase
+3651	20	conversation	b7b3861928ed1dbb835f6b869b206e7b59c3a8c2cce4e988d3696671eb0dd7db	哥布林控制著上層洞穴的大部分地區。牠們分成兩族：綠哥布林與灰哥布林。兩族至今還沒消滅彼此，可不是因為不夠賣力。\n 你要特別小心灰哥布林。我前不久才因為闖入牠們的地盤而被關起來。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	21	conversation	0056e555e3c6b462bda9b4579af8bb7957667b790d4b7b9af4f9718d954ee3d0	那一定很可怕！	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	22	conversation	178d55e8373c3bbb3d20c1de1ba6b4c14ffd749d359fdb92a858dbfa9431a0be	你是怎麼逃出來的？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	23	conversation	46dcde194eef16cf91b5514c3c8e5b600b3bb4b45f2f1de15f4a7d0626321870	我的牢房顯然是儲藏室改建的，裡面還放著不少有用的東西，包括一根長竿。我用長竿碰到了開門的按鈕，偷偷溜走，回到自己人那裡。我想，我不會再去那地方冒險了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	24	conversation	1210f45235107ed058c6763a560dfb3e4ca138517485addf77ad10ccdcf93617	深淵裡還有哪些居民？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	25	conversation	3550fe18549c7476b9633171e86e91e6952cdcd45333a688e55676f5b7ecea54	跟我說說你的同伴吧。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	26	conversation	8d07d42ef1e729f645dccfc2300b4376716ccd6636b6836cc7fe0617398feab2	像你我這樣的人類，在一小塊地方落腳，日子還算平靜。我們下面住著山民，再往下我就不清楚了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	27	conversation	74d26abc289ff28f4f2e5433bfa4574debbcf33ca37c0a3184eb1c839470477d	這個人類聚落在哪裡？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	28	conversation	3771dda2a82d04b6fa30e01d5ef57b6665e751c861cb54b21402812048c536ba	除了人類以外，其他種族都懷有敵意嗎？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	29	conversation	f82c0a7c19e021e6a2ed0dd70674b87b3ece4532e58fcef56a74c4da16955165	這是個險惡的地方，這點你大可相信。上層洞穴裡沒有哥布林佔據的地方，也有巨大的蜘蛛和蠕蟲。我們這一小群人，是少數崇尚和平的居民之一。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	control-code,showcase
+3651	30	conversation	65489bc43446662b97e0d80366453c6a52650148beddae803aebd9054f6ba2f2	從深淵入口往西走，再往北，就能找到我的同伴。途中有一道小裂谷要跳過，不過你看起來是個身手靈活的@SS1。過了裂谷，就會看到深淵各處代表文明的標誌：卡比魯斯的旗幟，上面繪著聖者的符號——生命十字。\n 在沒有旗幟標示的地方，你可得格外小心。多數不尊重卡比魯斯遺志的生物，都不怎麼友善。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	dynamic-template,showcase
+3651	31	conversation	0c8abcb83b369001671ca04c40d733ebeb46d4a97fa03efbaa2042ea7fe97890	也許我會去找找這地方。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	32	conversation	f577e1ed0244a18d2516bc49148c045350cc29411a8a8e4ac6fbe3e327b89d73	謝謝你的幫助。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	33	conversation	a5c93821aa4eb3b61599193f9d6d5c9260a1d8a256899a6a771d1312054cb125	祝你旅途順利。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	34	conversation	3262ea83d678ed279e52c2ddee60e28b0f50c10a12c7c2c529e9f769fabef91d	又見面了！真高興你還活著。在深淵裡，沒有他人的幫助，要活下來可不容易。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	35	conversation	447cfa7af99e676b25b6685c7d23d4505f72238efbff1334641647b587d30221	對我來說很容易。我不需要你的幫助。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	36	conversation	cb11e9e960bf0d89d4889026b8bbe853792a49699c12186127ee7f91e8319ac4	那麼，你有什麼實用的消息可以告訴我？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	37	conversation	3f2f9837335273678f3f7163c839246d5bd1eff5b9b952a3ab540fa3c246b919	你好！你去過我們的聚落了嗎？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	38	conversation	e37bdceef0668460d85654fa74609aa547f32a93a1e50d65b624ca5a3576c0b4	還沒有，我抽不出時間。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	39	conversation	b6fef13821e9ddfc272a063c64bcba2e8c7ec1b2def4e106fda65f4cc22c950a	我一直找不到。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	40	conversation	a7700a56086f054423bba189f2a6d5cd1855f7fd86d05e93b10002e5a55cf991	是的，我去過了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	41	conversation	0a9f4dfcd023a98af0c09b61b670bf76fade8a210ef8df017f9389ad8209573d	好吧，這由你決定。我相信他們會歡迎你的。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	42	conversation	4d5de8d196831edd37bbab7051024999b97c1534d2b6b2efcecb9c9b196887ad	從入口的大廳往西走，穿過一道門，再往北跳過裂谷。記住，卡比魯斯的旗幟——上面繪有生命十字——就是深淵裡文明的標誌。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	43	conversation	f3971dc44134d64ab7ec2a5a12da5df91ee524a0a109cbe8fda79c7cf227ba23	很高興聽你這麼說。你若厭倦了四處奔波，隨時歡迎來和我們一起住。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	44	conversation	df5aeddb9ebe333eeaa6065ad9c492a00c6fc524b8b418f2e29d213cca8e7906	非常感謝。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	45	conversation	b0fcdbe1599b1ed35b61274aff17cf68f8bd38acf537efaeda74203027f7ab5e	謝謝你，不過我的命運另有安排。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	46	conversation	c6d6db1526baaf3d28d75da14776e26fe0e74280181bd6b439cc27bd0b06e80a	啊，又是你。決定留下來和我們一起住了嗎？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	47	conversation	ae72c2dd0a88d8bebaa04c77a0d42dc69b09e22e0cc2808bd600d7d179eaaeff	我想還是不了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	48	conversation	22623848eed4ddc4f036497b7fb851e0e0a565b595fd9ea409bd0f74fc28c750	不，我還有許多事要做。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
+3651	49	conversation	6c39070a4a850159ffb2f38d4d8781eb3cd56aa9dc56ea4929cb603f87320ff1	也許我會暫時住上一陣子。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase

@@ -19,7 +19,13 @@ python3 tools/i18n/l10n.py export --pak "$UW1_DATA/DATA/STRINGS.PAK" --cnv "$UW1
 在工作表只改 `target_zh_TW`、`status`、`context`、`notes`、`flags` 五欄，其餘欄位是唯讀參考
 （`auto_context` 會標出對話 NPC，`previous_source`／`next_source` 是前後條目，
 `runtime_hits`／`runtime_events` 來自實際遊玩 trace）。改完用 `l10n.py import ... workbook.tsv` 合併，
-再 `validate`。也可直接編輯 `master.tsv`，之後執行 `l10n.py normalize` 整理排序與 flags。
+再 `validate`。import 會比對工作表的英文與目前玩家資料，不同就整份拒絕（過期工作表），
+相同才寫入該列的 `source_hash`。也可直接編輯 `master.tsv` 的譯文欄，之後執行
+`l10n.py normalize --pak ...` 整理排序與 flags；新增列時 `source_hash` 留空，normalize 會依資料補上。
+
+**Source drift**：遊戲資料的英文改變時，`validate`／`build` 回報 `SOURCE_DRIFT` 並失敗，不會自動更新 hash。
+匯出工作表時這些列的 `source_drift` 欄為 `yes`；審閱譯文後把它清空再 import，才會記錄新的 hash。
+（或在審閱後執行 `normalize --pak ... --accept-source-drift` 一次接受全部。）
 
 ## 欄位
 
@@ -27,7 +33,7 @@ python3 tools/i18n/l10n.py export --pak "$UW1_DATA/DATA/STRINGS.PAK" --cnv "$UW1
 | --- | --- |
 | `block`, `index` | 十進位、無前導 0；block 0 一律寫成實際的對話／過場 block，`index` ≤ 511 |
 | `category` | 由 block 決定，`normalize` 會自動填 |
-| `source` | 英文原文，必須與玩家資料完全相同；不同即 **source drift**，build 會拒絕 |
+| `source_hash` | 英文原文的 SHA-256（遊戲解出的 CP437 bytes），**repository 不存英文原文**；與玩家資料不符即 **SOURCE_DRIFT**，build 會拒絕 |
 | `target_zh_TW` | 譯文；UTF-8，不可含 NUL、tab 或 CR（換行用 `\n`） |
 | `status` | `untranslated`／`draft`／`reviewed`／`approved`／`blocked` |
 | `context`, `notes` | 給譯者／審稿者的說明；不影響遊戲 |
@@ -63,8 +69,23 @@ python3 tools/i18n/l10n.py export --pak "$UW1_DATA/DATA/STRINGS.PAK" --cnv "$UW1
 
 ## 處理分類（coverage report 用）
 
-工具依原文自動給每個條目一個 handling，人工 flags 只能讓條目變成「特殊處理」：
-`direct`（可直接翻）、`template`、`object-name`、`grammar`（片段／形容詞／貼圖描述）、
-`bitmap-ui`（角色建立與過場，以低解析 bitmap 字型繪製，P12）、`hardcoded`、`debug-report`
-（block 24 的 dungeon report，屬除錯用），以及不計入可翻數量的 `empty` 與 `unaddressable`。
-這是第一版靜態分類，人工審閱後可調整規則。
+每個條目有一個 **scope**：`production`（玩家版中文化範圍，完成率的分母）、`debug`
+（block 24 的 dungeon report：遊戲程式從不讀取，仍保留在 inventory，可翻但不計入完成率）、
+`empty`、`unaddressable`。
+
+以及一個 **handling**，回答「它現在能不能直接走既有的 HD 顯示路徑」。
+人工 flags 只能讓條目變成特殊處理：
+
+| handling | 意義 |
+| --- | --- |
+| `direct` | 解出的字串原樣送到 scroll，HD 路徑可直接顯示譯文 |
+| `template` | 含 BABL `@`，留待 P11 |
+| `object-name` | 冠詞／複數語法的物品與生物名，留待 P11 |
+| `grammar` | 被複製或拼接後才顯示的片段（形容詞、貼圖描述、交易估價片段、`... of <法術>`），HD 路徑目前會退回英文 |
+| `bitmap-ui` | 以 `string_to_screen` 畫在低解析畫面：角色建立、過場、主選單讀檔訊息、結局畫面、對話標題的 NPC 名稱，留待 P12 |
+| `input-token` | 咒語（mantra）：與玩家鍵入的文字比對，翻譯會讓咒語失效 |
+| `hardcoded`、`needs-context` | 由人工 flags 指定 |
+| `debug-report` | block 24 |
+
+規則與依據的程式位置見 [Phase 9 report](../../docs/i18n/LOCALIZATION-PRODUCTION.md#p9-review-fixup--pre-p10-gate)。
+匯出時可用 `--scope production` 只取玩家範圍。

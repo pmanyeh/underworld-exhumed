@@ -1,0 +1,61 @@
+"""P9 review fixup: inventory/coverage after reclassification, and the per-key diff
+against the P9 inventory (keys and classes only; no English text)."""
+import csv
+from collections import Counter
+import json
+from pathlib import Path
+import subprocess
+import sys
+
+workspace = Path('D:/git/uw1-native-poc')
+root = workspace / 'underworld-exhumed/uw1'
+out = root / 'build/i18n/p9-fixup'
+data = workspace / '.poc-private/game/UW/DATA'
+py = sys.executable
+D = ['--pak', str(data / 'STRINGS.PAK'), '--cnv', str(data / 'CNV.ARK')]
+traces = []
+for path in sorted((root / 'build/replay/verify-i18n').glob('*/port/i18n-trace.jsonl')):
+    traces += ['--trace', str(path)]
+for command in (['inventory', *D, '--out', str(out)], ['coverage', *D, *traces, '--out', str(out)]):
+    subprocess.run([py, 'tools/i18n/l10n.py', *command], cwd=root, check=True, stdout=subprocess.DEVNULL)
+(out / 'coverage.json').replace(out / 'coverage-after.json')
+(out / 'coverage.md').replace(out / 'coverage-after.md')
+
+
+def load(path):
+    with path.open(encoding='utf-8', newline='') as stream:
+        return {(int(r['block']), int(r['index'])): r for r in csv.DictReader(stream, delimiter='\t')}
+
+
+before, after = load(out / 'inventory-before.tsv'), load(out / 'inventory.tsv')
+sys.path.insert(0, str(root / 'tools/i18n'))
+import l10n
+changes, transitions = [], Counter()
+for key in sorted(after):
+    old, new = before[key]['handling'], after[key]['handling']
+    if old != new:
+        verified = l10n.rule(*key)
+        transitions[f'{old}->{new}'] += 1
+        changes.append({'block': key[0], 'index': key[1], 'category': after[key]['category'],
+                        'before': old, 'after': new, 'scope': after[key]['scope'],
+                        'reason': verified[1] if verified else 'heuristic'})
+count = lambda rows, h: sum(r['handling'] == h for r in rows.values())
+cb = json.loads((out / 'coverage-before.json').read_text(encoding='utf-8'))
+ca = json.loads((out / 'coverage-after.json').read_text(encoding='utf-8'))
+report = {
+    'note': 'handling of the inventory (no manual flags); coverage adds master flags (lad/lass grammar-sensitive)',
+    'inventory_handling_before': dict(sorted(Counter(r['handling'] for r in before.values()).items())),
+    'inventory_handling_after': dict(sorted(Counter(r['handling'] for r in after.values()).items())),
+    'direct_before': count(before, 'direct'), 'direct_after': count(after, 'direct'),
+    'bitmap_ui_before': count(before, 'bitmap-ui'), 'bitmap_ui_after': count(after, 'bitmap-ui'),
+    'coverage_direct_before': cb['total']['direct'], 'coverage_direct_after': ca['total']['direct'],
+    'coverage_special_before': cb['total']['special'], 'coverage_special_after': ca['total']['special'],
+    'production_translatable_before': cb['total']['direct'] + cb['total']['special'],
+    'production_translatable_after': ca['production']['translatable'],
+    'debug_excluded': ca['all_inventory']['debug'],
+    'transitions': dict(sorted(transitions.items())), 'reclassified_count': len(changes),
+    'reclassified_direct_to_bitmap_ui': transitions['direct->bitmap-ui'],
+    'reclassified_keys': changes,
+}
+(out / 'classification-diff.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+print(json.dumps({k: v for k, v in report.items() if k != 'reclassified_keys'}, indent=2))

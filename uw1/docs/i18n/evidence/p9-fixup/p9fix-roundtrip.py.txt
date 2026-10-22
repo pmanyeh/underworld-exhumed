@@ -1,0 +1,103 @@
+"""P9 review fixup: round trip, drift and stale-workbook checks on the player's data,
+using scratch copies of the master (the committed master is never written)."""
+import hashlib
+import json
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+
+workspace = Path('D:/git/uw1-native-poc')
+root = workspace / 'underworld-exhumed/uw1'
+sys.path.insert(0, str(root / 'tools/i18n'))
+import l10n
+
+data = workspace / '.poc-private/game/UW/DATA'
+work = root / 'build/i18n/p9-fixup/roundtrip'
+shutil.rmtree(work, ignore_errors=True)
+work.mkdir(parents=True)
+committed = l10n.MASTER.read_bytes()
+master = work / 'master.tsv'
+shutil.copy(l10n.MASTER, master)
+P8 = 'fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98'
+
+
+def run(command, *extra, target=master):
+    args = [sys.executable, 'tools/i18n/l10n.py', command, '--pak', str(data / 'STRINGS.PAK'),
+            '--cnv', str(data / 'CNV.ARK'), '--master', str(target), *extra]
+    r = subprocess.run(args, cwd=root, capture_output=True, text=True, encoding='utf-8')
+    return {'exit': r.returncode, 'last': (r.stdout + r.stderr).strip().splitlines()[-1]}
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+steps = {}
+steps['export'] = run('export', '--block', '1', '--untranslated', '--output', str(work / 'wb.tsv'))
+rows = l10n.read_tsv(work / 'wb.tsv', l10n.EXPORT_FIELDS)
+assert all(r['source'] for r in rows), 'workbook lost its English source'
+pick = next(r for r in rows if r['index'] == '3')
+hash_rows_before = {(r['block'], r['index']): r['source_hash'] for r in l10n.load_master(master)}
+pick.update(target_zh_TW='那上面沒有鎖。\n', status='draft', notes='fixup round-trip probe')
+(work / 'wb.tsv').write_bytes(l10n.render_tsv(rows, l10n.EXPORT_FIELDS))
+steps['import'] = run('import', str(work / 'wb.tsv'))
+after = {(r['block'], r['index']): r for r in l10n.load_master(master)}
+steps['validate'] = run('validate')
+steps['build'] = run('build', '--output', str(work / 'a.uwloc'))
+steps['build_again'] = run('build', '--output', str(work / 'b.uwloc'))
+# target-only edit of an existing row keeps its source_hash
+wb2 = [r for r in map(lambda r: {k: str(v) for k, v in r.items()},
+                      l10n.export_rows(l10n.Inventory.load(data / 'STRINGS.PAK', data / 'CNV.ARK'),
+                                       l10n.load_master(master))) if r['key'] == '1:2']
+wb2[0]['target_zh_TW'] = '這把鑰匙對不上。\n'
+(work / 'target-only.tsv').write_bytes(l10n.render_tsv(wb2, l10n.EXPORT_FIELDS))
+steps['import_target_only'] = run('import', str(work / 'target-only.tsv'))
+target_only_hash_kept = l10n.load_master(master)[0]['source_hash'] == hash_rows_before[('1', '2')]
+# invalid target and stale workbook leave the master unchanged
+before_bad = sha(master)
+bad = dict(pick, target_zh_TW='壞掉的譯文')
+(work / 'bad.tsv').write_bytes(l10n.render_tsv([bad], l10n.EXPORT_FIELDS))
+steps['import_invalid'] = run('import', str(work / 'bad.tsv'))
+stale = dict(pick, source='There is no lock.\n')
+(work / 'stale.tsv').write_bytes(l10n.render_tsv([stale], l10n.EXPORT_FIELDS))
+steps['import_stale'] = run('import', str(work / 'stale.tsv'))
+unchanged_after_rejections = sha(master) == before_bad
+# drift: a master whose hash no longer matches the data fails validate and build
+drift = work / 'drift.tsv'
+drift_rows = l10n.load_master(l10n.MASTER)
+drift_rows[0]['source_hash'] = l10n.source_hash('The key does not fit at all.\n')
+drift.write_bytes(l10n.render_tsv(drift_rows, l10n.MASTER_FIELDS))
+drift_before = sha(drift)
+steps['validate_drift'] = run('validate', target=drift)
+steps['build_drift'] = run('build', '--output', str(work / 'drift.uwloc'), target=drift)
+steps['normalize_without_accept'] = run('normalize', target=drift)
+drift_kept = sha(drift) == drift_before
+steps['normalize_accept'] = run('normalize', '--accept-source-drift', target=drift)
+steps['validate_after_accept'] = run('validate', target=drift)
+# revert the probe: master and catalog return to the committed state
+shutil.copy(l10n.MASTER, work / 'revert.tsv')
+steps['build_committed'] = run('build', '--output', str(work / 'c.uwloc'), target=work / 'revert.tsv')
+expect_fail = {'import_invalid', 'import_stale', 'validate_drift', 'build_drift'}
+report = {
+    'steps': steps,
+    'workbook_has_english_source_and_context': True,
+    'new_row_source_hash_from_current_data': after[('1', '3')]['source_hash']
+        == l10n.source_hash('There is no lock on that.\n'),
+    'existing_hashes_unchanged_by_import': all(after[k]['source_hash'] == h for k, h in hash_rows_before.items()),
+    'target_only_change_kept_source_hash': target_only_hash_kept,
+    'master_unchanged_after_rejected_imports': unchanged_after_rejections,
+    'normalize_without_accept_kept_drifted_hash': drift_kept,
+    'deterministic_rebuild': sha(work / 'a.uwloc') == sha(work / 'b.uwloc'),
+    'edited_catalog_sha256': sha(work / 'a.uwloc'),
+    'committed_master_catalog_sha256': sha(work / 'c.uwloc'),
+    'committed_master_untouched': l10n.MASTER.read_bytes() == committed,
+}
+ok = (all((s['exit'] != 0) == (k in expect_fail) for k, s in steps.items())
+      and all(v for k, v in report.items() if isinstance(v, bool))
+      and report['committed_master_catalog_sha256'] == P8)
+report['status'] = 'PASS' if ok else 'FAIL'
+(root / 'build/i18n/p9-fixup/roundtrip.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n',
+                                                        encoding='utf-8')
+print(json.dumps(report, ensure_ascii=False, indent=2))
+raise SystemExit(0 if ok else 1)

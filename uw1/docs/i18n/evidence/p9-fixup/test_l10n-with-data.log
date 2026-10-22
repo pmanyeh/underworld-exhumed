@@ -1,0 +1,36 @@
+test_compare_baseline (__main__.BaselineTests.test_compare_baseline) ... ok
+test_deterministic_and_status_filtered (__main__.CatalogTests.test_deterministic_and_status_filtered) ... ok
+test_layout_matches_runtime_contract (__main__.CatalogTests.test_layout_matches_runtime_contract) ... ok
+test_context (__main__.ClassificationTests.test_context) ... ok
+test_derived_flags (__main__.ClassificationTests.test_derived_flags) ... ok
+test_handling_classes (__main__.ClassificationTests.test_handling_classes) ... ok
+test_scope (__main__.ClassificationTests.test_scope) ... ok
+test_verified_renderer_rules (__main__.ClassificationTests.test_verified_renderer_rules) ... ok
+test_committed_master_holds_no_english (__main__.DatasetTests.test_committed_master_holds_no_english) ... ok
+test_committed_master_round_trips_byte_for_byte (__main__.DatasetTests.test_committed_master_round_trips_byte_for_byte) ... ok
+test_normalize_is_canonical_and_idempotent (__main__.DatasetTests.test_normalize_is_canonical_and_idempotent) ... ok
+test_poc_catalog_equals_p8_with_player_data (__main__.DatasetTests.test_poc_catalog_equals_p8_with_player_data) ... ok
+test_poc_migration_is_lossless (__main__.DatasetTests.test_poc_migration_is_lossless) ... ok
+test_row_rules (__main__.DatasetTests.test_row_rules) ... ok
+test_rules_without_player_data_check_target_text_only (__main__.DatasetTests.test_rules_without_player_data_check_target_text_only) ... ok
+test_source_drift_and_missing_key_need_inventory (__main__.DatasetTests.test_source_drift_and_missing_key_need_inventory) ... ok
+test_strict_reader (__main__.DatasetTests.test_strict_reader) ... ok
+test_trailing_pause_must_stay_trailing (__main__.DatasetTests.test_trailing_pause_must_stay_trailing) ... ok
+test_valid_rows (__main__.DatasetTests.test_valid_rows) ... ok
+test_drifted_row_needs_reviewed_reimport (__main__.RoundTripTests.test_drifted_row_needs_reviewed_reimport) ... ok
+test_export_edit_import (__main__.RoundTripTests.test_export_edit_import) ... ok
+test_any_source_change_is_a_different_hash (__main__.SourceHashTests.test_any_source_change_is_a_different_hash) ... ok
+test_build_rejects_drift_without_updating (__main__.SourceHashTests.test_build_rejects_drift_without_updating) ... ok
+test_canonical_bytes_are_the_games_cp437 (__main__.SourceHashTests.test_canonical_bytes_are_the_games_cp437) ... ok
+test_deterministic_known_vector (__main__.SourceHashTests.test_deterministic_known_vector) ... ok
+test_explicit_accept_records_current_hash (__main__.SourceHashTests.test_explicit_accept_records_current_hash) ... ok
+test_stale_workbook_rejected_master_untouched (__main__.SourceHashTests.test_stale_workbook_rejected_master_untouched) ... ok
+test_target_only_change_keeps_hash_and_builds (__main__.SourceHashTests.test_target_only_change_keeps_hash_and_builds) ... ok
+test_coverage_matrix (__main__.TraceCoverageTests.test_coverage_matrix) ... ok
+test_debug_translation_never_counts_toward_production (__main__.TraceCoverageTests.test_debug_translation_never_counts_toward_production) ... ok
+test_trace_aggregation_and_rejection (__main__.TraceCoverageTests.test_trace_aggregation_and_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.409s
+
+OK

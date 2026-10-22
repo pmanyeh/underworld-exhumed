@@ -2,6 +2,10 @@
 
 **Native Acceptance Gate P9：PASS（依計劃 v2.3），2026-10-23。停在 P9，等待人工審閱；未開始 P10。**
 
+> **後續修正：**人工審閱後的 [P9 Review Fixup / Pre-P10 Gate](#p9-review-fixup--pre-p10-gate) 已把 master 的
+> `source` 英文欄改為 `source_hash`、修正分類，並以 production scope 計算完成率。下方 P9 原始段落保留當時的
+> schema 與數字作為歷史紀錄；目前的 schema 與 coverage 以該節為準。
+
 本階段建立大量翻譯前的 production pipeline：正式 master dataset、全量 inventory 重新核對、
 validators、deterministic catalog build、coverage matrix、runtime hit/miss/fallback trace、
 translator/QA export 與可重跑的 round-trip。**不是大量翻譯 Phase**：譯文仍是 PoC 的 52 + 1 筆草稿，
@@ -241,5 +245,156 @@ movement 15/15；blackbox 22/22；map notes 4/4。
 
 本機重跑用的 helper（含本機路徑）保存為 evidence 中的 `p9-*.py.txt`；英文工作表、完整 inventory、
 traces、recordings 與 catalog 只留在 ignored `build/`。
+
+**STOPPED HERE. Phase 10 was not started.**
+
+---
+
+## P9 Review Fixup / Pre-P10 Gate
+
+**P9_REVIEW_FIXUP：RESULT_PLACEHOLDER，2026-10-23。** 人工審閱 P9 後、正式大量翻譯前的 production-safety
+修正，只處理三件事：master 不再保存英文、修正 coverage classification、debug-only 文字不計入完成率。
+沒有新增翻譯、沒有開始 P10、BABL、grammar 或 HD UI；沒有改 runtime C、Exhume、gameplay、save format；
+`zh-tw-native-p9` tag 不動；Showcase recorder（`record_showcase.py`）保持 **PAUSED**，未修改、未執行。
+Evidence：[evidence/p9-fixup](evidence/p9-fixup/)。
+
+### 為什麼移除 committed English source
+
+P9 的 `master.tsv` 每一列都存英文 `source`。PoC 只有 52 列，但 P10 起每譯一列就多提交一段英文，
+最後 repository 會逐步累積成接近完整的 UW1 英文文字庫。Drift 檢查只需要知道原文「是否相同」，不需要原文本身。
+
+### `source_hash`
+
+```text
+source_hash = SHA-256( 遊戲解出的原文 bytes )，64 個小寫 hex
+```
+
+原文 bytes 就是 `STRINGS.PAK` 經 `GAMESTRN.C` 規則解出的 C string：第一個 NUL 結束、最多 511 bytes、
+不做任何 trim、大小寫、換行或 Unicode normalization。工具以 CP437 把它解成文字，`source_hash` 再以 CP437
+編回同一組 bytes；這也是 catalog 存放、runtime 逐字比對的那組 bytes，所以比 UTF-8 重新編碼更直接。
+目前資料全是 ASCII，兩者結果相同。相同的合法資料一定得到相同 hash；任何一個 byte 不同就是不同 hash。
+
+### P10-ready master schema
+
+```text
+block  index  category  source_hash  target_zh_TW  status  context  notes  flags
+```
+
+- Status：`untranslated`、`draft`、`reviewed`、`approved`、`blocked`；有譯文且 `draft／reviewed／approved` 才 pack，`blocked` 不 pack。
+- Flags 不變：`dynamic-template`、`object-name`、`control-code`（自動）、`grammar-sensitive`、`hardcoded-related`、`showcase`、`needs-context`（人工）。
+- `build` 需要玩家的 `STRINGS.PAK`：catalog 的英文 bytes 從資料讀出，逐列核對 `source_hash` 後才 pack。
+- `literals.tsv` 不變：它的 `source` 是本 repository C 程式碼中的字串，不是遊戲資料。
+
+### Migration
+
+52 列逐列確認舊 `source` 與目前資料完全相同後，改存其 hash；譯文、status、context、notes、flags 全部不變
+（[migration.json](evidence/p9-fixup/migration.json)）。
+
+| 項目 | 結果 |
+| --- | --- |
+| master rows | 52 → 52 |
+| committed English source | 移除（master 只剩 hash 與中文／metadata） |
+| catalog | 前後皆 `fd133b9a159b10e3…dff98`，52 entries、8,990 bytes，**完全相同** |
+
+歷史 commit、`zh-tw-native-p9` tag 與 P1–P9 evidence 不改寫；新 schema 從目前的 master 開始。
+
+### 譯者 workbook、import 與 drift
+
+- `export` 仍從玩家資料即時產生含英文的工作表：`source`、`previous_source`、`next_source`、`auto_context`、
+  新的 `scope` 與 `source_drift` 欄。工作表只在 ignored `build/`，不提交。
+- `import` 先比對工作表的 `source` 與**目前**資料，任何一列不同就整份失敗，master 不變（stale workbook）；
+  通過後才寫入該列的 `source_hash`。只改譯文不會改 hash。
+- `validate --pak`／`build` 對每列重算 hash，不同就回報 `SOURCE_DRIFT` 並失敗；不會自動更新 hash。
+- 接受新原文只有兩條明確路徑：把工作表中標為 `source_drift=yes` 的列審閱後清空該欄再 import；
+  或審閱後執行 `normalize --pak … --accept-source-drift`。一般 `normalize` 會保留舊 hash。
+- 沒有遊戲資料時（CI），`validate` 只檢查欄位、hash 格式與譯文文字本身。
+
+### Classification audit（string_to_screen）
+
+分類原則改為回答：**這個字串現在能不能直接走既有的 HD 顯示路徑？**HD scroll 以 decoded ring pointer
+找回譯文，所以被 `str_copy`／`str_cat` 拼接後才顯示，或由 `string_to_screen` 畫在 bitmap 畫面的字串都不能。
+逐一檢查 Native UW1 中所有 `string_to_screen` 呼叫與其字串來源：
+
+| 呼叫位置 | 畫出的內容 | 結論 |
+| --- | --- | --- |
+| `MAINMENU.C` draw_start_buttons | 存檔描述（玩家輸入） | 非 PAK 字串 |
+| `MAINMENU.C` do_journey／restore | `1:169` 讀檔失敗、`1:257` 重回深淵（fontbig） | **bitmap-ui** |
+| `CHARGEN.C` | block 2 問題／選項、`1:256` 建角結束 | **bitmap-ui** |
+| `STATS.C` | block 2 職業與技能名 | bitmap-ui（block 2 原已如此） |
+| `SKILLS.C` game_stats（結局畫面） | `1:187`–`1:190` 與 block 2 能力／技能 | **bitmap-ui** |
+| `CUTS.C` | 過場 blocks | bitmap-ui（原已如此） |
+| `CONVERSE.C` 對話畫面標題 | NPC 名稱 `7:(whoami+16)`（`get_name`；`LOOK.C` 也拼接它） | **bitmap-ui** |
+| `BARTER.C`、`INVPANEL.C`、`AUTOMAP.C` | 數字、地圖筆記（玩家輸入） | 非 PAK 字串 |
+| `SCROLLIO.C` | scroll 本身與 `[MORE]` literal | HD scroll 路徑本身；`[MORE]` 屬 literals |
+| 存檔／讀檔 UI | 按鈕為圖片；結果訊息走 `game_sprint` → scroll | 無 bitmap PAK 字串 |
+
+同時確認的非 bitmap 邊界：
+
+| 字串 | 實際路徑 | 結論 |
+| --- | --- | --- |
+| spells `6:0x180`–`6:0x1BF` | `RUNES.C` `scroll_print(get_string(...))` | **direct**（21） |
+| spells 其餘 | `LOOK.C` 拼成 `... of <spell>` | **grammar**（192） |
+| `7:3`–`7:16` | `BARTER.C` 以 `str_copy`／`str_cat` 組估價句後 `npc_say` | **grammar**（14） |
+| `2:0x33`–`2:0x4C` 咒語 | `SKILLS.C` 與玩家鍵入的文字比對 | 新增 **input-token**（26）：翻譯會使咒語失效 |
+| block 24 | 沒有任何遊戲程式碼讀取 | **debug-report／debug scope**（101，含原本因空白被歸 grammar 的 58） |
+
+規則寫成明確的 key／range 表（`l10n.py` 的 `BITMAP_KEYS`／`rule()`），沒有把整個 block 1 或 block 7 標成 bitmap；
+`template`／`object-name` 仍優先。尚未逐一追蹤的拼接用法（例如 `game_strings_3` 的組合）仍依原本的空白片段啟發式，
+無法確定的條目可由人工 `needs-context` flag 標成特殊處理（新增對應的 handling，不新增 flag）。
+
+| 數字（coverage，含 master 的人工 flags） | 修正前 | 修正後 |
+| --- | ---: | ---: |
+| direct | 5,737 | **5,444** |
+| bitmap-ui | 196 | **261** |
+| grammar | 548 | 692 |
+| input-token | — | 26 |
+| debug（不計入完成率） | 43 個 debug-report 混在可翻總數 | **101，獨立排除** |
+| production translatable（完成率分母） | 7,091 | **6,990** |
+
+共 381 個 key 改分類：direct→bitmap-ui 87（block 7 名稱 83、block 1 4）、direct→grammar 206（spells 192、barter 14）、
+grammar→bitmap-ui 4、bitmap-ui→input-token 26、grammar→debug-report 58。
+逐 key 清單見 [classification-diff.json](evidence/p9-fixup/classification-diff.json)；
+[coverage-before](evidence/p9-fixup/coverage-before.json)／[coverage-after](evidence/p9-fixup/coverage-after.json)。
+注意 `7:83`（Bragit）因標題列是 bitmap 而改為 bitmap-ui；它的譯文仍保留，對話中的命中不受影響。
+
+### Production vs debug coverage
+
+每個條目由 inventory deterministic 推導 `scope`，不新增 master 欄位：
+`production`、`debug`（block 24）、`empty`、`unaddressable`。完成率只用 production：
+
+```text
+Production completion (draft or better): 52 / 6,990 (0.74%)
+All inventory: 10,984 = 6,990 production + 101 debug + 3,852 empty + 41 unaddressable
+```
+
+排除採保守規則：只有程式碼完全不讀取的 block 24 被排除；block 1 的 `1:0`（開發者佔位文字）等可疑條目
+沒有證據前仍留在 production；hard-coded literal 的 UNKNOWN 候選不受影響。debug 條目仍可翻譯，
+但其譯文不會改變 production 完成率（有 test）。
+
+### Tests、regression 與 gate
+
+[source-hash-tests.json](evidence/p9-fixup/source-hash-tests.json)：`test_l10n.py` 31 tests 全部 PASS
+（含玩家資料時的 P8 catalog 比對；CI 無資料時自動跳過該項）。Source-hash policy 涵蓋：deterministic、
+不同原文不同 hash、CP437 bytes 定義、drift 使 validate／build 失敗且不改 hash、明確接受、stale workbook 拒絕且
+master 不變、drift 列須審閱後才可重新匯入、只改譯文不改 hash、export→import→validate→build round trip、
+master 不含英文欄位。分類與 scope 也有 tests（renderer rules、debug 不影響 production 完成率）。
+
+以玩家資料實跑（[roundtrip.json](evidence/p9-fixup/roundtrip.json)）：export（含英文）→ 譯一列 → import →
+validate → 兩次 build 相同 SHA；只改譯文保留 hash；錯誤譯文與 stale workbook 被拒絕且 master 不變；
+改壞的 hash 使 validate／build 回報 `SOURCE_DRIFT`，一般 normalize 保留舊 hash，`--accept-source-drift` 才更新；
+committed master build 仍為 P8 catalog SHA。
+
+| Regression（[regression.json](evidence/p9-fixup/regression.json)） | 結果 |
+| --- | --- |
+| Native rebuild／port-check | PASS；0 errors／0 warnings |
+| Catalog from master | `fd133b9a…dff98`，與 P8 相同 |
+| English compatibility | 16 public sessions 與 goldens 相同 |
+| zh-TW lookup replay | 16 sessions 相同；12 個 hits 逐字符合 master；QA traces 重新產生並用於 coverage |
+| P8 player recordings | walk／dialogue／restore／English／resize 各兩次 replay，全部相同 |
+| Text | inventory 22、l10n 31、layout 29、runtime 19、FreeType（ASan/UBSan）、no-FreeType、HD cursor、MOUSE.C、scroll flow／render／window、10,984-string native probe：PASS |
+| Native matrix | fuzz 34／5,680 cases 0 differ、enhancements 120/120、settings 72/72、movement 15/15、blackbox 22/22、map notes 4/4 |
+| Repository | `git diff --check`、repocheck PASS |
+
+CI_SYNC_PLACEHOLDER
 
 **STOPPED HERE. Phase 10 was not started.**

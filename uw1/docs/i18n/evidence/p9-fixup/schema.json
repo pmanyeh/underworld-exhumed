@@ -1,0 +1,92 @@
+{
+  "master_file": "uw1/i18n/zh-TW/master.tsv",
+  "master_fields": [
+    "block",
+    "index",
+    "category",
+    "source_hash",
+    "target_zh_TW",
+    "status",
+    "context",
+    "notes",
+    "flags"
+  ],
+  "literal_fields": [
+    "key",
+    "source",
+    "target_zh_TW",
+    "status",
+    "context",
+    "notes",
+    "flags"
+  ],
+  "statuses": [
+    "untranslated",
+    "draft",
+    "reviewed",
+    "approved",
+    "blocked"
+  ],
+  "packed_statuses": [
+    "draft",
+    "reviewed",
+    "approved"
+  ],
+  "blocked_packed": false,
+  "flags": [
+    "dynamic-template",
+    "grammar-sensitive",
+    "object-name",
+    "control-code",
+    "hardcoded-related",
+    "showcase",
+    "needs-context"
+  ],
+  "derived_flags": [
+    "dynamic-template",
+    "object-name",
+    "control-code"
+  ],
+  "handling": [
+    "direct",
+    "template",
+    "object-name",
+    "grammar",
+    "bitmap-ui",
+    "input-token",
+    "hardcoded",
+    "needs-context",
+    "debug-report",
+    "empty",
+    "unaddressable"
+  ],
+  "scopes": [
+    "production",
+    "debug",
+    "empty",
+    "unaddressable"
+  ],
+  "source_hash": "SHA-256 of the decoded game string bytes (first NUL ends, at most 511, no normalization), the CP437 bytes STRINGS.PAK yields and the runtime catalog compares; 64 lowercase hex",
+  "english_source_in_committed_master": false,
+  "catalog_format": "UW1LOC1 (unchanged)",
+  "export_fields": [
+    "key",
+    "block",
+    "index",
+    "category",
+    "scope",
+    "handling",
+    "flags",
+    "status",
+    "source",
+    "target_zh_TW",
+    "context",
+    "notes",
+    "auto_context",
+    "runtime_hits",
+    "runtime_events",
+    "previous_source",
+    "next_source",
+    "source_drift"
+  ]
+}
