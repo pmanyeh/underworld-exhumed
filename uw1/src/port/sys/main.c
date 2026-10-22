@@ -120,7 +120,7 @@ void port_on_flip(void)
 
 static int game_argc;
 static char **game_argv;
-static const char *locale = "en", *i18n_file, *i18n_log;
+static const char *locale = "en", *i18n_file, *i18n_log, *i18n_trace;
 static const char *cursor_log;
 static int modern_scroll;
 static const char *scroll_font_path, *scroll_log;
@@ -140,6 +140,8 @@ static int game(void *arg)
         fputs("uw1port: i18n: catalog unavailable or invalid; using English\n", stderr);
     if (port_i18n_trace_open(i18n_log) < 0)
         fputs("uw1port: i18n: cannot open lookup log\n", stderr);
+    if (port_i18n_qa_open(i18n_trace) < 0)
+        fputs("uw1port: i18n: cannot open QA trace\n", stderr);
     if (hd_cursor_trace_open(cursor_log) < 0) fputs("uw1port: cannot open cursor log\n", stderr);
     if (modern_scroll) {
         if (hd_font_init(&measure_font,scroll_font_path)) port_fatal("HD scroll: cannot initialize logical metrics font");
@@ -256,8 +258,9 @@ static const char help_text[] =
     "                         releases it; kept until changed\n"
     "Testing and debugging:\n"
     "  --locale en|zh-TW      lookup locale (default en); display remains English in Phase 2\n"
-    "  --i18n-file FILE       catalog compiled with tools/i18n/pack_translations.py\n"
+    "  --i18n-file FILE       catalog built with tools/i18n/l10n.py build\n"
     "  --i18n-log FILE        UTF-8 JSONL lookup hits (one per key, game thread only)\n"
+    "  --i18n-trace FILE      JSONL of every lookup: hit/template/miss/drift/invalid/dynamic\n"
     "  --hidden               no window; the scan-out still runs\n"
     "  --screenshot-after MS  write the screen to a PNG MS milliseconds after start\n"
     "  --screenshot FILE      that PNG's name (uw1port.png)\n"
@@ -423,6 +426,7 @@ int main(int argc, char *argv[])
         }
         else if (!strcmp(a, "--i18n-file") && i + 1 < argc) i18n_file = argv[++i];
         else if (!strcmp(a, "--i18n-log") && i + 1 < argc) i18n_log = argv[++i];
+        else if (!strcmp(a, "--i18n-trace") && i + 1 < argc) i18n_trace = argv[++i];
         else if (!strcmp(a, "--screenshot-after") && i + 1 < argc) cfg.screenshot_after_ms = atol(argv[++i]);
         else if (!strcmp(a, "--screenshot") && i + 1 < argc) cfg.screenshot_path = argv[++i];
         else if (!strcmp(a, "--window-shot") && i + 1 < argc) cfg.window_shot_path = argv[++i];

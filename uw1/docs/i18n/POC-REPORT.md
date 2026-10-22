@@ -41,7 +41,7 @@ validator 要求真的出現 Bragit 譯文、選項事件與正確尺寸，不�
 ## Localization / display contract
 
 Bragit whoami 67 對應 resolved string block **3651**；選定路徑命中 27 個 catalog keys，
-每個 hit 均逐字比對 [外部 UTF-8 TSV](../../i18n/zh-TW/poc.tsv)。
+每個 hit 均逐字比對外部 UTF-8 TSV（當時的 `poc.tsv`；Phase 9 起已無損遷移至 [master.tsv](../../i18n/zh-TW/master.tsv)）。
 NPC 原名 key `7:83` 仍可被查到；名稱標題的 legacy bitmap UI 保留英文，沒有擴充為 HD UI。
 實際對話文字來自 catalog，沒有把本輪中文台詞寫進 C，也沒有把 UTF-8 寫入 VM、BABL heap 或原 byte buffers。
 譯文仍為 PoC draft，未宣稱已完成人工校對或整個遊戲翻譯。

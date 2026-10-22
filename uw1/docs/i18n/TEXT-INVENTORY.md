@@ -33,7 +33,7 @@ Exhume pin 後的 7 個既有 tooling/profile commits 保持未合併，詳見 [
 - [validate_poc.py](../../tools/i18n/validate_poc.py)：檢查 source drift、key、PoC 範圍、模板與控制碼。
 - [native_probe.c](../../tools/i18n/native_probe.c)、[verify_native.py](../../tools/i18n/verify_native.py)：連結未修改的 native decoder，逐筆比較原始 bytes。
 - [test_i18n.py](../../tools/i18n/test_i18n.py)：不需原版 assets 的 malformed-input / format / token tests。
-- [poc.tsv](../../i18n/zh-TW/poc.tsv)：53 筆翻譯草稿。
+- `poc.tsv`：53 筆翻譯草稿（Phase 9 已無損遷移至 [master.tsv](../../i18n/zh-TW/master.tsv) 與 [literals.tsv](../../i18n/zh-TW/literals.tsv)）。
 - [資料契約與操作說明](../../i18n/README.md)、本報告與精簡驗收 evidence。
 
 未修改任何 `uw1/src`、generated file、gameplay、renderer、Exhume source 或 submodule pin。

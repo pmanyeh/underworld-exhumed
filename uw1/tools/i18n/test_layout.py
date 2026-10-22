@@ -1,6 +1,5 @@
 """Test the real UTF-8/layout C core without SDL, FreeType or game assets."""
 import ctypes as C
-import csv
 from itertools import chain
 from pathlib import Path
 import os
@@ -8,7 +7,7 @@ import random
 import shutil
 import subprocess
 import unittest
-from extract_strings import unescape
+from l10n import load_literals, load_master
 
 UW1 = Path(__file__).resolve().parents[2]
 OUT = UW1 / "build/i18n"
@@ -318,14 +317,13 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(self.render("外層", 2, metric)[0], ["外", "層"])
         self.assertEqual(invoked, [["內", "層"]])
 
-    def test_all_poc_translations_at_four_widths(self):
-        with (UW1 / "i18n/zh-TW/poc.tsv").open(encoding="utf-8", newline="") as stream:
-            rows = list(csv.DictReader(stream, delimiter="\t"))
-        self.assertEqual(len(rows), 53)
-        for row in rows:
-            text = unescape(row["zh_tw"])
+    def test_all_translations_at_four_widths(self):
+        rows = [(f"{r['block']}:{r['index']}", r["target_zh_TW"]) for r in load_master()]
+        rows += [(r["key"], r["target_zh_TW"]) for r in load_literals()]
+        self.assertGreaterEqual(len(rows), 53)
+        for key, text in rows:
             for width in (18, 32, 64, 160):
-                with self.subTest(key=row["source_key"], width=width):
+                with self.subTest(key=key, width=width):
                     self.render(text, width)
 
     def test_oversized_glyph_and_wide_accumulator(self):

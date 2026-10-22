@@ -103,6 +103,7 @@ char far * far get_string(int id)
     if (found >= 0) {
 #ifndef __TURBOC__
         port_i18n_forget(Strings[found].strings[string]);
+        port_i18n_note_dynamic(block, string);
 #endif
         return Strings[found].strings[string];
     }

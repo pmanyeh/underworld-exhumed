@@ -20,5 +20,11 @@ char *port_i18n_observe(unsigned block, unsigned index, char *fallback);
 const char *port_i18n_display(const char *legacy);
 void port_i18n_forget(const char *legacy);
 int port_i18n_trace_open(const char *path);
+/* Phase 9 QA trace (JSONL, game thread): every resolved lookup as hit, template
+   (translated but displayed through the English BABL expansion), miss, drift
+   (catalog source differs), invalid (unresolved/out-of-range key), and dynamic
+   (made-block strings, which bypass static lookup). Open after init. */
+int port_i18n_qa_open(const char *path);
+void port_i18n_note_dynamic(unsigned block, unsigned index);
 
 #endif

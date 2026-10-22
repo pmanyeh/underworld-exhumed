@@ -1,4 +1,34 @@
-# Native localization / layout / HD text / cursor / scroll (Phases 1–8)
+# Native localization / layout / HD text / cursor / scroll (Phases 1–9)
+
+**Phase 9 起，翻譯來源是 [zh-TW/master.tsv](zh-TW/master.tsv)（加上 hard-coded 的
+[zh-TW/literals.tsv](zh-TW/literals.tsv)）**；PoC 的 `poc.tsv` 已無損遷移後移除。
+譯者規則見 [zh-TW/README.md](zh-TW/README.md)，驗收見
+[Phase 9 report](../docs/i18n/LOCALIZATION-PRODUCTION.md)。
+
+## Localization production workflow (Phase 9)
+
+工具為 standard-library 的 [l10n.py](../tools/i18n/l10n.py)。在 `uw1/`，`$UW1_DATA` 是玩家自己的合法資料：
+
+```sh
+D="--pak $UW1_DATA/DATA/STRINGS.PAK --cnv $UW1_DATA/DATA/CNV.ARK"
+python3 tools/i18n/l10n.py inventory $D           # 重新盤點並與 committed fingerprint 比較
+python3 tools/i18n/l10n.py export $D --untranslated --category conversation   # 譯者工作表（含英文，僅留本機）
+python3 tools/i18n/l10n.py import $D build/i18n/p9/workbook.tsv               # 合併回 master.tsv
+python3 tools/i18n/l10n.py validate $D            # UTF-8／key／source drift／控制碼／模板
+python3 tools/i18n/l10n.py build $D               # deterministic build/i18n/zh-TW.uwloc
+build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" --locale zh-TW \
+  --i18n-file build/i18n/zh-TW.uwloc --hd-scroll --font tools/fonts/NotoSansCJKtc-Regular.otf \
+  --i18n-trace build/i18n/p9/play.jsonl
+python3 tools/i18n/l10n.py coverage $D --trace build/i18n/p9/play.jsonl   # coverage.json／coverage.md
+python3 tools/i18n/l10n.py export $D --trace build/i18n/p9/play.jsonl --runtime --untranslated
+```
+
+也可直接編輯 `master.tsv` 後執行 `normalize`／`validate`。`build` 先完整驗證，任何
+source drift、重複 key、非法 UTF-8 或格式錯誤都拒絕產生 catalog；同一輸入永遠得到相同 bytes 與 SHA-256。
+`--i18n-trace` 在任何 locale 都記錄每次 lookup：`hit`、`template`（已譯但仍以英文 BABL 展開顯示）、
+`miss`、`drift`、`invalid`、`dynamic`；coverage／export 會彙總同一 key 的重複次數。
+`export` 與 `inventory.tsv` 含原版英文，只放在 ignored `build/`；committed 的只有翻譯資料、
+不含文字的 [inventory fingerprint](inventory-baseline.json) 與計數報告。
 
 目前已完成文字盤點、翻譯資料、Native UTF-8 lookup 與獨立的文字排版核心。
 預設保留原英文 renderer；`--hd-scroll` 可選用繁中 scroll／conversation 顯示。
@@ -7,7 +37,8 @@ Phase 6 加入原版 bitmap 的 Native 游標 overlay；驗收見 [HD cursor](..
 Phase 7 將 UTF-8 換行、控制碼、分頁與對話選項接入實際遊戲；驗收見
 [Chinese scroll integration](../docs/i18n/CHINESE-SCROLL.md)。
 Phase 8 已完成實際 Bragit 多輪繁中流程、存讀檔與跨平台建置，技術驗收 **PoC = GO**；
-完整結果與限制見 [PoC report](../docs/i18n/POC-REPORT.md)。目前停在 P8，等待人工審閱。
+完整結果與限制見 [PoC report](../docs/i18n/POC-REPORT.md)。
+Phase 9 建立 localization production pipeline，停在 P9 等待人工審閱，尚未開始 P10 大量翻譯。
 驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md)、[Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)
 與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)、[Phase 4](../docs/i18n/OVERLAY-FOUNDATION.md)。
 
@@ -19,7 +50,7 @@ Phase 8 已完成實際 Bragit 多輪繁中流程、存讀檔與跨平台建置�
 在 `uw1/` 建置 catalog、下載字型、啟動 Native executable：
 
 ```sh
-python3 tools/i18n/pack_translations.py i18n/zh-TW/poc.tsv build/i18n/zh-TW.uwloc
+python3 tools/i18n/l10n.py build --pak "$UW1_DATA/DATA/STRINGS.PAK"
 python3 tools/i18n/fetch_font.py
 make port
 build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" \
@@ -139,7 +170,7 @@ Sanitizer driver 需要 Clang 的 ASan / UBSan runtime；一般 core tests 只�
 
 ```sh
 make port
-python3 tools/i18n/pack_translations.py i18n/zh-TW/poc.tsv build/i18n/zh-TW.uwloc
+python3 tools/i18n/pack_translations.py build/i18n/zh-TW.uwloc   # 不讀原版資料、不檢查 source drift
 build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" \
   --locale zh-TW --i18n-file build/i18n/zh-TW.uwloc --i18n-log build/i18n/hits.jsonl
 ```
@@ -179,8 +210,10 @@ per entry, sorted by (block,index):
   UTF-8 target bytes + NUL
 ```
 
-每筆原文最多 511 bytes、譯文最多 16,384 bytes；總數最多 4,096 筆、整檔最多 4 MiB。
-本次 pack 為 52 static entries / 8,990 bytes；一個 literal sample 保留到相應 UI 階段。
+每筆原文最多 511 bytes、譯文最多 16,384 bytes；總數最多 32,768 筆、整檔最多 16 MiB
+（Phase 9 由 4,096 筆／4 MiB 放寬，足以容納全遊戲 10,984 個 entries）。
+PoC 資料 pack 為 52 static entries / 8,990 bytes；literal 保留到相應 UI 階段，不進 catalog。
+只有 `draft`／`reviewed`／`approved` 且有譯文的列會 pack；`l10n.py build --min-status reviewed` 可做較嚴格的 build。
 loader 先檢查整檔，拒絕截斷、重複／未排序 key、額外尾端資料、非法 key、NUL 與損毀 UTF-8，
 通過後才公開整份 catalog。UTF-8 format check 是 loader 的局部輸入驗證，不是 Phase 3 layout API。
 
@@ -191,7 +224,7 @@ python3 tools/i18n/test_runtime.py -v
 python3 tools/i18n/verify_native.py "$UW1_EXE" "$UW1_DATA/DATA/STRINGS.PAK" \
   --catalog build/i18n/zh-TW.uwloc --report build/i18n/native-comparison.json
 python3 tools/i18n/verify_localized_replay.py --config exhume.toml \
-  --catalog build/i18n/zh-TW.uwloc --poc i18n/zh-TW/poc.tsv --report build/i18n/replay-zh-TW.json
+  --catalog build/i18n/zh-TW.uwloc --master i18n/zh-TW/master.tsv --report build/i18n/replay-zh-TW.json
 ```
 
 第一項使用真實 C module 建立 shared library，不需 SDL 或原版遊戲資料。
@@ -207,8 +240,7 @@ Python 3.10+ standard library 即可執行盤點與驗證。在 `uw1/` 執行：
 python3 tools/i18n/extract_strings.py "$UW1_DATA/DATA/STRINGS.PAK" build/i18n/strings.tsv \
   --cnv "$UW1_DATA/DATA/CNV.ARK" --metadata build/i18n/metadata.json
 python3 tools/i18n/scan_literals.py build/i18n/literals.tsv
-python3 tools/i18n/validate_poc.py "$UW1_DATA/DATA/STRINGS.PAK" \
-  "$UW1_DATA/DATA/CNV.ARK" i18n/zh-TW/poc.tsv
+python3 tools/i18n/validate_poc.py "$UW1_DATA/DATA/STRINGS.PAK" "$UW1_DATA/DATA/CNV.ARK"
 python3 -m unittest discover -s tools/i18n -p test_i18n.py -v
 ```
 
@@ -243,16 +275,17 @@ newline、CR、tab、NUL。其他反斜線 escape 拒絕接受；不得用 `eval
 穩定排序為 block、index；保留空字串及所有磁碟 entry，包括超出 raw ID 的 41 個尾端 entries。
 後者屬於盤點，不能直接當作 runtime `get_string` key。
 
-`zh-TW/poc.tsv` 欄位為 `kind, block, index, source_key, role, source_en, zh_tw, note`。
+兩個翻譯檔使用相同的 TSV 規則（`l10n.py` 另外拒絕 BOM、CR 與非 canonical 排版）：
 
-| kind | identity | 用途 |
+| 檔案 | 欄位 | identity |
 | --- | --- | --- |
-| `pak` | `pak:<resolved block>:<index>` | 靜態字串，例如 `pak:3651:3` |
-| `literal` | `literal:<repo path>:<call>:<text SHA256 前16碼>:<occurrence>` | 獨立 namespace；block/index 留白 |
+| `zh-TW/master.tsv` | `block, index, category, source, target_zh_TW, status, context, notes, flags` | resolved `(block,index)`，例如 `3651`／`3` |
+| `zh-TW/literals.tsv` | `key, source, target_zh_TW, status, context, notes, flags` | `literal:<repo path>:<call>:<text SHA256 前16碼>:<occurrence>` |
 
 Literal identity 不依賴行號；path、call、內容或同值出現次序改動會使 key 改變，需重新審查。
-`source_en` 是 drift check，來源有變時拒絕套用舊翻譯。譯文是 PoC 草稿，尚待畫面與用語校對。
-`role` 是翻譯備註，不控制遊戲流程；同一個 key 可由多個 script branch 引用。
+`source` 是 drift check，來源有變時拒絕套用舊翻譯。欄位語意、status 與 flags 見 [zh-TW/README.md](zh-TW/README.md)。
+PoC 的 `poc.tsv`（`kind, block, index, source_key, role, source_en, zh_tw, note`）已在 Phase 9 遷移：
+`role` 成為 `context` 的 `PoC role: …`，`note` 成為 `notes`，狀態一律 `draft`。
 
 ## Runtime identity and lifetime
 

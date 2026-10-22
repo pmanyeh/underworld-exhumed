@@ -5,14 +5,13 @@ Run after recording and verifying the five Native cases. Screenshot appearance
 still needs visual review; these checks cannot certify translation quality.
 """
 import argparse
-import csv
 import hashlib
 import json
 from pathlib import Path
 import re
 import struct
 
-from extract_strings import unescape
+from l10n import static_targets
 
 
 def sha(path):
@@ -36,14 +35,12 @@ def main():
     for name in ('walk', 'dialogue', 'restore', 'english', 'resize'):
         parser.add_argument('--'+name, required=True, type=Path)
     parser.add_argument('--replays', required=True, type=Path, help='directory of NAME-replay.json reports')
-    parser.add_argument('--poc', type=Path, default=root/'i18n/zh-TW/poc.tsv')
+    parser.add_argument('--master', type=Path, default=root/'i18n/zh-TW/master.tsv')
     parser.add_argument('--report', required=True, type=Path)
     args = parser.parse_args()
     from PIL import Image
 
-    with args.poc.open(encoding='utf-8', newline='') as stream:
-        expected = {(int(row['block']), int(row['index'])): unescape(row['zh_tw'])
-                    for row in csv.DictReader(stream, delimiter='\t') if row['kind'] == 'pak'}
+    expected = static_targets(args.master)
     hits = rows(args.dialogue/'lookup.jsonl')
     for hit in hits:
         assert hit['text'] == expected[(hit['block'], hit['index'])], hit

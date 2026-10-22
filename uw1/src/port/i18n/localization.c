@@ -7,8 +7,9 @@
 #include "i18n/localization.h"
 #include "i18n/utf8.h"
 
-#define MAX_CATALOG (4u * 1024u * 1024u)
-#define MAX_ENTRIES 4096u
+/* Phase 9: sized for the whole game (10,984 PAK entries), not the PoC. */
+#define MAX_CATALOG (16u * 1024u * 1024u)
+#define MAX_ENTRIES 32768u
 #define MAX_TARGET 16384u
 
 struct entry {
@@ -19,7 +20,7 @@ struct entry {
 static unsigned char *image;
 static struct entry *entries;
 static unsigned count;
-static FILE *trace;
+static FILE *trace, *qa;
 static unsigned char traced[MAX_ENTRIES];
 static struct { const char *address, *target; char source[512]; } display[8];
 static unsigned display_next;
@@ -65,7 +66,8 @@ void port_i18n_shutdown(void)
     memset(display, 0, sizeof display);
     display_next = 0;
     if (trace) fclose(trace);
-    trace = NULL;
+    if (qa) fclose(qa);
+    trace = qa = NULL;
     free(entries);
     free(image);
     entries = NULL;
@@ -134,19 +136,25 @@ bad:
 
 int port_i18n_enabled(void) { return count != 0; }
 
-static const struct entry *find(unsigned block, unsigned index, const char *fallback)
+/* The catalog entry for this key, whatever its source text. */
+static const struct entry *locate(unsigned block, unsigned index)
 {
     unsigned low = 0, high = count;
-    if (!fallback || !static_key(block, index)) return NULL;
+    if (!static_key(block, index)) return NULL;
     while (low < high) {
         unsigned middle = low + (high - low) / 2;
         const struct entry *e = entries + middle;
         if (e->block < block || (e->block == block && e->index < index)) low = middle + 1;
         else high = middle;
     }
-    if (low < count && entries[low].block == block && entries[low].index == index &&
-        !strcmp(entries[low].source, fallback)) return entries + low;
+    if (low < count && entries[low].block == block && entries[low].index == index) return entries + low;
     return NULL;
+}
+
+static const struct entry *find(unsigned block, unsigned index, const char *fallback)
+{
+    const struct entry *e = fallback ? locate(block, index) : NULL;
+    return e && !strcmp(e->source, fallback) ? e : NULL;
 }
 
 const char *port_i18n_lookup(unsigned block, unsigned index, const char *fallback)
@@ -165,6 +173,29 @@ int port_i18n_trace_open(const char *path)
     return trace ? 0 : -1;
 }
 
+/* Phase 9 QA trace: one JSONL record per lookup, in any locale (English
+   records every static key as a miss). Tools aggregate repeated keys. */
+int port_i18n_qa_open(const char *path)
+{
+    if (qa) fclose(qa);
+    qa = NULL;
+    if (!path) return 0;
+    qa = fopen(path, "wb");
+    return qa ? 0 : -1;
+}
+
+static void qa_event(const char *event, unsigned block, unsigned index)
+{
+    if (!qa) return;
+    fprintf(qa, "{\"event\":\"%s\",\"block\":%u,\"index\":%u}\n", event, block, index);
+    fflush(qa);  /* Window-close may end the process with the game parked. */
+}
+
+void port_i18n_note_dynamic(unsigned block, unsigned index)
+{
+    qa_event("dynamic", block, index);
+}
+
 static void json_text(FILE *f, const char *text)
 {
     const unsigned char *p = (const unsigned char *)text;
@@ -180,6 +211,12 @@ static void json_text(FILE *f, const char *text)
 char *port_i18n_observe(unsigned block, unsigned index, char *fallback)
 {
     const char *translated = port_i18n_lookup(block, index, fallback);
+    if (qa) {
+        const struct entry *e = locate(block, index);
+        qa_event(!fallback || !static_key(block, index) ? "invalid" : !e ? "miss" :
+                 translated == fallback ? "drift" : strchr(translated, '@') ? "template" : "hit",
+                 block, index);
+    }
     port_i18n_forget(fallback);
     if (translated != fallback && !strchr(translated, '@') && strlen(fallback) < 512) {
         unsigned slot = display_next++ % 8;

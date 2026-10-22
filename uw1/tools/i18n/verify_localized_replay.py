@@ -4,26 +4,26 @@
 Uses upstream's Native verifier with extra documented CLI options, without
 rebuilding a DOS reference. Original inputs,
 assertions and goldens are unchanged. Work directories are separate from the
-ordinary English verify run; every trace hit is checked against the source TSV.
+ordinary English verify run; every trace hit is checked against the master
+dataset. Each session also writes the Phase 9 QA trace (port/i18n-trace.jsonl).
 """
 import argparse
-import csv
 import json
 import os
 from pathlib import Path
 import sys
 
-from extract_strings import unescape
+from l10n import static_targets
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", required=True, type=Path)
     parser.add_argument("--catalog", required=True, type=Path)
-    parser.add_argument("--poc", required=True, type=Path)
+    parser.add_argument("--master", required=True, type=Path)
     parser.add_argument("--report", required=True, type=Path)
     args = parser.parse_args()
-    for name in ("config", "catalog", "poc", "report"):
+    for name in ("config", "catalog", "master", "report"):
         setattr(args, name, getattr(args, name).resolve())
     sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "exhume/tools"))
     os.environ["EXHUME_CONFIG"] = str(args.config)
@@ -35,7 +35,8 @@ def main():
 
     def run_port(rec, out, extra=(), **kwargs):
         options = list(extra) + ["--locale", "zh-TW", "--i18n-file", str(args.catalog),
-                                 "--i18n-log", os.path.join(out, "i18n.jsonl")]
+                                 "--i18n-log", os.path.join(out, "i18n.jsonl"),
+                                 "--i18n-trace", os.path.join(out, "i18n-trace.jsonl")]
         return original(rec, out, options, **kwargs)
 
     R.run_port = run_port
@@ -49,12 +50,7 @@ def main():
     result = G.cmd_verify(G.SESSIONS, jobs=None)
     if result:
         raise SystemExit(result)
-    expected = {}
-    with args.poc.open(encoding="utf-8", newline="") as stream:
-        for raw in csv.DictReader(stream, delimiter="\t"):
-            row = {k: unescape(v) for k, v in raw.items()}
-            if row["kind"] == "pak":
-                expected[int(row["block"]), int(row["index"])] = row["zh_tw"]
+    expected = static_targets(args.master)
     sessions, all_keys = {}, set()
     for name in G.SESSIONS:
         trace = Path(G.VWORK) / name / "port/i18n.jsonl"
@@ -78,7 +74,8 @@ def main():
         raise AssertionError(f"Bragit path missing: {required - talk_keys}")
     report = {"status": "PASS", "locale": "zh-TW", "sessions": sessions,
               "session_count": len(G.SESSIONS), "distinct_translation_hits": len(all_keys),
-              "translation_text_checked_against_tsv": True,
+              "translation_text_checked_against_master": True,
+              "qa_traces": [str(Path(G.VWORK) / n / "port/i18n-trace.jsonl") for n in G.SESSIONS],
               "legacy_state_and_saves": "identical to committed DOS goldens",
               "dos_reference_rebuild": "NOT APPLICABLE - Native-only PoC",
               "display": "legacy English path; UTF-8 lookup verified via JSONL"}

@@ -7,7 +7,7 @@ import shlex
 import shutil
 import struct
 import subprocess
-from pack_translations import MAGIC
+from l10n import MAGIC
 
 
 def main():

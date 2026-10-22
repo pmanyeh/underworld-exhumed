@@ -6,3 +6,6 @@
 **/tests/replay/golden/** binary
 *.png binary
 *.sh text eol=lf
+# Translation datasets: l10n.py reads them byte-exact (LF only), and an empty last
+# tab-separated field is data, not trailing whitespace.
+uw1/i18n/**/*.tsv text eol=lf whitespace=-blank-at-eol

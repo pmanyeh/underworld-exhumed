@@ -1,0 +1,2 @@
+key	source	target_zh_TW	status	context	notes	flags
+literal:uw1/src/ui/SCROLLIO.C:string_to_screen:b3c799d75b3072a5:1	[MORE]	[繼續]	draft	PoC role: scroll_more	Separate literal namespace; no runtime hook in Phase 1	

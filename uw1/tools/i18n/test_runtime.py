@@ -3,7 +3,6 @@
 Run in the native compiler environment: python3 tools/i18n/test_runtime.py -v
 """
 import ctypes
-import csv
 import json
 import os
 from pathlib import Path
@@ -13,8 +12,8 @@ import subprocess
 import tempfile
 import unittest
 
-from extract_strings import unescape, write_tsv
-from pack_translations import MAGIC, pack
+from l10n import MAGIC, MASTER, MASTER_FIELDS, DatasetError, load_master, render_tsv
+from pack_translations import pack
 
 UW1 = Path(__file__).resolve().parents[2]
 OUT = UW1 / "build/i18n"
@@ -49,6 +48,9 @@ class RuntimeTests(unittest.TestCase):
         cls.lib.port_i18n_observe.argtypes = cls.lib.port_i18n_lookup.argtypes
         cls.lib.port_i18n_observe.restype = ctypes.c_void_p
         cls.lib.port_i18n_trace_open.argtypes = [ctypes.c_char_p]
+        cls.lib.port_i18n_qa_open.argtypes = [ctypes.c_char_p]
+        cls.lib.port_i18n_note_dynamic.argtypes = [ctypes.c_uint, ctypes.c_uint]
+        cls.lib.port_i18n_note_dynamic.restype = None
         cls.lib.port_i18n_shutdown.restype = None
 
     def setUp(self):
@@ -88,19 +90,17 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(self.lib.port_i18n_init(b"zh-TW", b"does-not-exist"), -1)
         self.assertEqual(self.init(locale=b"fr"), -1)
 
-    def test_load_actual_poc_all_52_keys(self):
-        data, n, skipped = pack(UW1 / "i18n/zh-TW/poc.tsv")
-        self.assertEqual((n, skipped), (52, 1))
+    def test_load_actual_master_all_keys(self):
+        data, n = pack(MASTER)
+        rows = [r for r in load_master() if r["target_zh_TW"]]
+        self.assertEqual(n, len(rows))
+        self.assertGreaterEqual(n, 52)
         self.assertEqual(self.init(data), 0)
         self.assertEqual(self.lib.port_i18n_enabled(), 1)
-        with (UW1 / "i18n/zh-TW/poc.tsv").open(encoding="utf-8", newline="") as stream:
-            for raw in csv.DictReader(stream, delimiter="\t"):
-                row = {k: unescape(v) for k, v in raw.items()}
-                if row["kind"] != "pak":
-                    continue
-                buffer, pointer = self.lookup(row["source_en"].encode("cp437"), int(row["block"]), int(row["index"]))
-                self.assertNotEqual(pointer, ctypes.addressof(buffer))
-                self.assertEqual(ctypes.string_at(pointer), row["zh_tw"].encode())
+        for row in rows:
+            buffer, pointer = self.lookup(row["source"].encode("cp437"), int(row["block"]), int(row["index"]))
+            self.assertNotEqual(pointer, ctypes.addressof(buffer))
+            self.assertEqual(ctypes.string_at(pointer), row["target_zh_TW"].encode())
 
     def test_missing_drift_and_dynamic_keys_return_pointer(self):
         self.assertEqual(self.init(), 0)
@@ -139,10 +139,17 @@ class RuntimeTests(unittest.TestCase):
         self.assert_bad(b"BADLOC1\0" + self.data[8:])
 
     def test_counts_and_file_limits(self):
-        for n in (0, 4097, 0xFFFFFFFF):
+        for n in (0, 32769, 0xFFFFFFFF):
             self.assert_bad(MAGIC + struct.pack("<I", n))
         self.assert_bad(self.data + b"x")
-        self.assert_bad(b"x" * (4 * 1024 * 1024 + 1))
+        self.assert_bad(b"x" * (16 * 1024 * 1024 + 1))
+
+    def test_full_game_sized_catalog(self):
+        # Phase 9: every addressable key of a full translation fits.
+        rows = [(1 + n // 512, n % 512, b"S%d" % n, "譯%d".encode() % n) for n in range(32768)]
+        self.assertEqual(self.init(catalog(rows)), 0)
+        buffer, pointer = self.lookup(b"S32767", 64, 511)
+        self.assertEqual(ctypes.string_at(pointer), "譯32767".encode())
 
     def test_sorted_unique_static_keys_only(self):
         for b, i in [(0, 3), (0x7C, 3), (0x7D, 3), (0x8000, 3), (3651, 512)]:
@@ -184,6 +191,35 @@ class RuntimeTests(unittest.TestCase):
         self.lib.port_i18n_observe(3651, 3, ctypes.create_string_buffer(b"Hello"))
         self.assertEqual(json.loads(path.read_text(encoding="utf-8"))["text"], target.decode())
 
+    def qa_events(self, path):
+        return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
+
+    def test_qa_trace_classifies_every_lookup(self):
+        rows = [(1, 2, b"Plain", "純文字".encode()), (3651, 3, b"Hello", "你好，@SS1！".encode())]
+        self.assertEqual(self.init(catalog(rows)), 0)
+        path = Path(self.tmp.name) / "qa.jsonl"
+        self.assertEqual(self.lib.port_i18n_qa_open(os.fsencode(path)), 0)
+        for source, block, index in [(b"Plain", 1, 2), (b"Plain", 1, 2), (b"Hello", 3651, 3),
+                                     (b"Missing", 1, 3), (b"Changed", 1, 2), (b"Hello", 0, 3),
+                                     (b"Hello", 0x7C, 1), (b"Hello", 3651, 512)]:
+            buffer = ctypes.create_string_buffer(source)
+            self.assertEqual(self.lib.port_i18n_observe(block, index, buffer), ctypes.addressof(buffer))
+        self.lib.port_i18n_note_dynamic(0x7D, 0)
+        self.assertEqual([(r["event"], r["block"], r["index"]) for r in self.qa_events(path)],
+                         [("hit", 1, 2), ("hit", 1, 2), ("template", 3651, 3), ("miss", 1, 3),
+                          ("drift", 1, 2), ("invalid", 0, 3), ("invalid", 0x7C, 1),
+                          ("invalid", 3651, 512), ("dynamic", 0x7D, 0)])
+
+    def test_qa_trace_in_english_records_misses(self):
+        self.assertEqual(self.init(locale=b"en"), 0)
+        path = Path(self.tmp.name) / "qa.jsonl"
+        self.assertEqual(self.lib.port_i18n_qa_open(os.fsencode(path)), 0)
+        buffer = ctypes.create_string_buffer(b"Hello")
+        self.assertEqual(self.lib.port_i18n_observe(3651, 3, buffer), ctypes.addressof(buffer))
+        self.assertEqual(self.qa_events(path), [{"event": "miss", "block": 3651, "index": 3}])
+        self.assertEqual(self.lib.port_i18n_qa_open(None), 0)
+        self.assertEqual(self.lib.port_i18n_qa_open(os.fsencode(Path(self.tmp.name))), -1)
+
     def test_trace_off_or_unwritable(self):
         path = Path(self.tmp.name) / "trace.jsonl"
         self.assertEqual(self.lib.port_i18n_trace_open(os.fsencode(path)), 0)
@@ -195,26 +231,27 @@ class RuntimeTests(unittest.TestCase):
 
 class PackerTests(unittest.TestCase):
     def test_pack_repeat_and_order(self):
-        path = UW1 / "i18n/zh-TW/poc.tsv"
-        self.assertEqual(pack(path), pack(path))
-        data, count, skipped = pack(path)
-        self.assertEqual(data[:12], MAGIC + struct.pack("<I", 52))
-        self.assertEqual((count, skipped), (52, 1))
+        self.assertEqual(pack(MASTER), pack(MASTER))
+        data, count = pack(MASTER)
+        self.assertEqual(data[:12], MAGIC + struct.pack("<I", count))
 
     def test_reject_bad_keys_text_and_tokens(self):
-        fields = ["kind", "block", "index", "source_key", "role", "source_en", "zh_tw", "note"]
-        row = dict(zip(fields, ["pak", "3651", "3", "pak:3651:3", "test", "Hi @SS1\\m", "你好 @SS1\\m", ""]))
+        row = dict(zip(MASTER_FIELDS, ["3651", "3", "conversation", "Hi @SS1\\m", "你好 @SS1\\m",
+                                       "draft", "", "", "dynamic-template,control-code"]))
         with tempfile.TemporaryDirectory(dir=OUT) as tmp:
             path = Path(tmp) / "input.tsv"
-            for change in ({"block": "0"}, {"block": "124"}, {"index": "512"},
-                           {"source_key": "pak:3651:4"}, {"source_en": "a\0b"},
-                           {"zh_tw": ""}, {"zh_tw": "你好 @SS2\\m"}, {"zh_tw": "你好 @SS1"}):
+            path.write_bytes(render_tsv([row], MASTER_FIELDS))
+            self.assertEqual(pack(path)[1], 1)
+            for change in ({"block": "0"}, {"block": "124"}, {"index": "512"}, {"index": "03"},
+                           {"category": "game"}, {"source": "a\0b"}, {"status": "done"},
+                           {"target_zh_TW": ""}, {"target_zh_TW": "你好 @SS2\\m"},
+                           {"target_zh_TW": "你好 @SS1"}, {"flags": "control-code"}):
                 with self.subTest(change=change):
-                    write_tsv(path, [dict(row, **change)], fields)
-                    with self.assertRaises(ValueError):
+                    path.write_bytes(render_tsv([dict(row, **change)], MASTER_FIELDS))
+                    with self.assertRaises(DatasetError):
                         pack(path)
-            write_tsv(path, [row, row], fields)
-            with self.assertRaises(ValueError):
+            path.write_bytes(render_tsv([row, row], MASTER_FIELDS))
+            with self.assertRaises(DatasetError):
                 pack(path)
 
 

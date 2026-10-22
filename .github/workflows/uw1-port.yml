@@ -56,6 +56,12 @@ jobs:
           PKG_CONFIG_PATH=$PWD/uw1/tools/libs/lib/pkgconfig sh exhume/tools/setup-sound.sh uw1/tools/nuked-opl3
       - run: make -C uw1 port
       - run: make -C uw1 port-check
+      - name: Localization dataset, pipeline and catalog lookup (no game assets)
+        run: |
+          python3 uw1/tools/i18n/l10n.py validate
+          python3 uw1/tools/i18n/test_l10n.py
+          python3 -m unittest discover -s uw1/tools/i18n -p test_i18n.py
+          python3 uw1/tools/i18n/test_runtime.py
       - name: FreeType CJK render and cache checks (no game assets)
         run: |
           python3 uw1/tools/i18n/fetch_font.py
@@ -117,6 +123,12 @@ jobs:
       - run: sh exhume/tools/setup-sound.sh uw1/tools/nuked-opl3
       - run: make -C uw1 port
       - run: make -C uw1 port-check
+      - name: Localization dataset, pipeline and catalog lookup (no game assets)
+        run: |
+          python3 uw1/tools/i18n/l10n.py validate
+          python3 uw1/tools/i18n/test_l10n.py
+          python3 -m unittest discover -s uw1/tools/i18n -p test_i18n.py
+          python3 uw1/tools/i18n/test_runtime.py
       - name: FreeType CJK render and cache checks (no game assets)
         run: |
           python3 uw1/tools/i18n/fetch_font.py
@@ -155,6 +167,12 @@ jobs:
       - run: sh exhume/tools/setup-sound.sh uw1/tools/nuked-opl3
       - run: make -C uw1 PY=python port
       - run: make -C uw1 PY=python port-check
+      - name: Localization dataset, pipeline and catalog lookup (no game assets)
+        run: |
+          python uw1/tools/i18n/l10n.py validate
+          python uw1/tools/i18n/test_l10n.py
+          python -m unittest discover -s uw1/tools/i18n -p test_i18n.py
+          python uw1/tools/i18n/test_runtime.py
       - name: FreeType CJK render and cache checks (no game assets)
         run: |
           python uw1/tools/i18n/fetch_font.py
