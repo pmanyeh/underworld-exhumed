@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "scope": "P8 Native player-flow and save semantics; visual review separate",
+  "walk_arrival_xyz_facing_level": [
+    4736,
+    1664,
+    768,
+    0,
+    1
+  ],
+  "mouse_choices": [
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2
+  ],
+  "external_catalog_keys_observed": [
+    "3651:1",
+    "3651:10",
+    "3651:11",
+    "3651:12",
+    "3651:16",
+    "3651:17",
+    "3651:18",
+    "3651:19",
+    "3651:20",
+    "3651:21",
+    "3651:22",
+    "3651:23",
+    "3651:24",
+    "3651:25",
+    "3651:26",
+    "3651:27",
+    "3651:28",
+    "3651:3",
+    "3651:30",
+    "3651:31",
+    "3651:32",
+    "3651:33",
+    "3651:4",
+    "3651:5",
+    "3651:6",
+    "3651:7",
+    "7:83"
+  ],
+  "dynamic_fallback_expanded_English": true,
+  "MORE_events": 3,
+  "restore_player_and_inventory_exact_except_game_clock": true,
+  "restore_position_before_movement": [
+    4736,
+    1664,
+    768,
+    -16384,
+    1
+  ],
+  "saved_position_after_movement": [
+    4608,
+    1664,
+    768,
+    -16384,
+    1
+  ],
+  "continued_after_restore": true,
+  "English_and_modern_BGLOBALS_exact": true,
+  "English_and_modern_player_except_facing_clock_equal": true,
+  "English_and_modern_serialized_items_equal": true,
+  "window_geometry": {
+    "dialogue": [
+      960,
+      720
+    ],
+    "resize": [
+      1280,
+      960
+    ]
+  },
+  "legacy_scroll_papers_uniform": true,
+  "English_original_glyphs_present": true,
+  "cheats": false,
+  "replay_checkpoints_per_run": {
+    "walk": 250,
+    "dialogue": 307,
+    "restore": 123,
+    "english": 301,
+    "resize": 479
+  },
+  "sanitizer_runs": 5,
+  "recording_sha256": {
+    "walk": "28014aeb344d1c71bbf8b131a52edabad2b7e031f2eb3ec484bf751c72f2c029",
+    "dialogue": "8a91ea338a01b34907b24d6940e817f9b75afaa9aed662c0b2fe636323ef062d",
+    "restore": "80987a1e6abecb22e65e4584a7c23c18afede49abd7d90338ce2c57cedebfb1c",
+    "english": "b7e5e85de2b5e7c2f8141caa396913dc8f1ee41972710509b4c35df8ba6880fd",
+    "resize": "4c1afa8a12d43ee678cb85ee9f52ad1cff6d0eaa920d12e08567c2e68be18432"
+  }
+}

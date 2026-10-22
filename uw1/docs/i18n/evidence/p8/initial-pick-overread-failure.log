@@ -1,0 +1,69 @@
+EMS allocated
+
+uw1port: mt32: no ROMs
+uw1port: enhance: skip-intro (not as DOS)
+uw1port: mouse: follow
+=================================================================
+==28156==ERROR: AddressSanitizer: global-buffer-overflow on address 0x7ff6abc95161 at pc 0x7ff6ab304850 bp 0x006d1e1fefd0 sp 0x006d1e1ff018
+READ of size 2 at 0x7ff6abc95161 thread T2
+    #0 0x7ff6ab30484f in pick_3d D:\git\uw1-native-poc\underworld-exhumed\uw1\src\ui/INTERACT.C:395:25
+    #1 0x7ff6ab306d92 in mous_in_3d D:\git\uw1-native-poc\underworld-exhumed\uw1\src\ui/INTERACT.C:592:32
+    #2 0x7ff6ab2ff110 in input_dispatch D:\git\uw1-native-poc\underworld-exhumed\uw1\src\ui/INPUT.C:210:17
+    #3 0x7ff6ab1f336d in mainloop D:\git\uw1-native-poc\underworld-exhumed\uw1\src\game/MAINLOOP.C:37:9
+    #4 0x7ff6ab21956b in uw1_main D:\git\uw1-native-poc\underworld-exhumed\uw1\src\game/UWEDIT.C:147:5
+    #5 0x7ff6ab809533 in game D:\git\uw1-native-poc\underworld-exhumed\uw1\src\port\sys/main.c:149:14
+    #6 0x7ff6ab35b302 in game_thread D:\git\Ultima Underworld\underworld-exhumed\exhume\runtime\port\platform\sdl3/plat_sdl3.c:241:10
+    #7 0x7ffa917b3171 in SDL_RunThread (D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\SDL3.dll+0x1800e3171)
+    #8 0x7ffa91871140 in SDL_SYS_CreateThread (D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\SDL3.dll+0x1801a1140)
+    #9 0x7ffbb625cd2f  (C:\WINDOWS\System32\ucrtbase.dll+0x18002cd2f)
+    #10 0x7ffa8b88f15c in CreateThread (D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\libclang_rt.asan_dynamic-x86_64.dll+0x18005f15c)
+    #11 0x7ffbb829dda6  (C:\WINDOWS\System32\KERNEL32.DLL+0x18002dda6)
+    #12 0x7ffbb905ee4b  (C:\WINDOWS\SYSTEM32\ntdll.dll+0x18007ee4b)
+
+0x7ff6abc95161 is located 31 bytes before global variable 'PlayerBank' defined in 'D:\git\uw1-native-poc\underworld-exhumed\uw1\src\motion\PLAYMOVE.C' (0x7ff6abc95180) of size 2
+0x7ff6abc95161 is located 63 bytes before global variable 'PlayerDat' defined in 'D:\git\uw1-native-poc\underworld-exhumed\uw1\src\game\PLAYER.C' (0x7ff6abc951a0) of size 210
+0x7ff6abc95161 is located 0 bytes after global variable 'PickUp' defined in 'D:\git\uw1-native-poc\underworld-exhumed\uw1\src\3d\GRIDDB.C' (0x7ff6abc95160) of size 1
+SUMMARY: AddressSanitizer: global-buffer-overflow D:\git\uw1-native-poc\underworld-exhumed\uw1\src\ui/INTERACT.C:395:25 in pick_3d
+Shadow bytes around the buggy address:
+  0x7ff6abc94e80: 02 f9 f9 f9 00 f9 f9 f9 00 00 00 00 00 00 00 00
+  0x7ff6abc94f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7ff6abc94f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7ff6abc95000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7ff6abc95080: 00 00 00 00 00 00 00 00 f9 f9 f9 f9 f9 f9 f9 f9
+=>0x7ff6abc95100: f9 f9 f9 f9 f9 f9 f9 f9 00 f9 f9 f9[01]f9 f9 f9
+  0x7ff6abc95180: 02 f9 f9 f9 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7ff6abc95200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 02 f9
+  0x7ff6abc95280: f9 f9 f9 f9 02 f9 f9 f9 02 f9 f9 f9 02 f9 f9 f9
+  0x7ff6abc95300: 02 f9 f9 f9 02 f9 f9 f9 00 00 00 00 00 00 00 00
+  0x7ff6abc95380: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+Thread T2 created by T0 here:
+    #0 0x7ffa8b88f076 in CreateThread (D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\libclang_rt.asan_dynamic-x86_64.dll+0x18005f076)
+    #1 0x7ffbb62aa2b7  (C:\WINDOWS\System32\ucrtbase.dll+0x18007a2b7)
+    #2 0x7ffa918710bc in SDL_SYS_CreateThread (D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\SDL3.dll+0x1801a10bc)
+    #3 0x7ffa917b3315 in SDL_CreateThreadWithPropertiesRuntime_REAL (D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\SDL3.dll+0x1800e3315)
+    #4 0x7ff6ab35ad93 in plat_run D:\git\Ultima Underworld\underworld-exhumed\exhume\runtime\port\platform\sdl3/plat_sdl3.c:1027:14
+    #5 0x7ff6ab807f0d in main D:\git\uw1-native-poc\underworld-exhumed\uw1\src\port\sys/main.c:667:14
+    #6 0x7ff6ab0c110c in __tmainCRTStartup (D:\git\uw1-native-poc\underworld-exhumed\uw1\build\port-debug\uw1port.exe+0x14000110c)
+    #7 0x7ffbb829dda6  (C:\WINDOWS\System32\KERNEL32.DLL+0x18002dda6)
+    #8 0x7ffbb905ee4b  (C:\WINDOWS\SYSTEM32\ntdll.dll+0x18007ee4b)
+
+==28156==ABORTING

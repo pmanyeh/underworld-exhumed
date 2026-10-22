@@ -1,0 +1,93 @@
+from pathlib import Path
+import hashlib,json,subprocess
+from PIL import Image
+workspace=Path(__file__).resolve().parent.parent
+repo=workspace/'underworld-exhumed';root=repo/'uw1';build=root/'build/vertical-slice'
+out=root/'docs/i18n/evidence/p8';out.mkdir(parents=True,exist_ok=True)
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def copy(src,name):
+ data=src.read_bytes().replace(b'\r\n',b'\n')
+ if src.suffix=='.log':data=b'\n'.join(line.rstrip(b' \t') for line in data.split(b'\n'))
+ (out/name).write_bytes(data.rstrip(b'\n')+b'\n')
+for p in (root/'build/i18n').glob('p8-*'):
+ if p.suffix in ('.log','.json'):copy(p,p.name.removeprefix('p8-'))
+for name in ('native-build.log','sanitizer-build-final.log','initial-bounds-failure.log','initial-pick-overread-failure.log','initial-path-tail-failure.log','acceptance.json'):
+ copy(build/name,name)
+cases={'walk':'walk-01','dialogue':'dialogue-01','restore':'restore-01','english':'english-01','resize':'resize-02'}
+images={}
+for name,directory in cases.items():
+ folder=build/directory
+ for source,target in [('run.log','run.log'),('scroll.jsonl','scroll.jsonl'),('lookup.jsonl','lookup.jsonl'),('input.script','input.script'),('walk.script','input.script'),('dialogue.script','input.script'),('scenario.json','scenario.json'),('command.json','command.json')]:
+  if (folder/source).exists():copy(folder/source,name+'-'+target)
+ copy(build/(name+'-replay.json'),name+'-replay.json')
+ for label in ('replay1','replay2','sanitizer'):
+  copy(build/('final-'+name)/label/'port.log',name+'-'+label+'.log')
+ for source,suffix in [('window.png','.png'),('scanout.png','-scanout.png')]:
+  p=folder/source;dest=out/(name+suffix)
+  with Image.open(p) as image:
+   before=image.tobytes();mode=image.mode;size=image.size
+   image.save(dest,optimize=True,compress_level=9)
+  with Image.open(dest) as image:assert image.tobytes()==before and image.mode==mode and image.size==size
+  images[dest.name]={'sha256':sha(dest),'decoded_pixel_sha256':hashlib.sha256(before).hexdigest(),'mode':mode,'size':list(size),'lossless_recompression_verified':True}
+# Preserve the unsuccessful coarse-grid resize fixture and its actual result.
+for p in ('run.log','input.script','scroll.jsonl'):
+ copy(build/'resize-01'/p,'initial-resize-'+p)
+for name in ('p8-walk.py','p8-dialogue.py','p8-native-regression.py','p8-replay-en.py','p8-text-regression.py','p8-verify-all.py','p8-archive.py','prepare-fuzzhost-link.py'):
+ copy(workspace/'.poc-tools'/name,name+'.txt')
+code=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip()
+assert code=='ec959aa8585cf8cf8488e1debc0371b065d6da3a'
+ci=json.loads((out/'ci.json').read_text(encoding='utf-8'))
+assert ci['commit']==code and {j['name'] for j in ci['jobs']}=={'linux','macos','windows','web'}
+assert all(j['status']=='completed' and j['conclusion']=='success' for j in ci['jobs'])
+baseline='5175c2e9d3326382220a8233a651407d73a3e7e9'
+files=subprocess.check_output(['git','diff','--name-only',baseline,code],cwd=repo,text=True).splitlines()
+manifest={'status':'Native P8 PASS; PoC = GO',
+ 'date':'2026-10-22','tested_code_and_tests':code,
+ 'baseline':{'underworld_upstream':'e5deadd6945b492636aadccc14f52caa908b4186','underworld_feature':baseline,
+  'exhume_upstream_observed':'aa2353a2442c9cb9ef2267aabd9398abb8aac42d','exhume_runtime_base':'c54e00e9176c14d0913b5806318a30f85a8f4636',
+  'exhume_overlay_pin':'89278495bb0b8b224b5bb58e53da2fd367c0d8c0'},
+ 'source_sha256':{p:sha(repo/p) for p in files},
+ 'native_exe_sha256':sha(root/'build/port/uw1port.exe'),
+ 'sanitizer_exe_sha256':sha(root/'build/port-debug/uw1port.exe'),
+ 'native_exe_bytes':(root/'build/port/uw1port.exe').stat().st_size,
+ 'sanitizer_exe_bytes':(root/'build/port-debug/uw1port.exe').stat().st_size,
+ 'platform':'Windows / Clang 23.1.3 / SDL3 3.4.18 / FreeType 2.14.3 / Python 3.12.10',
+ 'sanitizers':{'full_game':'address,null,bounds','standalone':'address,undefined',
+  'Windows_leak_detection':False,'third_party_DLLs_instrumented':False,'failures_suppressed':False},
+ 'font':{'name':'Noto Sans CJK TC Regular 2.004','license':'OFL 1.1',
+  'revision':'f8d157532fbfaeda587e826d4cd5b21a49186f7c','sha256':sha(root/'tools/fonts/NotoSansCJKtc-Regular.otf')},
+ 'freetype_DLL_sha256':sha(root/'tools/libs/bin/libfreetype.dll'),
+ 'catalog_sha256':sha(root/'build/i18n/zh-TW.uwloc'),'poc_tsv_sha256':sha(root/'i18n/zh-TW/poc.tsv'),
+ 'ci':'https://github.com/pmanyeh/underworld-exhumed/actions/runs/39718841930',
+ 'cross_platform_ci':{j['name']:j['conclusion'] for j in ci['jobs']},
+ 'player_flow':json.loads((build/'acceptance.json').read_text(encoding='utf-8')),
+ 'tests':{'five_fresh_recordings':{'original_checkpoints':1455,'per_replay':1460,'runs':3,'normal_replays':2,'sanitizer_replays':1,
+   'total_compared_checkpoints_including_terminal':4380,'additional_section_masks':[],'saved_files':'identical'},
+  'compatibility':{'English':[16,1786],'zh_TW_lookup':[16,1786],'all_original_sections_screens_saves':True,'goldens_modified':False},
+  'standalone':'inventory, runtime, layout, real font, no-FreeType stub, cursor, actual MOUSE.C, scroll flow/render/window PASS',
+  'font_assertions':4411580,'render_assertions':75258,'SDL_scroll_scenarios':8,'snapshot_publications':5000,
+  'native_probe_strings':10984,'native_probe_missing_keys':2,
+  'native_matrix':json.loads((root/'build/i18n/p8-native-matrix.json').read_text()),
+  'DOS':'NOT APPLICABLE - Native-only PoC'},
+ 'images':images,
+ 'save_sha256':{name:{f'{folder.name}/{file.name}':sha(file) for folder in (build/directory).glob('SAVE[1-4]') if folder.is_dir() for file in folder.iterdir() if file.is_file()} for name,directory in cases.items()},
+ 'initial_failures':{'automap':'UBSan bounds: row pointer used with linear 4096-tile index; fixed Native whole-array byte view',
+  'pick_counter':'ASan: byte counter read as a word; fixed Native byte read',
+  'path_tail':'UBSan bounds: padded path steps read stale non-neighbour coordinates; skip unused tail bits in Native',
+  'resize_fixture':'coarse click grid missed wandering NPC and MORE spaces changed settings twice; revised dense grid and separate settings input; final acceptance asserts actual conversation and 4x geometry'},
+ 'compatibility_notes':['Existing emulated FARNULLTRAP reads in inv_look/checkTrap remain recorded; not host invalid accesses or suppressed sanitizer failures',
+  'English/Chinese paired saves compare exact BGLOBALS, player data except facing/game clock, and serialized item slots/objects after avatar; independent runs have different timing/direction',
+  'Within each recorded scenario, all canonical sections/headers and saved files match with no extra masks'],
+ 'limitations':['Full game/player workflow tested on Windows; Linux/macOS build and standalone checks in CI, not full game asset runs',
+  'Templates containing @ retain expanded English fallback; title/name bitmap UI and MORE label remain legacy English',
+  'No full-game translation, IME, UW2, HD UI or HD 3D',
+  'Basic codepoint layout; no full Unicode shaping, grapheme or UAX14 coverage',
+  'Real 3x to 4x resize on Windows; physical cross-monitor DPI move not tested',
+  'Web compile/link only; no Web HD scroll runtime claim',
+  'Scripts can miss a wandering NPC; only validator/replay results count as acceptance, not exit status alone'],
+ 'stop_rule':'P8 ends the PoC. Do not start Phase 9 without human review.',
+ 'evidence_policy':'No original game data, executable, saves, recordings, font or DLL binaries are distributed'}
+(out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+for p in out.iterdir():
+ if p.is_file() and p.suffix!='.png':p.write_bytes(p.read_bytes().replace(b'\r\n',b'\n').rstrip(b'\n')+b'\n')
+print('Archived',len(list(out.iterdir())),'evidence files;',len(images),'lossless PNGs;',len(files),'source hashes')

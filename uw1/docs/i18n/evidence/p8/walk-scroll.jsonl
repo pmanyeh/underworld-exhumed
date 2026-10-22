@@ -1,0 +1,50 @@
+{"event":"text","box":0,"choice":0,"text":"There is no space to drop that.\u000a"}
+{"event":"write","box":0,"value":0,"cells":31,"lines":0}
+{"event":"text","box":0,"choice":0,"text":"Use key on what?\u000a"}
+{"event":"write","box":0,"value":0,"cells":47,"lines":1}
+{"event":"text","box":0,"choice":0,"text":"鑰匙打開了鎖。\u000a"}
+{"event":"write","box":0,"value":0,"cells":54,"lines":2}
+{"event":"text","box":0,"choice":0,"text":"\\6    Save Game Descriptions"}
+{"event":"write","box":0,"value":0,"cells":26,"lines":0}
+{"event":"text","box":0,"choice":0,"text":"\u000a"}
+{"event":"write","box":0,"value":0,"cells":26,"lines":0}
+{"event":"text","box":0,"choice":0,"text":"I- "}
+{"event":"write","box":0,"value":0,"cells":29,"lines":1}
+{"event":"text","box":0,"choice":0,"text":"<not used yet>"}
+{"event":"write","box":0,"value":0,"cells":43,"lines":1}
+{"event":"text","box":0,"choice":0,"text":"\u000a"}
+{"event":"write","box":0,"value":0,"cells":43,"lines":1}
+{"event":"text","box":0,"choice":0,"text":"II- "}
+{"event":"write","box":0,"value":0,"cells":47,"lines":2}
+{"event":"text","box":0,"choice":0,"text":"<not used yet>"}
+{"event":"write","box":0,"value":0,"cells":61,"lines":2}
+{"event":"text","box":0,"choice":0,"text":"\u000a"}
+{"event":"write","box":0,"value":0,"cells":61,"lines":2}
+{"event":"text","box":0,"choice":0,"text":"III- "}
+{"event":"write","box":0,"value":0,"cells":40,"lines":3}
+{"event":"text","box":0,"choice":0,"text":"<not used yet>"}
+{"event":"write","box":0,"value":0,"cells":54,"lines":3}
+{"event":"text","box":0,"choice":0,"text":"\u000a"}
+{"event":"write","box":0,"value":0,"cells":54,"lines":3}
+{"event":"text","box":0,"choice":0,"text":"IV- "}
+{"event":"write","box":0,"value":0,"cells":41,"lines":4}
+{"event":"text","box":0,"choice":0,"text":"<not used yet>"}
+{"event":"write","box":0,"value":0,"cells":55,"lines":4}
+{"event":"text","box":0,"choice":0,"text":"\\0"}
+{"event":"write","box":0,"value":0,"cells":55,"lines":4}
+{"event":"text","box":0,"choice":0,"text":"\\6     Please enter a save file description:\u000a"}
+{"event":"write","box":0,"value":0,"cells":37,"lines":0}
+{"event":"text","box":0,"choice":0,"text":"\u000a"}
+{"event":"write","box":0,"value":0,"cells":0,"lines":0}
+{"event":"text","box":0,"choice":0,"text":"Saving Game "}
+{"event":"write","box":0,"value":0,"cells":12,"lines":1}
+{"event":"text","box":0,"choice":0,"text":"..."}
+{"event":"write","box":0,"value":0,"cells":15,"lines":1}
+{"event":"text","box":0,"choice":0,"text":"..."}
+{"event":"write","box":0,"value":0,"cells":18,"lines":1}
+{"event":"text","box":0,"choice":0,"text":"..."}
+{"event":"write","box":0,"value":0,"cells":21,"lines":1}
+{"event":"text","box":0,"choice":0,"text":"\\0"}
+{"event":"write","box":0,"value":0,"cells":21,"lines":1}
+{"event":"text","box":0,"choice":0,"text":"\\6Save Game Succeeded.\u000a\\0"}
+{"event":"write","box":0,"value":0,"cells":20,"lines":1}

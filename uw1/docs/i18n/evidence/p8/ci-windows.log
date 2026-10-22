@@ -1,0 +1,10 @@
+2026-10-22T03:50:02.0690728Z compiled 89 game sources and 103 port sources (layout flags: -mno-ms-bitfields)
+2026-10-22T03:50:02.0695084Z linked build/port/uw1port.exe (5146624 bytes)
+2026-10-22T03:50:10.9087933Z 89 C sources: 89 compile, 0 fail; 89 with no diagnostic in the file itself
+2026-10-22T03:50:10.9088629Z 0 errors and 0 warnings (each counted once)
+2026-10-22T03:50:12.4764895Z PASS 4411580 assertions: CJK/AA, metrics, cache hit/eviction/face/size, alpha, malformed input, wrapping, clipping
+2026-10-22T03:50:12.4766108Z PASS FreeType compile/link/render
+2026-10-22T03:50:13.4301405Z PASS 3513578 assertions: nearest pixels, hotspot, alpha/z-order, aspect/letterbox/HiDPI, clipping, 50000 concurrent snapshots
+2026-10-22T03:50:13.9768029Z PASS actual MOUSE.C: 39 assertions; nesting, save-under, regions, force stack, object, both raster paths
+2026-10-22T03:50:15.4567980Z PASS 54492 assertions: UTF-8, CJK/English wrap, punctuation, append, pages/MORE, controls, choices, fallback, 5000 concurrent snapshots
+2026-10-22T03:50:16.4588469Z PASS 75258 assertions: FreeType logical metrics, stable positions, native masks, warm cache, bounds/guards, 1x/3x/fractional/HiDPI

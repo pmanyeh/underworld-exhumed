@@ -1,0 +1,363 @@
+{
+  "status": "Native P8 PASS; PoC = GO",
+  "date": "2026-10-22",
+  "tested_code_and_tests": "ec959aa8585cf8cf8488e1debc0371b065d6da3a",
+  "baseline": {
+    "underworld_upstream": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "underworld_feature": "5175c2e9d3326382220a8233a651407d73a3e7e9",
+    "exhume_upstream_observed": "aa2353a2442c9cb9ef2267aabd9398abb8aac42d",
+    "exhume_runtime_base": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "exhume_overlay_pin": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0"
+  },
+  "source_sha256": {
+    "uw1/src/3d/GRIDDB.C": "893928304e25b759930595d4f321395b5bfe197a9bf18b416135aa15b2ee825e",
+    "uw1/src/critter/PATHFIND.C": "1b954f85db11680fb1c7f683395fd4f4135a894f4effc27ed280fcbda2733812",
+    "uw1/src/ui/INTERACT.C": "c7cc4a74594e2939851f65dbb327d56ba99b281aa0c61115f83a9e7299cf16fa",
+    "uw1/tools/i18n/record_vertical_slice.py": "7dc36397dbe258afa7e5d20b2c823d6e5365be5b39c58a0b213c05eed5f74be9",
+    "uw1/tools/i18n/validate_vertical_slice.py": "2983c4a4b081b1a0a8fe970662f77c0c89c39f96c9cfcee359d5704d816666a0",
+    "uw1/tools/i18n/verify_native_recording.py": "ca02868f00ae3fcc5ace7b56b69cc715bb48f33f54296bb36c99d1e33c50bb82"
+  },
+  "native_exe_sha256": "6918bd54db2a241c1e1b6b7cf08b59dbac810ce9ba4be38388e478b7a41118a2",
+  "sanitizer_exe_sha256": "a3205769bc3bbfa76c31c2c025266acb1ffdd43690f3de2bfb66078226efdb8d",
+  "native_exe_bytes": 5154304,
+  "sanitizer_exe_bytes": 16330752,
+  "platform": "Windows / Clang 23.1.3 / SDL3 3.4.18 / FreeType 2.14.3 / Python 3.12.10",
+  "sanitizers": {
+    "full_game": "address,null,bounds",
+    "standalone": "address,undefined",
+    "Windows_leak_detection": false,
+    "third_party_DLLs_instrumented": false,
+    "failures_suppressed": false
+  },
+  "font": {
+    "name": "Noto Sans CJK TC Regular 2.004",
+    "license": "OFL 1.1",
+    "revision": "f8d157532fbfaeda587e826d4cd5b21a49186f7c",
+    "sha256": "dce08bd4fd91aa8aa76ed8fea4b694c2dfb8550f67871e326843212ddbeb88b4"
+  },
+  "freetype_DLL_sha256": "751400ec0a3bbb3330200547bd3ed9bd09402b1c44118ff4d40dc0b4f0bae9f3",
+  "catalog_sha256": "fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98",
+  "poc_tsv_sha256": "fef857593dafa1c1128e5f5bf93762a9486f18f095d27678da1292b5a3978c3f",
+  "ci": "https://github.com/pmanyeh/underworld-exhumed/actions/runs/39718841930",
+  "cross_platform_ci": {
+    "web": "success",
+    "linux": "success",
+    "windows": "success",
+    "macos": "success"
+  },
+  "player_flow": {
+    "status": "PASS",
+    "scope": "P8 Native player-flow and save semantics; visual review separate",
+    "walk_arrival_xyz_facing_level": [
+      4736,
+      1664,
+      768,
+      0,
+      1
+    ],
+    "mouse_choices": [
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2
+    ],
+    "external_catalog_keys_observed": [
+      "3651:1",
+      "3651:10",
+      "3651:11",
+      "3651:12",
+      "3651:16",
+      "3651:17",
+      "3651:18",
+      "3651:19",
+      "3651:20",
+      "3651:21",
+      "3651:22",
+      "3651:23",
+      "3651:24",
+      "3651:25",
+      "3651:26",
+      "3651:27",
+      "3651:28",
+      "3651:3",
+      "3651:30",
+      "3651:31",
+      "3651:32",
+      "3651:33",
+      "3651:4",
+      "3651:5",
+      "3651:6",
+      "3651:7",
+      "7:83"
+    ],
+    "dynamic_fallback_expanded_English": true,
+    "MORE_events": 3,
+    "restore_player_and_inventory_exact_except_game_clock": true,
+    "restore_position_before_movement": [
+      4736,
+      1664,
+      768,
+      -16384,
+      1
+    ],
+    "saved_position_after_movement": [
+      4608,
+      1664,
+      768,
+      -16384,
+      1
+    ],
+    "continued_after_restore": true,
+    "English_and_modern_BGLOBALS_exact": true,
+    "English_and_modern_player_except_facing_clock_equal": true,
+    "English_and_modern_serialized_items_equal": true,
+    "window_geometry": {
+      "dialogue": [
+        960,
+        720
+      ],
+      "resize": [
+        1280,
+        960
+      ]
+    },
+    "legacy_scroll_papers_uniform": true,
+    "English_original_glyphs_present": true,
+    "cheats": false,
+    "replay_checkpoints_per_run": {
+      "walk": 250,
+      "dialogue": 307,
+      "restore": 123,
+      "english": 301,
+      "resize": 479
+    },
+    "sanitizer_runs": 5,
+    "recording_sha256": {
+      "walk": "28014aeb344d1c71bbf8b131a52edabad2b7e031f2eb3ec484bf751c72f2c029",
+      "dialogue": "8a91ea338a01b34907b24d6940e817f9b75afaa9aed662c0b2fe636323ef062d",
+      "restore": "80987a1e6abecb22e65e4584a7c23c18afede49abd7d90338ce2c57cedebfb1c",
+      "english": "b7e5e85de2b5e7c2f8141caa396913dc8f1ee41972710509b4c35df8ba6880fd",
+      "resize": "4c1afa8a12d43ee678cb85ee9f52ad1cff6d0eaa920d12e08567c2e68be18432"
+    }
+  },
+  "tests": {
+    "five_fresh_recordings": {
+      "original_checkpoints": 1455,
+      "per_replay": 1460,
+      "runs": 3,
+      "normal_replays": 2,
+      "sanitizer_replays": 1,
+      "total_compared_checkpoints_including_terminal": 4380,
+      "additional_section_masks": [],
+      "saved_files": "identical"
+    },
+    "compatibility": {
+      "English": [
+        16,
+        1786
+      ],
+      "zh_TW_lookup": [
+        16,
+        1786
+      ],
+      "all_original_sections_screens_saves": true,
+      "goldens_modified": false
+    },
+    "standalone": "inventory, runtime, layout, real font, no-FreeType stub, cursor, actual MOUSE.C, scroll flow/render/window PASS",
+    "font_assertions": 4411580,
+    "render_assertions": 75258,
+    "SDL_scroll_scenarios": 8,
+    "snapshot_publications": 5000,
+    "native_probe_strings": 10984,
+    "native_probe_missing_keys": 2,
+    "native_matrix": {
+      "fuzz-host-link": 0,
+      "fuzz": 0,
+      "enhancements": 0,
+      "settings": 0,
+      "movement": 0,
+      "blackbox": 0,
+      "mapnotes": 0
+    },
+    "DOS": "NOT APPLICABLE - Native-only PoC"
+  },
+  "images": {
+    "walk.png": {
+      "sha256": "636bbf523d95d94488a986868f2854acf62e205f969442cc89a737b13489ae0d",
+      "decoded_pixel_sha256": "089545a6b2c60025703df1e70c6855858c1f31213c7f40664687a44507d63f26",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "walk-scanout.png": {
+      "sha256": "9698978f8bbed1c071e6ecb73fbc620c9b054d0c60aa1656200a48d793307015",
+      "decoded_pixel_sha256": "07b46daa6aac660b0b816a8c97072f7c7b4e8b38a17a02a40c9b4b735ffbe6e3",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "dialogue.png": {
+      "sha256": "8e2aeccf60ecacb03922e2cdb928ea738423cde8a8c293186210f2c27c71921a",
+      "decoded_pixel_sha256": "e53202b18ac1c50acc60466fa47759efc1fd275d583d8fcec85d3cba879f260f",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "dialogue-scanout.png": {
+      "sha256": "9be09796276fefce7ee7f1efb4050745bed7bf4cd78183b907e367a3340fc2fe",
+      "decoded_pixel_sha256": "c8715e99afcd5d1bcf3b31a0a4dd0620a63fed8da5744b1b3b82d1d37c2fedab",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "restore.png": {
+      "sha256": "c54d6a3801f3d05c100fe8fbe0575a5bc98f6f0fd3bbbd8cea157f32d9e5545c",
+      "decoded_pixel_sha256": "34aa12bafec568df2c81052b1e11972c907f657a5b5483d0a675a48509700331",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "restore-scanout.png": {
+      "sha256": "e6b792b78b478524ce8b45073c34207e947079495dc35dfaf65c6df37c8891f0",
+      "decoded_pixel_sha256": "ceb3f159c67ad738ba2efc670b3e47178f38915e0c754d342cffc6f53c738936",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "english.png": {
+      "sha256": "24afa9929c0439dfccf66938eceee071987b0fe06a61614806064921c3890020",
+      "decoded_pixel_sha256": "5ec19ee8cde0865c2d1834407cd497237bae5be8901f1e1775d7ed216d87a16b",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "english-scanout.png": {
+      "sha256": "8aa053c4c5a821dbe545ea67955b54a9edaaebf8ac808535bbc53822c916b574",
+      "decoded_pixel_sha256": "d651b417cf5aec28d340d21e6a415b2593e380e4ad0d1ae13384ea3236985ab7",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "resize.png": {
+      "sha256": "461894c7d3d4830da3e23d553375913a8e16ea0962e959e2d455e281a466044b",
+      "decoded_pixel_sha256": "1b4f00d1c35743213e2df56885bfb29b14148a388c133813842218ab213cc35e",
+      "mode": "RGB",
+      "size": [
+        1280,
+        960
+      ],
+      "lossless_recompression_verified": true
+    },
+    "resize-scanout.png": {
+      "sha256": "9be09796276fefce7ee7f1efb4050745bed7bf4cd78183b907e367a3340fc2fe",
+      "decoded_pixel_sha256": "c8715e99afcd5d1bcf3b31a0a4dd0620a63fed8da5744b1b3b82d1d37c2fedab",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    }
+  },
+  "save_sha256": {
+    "walk": {
+      "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+      "SAVE1/DESC": "7ec55fab25dac3dd4983e0c919b0ef3c23db49cac2b1ce01f98534d63ab49b71",
+      "SAVE1/LEV.ARK": "23754f44f5208c71d2df790460f725cc710d179d0f688a6af62d6f8232fdfe7f",
+      "SAVE1/PLAYER.DAT": "5e5d75696aeb7b5cec47f04a88414e11df89a2db99572bae0731c3d4a52cf62f"
+    },
+    "dialogue": {
+      "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+      "SAVE1/DESC": "7ec55fab25dac3dd4983e0c919b0ef3c23db49cac2b1ce01f98534d63ab49b71",
+      "SAVE1/LEV.ARK": "23754f44f5208c71d2df790460f725cc710d179d0f688a6af62d6f8232fdfe7f",
+      "SAVE1/PLAYER.DAT": "5e5d75696aeb7b5cec47f04a88414e11df89a2db99572bae0731c3d4a52cf62f",
+      "SAVE2/BGLOBALS.DAT": "2cbfd6ca475f283f53ecaaae95c36d677ad49df43f9a6d506e91b539a4da7a7a",
+      "SAVE2/DESC": "50c903e2e4f6f4330686bfd1a017700a41795deb7af614a9acdd9c056e8dae9d",
+      "SAVE2/LEV.ARK": "bfeadba828c1c1f14cecbcf42501414deb199f7dbeda2af23e358ddfa309768c",
+      "SAVE2/PLAYER.DAT": "b17f6033c9aea53c99eaa639691d88020283b6ac27ff1b5619aa1cf0ea887852"
+    },
+    "restore": {
+      "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+      "SAVE1/DESC": "7ec55fab25dac3dd4983e0c919b0ef3c23db49cac2b1ce01f98534d63ab49b71",
+      "SAVE1/LEV.ARK": "23754f44f5208c71d2df790460f725cc710d179d0f688a6af62d6f8232fdfe7f",
+      "SAVE1/PLAYER.DAT": "5e5d75696aeb7b5cec47f04a88414e11df89a2db99572bae0731c3d4a52cf62f",
+      "SAVE2/BGLOBALS.DAT": "2cbfd6ca475f283f53ecaaae95c36d677ad49df43f9a6d506e91b539a4da7a7a",
+      "SAVE2/DESC": "50c903e2e4f6f4330686bfd1a017700a41795deb7af614a9acdd9c056e8dae9d",
+      "SAVE2/LEV.ARK": "bfeadba828c1c1f14cecbcf42501414deb199f7dbeda2af23e358ddfa309768c",
+      "SAVE2/PLAYER.DAT": "b17f6033c9aea53c99eaa639691d88020283b6ac27ff1b5619aa1cf0ea887852",
+      "SAVE3/BGLOBALS.DAT": "2cbfd6ca475f283f53ecaaae95c36d677ad49df43f9a6d506e91b539a4da7a7a",
+      "SAVE3/DESC": "7855ba89e90670a3d239f5c03bed584a261604e83dd422b51c83c7cda89a3ece",
+      "SAVE3/LEV.ARK": "14731b5a553c51c27ba1c24826a26070e1d73fc6ffef328c38c91c39c84ef803",
+      "SAVE3/PLAYER.DAT": "a55885ce18a05611004e09a1c9dbb186c38dc37ebc209cd2e0314b5aa90e7f1e",
+      "SAVE4/BGLOBALS.DAT": "2cbfd6ca475f283f53ecaaae95c36d677ad49df43f9a6d506e91b539a4da7a7a",
+      "SAVE4/DESC": "81cf17983927b108dc9ba97a9c84977b9d003572cd26f269aa090bf63db801f1",
+      "SAVE4/LEV.ARK": "bfac04cfdaada2243d6e6efd6aa3ad611988aa6cebef3a77b7ab767239124cbc",
+      "SAVE4/PLAYER.DAT": "cb82fb96093ff80e392da8ec3559f173c1b74fcec99733f63a4261816661c911"
+    },
+    "english": {
+      "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+      "SAVE1/DESC": "7ec55fab25dac3dd4983e0c919b0ef3c23db49cac2b1ce01f98534d63ab49b71",
+      "SAVE1/LEV.ARK": "23754f44f5208c71d2df790460f725cc710d179d0f688a6af62d6f8232fdfe7f",
+      "SAVE1/PLAYER.DAT": "5e5d75696aeb7b5cec47f04a88414e11df89a2db99572bae0731c3d4a52cf62f",
+      "SAVE2/BGLOBALS.DAT": "2cbfd6ca475f283f53ecaaae95c36d677ad49df43f9a6d506e91b539a4da7a7a",
+      "SAVE2/DESC": "50c903e2e4f6f4330686bfd1a017700a41795deb7af614a9acdd9c056e8dae9d",
+      "SAVE2/LEV.ARK": "84d3cdb7d8ae6b0352da5092f2441ace51dbfbb674a3c5d46b0fa9f9ebb29c5e",
+      "SAVE2/PLAYER.DAT": "d9a2256cceb9b4c3c79828cbf7a75e5958143f464fb1ae5c6716d459e2469817"
+    },
+    "resize": {
+      "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+      "SAVE1/DESC": "7ec55fab25dac3dd4983e0c919b0ef3c23db49cac2b1ce01f98534d63ab49b71",
+      "SAVE1/LEV.ARK": "23754f44f5208c71d2df790460f725cc710d179d0f688a6af62d6f8232fdfe7f",
+      "SAVE1/PLAYER.DAT": "5e5d75696aeb7b5cec47f04a88414e11df89a2db99572bae0731c3d4a52cf62f"
+    }
+  },
+  "initial_failures": {
+    "automap": "UBSan bounds: row pointer used with linear 4096-tile index; fixed Native whole-array byte view",
+    "pick_counter": "ASan: byte counter read as a word; fixed Native byte read",
+    "path_tail": "UBSan bounds: padded path steps read stale non-neighbour coordinates; skip unused tail bits in Native",
+    "resize_fixture": "coarse click grid missed wandering NPC and MORE spaces changed settings twice; revised dense grid and separate settings input; final acceptance asserts actual conversation and 4x geometry"
+  },
+  "compatibility_notes": [
+    "Existing emulated FARNULLTRAP reads in inv_look/checkTrap remain recorded; not host invalid accesses or suppressed sanitizer failures",
+    "English/Chinese paired saves compare exact BGLOBALS, player data except facing/game clock, and serialized item slots/objects after avatar; independent runs have different timing/direction",
+    "Within each recorded scenario, all canonical sections/headers and saved files match with no extra masks"
+  ],
+  "limitations": [
+    "Full game/player workflow tested on Windows; Linux/macOS build and standalone checks in CI, not full game asset runs",
+    "Templates containing @ retain expanded English fallback; title/name bitmap UI and MORE label remain legacy English",
+    "No full-game translation, IME, UW2, HD UI or HD 3D",
+    "Basic codepoint layout; no full Unicode shaping, grapheme or UAX14 coverage",
+    "Real 3x to 4x resize on Windows; physical cross-monitor DPI move not tested",
+    "Web compile/link only; no Web HD scroll runtime claim",
+    "Scripts can miss a wandering NPC; only validator/replay results count as acceptance, not exit status alone"
+  ],
+  "stop_rule": "P8 ends the PoC. Do not start Phase 9 without human review.",
+  "evidence_policy": "No original game data, executable, saves, recordings, font or DLL binaries are distributed"
+}

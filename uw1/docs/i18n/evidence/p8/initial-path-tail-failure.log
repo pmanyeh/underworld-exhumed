@@ -1,0 +1,27 @@
+EMS allocated
+
+uw1port: mt32: no ROMs
+uw1port: enhance: skip-intro (not as DOS)
+uw1port: mouse: follow
+D:\git\uw1-native-poc\underworld-exhumed\uw1\src\critter\PATHFIND.C:968:39: runtime error: index -16 out of bounds for type 'unsigned char[3][3]'
+    #0 0x7ff7f3688732 in store_path D:\git\uw1-native-poc\underworld-exhumed\uw1\src\critter/PATHFIND.C:968:39
+    #1 0x7ff7f36920e8 in crit_head_for_loc D:\git\uw1-native-poc\underworld-exhumed\uw1\src\critter/PATHFIND.C:1206:9
+    #2 0x7ff7f36357fb in crit_mill D:\git\uw1-native-poc\underworld-exhumed\uw1\src\critter/AI.C:264:9
+    #3 0x7ff7f365e0b5 in critter_mv D:\git\uw1-native-poc\underworld-exhumed\uw1\src\critter/AI.C:1299:9
+    #4 0x7ff7f36594c3 in critter_ai D:\git\uw1-native-poc\underworld-exhumed\uw1\src\critter/AI.C:1181:9
+    #5 0x7ff7f3661951 in move_mobile D:\git\uw1-native-poc\underworld-exhumed\uw1\src\critter/AI.C:1561:22
+    #6 0x7ff7f376f808 in move_physics D:\git\uw1-native-poc\underworld-exhumed\uw1\src\motion/PLAYMOVE.C:373:9
+    #7 0x7ff7f376fb71 in check_physics D:\git\uw1-native-poc\underworld-exhumed\uw1\src\motion/PLAYMOVE.C:355:9
+    #8 0x7ff7f36c373c in do_changes D:\git\uw1-native-poc\underworld-exhumed\uw1\src\game/MAINLOOP.C:57:21
+    #9 0x7ff7f36c333a in mainloop D:\git\uw1-native-poc\underworld-exhumed\uw1\src\game/MAINLOOP.C:36:13
+    #10 0x7ff7f36e956b in uw1_main D:\git\uw1-native-poc\underworld-exhumed\uw1\src\game/UWEDIT.C:147:5
+    #11 0x7ff7f3cd94c3 in game D:\git\uw1-native-poc\underworld-exhumed\uw1\src\port\sys/main.c:149:14
+    #12 0x7ff7f382b292 in game_thread D:\git\Ultima Underworld\underworld-exhumed\exhume\runtime\port\platform\sdl3/plat_sdl3.c:241:10
+    #13 0x7ffac5693171 in SDL_RunThread (D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\SDL3.dll+0x1800e3171)
+    #14 0x7ffac5751140 in SDL_SYS_CreateThread (D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\SDL3.dll+0x1801a1140)
+    #15 0x7ffbb625cd2f  (C:\WINDOWS\System32\ucrtbase.dll+0x18002cd2f)
+    #16 0x7ffa8bd2f15c in CreateThread (D:\git\Ultima Underworld\.poc-tools\msys64\clang64\bin\libclang_rt.asan_dynamic-x86_64.dll+0x18005f15c)
+    #17 0x7ffbb829dda6  (C:\WINDOWS\System32\KERNEL32.DLL+0x18002dda6)
+    #18 0x7ffbb905ee4b  (C:\WINDOWS\SYSTEM32\ntdll.dll+0x18007ee4b)
+
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior D:\git\uw1-native-poc\underworld-exhumed\uw1\src\critter\PATHFIND.C:968:39

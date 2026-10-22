@@ -1,0 +1,53 @@
+{
+  "case": "restore",
+  "english": false,
+  "cheats": false,
+  "expected": {
+    "load_slot": 2,
+    "save_slots": [
+      3,
+      4
+    ],
+    "restore_slot": 3,
+    "post_restore": "use pack, turn right"
+  },
+  "command": [
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\port\\uw1port.exe",
+    "--data",
+    "D:\\git\\Ultima Underworld\\.poc-private\\game\\UW",
+    "--home",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\restore-01",
+    "--record",
+    "--sound",
+    "0,0",
+    "--no-audio",
+    "--enhance",
+    "skip-intro",
+    "--input-script",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\restore-01\\input.script",
+    "--locale",
+    "zh-TW",
+    "--screenshot-after",
+    "53000",
+    "--screenshot",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\restore-01\\scanout.png",
+    "--window-shot",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\restore-01\\window.png",
+    "--exit-after",
+    "54000",
+    "--scale",
+    "3",
+    "--exit-on-halt",
+    "--hd-scroll",
+    "--i18n-file",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\i18n\\zh-TW.uwloc",
+    "--font",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\tools\\fonts\\NotoSansCJKtc-Regular.otf",
+    "--scroll-log",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\restore-01\\scroll.jsonl",
+    "--i18n-log",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\restore-01\\lookup.jsonl",
+    "--cursor-log",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\restore-01\\cursor.jsonl"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "DOS_executed": false,
+  "recording_sha256": "80987a1e6abecb22e65e4584a7c23c18afede49abd7d90338ce2c57cedebfb1c",
+  "recording_version": 5,
+  "cheats": [],
+  "original_checkpoints": 122,
+  "stop_event": 141617744,
+  "expected_extra_terminal": 1,
+  "additional_section_masks": [],
+  "goldens_modified": false,
+  "runs": [
+    {
+      "run": "replay1",
+      "status": "PASS",
+      "checkpoints": 123,
+      "all_canonical_sections_and_headers": true,
+      "saves_identical": true
+    },
+    {
+      "run": "replay2",
+      "status": "PASS",
+      "checkpoints": 123,
+      "all_canonical_sections_and_headers": true,
+      "saves_identical": true
+    },
+    {
+      "run": "sanitizer",
+      "status": "PASS",
+      "checkpoints": 123,
+      "all_canonical_sections_and_headers": true,
+      "saves_identical": true
+    }
+  ],
+  "sanitizer_scope": "port-debug; use the sanitizers specified when building it; third-party DLLs excluded"
+}

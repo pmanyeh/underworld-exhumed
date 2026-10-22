@@ -1,0 +1,58 @@
+from pathlib import Path
+import os, subprocess, tomllib, json
+
+workspace = Path(__file__).resolve().parent.parent
+root = workspace / 'underworld-exhumed/uw1'
+out = root / 'build/vertical-slice'
+out.mkdir(parents=True, exist_ok=True)
+home = out / 'walk-01'
+home.mkdir(exist_ok=False)
+steps = tomllib.loads((root / 'exhume.toml').read_text(encoding='utf-8'))['replay']['steps']['talk']
+steps = steps[2:steps.index('k:F2')]
+events = [(2000, 'key enter')] + [(3500+1500*i, 'key enter') for i in range(8)]
+events += [(16000, 'key a'), (17000, 'key enter'), (18500, 'key enter')]
+t = 24000
+x, y = 160, 100
+markers = []
+def chord(arg):
+    global t
+    parts = arg.lower().replace('control', 'ctrl').replace('escape', 'esc').split('+')
+    for mod in parts[:-1]: events.append((t, 'down '+mod)); t += 60
+    events.append((t, 'key '+parts[-1])); t += 150
+    for mod in reversed(parts[:-1]): events.append((t, 'up '+mod)); t += 60
+    t += 400
+
+for step in steps:
+    op, _, arg = step.partition(':')
+    if op == 'w': t += int(arg)
+    elif op == 'k': chord(arg)
+    elif op == 'M': x,y=0,0; events.append((t, 'move 0 0')); t+=200
+    elif op == 'm': x,y=(int(v)//2 for v in arg.split(',')); events.append((t,f'move {x} {y}'));t+=200
+    elif op == 'c':
+        btn,ms=arg.split(',');events.append((t,f'mdown {x} {y} {btn}'));t+=int(ms)
+        events.append((t,f'mup {x} {y} {btn}'));t+=200
+    elif op == 's': markers.append({'time':t,'label':arg})
+    else: raise ValueError(step)
+markers.append({'time':t,'label':'arrived-before-talk'})
+chord('ctrl+s'); t+=1800;chord('enter');t+=1800
+for c in 'p8arrival': chord(c);t+=50
+chord('enter');t+=4000
+script=home/'walk.script'
+script.write_text(''.join(f'{ms} {event}\n' for ms,event in events),encoding='utf-8')
+(home/'markers.json').write_text(json.dumps(markers,indent=2)+'\n',encoding='utf-8')
+env=dict(os.environ)
+env.pop('EXHUME_TEST_CHEATS',None)
+env['PATH']=str(root/'tools/libs/bin')+os.pathsep+str(workspace/'.poc-tools/msys64/clang64/bin')+os.pathsep+env['PATH']
+cmd=[str(root/'build/port/uw1port.exe'),'--data',str(workspace/'.poc-private/game/UW'),'--home',str(home),
+ '--record','--no-audio','--sound','0,0','--enhance','skip-intro','--input-script',str(script),
+ '--locale','zh-TW','--i18n-file',str(root/'build/i18n/zh-TW.uwloc'),'--hd-scroll',
+ '--font',str(root/'tools/fonts/NotoSansCJKtc-Regular.otf'),'--scroll-log',str(home/'scroll.jsonl'),
+ '--i18n-log',str(home/'lookup.jsonl'),'--cursor-log',str(home/'cursor.jsonl'),
+ '--screenshot-after',str(t),'--screenshot',str(home/'scanout.png'),'--window-shot',str(home/'window.png'),
+ '--exit-after',str(t+1000),'--scale','3','--exit-on-halt']
+(home/'command.json').write_text(json.dumps(cmd,indent=2)+'\n')
+print('Walking from a new game; runtime',t+1000,'ms; no cheats; home',home,flush=True)
+r=subprocess.run(cmd,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=t/1000+35)
+(home/'run.log').write_bytes(r.stdout)
+print(r.stdout.decode('utf-8',errors='replace'),flush=True)
+raise SystemExit(r.returncode)

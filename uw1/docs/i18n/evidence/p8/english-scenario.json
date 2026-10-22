@@ -1,0 +1,45 @@
+{
+  "case": "dialogue",
+  "english": true,
+  "cheats": false,
+  "expected": {
+    "choices": [
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2
+    ],
+    "save_slot": 2
+  },
+  "command": [
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\port\\uw1port.exe",
+    "--data",
+    "D:\\git\\Ultima Underworld\\.poc-private\\game\\UW",
+    "--home",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\english-01",
+    "--record",
+    "--sound",
+    "0,0",
+    "--no-audio",
+    "--enhance",
+    "skip-intro",
+    "--input-script",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\english-01\\input.script",
+    "--locale",
+    "en",
+    "--screenshot-after",
+    "58000",
+    "--screenshot",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\english-01\\scanout.png",
+    "--window-shot",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\english-01\\window.png",
+    "--exit-after",
+    "140000",
+    "--scale",
+    "3",
+    "--exit-on-halt"
+  ]
+}

@@ -1,0 +1,38 @@
+from pathlib import Path
+import os, subprocess, shutil, json
+workspace=Path(__file__).resolve().parent.parent
+root=workspace/'underworld-exhumed/uw1'
+out=root/'build/vertical-slice'
+home=out/'dialogue-01';home.mkdir(exist_ok=False)
+shutil.copytree(out/'walk-01/SAVE1',home/'SAVE1')
+events=[(3000,'key enter'),(4500,'key enter'),(8000,'down shift'),(8060,'key a'),(8210,'up shift'),(9000,'key f2')]
+t=9500
+for direction in range(2):
+ for y in (35,55,75,95,115):
+  for x in (60,82,105,127,150,172,195,215):
+   events += [(t,f'mdown {x} {y} right'),(t+180,f'mup {x} {y} right')];t+=450
+ if direction==0:
+  events += [(t,'down shift'),(t+60,'key a'),(t+210,'up shift')];t+=1000
+for start,choice in [(50000,1),(60000,1),(70000,2),(80000,2),(90000,1),(100000,1),(114000,2)]:
+ y=173+(choice-1)*8
+ events += [(start,f'mdown 30 {y} left'),(start+220,f'mup 30 {y} left')]
+ for ms in range(start+1500,start+(12500 if start==100000 else 8000),750): events.append((ms,'key space'))
+events += [(124000,'key f4'),(125000,'mdown 252 85 right'),(125250,'mup 252 85 right'),
+ (127000,'down ctrl'),(127060,'key s'),(127210,'up ctrl'),(129000,'key down'),(130000,'key enter')]
+for i,c in enumerate('p8done'):events.append((132000+200*i,'key '+c))
+events.append((134000,'key enter'))
+events.sort(key=lambda e:e[0]);script=home/'dialogue.script';script.write_text(''.join(f'{ms} {event}\n' for ms,event in events),encoding='utf-8')
+env=dict(os.environ);env.pop('EXHUME_TEST_CHEATS',None);env['UW1PORT_POS_LOG']='1'
+env['PATH']=str(root/'tools/libs/bin')+os.pathsep+str(workspace/'.poc-tools/msys64/clang64/bin')+os.pathsep+env['PATH']
+cmd=[str(root/'build/port/uw1port.exe'),'--data',str(workspace/'.poc-private/game/UW'),'--home',str(home),
+ '--record','--no-audio','--sound','0,0','--enhance','skip-intro','--input-script',str(script),
+ '--locale','zh-TW','--i18n-file',str(root/'build/i18n/zh-TW.uwloc'),'--hd-scroll',
+ '--font',str(root/'tools/fonts/NotoSansCJKtc-Regular.otf'),'--scroll-log',str(home/'scroll.jsonl'),
+ '--i18n-log',str(home/'lookup.jsonl'),'--cursor-log',str(home/'cursor.jsonl'),
+ '--screenshot-after','58000','--screenshot',str(home/'scanout.png'),'--window-shot',str(home/'window.png'),
+ '--exit-after','140000','--scale','3','--exit-on-halt']
+(home/'command.json').write_text(json.dumps(cmd,indent=2)+'\n')
+print('Real right-click talk, 7 mouse choices, item look and save slot II; no cheats',flush=True)
+r=subprocess.run(cmd,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=180)
+(home/'run.log').write_bytes(r.stdout);print(r.stdout.decode('utf-8',errors='replace'),flush=True)
+raise SystemExit(r.returncode)

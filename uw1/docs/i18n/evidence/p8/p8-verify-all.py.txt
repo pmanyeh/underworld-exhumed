@@ -1,0 +1,20 @@
+from pathlib import Path
+import os,subprocess,sys,json
+workspace=Path(__file__).resolve().parent.parent
+repo=workspace/'underworld-exhumed';root=repo/'uw1';out=root/'build/vertical-slice'
+env=dict(os.environ)
+env.update(UW1DECOMP=str(root),UW1_DATA=str(workspace/'.poc-private/game/UW'),UW1_EXE=str(workspace/'.poc-private/game/UW/UW.EXE'))
+env['PATH']=str(workspace/'.poc-tools/msys64/clang64/bin')+os.pathsep+env['PATH']
+reports={}
+for name,home,stage,modern in [('walk','walk-01',None,True),('dialogue','dialogue-01','dialogue',True),('restore','restore-01','restore',True),('english','english-01','dialogue',False)]:
+ command=[sys.executable,str(root/'tools/i18n/verify_native_recording.py'),'--config',str(root/'build/poc/native-v22.toml'),
+  '--recording',str(out/home/'RECORD.OUT'),'--original',str(out/home),'--output',str(out/('final-'+name)),
+  '--report',str(out/(name+'-replay.json')),'--sanitize']
+ if stage:command+=['--stage',str(out/'stages'/stage)]
+ if modern:command+=['--modern','--catalog',str(root/'build/i18n/zh-TW.uwloc'),'--font',str(root/'tools/fonts/NotoSansCJKtc-Regular.otf')]
+ print('Verifying',name,flush=True)
+ run=subprocess.run(command,cwd=repo,env=env)
+ reports[name]=run.returncode
+ if run.returncode:break
+(out/'recordings-status.json').write_text(json.dumps(reports,indent=2)+'\n')
+raise SystemExit(any(reports.values()))

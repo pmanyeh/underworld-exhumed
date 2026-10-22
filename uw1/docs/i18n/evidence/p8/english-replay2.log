@@ -1,0 +1,8 @@
+EMS allocated
+
+uw1port: mt32: no ROMs
+uw1port: enhance: skip-intro (not as DOS)
+uw1port: mouse: follow
+uw1port: far null pointer read at D:\git\uw1-native-poc\underworld-exhumed\uw1\src\obj\USEITEMS.C:1086
+uw1port: far null pointer read at D:\git\uw1-native-poc\underworld-exhumed\uw1\src\obj\USEITEMS.C:1086
+uw1port: far null pointer read at D:\git\uw1-native-poc\underworld-exhumed\uw1\src\obj\USEITEMS.C:1088

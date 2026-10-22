@@ -1,0 +1,267 @@
+3000 key enter
+4500 key enter
+8000 down shift
+8060 key a
+8210 up shift
+9000 key f2
+9500 mdown 60 35 right
+9680 mup 60 35 right
+9950 mdown 82 35 right
+10130 mup 82 35 right
+10400 mdown 105 35 right
+10580 mup 105 35 right
+10850 mdown 127 35 right
+11030 mup 127 35 right
+11300 mdown 150 35 right
+11480 mup 150 35 right
+11750 mdown 172 35 right
+11930 mup 172 35 right
+12200 mdown 195 35 right
+12380 mup 195 35 right
+12650 mdown 215 35 right
+12830 mup 215 35 right
+13100 mdown 60 55 right
+13280 mup 60 55 right
+13550 mdown 82 55 right
+13730 mup 82 55 right
+14000 mdown 105 55 right
+14180 mup 105 55 right
+14450 mdown 127 55 right
+14630 mup 127 55 right
+14900 mdown 150 55 right
+15080 mup 150 55 right
+15350 mdown 172 55 right
+15530 mup 172 55 right
+15800 mdown 195 55 right
+15980 mup 195 55 right
+16250 mdown 215 55 right
+16430 mup 215 55 right
+16700 mdown 60 75 right
+16880 mup 60 75 right
+17150 mdown 82 75 right
+17330 mup 82 75 right
+17600 mdown 105 75 right
+17780 mup 105 75 right
+18050 mdown 127 75 right
+18230 mup 127 75 right
+18500 mdown 150 75 right
+18680 mup 150 75 right
+18950 mdown 172 75 right
+19130 mup 172 75 right
+19400 mdown 195 75 right
+19580 mup 195 75 right
+19850 mdown 215 75 right
+20030 mup 215 75 right
+20300 mdown 60 95 right
+20480 mup 60 95 right
+20750 mdown 82 95 right
+20930 mup 82 95 right
+21200 mdown 105 95 right
+21380 mup 105 95 right
+21650 mdown 127 95 right
+21830 mup 127 95 right
+22100 mdown 150 95 right
+22280 mup 150 95 right
+22550 mdown 172 95 right
+22730 mup 172 95 right
+23000 mdown 195 95 right
+23180 mup 195 95 right
+23450 mdown 215 95 right
+23630 mup 215 95 right
+23900 mdown 60 115 right
+24080 mup 60 115 right
+24350 mdown 82 115 right
+24530 mup 82 115 right
+24800 mdown 105 115 right
+24980 mup 105 115 right
+25250 mdown 127 115 right
+25430 mup 127 115 right
+25700 mdown 150 115 right
+25880 mup 150 115 right
+26150 mdown 172 115 right
+26330 mup 172 115 right
+26600 mdown 195 115 right
+26780 mup 195 115 right
+27050 mdown 215 115 right
+27230 mup 215 115 right
+27500 down shift
+27560 key a
+27710 up shift
+28500 mdown 60 35 right
+28680 mup 60 35 right
+28950 mdown 82 35 right
+29130 mup 82 35 right
+29400 mdown 105 35 right
+29580 mup 105 35 right
+29850 mdown 127 35 right
+30030 mup 127 35 right
+30300 mdown 150 35 right
+30480 mup 150 35 right
+30750 mdown 172 35 right
+30930 mup 172 35 right
+31200 mdown 195 35 right
+31380 mup 195 35 right
+31650 mdown 215 35 right
+31830 mup 215 35 right
+32100 mdown 60 55 right
+32280 mup 60 55 right
+32550 mdown 82 55 right
+32730 mup 82 55 right
+33000 mdown 105 55 right
+33180 mup 105 55 right
+33450 mdown 127 55 right
+33630 mup 127 55 right
+33900 mdown 150 55 right
+34080 mup 150 55 right
+34350 mdown 172 55 right
+34530 mup 172 55 right
+34800 mdown 195 55 right
+34980 mup 195 55 right
+35250 mdown 215 55 right
+35430 mup 215 55 right
+35700 mdown 60 75 right
+35880 mup 60 75 right
+36150 mdown 82 75 right
+36330 mup 82 75 right
+36600 mdown 105 75 right
+36780 mup 105 75 right
+37050 mdown 127 75 right
+37230 mup 127 75 right
+37500 mdown 150 75 right
+37680 mup 150 75 right
+37950 mdown 172 75 right
+38130 mup 172 75 right
+38400 mdown 195 75 right
+38580 mup 195 75 right
+38850 mdown 215 75 right
+39030 mup 215 75 right
+39300 mdown 60 95 right
+39480 mup 60 95 right
+39750 mdown 82 95 right
+39930 mup 82 95 right
+40200 mdown 105 95 right
+40380 mup 105 95 right
+40650 mdown 127 95 right
+40830 mup 127 95 right
+41100 mdown 150 95 right
+41280 mup 150 95 right
+41550 mdown 172 95 right
+41730 mup 172 95 right
+42000 mdown 195 95 right
+42180 mup 195 95 right
+42450 mdown 215 95 right
+42630 mup 215 95 right
+42900 mdown 60 115 right
+43080 mup 60 115 right
+43350 mdown 82 115 right
+43530 mup 82 115 right
+43800 mdown 105 115 right
+43980 mup 105 115 right
+44250 mdown 127 115 right
+44430 mup 127 115 right
+44700 mdown 150 115 right
+44880 mup 150 115 right
+45150 mdown 172 115 right
+45330 mup 172 115 right
+45600 mdown 195 115 right
+45780 mup 195 115 right
+46050 mdown 215 115 right
+46230 mup 215 115 right
+50000 mdown 30 173 left
+50220 mup 30 173 left
+51500 key space
+52250 key space
+53000 key space
+53750 key space
+54500 key space
+55250 key space
+56000 key space
+56750 key space
+57500 key space
+60000 mdown 30 173 left
+60220 mup 30 173 left
+61500 key space
+62250 key space
+63000 key space
+63750 key space
+64500 key space
+65250 key space
+66000 key space
+66750 key space
+67500 key space
+70000 mdown 30 181 left
+70220 mup 30 181 left
+71500 key space
+72250 key space
+73000 key space
+73750 key space
+74500 key space
+75250 key space
+76000 key space
+76750 key space
+77500 key space
+80000 mdown 30 181 left
+80220 mup 30 181 left
+81500 key space
+82250 key space
+83000 key space
+83750 key space
+84500 key space
+85250 key space
+86000 key space
+86750 key space
+87500 key space
+90000 mdown 30 173 left
+90220 mup 30 173 left
+91500 key space
+92250 key space
+93000 key space
+93750 key space
+94500 key space
+95250 key space
+96000 key space
+96750 key space
+97500 key space
+100000 mdown 30 173 left
+100220 mup 30 173 left
+101500 key space
+102250 key space
+103000 key space
+103750 key space
+104500 key space
+105250 key space
+106000 key space
+106750 key space
+107500 key space
+108250 key space
+109000 key space
+109750 key space
+110500 key space
+111250 key space
+112000 key space
+114000 mdown 30 181 left
+114220 mup 30 181 left
+115500 key space
+116250 key space
+117000 key space
+117750 key space
+118500 key space
+119250 key space
+120000 key space
+120750 key space
+121500 key space
+124000 key f4
+125000 mdown 252 85 right
+125250 mup 252 85 right
+127000 down ctrl
+127060 key s
+127210 up ctrl
+129000 key down
+130000 key enter
+132000 key p
+132200 key 8
+132400 key d
+132600 key o
+132800 key n
+133000 key e
+134000 key enter

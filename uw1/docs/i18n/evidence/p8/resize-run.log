@@ -1,0 +1,13 @@
+uw1port: mt32: no ROMs
+uw1port: enhance: skip-intro (not as DOS)
+uw1port: mouse: follow
+uw1port: renderer direct3d11, display 120 Hz, vsync requested
+EMS allocated
+uw1port: 600 presents in 5.0 s, 0 paced (vsync holds)
+settings: shown
+settings: MT-32 ROMs: not found
+uw1port: wrote D:\git\Ultima Underworld\underworld-exhumed\uw1\build\vertical-slice\resize-02\scanout.png (320x200) at 65010 ms
+uw1port: wrote D:\git\Ultima Underworld\underworld-exhumed\uw1\build\vertical-slice\resize-02\window.png (1280x960, the window)
+uw1port: 7898 presents, 2 paced, 0 passes with the window hidden
+uw1port: HD text cache: 645958 hits, 196 rasterizations, 196 entries, 56404 bytes
+uw1port: motion: x 4736 y 1664 z 768 facing 49152 heading 0 frames 524 ticks 6599 short 0

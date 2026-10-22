@@ -1,0 +1,16 @@
+Verifying walk
+replay1 PASS 250 checkpoints; all canonical sections, headers and saves
+replay2 PASS 250 checkpoints; all canonical sections, headers and saves
+sanitizer PASS 250 checkpoints; all canonical sections, headers and saves
+Verifying dialogue
+replay1 PASS 307 checkpoints; all canonical sections, headers and saves
+replay2 PASS 307 checkpoints; all canonical sections, headers and saves
+sanitizer PASS 307 checkpoints; all canonical sections, headers and saves
+Verifying restore
+replay1 PASS 123 checkpoints; all canonical sections, headers and saves
+replay2 PASS 123 checkpoints; all canonical sections, headers and saves
+sanitizer PASS 123 checkpoints; all canonical sections, headers and saves
+Verifying english
+replay1 PASS 301 checkpoints; all canonical sections, headers and saves
+replay2 PASS 301 checkpoints; all canonical sections, headers and saves
+sanitizer PASS 301 checkpoints; all canonical sections, headers and saves

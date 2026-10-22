@@ -1,0 +1,50 @@
+{
+  "case": "resize",
+  "english": false,
+  "cheats": false,
+  "expected": {
+    "choices": [
+      1
+    ],
+    "settings_resize": "3x -> 4x"
+  },
+  "command": [
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\port\\uw1port.exe",
+    "--data",
+    "D:\\git\\Ultima Underworld\\.poc-private\\game\\UW",
+    "--home",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\resize-02",
+    "--record",
+    "--sound",
+    "0,0",
+    "--no-audio",
+    "--enhance",
+    "skip-intro",
+    "--input-script",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\resize-02\\input.script",
+    "--locale",
+    "zh-TW",
+    "--screenshot-after",
+    "65000",
+    "--screenshot",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\resize-02\\scanout.png",
+    "--window-shot",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\resize-02\\window.png",
+    "--exit-after",
+    "66000",
+    "--scale",
+    "3",
+    "--exit-on-halt",
+    "--hd-scroll",
+    "--i18n-file",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\i18n\\zh-TW.uwloc",
+    "--font",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\tools\\fonts\\NotoSansCJKtc-Regular.otf",
+    "--scroll-log",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\resize-02\\scroll.jsonl",
+    "--i18n-log",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\resize-02\\lookup.jsonl",
+    "--cursor-log",
+    "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\build\\vertical-slice\\resize-02\\cursor.jsonl"
+  ]
+}

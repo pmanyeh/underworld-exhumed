@@ -1,4 +1,4 @@
-# Native localization / layout / HD text / cursor / scroll (Phases 1–7)
+# Native localization / layout / HD text / cursor / scroll (Phases 1–8)
 
 目前已完成文字盤點、翻譯資料、Native UTF-8 lookup 與獨立的文字排版核心。
 預設保留原英文 renderer；`--hd-scroll` 可選用繁中 scroll／conversation 顯示。
@@ -6,6 +6,8 @@ Phase 4 已加入選用的通用 RGBA overlay；Phase 5 加入 FreeType 高解�
 Phase 6 加入原版 bitmap 的 Native 游標 overlay；驗收見 [HD cursor](../docs/i18n/HD-CURSOR.md)。
 Phase 7 將 UTF-8 換行、控制碼、分頁與對話選項接入實際遊戲；驗收見
 [Chinese scroll integration](../docs/i18n/CHINESE-SCROLL.md)。
+Phase 8 已完成實際 Bragit 多輪繁中流程、存讀檔與跨平台建置，技術驗收 **PoC = GO**；
+完整結果與限制見 [PoC report](../docs/i18n/POC-REPORT.md)。目前停在 P8，等待人工審閱。
 驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md)、[Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)
 與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)、[Phase 4](../docs/i18n/OVERLAY-FOUNDATION.md)。
 
