@@ -182,4 +182,18 @@ python3 tools/i18n/record_vertical_slice.py --case resize --data "$UW1_DATA" --s
 | Exhume feature / submodule pin | `89278495bb0b8b224b5bb58e53da2fd367c0d8c0` |
 
 P7 已記錄的 ARMCC5／tooling／documentation backlog 沿用，不宣稱已整合最新 Exhume upstream。
-本輪驗收 evidence checkpoint 提交後，於乾淨 working trees 執行最後的 boundary fetch，另補結案同步紀錄。
+驗收 evidence checkpoint：`cc8f0e2f5078c201377fa85689e947923ee70793`。
+該提交後，主 repository 與 Exhume working trees 都 clean，才執行兩邊 `fetch --all --prune`。
+
+| 結案檢查 | 結果 |
+| --- | --- |
+| Underworld main / origin/main / upstream/main | 全部仍為 `e5deadd6945b492636aadccc14f52caa908b4186`，`0/0` |
+| Underworld feature vs origin（結案 push 前） | `1/0`，唯一未 push 的提交為上述 evidence checkpoint |
+| Exhume upstream/master | 仍為 `aa2353a2442c9cb9ef2267aabd9398abb8aac42d`，相較 P7 boundary 沒有新提交 |
+| Exhume main / origin/main | 仍為 `c54e00e9176c14d0913b5806318a30f85a8f4636`，vs upstream `0/4` |
+| Exhume feature / origin feature / pin | 全部仍為 `89278495bb0b8b224b5bb58e53da2fd367c0d8c0`，vs origin `0/0`，vs upstream `1/11` |
+
+**UPSTREAM_SYNC = NO NEW CHANGES；既有 Exhume backlog 仍 DEFERRED。**
+沒有 merge/rebase、更新 fork main 或改動 submodule pin；P8 source、tests 與 evidence baseline 未變。
+詳見 [sync.json](evidence/p8/sync.json)。`zh-tw-native-p8-poc` annotated tag 指向本輪結案提交，
+與 `feature/zh-tw-native` 一同 push。**P8 到此停止，未開始 P9。**

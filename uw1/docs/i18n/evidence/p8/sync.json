@@ -1,0 +1,33 @@
+{
+  "phase": 8,
+  "date": "2026-10-22",
+  "status": "UPSTREAM_SYNC = NO NEW CHANGES; existing Exhume backlog remains DEFERRED",
+  "evidence_checkpoint": "cc8f0e2f5078c201377fa85689e947923ee70793",
+  "working_trees_clean_before_fetch": true,
+  "fetch": "git fetch --all --prune; main repo and Exhume",
+  "underworld": {
+    "main_origin_main_upstream_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "main_vs_upstream": [0, 0],
+    "feature_before_closing_commit": "cc8f0e2f5078c201377fa85689e947923ee70793",
+    "origin_feature_before_final_push": "ec959aa8585cf8cf8488e1debc0371b065d6da3a",
+    "feature_vs_origin_before_final_push": [1, 0]
+  },
+  "exhume": {
+    "main_origin_main": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "upstream_master": "aa2353a2442c9cb9ef2267aabd9398abb8aac42d",
+    "feature_origin_feature_submodule_pin": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0",
+    "main_vs_upstream": [0, 4],
+    "feature_vs_origin": [0, 0],
+    "feature_vs_upstream": [1, 11],
+    "new_upstream_commits_since_P7": [],
+    "backlog": "P7-reviewed ARMCC5 tools/tests/docs plus the existing compiler profile/tooling/documentation backlog; unchanged and not integrated"
+  },
+  "merge_or_rebase": false,
+  "fork_main_updated": false,
+  "exhume_changed": false,
+  "closing_tag": "zh-tw-native-p8-poc",
+  "Native_P8": "PASS",
+  "PoC": "GO",
+  "human_architecture_visual_performance_platform_maintainability_review": "pending",
+  "phase_9_started": false
+}
