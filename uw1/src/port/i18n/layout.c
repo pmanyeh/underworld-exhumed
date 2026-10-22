@@ -22,7 +22,7 @@ static unsigned character_flags(uint32_t c)
         flags |= LAYOUT_NO_END; break;
     case ',': case '.': case '!': case '?': case ';': case ':':
     case ')': case ']': case '}':
-    case 0xFF0C: case 0x3002: case 0xFF01: case 0xFF1F: case 0xFF1B: case 0xFF1A: case 0x3001:
+    case 0xFF0C: case 0x3002: case 0xFF01: case 0xFF1F: case 0xFF1B: case 0xFF1A: case 0x3001: case 0x2026:
     case 0xFF09: case 0x300B: case 0x300D: case 0x300F: case 0x3011:
     case 0x3009: case 0x3015: case 0xFF5D:
         flags |= LAYOUT_NO_START; break;
@@ -135,9 +135,9 @@ void layout_free(struct text_layout *out)
     memset(out, 0, sizeof *out);
 }
 
-int layout_text(const char *text, size_t length, int max_width,
-                layout_measure_fn measure, void *context,
-                struct text_layout *out, size_t *error_offset)
+int layout_text_controls(const char *text, size_t length, int max_width,
+                         layout_measure_fn measure, void *context, int controls,
+                         struct text_layout *out, size_t *error_offset)
 {
     struct text_layout result = {0};
     size_t pos = 0, bad = 0, start = 0, i;
@@ -162,7 +162,7 @@ int layout_text(const char *text, size_t length, int max_width,
     while (pos < length) {
         struct layout_unit *u = result.units + result.unit_count++;
         u->byte_offset = pos;
-        if (text[pos] == '\\' && length - pos >= 2 && control((unsigned char)text[pos + 1])) {
+        if (controls && text[pos] == '\\' && length - pos >= 2 && control((unsigned char)text[pos + 1])) {
             u->kind = LAYOUT_CONTROL;
             u->scalar = (unsigned char)text[pos + 1];
             pos += 2;
@@ -196,4 +196,11 @@ int layout_text(const char *text, size_t length, int max_width,
     *out = result;
     if (error_offset) *error_offset = length;
     return LAYOUT_OK;
+}
+
+int layout_text(const char *text, size_t length, int max_width,
+                layout_measure_fn measure, void *context,
+                struct text_layout *out, size_t *error_offset)
+{
+    return layout_text_controls(text, length, max_width, measure, context, 1, out, error_offset);
 }

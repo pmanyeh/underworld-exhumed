@@ -58,6 +58,9 @@
 #include "event.h"
 #include "file.h"
 #include "gfx.h"
+#ifndef __TURBOC__
+#include "presentation/scroll_text.h"
+#endif
 #include "inv.h"
 #include "map.h"
 #include "motion.h"
@@ -271,6 +274,7 @@ void far clearobj(int unused)
 void far change_screen(int mode)
 {
 #ifndef __TURBOC__
+    scroll_text_screen(mode);
     /* port only: --enhance mouse-look off while the 3D view gives way, and back as it was when
        it returns: the input modes with a bit of 0x11, as UltimaHacks' setInterfaceMode tests */
     port_mouse_look_screen(1, (inplist->mode & 0x11) != 0);
@@ -408,6 +412,9 @@ void far real_death(int how)
     }
     editor_dispatch[scrnum][15]();
     scrmode = inplist->mode = 0;
+#ifndef __TURBOC__
+    scroll_text_screen(0);
+#endif
     scr = scrnum;
     scrnum = -1;
     in_game = 0;
@@ -420,6 +427,9 @@ void far real_death(int how)
     in_game = 1;
     scrnum = scr;
     scrmode = 1 << scrnum;
+#ifndef __TURBOC__
+    scroll_text_screen(scrmode);
+#endif
     editor_dispatch[scrnum][0]();
 }
 

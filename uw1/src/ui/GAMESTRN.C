@@ -100,7 +100,12 @@ char far * far get_string(int id)
     found = -1;
     for (i = 0; i < string_blocks; i++)
         if (Strings[i].block == block) { found = i; break; }
-    if (found >= 0) return Strings[found].strings[string];
+    if (found >= 0) {
+#ifndef __TURBOC__
+        port_i18n_forget(Strings[found].strings[string]);
+#endif
+        return Strings[found].strings[string];
+    }
 #ifndef __TURBOC__
     /* Phase 2: resolve and observe UTF-8 separately from the mutable game ring.
        Made blocks return above; no translation reaches legacy text/grammar. */

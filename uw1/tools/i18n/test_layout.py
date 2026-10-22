@@ -232,7 +232,7 @@ class CoreTests(unittest.TestCase):
         self.assertEqual([line.width for line in result[2]], [11, 11])
 
     def test_closing_punctuation_never_begins_soft_line(self):
-        for punctuation in "，。！？；：、":
+        for punctuation in "，。！？；：、…":
             with self.subTest(punctuation=punctuation):
                 actual, _, lines, _ = self.render("甲" + punctuation + "乙", 2)
                 self.assertEqual(actual, ["甲" + punctuation, "乙"])

@@ -37,6 +37,15 @@
 #include "player.h"
 #include "sys.h"
 #include "ui.h"
+#include "conv.h"
+#include "presentation/scroll_bridge.h"
+#include "i18n/utf8.h"
+/* Fixture files are host paths, outside the emulated DOS filesystem. */
+#undef fopen
+#undef fread
+#undef fseek
+#undef ftell
+#undef fclose
 
 unsigned char far EncumCheck(struct Object far *obj);   /* INVDATA.C; no header declares it */
 
@@ -151,10 +160,41 @@ static const char *c_set(int argc, char *argv[], int run)
     return NULL;
 }
 
+/* Presentation integration fixtures only. Still behind EXHUME_TEST_CHEATS and
+   the runtime's native-only safe point; no game data or test text is embedded. */
+static const char *c_scroll(int argc, char *argv[], int run)
+{
+    FILE *f;long size;char *text;
+    if(argc!=1)return "one UTF-8 text file path";
+    if(!run)return NULL;
+    if(!scroll_text_enabled())return "--hd-scroll is required";
+    f=fopen(argv[0],"rb");if(!f)return "cannot open UTF-8 fixture";
+    if(fseek(f,0,SEEK_END) || (size=ftell(f))<0 || size>16384) {fclose(f);return "fixture must be <=16KiB";}
+    rewind(f);text=malloc((size_t)size+1);
+    if(!text) {fclose(f);return "allocation failed";}
+    if(fread(text,1,(size_t)size,f)!=(size_t)size || memchr(text,0,(size_t)size) ||
+       !utf8_validate(text,(size_t)size,NULL)) {
+        free(text);fclose(f);return "bad UTF-8 fixture";
+    }
+    fclose(f);text[size]=0;do_main_scroll();scroll_clear(1);scroll_print(text);free(text);return NULL;
+}
+static const char *c_talk(int argc, char *argv[], int run)
+{
+    long who;int i;struct Object *obj;
+    if(argc!=1 || cheat_num(argv[0],1,239,&who))return "an NPC whoami 1..239";
+    if(!run)return NULL;
+    for(i=1;i<256;i++) {
+        obj=Obj_IntTMem(i);
+        if(OBJ_MAJOR(obj)==MAJOR_CREATURE && obj->whoami==who) {TalkTo(obj);return NULL;}
+    }
+    return "NPC not found on this level";
+}
 static const struct cheat_cmd cmds[] = {
     { "goto", "LEVEL X Y", c_goto },
     { "give", "ITEM [QTY [QUALITY]] [drop]", c_give },
     { "set", "FIELD VALUE", c_set },
+    { "scroll", "UTF8_FILE (HD scroll fixture)", c_scroll },
+    { "talk", "WHOAMI (conversation fixture)", c_talk },
 };
 
 const struct cheat_game cheat_game = { cmds, (int)(sizeof cmds / sizeof cmds[0]), cheat_ready };

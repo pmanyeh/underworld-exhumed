@@ -21,6 +21,23 @@ static struct entry *entries;
 static unsigned count;
 static FILE *trace;
 static unsigned char traced[MAX_ENTRIES];
+static struct { const char *address, *target; char source[512]; } display[8];
+static unsigned display_next;
+
+void port_i18n_forget(const char *legacy)
+{
+    unsigned i;
+    for (i = 0; i < 8; i++) if (display[i].address == legacy) display[i].address = NULL;
+}
+const char *port_i18n_display(const char *legacy)
+{
+    unsigned i;
+    if (!legacy) return "";
+    for (i = 0; i < 8; i++)
+        if (display[i].address == legacy && !strcmp(display[i].source, legacy))
+            return display[i].target ? display[i].target : legacy;
+    return legacy;
+}
 
 static unsigned word(const unsigned char *p)
 {
@@ -45,6 +62,8 @@ static int valid_target(const unsigned char *p, size_t n)
 
 void port_i18n_shutdown(void)
 {
+    memset(display, 0, sizeof display);
+    display_next = 0;
     if (trace) fclose(trace);
     trace = NULL;
     free(entries);
@@ -161,6 +180,13 @@ static void json_text(FILE *f, const char *text)
 char *port_i18n_observe(unsigned block, unsigned index, char *fallback)
 {
     const char *translated = port_i18n_lookup(block, index, fallback);
+    port_i18n_forget(fallback);
+    if (translated != fallback && !strchr(translated, '@') && strlen(fallback) < 512) {
+        unsigned slot = display_next++ % 8;
+        display[slot].address = fallback;
+        display[slot].target = translated;
+        strcpy(display[slot].source, fallback);
+    }
     if (trace && translated != fallback) {
         const struct entry *e = find(block, index, fallback);
         unsigned slot = (unsigned)(e - entries);

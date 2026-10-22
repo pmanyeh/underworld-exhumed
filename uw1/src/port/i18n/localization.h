@@ -15,6 +15,10 @@ void port_i18n_shutdown(void);
    The mutable legacy string is returned unchanged. UTF-8 is not copied into
    fixed game buffers or sent to the legacy renderer. */
 char *port_i18n_observe(unsigned block, unsigned index, char *fallback);
+/* Display-only provenance for the eight decoded ring slots. No gameplay string
+   replacement. Templates containing @ retain their expanded English fallback. */
+const char *port_i18n_display(const char *legacy);
+void port_i18n_forget(const char *legacy);
 int port_i18n_trace_open(const char *path);
 
 #endif

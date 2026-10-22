@@ -50,5 +50,9 @@ int layout_text(const char *text, size_t length, int max_width,
                 layout_measure_fn measure, void *context,
                 struct text_layout *out, size_t *error_offset);
 void layout_free(struct text_layout *layout);
+/* Same contract; controls=0 treats backslashes literally (e.g. saved names). */
+int layout_text_controls(const char *text, size_t length, int max_width,
+                         layout_measure_fn measure, void *context, int controls,
+                         struct text_layout *out, size_t *error_offset);
 
 #endif

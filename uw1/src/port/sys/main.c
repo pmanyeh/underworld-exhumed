@@ -26,6 +26,7 @@
 #include "presentation/hd_demo.h"
 #include "presentation/presentation.h"
 #include "presentation/hd_cursor.h"
+#include "presentation/scroll_text.h"
 
 extern const struct enhance_flag enhance_table[];   /* src/port/sys/enhtab.c */
 extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a test's cheats */
@@ -121,10 +122,16 @@ static int game_argc;
 static char **game_argv;
 static const char *locale = "en", *i18n_file, *i18n_log;
 static const char *cursor_log;
+static int modern_scroll;
+static const char *scroll_font_path, *scroll_log;
+void scroll_wait(int ticks, char mouse);
+static int scroll_measure(uint32_t cp, void *font) { return hd_scroll_advance(font,cp,5*64); }
+static void scroll_pause(int ticks, void *unused) { (void)unused;scroll_wait(ticks,1); }
 
 static int game(void *arg)
 {
     int status;
+    HdFont *measure_font = NULL;
     (void)arg;
     /* All localization writes are on this thread, before/after game calls.
        plat_run can return while this thread is still running: main must not
@@ -134,8 +141,15 @@ static int game(void *arg)
     if (port_i18n_trace_open(i18n_log) < 0)
         fputs("uw1port: i18n: cannot open lookup log\n", stderr);
     if (hd_cursor_trace_open(cursor_log) < 0) fputs("uw1port: cannot open cursor log\n", stderr);
+    if (modern_scroll) {
+        if (hd_font_init(&measure_font,scroll_font_path)) port_fatal("HD scroll: cannot initialize logical metrics font");
+        scroll_text_start(scroll_measure,measure_font,scroll_pause,NULL);
+        if (scroll_text_trace_open(scroll_log)<0) port_fatal("HD scroll: cannot open log");
+    }
     status = uw1_main(game_argc, game_argv);
     hd_cursor_trace_close();
+    scroll_text_trace_close();
+    hd_font_shutdown(measure_font);
     port_i18n_shutdown();
     return status;
 }
@@ -251,6 +265,8 @@ static const char help_text[] =
     "  --test-overlay         native RGBA geometry/alpha probe (no text)\n"
     "  --test-hd-text         FreeType Chinese text probe on the native RGBA layer\n"
     "  --hd-cursor            original cursor bitmap on the native RGBA layer\n"
+    "  --hd-scroll            zh-TW conversation/scroll layout + HD cursor (requires font)\n"
+    "  --scroll-log FILE      diagnostic UTF-8 text, waits and paging events\n"
     "  --cursor-log FILE      diagnostic cursor snapshots (with --hd-cursor)\n"
     "  --font FILE            scalable Unicode font for --test-hd-text\n"
     "  --shot-at-flip K:FILE  write the screen right after the game's K-th page flip\n"
@@ -397,6 +413,8 @@ int main(int argc, char *argv[])
         else if (!strcmp(a, "--test-overlay")) test_overlay = 1;
         else if (!strcmp(a, "--test-hd-text")) test_hd_text = 1;
         else if (!strcmp(a, "--hd-cursor")) hd_cursor = 1;
+        else if (!strcmp(a, "--hd-scroll")) modern_scroll = 1;
+        else if (!strcmp(a, "--scroll-log") && i + 1 < argc) scroll_log = argv[++i];
         else if (!strcmp(a, "--cursor-log") && i + 1 < argc) cursor_log = argv[++i];
         else if (!strcmp(a, "--font") && i + 1 < argc) font_path = argv[++i];
         else if (!strcmp(a, "--locale") && i + 1 < argc) {
@@ -593,7 +611,11 @@ int main(int argc, char *argv[])
                         cl_integer ? NULL : &cfg.integer_scale);
     port_settings_roms(roms);
     port_settings_seed(cfg.fullscreen, cfg.scale, cfg.aspect, cfg.integer_scale, cfg.mouse_lock);
-    if (test_hd_text) {
+    if (modern_scroll && strcmp(locale,"zh-TW")) {
+        fputs("uw1port: HD scroll requires --locale zh-TW\n",stderr);
+        return 1;
+    }
+    if (test_hd_text || modern_scroll) {
         int result = hd_font_init(&hd_demo.font, font_path);
         if (result) {
             fprintf(stderr, "uw1port: HD text: %s: %s\n", hd_font_error(result), font_path);
@@ -601,15 +623,20 @@ int main(int argc, char *argv[])
         }
         hd_demo.geometry = test_overlay;
     }
+    if (modern_scroll) hd_cursor = 1;
     if (hd_cursor && ENHANCED(ENH_MOUSE_LOOK)) {
         fputs("uw1port: HD cursor: mouse-look is not supported; use compatibility cursor or disable mouse-look\n", stderr);
         hd_font_shutdown(hd_demo.font);
         return 1;
     }
     hd_cursor_enable(hd_cursor);
+    scroll_text_enable(modern_scroll);
+    scroll_font_path = font_path;
     presentation.demo = hd_demo;
+    if (!test_hd_text) presentation.demo.font = NULL;
     presentation.demo.geometry = test_overlay;
     presentation.cursor = hd_cursor;
+    presentation.scroll_font = modern_scroll ? hd_demo.font : NULL;
     pit_start();
     memset(&hooks, 0, sizeof hooks);
     hooks.scanout = vga_scanout;

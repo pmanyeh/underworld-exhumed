@@ -198,7 +198,8 @@ int hd_text_measure_logical(HdFont *f, const PlatOverlay *p, const char *text, s
     if (!status) { m.width /= sx; m.height /= sy; *out = m; }
     return status;
 }
-static void paint(const PlatOverlay *p, const Glyph *g, double x, double baseline, HdColor c)
+static void paint(const PlatOverlay *p, const Glyph *g, double x, double baseline, HdColor c,
+                  int x0, int y0, int x1, int y1)
 {
     int ox, oy, row, col;
     /* Bound before converting, then round to the nearest output pixel. C casts
@@ -211,12 +212,12 @@ static void paint(const PlatOverlay *p, const Glyph *g, double x, double baselin
     if (baseline < oy) oy--;
     for (row = 0; row < g->height; row++) {
         int64_t dy = (int64_t)oy + row;
-        if (dy < 0 || dy >= p->height) continue;
+        if (dy < y0 || dy >= y1) continue;
         for (col = 0; col < g->width; col++) {
             uint8_t *d;
             unsigned a, da, oa;
             int64_t dx = (int64_t)ox + col;
-            if (dx < 0 || dx >= p->width) continue;
+            if (dx < x0 || dx >= x1) continue;
             a = (g->mask[(size_t)row * g->width + col] * c.a + 127u) / 255u;
             if (!a) continue;
             d = p->rgba + (size_t)dy * p->pitch + (size_t)dx * 4;
@@ -254,12 +255,43 @@ int hd_text_draw(HdFont *f, const PlatOverlay *p, const char *text, size_t len,
             if (u->kind != LAYOUT_GLYPH || u->flags & LAYOUT_TRIMMED) continue;
             g = glyph(f, size, u->scalar == '\t' ? ' ' : u->scalar);
             if (!g) { status = f->error; goto done; }
-            if (u->scalar != '\t') paint(p, g, p->viewport_x + x * (double)sx + pen / 64.0, baseline, color);
+            if (u->scalar != '\t') paint(p, g, p->viewport_x + x * (double)sx + pen / 64.0,
+                                         baseline, color, 0, 0, p->width, p->height);
             pen += u->advance;
         }
     }
 done:
     layout_free(&layout); return status;
+}
+int hd_scroll_advance(HdFont *f,uint32_t scalar,int em_64)
+{
+    Glyph *g;
+    if(!f || em_64<=0 || em_64>64*32)return -1;
+    g=glyph(f,64,scalar=='\t'?' ':scalar);
+    return g?(int)((int64_t)g->advance*em_64*5*(scalar=='\t'?4:1)/(64*64*4)):-1;
+}
+int hd_scroll_glyph(HdFont *f,const PlatOverlay *p,uint32_t scalar,
+                    float x,float y,float em,const float clip[4],HdColor color)
+{
+    unsigned size;float sx,sy;double a,b,c,d;int x0,y0,x1,y1;Glyph *g;
+    if(!f || !clip || geometry(p,em,0,&size,&sx,&sy) || !p->rgba || p->width<=0 ||
+        p->width>INT_MAX/4 || p->height<=0 || p->pitch<p->width*4 ||
+        (size_t)p->height>SIZE_MAX/(size_t)p->pitch || !isfinite(x) || !isfinite(y) ||
+        fabsf(x)>1000000 || fabsf(y)>1000000)return HD_ARGUMENT;
+    if(!isfinite(clip[0]) || !isfinite(clip[1]) || !isfinite(clip[2]) || !isfinite(clip[3]) ||
+        clip[0]<0 || clip[1]<0 || clip[2]>p->logical_width || clip[3]>p->logical_height ||
+        clip[2]<=clip[0] || clip[3]<=clip[1])return HD_ARGUMENT;
+    a=p->viewport_x+clip[0]*(double)sx;b=p->viewport_y+clip[1]*(double)sy;
+    c=p->viewport_x+clip[2]*(double)sx;d=p->viewport_y+clip[3]*(double)sy;
+    if(c<=0 || d<=0 || a>=p->width || b>=p->height)return HD_OK;
+    x0=a<=0?0:(int)a+((double)(int)a<a);y0=b<=0?0:(int)b+((double)(int)b<b);
+    x1=c>=p->width?p->width:(int)c;y1=d>=p->height?p->height:(int)d;
+    if(FT_Set_Pixel_Sizes(f->face,0,size))return HD_GLYPH;
+    g=glyph(f,size,scalar);if(!g)return HD_GLYPH;
+    paint(p,g,p->viewport_x+x*(double)sx,
+          p->viewport_y+y*(double)sy+f->face->size->metrics.ascender/64.0,
+          color,x0,y0,x1,y1);
+    return HD_OK;
 }
 #else
 /* No dependency means a usable original port, with an explicit opt-in error. */
@@ -272,4 +304,7 @@ int hd_text_measure_logical(HdFont *f, const PlatOverlay *p, const char *t, size
 { (void)f; (void)p; (void)t; (void)n; (void)e; (void)w; (void)o; return HD_UNAVAILABLE; }
 int hd_text_draw(HdFont *f, const PlatOverlay *p, const char *t, size_t n, float x, float y, float e, float w, HdColor c)
 { (void)f; (void)p; (void)t; (void)n; (void)x; (void)y; (void)e; (void)w; (void)c; return HD_UNAVAILABLE; }
+int hd_scroll_advance(HdFont *f,uint32_t c,int e) { (void)f;(void)c;(void)e;return -1; }
+int hd_scroll_glyph(HdFont *f,const PlatOverlay *p,uint32_t c,float x,float y,float e,const float clip[4],HdColor color)
+{ (void)f;(void)p;(void)c;(void)x;(void)y;(void)e;(void)clip;(void)color;return HD_UNAVAILABLE; }
 #endif

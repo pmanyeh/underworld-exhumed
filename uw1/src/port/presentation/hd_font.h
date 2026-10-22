@@ -40,4 +40,12 @@ int hd_text_measure_logical(HdFont *font, const PlatOverlay *frame,
    Invalid input is rejected before any pixels are changed. */
 int hd_text_draw(HdFont *font, const PlatOverlay *frame, const char *text,
                   size_t length, float x, float y, float em, float wrap_width, HdColor color);
+/* Scroll profile: fixed logical metrics from a 64px reference face, with 5/4
+   horizontal room for 4:3 correction. Separate game-owned font for measuring.
+   Result is logical 26.6; em_64 is the logical em in 26.6. */
+int hd_scroll_advance(HdFont *font, uint32_t scalar, int em_64);
+/* Draw one scalar at its prepared logical position; clip={left,top,right,bottom}.
+   Resizing changes masks, never the prepared line breaks or choice hit boxes. */
+int hd_scroll_glyph(HdFont *font, const PlatOverlay *frame, uint32_t scalar,
+                    float x, float y, float em, const float clip[4], HdColor color);
 #endif
