@@ -1,0 +1,300 @@
+{
+  "status": "Native P7 PASS",
+  "date": "2026-10-22",
+  "tested_code_and_tests": "4e0f622da7f4ee3aa159cfd8e5b15909fcacc41c",
+  "initial_implementation": "bb7391a83d12373c8318f2ade16ed47f0859fa4b",
+  "baseline": {
+    "underworld_upstream": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "underworld_feature": "ef28ab992e089fa496e325c22bd8a4ca36af6e4a",
+    "exhume_upstream": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "exhume_overlay_pin": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0"
+  },
+  "platform": "Windows / Clang 23.1.3 / SDL3 3.4.18 / FreeType 2.14.3 / Python 3.12.10",
+  "source_sha256": {
+    ".github/workflows/uw1-port.yml": "683618c7b2c366d37782747bd198443fa1449156d39146e205291f08dc56708f",
+    "uw1/src/conv/CONVERSE.C": "f5f66685e784725013e8299f31be286688f61f3c4d113f2ba5d96ea366170aa1",
+    "uw1/src/game/UWEDIT.C": "b1c5f2b59fe4e3c61cbc3ae6535bf48d7e5ad004f41acfe1819c0892907bb1ce",
+    "uw1/src/port/i18n/layout.c": "55d28e8761950febeb8a1b1a2bba6fe84fff99313d3a422543b45a26d8522b36",
+    "uw1/src/port/i18n/layout.h": "e6f6b9b45433cec26b3c735a596894893b2f883a9293e311bf99c583e99baddf",
+    "uw1/src/port/i18n/localization.c": "d7f210f28666a5f5f6230501d98663290d4717dce7de6f8eaca75826336c7bc8",
+    "uw1/src/port/i18n/localization.h": "686b0b8dc4f8c6ade10b7ae93bec4eca8f7db88bda6d44597c8ac504eb7cfd42",
+    "uw1/src/port/presentation/hd_font.c": "ae8aea13f5c443ce7e52b45ab9f672e26029b30aecb34bd5d37fccbf7c42a5f3",
+    "uw1/src/port/presentation/hd_font.h": "8e7dabaaf75ecbaefd910b44584b7e9a19c918c507a2af3d3c694915d33e1d5c",
+    "uw1/src/port/presentation/presentation.c": "8fba1d6e74438bec0c5cd953233e2cc48c1bc93ba099981ea3e6cecd80bd5efd",
+    "uw1/src/port/presentation/presentation.h": "a8e4e459f9b1ec35b63739041d9fd7472e21cd726b07617af2e481d83a624ad1",
+    "uw1/src/port/presentation/scroll_bridge.c": "02945af085323cbf0c829299d6b738e8732b9c8fb800d58142519127e9eb5ede",
+    "uw1/src/port/presentation/scroll_bridge.h": "455a3e33666275ee6d969f3a57e477a439644089ae07bb907ad08c3cd145ef04",
+    "uw1/src/port/presentation/scroll_overlay.c": "a64995eae3ccf5e88aeb68d1be64a9135db6acc23e3f3cb634b7b97413357eaa",
+    "uw1/src/port/presentation/scroll_overlay.h": "3f6466f6245c4d47524f37052efd3566fe8c9aa7ff03bb3c41ff0c8d5856d883",
+    "uw1/src/port/presentation/scroll_text.c": "57c939b33d2e6c8979633f39d85ef429bcc83cb0c94712042f34107072b9423c",
+    "uw1/src/port/presentation/scroll_text.h": "707756b67d96d713f47a2dcde47427e1ac0b44d5d6d79ca1edd24db7f50ff6ae",
+    "uw1/src/port/sys/cheats.c": "ed7b44d969aa7617f7c57f1ae58d6cbc6f102f07393843c0b071bdc371473061",
+    "uw1/src/port/sys/main.c": "094b822f99946ba774b37275dc864f897baa6066b75ae29d9f676dbaa17a631a",
+    "uw1/src/ui/GAMESTRN.C": "995f241ef8aef13c2fc0eef2e736649fc503fc35c06cbdb81f19da90e453fe66",
+    "uw1/src/ui/SCROLLIO.C": "a4f5028fe3ab2ea115655e43d30e5e26d13bc6d5a489e212ca31a743e9ac12ac",
+    "uw1/tools/i18n/scroll_render_test.c": "e70ed419affb483944bb10472bc4060dd847eb38b9718faabab74965967abbd3",
+    "uw1/tools/i18n/scroll_text_test.c": "938effc99ca56a24945e165b10cf4c1a8ce70ad63905e93ad3077ef98dd3c29a",
+    "uw1/tools/i18n/scroll_window_test.c": "d1a6e7dcbcbd3ae186eaa7a18e7f9e7d19136004dea25034da73006cd4f8750d",
+    "uw1/tools/i18n/test_hd_cursor.py": "1a3e6a273b81bf06906163399bcea14acf7eed93249a8f785e64260cc565371b",
+    "uw1/tools/i18n/test_layout.py": "95183547942c84b9fbb0dd286919d7cdb982360420723fd503b32d768489b34a",
+    "uw1/tools/i18n/test_scroll_text.py": "0c234338da848f02d71d297136d4b62e284e63df953aced0f28750abccc6f70e"
+  },
+  "native_exe_sha256": "cf0bfd684c517a1e54e69168d28da963871459fc1c915e8ab2e8633d8b467ba7",
+  "native_exe_bytes": 5154304,
+  "dependencies": {
+    "font": {
+      "name": "Noto Sans CJK TC Regular 2.004",
+      "license": "OFL 1.1",
+      "revision": "f8d157532fbfaeda587e826d4cd5b21a49186f7c",
+      "sha256": "dce08bd4fd91aa8aa76ed8fea4b694c2dfb8550f67871e326843212ddbeb88b4"
+    },
+    "freetype": {
+      "version": "2.14.3",
+      "source_revision": "c740f0fda4274d6ffd2e5b64a25b06ef69803a07",
+      "dll_sha256": "751400ec0a3bbb3330200547bd3ed9bd09402b1c44118ff4d40dc0b4f0bae9f3"
+    }
+  },
+  "ci": "https://github.com/pmanyeh/underworld-exhumed/actions/runs/39713029689",
+  "tests": {
+    "build_game_port_sources": [
+      89,
+      103
+    ],
+    "windows_port_check_errors_warnings": [
+      0,
+      0
+    ],
+    "flow_core": "UTF-8/CJK/English/kinsoku/append/newline/empty/invalid/lifetime/CP437/colours/pause/MORE/current row/choices PASS",
+    "concurrent_snapshot_publications": 5000,
+    "flow_local_sanitizer_assertions": 34878,
+    "render_assertions": 75258,
+    "SDL_scroll_scenarios": 8,
+    "sanitizers": "ASan/UBSan core, real FreeType renderer and actual SDL window PASS; no Windows leak detection; third-party DLLs unsanitized",
+    "game_fixtures": {
+      "cases": 6,
+      "direct_TalkTo_fixture": true,
+      "selection": 1,
+      "raw_paper_uniform_all_cases": true
+    },
+    "modern_native_replay": {
+      "sessions": 6,
+      "original_checkpoints": 81,
+      "replay_checkpoints_per_run": 87,
+      "runs": 2,
+      "all_canonical_sections_and_headers": true,
+      "saves_identical": true,
+      "expected_extra_terminal_per_session": 1,
+      "terminal_count_matches_record_stop": true,
+      "added_section_exclusions": [],
+      "goldens_modified": false
+    },
+    "compatibility_replay": {
+      "English": [
+        16,
+        1786
+      ],
+      "zh_TW_lookup": [
+        16,
+        1786
+      ],
+      "all_original_sections_screens_saves": true,
+      "lookup_hits": 12
+    },
+    "existing": {
+      "layout": 29,
+      "runtime": 16,
+      "inventory": 22,
+      "font_assertions": 4411580,
+      "no_freetype_stub": "PASS",
+      "cursor": "P6 sanitizer and 8 actual SDL scenarios PASS"
+    },
+    "native_string_probe": {
+      "strings": 10984,
+      "missing_keys": 2,
+      "block0_dynamic_ring_lifetime": "PASS"
+    },
+    "native_matrix": {
+      "fuzz_routines": 34,
+      "fuzz_cases": 5680,
+      "differences": 0,
+      "enhancements": [
+        120,
+        120
+      ],
+      "settings": [
+        72,
+        72
+      ],
+      "movement": [
+        15,
+        15
+      ],
+      "blackbox": [
+        22,
+        22
+      ],
+      "mapnotes": [
+        4,
+        4
+      ]
+    },
+    "CLI_negative_cases": [
+      "locale",
+      "font",
+      "mouse-look"
+    ]
+  },
+  "images": {
+    "bragit-menu.png": {
+      "sha256": "4bbc2148ae2aa6b2d7a3954c372d912dfc96d1bfbafa9b7356640e705bd316a4",
+      "decoded_pixel_sha256": "a35e4b94512a52ed0e6cce191caeb35332a1c584a2573a691cd6e5891ab49a1a",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "bragit-menu-scanout.png": {
+      "sha256": "76e151dfd8153d13a5ccbcc9c496c2107da2be04e838bcf5afb58a5ac629738a",
+      "decoded_pixel_sha256": "611ae4df1e684d1261d39c2fb7cbadec871ee9a7d166283c2668d633fc4ec688",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "bragit-click.png": {
+      "sha256": "fc849cddf7b8da75438d07d36cfa91c6f1dfa4d65e7e87e077b1e5ba0ba0ccba",
+      "decoded_pixel_sha256": "986416232500d713537806f99a631d01189bf70facaab9dbacd7d693df53d8fd",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "bragit-click-scanout.png": {
+      "sha256": "a0f6c45539401f980237910978a0974f7fe9a470611fdf6bd682a2e486f3b929",
+      "decoded_pixel_sha256": "20d226678691522b3d7104364801905c2468135877f9f779462e73f4e20992a4",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "scroll-short.png": {
+      "sha256": "d469b3eff0b3d63cea846f0c5ab123f387699c33aab1579ab7c5c4e376eff36d",
+      "decoded_pixel_sha256": "91818f2c6e36a6ba8859988d6056e963714b9937fa7902584d44f8918da03804",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "scroll-short-scanout.png": {
+      "sha256": "4511c48a37a30889f7fa9fa5777c0af055438a9d45c869cca6be517327eded0c",
+      "decoded_pixel_sha256": "f2a61d73874c1dbc51f1cba5fea8f8577555d21d4b02832d52e153c75da2f72b",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "scroll-pages.png": {
+      "sha256": "8d333b9e28053b5a79bfdadddbfba18dce9df1270fec7c4e0194cfa5180a60dd",
+      "decoded_pixel_sha256": "0142be2e8dbbdd5ddbfbc7470b2e26013d2ec4fb94eb824960bd60aa95bf8a0a",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "scroll-pages-scanout.png": {
+      "sha256": "4511c48a37a30889f7fa9fa5777c0af055438a9d45c869cca6be517327eded0c",
+      "decoded_pixel_sha256": "f2a61d73874c1dbc51f1cba5fea8f8577555d21d4b02832d52e153c75da2f72b",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "scroll-controls.png": {
+      "sha256": "90c1967c5a2f983d906a5562a5318c0d47b83db8d6ac3a2ef4865281cdef14d6",
+      "decoded_pixel_sha256": "23697ce63061a94782d4a9f0173dc38688b353dc83860af4aca6350b46602b66",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "scroll-controls-scanout.png": {
+      "sha256": "4511c48a37a30889f7fa9fa5777c0af055438a9d45c869cca6be517327eded0c",
+      "decoded_pixel_sha256": "f2a61d73874c1dbc51f1cba5fea8f8577555d21d4b02832d52e153c75da2f72b",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "scroll-empty.png": {
+      "sha256": "362f2e53ef2c4b4479549eb6b63f4e4cb1c5fb02a884b4f3eee2a10952945bb5",
+      "decoded_pixel_sha256": "a107d5e673d55f5a53bccf3c241d78e3eaecb9b8bea05b9c2d27a8ad50450f5b",
+      "mode": "RGB",
+      "size": [
+        960,
+        720
+      ],
+      "lossless_recompression_verified": true
+    },
+    "scroll-empty-scanout.png": {
+      "sha256": "4511c48a37a30889f7fa9fa5777c0af055438a9d45c869cca6be517327eded0c",
+      "decoded_pixel_sha256": "f2a61d73874c1dbc51f1cba5fea8f8577555d21d4b02832d52e153c75da2f72b",
+      "mode": "RGB",
+      "size": [
+        320,
+        200
+      ],
+      "lossless_recompression_verified": true
+    },
+    "resize.png": {
+      "sha256": "508846de8432265bd11bb3028b092446634f0f6834102255f993ffb0279376ee",
+      "decoded_pixel_sha256": "57126c4e6b0f2f4e54c254ca25ee7548bc71f7142ea594e9c129793d7d9a1c4f",
+      "mode": "RGB",
+      "size": [
+        853,
+        517
+      ],
+      "lossless_recompression_verified": true
+    }
+  },
+  "native_recording_sha256": {
+    "bragit-menu": "491c55bddfbae9f089a815d3601adf6bac1795a8c0ebb1521cf1ec84f4eaf5c0",
+    "bragit-click": "794b783f9b030798beafe8328455a6de9ef43b5eface04c3af38ffba01fc3ac0",
+    "scroll-short": "d52291640b696ebf6f0faccc6ccd9462055e3d9d96a14059283e599d951de42d",
+    "scroll-pages": "5851b627067868afcc3c508072d62bd241ffc18bc5d59dedf9db9fab17d47440",
+    "scroll-controls": "1d184b16800b33ac9e48229b7fb1f632000a78b8768ab344ac00c3279125edf0",
+    "scroll-empty": "69ee030a4dd7a1e4b519e9c950ba32c0fe61b2d5f1f3da9620d14a0381166e21"
+  },
+  "limitations": [
+    "Native-only: no DOS build/run or golden regeneration",
+    "Dynamic templates retain expanded English fallback; no BABL/template rewrite",
+    "ASCII typed-answer/yes-no editor retains legacy display; no Chinese input/IME",
+    "Basic codepoint layout; no full UAX14, grapheme, shaping or kerning",
+    "Actual game/window exercised on Windows; other Native CI uses standalone renderer",
+    "HiDPI geometry synthetic; no physical multi-monitor DPI move",
+    "Web compile/link only; no Web HD-scroll runtime claim",
+    "Direct TalkTo/scroll fixtures are P7 integration; Phase8 GO not claimed",
+    "Saved-file replay equality is not a modern save/load gameplay cycle"
+  ],
+  "Phase8_GO_claimed": false,
+  "evidence_policy": "No game assets, saves, generated recordings, executable, font or third-party DLL binaries distributed"
+}

@@ -1,0 +1,16 @@
+ok   the port reports the player's position (UW1PORT_POS_LOG)
+ok   standing still: the player stays put (2000 ms later, still at the same place and facing)
+ok   the saved game faces about north-east
+ok   facing north-east (the saved game's) (45 degrees), Z slides left: it moves 32 or more within 25 degrees of 315
+ok   facing north-east (the saved game's) (45 degrees), C slides right: it moves 32 or more within 25 degrees of 135
+ok   facing north-east (the saved game's) (45 degrees), X walks backwards: it moves 32 or more within 25 degrees of 225
+ok   facing north (356 degrees), Z slides left: it moves 32 or more within 25 degrees of 266
+ok   facing north (358 degrees), C slides right: it moves 32 or more within 25 degrees of 88
+ok   facing north (357 degrees), X walks backwards: it moves 32 or more within 25 degrees of 177
+ok   facing east (93 degrees), Z slides left: it moves 32 or more within 25 degrees of 3
+ok   facing east (93 degrees), C slides right: it moves 32 or more within 25 degrees of 183
+ok   facing east (92 degrees), X walks backwards: it moves 32 or more within 25 degrees of 272
+ok   facing west (264 degrees), X walks backwards: it moves 32 or more within 25 degrees of 84
+ok   facing south (187 degrees), X walks backwards: it moves 32 or more within 25 degrees of 7
+ok   the 3D frames come 8 or more ticks apart (at most 5% early, 8 ticks a frame on average)
+movecheck: 15 of 15 checks pass

@@ -1,0 +1,115 @@
+"""Archive P7 evidence without distributing private game/runtime assets."""
+from pathlib import Path
+import hashlib
+import json
+import subprocess
+from PIL import Image
+
+workspace = Path(__file__).resolve().parent.parent
+repo = workspace / 'underworld-exhumed'
+uw = repo / 'uw1'
+out = uw / 'docs/i18n/evidence/p7'
+out.mkdir(parents=True, exist_ok=True)
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def copy_text(src, name):
+    data = src.read_bytes().replace(b'\r\n', b'\n').rstrip(b'\n') + b'\n'
+    (out / name).write_bytes(data)
+
+for src in (uw / 'build/i18n').glob('p7-*'):
+    if src.is_file() and src.suffix in ('.json', '.log'):
+        copy_text(src, src.name.removeprefix('p7-'))
+
+game = uw / 'build/hd-scroll/game'
+for name in ('game-tests.json', 'modern-replay.json'):
+    copy_text(game / name, name)
+cases = json.loads((game / 'game-tests.json').read_text(encoding='utf-8'))['cases']
+for name in cases:
+    for ext in ('.log', '.jsonl'):
+        copy_text(game / (name + ext), name + ext)
+for src in (uw / 'build/hd-scroll/cli').glob('*'):
+    if src.suffix in ('.log', '.json'):
+        copy_text(src, src.name if src.name.startswith('cli-') else 'cli-' + src.name)
+
+for name in ('p7-game-tests.py', 'p7-modern-replay.py', 'p7-replay-en.py',
+             'p7-native-regression.py', 'prepare-fuzzhost-link.py', 'p7-archive.py'):
+    copy_text(workspace / '.poc-tools' / name, name + '.txt')
+
+images = {}
+def copy_image(src, name):
+    with Image.open(src) as image:
+        original = image.tobytes()
+        mode, size = image.mode, image.size
+        image.save(out / name, optimize=True, compress_level=9)
+    with Image.open(out / name) as image:
+        assert image.mode == mode and image.size == size and image.tobytes() == original
+    images[name] = {'sha256': sha(out / name), 'decoded_pixel_sha256': hashlib.sha256(original).hexdigest(),
+                    'mode': mode, 'size': list(size), 'lossless_recompression_verified': True}
+
+for name in cases:
+    copy_image(game / (name + '.png'), name + '.png')
+    copy_image(game / (name + '-scanout.png'), name + '-scanout.png')
+copy_image(uw / 'build/hd-scroll/window-asan-3.png', 'resize.png')
+
+source_commit = '4e0f622da7f4ee3aa159cfd8e5b15909fcacc41c'
+baseline = 'ef28ab992e089fa496e325c22bd8a4ca36af6e4a'
+files = subprocess.check_output(['git', 'diff', '--name-only', baseline, source_commit], cwd=repo, text=True).splitlines()
+exe = uw / 'build/port/uw1port.exe'
+manifest = {
+    'status': 'Native P7 PASS', 'date': '2026-10-22', 'tested_code_and_tests': source_commit,
+    'initial_implementation': 'bb7391a83d12373c8318f2ade16ed47f0859fa4b',
+    'baseline': {'underworld_upstream': 'e5deadd6945b492636aadccc14f52caa908b4186',
+                 'underworld_feature': baseline, 'exhume_upstream': 'c54e00e9176c14d0913b5806318a30f85a8f4636',
+                 'exhume_overlay_pin': '89278495bb0b8b224b5bb58e53da2fd367c0d8c0'},
+    'platform': 'Windows / Clang 23.1.3 / SDL3 3.4.18 / FreeType 2.14.3 / Python 3.12.10',
+    'source_sha256': {name: sha(repo / name) for name in files},
+    'native_exe_sha256': sha(exe), 'native_exe_bytes': exe.stat().st_size,
+    'dependencies': {
+        'font': {'name': 'Noto Sans CJK TC Regular 2.004', 'license': 'OFL 1.1',
+                 'revision': 'f8d157532fbfaeda587e826d4cd5b21a49186f7c',
+                 'sha256': sha(uw / 'tools/fonts/NotoSansCJKtc-Regular.otf')},
+        'freetype': {'version': '2.14.3', 'source_revision': 'c740f0fda4274d6ffd2e5b64a25b06ef69803a07',
+                     'dll_sha256': sha(uw / 'tools/libs/bin/libfreetype.dll')}
+    },
+    'ci': 'https://github.com/pmanyeh/underworld-exhumed/actions/runs/39713029689',
+    'tests': {
+        'build_game_port_sources': [89, 103], 'windows_port_check_errors_warnings': [0, 0],
+        'flow_core': 'UTF-8/CJK/English/kinsoku/append/newline/empty/invalid/lifetime/CP437/colours/pause/MORE/current row/choices PASS',
+        'concurrent_snapshot_publications': 5000, 'flow_local_sanitizer_assertions': 34878,
+        'render_assertions': 75258, 'SDL_scroll_scenarios': 8,
+        'sanitizers': 'ASan/UBSan core, real FreeType renderer and actual SDL window PASS; no Windows leak detection; third-party DLLs unsanitized',
+        'game_fixtures': {'cases': 6, 'direct_TalkTo_fixture': True, 'selection': 1, 'raw_paper_uniform_all_cases': True},
+        'modern_native_replay': {'sessions': 6, 'original_checkpoints': 81, 'replay_checkpoints_per_run': 87,
+            'runs': 2, 'all_canonical_sections_and_headers': True, 'saves_identical': True,
+            'expected_extra_terminal_per_session': 1, 'terminal_count_matches_record_stop': True,
+            'added_section_exclusions': [], 'goldens_modified': False},
+        'compatibility_replay': {'English': [16, 1786], 'zh_TW_lookup': [16, 1786],
+                                 'all_original_sections_screens_saves': True, 'lookup_hits': 12},
+        'existing': {'layout': 29, 'runtime': 16, 'inventory': 22, 'font_assertions': 4411580,
+                     'no_freetype_stub': 'PASS', 'cursor': 'P6 sanitizer and 8 actual SDL scenarios PASS'},
+        'native_string_probe': {'strings': 10984, 'missing_keys': 2, 'block0_dynamic_ring_lifetime': 'PASS'},
+        'native_matrix': {'fuzz_routines': 34, 'fuzz_cases': 5680, 'differences': 0,
+                          'enhancements': [120, 120], 'settings': [72, 72], 'movement': [15, 15],
+                          'blackbox': [22, 22], 'mapnotes': [4, 4]},
+        'CLI_negative_cases': ['locale', 'font', 'mouse-look']
+    },
+    'images': images,
+    'native_recording_sha256': {name: result['record_sha256'] for name, result in cases.items()},
+    'limitations': ['Native-only: no DOS build/run or golden regeneration',
+        'Dynamic templates retain expanded English fallback; no BABL/template rewrite',
+        'ASCII typed-answer/yes-no editor retains legacy display; no Chinese input/IME',
+        'Basic codepoint layout; no full UAX14, grapheme, shaping or kerning',
+        'Actual game/window exercised on Windows; other Native CI uses standalone renderer',
+        'HiDPI geometry synthetic; no physical multi-monitor DPI move',
+        'Web compile/link only; no Web HD-scroll runtime claim',
+        'Direct TalkTo/scroll fixtures are P7 integration; Phase8 GO not claimed',
+        'Saved-file replay equality is not a modern save/load gameplay cycle'],
+    'Phase8_GO_claimed': False,
+    'evidence_policy': 'No game assets, saves, generated recordings, executable, font or third-party DLL binaries distributed'
+}
+(out / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
+for path in (uw / 'i18n/README.md', uw / 'docs/i18n/CHINESE-SCROLL.md', *out.glob('*.log'), *out.glob('*.json'), *out.glob('*.txt'), *out.glob('*.jsonl')):
+    path.write_bytes(path.read_bytes().replace(b'\r\n', b'\n').rstrip(b'\n') + b'\n')
+print('Archived', len(list(out.iterdir())), 'files;', len(images), 'lossless PNGs;', len(files), 'source hashes')

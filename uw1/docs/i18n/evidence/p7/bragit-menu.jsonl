@@ -1,0 +1,9 @@
+{"event":"text","box":1,"choice":0,"text":"\\P你好，陌生人！你來這裡有何貴幹？我以前沒在這地方見過你。\u000a"}
+{"event":"pause","box":1,"value":200,"cells":0,"lines":0}
+{"event":"write","box":1,"value":0,"cells":28,"lines":1}
+{"event":"text","box":0,"choice":1,"text":"1. 我只是在探索深淵。\u000a"}
+{"event":"write","box":0,"value":1,"cells":12,"lines":0}
+{"event":"text","box":0,"choice":2,"text":"2. 我正試著救出一名無辜的女孩。\u000a"}
+{"event":"write","box":0,"value":2,"cells":29,"lines":1}
+{"event":"text","box":0,"choice":3,"text":"3. 我被丟進這裡，為一樁並非我所犯的罪受罰。\u000a"}
+{"event":"write","box":0,"value":3,"cells":52,"lines":2}

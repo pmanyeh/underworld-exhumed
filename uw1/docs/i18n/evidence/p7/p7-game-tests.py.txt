@@ -1,0 +1,31 @@
+from pathlib import Path
+import subprocess,os,shutil,json,hashlib
+from PIL import Image
+root=Path(r'D:\git\uw1-native-poc\underworld-exhumed\uw1');out=root/'build/hd-scroll/game';out.mkdir(parents=True,exist_ok=True)
+env=dict(os.environ,EXHUME_TEST_CHEATS='1');env['PATH']=str(root/'tools/libs/bin')+os.pathsep+r'D:\git\uw1-native-poc\.poc-tools\msys64\clang64\bin'+os.pathsep+env['PATH']
+fixtures={'short':'你好，冒險者。','pages':'中文沒有空白也可以逐字換行，標點「不能」隨意拆開。'*30,'controls':'\\0短中文。\\1中英混排 English 123。\\2「標點」測試。\\3長單字 Supercalifragilisticexpialidocious。\\4\\p暫停後。\\5\\P再次暫停後。\\6\\m明示 MORE 後。\n第二段沒有空白的繁體中文測試。','empty':''}
+for name,text in fixtures.items():(out/(name+'.txt')).write_text(text,encoding='utf-8')
+cases=[('bragit-menu','9000 cheat talk 67\n',12000,13000),('bragit-click','9000 cheat talk 67\n10500 mdown 30 173 left\n10750 mup 30 173 left\n12000 key space\n',17000,18000),('scroll-short',f'9000 cheat scroll {(out/"short.txt").as_posix()}\n',11000,12000),('scroll-pages',f'9000 cheat scroll {(out/"pages.txt").as_posix()}\n',10000,11000),('scroll-controls',f'9000 cheat scroll {(out/"controls.txt").as_posix()}\n'+''.join(f'{t} key space\n' for t in range(10000,16000,500)),17000,18000),('scroll-empty',f'9000 cheat scroll {(out/"empty.txt").as_posix()}\n',11000,12000)]
+report={}
+for name,events,shot,after in cases:
+ home=out/name
+ if home.exists():
+  home.resolve().relative_to(out.resolve())
+  shutil.rmtree(home)
+ home.mkdir();shutil.copytree(root/'build/replay/verify-en-p6/items/port/SAVE1',home/'SAVE1')
+ script=home/'test.script';script.write_text('3000 key enter\n4500 key enter\n'+events)
+ cmd=[str(root/'build/port/uw1port.exe'),'--data',r'D:\git\uw1-native-poc\.poc-private\game\UW','--home',str(home),'--record','--no-audio','--sound','0,0','--enhance','skip-intro','--input-script',str(script),'--locale','zh-TW','--i18n-file',str(root/'build/i18n/zh-TW.uwloc'),'--hd-scroll','--font',str(root/'tools/fonts/NotoSansCJKtc-Regular.otf'),'--scroll-log',str(out/(name+'.jsonl')),'--cursor-log',str(out/(name+'-cursor.jsonl')),'--screenshot-after',str(shot),'--screenshot',str(out/(name+'-scanout.png')),'--window-shot',str(out/(name+'.png')),'--exit-after',str(after),'--scale','3']
+ r=subprocess.run(cmd,env=env,capture_output=True,text=True,timeout=45);(out/(name+'.log')).write_text(r.stdout+r.stderr,encoding='utf-8');assert r.returncode==0,(name,r.stderr)
+ rows=[json.loads(s) for s in (out/(name+'.jsonl')).read_text(encoding='utf-8').splitlines()];texts=[r['text'] for r in rows if r['event']=='text'];selections=[r['value'] for r in rows if r['event']=='selection'];more=sum(r['event']=='more' for r in rows)
+ if name=='bragit-menu':assert any('你好，陌生人' in t for t in texts) and all(any(t.startswith(f'{i}. ') for t in texts) for i in (1,2,3))
+ if name=='bragit-click':
+  assert selections==[1],(name,selections,texts)
+  assert any('探索，是嗎' in t for t in texts) and any('Thou needst not' in t and '@SS1' not in t for t in texts),(name,texts)
+ if name=='scroll-pages':assert more>0,(name,rows)
+ if name=='scroll-controls':assert more==1 and {r['value'] for r in rows if r['event']=='pause'}=={200,600},(name,rows)
+ if name=='scroll-empty':assert '' in texts
+ image=Image.open(out/(name+'-scanout.png'));paper=image.crop((15,169,306,199));assert len(set(paper.get_flattened_data()))==1,(name,'legacy bottom glyphs remain')
+ if name.startswith('bragit'):assert len(set(image.crop((56,53,220,132)).get_flattened_data()))==1,(name,'legacy NPC glyphs remain')
+ report[name]={'status':'PASS','selections':selections,'MORE_events':more,'text_events':len(texts),'low_resolution_scroll_paper_uniform':True,'record_sha256':hashlib.sha256((home/'RECORD.OUT').read_bytes()).hexdigest()}
+ print(name,report[name],flush=True)
+(out/'game-tests.json').write_text(json.dumps({'status':'PASS','Native_integration_fixtures':True,'Phase8_GO_claimed':False,'cases':report},indent=2)+'\n')

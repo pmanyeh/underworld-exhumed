@@ -1,14 +1,36 @@
-# Native localization / layout / HD text / cursor (Phases 1–6)
+# Native localization / layout / HD text / cursor / scroll (Phases 1–7)
 
 目前已完成文字盤點、翻譯資料、Native UTF-8 lookup 與獨立的文字排版核心。
-查找以記錄驗證，排版以 renderer-independent tests 驗證；畫面仍走原本英文路徑。
+預設保留原英文 renderer；`--hd-scroll` 可選用繁中 scroll／conversation 顯示。
 Phase 4 已加入選用的通用 RGBA overlay；Phase 5 加入 FreeType 高解析度繁中示範。
 Phase 6 加入原版 bitmap 的 Native 游標 overlay；驗收見 [HD cursor](../docs/i18n/HD-CURSOR.md)。
+Phase 7 將 UTF-8 換行、控制碼、分頁與對話選項接入實際遊戲；驗收見
+[Chinese scroll integration](../docs/i18n/CHINESE-SCROLL.md)。
 驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md)、[Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)
 與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)、[Phase 4](../docs/i18n/OVERLAY-FOUNDATION.md)。
 
 目前依使用者更新採 [Native-only 驗收](../docs/i18n/VALIDATION.md)：不需要 Borland 或 DOS 驗證。
 先前報告的 DOS NOT RUN 是歷史紀錄，不是待解決的阻礙。
+
+## Chinese conversation / scroll
+
+在 `uw1/` 建置 catalog、下載字型、啟動 Native executable：
+
+```sh
+python3 tools/i18n/pack_translations.py i18n/zh-TW/poc.tsv build/i18n/zh-TW.uwloc
+python3 tools/i18n/fetch_font.py
+make port
+build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" \
+  --locale zh-TW --i18n-file build/i18n/zh-TW.uwloc --hd-scroll \
+  --font tools/fonts/NotoSansCJKtc-Regular.otf
+```
+
+Windows 使用 `uw1port.exe`；font／catalog 也可使用絕對路徑。
+HD scroll 會同時啟用 HD cursor，需要停用 mouse-look；不會自動修改已存的 enhancement 設定。
+`--scroll-log FILE` 可記錄實際顯示文字、pause、MORE 與選項事件。
+缺譯文、dynamic string、含 `@` 的模板，保留英文 fallback；模板先由原 BABL 展開。
+這階段沒有把 UTF-8 寫進 VM、game string ring 或原 byte buffers，也沒有實作中文輸入／IME。
+不加 `--hd-scroll` 時，`--locale zh-TW` 仍只做 lookup／trace，維持原 renderer。
 
 ## FreeType HD text
 

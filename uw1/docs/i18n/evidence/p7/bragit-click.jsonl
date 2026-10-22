@@ -1,0 +1,23 @@
+{"event":"text","box":1,"choice":0,"text":"\\P你好，陌生人！你來這裡有何貴幹？我以前沒在這地方見過你。\u000a"}
+{"event":"pause","box":1,"value":200,"cells":0,"lines":0}
+{"event":"write","box":1,"value":0,"cells":28,"lines":1}
+{"event":"text","box":0,"choice":1,"text":"1. 我只是在探索深淵。\u000a"}
+{"event":"write","box":0,"value":1,"cells":12,"lines":0}
+{"event":"text","box":0,"choice":2,"text":"2. 我正試著救出一名無辜的女孩。\u000a"}
+{"event":"write","box":0,"value":2,"cells":29,"lines":1}
+{"event":"text","box":0,"choice":3,"text":"3. 我被丟進這裡，為一樁並非我所犯的罪受罰。\u000a"}
+{"event":"write","box":0,"value":3,"cells":52,"lines":2}
+{"event":"selection","box":0,"value":1,"cells":52,"lines":2}
+{"event":"text","box":1,"choice":0,"text":"\\1我只是在探索深淵。\\0\u000a"}
+{"event":"write","box":1,"value":0,"cells":37,"lines":2}
+{"event":"text","box":1,"choice":0,"text":"\\P探索，是嗎？哈，這藉口真不錯。不過，你要是不願說自己犯了什麼罪，我也無意過問。\\m\u000a"}
+{"event":"pause","box":1,"value":200,"cells":37,"lines":3}
+{"event":"more","box":1,"value":0,"cells":57,"lines":4}
+{"event":"write","box":1,"value":0,"cells":51,"lines":4}
+{"event":"text","box":1,"choice":0,"text":"\\PThou needst not be ashamed of thy misfortune, lad; thou art in the same pot with all of us now.  If thou art to have a chance of surviving in the Abyss for long, thou must learn the lay of the land.\u000a"}
+{"event":"pause","box":1,"value":200,"cells":51,"lines":5}
+{"event":"write","box":1,"value":0,"cells":246,"lines":8}
+{"event":"text","box":0,"choice":1,"text":"1. 的確，我很想多了解這一帶。\u000a"}
+{"event":"write","box":0,"value":1,"cells":16,"lines":0}
+{"event":"text","box":0,"choice":2,"text":"2. 我自己應付得來。\u000a"}
+{"event":"write","box":0,"value":2,"cells":27,"lines":1}

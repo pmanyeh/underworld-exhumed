@@ -1,0 +1,33 @@
+from pathlib import Path
+import json,hashlib,os,sys,shutil
+workspace=Path(r'D:\git\uw1-native-poc');root=workspace/'underworld-exhumed/uw1';out=root/'build/hd-scroll/game'
+sys.path.insert(0,str(workspace/'underworld-exhumed/exhume/tools'));os.environ['EXHUME_CONFIG']=str(root/'build/poc/native-v22.toml')
+import replay as R
+import golden as G
+stage=out/'replay-stage'
+if stage.exists():
+ stage.resolve().relative_to(out.resolve())
+ shutil.rmtree(stage)
+stage.mkdir();shutil.copytree(root/'build/replay/verify-en-p6/items/port/SAVE1',stage/'SAVE1')
+report={}
+for name in ['bragit-menu','bragit-click','scroll-short','scroll-pages','scroll-controls','scroll-empty']:
+ rec=out/name/'RECORD.OUT';original=R.read_dump(str(out/name));assert original,(name,'no record checkpoints')
+ d=out/(name+'-replay');d.mkdir(exist_ok=True)
+ rc=R.run_port(str(rec),str(d),['--hd-scroll','--locale','zh-TW','--i18n-file',str(root/'build/i18n/zh-TW.uwloc'),'--font',str(root/'tools/fonts/NotoSansCJKtc-Regular.otf'),'--sound','0,0'],stage=str(stage),quiet=True)
+ assert rc==0,(name,rc,(d/'port.log').read_text())
+ actual=R.read_dump(str(d));stop=R.read_log(str(rec))[1]
+ assert len(actual)==len(original)+1 and actual[-1]['kind']==4 and actual[-1]['events']==stop,(name,len(actual),len(original),stop)
+ # GUI timed exit closes the recording stream; replay appends its terminal checkpoint.
+ assert G.save_hashes(str(d))==G.save_hashes(str(out/name)),(name,'saved files')
+ for i,(a,b) in enumerate(zip(actual,original)):
+  assert G.header(a)==G.header(b),(name,i,'header')
+  ca,cb=G.canon(a),G.canon(b)
+  assert ca==cb,(name,i,[s for s in set(ca)|set(cb) if ca.get(s)!=cb.get(s)])
+ d2=out/(name+'-replay2');d2.mkdir(exist_ok=True)
+ rc=R.run_port(str(rec),str(d2),['--hd-scroll','--locale','zh-TW','--i18n-file',str(root/'build/i18n/zh-TW.uwloc'),'--font',str(root/'tools/fonts/NotoSansCJKtc-Regular.otf'),'--sound','0,0'],stage=str(stage),quiet=True)
+ assert rc==0,(name,'second replay',rc)
+ second=R.read_dump(str(d2));assert [(G.header(c),G.canon(c)) for c in second]==[(G.header(c),G.canon(c)) for c in actual],(name,'replay determinism')
+ assert G.save_hashes(str(d2))==G.save_hashes(str(d)),(name,'replay saves')
+ report[name]={'status':'PASS','record_checkpoints':len(original),'replay_checkpoints':len(actual),'all_canonical_sections':True,'header':True,'saves':True,'two_replays_including_terminal_identical':True}
+ print(name,report[name],flush=True)
+(out/'modern-replay.json').write_text(json.dumps({'status':'PASS','DOS_executed':False,'reference':'fresh Native HD-scroll recordings; all canonical sections and headers','cases':report},indent=2)+'\n',encoding='utf-8')

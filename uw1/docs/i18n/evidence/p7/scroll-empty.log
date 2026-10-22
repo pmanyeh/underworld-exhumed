@@ -1,0 +1,12 @@
+EMS allocated
+
+uw1port: mt32: no ROMs
+uw1port: enhance: skip-intro (not as DOS)
+uw1port: mouse: follow
+uw1port: renderer direct3d11, display 120 Hz, vsync requested
+uw1port: 600 presents in 6.2 s, 0 paced (vsync holds)
+uw1port: cheat: scroll D:/git/uw1-native-poc/underworld-exhumed/uw1/build/hd-scroll/game/empty.txt (not as DOS)
+uw1port: wrote D:\git\uw1-native-poc\underworld-exhumed\uw1\build\hd-scroll\game\scroll-empty-scanout.png (320x200) at 11003 ms
+uw1port: wrote D:\git\uw1-native-poc\underworld-exhumed\uw1\build\hd-scroll\game\scroll-empty.png (960x720, the window)
+uw1port: 1230 presents, 113 paced, 0 passes with the window hidden
+uw1port: HD text cache: 0 hits, 0 rasterizations, 0 entries, 0 bytes

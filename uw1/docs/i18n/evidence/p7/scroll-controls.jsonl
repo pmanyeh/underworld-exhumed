@@ -1,0 +1,5 @@
+{"event":"text","box":0,"choice":0,"text":"\\0短中文。\\1中英混排 English 123。\\2「標點」測試。\\3長單字 Supercalifragilisticexpialidocious。\\4\\p暫停後。\\5\\P再次暫停後。\\6\\m明示 MORE 後。\u000d\u000a第二段沒有空白的繁體中文測試。"}
+{"event":"pause","box":0,"value":600,"cells":67,"lines":0}
+{"event":"pause","box":0,"value":200,"cells":71,"lines":0}
+{"event":"more","box":0,"value":0,"cells":11,"lines":1}
+{"event":"write","box":0,"value":0,"cells":30,"lines":2}

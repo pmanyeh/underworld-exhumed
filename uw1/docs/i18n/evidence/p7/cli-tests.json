@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "cases": {
+    "locale": {
+      "exit": 1,
+      "diagnostic": "requires --locale zh-TW"
+    },
+    "font": {
+      "exit": 1,
+      "diagnostic": "cannot open scalable Unicode font"
+    },
+    "mouse-look": {
+      "exit": 1,
+      "diagnostic": "HD cursor: mouse-look is not supported"
+    }
+  }
+}

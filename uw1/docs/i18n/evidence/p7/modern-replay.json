@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "DOS_executed": false,
+  "reference": "fresh Native HD-scroll recordings; all canonical sections and headers",
+  "cases": {
+    "bragit-menu": {
+      "status": "PASS",
+      "record_checkpoints": 11,
+      "replay_checkpoints": 12,
+      "all_canonical_sections": true,
+      "header": true,
+      "saves": true,
+      "two_replays_including_terminal_identical": true
+    },
+    "bragit-click": {
+      "status": "PASS",
+      "record_checkpoints": 15,
+      "replay_checkpoints": 16,
+      "all_canonical_sections": true,
+      "header": true,
+      "saves": true,
+      "two_replays_including_terminal_identical": true
+    },
+    "scroll-short": {
+      "status": "PASS",
+      "record_checkpoints": 11,
+      "replay_checkpoints": 12,
+      "all_canonical_sections": true,
+      "header": true,
+      "saves": true,
+      "two_replays_including_terminal_identical": true
+    },
+    "scroll-pages": {
+      "status": "PASS",
+      "record_checkpoints": 10,
+      "replay_checkpoints": 11,
+      "all_canonical_sections": true,
+      "header": true,
+      "saves": true,
+      "two_replays_including_terminal_identical": true
+    },
+    "scroll-controls": {
+      "status": "PASS",
+      "record_checkpoints": 24,
+      "replay_checkpoints": 25,
+      "all_canonical_sections": true,
+      "header": true,
+      "saves": true,
+      "two_replays_including_terminal_identical": true
+    },
+    "scroll-empty": {
+      "status": "PASS",
+      "record_checkpoints": 10,
+      "replay_checkpoints": 11,
+      "all_canonical_sections": true,
+      "header": true,
+      "saves": true,
+      "two_replays_including_terminal_identical": true
+    }
+  }
+}

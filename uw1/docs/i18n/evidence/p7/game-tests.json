@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "Native_integration_fixtures": true,
+  "Phase8_GO_claimed": false,
+  "cases": {
+    "bragit-menu": {
+      "status": "PASS",
+      "selections": [],
+      "MORE_events": 0,
+      "text_events": 4,
+      "low_resolution_scroll_paper_uniform": true,
+      "record_sha256": "491c55bddfbae9f089a815d3601adf6bac1795a8c0ebb1521cf1ec84f4eaf5c0"
+    },
+    "bragit-click": {
+      "status": "PASS",
+      "selections": [
+        1
+      ],
+      "MORE_events": 1,
+      "text_events": 9,
+      "low_resolution_scroll_paper_uniform": true,
+      "record_sha256": "794b783f9b030798beafe8328455a6de9ef43b5eface04c3af38ffba01fc3ac0"
+    },
+    "scroll-short": {
+      "status": "PASS",
+      "selections": [],
+      "MORE_events": 0,
+      "text_events": 1,
+      "low_resolution_scroll_paper_uniform": true,
+      "record_sha256": "d52291640b696ebf6f0faccc6ccd9462055e3d9d96a14059283e599d951de42d"
+    },
+    "scroll-pages": {
+      "status": "PASS",
+      "selections": [],
+      "MORE_events": 1,
+      "text_events": 1,
+      "low_resolution_scroll_paper_uniform": true,
+      "record_sha256": "5851b627067868afcc3c508072d62bd241ffc18bc5d59dedf9db9fab17d47440"
+    },
+    "scroll-controls": {
+      "status": "PASS",
+      "selections": [],
+      "MORE_events": 1,
+      "text_events": 1,
+      "low_resolution_scroll_paper_uniform": true,
+      "record_sha256": "1d184b16800b33ac9e48229b7fb1f632000a78b8768ab344ac00c3279125edf0"
+    },
+    "scroll-empty": {
+      "status": "PASS",
+      "selections": [],
+      "MORE_events": 0,
+      "text_events": 1,
+      "low_resolution_scroll_paper_uniform": true,
+      "record_sha256": "69ee030a4dd7a1e4b519e9c950ba32c0fe61b2d5f1f3da9620d14a0381166e21"
+    }
+  }
+}

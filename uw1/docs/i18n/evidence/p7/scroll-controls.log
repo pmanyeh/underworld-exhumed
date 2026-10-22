@@ -1,0 +1,12 @@
+EMS allocated
+
+uw1port: mt32: no ROMs
+uw1port: enhance: skip-intro (not as DOS)
+uw1port: mouse: follow
+uw1port: renderer direct3d11, display 120 Hz, vsync requested
+uw1port: 600 presents in 5.8 s, 229 paced (vsync not honoured)
+uw1port: cheat: scroll D:/git/uw1-native-poc/underworld-exhumed/uw1/build/hd-scroll/game/controls.txt (not as DOS)
+uw1port: wrote D:\git\uw1-native-poc\underworld-exhumed\uw1\build\hd-scroll\game\scroll-controls-scanout.png (320x200) at 17006 ms
+uw1port: wrote D:\git\uw1-native-poc\underworld-exhumed\uw1\build\hd-scroll\game\scroll-controls.png (960x720, the window)
+uw1port: 2048 presents, 417 paced, 0 passes with the window hidden
+uw1port: HD text cache: 36574 hits, 59 rasterizations, 59 entries, 12172 bytes
