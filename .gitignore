@@ -1,4 +1,5 @@
 *.OBJ
+*.mp4
 .venv/
 TASM/
 TC/
