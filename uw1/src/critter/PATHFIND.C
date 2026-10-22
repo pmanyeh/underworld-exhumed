@@ -965,6 +965,11 @@ void far store_path(struct PathRec far *path) {
     for (i = 0; i < pathlen; i = i + 4) {
         direction = 0;
         for (j = 0; j < 4; j++) {
+#ifndef __TURBOC__
+            /* The rounded final byte has unused steps. Their stale squares
+               need not be neighbours and cannot index the 3x3 turn table. */
+            if (i + j >= pathlen) continue;
+#endif
             direction = direction + ((path_turns[pathsq[i+j+1].x - pathsq[i+j].x + 1]
                 [pathsq[i+j+1].y - pathsq[i+j].y + 1] & 3) << (j * 2));
         }
@@ -972,8 +977,12 @@ void far store_path(struct PathRec far *path) {
     }
     for (i = 0; i < pathlen; i = i + 8) {
         slope = 0;
-        for (j = 0; j < 8; j++)
+        for (j = 0; j < 8; j++) {
+#ifndef __TURBOC__
+            if (i + j >= pathlen) continue;
+#endif
             slope = slope + ((pathsq[i+j+1].flag & 1) << j);
+        }
         path->slopes[i / 8] = slope;
     }
 }

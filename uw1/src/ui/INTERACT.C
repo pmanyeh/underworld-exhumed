@@ -392,7 +392,12 @@ struct Object far * far pick_3d(int how)
     pTxtId = 0;
     /* match: PickUp is a byte, read here as a word; the byte after it (DS:311F) is
        _BSS alignment padding, always 0, so the test is the byte's */
+#ifdef __TURBOC__
     if (*p >= 1 && *p < *(int16 *)&PickUp) {
+#else
+    /* Native globals have no DOS padding contract: read only the counter. */
+    if (*p >= 1 && *p < PickUp) {
+#endif
         idx = color_to_obj[*p - 1];
         PickMap = mlowptr + color_to_map[*p - 1];
     } else if (*p >= PICK_WALL && *p <= PICK_CEILING)

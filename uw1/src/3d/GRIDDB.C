@@ -71,6 +71,12 @@ extern int port_drawing_behind;
 int port_setpnt(char x, char y, char z);
 int port_queue_full(void);
 #define SetPnt(x, y, z) port_setpnt(x, y, z)
+/* The renderer walks the whole 64x64 automap by linear tile index. A pointer
+   to PlayersMap[0] only spans its first 64-byte row in Native C; take the byte
+   representation of the complete array instead, keeping the same addresses. */
+#define AUTOMAP_BYTES ((unsigned char *)(void *)&PlayersMap)
+#else
+#define AUTOMAP_BYTES PlayersMap[0]
 #endif
 
 typedef void (far *FlrFn)(unsigned char *pts, unsigned char shade, unsigned char tex);
@@ -342,22 +348,22 @@ void far subprocess(void)
              i = idx + loopx * dx; loopx < 0x10;
              loopx++, p_gloc++, tmptr += dx, i += dx)
             if (!(i & 0xF000))
-                grdb_elem(PlayersMap[0] + i);
+                grdb_elem(AUTOMAP_BYTES + i);
         sort_setup(1);
         for (loopx = 0x20, p_gloc = gloc + loopx, tmptr = row + loopx * dx,
              i = idx + loopx * dx; loopx > 0x10;
              loopx--, p_gloc--, tmptr -= dx, i -= dx)
             if (!(i & 0xF000))
-                grdb_elem(PlayersMap[0] + i);
+                grdb_elem(AUTOMAP_BYTES + i);
         sort_setup(0);
         if (!(i & 0xF000))
-            grdb_elem(PlayersMap[0] + i);
+            grdb_elem(AUTOMAP_BYTES + i);
         *dbptr++ = OP_MOUSEQ;
         gloc -= 33;
         row -= dy;
         idx -= dy;
     }
-    for (tmptr = row, loopx = 0, i = idx, am = PlayersMap[0] + idx; loopx < 0x21;
+    for (tmptr = row, loopx = 0, i = idx, am = AUTOMAP_BYTES + idx; loopx < 0x21;
          loopx++, tmptr += dx, i += dx, am += dx)
         if (!(i & 0xF000) && *am == 0)
             *am = tile_mapcode[tmptr->type];
