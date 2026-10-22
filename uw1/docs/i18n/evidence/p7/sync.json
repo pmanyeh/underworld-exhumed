@@ -1,0 +1,54 @@
+{
+  "phase": 7,
+  "date": "2026-10-22",
+  "status": "Underworld NO CHANGE; Exhume UPDATES REVIEWED / DEFERRED",
+  "evidence_checkpoint": "b13b7c5173a0b197b24704da29d14967150fc59e",
+  "working_trees_clean_before_fetch": true,
+  "fetch": "git fetch --all --prune; main repo and Exhume",
+  "underworld": {
+    "status": "UPSTREAM_SYNC = NO CHANGE",
+    "main_origin_main_upstream_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "main_vs_upstream": [0, 0],
+    "feature_before_closing_commit": "b13b7c5173a0b197b24704da29d14967150fc59e",
+    "origin_feature_before_final_push": "4e0f622da7f4ee3aa159cfd8e5b15909fcacc41c",
+    "feature_vs_origin_before_final_push": [1, 0]
+  },
+  "exhume": {
+    "status": "UPSTREAM_SYNC = DEFERRED (non-UW1 Native changes)",
+    "main_origin_main": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "upstream_master": "aa2353a2442c9cb9ef2267aabd9398abb8aac42d",
+    "feature_origin_feature_submodule_pin": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0",
+    "main_vs_upstream": [0, 4],
+    "feature_vs_origin": [0, 0],
+    "feature_vs_upstream": [1, 11],
+    "new_commits": [
+      "f25ecbfdfcf902b778d5319f43cbd270d59735a8",
+      "f599f98dddb88d21f431d85d7c1eb5320eb7bd9e",
+      "419a4f29cae439529aaa253ad3fb132c51d81e4a",
+      "aa2353a2442c9cb9ef2267aabd9398abb8aac42d"
+    ],
+    "classification": ["A: documentation", "I: ARMCC5 profile tools/tests"],
+    "changed_files": [
+      "README.md",
+      "profiles/armcc5/compiler.md",
+      "profiles/armcc5/linker.md",
+      "profiles/armcc5/match-brief.md",
+      "profiles/armcc5/tests/fixtures/objplace/repeat.c",
+      "profiles/armcc5/tests/fixtures/objplace/repeat_fromelf.txt",
+      "profiles/armcc5/tests/fixtures/objplace/repeat_syms.txt",
+      "profiles/armcc5/tests/test_fnscore.py",
+      "profiles/armcc5/tests/test_objplace.py",
+      "profiles/armcc5/tools/fnscore.py",
+      "profiles/armcc5/tools/objplace.py",
+      "skills/match-file/SKILL.md",
+      "skills/orchestrate/SKILL.md"
+    ],
+    "runtime_or_shared_tools_changed": false,
+    "decision": "Retain accepted P7 baseline; carry unrelated ARMCC5 update with existing tooling/profile/documentation backlog. Latest upstream not integrated or claimed tested."
+  },
+  "merge_or_rebase": false,
+  "fork_main_updated": false,
+  "exhume_changed": false,
+  "closing_tag": "zh-tw-native-p7",
+  "phase_8_started": false
+}

@@ -159,4 +159,29 @@ HiDPI coverage 是 synthetic output/window geometry；Windows 實際 resize／fu
 | Exhume upstream/master | `c54e00e9176c14d0913b5806318a30f85a8f4636` |
 | Exhume feature / submodule pin | `89278495bb0b8b224b5bb58e53da2fd367c0d8c0` |
 
-本階段沒有修改 Exhume。Phase boundary sync 與結案 tag 另記於本輪結案紀錄。
+本階段沒有修改 Exhume。
+
+## Phase boundary sync
+
+驗收 evidence checkpoint：`b13b7c5173a0b197b24704da29d14967150fc59e`。
+主 repository 與 Exhume working trees 都 clean 後，執行兩邊 `fetch --all --prune`。
+
+| 檢查 | 結果 |
+| --- | --- |
+| Underworld main / origin/main / upstream/main | 全部 `e5deadd6945b492636aadccc14f52caa908b4186`，main vs upstream `0/0`，沒有更新 |
+| Underworld feature vs origin（結案 push 前） | `1/0`，唯一未 push 的提交為上述 evidence checkpoint |
+| Exhume main / origin/main | 仍為 `c54e00e9176c14d0913b5806318a30f85a8f4636` |
+| Exhume upstream/master | 新增至 `aa2353a2442c9cb9ef2267aabd9398abb8aac42d`；main vs upstream `0/4` |
+| Exhume feature / origin feature / submodule pin | 全部 `89278495bb0b8b224b5bb58e53da2fd367c0d8c0`，feature vs origin `0/0` |
+| Exhume feature vs upstream/master | `1/11`：原 7 個 backlog，加上本次 4 個新提交 |
+
+Underworld **UPSTREAM_SYNC = NO CHANGE**。
+Exhume **UPSTREAM_SYNC = DEFERRED（非 UW1 Native 更新）**。
+新提交為 `f25ecbf`（ARMCC5 objplace）、`f599f98`（fnscore）、`419a4f2`（ARMCC5 docs）與 merge `aa2353a`。
+分類為 A（文件）／I（其他 compiler profile tools/tests），13 個檔案均位於 README、`profiles/armcc5/` 與相關 skill 文件；
+沒有變更 `runtime/`、共用 `tools/`、Native build、renderer、mouse、replay 或 localization。
+因此本輪只記錄差異，延續原有 tooling/profile/documentation backlog，沒有 merge/rebase、更新 fork main 或改動 pin。
+既有 P7 程式與驗收結果仍對應同一組 baseline；不宣稱已驗證或整合最新 Exhume upstream。
+
+詳見 [sync.json](evidence/p7/sync.json)。`zh-tw-native-p7` annotated tag 指向本輪結案提交，
+與 `feature/zh-tw-native` 一同 push。尚未開始 Phase 8。
