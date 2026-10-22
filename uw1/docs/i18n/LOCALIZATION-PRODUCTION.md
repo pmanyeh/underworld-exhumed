@@ -252,7 +252,7 @@ traces、recordings 與 catalog 只留在 ignored `build/`。
 
 ## P9 Review Fixup / Pre-P10 Gate
 
-**P9_REVIEW_FIXUP：RESULT_PLACEHOLDER，2026-10-23。** 人工審閱 P9 後、正式大量翻譯前的 production-safety
+**P9_REVIEW_FIXUP：PASS，2026-10-23。** 人工審閱 P9 後、正式大量翻譯前的 production-safety
 修正，只處理三件事：master 不再保存英文、修正 coverage classification、debug-only 文字不計入完成率。
 沒有新增翻譯、沒有開始 P10、BABL、grammar 或 HD UI；沒有改 runtime C、Exhume、gameplay、save format；
 `zh-tw-native-p9` tag 不動；Showcase recorder（`record_showcase.py`）保持 **PAUSED**，未修改、未執行。
@@ -395,6 +395,27 @@ committed master build 仍為 P8 catalog SHA。
 | Native matrix | fuzz 34／5,680 cases 0 differ、enhancements 120/120、settings 72/72、movement 15/15、blackbox 22/22、map notes 4/4 |
 | Repository | `git diff --check`、repocheck PASS |
 
-CI_SYNC_PLACEHOLDER
+CI：fixup 工作提交 `fac21dc` 的 [uw1-port run 39828446780](https://github.com/pmanyeh/underworld-exhumed/actions/runs/39828446780)
+Linux／macOS／Windows／Web 全部 success；三平台的 asset-free localization step 執行 master schema validation、
+`test_l10n.py`（31，含 source-hash policy；需資料的一項自動跳過）、inventory 22、runtime 19。repocheck run 39828446905 success。
+需要合法資料的 drift／inventory integration 只在本機 evidence 執行。
+
+Upstream sync gate（[sync.json](evidence/p9-fixup/sync.json)）：兩個 working tree clean 後 fetch；
+Underworld main／origin／upstream 仍為 `e5deadd…`（`0/0`），Exhume upstream/master 仍為 `aa2353a…`，
+沒有新提交。**UPSTREAM_SYNC = NO NEW RELEVANT CHANGES**；未 merge／rebase，Exhume 與 submodule pin 不變。
+
+| Acceptance | 結果 |
+| --- | --- |
+| COMMITTED_MASTER_HAS_FULL_ENGLISH_SOURCE | NO |
+| SOURCE_HASH_SCHEMA／SOURCE_DRIFT_VALIDATION／STALE_WORKBOOK_REJECTION／LOCAL_EXPORT_HAS_ENGLISH_CONTEXT | PASS |
+| P8_CATALOG_EQUIVALENCE／P9_TRANSLATIONS_PRESERVED | PASS |
+| CLASSIFICATION_AUDIT／COVERAGE_MATRIX_UPDATED | PASS |
+| DEBUG_TEXT_EXCLUDED_FROM_PRODUCTION_METRIC／PLAYER_VISIBLE_TEXT_NOT_DROPPED | PASS |
+| ROUNDTRIP／DETERMINISTIC_BUILD／P9_REGRESSION／ENGLISH_COMPATIBILITY／ZH_TW_COMPATIBILITY | PASS |
+| CI／REPOCHECK | PASS |
+| SHOWCASE_MODIFIED／PHASE_10_STARTED | NO／NO |
+
+結案提交加上 annotated tag `zh-tw-native-p9-production-ready`（`zh-tw-native-p9` 不動），與 feature 一同 push（不 force）。
+**READY_FOR_PHASE_10：YES**——等待人工審閱後才開始 P10。
 
 **STOPPED HERE. Phase 10 was not started.**

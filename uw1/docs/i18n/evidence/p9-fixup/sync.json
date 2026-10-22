@@ -1,0 +1,27 @@
+{
+  "phase": "9 review fixup / pre-P10 gate",
+  "date": "2026-10-23",
+  "status": "UPSTREAM_SYNC = NO NEW RELEVANT CHANGES",
+  "start_sha": "a1e1eb90a1a82254cd0989d9ba1884a3a2b0a071",
+  "p9_tag_unchanged": {"zh-tw-native-p9": "b1e3c7002a9fec6ccc11504dd13d9c55b0b2fd40"},
+  "fixup_work_commit": "fac21dc88e2d29706af53b0d55337a66a9acc327",
+  "working_trees_clean_before_fetch": true,
+  "fetch": "git fetch --all --prune; main repo and Exhume",
+  "underworld": {
+    "main_origin_main_upstream_main": "e5deadd6945b492636aadccc14f52caa908b4186",
+    "main_vs_upstream": [0, 0],
+    "new_upstream_commits": []
+  },
+  "exhume": {
+    "submodule_pin": "89278495bb0b8b224b5bb58e53da2fd367c0d8c0",
+    "upstream_master": "aa2353a2442c9cb9ef2267aabd9398abb8aac42d",
+    "main_origin_main": "c54e00e9176c14d0913b5806318a30f85a8f4636",
+    "pin_vs_upstream": [1, 11],
+    "new_upstream_commits_since_P9": [],
+    "changed_in_fixup": false
+  },
+  "merge_or_rebase": false,
+  "force_push": false,
+  "showcase_modified": false,
+  "phase_10_started": false
+}
