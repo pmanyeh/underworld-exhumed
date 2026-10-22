@@ -71,6 +71,8 @@ int main(int argc,char **argv)
     reset(96,40);CHECK(scroll_text_write(0,"\\0甲\\1乙\\2丙\\3丁\\4戊\\5己\\6庚\\p\\P\\m辛",1,0)==0);
     bounds();CHECK(waits==3 && pauses==2 && more_prompts==1 && scroll_text_color(0)==0xd4);
     for(i=0;i<snapshot.boxes[0].count;i++)CHECK(snapshot.boxes[0].cells[i].scalar!='\\');
+    reset(96,40);CHECK(scroll_text_write(0,"甲\n乙\\m丙",1,0)==0);bounds();
+    CHECK(more_prompts==1 && snapshot.boxes[0].count==2 && snapshot.boxes[0].cells[1].y==28);
     reset(96,40);CHECK(scroll_text_write(0,"\\m",0,0)==0);bounds();CHECK(waits==0 && snapshot.boxes[0].count==2);
     generation=snapshot.generation;CHECK(scroll_text_write(0,bad,1,0)==-1);
     scroll_text_read(&snapshot);CHECK(snapshot.generation==generation);

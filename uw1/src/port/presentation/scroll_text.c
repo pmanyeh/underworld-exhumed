@@ -94,8 +94,10 @@ static int put(ScrollBox *b,uint32_t cp,int advance,int choice)
 static void more(int which)
 {
     ScrollBox *b=&work.boxes[which];
-    const char *label="[MORE]";int i,n,color=b->color;
-    roll(b);n=b->count;b->color=0x60;
+    const char *label="[MORE]";int i,n,color=b->color,row=b->row;
+    /* Explicit \m may occur halfway down the NPC paper. Roll one line but
+       retain that writing row; automatic bottom overflow already uses the last row. */
+    roll(b);b->row=row;n=b->count;b->color=0x60;
     for(i=0;label[i];i++)(void)put(b,(unsigned char)label[i],measure((unsigned char)label[i],measure_context),0);
     publish();event("more",which,0);
     if(wait_for_input)wait_for_input(0,wait_context);
