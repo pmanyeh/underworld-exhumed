@@ -97,6 +97,28 @@ class ClassificationTests(unittest.TestCase):
             l10n.UNREAD_KEYS.clear()
             l10n.UNREAD_KEYS.update(audited)
 
+    def test_compared_conversation_strings_are_input_tokens_by_hash(self):
+        # A string a script matches against the player's typed answer (babl_audit.py) is an
+        # input token; the same key with other text stays direct.
+        keys = l10n.input_keys()
+        audited = dict(keys)
+        try:
+            keys[3608, 22] = (source_hash("Mani\n"), "test")
+            self.assertEqual(l10n.classify(3608, 22, "Mani\n"), "input-token")
+            self.assertEqual(l10n.classify(3608, 22, "Other text\n"), "direct")
+            self.assertEqual(l10n.classify(3608, 23, "Mani\n"), "direct")
+        finally:
+            keys.clear()
+            keys.update(audited)
+
+    def test_shipped_input_keys_file_is_well_formed(self):
+        keys = l10n.input_keys()
+        self.assertTrue(keys)
+        for (block, index), (digest, reason) in keys.items():
+            self.assertTrue(0xE00 <= block < 0x1000 and 0 <= index < 512, (block, index))
+            self.assertRegex(digest, "^[0-9a-f]{64}$")
+            self.assertTrue(reason.startswith("BABL "))
+
     def test_derived_flags(self):
         self.assertEqual(l10n.derived_flags(3651, 2, "Hail, @SS1!\\m"), {"dynamic-template", "control-code"})
         self.assertEqual(l10n.derived_flags(7, 256, "a_bat"), {"object-name"})

@@ -129,6 +129,26 @@ UNREAD_KEYS = {
 }
 
 
+# Conversation strings a BABL script matches with compare, contains, find or STRCMP,
+# usually against the player's typed answer (tools/i18n/babl_audit.py, P10B): a
+# translation would never match, so they are input tokens. Keyed with the audited
+# source_hash, as UNREAD_KEYS: different data stays as it was.
+INPUT_KEYS_PATH = Path(__file__).resolve().parents[2] / "i18n/input-keys.tsv"
+_input_keys = None
+
+
+def input_keys():
+    """{(block, index): (source_hash, reason)} from i18n/input-keys.tsv, read once."""
+    global _input_keys
+    if _input_keys is None:
+        _input_keys = {}
+        if INPUT_KEYS_PATH.exists():
+            with open(INPUT_KEYS_PATH, encoding="utf-8", newline="") as f:
+                for r in csv.DictReader(f, delimiter="	"):
+                    _input_keys[int(r["block"]), int(r["index"])] = (r["source_hash"], r["reason"])
+    return _input_keys
+
+
 def rule(block, index):
     """(handling, reason) for a verified per-key/range rule, else None."""
     if block == 24:
@@ -176,6 +196,9 @@ def classify(block, index, source, flags=()):
         return "template"
     if "object-name" in flags:
         return "object-name"
+    typed = input_keys().get((block, index))
+    if typed and typed[0] == source_hash(source):
+        return "input-token"
     verified = rule(block, index)
     if verified and verified[0] != "direct":
         return verified[0]

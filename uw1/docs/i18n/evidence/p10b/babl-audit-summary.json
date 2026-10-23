@@ -1,0 +1,507 @@
+{
+  "totals": {
+    "none": 502,
+    "display": 4622,
+    "compare": 65
+  },
+  "compare_on_parameters": {},
+  "conversations": {
+    "3585": {
+      "slot": 1,
+      "none": 1,
+      "display": 46
+    },
+    "3586": {
+      "slot": 2,
+      "none": 16,
+      "display": 148
+    },
+    "3587": {
+      "slot": 3,
+      "none": 1,
+      "display": 97
+    },
+    "3588": {
+      "slot": 4,
+      "none": 1,
+      "display": 136
+    },
+    "3589": {
+      "slot": 5,
+      "none": 3,
+      "display": 62,
+      "compare": 1
+    },
+    "3590": {
+      "slot": 6,
+      "none": 11,
+      "display": 69
+    },
+    "3591": {
+      "slot": 7,
+      "none": 1,
+      "display": 60
+    },
+    "3592": {
+      "slot": 8,
+      "none": 1,
+      "display": 15
+    },
+    "3593": {
+      "slot": 9,
+      "none": 1,
+      "display": 54
+    },
+    "3594": {
+      "slot": 10,
+      "none": 8,
+      "display": 46
+    },
+    "3595": {
+      "slot": 11,
+      "none": 1,
+      "display": 30
+    },
+    "3596": {
+      "slot": 12,
+      "none": 1,
+      "display": 139
+    },
+    "3597": {
+      "slot": 13,
+      "none": 8,
+      "display": 92
+    },
+    "3598": {
+      "slot": 14,
+      "none": 1,
+      "display": 74
+    },
+    "3599": {
+      "slot": 15,
+      "none": 8,
+      "display": 89,
+      "compare": 2
+    },
+    "3600": {
+      "slot": 16,
+      "none": 1,
+      "display": 67
+    },
+    "3601": {
+      "slot": 17,
+      "none": 1,
+      "display": 35
+    },
+    "3602": {
+      "slot": 18,
+      "none": 1,
+      "display": 32,
+      "compare": 8
+    },
+    "3603": {
+      "slot": 19,
+      "none": 8,
+      "display": 57
+    },
+    "3604": {
+      "slot": 20,
+      "none": 8,
+      "display": 78
+    },
+    "3605": {
+      "slot": 21,
+      "none": 1,
+      "display": 19,
+      "compare": 2
+    },
+    "3606": {
+      "slot": 22,
+      "none": 1,
+      "display": 21
+    },
+    "3607": {
+      "slot": 23,
+      "none": 1,
+      "display": 69
+    },
+    "3608": {
+      "slot": 24,
+      "none": 3,
+      "display": 73,
+      "compare": 22
+    },
+    "3609": {
+      "slot": 25,
+      "none": 8,
+      "display": 45
+    },
+    "3610": {
+      "slot": 26,
+      "none": 7,
+      "display": 42
+    },
+    "3611": {
+      "slot": 27,
+      "none": 1,
+      "display": 47,
+      "compare": 4
+    },
+    "3612": {
+      "slot": 28,
+      "none": 8,
+      "display": 62
+    },
+    "3648": {
+      "slot": 64,
+      "none": 1,
+      "display": 26
+    },
+    "3649": {
+      "slot": 65,
+      "none": 1,
+      "display": 36
+    },
+    "3650": {
+      "slot": 66,
+      "none": 1,
+      "display": 11
+    },
+    "3651": {
+      "slot": 67,
+      "none": 1,
+      "display": 49
+    },
+    "3672": {
+      "slot": 88,
+      "none": 8,
+      "display": 23
+    },
+    "3673": {
+      "slot": 89,
+      "none": 8,
+      "display": 36
+    },
+    "3674": {
+      "slot": 90,
+      "none": 1,
+      "display": 41
+    },
+    "3696": {
+      "slot": 112,
+      "none": 8,
+      "display": 42
+    },
+    "3697": {
+      "slot": 113,
+      "none": 8,
+      "display": 50,
+      "compare": 10
+    },
+    "3698": {
+      "slot": 114,
+      "none": 1,
+      "display": 30
+    },
+    "3699": {
+      "slot": 115,
+      "none": 7,
+      "display": 12
+    },
+    "3720": {
+      "slot": 136,
+      "none": 8,
+      "display": 77
+    },
+    "3721": {
+      "slot": 137,
+      "none": 8,
+      "display": 47
+    },
+    "3722": {
+      "slot": 138,
+      "none": 1,
+      "display": 33
+    },
+    "3723": {
+      "slot": 139,
+      "none": 8,
+      "display": 74
+    },
+    "3724": {
+      "slot": 140,
+      "none": 1,
+      "display": 37
+    },
+    "3725": {
+      "slot": 141,
+      "none": 8,
+      "display": 52
+    },
+    "3726": {
+      "slot": 142,
+      "none": 1,
+      "display": 11
+    },
+    "3727": {
+      "slot": 143,
+      "none": 1,
+      "display": 75
+    },
+    "3728": {
+      "slot": 144,
+      "none": 1,
+      "display": 46,
+      "compare": 9
+    },
+    "3730": {
+      "slot": 146,
+      "none": 8,
+      "display": 77
+    },
+    "3731": {
+      "slot": 147,
+      "none": 8,
+      "display": 77
+    },
+    "3732": {
+      "slot": 148,
+      "none": 8,
+      "display": 77
+    },
+    "3733": {
+      "slot": 149,
+      "none": 8,
+      "display": 77
+    },
+    "3745": {
+      "slot": 161,
+      "none": 7,
+      "display": 83,
+      "compare": 1
+    },
+    "3746": {
+      "slot": 162,
+      "none": 1,
+      "display": 53
+    },
+    "3768": {
+      "slot": 184,
+      "none": 8,
+      "display": 22
+    },
+    "3769": {
+      "slot": 185,
+      "none": 8,
+      "display": 31
+    },
+    "3770": {
+      "slot": 186,
+      "none": 7,
+      "display": 34
+    },
+    "3771": {
+      "slot": 187,
+      "none": 8,
+      "display": 66,
+      "compare": 1
+    },
+    "3772": {
+      "slot": 188,
+      "none": 8,
+      "display": 33
+    },
+    "3773": {
+      "slot": 189,
+      "none": 8,
+      "display": 41
+    },
+    "3774": {
+      "slot": 190,
+      "none": 8,
+      "display": 34
+    },
+    "3775": {
+      "slot": 191,
+      "none": 8,
+      "display": 54
+    },
+    "3776": {
+      "slot": 192,
+      "none": 1,
+      "display": 17
+    },
+    "3777": {
+      "slot": 193,
+      "none": 3,
+      "display": 24
+    },
+    "3778": {
+      "slot": 194,
+      "none": 8,
+      "display": 50
+    },
+    "3792": {
+      "slot": 208,
+      "none": 8,
+      "display": 37
+    },
+    "3793": {
+      "slot": 209,
+      "none": 8,
+      "display": 35
+    },
+    "3794": {
+      "slot": 210,
+      "none": 1,
+      "display": 41
+    },
+    "3795": {
+      "slot": 211,
+      "none": 8,
+      "display": 57
+    },
+    "3796": {
+      "slot": 212,
+      "none": 8,
+      "display": 71,
+      "compare": 1
+    },
+    "3797": {
+      "slot": 213,
+      "none": 1,
+      "display": 23
+    },
+    "3798": {
+      "slot": 214,
+      "none": 8,
+      "display": 39
+    },
+    "3799": {
+      "slot": 215,
+      "none": 8,
+      "display": 38
+    },
+    "3800": {
+      "slot": 216,
+      "none": 8,
+      "display": 38
+    },
+    "3801": {
+      "slot": 217,
+      "none": 8,
+      "display": 31
+    },
+    "3802": {
+      "slot": 218,
+      "none": 8,
+      "display": 45
+    },
+    "3803": {
+      "slot": 219,
+      "none": 8,
+      "display": 36
+    },
+    "3804": {
+      "slot": 220,
+      "none": 8,
+      "display": 35
+    },
+    "3805": {
+      "slot": 221,
+      "none": 8,
+      "display": 74
+    },
+    "3806": {
+      "slot": 222,
+      "none": 8,
+      "display": 33
+    },
+    "3815": {
+      "slot": 231,
+      "none": 1,
+      "display": 12
+    },
+    "3816": {
+      "slot": 232,
+      "none": 1,
+      "display": 51
+    },
+    "3846": {
+      "slot": 262,
+      "none": 8,
+      "display": 25
+    },
+    "3847": {
+      "slot": 263,
+      "none": 8,
+      "display": 25
+    },
+    "3852": {
+      "slot": 268,
+      "none": 8,
+      "display": 27
+    },
+    "3856": {
+      "slot": 272,
+      "none": 8,
+      "display": 27
+    },
+    "3860": {
+      "slot": 276,
+      "none": 8,
+      "display": 39
+    },
+    "3861": {
+      "slot": 277,
+      "none": 8,
+      "display": 59
+    },
+    "3862": {
+      "slot": 278,
+      "none": 8,
+      "display": 39
+    },
+    "3864": {
+      "slot": 280,
+      "none": 8,
+      "display": 59
+    },
+    "3865": {
+      "slot": 281,
+      "none": 8,
+      "display": 38,
+      "compare": 4
+    },
+    "3866": {
+      "slot": 282,
+      "none": 1,
+      "display": 41
+    },
+    "3872": {
+      "slot": 288,
+      "none": 8,
+      "display": 28
+    },
+    "3875": {
+      "slot": 291,
+      "none": 1,
+      "display": 7
+    },
+    "3879": {
+      "slot": 295,
+      "none": 1,
+      "display": 24
+    },
+    "3881": {
+      "slot": 297,
+      "none": 1,
+      "display": 7
+    },
+    "3898": {
+      "slot": 314,
+      "none": 1,
+      "display": 19
+    }
+  }
+}
