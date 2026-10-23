@@ -70,13 +70,13 @@ guide_line	category	guide_english	guide_options	term_id	source_en	selected_zh_tw
 75	place	Lair of the Mountain-Folk	山岳族之穴	UW1-99C5392446FC	Lair of the Mountain-Folk	山岳族之穴	guide-exact		
 76	place	The Tombs	古墓群	UW1-AB24B2B1B53C	Tombs	古墓群	guide-exact		
 76	place	Crypts	地下墓穴	UW1-D3D4C56FCFD3	Crypts	地下墓穴	guide-exact		
-77	place	Knights of the Crux Encampment	南十字騎士駐地	UW1-0C2C92D4F95B	Knights of the Crux Encampment	南十字騎士駐地	guide-exact		
+77	place	Knights of the Crux Encampment	南十字騎士駐地	UW1-0C2C92D4F95B	Knights of the Crux Encampment	安卡十字騎士駐地	user-approved-override		
 78	place	The Grand Staircase	大階梯	UW1-BDA65E8A2B10	Grand Staircase	大階梯	guide-exact		
 79	place	Seers of the Moonstone	月石先知會所	UW1-DB47B7ED10D7	Seers of the Moonstone	月石先知會所	guide-exact		
 80	place	Meeting Halls	會議大廳	UW1-ACEEC151B95F	Meeting Halls	會議大廳	guide-exact		
 81	place	Dungeon Hythloth	地下城海瑟洛斯	UW1-FAFF16216415	Dungeon Hythloth	地下城海瑟洛斯	guide-exact		
-86	organization	Knights of the Crux	南十字騎士團	UW1-87FC45BAC51C	Knights of the Crux	南十字騎士團	guide-exact		
-86	organization	The Order of the Crux Ansata	安塔南十字騎士團	UW1-7BC7E9168F3E	Order of the Crux Ansata	安塔南十字騎士團	guide-exact		
+86	organization	Knights of the Crux	南十字騎士團	UW1-87FC45BAC51C	Knights of the Crux	安卡十字騎士團	user-approved-override		
+86	organization	The Order of the Crux Ansata	安塔南十字騎士團	UW1-7BC7E9168F3E	Order of the Crux Ansata	安卡十字騎士團	user-approved-override		
 87	organization	The Order of the Silver Serpent	銀蛇騎士團	UW1-33672828294B	Order of the Silver Serpent	銀蛇騎士團	guide-exact		
 88	race	Mountain-Folk	山岳族	UW1-0E96A51D860C	Mountain-folk	山岳族	guide-exact		
 89	organization	Seers of the Moonstone	月之石預言者	UW1-4E4F7BC9678B	Seers of the Moonstone	月之石預言者	guide-exact		

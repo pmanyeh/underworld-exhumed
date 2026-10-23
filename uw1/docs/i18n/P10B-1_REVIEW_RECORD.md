@@ -36,6 +36,6 @@ master 已翻譯的 485 筆至此全部是 `reviewed`；`approved` 仍只在 P13
 - `l10n.py authority`（整份 master）：0 errors，0 warnings，56 info。
 - `l10n.py build` ×2：485 筆，SHA 相同，與 P10B-1 提交時相同，所以 P10B-1 的重播結果照樣適用。
 
-## 待決
+## 後續
 
-- **B1** 仍待決：Crux Ansata「安卡十字」與騎士團「安塔南十字騎士團」的譯名是否統一，見 [P10B-1 報告](P10B-1_REPORT.md) D 節。
+- **B1** 已決定（2026-10-23）：使用者決定統一為「安卡十字騎士團」（Knights of the Crux、Order of the Crux Ansata 等同一組織的英文形式；駐地為「安卡十字騎士駐地」），見 Authority 的 USER-DECISIONS UD-20261023-012～015。3593:38 已改用新譯名。
