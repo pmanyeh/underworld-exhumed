@@ -1,0 +1,68 @@
+"""P10.11: the locale never reaches a saved game. Every public UW1 session is replayed three
+ways -- English, zh-TW with the P10 catalog (no HD), zh-TW with the catalog, HD scroll and HD
+cursor -- each session that starts from another's saved game taking it from the same mode's run,
+and the saved games are compared across the modes and with the DOS goldens."""
+from pathlib import Path
+import json
+import os
+import shutil
+import sys
+
+workspace = Path('D:/git/uw1-native-poc')
+root = workspace / 'underworld-exhumed/uw1'
+sys.path.insert(0, str(workspace / 'underworld-exhumed/exhume/tools'))
+os.chdir(root)
+import replay as R
+import golden as G
+
+out = root / 'build/i18n/p10-11'
+catalog = root / 'build/i18n/zh-TW.uwloc'
+font = root / 'tools/fonts/NotoSansCJKtc-Regular.otf'
+modes = {
+    'en': ['--sound', '0,0', '--locale', 'en'],
+    'zh-TW': ['--sound', '0,0', '--locale', 'zh-TW', '--i18n-file', str(catalog)],
+    'zh-TW-hd': ['--sound', '0,0', '--locale', 'zh-TW', '--i18n-file', str(catalog), '--hd-scroll',
+                 '--hd-cursor', '--font', str(font)],
+}
+names = sorted(p.stem for p in Path(R.RC.sessions).glob('*.rec'))
+names = [n for n in names if not n.startswith('sound')]   # sound sessions save nothing
+names += ['setup/' + p.name for p in sorted((Path(R.RC.sessions) / 'setup').iterdir()) if p.is_dir()]
+order = [n for n in names if n not in G.STAGE_FROM] + [n for n in names if n in G.STAGE_FROM]
+
+report = {'catalog_sha256': G.sha256(str(catalog)), 'sessions': {}}
+for name in order:
+    entry = report['sessions'].setdefault(name, {})
+    golden = G.load_golden(name) or {}
+    entry['golden_saves'] = golden.get('saves') or {}
+    for mode, extra in modes.items():
+        d = out / mode / name
+        shutil.rmtree(d, ignore_errors=True); d.mkdir(parents=True)
+        stage = None
+        if name in G.STAGE_FROM:
+            src = out / mode / G.STAGE_FROM[name]
+            stage = out / mode / (name.replace('/', '_') + '-stage')
+            shutil.rmtree(stage, ignore_errors=True); stage.mkdir(parents=True)
+            for x in G.stage_dirs(str(src)):
+                shutil.copytree(src / x, stage / x)
+        logs = []
+        if mode != 'en':
+            logs = ['--i18n-log', str((d / 'lookup.jsonl').resolve())]
+            if mode == 'zh-TW-hd':
+                logs += ['--scroll-log', str((d / 'scroll.jsonl').resolve())]
+        rc = R.run_port(G.rec_of(name), str(d), extra + logs, stage=str(stage) if stage else None, quiet=True)
+        entry[mode] = {'rc': rc, 'saves': G.save_hashes(str(d))}
+        for k in ('lookup', 'scroll'):
+            f = d / (k + '.jsonl')
+            if f.exists():
+                entry[mode][k + '_lines'] = sum(1 for _ in f.open(encoding='utf-8', errors='replace'))
+    saves = [entry[m]['saves'] for m in modes]
+    entry['saves_identical_across_modes'] = all(s == saves[0] for s in saves)
+    if entry['golden_saves']:
+        entry['en_matches_golden'] = {k: v for k, v in saves[0].items() if k in entry['golden_saves']} == entry['golden_saves']
+    entry['diff_files'] = sorted({k for s in saves for k in s if any(t.get(k) != s.get(k) for t in saves)})
+    print(name, 'files', len(saves[0]), 'identical' if entry['saves_identical_across_modes'] else 'DIFFER',
+          entry.get('en_matches_golden', '-'), [entry[m]['rc'] for m in modes],
+          {m: {k: v for k, v in entry[m].items() if k.endswith('_lines')} for m in modes if m != 'en'}, flush=True)
+
+out.mkdir(parents=True, exist_ok=True)
+(out / 'p10-11-saves.json').write_text(json.dumps(report, indent=2) + '\n')
