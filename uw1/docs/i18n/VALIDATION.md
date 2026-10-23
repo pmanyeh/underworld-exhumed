@@ -23,7 +23,10 @@ Phase 0–2 的歷史 logs、manifest 與當時的 NOT RUN 結果保留原樣，
 
 HD 模式會把排版後的 scroll 游標寫回遊戲記憶體，所以 P8 的 HD 錄影（walk、dialogue、restore、resize）
 只在錄製時的 catalog 下逐 byte 相同（[P10A F1](P10A_BATCH1_REPORT.md#i-findings--blockers)）。
-依 2026-10-23 的決定，在 UW1 完成（P13）重錄之前：
+
+**暫停（2026-10-23 使用者決定）：** 在翻譯大致完成前，所有 HD 錄影相關的規則、限制與比對一律暫停：
+P8 HD 錄影不需執行，結果不作為任何 Phase 的 Gate；恢復時機由使用者決定。暫停期間仍不得修改既有錄影、
+goldens 或 verifier 的比對範圍。以下是恢復時預定採用的做法：
 
 - P8 HD 錄影一律用 **P8 catalog** 重播：由 `zh-tw-native-authority-ready` tag 的 master 重建，
   SHA `fd133b9a…dff98`（`test_l10n.py` 的 P8 catalog 測試會驗證可重現）。它們是 HD 程式路徑的回歸。
