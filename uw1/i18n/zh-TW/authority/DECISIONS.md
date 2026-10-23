@@ -1,99 +1,257 @@
 # 重要選詞決策
 
-日期：2026-10-23。以下記錄目前詞表的選擇與理由，不表示已人工或官方核准。
+2026-10-23：依使用者指定 Translation_Guide.md 整理，並套用後續人工裁定。approved 表示本專案用詞獲使用者核准，不表示手冊原圖已獨立核實。
 
-若先前專案建議與目前採用值不同，兩者均列出；具體手冊字形與語意仍以原圖核對為準。
+Sir Almric 與 Baron Almric 均譯阿姆瑞克男爵；Lady Arriana 與 Arial 暫視為不同人物；其他原待核詞沿用現行譯名。完整紀錄見 USER-DECISIONS.tsv。
 
-## UW1-9B744C184EF3 — Charm
+## UW1-48D2D2F04929 — Tyball（person）
 
-- 分類：skill
-- 目前選詞：魅力
-- 原先專案建議：交涉
-- 狀態：project-selected；來源層級：TW_MANUAL_OCR_PROVISIONAL
-- 理由：實際用途是交易交涉，不譯成控制心智的魅惑術。 本機採手冊明示雙語候選；已通過獨立語意候選比對，原圖字形仍未核准。
-- 遊戲直接標籤：2:46
+- 目前選詞：泰瑞爾
+- 調整前：泰巴爾
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：57
+- 判斷：依指南明列譯名採用。
 
-## UW1-C98C57243FAC — Lore
+## UW1-E1571E1179FE — Ravenhurst（person）
 
-- 分類：skill
+- 目前選詞：雷赫斯特
+- 調整前：瑞文赫斯特
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：65
+- 判斷：依指南明列譯名採用。
+
+## UW1-0E96A51D860C — Mountain-folk（race）
+
+- 目前選詞：山岳族
+- 調整前：山民
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：88
+- 判斷：依指南自稱山岳族；dwarf 仍為矮人，保留對話中不喜被叫矮人的語意。
+
+## UW1-C98C57243FAC — Lore（skill）
+
 - 目前選詞：知識
-- 原先專案建議：鑑識
-- 狀態：project-selected；來源層級：TW_MANUAL_OCR_PROVISIONAL
-- 理由：實際用途是鑑識物品；與 Appraise 的交易估價分開。 本機採手冊明示雙語候選；已通過獨立語意候選比對，原圖字形仍未核准。
-- 遊戲直接標籤：2:39
+- 調整前：知識
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：227
+- 判斷：實際用途是鑑識物品；與 Appraise 的交易估價分開。 先前手冊 OCR 字形未核准；本輪依使用者指南選詞。
 
-## UW1-54928E2DC91B — Appraise
+## UW1-9B744C184EF3 — Charm（skill）
 
-- 分類：skill
-- 目前選詞：估價
-- 原先專案建議：估價
-- 狀態：project-selected；來源層級：TW_MANUAL_OCR_PROVISIONAL
-- 理由：判斷交易價值，與 Lore 鑑識物品分開。 本機採手冊明示雙語候選；已通過獨立語意候選比對，原圖字形仍未核准。
-- 遊戲直接標籤：2:49
+- 目前選詞：魅力
+- 調整前：魅力
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：225
+- 判斷：實際用途是交易交涉，不譯成控制心智的魅惑術。 先前手冊 OCR 字形未核准；本輪依使用者指南選詞。
 
-## UW1-0E96A51D860C — Mountain-folk
+## UW1-97C2B5DB11F0 — Sword（skill）
 
-- 分類：race
-- 目前選詞：山民
-- 原先專案建議：山民
-- 狀態：project-selected；來源層級：PROJECT_PROPOSAL
-- 理由：自稱山民；dwarf 為獨立詞條矮人，保留對話中不喜被叫矮人的語意。
-- 遊戲直接標籤：見 GLOSSARY.tsv 的 game_keys 上下文
+- 目前選詞：刀劍
+- 調整前：劍術
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：236
+- 判斷：依指南明列譯名採用。
 
-## UW1-8C900EA6F50F — dwarf
+## UW1-D6DE16A4E770 — Paladin（gameplay）
 
-- 分類：race
-- 目前選詞：矮人
-- 原先專案建議：矮人
-- 狀態：project-selected；來源層級：PROJECT_PROPOSAL
-- 理由：
-- 遊戲直接標籤：見 GLOSSARY.tsv 的 game_keys 上下文
+- 目前選詞：聖騎士
+- 調整前：聖騎士
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：206
+- 判斷：採指南允許的聖騎士；遊俠僅保留為歷史候選，Ranger 統一為巡林漢。
 
-## UW1-CB7B5DCD8B52 — Rodrick
+## UW1-55E5DE8ED624 — Ranger（gameplay）
 
-- 分類：person
-- 目前選詞：羅德里克
-- 原先專案建議：羅德里克
-- 狀態：project-selected；來源層級：PROJECT_PROPOSAL
-- 理由：以本機遊戲 Rodrick 為準；網路 Roderick 是異拼，不可混入 Ultima IV 同名人物。
-- 遊戲直接標籤：7:158
+- 目前選詞：巡林漢
+- 調整前：遊俠
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：207
+- 判斷：依指南明列譯名採用。
 
-## UW1-072271D41E7E — Cup of Wonder
+## UW1-A8F4BBDCA7D1 — Book of Honesty（quest-object）
 
-- 分類：quest-object
-- 目前選詞：奇蹟之杯
-- 原先專案建議：奇蹟之杯
-- 狀態：review-needed；來源層級：PROJECT_PROPOSAL
-- 理由：正式英文名稱是 Wonder；不可為了八德對稱直接改成靈性之杯。
-- 遊戲直接標籤：見 GLOSSARY.tsv 的 game_keys 上下文
+- 目前選詞：真實之書
+- 調整前：誠實之書
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：100
+- 判斷：指南以 Book of Truth 稱「真實之書」；遊戲 3:172 明寫 Book of Honesty、作者 Ravenhurst of Moonglow。依同一作者及八聖物語境採指南譯名，英文身份保留 Book of Honesty；不能把一般 Honesty／Truth 全域合併。
 
-## UW1-0D8905766934 — Stealth
+## UW1-188E345E49B2 — Sword of Justice（quest-object）
 
-- 分類：spell
-- 目前選詞：無聲行走
-- 原先專案建議：無聲行走
-- 狀態：review-needed；來源層級：PROJECT_PROPOSAL
-- 理由：降低行走聲響；與 Sneak 技能、Conceal、Invisibility 法術分開。
-- 遊戲直接標籤：6:50;6:260;6:390
+- 目前選詞：公正之劍
+- 調整前：正義之劍
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：21
+- 判斷：稱號採公正之劍；專名 Sword Caliburn 採凱利班之劍，對應同一把劍而保留名稱形式差異。
 
-## UW1-9AB054A37156 — Conceal
+## UW1-5BD48EE2EE2E — Sword Caliburn（quest-object）
 
-- 分類：spell
-- 目前選詞：隱匿術
-- 原先專案建議：隱匿術
-- 狀態：project-selected；來源層級：PROJECT_PROPOSAL
-- 理由：隱匿效果；與完全隱形的 Invisibility 分開。
-- 遊戲直接標籤：6:51;6:269;6:391
+- 目前選詞：凱利班之劍
+- 調整前：本輪新增
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：105
+- 判斷：依使用者提供指南補入；原文出處與語意仍須依分類判讀。
 
-## UW1-E320BF0DC424 — Invisibility
+## UW1-BF04191D6B5F — Speed（spell）
 
-- 分類：spell
-- 目前選詞：隱形術
-- 原先專案建議：隱形術
-- 狀態：project-selected；來源層級：PROJECT_PROPOSAL
-- 理由：
-- 遊戲直接標籤：6:52;6:295;6:392
+- 目前選詞：降速術
+- 調整前：加速術
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：150
+- 判斷：依指南採「降速術」作歷史譯名。實際程式對施術者啟用 Hasted，世界物理更新次數減半；不是對指定敵人施放獨立 Slow。與作用中效果 Haste 分列。
 
-## 輸入碼
+## UW1-25246B35EBB7 — Electrical Bolt（spell）
 
-24 個符文識別碼與 26 個祈禱語標籤保持原樣；中文只作含義或物件名稱說明，不修改解謎、施法或字串比較。
+- 目前選詞：雷擊術
+- 調整前：閃電術
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：148
+- 判斷： 指南名稱 Lightning 與遊戲 Electrical Bolt 依符文組合核對為同一法術。
+
+## UW1-95A5D38C79C7 — Flameproof（spell）
+
+- 目前選詞：耐火術
+- 調整前：火焰防護
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：158
+- 判斷： 指南名稱 Resist Fire 與遊戲 Flameproof 依符文組合核對為同一法術。
+
+## UW1-4E4F7BC9678B — Seers of the Moonstone（organization）
+
+- 目前選詞：月之石預言者
+- 調整前：月石先知團
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：89
+- 判斷：指南同英文依分類區分：組織為月之石預言者，地點為月石先知會所；不得跨分類全域替換。
+
+## UW1-DB47B7ED10D7 — Seers of the Moonstone（place）
+
+- 目前選詞：月石先知會所
+- 調整前：本輪新增
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：79
+- 判斷：指南同英文依分類區分：組織為月之石預言者，地點為月石先知會所；不得跨分類全域替換。
+
+## UW1-0F26DAB1267E — Lady Arriana（person）
+
+- 目前選詞：雅莉安娜女爵
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：55
+- 判斷：使用者指定 Lady Arriana 與 Arial 先當作不同人物，現行譯名各自保留；這是暫定處理，不是已證實的歷史身份判定。
+
+- 人工決策：UD-20261023-007；決策前選詞：雅莉安娜女爵
+
+## UW1-CF305FC57BA5 — Sir Almric（person）
+
+- 目前選詞：阿姆瑞克男爵
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：54
+- 判斷：使用者明確指定 Sir Almric 與 Baron Almric 均譯阿姆瑞克男爵；保留兩種英文形式的詞條，不自動合併身份。
+
+- 人工決策：UD-20261023-008；決策前選詞：安瑞克爵士
+
+## UW1-C23908D58200 — Chief Goldsword（person）
+
+- 目前選詞：金劍酋長
+- 調整前：本輪新增
+- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 指南行號：58
+- 判斷：指南隨附資料人物；沒有將其合併為遊戲 NPC Goldthirst，領袖頭銜相似不等於同一人。
+
+## UW1-0B19E370CD69 — Easy（UI）
+
+- 目前選詞：簡單
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：
+- 判斷：使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+
+- 人工決策：UD-20261023-001；決策前選詞：簡單
+
+## UW1-F2CDF971E08E — Male（UI）
+
+- 目前選詞：男性
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：
+- 判斷：使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+
+- 人工決策：UD-20261023-002；決策前選詞：男性
+
+## UW1-05423B8226EC — mantra（gameplay）
+
+- 目前選詞：祈禱語
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：
+- 判斷：使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+
+- 人工決策：UD-20261023-003；決策前選詞：祈禱語
+
+## UW1-DF29D419E377 — standard（object）
+
+- 目前選詞：旗幟
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：
+- 判斷：使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+
+- 人工決策：UD-20261023-004；決策前選詞：旗幟
+
+## UW1-CB3C416A8A39 — Arial（person）
+
+- 目前選詞：艾莉雅
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：
+- 判斷：使用者指定 Lady Arriana 與 Arial 先當作不同人物，現行譯名各自保留；這是暫定處理，不是已證實的歷史身份判定。
+
+- 人工決策：UD-20261023-005；決策前選詞：艾莉雅
+
+## UW1-182802E7D3AF — worn（status）
+
+- 目前選詞：磨損
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：
+- 判斷：使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+
+- 人工決策：UD-20261023-009；決策前選詞：磨損
+
+## UW1-F3810A343B78 — axe（weapon）
+
+- 目前選詞：斧頭
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：
+- 判斷：使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+
+- 人工決策：UD-20261023-010；決策前選詞：斧頭
+
+## UW1-D588E282BD34 — stone（weapon）
+
+- 目前選詞：石頭
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：
+- 判斷：使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+
+- 人工決策：UD-20261023-011；決策前選詞：石頭
+
+## UW1-008918E24887 — Baron Almric（person）
+
+- 目前選詞：阿姆瑞克男爵
+- 調整前：本輪新增
+- 狀態：approved；依據：PROJECT_HUMAN_DECISION
+- 指南行號：54
+- 判斷：使用者明確指定 Sir Almric 與 Baron Almric 均譯阿姆瑞克男爵；保留兩種英文形式的詞條，不自動合併身份。
+
+- 人工決策：UD-20261023-006；決策前選詞：阿姆瑞克男爵
+
+## 輸入碼與缺漏
+
+24 個符文識別碼與 26 個祈禱語標籤不變。法術符文及環級以本機 SPELLS.C、RUNES.C 核對；指南未列的 8 個符文法術仍保留原詞表，沒有刪除或湊出指南行號。
+
+指南沒有涵蓋的專案詞維持原先選詞。guide-only 補充沒有遊戲鍵值時保持空白，不捏造出處。來源版次、出版者與年份也不因指南自述就改成已核實。

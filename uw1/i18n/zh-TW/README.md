@@ -7,7 +7,7 @@
 | --- | --- |
 | `master.tsv` | STRINGS.PAK 的靜態字串，以 resolved `(block,index)` 識別 |
 | `literals.tsv` | 程式碼裡的 hard-coded 文字（Phase 12 才接 runtime；目前只保存） |
-| [authority/](authority/README.md) | 894 個術語的權威選詞稿、來源與審閱規則；尚未套入正式遊戲譯文 |
+| [authority/](authority/README.md) | 980 個術語的權威選詞稿，已依使用者指南整理；尚未套入正式遊戲譯文 |
 
 `master.tsv` 只收**有翻譯工作的列**（有譯文、備註、非預設狀態或人工 flags）。
 沒出現的 key 就是尚未翻譯。要找下一批要翻的字串，用工具匯出含英文的工作表（只留本機）：

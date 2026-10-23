@@ -1,0 +1,5 @@
+term_id	source_en	kind	decision	evidence
+UW1-CF305FC57BA5	Sir Almric	resolved-by-user-translation-choice	使用者已指定 Sir Almric／Baron Almric 均譯阿姆瑞克男爵；英文形式保留分列。	Translation_Guide.md:Characters;local game names;USER-DECISIONS.tsv
+UW1-0F26DAB1267E	Lady Arriana	resolved-by-provisional-user-identity-policy	依使用者指示，Lady Arriana／Arial 暫當不同人物；維持各自譯名，不列為本輪待核。	Translation_Guide.md:Characters;local game names;USER-DECISIONS.tsv
+UW1-A8F4BBDCA7D1	Book of Honesty	guide-English-name-differs	同一聖物稱號依指南，原英文不改寫。	3:172;Translation_Guide.md:Talismans/Ravenhurst
+UW1-BF04191D6B5F	Speed	name-versus-mechanism	保留指南名稱，補上實際效果；不改玩法。	src/combat/SPELLS.C:769;src/game/PLAYDATA.C:257;src/motion/PLAYMOVE.C:348

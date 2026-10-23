@@ -1,0 +1,95 @@
+term_id	category	source_en	previous_zh_tw	canonical_zh_tw	guide_lines	reason
+UW1-14D0DE87DE89	attribute	Intelligence	智力	智慧	213	guide-exact
+UW1-2CA99693465D	creature	acid slug	酸液蛞蝓	強酸蛞蝓	248	guide-exact
+UW1-0188107386AC	creature	deep lurker	深淵潛伏獸	深處潛伏者	254	guide-exact
+UW1-E9F66E4B9C24	creature	dire ghost	凶惡幽靈	凶惡鬼魂	267	guide-derived-concept-family
+UW1-A76A8FF2BD5A	creature	flesh slug	食肉蛞蝓	肉色蛞蝓	247	guide-exact
+UW1-1EC8324FBA3E	creature	ghost	幽靈	鬼魂	267	guide-exact
+UW1-320115565439	creature	goblin	哥布林	惡鬼	91	guide-derived-concept-family
+UW1-776A7216A513	creature	lurker	潛伏獸	潛伏者	253	guide-exact
+UW1-BDDB13682F76	creature	mongbat	魔蝠	蝙蝠猿	256	guide-exact
+UW1-1CEB126FE254	creature	mountainman	山民	山岳族	88	guide-derived-concept-family
+UW1-2C9E31460E82	creature	reaper	死神樹	樹精	259	guide-exact
+UW1-E849296EE4AF	creature	skeleton	骷髏	骷髏人	265	guide-exact
+UW1-4BD680A6DD0C	creature	troll	巨魔	洞穴巨人	94	guide-derived-concept-family
+UW1-9E1A4889BCFE	creature	wisp	幽光	鬼火	264	guide-exact
+UW1-876C464CFAB9	creature	wolf spider	狼蛛	狼蜘蛛	250	guide-exact
+UW1-752B377EC838	dungeon-term	Standard of the Mountainfolk	山民旗幟	山岳族旗幟	88	guide-derived-concept-family
+UW1-3967A0384576	faction	Gray Goblins	灰哥布林	灰色惡鬼族	92	guide-exact
+UW1-A2C6B7FEA9B8	faction	Green Goblins	綠哥布林	綠色惡鬼族	93	guide-exact
+UW1-55E5DE8ED624	gameplay	Ranger	遊俠	巡林漢	207	guide-exact
+UW1-E442EB5E71AC	object	ankh pendant	安卡墜飾	聖符墜飾	46	guide-derived-concept-family
+UW1-D6B8C18B9DEC	object	bedroll	睡袋	鋪蓋	327	guide-exact
+UW1-BF2E3EDA9FEC	object	green potion	綠色藥水	綠色藥劑	335	guide-derived-concept-family
+UW1-9A2D1667145D	object	moonstone	月石	月之石	47	guide-exact
+UW1-6CD2FD5A0683	object	pole	長桿	長竹竿	329	guide-exact
+UW1-EF8E4F93E8B8	object	red potion	紅色藥水	紅色藥劑	335	guide-derived-concept-family
+UW1-9B9465DEDE6A	organization	Ancient Illuminated Seers of the Moonstone	古老光明月石先知團	古老光明月之石預言者	47;89	guide-derived-concept-family
+UW1-BAC8B4ADCC01	organization	Knights of the Order of the Crux Ansata	安卡十字騎士團	安塔南十字騎士團	86	guide-derived-concept-family
+UW1-7BC7E9168F3E	organization	Order of the Crux Ansata	安卡十字教團	安塔南十字騎士團	86	guide-exact
+UW1-B2CD4EFDCC9B	organization	Seers	先知團	預言者	89	guide-derived-concept-family
+UW1-4E4F7BC9678B	organization	Seers of the Moonstone	月石先知團	月之石預言者	89	guide-exact
+UW1-E1571E1179FE	person	Ravenhurst	瑞文赫斯特	雷赫斯特	65	guide-exact
+UW1-48D2D2F04929	person	Tyball	泰巴爾	泰瑞爾	57	guide-exact
+UW1-7C3219DE28BB	place	Jhelom	傑倫	傑南	28	guide-exact
+UW1-A8F4BBDCA7D1	quest-object	Book of Honesty	誠實之書	真實之書	100	same-talisman-by-author-and-context
+UW1-A56DEACB8219	quest-object	Caliburn	卡利伯恩	凱利班	105	guide-derived-concept-family
+UW1-072271D41E7E	quest-object	Cup of Wonder	奇蹟之杯	驚異之杯	102	guide-exact
+UW1-57BAEB4E5298	quest-object	Ring of Humility	謙卑之戒	謙遜戒指	101	guide-exact
+UW1-7827BE7A0330	quest-object	Shield of Valor	英勇之盾	勇氣之盾	103	guide-exact
+UW1-5170FDAB6DAC	quest-object	Standard of Honor	榮譽之旗	榮譽之旆	104	guide-exact
+UW1-188E345E49B2	quest-object	Sword of Justice	正義之劍	公正之劍	21	guide-derived-concept-family
+UW1-4F3F1ED73C86	race	gargoyle	石像鬼	石像鬼族	39	guide-exact
+UW1-5F403F394D7B	race	goblin	哥布林	惡鬼族	91	guide-exact
+UW1-0E96A51D860C	race	Mountain-folk	山民	山岳族	88	guide-exact
+UW1-3C2C4E5B35AE	race	troll	巨魔	洞穴巨人	94	guide-exact
+UW1-05F6B73DD461	rune	Jux	Jux（傷害）	Jux（引起／傷害）	124	guide-meaning-input-token-preserved
+UW1-D706741F387D	rune	Quas	Quas（幻象）	Quas（幻像）	119	guide-meaning-input-token-preserved
+UW1-DD40A0740CCA	rune	Rel	Rel（變化）	Rel（改變）	120	guide-meaning-input-token-preserved
+UW1-976DDD842723	rune	Sanct	Sanct（防護）	Sanct（保護）	121	guide-meaning-input-token-preserved
+UW1-298659FFE12B	rune	Uus	Uus（上升）	Uus（昇起）	123	guide-meaning-input-token-preserved
+UW1-A72A3E9EE49B	rune	Vas	Vas（大）	Vas（巨大）	124	guide-meaning-input-token-preserved
+UW1-FE9718BB1924	skill	Axe	斧術	斧頭	223	guide-exact
+UW1-4E32D1959E8C	skill	Mace	錘術	釘頭錘	228	guide-exact
+UW1-284C160E583C	skill	Mana	法力	魔力	229	guide-exact
+UW1-2687E210CAF4	skill	Missile	遠射	長程武器	230	guide-exact
+UW1-97C2B5DB11F0	skill	Sword	劍術	刀劍	236	guide-exact
+UW1-A5FA55AD03E3	skill	Traps	拆除陷阱	陷阱	238	guide-exact
+UW1-62849A6D5A04	spell	Ally	結盟術	同伴術	175	guide-exact
+UW1-9AB054A37156	spell	Conceal	隱匿術	隱蔽術	147	guide-exact
+UW1-BAE71FD3D75C	spell	Create Food	造食術	造食物術	133	guide-exact
+UW1-F5A2680DE04E	spell	Cure Poison	解毒	解毒術	161	guide-exact
+UW1-EF74798C11F7	spell	Detect Monster	偵測怪物	偵測怪物術	141	guide-exact
+UW1-25246B35EBB7	spell	Electrical Bolt	閃電術	雷擊術	148	same-spell-confirmed-by-rune-sequence
+UW1-95A5D38C79C7	spell	Flameproof	火焰防護	耐火術	158	same-spell-confirmed-by-rune-sequence
+UW1-5FAC68F6BE53	spell	Freeze Time	時間凍結	停時術	183	guide-exact
+UW1-1130BBA787B1	spell	Gate Travel	傳送門術	月門召喚術	169	guide-exact
+UW1-6FA1F80AE14B	spell	Greater Heal	高等治療術	大醫療術	170	guide-exact
+UW1-762041C7151E	spell	Heal	治療術	醫療術	154	guide-exact
+UW1-A8B97AAC0FEF	spell	Iron Flesh	鐵膚術	鋼鐵之軀	184	guide-exact
+UW1-C89B72D0BD8E	spell	Lesser Heal	初級治療術	小醫療術	142	guide-exact
+UW1-6E1757802F31	spell	Levitate	浮空術	飄浮術	155	guide-exact
+UW1-26315F20850D	spell	Light	光明術	神光術	134	guide-exact
+UW1-B54B10B4E201	spell	Magic Arrow	魔法箭	魔法之箭	135	guide-exact
+UW1-421ACAF07F55	spell	Missile Protection	飛射防護	反長程武器保護	163	guide-exact
+UW1-0C839D2D3AED	spell	Name Enchantment	鑑定附魔	鑑定法術	164	guide-exact
+UW1-14950393F735	spell	Open	開鎖術	開門術	165	guide-exact
+UW1-C8B3B5A03E7E	spell	Poison	施毒術	毒擊術	156	guide-exact
+UW1-C4CE9378A9EF	spell	Remove Trap	解除陷阱	除去陷阱術	157	guide-exact
+UW1-BD77A70B15C1	spell	Resist Blows	抗擊術	耐擊術	136	guide-exact
+UW1-E5CC7F6E5845	spell	Reveal	顯形術	顯現術	179	guide-exact
+UW1-CCC14365F221	spell	Roaming Sight	遊移視界	徘徊之視	185	guide-exact
+UW1-CC79D4070F3A	spell	Rune of Warding	守護符文	守護之符	143	guide-exact
+UW1-BF04191D6B5F	spell	Speed	加速術	降速術	150	historical-guide-name-with-mechanism-note
+UW1-0D8905766934	spell	Stealth	無聲行走	潛行術	137	guide-exact
+UW1-D1EF0785462A	spell	Strengthen Door	強化門扉	封門術	151	guide-exact
+UW1-EE78D3C6F76B	spell	Tremor	地震	地震術	186	guide-exact
+UW1-34111549E4A3	title	Seer	先知	預言者	89	guide-derived-concept-family
+UW1-3188003ECFBE	virtue	Compassion	慈悲	憐憫	19	guide-exact
+UW1-A6CB4DF2DC68	virtue	Humility	謙卑	謙遜	25	guide-exact
+UW1-C21144A3CD76	virtue	Justice	正義	公正	21	guide-exact
+UW1-E1CA0D0DDBE6	virtue	Valor	英勇	勇氣	20	guide-exact
+UW1-E2A73281EE8C	weapon	crossbow	弩	十字弓	290	guide-exact
+UW1-BD2684144C14	weapon	sling	投石索	投石器	288	guide-exact
+UW1-F8EE7C0FFCAC	weapon	sling stone	投石索石彈	石彈	293	guide-exact
+UW1-8C581A43FC67	world-lore	Ankh	安卡	聖符	46	guide-exact

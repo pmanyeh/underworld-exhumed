@@ -2,6 +2,12 @@
 
 ## 來源優先順序
 
+本輪的選詞規範是使用者指定的 `Translation_Guide.md`；其行號與雜湊登錄在 GUIDE-SOURCES.tsv、GUIDE-ALIGNMENT.tsv。
+明列的譯名優先於先前 Agent 暫譯與尚未核實的 OCR 候選。這是使用者指定的規範，不代表其官方手冊來源聲明已被獨立核圖。
+若英文身份、實際用途或同形異義有差異，保留原遊戲英文與分類，將處理記入 GUIDE-ISSUES.tsv 及 DECISIONS.md，不盲目合併。
+
+確認歷史來源時仍遵循以下證據順序：
+
 1. 台灣正式發行版本隨附的中文手冊與正式中文資料。
 2. 遊戲原始英文語意，以及合法遊戲資料與程式證明的用途。
 3. 經確認的其他台灣正式 Ultima 中文出版物。
@@ -14,9 +20,15 @@
 
 ## 選詞狀態
 
+最新使用者裁定優先於指南及 OCR 候選，登錄在 USER-DECISIONS.tsv、USER-DECISION-SOURCES.tsv。
+`PROJECT_HUMAN_DECISION` 與 `approved` 表示用詞或暫定身份處理經使用者核准，不表示官方手冊原圖已獨立驗證。
+Sir Almric／Baron Almric 統一為阿姆瑞克男爵；Lady Arriana／Arial 暫分列不同人物，仍保留未來依新證據重審的可能。
+
 `GLOSSARY.tsv` 為主詞表。`project-selected` 是依使用者委託建立的一致選詞稿；`review-needed` 表示仍有手冊辨識或英文身份疑點。
 兩者均非官方或人工核准。`TW_MANUAL_OCR_PROVISIONAL` 只在本機明示英文標籤與獨立可接受語意候選相符時暫採，仍需核對原圖。
 `PROJECT_COMPOSITION_WITH_MANUAL_ROOT` 表示複合詞根沿用手冊候選，不能推論整個名稱在手冊中出現過。
+`USER_TRANSLATION_GUIDE` 表示依本輪指定文件採用；guide_decision 區分直接明列、選用允許異名、同一概念的複合詞、法術異稱與指南範圍展開。
+guide-only 補充可以沒有遊戲 key；不能把指南未在文本出現的歷史人物、地點或介面名稱假裝成已從遊戲抽出。
 
 明確手冊定名確認後優先沿用；疑似錯字、前後不一致或與遊戲用途衝突時保留異名與決策，不靜默改寫來源。
 原始手冊辨識差異、座標與圖像仍在本機工作區；公開詞表保存來源 ID、掃描頁位及待核狀態。

@@ -1,0 +1,313 @@
+guide_line	category	guide_english	guide_options	term_id	source_en	selected_zh_tw	decision	guide_circle	guide_runes
+8	world-lore	Ultima	創世紀	UW1-120519018A29	Ultima	創世紀	guide-exact		
+9	world-lore	Underworld	地下世界 / 地下創世紀	UW1-7782EF441177	Underworld	地下世界	guide-exact		
+10	place	The Stygian Abyss	冥河深淵	UW1-AB69C7F83AA4	Stygian Abyss	冥河深淵	guide-exact		
+11	place	Great Stygian Abyss	大冥河深淵	UW1-A973A317698E	Great Stygian Abyss	大冥河深淵	guide-exact		
+12	place	Isle of the Avatar / The Isle of Avatar	聖者之島	UW1-2ABA33FD18EA	Isle of the Avatar	聖者之島	guide-exact		
+13	place	Britannia	不列顛尼亞	UW1-D17F70AA051B	Britannia	不列顛尼亞	guide-exact		
+14	person	Lord British	不列顛王	UW1-056A52AEA60A	Lord British	不列顛王	guide-exact		
+15	world-lore	Avatar	聖者	UW1-65E55DF3E9A9	Avatar	聖者	guide-exact		
+16	world-lore	The Codex of Ultimate Wisdom	無限知識之聖典	UW1-79789DF6DCF0	Codex of Ultimate Wisdom	無限知識之聖典	guide-exact		
+17	world-lore	Eight Virtues	八大美德	UW1-106927E3DE8D	Eight Virtues	八大美德	guide-exact		
+18	virtue	Honesty	誠實	UW1-AC90580A8E6F	Honesty	誠實	guide-exact		
+19	virtue	Compassion	憐憫	UW1-3188003ECFBE	Compassion	憐憫	guide-exact		
+20	virtue	Valor	勇氣	UW1-E1CA0D0DDBE6	Valor	勇氣	guide-exact		
+21	virtue	Justice	公正	UW1-C21144A3CD76	Justice	公正	guide-exact		
+22	virtue	Sacrifice	犧牲	UW1-D13B07795B47	Sacrifice	犧牲	guide-exact		
+23	virtue	Honor	榮譽	UW1-B0DB0F3B754F	Honor	榮譽	guide-exact		
+24	virtue	Spirituality	靈性	UW1-099D9ECFED42	Spirituality	靈性	guide-exact		
+25	virtue	Humility	謙遜	UW1-A6CB4DF2DC68	Humility	謙遜	guide-exact		
+26	world-lore	Eight Cities of Virtue	八大美德城鎮	UW1-01DE7920F8E1	Eight Cities of Virtue	八大美德城鎮	guide-exact		
+27	place	Britain	不列顛城	UW1-7680CDF18DC4	Britain	不列顛城	guide-exact		
+28	place	Jhelom	傑南	UW1-7C3219DE28BB	Jhelom	傑南	guide-exact		
+29	place	Minoc	米諾克	UW1-59D66EEF89D4	Minoc	米諾克	guide-exact		
+30	place	Moonglow	月光城	UW1-29991AB925B0	Moonglow	月光城	guide-exact		
+31	place	Skara Brae	史卡布萊	UW1-774B49F1925D	Skara Brae	史卡布萊	guide-exact		
+32	place	Trinsic	崔斯克	UW1-13819DE78E6C	Trinsic	崔斯克	guide-exact		
+33	place	Yew	優樹城	UW1-88A323340746	Yew	優樹城	guide-exact		
+34	place	Magincia	美琴尼西亞	UW1-CD718C2181F7	Magincia	美琴尼西亞	guide-exact		
+34	place	New Magincia	新美琴尼西亞	UW1-9DD817CA7588	New Magincia	新美琴尼西亞	guide-exact		
+35	person	Mondain	蒙丹	UW1-47A940C036D7	Mondain	蒙丹	guide-exact		
+36	object	Skull of Mondain	蒙丹的頭骨	UW1-7C577E694F1C	Skull of Mondain	蒙丹的頭骨	guide-exact		
+37	person	Lord Blackthorn	布萊克索恩	UW1-FEBA7B6CE7D0	Lord Blackthorn	布萊克索恩	guide-exact		
+38	creature	Shadowlords	影魔	UW1-C4CC54B9F6E1	Shadowlords	影魔	guide-exact		
+39	race	Gargoyles	石像鬼族	UW1-4F3F1ED73C86	gargoyle	石像鬼族	guide-exact		
+40	object	Vortex Box	漩渦盒	UW1-677D0FB21D50	Vortex Box	漩渦盒	guide-exact		
+41	place	The Verity Isle	真理之島	UW1-84BCF62A9D7B	Verity Isle	真理之島	guide-exact		
+42	place	Lycaeum	大圖書館	UW1-321D61F8DBEB	Lycaeum	大圖書館	guide-exact		
+43	place	Empath Abbey	神人修道院	UW1-A145DC5B4598	Empath Abbey	神人修道院	guide-exact		
+44	place	Serpent's Spine Mountains	蛇山	UW1-8F1F295E33A7	Serpent's Spine Mountains	蛇山	guide-exact		
+45	place	Lake Venom	毒液湖	UW1-EBEB5C07E8A1	Lake Venom	毒液湖	guide-exact		
+46	world-lore	Ankh	聖符	UW1-8C581A43FC67	Ankh	聖符	guide-exact		
+47	object	Moonstone	月之石	UW1-9A2D1667145D	moonstone	月之石	guide-exact		
+52	person	Sir Cabirus	凱布勒斯爵士	UW1-2FB709B92E6B	Sir Cabirus	凱布勒斯爵士	guide-exact		
+53	person	Corby	柯比	UW1-2A066030C344	Corby	柯比	guide-exact		
+54	person	Baron Almric	阿姆瑞克男爵	UW1-008918E24887	Baron Almric	阿姆瑞克男爵	user-approved-current-choice		
+54	person	Sir Almric	安瑞克爵士	UW1-CF305FC57BA5	Sir Almric	阿姆瑞克男爵	user-approved-override		
+55	person	Lady Arriana	雅莉安娜女爵	UW1-0F26DAB1267E	Lady Arriana	雅莉安娜女爵	user-approved-current-choice		
+56	person	Shamino	薛米諾	UW1-B38216B90011	Shamino	薛米諾	guide-exact		
+57	person	Tyball	泰瑞爾	UW1-48D2D2F04929	Tyball	泰瑞爾	guide-exact		
+58	person	Chief Goldsword	金劍酋長	UW1-C23908D58200	Chief Goldsword	金劍酋長	guide-exact		
+59	person	Sir Broderick	布魯瑞克爵士	UW1-70589E6B8711	Sir Broderick	布魯瑞克爵士	guide-exact		
+60	person	Moonwane	孟溫	UW1-1652F31894AD	Moonwane	孟溫	guide-exact		
+61	person	Knight Galloway	凱洛維騎士	UW1-C144CAEC0360	Knight Galloway	凱洛維騎士	guide-exact		
+62	person	Knight Willomar	威洛瑪騎士	UW1-6CC9C688ABCD	Knight Willomar	威洛瑪騎士	guide-exact		
+63	person	Knight Vitalar	維塔勒騎士	UW1-3E60F50E29FC	Knight Vitalar	維塔勒騎士	guide-exact		
+64	person	Sir Geraci	蓋勒希爵士	UW1-E7121C336015	Sir Geraci	蓋勒希爵士	guide-exact		
+65	person	Ravenhurst	雷赫斯特	UW1-E1571E1179FE	Ravenhurst	雷赫斯特	guide-exact		
+66	person	Bill	比爾	UW1-748971B11CB0	Bill	比爾	guide-exact		
+67	creature	The Slasher of Veils	破帷者	UW1-ADED2A0C9893	the Slasher of Veils	破帷者	guide-exact		
+72	place	Entrance to the Abyss	冥河深淵入口	UW1-80E5A55FF16A	Entrance to the Abyss	冥河深淵入口	guide-exact		
+73	place	Level 1	第一層	UW1-D8D895AD51B9	Level 1	第一層	guide-range-expansion		
+73	place	Level 2	第二層	UW1-415FE29E0DAD	Level 2	第二層	guide-range-expansion		
+73	place	Level 3	第三層	UW1-919EF42E25EF	Level 3	第三層	guide-range-expansion		
+73	place	Level 4	第四層	UW1-5C57348FE55D	Level 4	第四層	guide-range-expansion		
+73	place	Level 5	第五層	UW1-48CCAF49443C	Level 5	第五層	guide-range-expansion		
+73	place	Level 6	第六層	UW1-AEB126442000	Level 6	第六層	guide-range-expansion		
+73	place	Level 7	第七層	UW1-33E013740201	Level 7	第七層	guide-range-expansion		
+73	place	Level 8	第八層	UW1-4B6379E7B3C3	Level 8	第八層	guide-range-expansion		
+74	place	Goblin Home	小鬼出沒地 / 哥布林家園	UW1-E8E0A7673650	Goblin Home	小鬼出沒地	guide-exact		
+75	place	Lair of the Mountain-Folk	山岳族之穴	UW1-99C5392446FC	Lair of the Mountain-Folk	山岳族之穴	guide-exact		
+76	place	The Tombs	古墓群	UW1-AB24B2B1B53C	Tombs	古墓群	guide-exact		
+76	place	Crypts	地下墓穴	UW1-D3D4C56FCFD3	Crypts	地下墓穴	guide-exact		
+77	place	Knights of the Crux Encampment	南十字騎士駐地	UW1-0C2C92D4F95B	Knights of the Crux Encampment	南十字騎士駐地	guide-exact		
+78	place	The Grand Staircase	大階梯	UW1-BDA65E8A2B10	Grand Staircase	大階梯	guide-exact		
+79	place	Seers of the Moonstone	月石先知會所	UW1-DB47B7ED10D7	Seers of the Moonstone	月石先知會所	guide-exact		
+80	place	Meeting Halls	會議大廳	UW1-ACEEC151B95F	Meeting Halls	會議大廳	guide-exact		
+81	place	Dungeon Hythloth	地下城海瑟洛斯	UW1-FAFF16216415	Dungeon Hythloth	地下城海瑟洛斯	guide-exact		
+86	organization	Knights of the Crux	南十字騎士團	UW1-87FC45BAC51C	Knights of the Crux	南十字騎士團	guide-exact		
+86	organization	The Order of the Crux Ansata	安塔南十字騎士團	UW1-7BC7E9168F3E	Order of the Crux Ansata	安塔南十字騎士團	guide-exact		
+87	organization	The Order of the Silver Serpent	銀蛇騎士團	UW1-33672828294B	Order of the Silver Serpent	銀蛇騎士團	guide-exact		
+88	race	Mountain-Folk	山岳族	UW1-0E96A51D860C	Mountain-folk	山岳族	guide-exact		
+89	organization	Seers of the Moonstone	月之石預言者	UW1-4E4F7BC9678B	Seers of the Moonstone	月之石預言者	guide-exact		
+90	race	Lizardmen	蜥蜴人	UW1-007D6FFBCE75	lizardman	蜥蜴人	guide-exact		
+91	race	Goblins	惡鬼族 / 哥布林	UW1-5F403F394D7B	goblin	惡鬼族	guide-exact		
+92	faction	Gray Goblins	灰色惡鬼族	UW1-3967A0384576	Gray Goblins	灰色惡鬼族	guide-exact		
+93	faction	Green Goblins	綠色惡鬼族	UW1-A2C6B7FEA9B8	Green Goblins	綠色惡鬼族	guide-exact		
+94	race	Trolls	洞穴巨人 / 巨魔	UW1-3C2C4E5B35AE	troll	洞穴巨人	guide-exact		
+95	faction	Exiles / Outcasts	放逐者	UW1-CE187B4E5688	Outcasts	放逐者	guide-exact		
+100	quest-object	Book of Truth	真實之書	UW1-A8F4BBDCA7D1	Book of Honesty	真實之書	same-talisman-by-author-and-context		
+101	quest-object	Ring of Humility	謙遜戒指	UW1-57BAEB4E5298	Ring of Humility	謙遜戒指	guide-exact		
+102	quest-object	Cup of Wonder	驚異之杯	UW1-072271D41E7E	Cup of Wonder	驚異之杯	guide-exact		
+103	quest-object	Shield of Valor	勇氣之盾	UW1-7827BE7A0330	Shield of Valor	勇氣之盾	guide-exact		
+104	quest-object	Standard of Honor	榮譽之旆 / 榮譽之旗	UW1-5170FDAB6DAC	Standard of Honor	榮譽之旆	guide-exact		
+105	quest-object	Sword Caliburn	凱利班之劍	UW1-5BD48EE2EE2E	Sword Caliburn	凱利班之劍	guide-exact		
+106	quest-object	Taper of Sacrifice	犧牲之燭	UW1-FAEA9836D3AD	Taper of Sacrifice	犧牲之燭	guide-exact		
+107	quest-object	Wine of Compassion	憐憫之酒	UW1-C8912FE62329	Wine of Compassion	憐憫之酒	guide-exact		
+115	rune	AN	否定	UW1-4E07905655BD	An	An（否定）	guide-meaning-input-token-preserved		
+115	rune	MANI	生命	UW1-C9C587F0364F	Mani	Mani（生命）	guide-meaning-input-token-preserved		
+116	rune	BET	小	UW1-A2B88B2A14D7	Bet	Bet（小）	guide-meaning-input-token-preserved		
+116	rune	NOX	毒	UW1-2A231CD7A896	Nox	Nox（毒）	guide-meaning-input-token-preserved		
+117	rune	CORP	死亡	UW1-9DC2ED1BD819	Corp	Corp（死亡）	guide-meaning-input-token-preserved		
+117	rune	ORT	魔法	UW1-AAE180590473	Ort	Ort（魔法）	guide-meaning-input-token-preserved		
+118	rune	DES	下降	UW1-294FD4EF9BC3	Des	Des（下降）	guide-meaning-input-token-preserved		
+118	rune	POR	移動	UW1-E286170230C2	Por	Por（移動）	guide-meaning-input-token-preserved		
+119	rune	EX	自由	UW1-A6D0D8CB96F5	Ex	Ex（自由）	guide-meaning-input-token-preserved		
+119	rune	QUAS	幻像	UW1-D706741F387D	Quas	Quas（幻像）	guide-meaning-input-token-preserved		
+120	rune	FLAM	火焰	UW1-DB2E1C618E99	Flam	Flam（火焰）	guide-meaning-input-token-preserved		
+120	rune	REL	改變	UW1-DD40A0740CCA	Rel	Rel（改變）	guide-meaning-input-token-preserved		
+121	rune	GRAV	能量	UW1-58A76C719AAD	Grav	Grav（能量）	guide-meaning-input-token-preserved		
+121	rune	SANCT	保護 / 防護	UW1-976DDD842723	Sanct	Sanct（保護）	guide-meaning-input-token-preserved		
+122	rune	HUR	風	UW1-E6D7C2062582	Hur	Hur（風）	guide-meaning-input-token-preserved		
+122	rune	TYM	時間	UW1-DE33B11E632C	Tym	Tym（時間）	guide-meaning-input-token-preserved		
+123	rune	IN	創生	UW1-EB3BC98C6FCB	In	In（創生）	guide-meaning-input-token-preserved		
+123	rune	UUS	昇起	UW1-298659FFE12B	Uus	Uus（昇起）	guide-meaning-input-token-preserved		
+124	rune	JUX	引起 / 傷害	UW1-05F6B73DD461	Jux	Jux（引起／傷害）	guide-meaning-input-token-preserved		
+124	rune	VAS	巨大	UW1-A72A3E9EE49B	Vas	Vas（巨大）	guide-meaning-input-token-preserved		
+125	rune	KAL	召喚	UW1-F8CA80F6A2CB	Kal	Kal（召喚）	guide-meaning-input-token-preserved		
+125	rune	WIS	知識	UW1-A9E1C7E76AA1	Wis	Wis（知識）	guide-meaning-input-token-preserved		
+126	rune	LOR	光	UW1-664AC3D26044	Lor	Lor（光）	guide-meaning-input-token-preserved		
+126	rune	YLEM	物質	UW1-30E333E0742E	Ylem	Ylem（物質）	guide-meaning-input-token-preserved		
+133	spell	Create Food	造食物術	UW1-BAE71FD3D75C	Create Food	造食物術	guide-exact	1	In Mani Ylem
+134	spell	Light	神光術	UW1-26315F20850D	Light	神光術	guide-exact	1	In Lor
+135	spell	Magic Arrow	魔法之箭 / 魔法箭	UW1-B54B10B4E201	Magic Arrow	魔法之箭	guide-exact	1	Ort Jux
+136	spell	Resist Blows	耐擊術	UW1-BD77A70B15C1	Resist Blows	耐擊術	guide-exact	1	Bet In Sanct
+137	spell	Stealth	潛行術	UW1-0D8905766934	Stealth	潛行術	guide-exact	1	Sanct Hur
+140	spell	Cause Fear	恐懼術	UW1-82CB56F73F66	Cause Fear	恐懼術	guide-exact	2	Quas Corp
+141	spell	Detect Monster	偵測怪物術	UW1-EF74798C11F7	Detect Monster	偵測怪物術	guide-exact	2	Wis Mani
+142	spell	Lesser Heal	小醫療術	UW1-C89B72D0BD8E	Lesser Heal	小醫療術	guide-exact	2	In Bet Mani
+143	spell	Rune of Warding	守護之符	UW1-CC79D4070F3A	Rune of Warding	守護之符	guide-exact	2	In Jux
+144	spell	Slow Fall	緩落術	UW1-1C9148F04D73	Slow Fall	緩落術	guide-exact	2	Rel Des Por
+147	spell	Conceal	隱蔽術	UW1-9AB054A37156	Conceal	隱蔽術	guide-exact	3	Bet Sanct Lor
+148	spell	Lightning	雷擊術	UW1-25246B35EBB7	Electrical Bolt	雷擊術	same-spell-confirmed-by-rune-sequence	3	Ort Grav
+149	spell	Night Vision	夜視術	UW1-A353468D0E46	Night Vision	夜視術	guide-exact	3	Quas Lor
+150	spell	Speed	降速術	UW1-BF04191D6B5F	Speed	降速術	historical-guide-name-with-mechanism-note	3	Rel Tym Por
+151	spell	Strengthen Door	封門術 / 強化門扉	UW1-D1EF0785462A	Strengthen Door	封門術	guide-exact	3	Sanct Jux
+154	spell	Heal	醫療術	UW1-762041C7151E	Heal	醫療術	guide-exact	4	In Mani
+155	spell	Levitate	飄浮術	UW1-6E1757802F31	Levitate	飄浮術	guide-exact	4	Hur Por
+156	spell	Poison	毒擊術	UW1-C8B3B5A03E7E	Poison	毒擊術	guide-exact	4	Nox Mani
+157	spell	Remove Trap	除去陷阱術	UW1-C4CE9378A9EF	Remove Trap	除去陷阱術	guide-exact	4	An Jux
+158	spell	Resist Fire	耐火術	UW1-95A5D38C79C7	Flameproof	耐火術	same-spell-confirmed-by-rune-sequence	4	Sanct Flam
+161	spell	Cure Poison	解毒術	UW1-F5A2680DE04E	Cure Poison	解毒術	guide-exact	5	An Nox
+162	spell	Fireball	火球術	UW1-198A86DB1702	Fireball	火球術	guide-exact	5	Por Flam
+163	spell	Missile Protection	反長程武器保護 / 飛彈防護	UW1-421ACAF07F55	Missile Protection	反長程武器保護	guide-exact	5	Grav Sanct Por
+164	spell	Name Enchantment	鑑定法術 / 釋名術	UW1-0C839D2D3AED	Name Enchantment	鑑定法術	guide-exact	5	Ort Wis Ylem
+165	spell	Open	開門術 / 開鎖術	UW1-14950393F735	Open	開門術	guide-exact	5	Ex Ylem
+168	spell	Daylight	日光術	UW1-9FCDB896A02E	Daylight	日光術	guide-exact	6	Vas In Lor
+169	spell	Gate Travel	月門召喚術 / 傳送門術	UW1-1130BBA787B1	Gate Travel	月門召喚術	guide-exact	6	Vas Rel Por
+170	spell	Greater Heal	大醫療術	UW1-6FA1F80AE14B	Greater Heal	大醫療術	guide-exact	6	Vas In Mani
+171	spell	Paralyze	麻痺術	UW1-A168EDFE8F19	Paralyze	麻痺術	guide-exact	6	An Ex Por
+172	spell	Telekinesis	念動術	UW1-D779CFD16DA1	Telekinesis	念動術	guide-exact	6	Ort Por Ylem
+175	spell	Ally	同伴術 / 結盟術	UW1-62849A6D5A04	Ally	同伴術	guide-exact	7	In Mani Rel
+176	spell	Confusion	混亂術	UW1-27F181CF6B9F	Confusion	混亂術	guide-exact	7	Vas An Wis
+177	spell	Fly	飛行術	UW1-F6F60FEA655C	Fly	飛行術	guide-exact	7	Vas Hur Por
+178	spell	Invisibility	隱形術	UW1-E320BF0DC424	Invisibility	隱形術	guide-exact	7	Vas Sanct Lor
+179	spell	Reveal	顯現術	UW1-E5CC7F6E5845	Reveal	顯現術	guide-exact	7	Ort An Quas
+182	spell	Flame Wind	火焰之風	UW1-CB1598C51412	Flame Wind	火焰之風	guide-exact	8	Flam Hur
+183	spell	Freeze Time	停時術	UW1-5FAC68F6BE53	Freeze Time	停時術	guide-exact	8	An Tym
+184	spell	Iron Flesh	鋼鐵之軀 / 鐵膚術	UW1-A8B97AAC0FEF	Iron Flesh	鋼鐵之軀	guide-exact	8	In Vas Sanct
+185	spell	Roaming Sight	徘徊之視 / 遊移視界	UW1-CCC14365F221	Roaming Sight	徘徊之視	guide-exact	8	Ort Por Wis
+186	spell	Tremor	地震術	UW1-EE78D3C6F76B	Tremor	地震術	guide-exact	8	Vas Por Ylem
+192	gameplay	Summ Ra	Summ Ra	UW1-E7535BA2B36F	SUMM RA	SUMM RA	input-token-preserved		
+193	gameplay	Mu Ahm	Mu Ahm	UW1-3ECEFF10B65A	MU AHM	MU AHM	input-token-preserved		
+194	gameplay	Om Cah	Om Cah	UW1-F537DD5C200D	OM CAH	OM CAH	input-token-preserved		
+201	gameplay	Fighter	戰士	UW1-379702AAD8AE	Fighter	戰士	guide-exact		
+202	gameplay	Mage	魔法師	UW1-1841E18FA904	Mage	魔法師	guide-exact		
+203	gameplay	Bard	吟遊詩人	UW1-581A38AF96B4	Bard	吟遊詩人	guide-exact		
+204	gameplay	Tinker	工匠	UW1-0FA6A6689C01	Tinker	工匠	guide-exact		
+205	gameplay	Druid	德魯伊	UW1-C48D5CA2EED3	Druid	德魯伊	guide-exact		
+206	gameplay	Paladin	遊俠 / 聖騎士	UW1-D6DE16A4E770	Paladin	聖騎士	guide-alternative-distinct-from-ranger		
+207	gameplay	Ranger	巡林漢 / 巡林客	UW1-55E5DE8ED624	Ranger	巡林漢	guide-exact		
+208	gameplay	Shepherd	牧羊人	UW1-AE3D490722F0	Shepherd	牧羊人	guide-exact		
+211	attribute	Strength	力量	UW1-0D31CEAEA797	Strength	力量	guide-exact		
+212	attribute	Dexterity	敏捷	UW1-63076357709D	Dexterity	敏捷	guide-exact		
+213	attribute	Intelligence	智慧 / 智力	UW1-14D0DE87DE89	Intelligence	智慧	guide-exact		
+214	attribute	Vitality	生命力	UW1-802AB48468C8	Vitality	生命力	guide-exact		
+215	attribute	Mana	法力 / 魔力	UW1-4223326FA5E4	Mana	法力	guide-exact		
+216	attribute	Experience	經驗值	UW1-CB0B9116A578	Experience	經驗值	guide-exact		
+217	attribute	Level	等級	UW1-5EA108ACD08D	Level	等級	guide-exact		
+220	skill	Acrobat	特技	UW1-A81A0209B351	Acrobat	特技	guide-exact		DEX
+221	skill	Appraise	估價	UW1-54928E2DC91B	Appraise	估價	guide-exact		DEX
+222	skill	Attack	攻擊	UW1-F5DC49BEBE5E	Attack	攻擊	guide-exact		STR
+223	skill	Axe	斧頭	UW1-FE9718BB1924	Axe	斧頭	guide-exact		STR
+224	skill	Casting	施法	UW1-53CAAF8AB84F	Casting	施法	guide-exact		INT
+225	skill	Charm	魅力	UW1-9B744C184EF3	Charm	魅力	guide-exact		DEX
+226	skill	Defense	防禦	UW1-23B9B449013B	Defense	防禦	guide-exact		STR
+227	skill	Lore	知識	UW1-C98C57243FAC	Lore	知識	guide-exact		INT
+228	skill	Mace	釘頭錘	UW1-4E32D1959E8C	Mace	釘頭錘	guide-exact		INT/STR
+229	skill	Mana	魔力	UW1-284C160E583C	Mana	魔力	guide-exact		INT
+230	skill	Missile	長程武器	UW1-2687E210CAF4	Missile	長程武器	guide-exact		STR
+231	skill	Picklock	開鎖	UW1-455C030CF8C9	Picklock	開鎖	guide-exact		DEX
+232	skill	Repair	修理	UW1-5AEE8BA2CCEB	Repair	修理	guide-exact		DEX
+233	skill	Search	搜索	UW1-3084A0FA93E2	Search	搜索	guide-exact		DEX
+234	skill	Sneak	潛行	UW1-B2BEA6164AE0	Sneak	潛行	guide-exact		DEX
+235	skill	Swimming	游泳	UW1-C02856ED6361	Swimming	游泳	guide-exact		DEX
+236	skill	Sword	刀劍	UW1-97C2B5DB11F0	Sword	刀劍	guide-exact		STR
+237	skill	Track	追蹤	UW1-24EA8346960D	Track	追蹤	guide-exact		DEX
+238	skill	Unarmed	徒手格鬥	UW1-DEA8D0001B99	Unarmed	徒手格鬥	guide-exact		DEX
+238	skill	Trap	陷阱	UW1-A5FA55AD03E3	Traps	陷阱	guide-exact		DEX
+243	creature	Cave Bat	洞穴蝙蝠	UW1-9E69048424F0	cave bat	洞穴蝙蝠	guide-exact		
+244	creature	Vampire Bat	吸血蝙蝠	UW1-75E72483F898	vampire bat	吸血蝙蝠	guide-exact		
+245	creature	Bloodworm	血蟲	UW1-7AB0D46FD5A3	bloodworm	血蟲	guide-exact		
+246	creature	Rotworm	腐蟲	UW1-6366F460DC3C	rotworm	腐蟲	guide-exact		
+247	creature	Flesh Slug	肉色蛞蝓	UW1-A76A8FF2BD5A	flesh slug	肉色蛞蝓	guide-exact		
+248	creature	Acid Slug	強酸蛞蝓	UW1-2CA99693465D	acid slug	強酸蛞蝓	guide-exact		
+249	creature	Giant Spider	巨蜘蛛	UW1-E5641A296E5D	giant spider	巨蜘蛛	guide-exact		
+250	creature	Wolf Spider	狼蜘蛛	UW1-876C464CFAB9	wolf spider	狼蜘蛛	guide-exact		
+251	creature	Dread Spider	恐怖蜘蛛	UW1-0447A26E005C	dread spider	恐怖蜘蛛	guide-exact		
+252	creature	Giant Rat	巨鼠	UW1-F262F2FADE8F	giant rat	巨鼠	guide-exact		
+253	creature	Lurker	潛伏者	UW1-776A7216A513	lurker	潛伏者	guide-exact		
+254	creature	Deep Lurker	深處潛伏者	UW1-0188107386AC	deep lurker	深處潛伏者	guide-exact		
+255	creature	Imp	小惡魔	UW1-F012CAC98B72	imp	小惡魔	guide-exact		
+256	creature	Mongbat	蝙蝠猿 / 魔蝠	UW1-BDDB13682F76	mongbat	蝙蝠猿	guide-exact		
+257	creature	Gazer	眼魔	UW1-61CE02A5C1E0	gazer	眼魔	guide-exact		
+258	creature	Headless	無頭人	UW1-826B0D0969BC	headless	無頭人	guide-exact		
+259	creature	Reaper	樹精 / 死神樹	UW1-2C9E31460E82	reaper	樹精	guide-exact		
+260	creature	Earth Golem	土魔像	UW1-04FC582E2064	earth golem	土魔像	guide-exact		
+261	creature	Stone Golem	石魔像	UW1-0B89CB67E025	stone golem	石魔像	guide-exact		
+262	creature	Metal Golem	金屬魔像	UW1-369470516D34	metal golem	金屬魔像	guide-exact		
+263	creature	Fire Elemental	火元素	UW1-F496A2C61291	fire elemental	火元素	guide-exact		
+264	creature	Wisp	鬼火 / 幽光	UW1-9E1A4889BCFE	wisp	鬼火	guide-exact		
+265	creature	Skeleton	骷髏人	UW1-E849296EE4AF	skeleton	骷髏人	guide-exact		
+266	creature	Ghoul	食屍鬼	UW1-EB194A0E3B05	ghoul	食屍鬼	guide-exact		
+267	creature	Ghost	鬼魂	UW1-1EC8324FBA3E	ghost	鬼魂	guide-exact		
+268	creature	Shadow Beast	影魔 / 暗影獸	UW1-B8480FC62E48	shadow beast	暗影獸	guide-alternative-distinct-from-shadowlords		
+273	equipment	Swords	劍類	UW1-596EBB200C93	Swords	劍類	guide-exact		
+274	weapon	Dagger	匕首	UW1-387543AA76D5	dagger	匕首	guide-exact		
+275	weapon	Shortsword	短劍	UW1-3E576CB6541F	shortsword	短劍	guide-exact		
+276	weapon	Longsword	長劍	UW1-D1821DE7D2BE	longsword	長劍	guide-exact		
+277	weapon	Broadsword	闊劍	UW1-144B81790328	broadsword	闊劍	guide-exact		
+278	equipment	Axes	斧類	UW1-91E8AA558E77	Axes	斧類	guide-exact		
+279	weapon	Handaxe	手斧	UW1-8F1A69348621	hand axe	手斧	guide-exact		
+280	weapon	Pole Axe	長柄斧	UW1-D2776F58CB79	Pole Axe	長柄斧	guide-exact		
+281	weapon	Battle Axe	戰斧	UW1-C86C6BBFF3A7	battle axe	戰斧	guide-exact		
+282	equipment	Maces	釘頭槌類	UW1-DFE1DD4DEC8F	Maces	釘頭槌類	guide-exact		
+283	weapon	Cudgel	短棍	UW1-8B716402225C	cudgel	短棍	guide-exact		
+284	weapon	Light Mace	輕型釘頭錘	UW1-84ADB9F5226C	light mace	輕型釘頭錘	guide-exact		
+285	weapon	Mace	釘頭錘	UW1-6B2FCCCAD25C	mace	釘頭錘	guide-exact		
+286	weapon	War Hammer	戰錘	UW1-DE52391DFA6A	War Hammer	戰錘	guide-exact		
+287	equipment	Missile Weapons	長程武器	UW1-AC9D065EF8F3	Missile Weapons	長程武器	guide-exact		
+288	weapon	Sling	投石器	UW1-BD2684144C14	sling	投石器	guide-exact		
+289	weapon	Bow	弓	UW1-79183B3A20F4	bow	弓	guide-exact		
+290	weapon	Crossbow	十字弓	UW1-E2A73281EE8C	crossbow	十字弓	guide-exact		
+291	weapon	Arrow	箭	UW1-CAA4083B4D32	arrow	箭	guide-exact		
+292	weapon	Crossbow Bolt	弩箭	UW1-82B3DDB41F27	crossbow bolt	弩箭	guide-exact		
+293	weapon	Sling Stone	石彈	UW1-F8EE7C0FFCAC	sling stone	石彈	guide-exact		
+294	equipment	Armor	防具	UW1-7B32EC030278	Armor	防具	guide-exact		
+295	armor	Leather Vest / Leather Armor	皮甲	UW1-FEBE52EEB10A	leather vest	皮甲	guide-exact		
+296	armor	Mail Shirt / Chain Mail	鎖子甲	UW1-66AF79D4235A	mail shirt	鎖子甲	guide-exact		
+297	armor	Breastplate	胸甲	UW1-7591973A296F	breastplate	胸甲	guide-exact		
+297	armor	Plate Mail	板甲	UW1-FAE4B3A1E9D3	Plate Mail	板甲	guide-exact		
+298	armor	Leather Gloves	皮手套	UW1-2DD8EC409FDE	leather gloves	皮手套	guide-exact		
+299	armor	Chain Gauntlets	鎖甲手套	UW1-40D970CE6060	chain gauntlets	鎖甲手套	guide-exact		
+300	armor	Plate Gauntlets	板甲手套	UW1-101378DD09EA	plate gauntlets	板甲手套	guide-exact		
+301	armor	Leather Leggings	皮護腿	UW1-02F426868880	leather leggings	皮護腿	guide-exact		
+302	armor	Mail Leggings	鎖甲護腿	UW1-B223008B8380	mail leggings	鎖甲護腿	guide-exact		
+303	armor	Plate Leggings	板甲護腿	UW1-7DFC2822B479	plate leggings	板甲護腿	guide-exact		
+304	armor	Leather Boots	皮靴	UW1-671B0BB87EF3	leather boots	皮靴	guide-exact		
+305	armor	Chain Boots	鎖甲靴	UW1-A31947F10016	chain boots	鎖甲靴	guide-exact		
+306	armor	Plate Boots	板甲靴	UW1-C7F99879EAA7	plate boots	板甲靴	guide-exact		
+307	armor	Dragon Skin Boots	龍皮靴	UW1-127E7345F07B	dragon skin boots	龍皮靴	guide-exact		
+308	armor	Leather Cap	皮帽	UW1-B8CBBC99B08E	leather cap	皮帽	guide-exact		
+309	armor	Chain Cowl	鎖甲頭罩	UW1-11177AF3AEF3	chain cowl	鎖甲頭罩	guide-exact		
+310	armor	Helmet	頭盔	UW1-3090C4B89DD3	helmet	頭盔	guide-exact		
+311	armor	Crown	王冠	UW1-D568C47ABED2	crown	王冠	guide-exact		
+312	equipment	Shields	盾牌	UW1-163718F19277	Shields	盾牌	guide-exact		
+313	armor	Buckler	圓盾	UW1-5E5ED9AD73CF	buckler	圓盾	guide-exact		
+314	armor	Small Shield	小盾	UW1-EFD454234B97	small shield	小盾	guide-exact		
+315	armor	Wooden Shield	木盾	UW1-9D58939AB896	wooden shield	木盾	guide-exact		
+316	armor	Tower Shield	塔盾	UW1-B510254D45CD	tower shield	塔盾	guide-exact		
+317	armor	Shiny Shield	亮盾	UW1-0D2719C41A76	shiny shield	亮盾	guide-exact		
+318	armor	Jeweled Shield	鑲寶石盾	UW1-DF70016A545A	jeweled shield	鑲寶石盾	guide-exact		
+319	equipment	Rings	戒指	UW1-1DF36873AD40	Rings	戒指	guide-exact		
+320	armor	Iron Ring	鐵戒指	UW1-807A07D302E9	iron ring	鐵戒指	guide-exact		
+321	armor	Gold Ring	金戒指	UW1-3CB2AA135A72	gold ring	金戒指	guide-exact		
+322	armor	Silver Ring	銀戒指	UW1-883D20279CB1	silver ring	銀戒指	guide-exact		
+323	armor	Red Ring	紅戒指	UW1-E279C5CE77A9	red ring	紅戒指	guide-exact		
+324	equipment	Adventuring Gear	冒險道具	UW1-D235665F0C06	Adventuring Gear	冒險道具	guide-exact		
+325	object	Rune Bag	符石袋	UW1-2E605E5BF3BA	rune bag	符石袋	guide-exact		
+326	object	Map	地圖	UW1-571F2F3E6E38	map	地圖	guide-exact		
+327	object	Bedroll	鋪蓋 / 睡袋	UW1-D6B8C18B9DEC	bedroll	鋪蓋	guide-exact		
+328	object	Anvil	鐵砧	UW1-1D680564CA02	anvil	鐵砧	guide-exact		
+329	object	Pole	長竹竿	UW1-6CD2FD5A0683	pole	長竹竿	guide-exact		
+330	object	Torch	火把	UW1-D890D4BDAA65	torch	火把	guide-exact		
+331	object	Candle	蠟燭	UW1-B321ADF19FC8	candle	蠟燭	guide-exact		
+332	object	Magic Lantern	魔法提燈	UW1-3CD045663EE3	Magic Lantern	魔法提燈	guide-exact		
+333	object	Key	鑰匙	UW1-DBC0AE539A0A	key	鑰匙	guide-exact		
+334	object	Lockpick	開鎖器	UW1-F64FDF93C966	lockpick	開鎖器	guide-exact		
+335	object	Potions	藥劑 / 藥水	UW1-E8A5C5506212	Potions	藥劑	guide-exact		
+336	object	Scrolls	卷軸	UW1-AA9ECDEB2F3A	scroll	卷軸	guide-exact		
+337	object	Wand	魔杖	UW1-D7D49A4969B7	wand	魔杖	guide-exact		
+338	object	Crystal Ball	水晶球	UW1-A3E048C00E67	Crystal Ball	水晶球	guide-exact		
+339	object	Bag	袋子 / 背包	UW1-D3656D645E54	Bag	袋子	guide-exact		
+340	object	Chest	箱子 / 寶箱	UW1-A706AAB710C7	chest	箱子	guide-exact		
+341	object	Box	盒子	UW1-8C9DA1B048D7	box	盒子	guide-exact		
+346	UI	3D View Window	3D 視窗	UW1-4D0063F2F9F8	3D View Window	3D 視窗	guide-exact		
+347	UI	Character Panel	人物狀況盤	UW1-E11031DD1804	Character Panel	人物狀況盤	guide-exact		
+348	UI	Power Gem	威力寶石 / 威力量石	UW1-3501AC667970	Power Gem	威力寶石	guide-exact		
+349	UI	Compass	羅盤	UW1-F0B278D4C8B9	Compass	羅盤	guide-exact		
+350	UI	Message Scroll	訊息捲軸	UW1-E809B14C3EE2	Message Scroll	訊息捲軸	guide-exact		
+351	UI	Rune Shelf	符石欄	UW1-9802B403064D	Rune Shelf	符石欄	guide-exact		
+352	UI	Active Spells	作用中的法術	UW1-915EC4F88A25	Active Spells	作用中的法術	guide-exact		
+353	UI	Command Modes	指令模式	UW1-C43AAF6C2B25	Command Modes	指令模式	guide-exact		
+354	UI	Talk Mode	交談模式	UW1-0AB1A9E66A45	Talk Mode	交談模式	guide-exact		
+355	UI	Get Mode	拿取模式	UW1-CF290F5126E2	Get Mode	拿取模式	guide-exact		
+356	UI	Look Mode	察看模式	UW1-13ACA5814051	Look Mode	察看模式	guide-exact		
+357	UI	Fight Mode	戰鬥模式	UW1-0ECEBB09EBA7	Fight Mode	戰鬥模式	guide-exact		
+358	UI	Use Mode	使用模式	UW1-73C159DA841F	Use Mode	使用模式	guide-exact		
+359	UI	Default Mode	預設狀態	UW1-36293A50DE43	Default Mode	預設狀態	guide-exact		
+360	gameplay	Barter	以物易物	UW1-0FA8224B7C38	barter	以物易物	guide-exact		
+361	UI	Attack Types	戰鬥攻擊動作	UW1-587D4C90B87C	Attack Types	戰鬥攻擊動作	guide-exact		
+362	UI	Bash	直劈	UW1-651AF8E1F6A0	Bash	直劈	guide-exact		
+363	UI	Slash	橫砍	UW1-BFABADC4AEA3	Slash	橫砍	guide-exact		
+364	UI	Thrust	刺擊	UW1-2077D8CC3E73	Thrust	刺擊	guide-exact		

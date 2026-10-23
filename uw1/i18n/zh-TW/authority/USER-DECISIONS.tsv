@@ -1,0 +1,12 @@
+decision_id	source_id	date	term_id	source_en	previous_zh_tw	canonical_zh_tw	scope	entity_policy	status	reason
+UD-20261023-001	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-0B19E370CD69	Easy	簡單	簡單	translation-current-choice		approved	使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+UD-20261023-002	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-F2CDF971E08E	Male	男性	男性	translation-current-choice		approved	使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+UD-20261023-003	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-05423B8226EC	mantra	祈禱語	祈禱語	translation-current-choice		approved	使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+UD-20261023-004	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-DF29D419E377	standard	旗幟	旗幟	translation-current-choice		approved	使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+UD-20261023-005	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-CB3C416A8A39	Arial	艾莉雅	艾莉雅	translation-and-provisional-identity-policy	provisional-separate-from:UW1-0F26DAB1267E	approved	使用者指定 Lady Arriana 與 Arial 先當作不同人物，現行譯名各自保留；這是暫定處理，不是已證實的歷史身份判定。
+UD-20261023-006	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-008918E24887	Baron Almric	阿姆瑞克男爵	阿姆瑞克男爵	translation-current-choice	same-translation-as:UW1-CF305FC57BA5	approved	使用者明確指定 Sir Almric 與 Baron Almric 均譯阿姆瑞克男爵；保留兩種英文形式的詞條，不自動合併身份。
+UD-20261023-007	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-0F26DAB1267E	Lady Arriana	雅莉安娜女爵	雅莉安娜女爵	translation-and-provisional-identity-policy	provisional-separate-from:UW1-CB3C416A8A39	approved	使用者指定 Lady Arriana 與 Arial 先當作不同人物，現行譯名各自保留；這是暫定處理，不是已證實的歷史身份判定。
+UD-20261023-008	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-CF305FC57BA5	Sir Almric	安瑞克爵士	阿姆瑞克男爵	translation-current-choice	same-translation-as:UW1-008918E24887	approved	使用者明確指定 Sir Almric 與 Baron Almric 均譯阿姆瑞克男爵；保留兩種英文形式的詞條，不自動合併身份。
+UD-20261023-009	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-182802E7D3AF	worn	磨損	磨損	translation-current-choice		approved	使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+UD-20261023-010	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-F3810A343B78	axe	斧頭	斧頭	translation-current-choice		approved	使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
+UD-20261023-011	USER_DECISION_20261023_TERM_REVIEW	2026-10-23	UW1-D588E282BD34	stone	石頭	石頭	translation-current-choice		approved	使用者指定其他待核詞沿用現行翻譯，作為專案用詞核准；不宣稱已核實手冊 OCR。
