@@ -2014,6 +2014,52 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3610	46	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
 3610	47	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
 3610	48	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3611	1	conversation	e69789507b1b229ef5c564ed912fe8b6a5ed782163623c2875685249668a7a45	你做得很好。如今我的骨骸終於得以安息，我可以暢所欲言了。但只要這場危機還在，我的靈魂就無法安息。\n 我們必須在我兄弟召喚來的那個邪物被禁錮之處附近，打開一道門。我們必須把它送回它來的那個位面。	draft		p10b-21 draft; authority-ok:rest（at rest 是安息，不是休息）	
+3611	2	conversation	4c307454eb94f9a7bc7b489548468a57395fa13266b31c7f161a2a0ddca54c96	沒有別的辦法嗎？	draft		p10b-21 draft	
+3611	3	conversation	cfc01948d5a59adc3fa959393ea83653fd30bdfc7a00abc1facccfcbc607ca8e	我們要怎麼打開這樣一道門？	draft		p10b-21 draft; authority-ok:Open（open such a gate 是打開門，不是法術）	
+3611	4	conversation	882782ba2f56f1c79214300cb3afa6cbab35fa32c6cded6f359f2aaa131868a1	沒有其他力量能打敗它。就算把它放逐到別處，也傷不了它——要是那個地方跟它的故鄉相似，說不定還會讓它恢復全部力量——但至少能解除不列顛尼亞的威脅！	draft		p10b-21 draft	
+3611	5	conversation	f67bd1b68c223b77cd6153a254aeae32a5dcdb3b15860cb1b29775a721cb3b6c	要怎麼做到？	draft		p10b-21 draft	
+3611	6	conversation	cf3c26ca33132c4d692f5d780bcda9206ce8d5d4005dd7791ac0820c4c7fc6b6	為此我需要大量的魔法能量。這可不是把你引來這裡那種溫和的引誘，而是一道難以想像的跨位面能量漩渦。	draft		p10b-21 draft	
+3611	7	conversation	6a761678488748d032eb39b9b2cd414dfb72d98579490da79e16aa2100bb0660	要是泰瑞爾的寶珠沒被摧毀，它的力量夠用嗎？	draft		p10b-21 draft	
+3611	8	conversation	8a4040ff9d79b1ceb06aa08fc8a9b490d389b7918ad8c9d95566dd7d59b99f57	我們要去哪裡找這麼強大的魔法？	draft		p10b-21 draft	
+3611	9	conversation	670571af4227533b068fed3142577a2c3b133e81f56223297b35f407f7168eee	泰瑞爾的寶珠就算完好無缺，用起來也很危險。我們汲取的力量必須謹慎挑選……你大概猜到了，我跟你們的世界有點脫節了。我原本希望你能提供答案。	draft		p10b-21 draft	
+3611	10	conversation	db0843c4c88bf62fa3a6e2acffc6e674b61333a81b77d49490b8c9a6d2ae1e44	恐怕我一點頭緒也沒有。	draft		p10b-21 draft	
+3611	11	conversation	102270651ec0a4a6b70995428358144be417e8c8f5f3141607a049f5b8361e77	你需要的東西得符合什麼條件？	draft		p10b-21 draft	
+3611	12	conversation	f2e236d9d836f250ef18feee9e799f0fc9ab5a22cebfc78d96fd491125a6f3bb	力量的來源最好絕對純淨——我兄弟就是汲取了來歷不明的力量才發現其中的危險——而且最好能讓不列顛尼亞本身以某種方式參與其中。	draft		p10b-21 draft	
+3611	13	conversation	7880cf6793970bd53557e611a2664356dde61ac64cb4af7d544e6ac1e58d3d9f	你說「讓不列顛尼亞參與」是什麼意思？	draft		p10b-21 draft	
+3611	14	conversation	c95c6f777f60fc72403d8851466e1f998d47d3a796434368a31068af67f8b806	來源必須純淨？	draft		p10b-21 draft	
+3611	15	conversation	6e85748de6f76fa2de629c03f6a2dd5e65dc9da52be053507d732292cd23a63c	最好能召喚某種元素。我們是為了援救不列顛尼亞而努力，只能希望她會盡力相助。	draft		p10b-21 draft	
+3611	16	conversation	93d48262eadfbf0faee5b00e8d9a916263430d4c7c0716fc67b698ae6f968be2	元素？	draft		p10b-21 draft	
+3611	17	conversation	fef83ff7caaad6fcf79928cd348cdf3cbf5b8f90980f81d63593365f80456bfa	你說得好像不列顛尼亞是活的。	draft		p10b-21 draft	
+3611	18	conversation	108a61f4eaf5637af41daef1b17a11d1a7dbbebeb55457596b3a18c55da5f14e	可是魔法的來源必須純淨？	draft		p10b-21 draft	
+3611	19	conversation	5a32a1e907058cca1cc764923740d13daeb6499048ea8ee7a418ad0a1b099559	古典的四元素：土、風、火、水。	draft		p10b-21 draft	
+3611	20	conversation	aecd15076ac63701dfb964ab10da70adc354deef360044f768c62e299b960b28	她確實是活的，一個翠綠、有生命的存在。不是我們所理解的那種意識，但也許察覺得到我們在為她努力。	draft		p10b-21 draft	
+3611	21	conversation	0b231a7c1ace102e0e142026f0bc070ecb9bcd03f1f87700298ece8e9caf401b	對，那個來源要盡可能純淨，要是我們運氣好，說不定還能喚醒不列顛尼亞來幫助我們。否則我們可能會落得跟我兄弟一樣的下場。	draft		p10b-21 draft	
+3611	22	conversation	36807d5742ae714520b37a3c0fbd7fc537cd4fb87b33303abd5e5d603d1186b0	我腦中一片空白。	draft		p10b-21 draft	
+3611	23	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-21 draft; 「其他……」讓玩家輸入答案（talisman(s)，3611:24／25 不翻）	
+3611	26	conversation	8eb6b325cf8c9864b0cf0f61ab38d6777bb5a5aea927e0e2fe71fd09992d6870	不，那不行。也許是別的東西……	draft		p10b-21 draft	
+3611	27	conversation	e072ee86bce0a4d8bc2fb9060002a0fe87ba6ee0dd0dfc70559da6647abf921a	也許你該再多想一想這個問題。不過要想得仔細又快，因為不列顛尼亞的命運危在旦夕！	draft		p10b-21 draft	
+3611	28	conversation	765876a70a273afab4d4dc35e5fca9954df635aa6ce0fc74a77fdbfee562090c	也許某件或某些蘊含美德的物品會有用，要是真有這樣的東西的話。你知道有這樣的物品嗎？	draft		p10b-21 draft	
+3611	29	conversation	62c93a9bc51eab582e38fbd83de619df9224ba22fef2ef2b7e1d0cc5bf29c026	對，當然！那些再好不過了。現在，我們得找個方法釋放它們蘊藏的美德。我們必須找到某種潛藏的力量來源，能藉由聖物的能量釋放出來。	draft		p10b-21 draft	
+3611	30	conversation	b1adb673989aa92c31f5047ada923dc802c400675943cb5219544b8bbfe332a9	我想不出任何合適的東西。	draft		p10b-21 draft	
+3611	31	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-21 draft; 「其他……」讓玩家輸入答案（volcano／lava，3611:32／33 不翻）	
+3611	34	conversation	af556fc1d6440166d7cb912ce5e6988112080830ee723e47db86dc18e7d1c923	不，我們需要的是一個能輕易釋放的巨大力量來源。	draft		p10b-21 draft	
+3611	35	conversation	a545b999ec7d9b380045665c2fda732172efcf80ecf3ae0a0dfc7c1709efc32b	嗯，希望你能盡快解決這個問題，因為不列顛尼亞本身的命運就懸於一線！	draft		p10b-21 draft	
+3611	36	conversation	d243e50ec34b48cd06ef07d777940af75fea0034632098b1c04010306bde7d96	也許某個蘊藏著能釋放巨大力量的自然地標，能派上用場。	draft		p10b-21 draft	
+3611	37	conversation	50ffd59092c7bf53ff2d7990cc1585521aefb5056f8d673cab317aec9fc9a746	對，當然！要是把八件聖物一件一件投進火山口，我就能駕馭那股力量的浪潮打開漩渦。啊，你真是既英勇又睿智！你願意做出這樣的犧牲嗎？	draft		p10b-21 draft	
+3611	38	conversation	f125dfd2f1cb4b57d07470404f4a369441043d3ddb899a31c747078af3f2c198	再想想吧，鬼魂。你不知道我費了多少工夫才拿到它們！	draft		p10b-21 draft	
+3611	39	conversation	8d485a4a3b961cb5ec69538bac8400f01dc515e84a3c07f7fb142e348050a215	好，雖然失去這些寶物讓我非常心痛。	draft		p10b-21 draft	
+3611	40	conversation	7ec99f80623c245f611191f62a728d9dfb15a216ac6add1189f0ce37fc2bb13a	可是你非這麼做不可！你的犧牲將拯救整個世界！你總不能把你自己的辛勞和成就，跟這麼大的賭注相提並論吧！	draft		p10b-21 draft	
+3611	41	conversation	3d1de01685dd81213fb7b4a7c3c3c8ba450351f22717b2b4ee5af1c7092a628b	好吧，你說得對。我會去做！	draft		p10b-21 draft	
+3611	42	conversation	3e03b35737a0e90e43abc5b842c65e7cddd2a1e15633fc0981101d1cb11353f2	我會考慮考慮。	draft		p10b-21 draft	
+3611	43	conversation	bff405e652b7df285432083282dda891ef6ef736e1b831d88ef460cc80688091	太好了！快去最深的地方，你必須把八件聖物全都投進深淵——一件也不能留，否則後果自負！當它們被大地本身的火焰吞噬，我就會駕馭那股洪流，把我的門開到最大。要是命運眷顧，我們就能讓我們的敵人尖叫著滾回它的地獄！	draft		p10b-21 draft; authority-ok:Haste（Make haste 是趕快，不是法術）	
+3611	44	conversation	6c83a10f5bc88508d02411a1d776a82bbbad1904b90d77a309d9b6fb39daaa43	我要從哪裡進入火山？	draft		p10b-21 draft	
+3611	45	conversation	450044b7d1b05d1f983398f4bc8a8ae87b4a9290bf59b256c427eefca875020a	好！到那裡等我！	draft		p10b-21 draft	
+3611	46	conversation	3de171c61ec30bcee87bf8a14f0a9e83743dc3abfafcff230066989c88e7963e	美德之室位於深淵的最底層。它就在火山的正中心，冥河深淵的能量場在那裡最強。據說要進去需要一把特殊的三合一鑰匙，不過我不知道這個傳說是真是假。	draft		p10b-21 draft	
+3611	47	conversation	aaf6d028290ff5747a96d23a4d2e089d06a8a4363ded5939738d8546ccea8b6e	我會設法到那裡去。	draft		p10b-21 draft	
+3611	48	conversation	b76e1292c7242433478f67c26b4d53d86cabd4a555d3b19f03782f66f503d74d	快！沒有時間可以浪費了！	draft		p10b-21 draft	
+3611	50	conversation	5ead3e1d7b9bd2590b694ea2303f142f6722f6d07db45f9b6f1cbbacd4ae1227	怎樣？你找到能釋放凱布勒斯聖物力量的能量來源了嗎？	draft		p10b-21 draft	
+3611	51	conversation	7a464b08d2654ffb1284a877bb3d1ff86e2f45c0882168d56bfab05cb51671dc	怎樣？你想到一個純淨的力量與美德之源，能給我所需的魔法能量了嗎？	draft		p10b-21 draft	
 3612	1	conversation	f6a8e7d227e8738408e5cac5d5316c46a7f9680944d2a5350651ac7a91e5f5de	冒險者	draft		p10b-6 draft	
 3612	2	conversation	553c7d8088fbcae96a98d8c384975048c4f1d43cfc8d872dccb4f1430a208330	你好。我叫札克。你叫什麼？	draft		p10b-6 draft	
 3612	4	conversation	c41b50d068ed1fa47f0b7284b2e87d038fe62ab9448fcb04a3bd4826e6f0266f	不關你的事。	draft		p10b-6 draft	
@@ -3405,6 +3451,45 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3769	36	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
 3769	37	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
 3769	38	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3770	1	conversation	8b6e03a963c4a26143e6a39a496eae623c2e6f923ad1244cb7105b80a33d2f9d	你好，冒險者。我想你大概幫不了我吧。	draft		p10b-21 draft	
+3770	2	conversation	b3cc7c053d85aad734193875e4eb01ba4c87646cc503f39f0e9e00e80e675405	嗯，你有什麼問題？	draft		p10b-21 draft	
+3770	3	conversation	6e1643ee0107a3003befd61f685e073c8b4ca41b39e510978585f78f20a3eb0f	不，我大概幫不了。	draft		p10b-21 draft	
+3770	4	conversation	ef8287bca2e53cd51341a05d8210fa722fa3c62c1f769849456db34890cf25e0	我失去了飄浮的能力，再也沒辦法輕鬆越過熔岩了。我需要越過一些熔岩，現在唯一幫得上我的，就是一雙龍皮靴。你能幫我嗎？	draft		p10b-21 draft; authority-ok:Levitate（the ability to levitate 是飄浮能力，不是法術名）	
+3770	5	conversation	033ab56a5494484bc837522ce0c00aa96c6878313424b640cc4629b2af13dd1e	當然，給你。	draft		p10b-21 draft	
+3770	6	conversation	aa8dda72290910d27221bf02d9484ed174bf2a1d9390f632c634e95f8b0cbd8f	抱歉，我幫不了你。	draft		p10b-21 draft	
+3770	7	conversation	ddfc6418976193e0b79c1129c4882d1b18c69c4fe776022becd724dfcac90e63	我不知道你在說什麼。	draft		p10b-21 draft	
+3770	8	conversation	423acf4970a64d55d612c069687dcf94d8005f9ebaa05ffd8f55d63173970c6f	非常感謝你！	draft		p10b-21 draft	
+3770	9	conversation	0b446f2dbc9d4703b016a8b95f5ea4d0464e595cc34f8660da328316eb27118c	抱歉，那些在我看來不像龍皮靴。	draft		p10b-21 draft	
+3770	10	conversation	49c7b1b7fbf61a770b18e13c0d366234d202d387bbd1928aa2a8778f018b9f08	喔，在這裡。	draft		p10b-21 draft	
+3770	11	conversation	c93d8b0a09cb01ae858a882f4f56eef2dba03c6f47e69a225b525ad223d27986	抱歉，我沒有。	draft		p10b-21 draft	
+3770	12	conversation	68f9f650bd4c2a949a2ec2f6abb4b932e7f31ddb21af07c7318a288e02ef35e8	真可惜。我真的很需要一雙。	draft		p10b-21 draft	
+3770	13	conversation	39d9dea2c523b03d35c202d090a5475490b86b3172fe3baf332f0bb7394fc647	據說穿上龍皮靴，走在熔岩上也不會痛。你有多的一雙可以給我嗎？	draft		p10b-21 draft	
+3770	14	conversation	a3ea7e797f645088fb5e85f6e0e070273a42ee02a04e03d163f9699fbf55f735	有，在這裡。	draft		p10b-21 draft	
+3770	15	conversation	8006f9897afd4b1417222b81378f11c903c5d22cdeca02d4deed109438cd456c	不，抱歉。	draft		p10b-21 draft	
+3770	16	conversation	5994f685b518cf2477df732cc6ad711cba57b2e45ab3a260a621473f9dc5a1bb	又見面了！再次衷心感謝你的靴子！祝你旅途順利。	draft		p10b-21 draft	
+3770	17	conversation	f106b3ee0a9cd0c7f9573b2d9689397de47ce307b352d4df060491544a30ffb5	謝謝你的祝福。	draft		p10b-21 draft	
+3770	18	conversation	6a758c960c599b8c0577c3a8d3b5723b8453c42cb83954cc5e58019edf0dc070	不客氣，不過現在我自己需要那雙靴子。	draft		p10b-21 draft	
+3770	20	conversation	3a98fcdc1f75b116d3370b3ff36ec85d9fe57351ae9cde2c8a54b62ce92fec09	你想找的是什麼幫助來著？	draft		p10b-21 draft	
+3770	21	conversation	e9718af5b1727f441ececb3aa1980d0b5251efd64ff791c8b651745cf92a8e43	有，這是你要找的靴子。	draft		p10b-21 draft	
+3770	22	conversation	0366ca1154962eca5e3dcc30fe96529b2559d7b3e9b7af2e5f6a6dc7d3ee055c	不，我還是幫不了。	draft		p10b-21 draft	
+3770	23	conversation	d1ca47c59f003d66cb77ac791d74b6d7633dcbd0c9e426996a602dcd0172f8d8	可是我還需要它們！等我用完了就還給你。	draft		p10b-21 draft	
+3770	24	conversation	eeb30bc5aecdf0ad89ca3621aad2cf20ad8d582d2043be9fb405330d99952ca3	好吧。	draft		p10b-21 draft	
+3770	25	conversation	8a34e20ddb8d2cce9f4f4bccb4c2eedd7ff9ddb181bf25c375a68bc7d1297b34	你要用多久？	draft		p10b-21 draft	
+3770	26	conversation	5be7799aa655cf581774c64e86dfc0d4146998ecf115ce1c144e646f4b711b3f	不會超過兩三個月。再次謝謝你！	draft		p10b-21 draft	
+3770	27	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	28	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	29	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	30	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	31	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	32	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	33	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	34	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	35	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	36	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	37	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	38	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	39	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3770	40	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
 3771	1	conversation	91f8ee17ad4ed4053884c0c5ca0c417fd024a9b302c4071183ba6400e684f423	你好，冒險者。你見過我的朋友古爾斯坦嗎？	draft		p10b-13 draft	
 3771	2	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	見過。	draft		p10b-13 draft	
 3771	3	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	沒見過。	draft		p10b-13 draft	
@@ -4534,6 +4619,50 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3816	49	conversation	be793c24f51ab65d82be4cd571570a9ade5da8431767c40aa7e1dbb9fdfc18f4	你能告訴我通往惡魔的那扇門的鑰匙在哪裡嗎？	draft		p10b-19 draft	
 3816	50	conversation	4fdb332b6eb3323e1103054bb099ccf99039f01a6c2e54197f8243a82a7e68ce	我有些食物要給你。	draft		p10b-19 draft	
 3816	51	conversation	eda163da4601edb62b9a7097931ea312e61af4e36c8ebdf2e09dad34bf3480e0	很高興再見到你，不過暫時再會了。	draft		p10b-19 draft	
+3860	3	conversation	5689e95272faa25d96de2c0cbc4df4eb48a91e4f75e28042e17c0aeff00d3765	我在找一個被綁架的女孩。	draft		p10b-21 draft	
+3860	4	conversation	7554bf7417361099f52fc58fcb49b9b850148ca2557df0da516a5255bd4c5d18	我的任務是剷除深淵裡的邪惡。	draft		p10b-21 draft	
+3860	5	conversation	4b122cc87fb7ab463d9ae364884db4def7a9d2f55ad94cc90e5ec4ef77ab434c	我在打聽消息。	draft		p10b-21 draft	
+3860	6	conversation	70ddcd3445fce25ea9cca488d47c89868754456f146001df9dcde3b8a9a40bdc	我想跟你以物易物。	draft		p10b-21 draft	
+3860	7	conversation	b64db396ced7b8d4d7def553c6a8c7aea089a2aabe24ea74cd201089b7f8b88c	很糟糕，對吧？我聽說有個洞穴巨人把她帶到下面去了。希望你一切順利。我們上面這裡自己的麻煩已經夠多了。	draft		p10b-21 draft	
+3860	8	conversation	96ae13ec94376ac0a135465ebb7eedb148a3555f85ab485fb23d91f527545786	什麼麻煩？	draft		p10b-21 draft	
+3860	9	conversation	4ef66c1c8b77fac901c084723353b6bb3de404ede75fb1efeef4849dd1a7af36	你有什麼辦法能幫我嗎？	draft		p10b-21 draft	
+3860	10	conversation	ac7cff20bab7d0b05be766e8348c8f993b1cc751fa6e6b3a8dac671e915b5c48	你想交換物品嗎？	draft		p10b-21 draft	
+3860	11	conversation	6db341c529e5872f0dc046e09e4c0277845c0d083df047d59bcdef8241c0e9ca	謝謝你撥空。	draft		p10b-21 draft	
+3860	12	conversation	b95614833ccb4dbb45f1ae08307238d4714beadd718cd20ebb7206a1ac96c0ad	也許你能幫我們。我們東南邊的礦坑被一頭可怕的野獸入侵了，牠飄在半空中，長著好多觸手。要是你能打敗牠，所有山岳族都會永遠感激你。	draft		p10b-21 draft	
+3860	13	conversation	fd9388dbc5be4579eeb0a19a0df28eaf5d4ec70873c2a2518ba028bdc6454a38	我這就去殺了牠。再會。	draft		p10b-21 draft	
+3860	14	conversation	c53287059a5e7f7781b68e4b8708ebfefb1ff7dd8f427fe2897a907b5bdbcc29	那你聽說過被綁架的女孩的事嗎？	draft		p10b-21 draft	
+3860	15	conversation	43d97e65e09f7cfc6b6cb7f14f12369cb559333bca06efbce234af215d27df20	你們有誰能幫我完成這件事嗎？	draft		p10b-21 draft	
+3860	16	conversation	b4ea6cae07ade40bde25c9a816ed3f7eb8d3e04381d5ad18f8ee63b9e24a3e2c	我想先跟你交易。	draft		p10b-21 draft	
+3860	17	conversation	859e2392dbf28412ef2cd09f8528a721d01a37e67fd0079c96895c8f928c2187	嗯，你殺了那頭討厭的野獸，我們就少了一個麻煩。那可真是英勇之舉。你要是需要我們幫忙，儘管說一聲。	draft		p10b-21 draft	
+3860	18	conversation	16d96f9609deb7c1609f5a85a61e516ec4963379419c8c3471e62f6806411e14	你有那個被綁架女孩的消息嗎？	draft		p10b-21 draft	
+3860	19	conversation	395471928c151f75943088673e3e0b581a2f2da43e753c5cdb6b9cdb0b39d0b1	我想打聽一些一般的消息。	draft		p10b-21 draft	
+3860	20	conversation	5b71a389a66d1d21c0b03008d51a745b214aa0df41775006f7fa4b3fe3593ce9	也許我們可以互相交易。	draft		p10b-21 draft	
+3860	21	conversation	bf45554ecf57903332c4bd6d15a94f186e98e7cb93b248d70616b3944be0362a	謝謝你的好意，再會。	draft		p10b-21 draft	
+3860	22	conversation	aff4a03411a7832748c2c99d506fda7c041563cdd1ca5abce3c307f365b29bcc	啊，你要找的可能是夏克。他是個鐵匠，懂得他那一行和這世界的種種門道。你要是想得到貪金王的青睞，也該去找他。	draft		p10b-21 draft; authority-ok:King（King Goldthirst 譯「貪金王」，名稱已含「王」）	
+3860	23	conversation	52a681b1e56db8213342b49ca55f9ec81d3188f8ecc3ff7e6ac20dc50f62a513	也許他們之中有人知道被綁架女孩的事。	draft		p10b-21 draft	
+3860	24	conversation	3b0cb44e2fc8f5005d068c20acdc3483669ca2b1a0cd8994055d7b27ca76ff3d	我也許能提供我的服務作為回報。	draft		p10b-21 draft	
+3860	25	conversation	c7fa7b04870d914df06ea0e7b2f9fc89cc03354a3e4ad09578e6ccaed54a9ba5	我們先交易一些物品吧？	draft		p10b-21 draft	
+3860	26	conversation	def9f43f52a80b8922b212b6795f7f509a74ed838d84745fd0c7db343df5d825	我會的。謝謝你。	draft		p10b-21 draft	
+3860	27	conversation	3a735820a9dbfd1b1b434835d3df90c013775546552773658877fb6bbf236955	好吧，讓我看看你有什麼。	draft		p10b-21 draft	
+3860	28	conversation	632a6676d70cba10dc65a07bd63d4d14f074ac771fbc2851e055fe4163719ea7	再見，祝你好運。	draft		p10b-21 draft	
+3860	29	conversation	e957ba075c78ec5a4b39cf6373e3c23e0115677a1f5b2db4cef886394bcc7ca7	你想交換物品嗎？	draft		p10b-21 draft	
+3860	30	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	想。	draft		p10b-21 draft	
+3860	31	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不想。	draft		p10b-21 draft	
+3860	32	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3860	33	conversation	5475b2b30073765fe31df2e60b665c3549aa779cf83d32ddf08817b93d5fcf4e	我要你把這些東西交給我。	draft		p10b-21 draft	
+3860	34	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3860	35	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3860	36	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3860	37	conversation	7d57f5dc898294359ad4ad02a1abed0611398c201221d3c83bbe65e955502440	我接受你的出價。	draft		p10b-21 draft	
+3860	38	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3860	39	conversation	aac6c49f6aadeb951039206b2021577728bff4fb97ec97edf5626e28b32ae1fc	你當我是傻瓜嗎？	draft		p10b-21 draft	
+3860	40	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3860	41	conversation	c040cb4d091ed6e58d6e75a34d97605cd2592aca97075783b88e82af85fdd0ed	你在跟我開玩笑嗎？	draft		p10b-21 draft	
+3860	42	conversation	457399ab75bcf193107d681f994117fbab33da7df2a2e499ccc0e755a9f454ea	你是打算搶劫我嗎？	draft		p10b-21 draft	
+3860	43	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3860	44	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3860	45	conversation	c2b82f4132914c1cc57cac6604351e5a2dd445db9eb2f6b41e375e356424a22f	既然你堅持，就拿去吧。	draft		p10b-21 draft	
+3860	46	conversation	9add31c433beebb81a3945bb87f0fca9f05d88df58f35125e05e534066761063	不！你休想拿走！	draft		p10b-21 draft	
 3861	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
 3861	2	conversation	ab041c218cb0a6d3a5e38217849c0262eed6da2b1c34ae8f2421beab5b7f5d43	也向你 Bica。	draft		p10b-20 draft	
 3861	3	conversation	fc3e13cccee30f1f06ee92bd0ea637796978cfba24630720dbec459c3e98a4b1	你好，蜥蜴人。	draft		p10b-20 draft	
@@ -4600,6 +4729,50 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3861	64	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3861	65	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
 3861	66	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3862	3	conversation	5689e95272faa25d96de2c0cbc4df4eb48a91e4f75e28042e17c0aeff00d3765	我在找一個被綁架的女孩。	draft		p10b-21 draft	
+3862	4	conversation	7554bf7417361099f52fc58fcb49b9b850148ca2557df0da516a5255bd4c5d18	我的任務是剷除深淵裡的邪惡。	draft		p10b-21 draft	
+3862	5	conversation	4b122cc87fb7ab463d9ae364884db4def7a9d2f55ad94cc90e5ec4ef77ab434c	我在打聽消息。	draft		p10b-21 draft	
+3862	6	conversation	70ddcd3445fce25ea9cca488d47c89868754456f146001df9dcde3b8a9a40bdc	我想跟你以物易物。	draft		p10b-21 draft	
+3862	7	conversation	b64db396ced7b8d4d7def553c6a8c7aea089a2aabe24ea74cd201089b7f8b88c	很糟糕，對吧？我聽說有個洞穴巨人把她帶到下面去了。希望你一切順利。我們上面這裡自己的麻煩已經夠多了。	draft		p10b-21 draft	
+3862	8	conversation	96ae13ec94376ac0a135465ebb7eedb148a3555f85ab485fb23d91f527545786	什麼麻煩？	draft		p10b-21 draft	
+3862	9	conversation	4ef66c1c8b77fac901c084723353b6bb3de404ede75fb1efeef4849dd1a7af36	你有什麼辦法能幫我嗎？	draft		p10b-21 draft	
+3862	10	conversation	ac7cff20bab7d0b05be766e8348c8f993b1cc751fa6e6b3a8dac671e915b5c48	你想交換物品嗎？	draft		p10b-21 draft	
+3862	11	conversation	6db341c529e5872f0dc046e09e4c0277845c0d083df047d59bcdef8241c0e9ca	謝謝你撥空。	draft		p10b-21 draft	
+3862	12	conversation	b95614833ccb4dbb45f1ae08307238d4714beadd718cd20ebb7206a1ac96c0ad	也許你能幫我們。我們東南邊的礦坑被一頭可怕的野獸入侵了，牠飄在半空中，長著好多觸手。要是你能打敗牠，所有山岳族都會永遠感激你。	draft		p10b-21 draft	
+3862	13	conversation	fd9388dbc5be4579eeb0a19a0df28eaf5d4ec70873c2a2518ba028bdc6454a38	我這就去殺了牠。再會。	draft		p10b-21 draft	
+3862	14	conversation	c53287059a5e7f7781b68e4b8708ebfefb1ff7dd8f427fe2897a907b5bdbcc29	那你聽說過被綁架的女孩的事嗎？	draft		p10b-21 draft	
+3862	15	conversation	43d97e65e09f7cfc6b6cb7f14f12369cb559333bca06efbce234af215d27df20	你們有誰能幫我完成這件事嗎？	draft		p10b-21 draft	
+3862	16	conversation	b4ea6cae07ade40bde25c9a816ed3f7eb8d3e04381d5ad18f8ee63b9e24a3e2c	我想先跟你交易。	draft		p10b-21 draft	
+3862	17	conversation	859e2392dbf28412ef2cd09f8528a721d01a37e67fd0079c96895c8f928c2187	嗯，你殺了那頭討厭的野獸，我們就少了一個麻煩。那可真是英勇之舉。你要是需要我們幫忙，儘管說一聲。	draft		p10b-21 draft	
+3862	18	conversation	16d96f9609deb7c1609f5a85a61e516ec4963379419c8c3471e62f6806411e14	你有那個被綁架女孩的消息嗎？	draft		p10b-21 draft	
+3862	19	conversation	395471928c151f75943088673e3e0b581a2f2da43e753c5cdb6b9cdb0b39d0b1	我想打聽一些一般的消息。	draft		p10b-21 draft	
+3862	20	conversation	5b71a389a66d1d21c0b03008d51a745b214aa0df41775006f7fa4b3fe3593ce9	也許我們可以互相交易。	draft		p10b-21 draft	
+3862	21	conversation	bf45554ecf57903332c4bd6d15a94f186e98e7cb93b248d70616b3944be0362a	謝謝你的好意，再會。	draft		p10b-21 draft	
+3862	22	conversation	aff4a03411a7832748c2c99d506fda7c041563cdd1ca5abce3c307f365b29bcc	啊，你要找的可能是夏克。他是個鐵匠，懂得他那一行和這世界的種種門道。你要是想得到貪金王的青睞，也該去找他。	draft		p10b-21 draft; authority-ok:King（King Goldthirst 譯「貪金王」，名稱已含「王」）	
+3862	23	conversation	52a681b1e56db8213342b49ca55f9ec81d3188f8ecc3ff7e6ac20dc50f62a513	也許他們之中有人知道被綁架女孩的事。	draft		p10b-21 draft	
+3862	24	conversation	3b0cb44e2fc8f5005d068c20acdc3483669ca2b1a0cd8994055d7b27ca76ff3d	我也許能提供我的服務作為回報。	draft		p10b-21 draft	
+3862	25	conversation	c7fa7b04870d914df06ea0e7b2f9fc89cc03354a3e4ad09578e6ccaed54a9ba5	我們先交易一些物品吧？	draft		p10b-21 draft	
+3862	26	conversation	def9f43f52a80b8922b212b6795f7f509a74ed838d84745fd0c7db343df5d825	我會的。謝謝你。	draft		p10b-21 draft	
+3862	27	conversation	3a735820a9dbfd1b1b434835d3df90c013775546552773658877fb6bbf236955	好吧，讓我看看你有什麼。	draft		p10b-21 draft	
+3862	28	conversation	632a6676d70cba10dc65a07bd63d4d14f074ac771fbc2851e055fe4163719ea7	再見，祝你好運。	draft		p10b-21 draft	
+3862	29	conversation	e957ba075c78ec5a4b39cf6373e3c23e0115677a1f5b2db4cef886394bcc7ca7	你想交換物品嗎？	draft		p10b-21 draft	
+3862	30	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	想。	draft		p10b-21 draft	
+3862	31	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不想。	draft		p10b-21 draft	
+3862	32	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3862	33	conversation	5475b2b30073765fe31df2e60b665c3549aa779cf83d32ddf08817b93d5fcf4e	我要你把這些東西交給我。	draft		p10b-21 draft	
+3862	34	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3862	35	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3862	36	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3862	37	conversation	7d57f5dc898294359ad4ad02a1abed0611398c201221d3c83bbe65e955502440	我接受你的出價。	draft		p10b-21 draft	
+3862	38	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3862	39	conversation	aac6c49f6aadeb951039206b2021577728bff4fb97ec97edf5626e28b32ae1fc	你當我是傻瓜嗎？	draft		p10b-21 draft	
+3862	40	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3862	41	conversation	c040cb4d091ed6e58d6e75a34d97605cd2592aca97075783b88e82af85fdd0ed	你在跟我開玩笑嗎？	draft		p10b-21 draft	
+3862	42	conversation	457399ab75bcf193107d681f994117fbab33da7df2a2e499ccc0e755a9f454ea	你是打算搶劫我嗎？	draft		p10b-21 draft	
+3862	43	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3862	44	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3862	45	conversation	c2b82f4132914c1cc57cac6604351e5a2dd445db9eb2f6b41e375e356424a22f	既然你堅持，就拿去吧。	draft		p10b-21 draft	
+3862	46	conversation	9add31c433beebb81a3945bb87f0fca9f05d88df58f35125e05e534066761063	不！你休想拿走！	draft		p10b-21 draft	
 3864	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
 3864	2	conversation	ab041c218cb0a6d3a5e38217849c0262eed6da2b1c34ae8f2421beab5b7f5d43	也向你 Bica。	draft		p10b-20 draft	
 3864	3	conversation	fc3e13cccee30f1f06ee92bd0ea637796978cfba24630720dbec459c3e98a4b1	你好，蜥蜴人。	draft		p10b-20 draft	
@@ -4666,3 +4839,89 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3864	64	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3864	65	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
 3864	66	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3865	1	conversation	ed577f55ca3d4bb2b21ed76e8b403923990071877f1c8f6b28fabf96e59d8fd1	陌生人，你好。	draft		p10b-21 draft	
+3865	2	conversation	45e56960ff25163a1259fa3443de49597b546f79fb8d6db62b5b75e26515bd56	朋友，你好！	draft		p10b-21 draft	
+3865	3	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica。	draft		p10b-21 draft	
+3865	4	conversation	fc3e13cccee30f1f06ee92bd0ea637796978cfba24630720dbec459c3e98a4b1	你好，蜥蜴人。	draft		p10b-21 draft	
+3865	5	conversation	5e36249fe866c711d65684fa38315b42973bda05e9a8c756727c3d878866969a	你會說我的語言！	draft		p10b-21 draft	
+3865	6	conversation	08181cc7433f931cdf485ab632bb46909652666c0cca71ba8a31cd1fafeee626	抱歉，我得走了。	draft		p10b-21 draft	
+3865	7	conversation	8dd5344f945d278c40e78e2cbd337ac13e8db43fadda0e28d602a0bd53abaf6a	我能你怎麼幫？	draft		p10b-21 draft	
+3865	8	conversation	abfdfa2da42eddd772bb508b16e86d8a9e3f71e5db498e10b78b79545f50aa77	你們的首領是誰？	draft		p10b-21 draft	
+3865	9	conversation	842380ad9529ac3ab1761afb62a28c6d8ef1284ee629044b8aed07dc9fcd0b57	你想交易嗎？	draft		p10b-21 draft	
+3865	10	conversation	d6b34d7bd5c082db907261e122efd46528354278c3c70aa516f116bd03fc5e55	其他……	draft		p10b-21 draft; 「其他……」讓玩家輸入話題（sword、murgo、barter、trade 不翻）	
+3865	15	conversation	9e1ed15936d145c3aa2a70fe9fb1fa812928613ad5b3b4513490e007033a17da	抱歉。你我幫不了。	draft		p10b-21 draft	
+3865	16	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-21 draft	
+3865	17	conversation	7b3eb8e68e986d3bfcfd5bb29d3631e9918f3e766d154b9b5173c27e1811fd5d	是。不過不太好。	draft		p10b-21 draft	
+3865	18	conversation	5a532e2de102df93498c959095484d22c118828de53c8a6795325eb57871b3ea	伊斯利克你在找。在我們住處的東邊找。	draft		p10b-21 draft	
+3865	19	conversation	e999f54b5d00de4dd8c9e0eba8c22a84e15e9c79e689efae1ae64ff19a63e3f2	謝謝你。我現在得走了。	draft		p10b-21 draft	
+3865	20	conversation	463359b3915f0aefeb99782eec9de6bdc141fa92b72174bed81fb7e0de8e8dc9	等等。那……呢？	draft		p10b-21 draft	
+3865	21	conversation	a8e6c1cb496449009a12a944f4def8fee1fd4fbe017531690a1a29109c3d6b24	這個我知道很少。不過，我們的首領知道得多。	draft		p10b-21 draft	
+3865	22	conversation	485295171454be8e1f040ef8afa2d13f977a16368ff0ff76bff0d9cf3bda6b97	謝謝你。我現在得走了。	draft		p10b-21 draft	
+3865	23	conversation	ee42ccbda03983072eecd0b72cc08425b6ca88067e9baa6d477782589ed4a108	你們的首領？那是誰？	draft		p10b-21 draft	
+3865	24	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-21 draft; 「其他……」讓玩家輸入話題（sword、murgo、barter、trade 不翻）	
+3865	25	conversation	0e4884b9746feb0c8271777ee72e653e7885bfaa0a0c9d8fb1904b0f60e02d09	綠的那些把他關著，我相信。去那裡問。	draft		p10b-21 draft	
+3865	26	conversation	0851ea0a9519910645c39a2f8f44d8919dd1dbc644dde11786fa5bc70c7e5bf8	喔！謝謝你！再見。	draft		p10b-21 draft	
+3865	27	conversation	a4d93c485cf1815ab3c70852a106e5a04a38dab5e1a867587c8bb23b4ba8892e	謝謝你！你想交易嗎？	draft		p10b-21 draft	
+3865	28	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-21 draft; 「其他……」讓玩家輸入話題（sword、murgo、barter、trade 不翻）	
+3865	29	conversation	82bdfaca6097d982db3a625e24bc48653784594015032908e5ad3f9b179aa687	你說蜥蜴人的語言。非常好。很多蜥蜴人會當你的朋友！	draft		p10b-21 draft	
+3865	30	conversation	9baa436ab278b84d11dc3ee1786c824e9f6dc589f1afae091d5063c8d4eb2ebf	謝謝你。我盡力而為。	draft		p10b-21 draft	
+3865	31	conversation	485295171454be8e1f040ef8afa2d13f977a16368ff0ff76bff0d9cf3bda6b97	謝謝你。我現在得走了。	draft		p10b-21 draft	
+3865	32	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?	draft		p10b-21 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3865	33	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-21 draft	
+3865	34	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-21 draft	
+3865	35	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3865	36	conversation	5475b2b30073765fe31df2e60b665c3549aa779cf83d32ddf08817b93d5fcf4e	我要你把這些東西交給我。	draft		p10b-21 draft	
+3865	37	conversation	1ed33b3a7d1da6b4d57aa5751e098b9407fd8d9ed65b6e141569221c4b477ee1	我得考慮一下這個出價。	draft		p10b-21 draft	
+3865	38	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3865	39	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
+3865	40	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-21 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3865	41	conversation	ac324dcd5dde7dfae18a74b36ce4ba5f980bc678c6e90ba2147c2c44c5c47c47	'Click.	draft		p10b-21 draft; 蜥蜴人語，保留原文	
+3865	42	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-21 draft; 蜥蜴人語，保留原文	
+3865	43	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.	draft		p10b-21 draft; 蜥蜴人語，保留原文	
+3865	44	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?	draft		p10b-21 draft; 蜥蜴人語，保留原文	
+3865	45	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?	draft		p10b-21 draft; 蜥蜴人語，保留原文	
+3865	46	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-21 draft	
+3865	47	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-21 draft	
+3865	48	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-21 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3865	49	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-21 draft; 蜥蜴人語，保留原文	
+3866	1	conversation	779a36d52ba9f11823af8a8a5d5a32cdc736b2c4c3829dfa96fadcb9bf594f50	喲，又一個同伴被深淵抓來了！你犯了什麼罪，說來聽聽？	draft		p10b-21 draft	
+3866	2	conversation	a9858cd1d94507f04c316fa381376d6bac3eb5799bed58b2fc713816a9a8e39e	我沒有犯罪。	draft		p10b-21 draft	
+3866	3	conversation	74109fee1d82b789b52bdd00a04cdf6f2eb53ac44a59cf5e804ccfd91c4fe4b2	我一直住在這裡，是個安分的漁夫。	draft		p10b-21 draft	
+3866	4	conversation	3fb3f65d773256b2fa7354824bc07cb301c65451943f079807281eeb71588cb3	我被指控綁架一個女孩。	draft		p10b-21 draft	
+3866	5	conversation	8d2953762d8912db56831fa9c79db6a918885ae4a86391ff76cc898a1911891b	嗯，也許就是我聽說被一個洞穴巨人扛著穿過這些上層洞穴的那個女孩。	draft		p10b-21 draft	
+3866	6	conversation	2079b75222c6b2dc517fabffe8d4c50ceb953db87176f057fab2fdd4a2c36b41	對，一定就是她！	draft		p10b-21 draft	
+3866	7	conversation	6b54ae4d68f6f49b91af6e7c48f40fe1d66baf79cb1cc5ab1df8b1f66e469c7e	也許是別人。	draft		p10b-21 draft	
+3866	8	conversation	6c3a7287f2fe7c2c3be064429672df55af6b6f4749780beebb899bfd1ae06339	他把她帶到哪裡去了？	draft		p10b-21 draft	
+3866	9	conversation	504e1f9dcf028d1592ac6f39fab6fd9a869fc9133026984b4215eccff192b9eb	嗯，不管她是誰，她已經不在這裡了。我不知道那個洞穴巨人打算把她帶多遠，不過以洞穴巨人的力氣，他短時間內大概不會累。	draft		p10b-21 draft	
+3866	10	conversation	c7d61c1fb6dfa551cf7b4385885f1cd6383be6dea176b0fd89b33af634d99a97	我得馬上出發！	draft		p10b-21 draft	
+3866	11	conversation	13e4702732db31dd99be46933a99531995c11706c3d8b4c4e5cd40a67335cf59	那就沒希望救她了。	draft		p10b-21 draft	
+3866	12	conversation	1d4632aa529323c10d56634f52b054fde432146171ed58e657c8ca5daa87b8cb	等一下。那個女孩確實有麻煩，不過你要是先學會深淵的生存之道，救她的機會一定會大一些。	draft		p10b-21 draft	
+3866	13	conversation	28fde32b2e46a2a01c8c0b230040e78cacfc6ac091b3df55b7a51ac77b0a649c	那關於深淵，我該知道些什麼？	draft		p10b-21 draft	
+3866	14	conversation	4653fa09dafe67e2469a477c9456a2999757767a0ebba56b4824d794c860f57e	告訴我哪些地方該避開就好。	draft		p10b-21 draft	
+3866	15	conversation	c7b0399e9bb5ec3ecfb8101ea3fb95e82c186f1129bb99081e040d42c06cbd68	嗯，你該知道深淵的居民大多不友善。與其說哪些地方要避開，不如說哪些地方比較安全。\n 留意凱布勒斯的旗幟——一幅繡著聖符的掛毯，像我們這裡這幅一樣——那是文明的標誌。在旗幟後面遇到的人或生物，比較可能跟你說話，而不是把你吃掉。\n 說到聖符，你最好也去找找它代表的另一樣東西：神殿。	draft		p10b-21 draft	
+3866	16	conversation	2fe679c925a5c609c72921e7c723e490e47b4981710333e42cc4e6684fcf91c2	它們有什麼用處？	draft		p10b-21 draft	
+3866	17	conversation	a11dadeec5a761266596ab9b6978dd8db7c10fd409bac6c19646809da0896677	我要去哪裡找它們？	draft		p10b-21 draft	
+3866	18	conversation	741684eb4520b58df3352ba046d194264ff237f0c23e99c126c895175b13aba6	當你看到一個立在地上、樸素的大聖符，你就找到了一座美德神殿。\n 據說，要是你一直行事有德，又專心提升自己的能力，在神殿念出正確的祈禱語，就能增強你的能力。\n 據說這些上層洞穴的東南區有一座，不過我自己沒見過。	draft		p10b-21 draft	
+3866	19	conversation	b9827b9f54ef0a56f6a998df18baf7e440877cb79a1d4897aa7356d2e9e48113	謝謝你提供的消息。	draft		p10b-21 draft	
+3866	20	conversation	aea4e4757a9d625bf76cbd6c0b7a425e3c5fddd30d7a022d3edbccfda6e5849b	我現在得去照你的建議做了。	draft		p10b-21 draft	
+3866	21	conversation	282f598a8b4f830a5b9d8366622dc0b524da545a586374dacd7fe22e2dfe4431	那麼，祝你旅途順利。這裡永遠歡迎你。	draft		p10b-21 draft	
+3866	22	conversation	4cb8c375d2639302d6e9513c6b2e6989a0394c6ae0342dbb92d4849cb686547c	喔，你是無辜的過路人，是吧？也許你是來深淵觀光的？還是你是來做人口普查的？收稅的？嗯？	draft		p10b-21 draft	
+3866	23	conversation	e4465405045a4652af02580b4ff3ba4afcbaf71955c605223d35b89a03215b1d	我被冤枉丟到這裡，想要重獲自由。	draft		p10b-21 draft	
+3866	24	conversation	2876b37424ec6fc64fb4be859d54a9dcbaa87c7fea376ca7fd08993098dc00e6	是啊，我只是來這些洞穴觀光。	draft		p10b-21 draft	
+3866	25	conversation	303602068f89a51185e22babed7b572a8bd8cb977b5ba43d0c6347126f4259ce	我受阿姆瑞克男爵委託來繪製深淵的地圖。	draft		p10b-21 draft	
+3866	26	conversation	c8be006226ff6fb4da050129b70549c91c144523c1e4ab87cdbdd03763092aef	我看你已經被逼瘋了。真可惜，這麼年輕就失了神智。唉，死大概是你最好的指望了。祝你好運。	draft		p10b-21 draft	
+3866	27	conversation	38ad8b34d9ea6288354627ca7d17424966715e825fb22303a11b184652bc7707	你說你是被硬丟到這裡，我信，可是說冤枉就是另一回事了。不過在我們之間不用裝。我們沒一個人相信阿姆瑞克那套小家子氣的公正。\n  既然你來了，就該跟我們待在一起。外面那些生物比阿姆瑞克能對你做的任何事都可怕得多。這裡靠近門的地方最安全。相信我。	draft		p10b-21 draft	
+3866	28	conversation	11537a2da9d6154c00518bdbfe31ddf7de5b82f4d571ff074784b19300ef0a2e	外面有什麼那麼可怕？	draft		p10b-21 draft	
+3866	29	conversation	c727625f2ac880739d45a5a563352c3afcd12b32dae310357c8e80ca37a9a5b6	你有到外面去過嗎？	draft		p10b-21 draft	
+3866	30	conversation	224716bfd4bb54f466845e28369e8d2e8fc2752898bc86837f97f7877e330a92	真教人不敢相信。據說從前這裡所有種族都和睦相處。現在可不是了，這是肯定的。這一層的惡鬼仔不停打仗，跟彼此打，也跟其他所有人打。下面還有些東西，我連提都不敢提。\n 傳聞說，深淵大部分有人殖民過的地方，還留著一些文明的殘跡，不過我從來沒有勇氣，也沒興趣去查證。	draft		p10b-21 draft; authority-ok:Courage（courage 是膽量，譯「勇氣」即同）	
+3866	31	conversation	c29d738d18f57cf3659620ce747bfc9c366a7b6bd7c3d78b8225228eb955bce8	我要怎麼找到殘存的文明？	draft		p10b-21 draft	
+3866	32	conversation	99e86a36460c71a321869b93be24fce0daed63ca082a0046c61ab090c1532e39	你對生存有什麼建議嗎？	draft		p10b-21 draft	
+3866	33	conversation	959ef275a8c233c3f123956095b971470a307b0a28d50705960795638361dd53	衷心歡迎你。你決定跟我們待在一起了嗎？	draft		p10b-21 draft	
+3866	34	conversation	a8fb8d397c0f9c349b08dcbf07a8d1ab0312e54f4b0346d0b8ab24db3a5627a0	不，我的命運在別處。	draft		p10b-21 draft	
+3866	35	conversation	770b3743e42790a6fdeedbb9e1f9c237b19635087f3a41d632c32c33bb5961a5	也許待一陣子吧。	draft		p10b-21 draft	
+3866	36	conversation	9c2a737fe9c7776b33e4a3f6cb5e5ab291a677e98a2f841892e4a63c593106b6	聽到這個我很高興。這裡是深淵裡最安全的地方。	draft		p10b-21 draft	
+3866	37	conversation	9e6a901d2813bd446cc8385050e188dfa180fde36c4e39b0a93a6fdc3c06b9df	我想不會，不過你能給我的任何建議我都想聽。	draft		p10b-21 draft	
+3866	38	conversation	d805f15e883e84c6f118d368dfe32a1aa33579527aaf69aed56d99032482281f	你想知道什麼？	draft		p10b-21 draft	
+3866	39	conversation	1054b4f18afc4d16f1b5e98fe4821be020e5c72f6b4f772e8927443c7ff9b5c8	你有被綁架女孩的消息嗎？	draft		p10b-21 draft	
+3866	40	conversation	3b4c8cf764f8790212a50fef915bf616e2fbda9a6b4c75c9a8444f6e6401ad90	這上面的生活是什麼樣子？	draft		p10b-21 draft	
+3866	41	conversation	7c70181ba78125aa0723946323546abe86ae222aeb310d1523ca8682a9b2b3c4	我該避開哪些居民？	draft		p10b-21 draft	
