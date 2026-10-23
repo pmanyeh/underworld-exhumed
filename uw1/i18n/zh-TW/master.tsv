@@ -1075,6 +1075,35 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3594	51	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
 3594	52	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
 3594	53	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3595	1	conversation	65060fa6bac7e9755c898506419b3ff4183629da1c51b382531c019c4b5824f9	你好。我是索爾森。	draft		p10b-22 draft	
+3595	2	conversation	6d213fd68d704bfa6504399874427b8a6562568d139fb4488f2436ba2f8ac610	幸會，索爾森。	draft		p10b-22 draft	
+3595	3	conversation	f01bb2b1a309f992a0c331f994aae7fed9f44566a338704335404e20efad2394	索爾森，你為什麼來煩我？	draft		p10b-22 draft	
+3595	4	conversation	51412d1df601005f88fda2c8fc1b904c6bb60832c6465845311aa191340dfd38	你好。我能為你做什麼？	draft		p10b-22 draft	
+3595	5	conversation	9e8d56c433e04a80101d9bf86d46e5e7d6a48b3ae987e6dfae86c9b8b97c1eb6	確實幸會。你真有禮貌。我能請你幫個忙嗎？	draft		p10b-22 draft	
+3595	6	conversation	e598d3b379d6e33b045cc6954acb10dac89edcde5efb02eee077dbce9a823d3f	儘管說，我一定答應。	draft		p10b-22 draft	
+3595	7	conversation	f8cdc7339cf967147b1762596afba67139bdb4d258e7e89940de4540f4fd521c	只要在我能力範圍內，又不違背我的誓言。	draft		p10b-22 draft	
+3595	8	conversation	f56ee4b1f7939e0bfcfb17e66eaae16ae4a513b4db9a9b2d587cb0bbf753a587	不。我太忙了，沒空幫你。	draft		p10b-22 draft	
+3595	9	conversation	c5e12286b3c9ec6076e5b7bcefc9dffde74c86a8221fa27698728674cf06127c	什麼忙都可以？	draft		p10b-22 draft	
+3595	10	conversation	404cba15a4acdcfea85caa97d009b1042d20f0967c26f9a1abf59aecbeddf9bd	當然。	draft		p10b-22 draft	
+3595	11	conversation	f8cdc7339cf967147b1762596afba67139bdb4d258e7e89940de4540f4fd521c	只要在我能力範圍內，又不違背我的誓言。	draft		p10b-22 draft	
+3595	12	conversation	5d06426996e25afb47d7a9a3e8ead453be3ee1e8e13c42c32c53938ecce22612	那就殺了我吧，我渴望戰死沙場。	draft		p10b-22 draft	
+3595	13	conversation	b9c96c569c66c13e6e4b7bd17ca1e044856dc1daffee741364609653d8f56c19	我的死期近了，死在床上是受詛咒的死法。你願意跟我打一場，讓我光榮地戰死嗎？	draft		p10b-22 draft	
+3595	14	conversation	7fbca04400612257eacda86ad8225829cde1f0d77ecaf4e1dd7aa536f71a71a6	當然，如果那是你的願望。	draft		p10b-22 draft	
+3595	15	conversation	5438c8b609639422896a08541b2be68a08981fb141992f0b874a1afb223d30f3	不。雖然那是你的意願，我也不能答應。	draft		p10b-22 draft	
+3595	16	conversation	0a8b95a941f525b3826d697b3f79ad2ea84ae373ccc26149abe63e95baaa624f	依我的誓言，我不能隨便殺了你。	draft		p10b-22 draft	
+3595	17	conversation	3a33c3c49938b331be509fe0d98d38651a0f61cead975ce9f451702ee3f964f0	你這個傻瓜！	draft		p10b-22 draft	
+3595	18	conversation	d89705d6b4a07db099c465d836fb989844730c80426d7d73ec77a51731827624	也許你能用別的方式，幫我找到光榮的死法？	draft		p10b-22 draft	
+3595	19	conversation	71c8c31b856757166f1e8bc8f5f75cad46ca4c9b57b73ee9cfae2e283574e3d0	當然。跟著我，你想要多少危險都有。	draft		p10b-22 draft	
+3595	20	conversation	c9e5cce4d9607383c2402c759829e574b8944b3599e9e744641cd19504f3f1c9	從我眼前消失，老糊塗！	draft		p10b-22 draft	
+3595	21	conversation	0013d134f377a5b558920b55a115b80d26fb5ac34a60941503080e1abbde8f3d	不。我實在幫不了你。	draft		p10b-22 draft	
+3595	22	conversation	348c46e2c97a3cd6e0c31a9f31c69b14b0fff9fa4212df753dedf703b99d7c7d	那我就完了！	draft		p10b-22 draft	
+3595	23	conversation	05267f564a60e2d1b4c7dd85d1d1922c1a7db9532b421606d761e58d00724062	你在這裡做什麼？又要來侮辱我嗎？	draft		p10b-22 draft	
+3595	24	conversation	7d4144967d98f04c3f9fa3a3a2d506ac67dfadcfe3f3dcaa2b7cf6782596a645	你重新考慮了嗎？終究願意殺了我嗎？	draft		p10b-22 draft	
+3595	25	conversation	bf08f2863db3c7ddd4b2948fb03a1185a83cda361186006cd347b37785046f5a	什麼事，我的朋友？	draft		p10b-22 draft	
+3595	26	conversation	403a0b37d54a0c2c2846cdea6ea2616404b7d7663524310a4cb4d2e33bf4e30e	只要跟著我，你就能戰死沙場。	draft		p10b-22 draft	
+3595	27	conversation	b708509690638d401db5e149969b56942f4113cd4a45fa8b909147f2c6721eb6	殺你不是我該做的事，老人家。	draft		p10b-22 draft	
+3595	29	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-22 draft	
+3595	30	conversation	d1a937e3216146141734c70b34f843714b53fac28e1de12e5582d8c8347a65cf	好。我會殺了你。	draft		p10b-22 draft	
 3596	1	conversation	1d10506c146d6480d937fe77b0337bc9b4ff97668681910ef3f406fa8a973fb7	\n你好！我是多納・鐵拳，安卡十字騎士團的團長。\\m	draft		p10b-7 draft	control-code
 3596	2	conversation	eb5669fb7c2ea74d3a996520918ff3d2790a402ba0ee9e11f65812e1001ff811	你是誰？	draft		p10b-7 draft	
 3596	4	conversation	7dc3df309b9a3e13c429d98440a5791b5278b52dfef960d0d90efbf9e56db0b0	我是追尋知識的普通旅人。	draft		p10b-7 draft	
@@ -2470,6 +2499,24 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3698	28	conversation	e517e8a6e0b48e05d59fb18dfbff90db2379974ca7fc09be01f67d038218e8eb	Bica。你也是我的朋友。	draft		p10b-6 draft	
 3698	29	conversation	c6779d13f6fb45e8634b394c218b5c7286ae5b9c8a39fff962efbb4055a5e646	'Click thit sstresh. Bica.	draft		p10b-6 draft; 蜥蜴人語，保留原文	
 3698	30	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-6 draft	
+3699	1	conversation	f07c1c46b9951a280cfc30351d7e6776f097b2cadfdaeda5354e5801ec3ff00d	嗨。我叫瘋狂鮑伯。要不要一些破爛？	draft		p10b-22 draft	
+3699	2	conversation	c4e3edaa58e7becbf9035449dfb1058a978a7ba39f29622117480f44b48af294	好。麻煩你。	draft		p10b-22 draft	
+3699	3	conversation	428c7f109e54dac67c84d19233434edbe5b98ab1167db8aa1fd3bd51310cb1fa	不，謝謝。	draft		p10b-22 draft	
+3699	4	conversation	2e25cc8c6bc71f7ea45a4d02973326d901a43b14491a7458d3bac6fe8b5a1086	拿去。	draft		p10b-22 draft	
+3699	5	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	6	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	7	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	8	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	9	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	10	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	11	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	12	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	13	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	14	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	15	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	16	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	17	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3699	18	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3720	1	conversation	4931df48f8ae3b5b959ae914c644a3531e59be0cc6d6e6843d9761816d2e3052	你好，陌生人。是什麼不幸的意外把你帶進深淵的？	draft		p10b-7 draft	
 3720	2	conversation	16a26a4b88717028c7f506ca625691bd5cb016efa37fc4ef030c7c195da9f4ef	我被誣陷犯了綁架案。	draft		p10b-7 draft	
 3720	3	conversation	f99a9de5561b51f4f525471edc497a63173a5cf552a7eb1952c84dd3ee17a180	我想救出一個女孩。	draft		p10b-7 draft	
@@ -4619,6 +4666,138 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3816	49	conversation	be793c24f51ab65d82be4cd571570a9ade5da8431767c40aa7e1dbb9fdfc18f4	你能告訴我通往惡魔的那扇門的鑰匙在哪裡嗎？	draft		p10b-19 draft	
 3816	50	conversation	4fdb332b6eb3323e1103054bb099ccf99039f01a6c2e54197f8243a82a7e68ce	我有些食物要給你。	draft		p10b-19 draft	
 3816	51	conversation	eda163da4601edb62b9a7097931ea312e61af4e36c8ebdf2e09dad34bf3480e0	很高興再見到你，不過暫時再會了。	draft		p10b-19 draft	
+3846	1	conversation	432829e23c6cb95908b183891adb5efeeae81fafdebf2f15c4e5cdafb187b3c0	又是你。你沒更好的事做嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	2	conversation	314ac9d031140e7353f65032463576488799c8ad2daee62a287c12f74b2e9e85	嘿，你不是惡鬼族！你為什麼在這？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	3	conversation	49b188bb81afa4b2a4907caf101067da4151192041fb5f3e81f55882515c2cbf	你能跟我說說惡鬼族嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	4	conversation	f52645d730eaa3eeeb1b42fd469407f19af27a29af2642d295a9b6af24ea4061	你們的首領在哪裡？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	5	conversation	fafdddd00b94b818b5f015846b8ece60822bfb702ad11569d5b3cd1c25a467f9	我想跟你交易。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	6	conversation	5c000937f04db0f3fc38333d387c4f44904c125ef27de4aac65459c785d95fb4	我得上路了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	7	conversation	56df0b0bcfaea837e3f4d7baa0af30158913e8fcfa09784f2a24316d8c243d1d	綠色惡鬼族，對，很好。我們是深淵裡最強最勇敢的。灰色惡鬼族，他們討厭又弱。你不會想跟他們說話。也要小心一些壞惡鬼族，跟我們聚落不一樣。他們穿紅的。好的惡鬼族在有奇怪記號的旗子附近。像我。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	8	conversation	f52645d730eaa3eeeb1b42fd469407f19af27a29af2642d295a9b6af24ea4061	你們的首領在哪裡？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	9	conversation	050735160392614a1b3f764dd78ae99ef81f0c5789203af2f309721018a9cf35	我想跟你交換一些物品。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	10	conversation	129e67594e92d504b2511f9fa0d50e992ff5af7caa33ce5fa763eda9c6f01488	非常感謝你提供的消息。再會。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	11	conversation	7861d3e24b80b1a491ec11b35e622b29e9b5c9b9adfa995c249127bffaf00132	對，維尼克斯，他是國王。也許你想先跟護衛拉努戈說話。他們在西北邊，高高的懸崖小路盡頭。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	12	conversation	9f6a5208e8d457edadd7ec438ad352731ef429e7ee374e5e020be4e3a2c81dea	那你能跟我說說你的族人嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	13	conversation	3ad3359742b7b9983b8c86ffa514de469f8a76a785d61ab54a81aff5a638be56	也許我們可以交換一些貨物。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	14	conversation	758e0872233e2b38851a6b0dda4d7f3154b70742fad3398f725fb55eda2cc7e8	謝謝你。我會去找他。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	15	conversation	a849c117029e451b026da0a63be3d848d36c4a78f65b92d6d6a8d0fc03ba0d10	不，現在不要。也許別的惡鬼族吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	16	conversation	c969875b4e24e1bf0225cd3b6d6a3d37f2e00208d3cdc8519ba6af32d8413bfa	也許。你有什麼？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	17	conversation	2c2367974cda9d6855485ffd5b59484209684aa9f2ac5bde19009edebbf92653	好，再見。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	18	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3846	19	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3846	20	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3846	21	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3846	22	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3846	23	conversation	1a824dd1542f62ff8c93061c43547a2d7a00103a6c67e01e0d59ef330b1c12dd	好，這個我們換。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	24	conversation	2cd12db7d38e83837f81bf2dacb66d2c7727d0333aaa9df1b6b506d0012cbb31	不，我不喜歡。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	25	conversation	9c4d960285c9f8a8892c53572845b7b07f802c01906eca0d2d29581a43040f11	你覺得我很笨？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	26	conversation	2b88c1615a79c370aa648cfd21d92886eb8e496a824e6c6faca1c308df8dce79	我煩了，走開。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	27	conversation	f48e8759c683543dd730a7362c6b80a9c84076373f12d90730e501b1929d68e5	你說話沒道理。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	28	conversation	a4c02fa8ea20d2e6a41c7f6b10f962e0a28f58cfc6ca2f73e2fdf5577f545fdf	你以為你可以就這樣從我這裡拿走？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	29	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3846	30	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3846	31	conversation	a95d744a494b9cb91192e7d0f63ffc25f9cd77b60a28e42c1983613bf16ce8e7	你很不公平。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	32	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從惡鬼族手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	1	conversation	432829e23c6cb95908b183891adb5efeeae81fafdebf2f15c4e5cdafb187b3c0	又是你。你沒更好的事做嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	2	conversation	314ac9d031140e7353f65032463576488799c8ad2daee62a287c12f74b2e9e85	嘿，你不是惡鬼族！你為什麼在這？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	3	conversation	49b188bb81afa4b2a4907caf101067da4151192041fb5f3e81f55882515c2cbf	你能跟我說說惡鬼族嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	4	conversation	f52645d730eaa3eeeb1b42fd469407f19af27a29af2642d295a9b6af24ea4061	你們的首領在哪裡？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	5	conversation	fafdddd00b94b818b5f015846b8ece60822bfb702ad11569d5b3cd1c25a467f9	我想跟你交易。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	6	conversation	5c000937f04db0f3fc38333d387c4f44904c125ef27de4aac65459c785d95fb4	我得上路了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	7	conversation	56df0b0bcfaea837e3f4d7baa0af30158913e8fcfa09784f2a24316d8c243d1d	綠色惡鬼族，對，很好。我們是深淵裡最強最勇敢的。灰色惡鬼族，他們討厭又弱。你不會想跟他們說話。也要小心一些壞惡鬼族，跟我們聚落不一樣。他們穿紅的。好的惡鬼族在有奇怪記號的旗子附近。像我。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	8	conversation	f52645d730eaa3eeeb1b42fd469407f19af27a29af2642d295a9b6af24ea4061	你們的首領在哪裡？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	9	conversation	050735160392614a1b3f764dd78ae99ef81f0c5789203af2f309721018a9cf35	我想跟你交換一些物品。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	10	conversation	129e67594e92d504b2511f9fa0d50e992ff5af7caa33ce5fa763eda9c6f01488	非常感謝你提供的消息。再會。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	11	conversation	7861d3e24b80b1a491ec11b35e622b29e9b5c9b9adfa995c249127bffaf00132	對，維尼克斯，他是國王。也許你想先跟護衛拉努戈說話。他們在西北邊，高高的懸崖小路盡頭。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	12	conversation	9f6a5208e8d457edadd7ec438ad352731ef429e7ee374e5e020be4e3a2c81dea	那你能跟我說說你的族人嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	13	conversation	3ad3359742b7b9983b8c86ffa514de469f8a76a785d61ab54a81aff5a638be56	也許我們可以交換一些貨物。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	14	conversation	758e0872233e2b38851a6b0dda4d7f3154b70742fad3398f725fb55eda2cc7e8	謝謝你。我會去找他。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	15	conversation	a849c117029e451b026da0a63be3d848d36c4a78f65b92d6d6a8d0fc03ba0d10	不，現在不要。也許別的惡鬼族吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	16	conversation	c969875b4e24e1bf0225cd3b6d6a3d37f2e00208d3cdc8519ba6af32d8413bfa	也許。你有什麼？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	17	conversation	2c2367974cda9d6855485ffd5b59484209684aa9f2ac5bde19009edebbf92653	好，再見。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	18	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3847	19	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3847	20	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3847	21	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3847	22	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3847	23	conversation	1a824dd1542f62ff8c93061c43547a2d7a00103a6c67e01e0d59ef330b1c12dd	好，這個我們換。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	24	conversation	2cd12db7d38e83837f81bf2dacb66d2c7727d0333aaa9df1b6b506d0012cbb31	不，我不喜歡。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	25	conversation	9c4d960285c9f8a8892c53572845b7b07f802c01906eca0d2d29581a43040f11	你覺得我很笨？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	26	conversation	2b88c1615a79c370aa648cfd21d92886eb8e496a824e6c6faca1c308df8dce79	我煩了，走開。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	27	conversation	f48e8759c683543dd730a7362c6b80a9c84076373f12d90730e501b1929d68e5	你說話沒道理。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	28	conversation	a4c02fa8ea20d2e6a41c7f6b10f962e0a28f58cfc6ca2f73e2fdf5577f545fdf	你以為你可以就這樣從我這裡拿走？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	29	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3847	30	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3847	31	conversation	a95d744a494b9cb91192e7d0f63ffc25f9cd77b60a28e42c1983613bf16ce8e7	你很不公平。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	32	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從惡鬼族手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	1	conversation	31c4081fc7106b92fdb85d96b6c262b3f6d43d429849d758d3e49e7d80717c2e	哈囉，又是長得好笑的人。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	2	conversation	86261b372337d2675d0b504b01f5c0f5fbfb3e27e185618eca9d350224ca8041	你在這裡有事？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	3	conversation	dd19aebfd258d296ca15abc3604dcef970c06dcb684e9d8d2528aea673fe2d3b	你能跟我說說你的種族，惡鬼族嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	4	conversation	d32cb9565f1aa08be50079d288128dd922c38c1c42f75c98ef7b594287e61838	我在哪裡能找到綠色惡鬼族？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	5	conversation	fafdddd00b94b818b5f015846b8ece60822bfb702ad11569d5b3cd1c25a467f9	我想跟你交易。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	6	conversation	2ad43e0a4893f9c6f7034ef7dfcb67cc991e254a20a526ce73c9cf4f1eb25238	不，我得走了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	7	conversation	af170e9125e96f54c54d56fe6b01c25d49a626518e63edfa19203dfe4ec80d24	灰色惡鬼族，灰色惡鬼族，不是只有惡鬼族。說惡鬼族，也許你連綠色惡鬼族也算進去，噁。你不會想知道他們的事。他們又討厭又野蠻。比人類還醜。跟我們沒關係，沒有，一點也沒有。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	8	conversation	b636607e30e6bb7b6bdbe855832cb659e6be079cb306ce1107e23d0a50e5ddef	好吧，那灰色惡鬼族呢？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	9	conversation	00199ee3991eb5bee2750f22ee1f0b87f69d9369dbd39fa205a342d2260b73f3	那我會盡量避開他們。再會。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	10	conversation	3cbf76a8b8f5b781d489ecaa1d5e09ea51a65e39aea3d0265b75db2104b682b5	啊，對，灰色惡鬼族，好多了。我們是這一帶的統治者。其他人都敬仰我們，人類、綠色惡鬼族，連蜘蛛也是。你要找強大的族群，你來對地方了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	11	conversation	11bc90ac77559843b3570ae28c3ac4941f5c88bfb3f98bf8542573fe6182fe35	也許吧。我會繼續探險。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	12	conversation	f63c3a5c9bf62eb70f09748f2b04cfb79e993bd94d20e484b6ba2f4534fb51c8	你想跟我交換一些物品嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	13	conversation	6db341c529e5872f0dc046e09e4c0277845c0d083df047d59bcdef8241c0e9ca	謝謝你撥空。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	14	conversation	1ce6d94f28d090c781254f77a011538dbaa63aca44f14b3152a1dc29ff655dd1	喔，不，不，不，你不會要綠色惡鬼族。他們邪惡又醜又笨。不，你跟著灰色惡鬼族。我們聰明又強悍。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	15	conversation	1f1db916473ba4e174e3f9e32319d8e45e4a126c7086a5e90453c84fb83a348e	也許吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	16	conversation	577ee384ddc23feb043ba162652d446d58c776a50c76599040abb316d35454a8	我會去拜訪這些綠色惡鬼族，自己判斷。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	17	conversation	1e9682fa4b9fd526ca6a6794eed68415b83a15bf8b2e1475a3a597f925dcaa43	不，我不要你的東西。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	18	conversation	8f9d1f1d48d0a0bd1240c45068261a9af6521ae28d2b776616d33f84dbe390b8	好，你有什麼？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	19	conversation	54eb4537a29ade41e8d54f6e5fda592f2282842b8ce95bce3a4da376ab953977	那就再見。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	20	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3852	21	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3852	22	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3852	23	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3852	24	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3852	25	conversation	1a824dd1542f62ff8c93061c43547a2d7a00103a6c67e01e0d59ef330b1c12dd	好，這個我們換。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	26	conversation	2cd12db7d38e83837f81bf2dacb66d2c7727d0333aaa9df1b6b506d0012cbb31	不，我不喜歡。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	27	conversation	9c4d960285c9f8a8892c53572845b7b07f802c01906eca0d2d29581a43040f11	你覺得我很笨？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	28	conversation	2b88c1615a79c370aa648cfd21d92886eb8e496a824e6c6faca1c308df8dce79	我煩了，走開。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	29	conversation	f48e8759c683543dd730a7362c6b80a9c84076373f12d90730e501b1929d68e5	你說話沒道理。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	30	conversation	a4c02fa8ea20d2e6a41c7f6b10f962e0a28f58cfc6ca2f73e2fdf5577f545fdf	你以為你可以就這樣從我這裡拿走？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	31	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3852	32	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3852	33	conversation	a95d744a494b9cb91192e7d0f63ffc25f9cd77b60a28e42c1983613bf16ce8e7	你很不公平。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	34	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從惡鬼族手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	1	conversation	31c4081fc7106b92fdb85d96b6c262b3f6d43d429849d758d3e49e7d80717c2e	哈囉，又是長得好笑的人。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	2	conversation	86261b372337d2675d0b504b01f5c0f5fbfb3e27e185618eca9d350224ca8041	你在這裡有事？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	3	conversation	dd19aebfd258d296ca15abc3604dcef970c06dcb684e9d8d2528aea673fe2d3b	你能跟我說說你的種族，惡鬼族嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	4	conversation	d32cb9565f1aa08be50079d288128dd922c38c1c42f75c98ef7b594287e61838	我在哪裡能找到綠色惡鬼族？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	5	conversation	fafdddd00b94b818b5f015846b8ece60822bfb702ad11569d5b3cd1c25a467f9	我想跟你交易。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	6	conversation	2ad43e0a4893f9c6f7034ef7dfcb67cc991e254a20a526ce73c9cf4f1eb25238	不，我得走了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	7	conversation	af170e9125e96f54c54d56fe6b01c25d49a626518e63edfa19203dfe4ec80d24	灰色惡鬼族，灰色惡鬼族，不是只有惡鬼族。說惡鬼族，也許你連綠色惡鬼族也算進去，噁。你不會想知道他們的事。他們又討厭又野蠻。比人類還醜。跟我們沒關係，沒有，一點也沒有。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	8	conversation	b636607e30e6bb7b6bdbe855832cb659e6be079cb306ce1107e23d0a50e5ddef	好吧，那灰色惡鬼族呢？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	9	conversation	00199ee3991eb5bee2750f22ee1f0b87f69d9369dbd39fa205a342d2260b73f3	那我會盡量避開他們。再會。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	10	conversation	3cbf76a8b8f5b781d489ecaa1d5e09ea51a65e39aea3d0265b75db2104b682b5	啊，對，灰色惡鬼族，好多了。我們是這一帶的統治者。其他人都敬仰我們，人類、綠色惡鬼族，連蜘蛛也是。你要找強大的族群，你來對地方了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	11	conversation	11bc90ac77559843b3570ae28c3ac4941f5c88bfb3f98bf8542573fe6182fe35	也許吧。我會繼續探險。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	12	conversation	f63c3a5c9bf62eb70f09748f2b04cfb79e993bd94d20e484b6ba2f4534fb51c8	你想跟我交換一些物品嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	13	conversation	6db341c529e5872f0dc046e09e4c0277845c0d083df047d59bcdef8241c0e9ca	謝謝你撥空。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	14	conversation	1ce6d94f28d090c781254f77a011538dbaa63aca44f14b3152a1dc29ff655dd1	喔，不，不，不，你不會要綠色惡鬼族。他們邪惡又醜又笨。不，你跟著灰色惡鬼族。我們聰明又強悍。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	15	conversation	1f1db916473ba4e174e3f9e32319d8e45e4a126c7086a5e90453c84fb83a348e	也許吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	16	conversation	577ee384ddc23feb043ba162652d446d58c776a50c76599040abb316d35454a8	我會去拜訪這些綠色惡鬼族，自己判斷。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	17	conversation	1e9682fa4b9fd526ca6a6794eed68415b83a15bf8b2e1475a3a597f925dcaa43	不，我不要你的東西。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	18	conversation	8f9d1f1d48d0a0bd1240c45068261a9af6521ae28d2b776616d33f84dbe390b8	好，你有什麼？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	19	conversation	54eb4537a29ade41e8d54f6e5fda592f2282842b8ce95bce3a4da376ab953977	那就再見。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	20	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3856	21	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3856	22	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3856	23	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3856	24	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3856	25	conversation	1a824dd1542f62ff8c93061c43547a2d7a00103a6c67e01e0d59ef330b1c12dd	好，這個我們換。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	26	conversation	2cd12db7d38e83837f81bf2dacb66d2c7727d0333aaa9df1b6b506d0012cbb31	不，我不喜歡。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	27	conversation	9c4d960285c9f8a8892c53572845b7b07f802c01906eca0d2d29581a43040f11	你覺得我很笨？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	28	conversation	2b88c1615a79c370aa648cfd21d92886eb8e496a824e6c6faca1c308df8dce79	我煩了，走開。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	29	conversation	f48e8759c683543dd730a7362c6b80a9c84076373f12d90730e501b1929d68e5	你說話沒道理。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	30	conversation	a4c02fa8ea20d2e6a41c7f6b10f962e0a28f58cfc6ca2f73e2fdf5577f545fdf	你以為你可以就這樣從我這裡拿走？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	31	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3856	32	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3856	33	conversation	a95d744a494b9cb91192e7d0f63ffc25f9cd77b60a28e42c1983613bf16ce8e7	你很不公平。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	34	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從惡鬼族手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3860	3	conversation	5689e95272faa25d96de2c0cbc4df4eb48a91e4f75e28042e17c0aeff00d3765	我在找一個被綁架的女孩。	draft		p10b-21 draft	
 3860	4	conversation	7554bf7417361099f52fc58fcb49b9b850148ca2557df0da516a5255bd4c5d18	我的任務是剷除深淵裡的邪惡。	draft		p10b-21 draft	
 3860	5	conversation	4b122cc87fb7ab463d9ae364884db4def7a9d2f55ad94cc90e5ec4ef77ab434c	我在打聽消息。	draft		p10b-21 draft	
@@ -4925,3 +5104,95 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3866	39	conversation	1054b4f18afc4d16f1b5e98fe4821be020e5c72f6b4f772e8927443c7ff9b5c8	你有被綁架女孩的消息嗎？	draft		p10b-21 draft	
 3866	40	conversation	3b4c8cf764f8790212a50fef915bf616e2fbda9a6b4c75c9a8444f6e6401ad90	這上面的生活是什麼樣子？	draft		p10b-21 draft	
 3866	41	conversation	7c70181ba78125aa0723946323546abe86ae222aeb310d1523ca8682a9b2b3c4	我該避開哪些居民？	draft		p10b-21 draft	
+3872	1	conversation	4d8abc6780228940cecfadf28055e7d9dc03fa65da688934ca5a66aa0fa3bc21	你又來？為什麼？	draft		p10b-22 draft	
+3872	2	conversation	5bbb5701487268f7eb943f3d130d47102d3d4bd6d0cc17c2b47b9fc68564ab05	你在這裡幹嘛？	draft		p10b-22 draft	
+3872	3	conversation	7a6912c5a75d499f46810cfb080a9ab90fe1c5c0f40377d35227357c449e461d	你能告訴我什麼消息嗎？	draft		p10b-22 draft	
+3872	4	conversation	ff7aadb2d1f0bf5cbec53b0ac05f39116517d2181d2761a28926a28c034c3a72	我在找洞穴巨人來殺。	draft		p10b-22 draft; authority-ok:troll（trolls to kill 譯「洞穴巨人」即同）	
+3872	5	conversation	04c7618fe589c2fe703b7612a33fa912864501ff5aef2addf4b508b3496c1b4d	我只是在探險。	draft		p10b-22 draft	
+3872	6	conversation	8486d82cd60b1829806a87e07700c51c4822ea1efaec89d5d25943b982c4bdbc	我們交易？	draft		p10b-22 draft	
+3872	7	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	好。	draft		p10b-22 draft	
+3872	8	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不要。	draft		p10b-22 draft	
+3872	9	conversation	a0e15e3a519332a68bea42df2f9a52f7a2c5b1b54acf9cd17d2730387819aecf	我沒有新消息給你。	draft		p10b-22 draft	
+3872	10	conversation	f20a60d6e3ffbe4ebfc8f0600e80bfb5aa54077cba60b91d1b9e7817cba1b80e	我聽說有個洞穴巨人被巫師抓去，當了奴隸。	draft		p10b-22 draft	
+3872	11	conversation	efdcd9d14bfcf4438976e24c28de7cf8ce701a83f55b72616ff5d709dac40a46	我聽說有人在殺洞穴巨人！我抓到，我吃掉！	draft		p10b-22 draft	
+3872	12	conversation	8ab07654d923d607c88554ecef8526757d996fc42a32c9f555bb1a7e70d72124	塞薩爾和他的朋友住在大坑附近。	draft		p10b-22 draft	
+3872	13	conversation	c027c897adbcf7d08b091ac8a601a77c89febd390e791305b33c31f66e0e01c2	有個偷偷摸摸的傢伙偷襲塞薩爾，可是被他丟進坑裡了。	draft		p10b-22 draft	
+3872	14	conversation	fbe239dde2fc7080425a2daf983ca37ee060ddb81bd858b6209b34050100beb6	有一個騎士很壞，他住在北邊。	draft		p10b-22 draft	
+3872	15	conversation	0740d7f1f5da0225362f4cb0a3f75faf66ad8231181224b88bb87117a55058e0	食屍鬼住在我們下面。他們好噁心。	draft		p10b-22 draft	
+3872	16	conversation	8b47aa7bdf40bfd76a741e5df2c6a7a414001abe5a9b15055b2506c1fb1be4dd	你是食物嗎，小不點人類？	draft		p10b-22 draft	
+3872	17	conversation	7d027971ca8d0ffa4d7f85dc5a773600319eaa1ea10c52e790686d42a34e381b	是啊，過來吃吧……	draft		p10b-22 draft	
+3872	18	conversation	5d1e9a239e3f4707284f984aa1fa21cbe8de3e69bb4a286027cbf38260b6a638	不，我們別打了。	draft		p10b-22 draft	
+3872	19	conversation	0ffae19a76b4db51f8316be5b23711c593ef37917b80a5ebe8e3e8938f72c79a	哈！你試試看啊！	draft		p10b-22 draft	
+3872	20	conversation	a815cf212a5a2d4baaaa9c0e2427c1a53f2e0d7ac7d5ed0e19877e26d0434683	你把我搞糊塗了，一下要打，一下又不要打。	draft		p10b-22 draft	
+3872	21	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	22	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	23	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	24	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	25	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	26	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	27	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	28	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	29	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	30	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	31	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	32	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	33	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	34	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3872	35	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
+3875	1	conversation	baa85f7367124ec17352625736d2e95d722375dbe4095ca0803910182cee9d44	人類！我們這裡很少看到你這種的，就算看到，也待不久。嘿嘿。	draft		p10b-22 draft	
+3875	2	conversation	d425e7489db49c0950a8be8d2e6d02ec402c0acb13be9177dd9965323d9c0ca6	我不喜歡你說話的口氣。	draft		p10b-22 draft	
+3875	3	conversation	93a37d6e4f5c402351690ddf2bb455700f3b300fd62879625abd68d1c8e33d45	很高興認識你。	draft		p10b-22 draft	
+3875	4	conversation	5c000937f04db0f3fc38333d387c4f44904c125ef27de4aac65459c785d95fb4	我得上路了。	draft		p10b-22 draft	
+3875	5	conversation	b042051d4b72c3acd4b378feb65d6db6dd98fd2ab05e6e8f4efe9fcfd7194986	呵呵！好啊，你也不用聽太久。	draft		p10b-22 draft	
+3875	6	conversation	121942c603e3f871225349f4eb6d94319f952be262737a8ad659a48676c80a4d	很高興認識，對，不過吃掉你更高興！嘿嘿。	draft		p10b-22 draft	
+3875	7	conversation	3a4b2f66a8726651746eb0331816c4c3d7fbbcda079477287d2dfd9d35cfd34d	對，上路——上到我肚子裡！	draft		p10b-22 draft	
+3879	1	conversation	c9be14e759c431b3fffb26ed9ac8d27ee2c2741af8b495433953038a0074bdd5	讓開，愚昧的冒險者！	draft		p10b-22 draft	
+3879	2	conversation	004727247cf46665f0f970d8d54e05837f401007f735e2be08d2985df3c9fbda	不好意思，請讓讓，我在趕路！	draft		p10b-22 draft; authority-ok:Haste（in haste 是趕路，不是法術「迅捷術」）	
+3879	3	conversation	4f705536e283fdb50b89463e6df0f128e97e56e3ed2bf723ffb245e6b1a8c50e	抱歉！沒時間說話！	draft		p10b-22 draft	
+3879	4	conversation	dc8b6d831203d13cd69fe54c9f6541f70547e07f43b8f57a0a60a2efbf1c0ca4	什麼事？我沒時間閒聊！	draft		p10b-22 draft	
+3879	5	conversation	8a411871c5a2fd755d2092ab198a35e5f0284aabed787f7397c88e78f2cfc507	滾開，長鬍子！	draft		p10b-22 draft	
+3879	6	conversation	1f279fa7576a4ddcc88846bc04ecaa7570f899e373cd7d030b82fc44b54cbba3	請見諒，博學的先生。	draft		p10b-22 draft	
+3879	7	conversation	59e186383fd668b752ad27062f9c6fbfe457bf9d5658272d2db8e383d4d6f788	走了正好！	draft		p10b-22 draft	
+3879	8	conversation	5fd6c829edd9566be23441cc117a87b38a7445bcb4509a801d97ad924c867397	我沒時間理你。去找公會會長莫洛克談。	draft		p10b-22 draft	
+3879	9	conversation	0b3a4d1a07afc4db0a3d3fc20d45040805194624254db1636f68bc2d45df177e	公會會長在哪裡？	draft		p10b-22 draft	
+3879	10	conversation	3fec6e99b715b160daa9e24f2dcac6b4119cad9f020dbb8c9da5443aa805d15e	你急什麼？	draft		p10b-22 draft	
+3879	11	conversation	85ff0709c4ac0758db9717be1db1508582f037ece3cf1e891f6363b6c48df23f	好吧。隨便你。	draft		p10b-22 draft	
+3879	12	conversation	4931332d2c3c0bf0dd1d6193fedf094890e24defc0866666c5e518f994255746	經過門檻上的那位。好了，失陪了！	draft		p10b-22 draft	
+3879	13	conversation	c7a19da7df746eba913db5570abd25e15493962a0850fd6dda678cd592a8597b	啊，也許我確實有時間把你這種討厭鬼捏扁。	draft		p10b-22 draft	
+3879	14	conversation	b97d5acb16fd88aaae092daa18088e88babf013c5a356178718d6c542cc77209	我什麼都不知道。	draft		p10b-22 draft	
+3879	15	conversation	90bf16433eeb3a8edd76952da7930c6062ccad1ec794df86861f0c9f908a3c3b	有人看到一個洞穴巨人扛著一個處女要去獻祭！	draft		p10b-22 draft	
+3879	16	conversation	bb5b4f97e3d5dea30fd7fd1a8a7fd48fafbcdaafff9ecd996b96a89de2b590c5	魔法的波動顯示有某種災難正在逼近！	draft		p10b-22 draft	
+3879	17	conversation	af1291aac8ae334e46f72959c63d25c8a2cee0e96e2119432619915fc09ac263	有某種神秘的力量正在吸走深淵深處某一層的所有魔力！	draft		p10b-22 draft	
+3879	18	conversation	f3bd8c3246b4c4d4d76731217f060766be4aa3a7775428ffef37c91adc2302aa	喔，你想學東西就去跟門說話！	draft		p10b-22 draft	
+3879	19	conversation	98f97c254165a17332a8e0e4c316ea2ca22d6feb379c1bf72cb5a10c30bf5dc2	去找貓頭鷹博士！他也許能幫你！	draft		p10b-22 draft	
+3879	20	conversation	f2bc02ebe52f6cf0665fd9f959f93751568d12769de8b05f07ebdc9a57108cc9	以太有異動！可能有來自其他世界的旅人在附近！	draft		p10b-22 draft	
+3879	21	conversation	7041656e83cd06023e6739af2afce43080825f5e913f55da690c7bd3324b0a34	那個瘋魔法師又在惹麻煩了！	draft		p10b-22 draft	
+3879	22	conversation	c86efe7771ea213df09811898bc6141b404db14aaaf0dc9af01cfc28dbda5282	加拉蒙死了！	draft		p10b-22 draft	
+3879	23	conversation	b9d1a122fc2b9c54e83ff968fce47f8ecb27806900dabda8c2c0e7b545fe7242	我得找個茅坑！	draft		p10b-22 draft	
+3879	24	conversation	1880509a32aba62150544ca50dc6d924f4cd79ab3afb21a260f25ff6f1a00d27	行公正，無所懼！	draft		p10b-22 draft	
+3881	1	conversation	baa85f7367124ec17352625736d2e95d722375dbe4095ca0803910182cee9d44	人類！我們這裡很少看到你這種的，就算看到，也待不久。嘿嘿。	draft		p10b-22 draft	
+3881	2	conversation	d425e7489db49c0950a8be8d2e6d02ec402c0acb13be9177dd9965323d9c0ca6	我不喜歡你說話的口氣。	draft		p10b-22 draft	
+3881	3	conversation	93a37d6e4f5c402351690ddf2bb455700f3b300fd62879625abd68d1c8e33d45	很高興認識你。	draft		p10b-22 draft	
+3881	4	conversation	5c000937f04db0f3fc38333d387c4f44904c125ef27de4aac65459c785d95fb4	我得上路了。	draft		p10b-22 draft	
+3881	5	conversation	b042051d4b72c3acd4b378feb65d6db6dd98fd2ab05e6e8f4efe9fcfd7194986	呵呵！好啊，你也不用聽太久。	draft		p10b-22 draft	
+3881	6	conversation	a0b10cc0883346f0afb98316d5508453455ffcade8fe227b97d8d4cfbf003396	很高興認識，對，不過吃掉你更高興！	draft		p10b-22 draft	
+3881	7	conversation	3a4b2f66a8726651746eb0331816c4c3d7fbbcda079477287d2dfd9d35cfd34d	對，上路——上到我肚子裡！	draft		p10b-22 draft	
+3898	1	conversation	9753dad674086221dffef6604cc09a2a597fed765913f0b42e37bc482bae073f	是個人類。我們一直在觀察你們。你們是很好的種族，不過有點欠缺知識。像你們那樣把智慧分散在各自身上——似乎不太對。而且你們的身體一定很難維持。不過，你們能做得這麼好，我們還是很佩服。	draft		p10b-22 draft	
+3898	2	conversation	92722463530cd2ba52005f9723526289863ccfecddbc677b840d89abb16c5c57	你們不想念擁有身體嗎？	draft		p10b-22 draft	
+3898	3	conversation	beb8dd3f923fa6ebba36a43aa290473994dc420471a247ddb94fd0396a1e8979	只由光球構成，難道不是同樣困難嗎？	draft		p10b-22 draft	
+3898	4	conversation	ca35be1b6fb95955968b8a00b854e7c7e3d048f9e83c20f65449afa90b458d10	當然不是。沒有身體的拖累，我們沒有煩惱也沒有掛慮。我們可以把整個存在都投入我們唯一的追求——收集資訊。	draft		p10b-22 draft	
+3898	5	conversation	249e1f1fbfb536d240c3cb601e3ef7e3ed28538e8b9eacc084161a496c020925	那你們收集了什麼資訊？	draft		p10b-22 draft	
+3898	6	conversation	f371ada593e97f977bb64a1fa4a30a3adc1711d09d92fce192582ee44244c99a	跟你們比起來，我一定知道得很少。	draft		p10b-22 draft	
+3898	7	conversation	bc08c500b775f7ebe94d1a8301128d0e9043038c68ece008cafb37388e0f8f55	確實，我們知道的大多數事情都屬於很高的層次，人類大概很難理解。	draft		p10b-22 draft	
+3898	8	conversation	6fc7fee5bb05e6c11076984ed269ce48a402d075a4b01ebdf9d68edcd1f14171	我很懷疑。	draft		p10b-22 draft	
+3898	9	conversation	49076026ab25d7af3c37f5f832fd50e851dec49d5cb376e1dcb3331de0f64ec1	比如說什麼？	draft		p10b-22 draft	
+3898	10	conversation	52a431c7553a4a8ea8d2869e47de7be9316eacb73ee5d890fd30692f358d4e7c	啊，所以你想知道危險得超乎你想像的高深資訊？很好，給你一則：法術 Vas（巨大） Kal（召喚） Corp（死亡）會終結你們所知的一切生命，不過像我們這樣的高等存在會以我們自己的方式繼續存在。好了。我們很想看看你會怎麼使用這則資訊。	draft		p10b-22 draft	
+3898	11	conversation	9713cb662687a33ab74c1fdd79b86a057d63285caa3f92a37146b153e52bac46	謝謝你。我會試試看。	draft		p10b-22 draft	
+3898	12	conversation	cc5a235098b40506830ac4f00dd5aaefcae08deb6b0872c48b0f2fc1b9f109b8	也許你沒有我們一開始以為的那麼聰明。	draft		p10b-22 draft	
+3898	13	conversation	01c7b0c91cfcf268e297e2fc3b47ce4f8d71bbeeb6a38e2759134919fa0ed9af	這則資訊對我沒用。	draft		p10b-22 draft	
+3898	14	conversation	c27d137ec94b533ff7c8ee1f65da93088855ab0150d9222781a47128c8a26f88	而知道這一點本身，就是件好事。	draft		p10b-22 draft	
+3898	15	conversation	9d3fc415c5107551a39ec1db8cf48b4e50616a4ee893fdedf140821ca5ec3269	所以你決定不用我們給你的資訊了？	draft		p10b-22 draft	
+3898	16	conversation	57fb9a8b5f96ca03f0813a9e400b96526f2ed45a6483ae268a3657dd8de66842	是的。太危險了。	draft		p10b-22 draft	
+3898	17	conversation	df31d0aa8f1cce2989fd1ee96b7d08f0be7ef0759c3e9bdf9f45856d174eb3c3	如果你學到了並不是所有資訊都有益，那你確實學到了一則有益的資訊。	draft		p10b-22 draft	
+3898	18	conversation	d563b0e30d866904bd399adb396096ab5ee404efc75ef08305188e25b436df31	我很快就會用。	draft		p10b-22 draft	
+3898	19	conversation	888dc6ace43ed04efd600e6fa67cf0b5a6e3c6fca33741eb3bf762c4747e6773	真的！那一定很值得一看。	draft		p10b-22 draft	
