@@ -20,9 +20,9 @@
 無核准定名時：依 GLOSSARY.tsv 的 project-selected 暫定選詞保持一致；明確未解的外語名稱保留英文。暫定選詞不是官方定譯。
 可音譯不可意譯的人名、可意譯的職稱、具有劇情雙關的地名，分別記理由，不用單一規則硬套。
 同名不同角色或物件要另辨身份；敬稱／頭銜與本名分開記錄，避免把頭銜誤當名字。
-使用者已明確裁定的例外以 USER-DECISIONS.tsv 為準：Sir Almric／Baron Almric 均譯阿姆瑞克男爵；Lady Arriana／Arial 暫視為不同人物，不互設英文別名。
+使用者已明確裁定的例外以 USER-DECISIONS.tsv 為準：安卡十字騎士團（Crux Ansata 的騎士團各種英文形式）；Sir Almric／Baron Almric 均譯阿姆瑞克男爵；Lady Arriana／Arial 暫視為不同人物，不互設英文別名。
 指南提供多種形式時選定單一主要名稱，其餘存 aliases_zh_tw。Paladin 採聖騎士，Ranger 採巡林漢；族名惡鬼族、個體惡鬼，哥布林保留異名。
-同英文在指南中作組織與地點時分列；Seers of the Moonstone 為月之石預言者／月石先知會所，依 category 判斷。
+同英文在指南中作組織與地點時分列，依 category 判斷；Seers of the Moonstone 經使用者決定，兩者都用「月之石預言者」。
 
 ## 對話
 

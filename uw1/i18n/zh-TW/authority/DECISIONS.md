@@ -122,15 +122,15 @@ Sir Almric 與 Baron Almric 均譯阿姆瑞克男爵；Lady Arriana 與 Arial �
 - 調整前：月石先知團
 - 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
 - 指南行號：89
-- 判斷：指南同英文依分類區分：組織為月之石預言者，地點為月石先知會所；不得跨分類全域替換。
+- 判斷：使用者決定（2026-10-23，UD-20261023-016）合併為「月之石預言者」；組織與地點兩個詞條保留，譯名相同。
 
 ## UW1-DB47B7ED10D7 — Seers of the Moonstone（place）
 
-- 目前選詞：月石先知會所
-- 調整前：本輪新增
-- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 目前選詞：月之石預言者
+- 調整前：月石先知會所
+- 狀態：approved（使用者決定）；依據：USER_TRANSLATION_GUIDE
 - 指南行號：79
-- 判斷：指南同英文依分類區分：組織為月之石預言者，地點為月石先知會所；不得跨分類全域替換。
+- 判斷：使用者決定（2026-10-23，UD-20261023-016）合併為「月之石預言者」；組織與地點兩個詞條保留，譯名相同。
 
 ## UW1-0F26DAB1267E — Lady Arriana（person）
 
