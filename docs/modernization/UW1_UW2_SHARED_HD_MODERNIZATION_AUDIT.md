@@ -5,7 +5,7 @@
 
 | 項目 | 值 |
 | --- | --- |
-| 日期 | 2026-10-23 |
+| 日期 | 2026-10-23（§13、§14 同日追加） |
 | Underworld Exhumed | `feature/zh-tw-native` `ae2fb9ac9538250d1bbc1bea61befcb6989be4f3` |
 | Exhume（submodule pin） | `89278495bb0b8b224b5bb58e53da2fd367c0d8c0` |
 | 主要來源 | `uw1/src`、`uw2/src`、`exhume/runtime/port`、`uw1/docs/subsystems/{3d,gfx}.md`、`uw2/docs/subsystems/gfx.md`、`exhume/docs/{port,presentation-overlay}.md` |
@@ -25,6 +25,7 @@
 5. **加寬視野會改變 gameplay。** 視野格（vision grid）固定 17×33，邊界射線固定在 heading ±0x2040；
    而 `process_grid` 依「首次看見的格數」給經驗值。真寬螢幕若擴大可見範圍，經驗值與 AI 可見性都會不同，
    必須是預設關閉的選項，並另行驗證。
+   以 port-only「只畫、不寫自動地圖與經驗值」的第二段處理兩側格子可避開這點（§14）。
 6. **HD 路徑已有一處寫回遊戲記憶體。** HD scroll 把排版後的游標寫回 `scroll->cur_x`、`cur_y`、`start_line`
    （P10A F1）。M1／M3 的任何 HD surface 都要遵守「只讀遊戲狀態、不回寫」，否則重演 F1。
 7. **UW1 與 UW2 的高層 C 幾乎相同，低層 renderer 不同。** `VIEW3D.C` 相似度 0.96、`GAMESORT.C` 0.93；
@@ -200,16 +201,135 @@ P10T 把字級、行高等改成設定值時，第 6 點的回寫會隨設定改
 **M4（寬螢幕）**
 
 - 3D view 矩形固定在 320×200 版面中；寬螢幕 3D 需要 HD renderer 畫出比原矩形更寬的範圍。
-- 視野格固定 17 列 × 33 欄，邊界射線固定在 ±0x2040；更寬的視角需要更大的格與射線，**會改變 gameplay**：
-  `process_grid` 依首次看見的格數給經驗值，AI 與互動也可能依可見性。寬螢幕必須預設關閉，並以 replay 驗證關閉時完全相同。
-- 一個不影響 gameplay 的折衷：HD renderer 只在原視野格內多畫邊緣（超出部分以霧或遮罩處理），需實測觀感。
+- 三種做法、成本與 gameplay 影響見 [§14](#14-169-寬螢幕評估)；建議依 A → B → C 的順序。
 
 ## 12. 開放問題與下一步
 
 1. 追蹤 UW1 自有 opcode（1Eh、20h、24h、28h、30h、52h、6Ah）與 3D 模型 bytecode 的格式——M3 的前置研究。
 2. 確認 HD scroll 回寫的欄位是否進入存檔（v2.5 P10.11；屬 P10，不屬 M0）。
 3. 為 M1 列出主畫面每個 UI 元件對應的 `.GR` 檔與索引，作為素材覆寫的 key 表。
-4. 評估 HD renderer 雙重繪製的效能預算（原 renderer 每 frame 仍要執行）。
+4. ~~評估 HD renderer 雙重繪製的效能預算~~：已量測，見 [§13](#13-效能量測)。
 5. UW2 的 UI 區域與 `GAMESCR.C`／`ICONS.C` 的細部對照，留到 P14／M5。
 
-本稽核沒有修改任何程式。**M0 STOPPED HERE；M1／M3 沒有開始。**
+本稽核沒有修改任何程式（§13 的量測用本機暫時修改，量完已還原，未提交）。**M0 STOPPED HERE；M1／M3 沒有開始。**
+
+## 13. 效能量測
+
+2026-10-23 追加。目的：以實測取代 §11 的估算，作為 M3 的效能預算。
+
+**方法：** 在本機暫時替 `c3dentry.c` 與 `VIEW3D.C` 加入以 `UW1PORT_PERF_LOG` 開啟的計時（`plat_counter`），
+重播 `tests/replay` 的公開 session；**重播時不套用 32 fps 節奏**，所以量到的是純 CPU 時間。修改內容與腳本在
+[evidence/m0-perf/](evidence/m0-perf/)（`perf-instrumentation.patch.txt`、`m0-perf.py.txt`、`m0-perf-wide.py.txt`），
+量完已還原並重建；還原後 `walk`、`items`、`talk` 與 DOS golden 全部一致。
+
+- 機器：Intel Core Ultra 7 255H（16 核）、Intel Arc 140T；Windows 11；`uw1port` 一般 build（翻譯模組 `-O2`）。
+- 樣本：10 個 session、19,821 張 3D 畫面。`fallpause`、`load`、`overpay`、`powerkill`、`tooheavy` 需要特定存檔起點，
+  `intro` 沒有 3D 畫面，這 6 個沒有樣本。
+
+### 13.1 原 renderer（UW1，172×113）
+
+| 每張畫面 | 平均 | p50 | p95 | p99 | 最大 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 建 render database（`setup_vars`～`process_grid`） | 0.019 ms | 0.014 | 0.045 | 0.064 | 1.08 |
+| `cRender`（翻譯後的 renderer 畫進 FB） | 0.87 ms | 0.65 | 1.79 | 2.18 | 18.6 |
+| `cFBtoScreen`（FB 複製到 mode X） | 0.13 ms | 0.09 | 0.25 | 0.33 | 3.2 |
+| 整個遊戲迴圈（相鄰兩張畫面的間隔） | 1.91 ms | 1.52 | 4.01 | 5.46 | — |
+| render database 大小 | 1,418 B | 1,548 | 1,984 | 2,468 | 2,800 |
+
+- pick frame（`do_3d_grab`）27 次，平均 0.30 ms；只畫進 FB 的 `render_FB` 11 次，平均 1.22 ms。
+- 最大值 18.6 ms 出現在 `talk` 的單一張畫面，p99 只有 2.3 ms，屬於主機排程的偶發延遲。
+- **預算：** 32 fps 時每張畫面有 31.25 ms。原 renderer 的 p99 是預算的 7%；整個遊戲（邏輯＋原 renderer）平均約佔
+  單一核心的 6%（1.91 ms × 32）。**保留原 renderer 的成本可以忽略。**
+- 原 renderer 是模擬 x86 逐指令執行的翻譯碼，仍達到每秒約 2,200 萬個可見像素（19,436 px ÷ 0.87 ms），
+  含重疊繪製約 4,500–6,700 萬。原生 C 的 HD renderer 每像素應快數倍（待 M3 的 1× gate 實測）。
+
+### 13.2 多畫格子的成本（`wide-pitch`）
+
+`wide-pitch` 把視野射線打開到 ±90°，向下看時再多畫一次背後的格子，是「畫更多格子」的現成實例。
+以 `items` 的存檔為起點，重播 `tests/replay/enhanced/wide-pitch`（7,119 張畫面）：
+
+| | 平均 | 最大 | database 最大 |
+| --- | ---: | ---: | ---: |
+| 有背後那一段（兩段繪製） | 1.17 ms | 3.9 ms | 4,880 B |
+| 沒有（`UW1PORT_NO_BACK_PASS`） | 0.69 ms | 3.0 ms | 2,574 B |
+
+database 增為約 1.7 倍，原 renderer 平均多 0.5 ms，仍在預算的 4% 以內。§14 選項 C 的「多畫兩側格子」成本與此同級。
+
+### 13.3 HD renderer 的估算（依 13.1 推算，M3 實測）
+
+HD renderer 只在遊戲交出新畫面時重畫，每秒最多 32 次；database 不到 5 KB，交給 presentation thread 的成本可忽略。
+以重疊繪製 2.5 倍估算填像素量：
+
+| 輸出 | 3D view 像素 | 每秒填像素 | 建議 |
+| --- | ---: | ---: | --- |
+| 1080p，4:3 視野（774×610） | 47 萬 | 約 3,800 萬 | 單一核心 |
+| 1080p，16:9 寬視野（例 1259×610，§14 C） | 77 萬 | 約 6,100 萬 | 單一核心，留餘裕可分帶多執行緒 |
+| 4K，16:9 寬視野（2518×1220） | 307 萬 | 約 2.5 億 | 多執行緒（依掃描帶切分）或 GPU 後端（M6） |
+
+結論：**雙 renderer 的設計在效能上沒有問題**；真正的成本在開發（模型 bytecode、UW1 自有 opcode）。
+M3 的第一個 gate 應同時記錄 HD renderer 每張畫面的時間，用同一份腳本比較。
+
+## 14. 16:9 寬螢幕評估
+
+使用者目標（2026-10-23）：除了原本的 4:3，也要支援 16:9 等現代比例。因為有遊戲的 C 原始碼，
+可以在 port-only 程式碼加入「只畫、不影響遊戲狀態」的第二段格子處理（`wide-pitch` 已有同類做法：`port_view_passes`），這是可行的關鍵。
+
+### 14.1 原版的幾何
+
+- 投影：`PROJ_X` 是視窗寬度的一半，裁切面為 x = ±z（`instance.c` 49E7、`interp.c` 2801），所以**水平視角 90°**；
+  視野格的邊界射線 ±0x2040（約 ±45.4°）與之一致。（zoom 字 `0x7ED2` 對投影的實際影響尚未追蹤。）
+- 畫面比例：320×200 以 4:3 顯示，像素高寬比 1.2。UW1 的 view 172×113 → **1.27 : 1**；UW2 的 208×128 → **1.35 : 1**。
+- 以「每度的大小不變、只往兩側加寬」計算，新比例 A 需要的半視角為 atan(A ÷ 原比例)：
+
+| 3D view 比例 | UW1 水平視角 | UW2 水平視角 |
+| --- | ---: | ---: |
+| 原版 | 90° | 90° |
+| 16:9（1.78） | 約 109° | 約 105° |
+| 2.06（1080p 版面例，§13.3） | 約 117° | 約 113° |
+
+### 14.2 三種做法
+
+| | A：4:3 置中＋兩側裝飾 | B：16:9 視窗、視角不變（上下裁切） | C：16:9 寬視野（兩側多畫） |
+| --- | --- | --- | --- |
+| 看到的範圍 | 與原版相同 | 水平相同；垂直只剩原版約 71%（UW1） | 水平約 105–117°，垂直相同 |
+| 視野格／遊戲狀態 | 不變 | 不變 | 原格照常計算經驗值與自動地圖；兩側另以「只畫」的第二段處理 |
+| 點選（pick） | 不變 | HD 畫面是原 pick 範圍的垂直裁切，線性換算即可，**仍具確定性** | 中央沿用原 pick；兩側超出原 pick 範圍 |
+| 依賴 | 只需 overlay | UI 版面重排；HD 畫面需 M3（或先用原 FB 放大裁切） | M3＋UI 版面重排＋只畫的第二段格子 |
+| 類別 | presentation | presentation | 兩側不可點：presentation；兩側可點：gameplay |
+| 工作量 | 小 | 中 | 大 |
+
+**C 的細節：**
+
+- **只畫的第二段：** 原版那一段照常執行（經驗值 `pipeexp`、自動地圖 `PlayersMap`、`AnimObjInPipe` 都只由它產生）；
+  兩側的格子由 port-only 的第二段畫出，必須關閉上述所有寫入，只產生 database。比照 `wide-pitch` 的 `port_drawing_behind`。
+  這樣遊戲狀態與 replay 完全不變，屬 presentation enhancement，可用 Exhume 既有的 presentation 檢查驗證。
+- **視野格寬度：** 視野格 33 欄（±16）。半視角 54.5° 時，邊緣在第 11 列左右就超出 ±16 欄；更遠處需要 port-only 的較寬格
+  （不動遊戲的 `glocs`），或以距離霧處理。UW1 遠處多半已是暗的，霧的觀感需實測。
+- **兩側點選：** 原 pick frame 只涵蓋原視野。第一版兩側不可點（游標顯示為不可互動）；要可點，得讓 HD renderer 輸出物件 ID buffer，
+  這會改變遊戲輸入，屬 gameplay enhancement，錄影須帶旗標（Exhume recording format 5 已支援）。
+- **效能：** 多畫的格子量與 `wide-pitch` 同級，原 renderer 多約 0.5 ms（§13.2）；HD renderer 見 §13.3。
+
+### 14.3 UI 版面（B 與 C 共用）
+
+16:9 在邏輯高度 200 時，寬度相當於 426.7 個邏輯像素，比原版多約 107。UW1 的主畫面可切成幾塊：
+
+| 區塊 | 邏輯範圍（x，y 由上往下） | 來源 |
+| --- | --- | --- |
+| 3D view | x 52–223，y 19–131 | `place_3d_view` |
+| 左側指令圖示 | x 0–51 | `INTERACT.C` 的 icons 點擊區 |
+| 右側物品欄、水瓶 | x 224–319 | `INVPANEL.C`、`INTERACT.C` 的 flask |
+| 下方訊息捲軸、移動箭頭、符文、法術 | y 132–199 | `PLAYER.C`、`INTERACT.C` |
+
+- **區塊重排（M4-lite）：** 先不重畫 UI，而是把原 320×200 畫面的各區塊（縮放後）擺到 16:9 的新位置，左右欄靠螢幕兩側，
+  3D view 佔中間加寬的空間。滑鼠在 SDL 換算到邏輯座標時，加上同一份版面的反向對應，遊戲收到的仍是原本的邏輯座標，
+  14 個 `input_addmouse` 點擊區不用改。HD 文字與 HD 游標（overlay）跟著同一份版面換算。
+- **全螢幕模式退回 4:3：** 自動地圖（點擊區涵蓋整個 320×200）、對話、交易、角色建立等畫面不適用區塊重排，切換到這些模式時改用 A。
+- 之後 M1／M4 以 HD 素材重畫 UI 時，版面設定沿用同一份。
+
+### 14.4 建議
+
+1. **A 隨 M1 先做：** overlay 已能畫兩側，成本低，馬上有 16:9 的完整畫面。
+2. **B 在區塊重排完成後做：** 不改遊戲狀態、點選仍具確定性，是「16:9 填滿」最安全的做法。
+3. **C 在 M3 的 1×／2× gate 通過後做：** 預設關閉的 presentation enhancement；兩側可點另立 gameplay 項目。
+4. 版面、比例與視角都放進 P10T 同一份預設設定檔（例如 `aspect = 4:3 | 16:9`、`wide_view = off | crop | wide`、`wide_fov_max`），設定介面之後再談。
+5. UW2 的版面（view 16,182 起、208×128）在 P14／M5 另做同樣的區塊表。

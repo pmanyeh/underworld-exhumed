@@ -1,0 +1,28 @@
+"""M0 performance probe (local only): the wide-pitch session (view opened to +-90 degrees, two
+passes when steep), with and without the pass behind, from the items session's saved game."""
+from pathlib import Path
+import json, os, shutil, statistics, sys
+workspace = Path('D:/git/uw1-native-poc')
+root = workspace / 'underworld-exhumed/uw1'
+sys.path.insert(0, str(workspace / 'underworld-exhumed/exhume/tools'))
+os.chdir(root)
+import replay as R
+out = root / 'build/m0-perf'
+stage = out / 'wide-stage'
+shutil.rmtree(stage, ignore_errors=True); stage.mkdir()
+shutil.copytree(out / 'items/SAVE1', stage / 'SAVE1')
+rec = root / 'tests/replay/enhanced/wide-pitch/session.rec'
+res = {}
+for name, env in [('wide-pitch', {}), ('wide-pitch-noback', {'UW1PORT_NO_BACK_PASS': '1'})]:
+    env['UW1PORT_PERF_LOG'] = '1'
+    rc = R.run_port(str(rec), str(out / name), stage=str(stage), quiet=True, env=env)
+    rows = [l.split('\t')[1:7] for l in (out / name / 'port.log').read_text(errors='replace').splitlines()
+            if l.startswith('perf\t0\t')]
+    r = [(float(x[3]), int(x[5])) for x in rows]
+    big = [t for t, b in r if b > 2800]          # more than the original's largest database
+    res[name] = {'rc': rc, 'frames': len(r), 'render_mean': round(statistics.fmean(t for t, _ in r), 4),
+                 'db_bytes_max': max(b for _, b in r), 'frames_db_gt_2800': len(big),
+                 'render_mean_db_gt_2800': round(statistics.fmean(big), 4) if big else None,
+                 'render_max': round(max(t for t, _ in r), 4)}
+    print(name, res[name], flush=True)
+(out / 'wide-summary.json').write_text(json.dumps(res, indent=2) + '\n')

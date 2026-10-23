@@ -1,0 +1,63 @@
+"""M0 performance probe (local only): replays every public UW1 session with the
+temporarily instrumented port (UW1PORT_PERF_LOG) and summarises the per-frame timings.
+Replay runs unpaced, so the timings are pure CPU cost."""
+from pathlib import Path
+import json
+import os
+import statistics
+import sys
+
+workspace = Path('D:/git/uw1-native-poc')
+root = workspace / 'underworld-exhumed/uw1'
+sys.path.insert(0, str(workspace / 'underworld-exhumed/exhume/tools'))
+os.chdir(root)
+import replay as R
+
+out = root / 'build/m0-perf'
+out.mkdir(parents=True, exist_ok=True)
+recs = sorted((root / 'tests/replay').glob('*.rec'))
+only = sys.argv[1:]
+
+
+def pct(v, p):
+    v = sorted(v)
+    return v[min(len(v) - 1, int(len(v) * p))] if v else 0.0
+
+
+def stats(v):
+    return {'n': len(v), 'mean': round(statistics.fmean(v), 4) if v else 0, 'p50': round(pct(v, .5), 4),
+            'p95': round(pct(v, .95), 4), 'p99': round(pct(v, .99), 4), 'max': round(max(v), 4) if v else 0}
+
+
+summary, allrows = {}, []
+for rec in recs:
+    name = rec.stem
+    if only and name not in only:
+        continue
+    rc = R.run_port(str(rec), str(out / name), quiet=True, env={'UW1PORT_PERF_LOG': '1'})
+    rows = []
+    log = out / name / 'port.log'
+    if log.exists():
+        for line in log.read_text(errors='replace').splitlines():
+            if not line.startswith('perf\t') or 'kind' in line:
+                continue
+            k, iv, db, rd, fb, nb = line.split('\t')[1:7]
+            rows.append((int(k), float(iv), float(db), float(rd), float(fb), int(nb)))
+    allrows += rows
+    view = [r for r in rows if r[0] == 0]
+    summary[name] = {'rc': rc, 'view_frames': len(view), 'pick_frames': sum(r[0] == 1 for r in rows),
+                     'fb_frames': sum(r[0] == 2 for r in rows),
+                     'render_ms': stats([r[3] for r in view]), 'db_ms': stats([r[2] for r in view]),
+                     'fb_ms': stats([r[4] for r in view]), 'db_bytes': stats([r[5] for r in view])}
+    print(name, rc, len(view), summary[name]['render_ms'], flush=True)
+
+view = [r for r in allrows if r[0] == 0]
+# frame interval: only consecutive view frames (interval > 0), unpaced = whole game loop CPU per frame
+summary['_all'] = {'view_frames': len(view), 'render_ms': stats([r[3] for r in view]),
+                   'db_ms': stats([r[2] for r in view]), 'fb_ms': stats([r[4] for r in view]),
+                   'interval_ms': stats([r[1] for r in view if 0 < r[1] < 1000]),
+                   'db_bytes': stats([r[5] for r in view]),
+                   'pick_render_ms': stats([r[3] for r in allrows if r[0] == 1]),
+                   'fb_only_render_ms': stats([r[3] for r in allrows if r[0] == 2])}
+(out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
+print(json.dumps(summary['_all'], indent=2))

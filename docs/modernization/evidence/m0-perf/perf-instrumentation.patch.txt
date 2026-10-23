@@ -1,0 +1,126 @@
+diff --git a/uw1/src/3d/VIEW3D.C b/uw1/src/3d/VIEW3D.C
+index 599cbec..c9e8a82 100644
+--- a/uw1/src/3d/VIEW3D.C
++++ b/uw1/src/3d/VIEW3D.C
+@@ -259,6 +259,7 @@ void port_hole_report(const unsigned char *fb, unsigned len, int pitch);
+ void far init_grid(void);
+ void far build_grid(void);
+ 
++void port_perf_begin(void); void port_perf_db(long); extern int port_perf_kind;
+ int port_drawing_behind;                /* the back pass is queuing (GRIDDB.C's SetPnt, do_objsort) */
+ int port_two_passes;                    /* either pass is (GRIDDB.C's queue guard) */
+ 
+@@ -370,6 +371,7 @@ static int port_steep(void)
+    320x200 screen afterwards. */
+ void far send_db(void)
+ {
++    port_perf_db((long)((char far *)dbptr - (char far *)DbEntry));
+     set_the_window(0, xhgt - 1, xwid - 1, 0);
+     cRender();
+     if (demo_mode)
+@@ -385,12 +387,14 @@ void far send_db(void)
+    grid of the last frame. */
+ void far do_3d_grab(void)
+ {
++    port_perf_kind = 1;
+     reset_db();
+     do_3d_pickup();
+     gr_putlab(0xA0);
+     *dbptr++ = 0;
+     set_the_window(0, xhgt - 1, xwid - 1, 0);
+     cRender();
++    port_perf_kind = 0;
+     set_the_window(0, 0xC7, 0x13F, 0);
+ }
+ 
+@@ -398,6 +402,7 @@ void far do_3d_grab(void)
+    it (fades and screens drawn over the view). */
+ void far render_FB(void)
+ {
++    port_perf_kind = 2;
+ #ifndef __TURBOC__
+     if (port_steep())                   /* port only: --enhance wide-pitch beyond the original's pitch */
+         port_view_passes();
+@@ -415,6 +420,7 @@ void far render_FB(void)
+     *dbptr++ = 0;
+     set_the_window(0, xhgt - 1, xwid - 1, 0);
+     cRender();
++    port_perf_kind = 0;
+     set_the_window(0, 0xC7, 0x13F, 0);
+ }
+ 
+@@ -422,6 +428,7 @@ void far render_FB(void)
+ void far establish_view(void)
+ {
+     strtime = GAME_TIME();
++    port_perf_begin();
+ #ifndef __TURBOC__
+     if (port_steep()) {                 /* port only: --enhance wide-pitch beyond the original's pitch */
+         port_view_passes();
+diff --git a/uw1/src/port/sys/c3dentry.c b/uw1/src/port/sys/c3dentry.c
+index d91c8a1..3a6e7f9 100644
+--- a/uw1/src/port/sys/c3dentry.c
++++ b/uw1/src/port/sys/c3dentry.c
+@@ -27,6 +27,30 @@ unsigned char *cLightTabs = lightabs;
+ int16 *cDbbase = (int16 *)(seg051 + 0x161C);
+ int16 *cPixXferStuff = (int16 *)(seg048 + 0xB12);
+ 
++
++/* PERF (local measurement, not committed): UW1PORT_PERF_LOG=path */
++#include <stdlib.h>
++#include "plat.h"
++#define PERF_MAX 400000
++static FILE *perf_f;
++static int perf_on = -1;
++int port_perf_kind;                     /* 0 view, 1 pick, 2 FB only */
++static uint64_t perf_t0, perf_t1, perf_prev;
++static long perf_db;
++static double perf_ms(uint64_t a, uint64_t b) { return (double)(b - a) * 1000.0 / (double)plat_counter_hz(); }
++int port_perf(void)
++{
++    if (perf_on < 0) {
++        const char *p = getenv("UW1PORT_PERF_LOG");
++        perf_on = p && *p; perf_f = stderr;
++        if (perf_on) fprintf(perf_f, "perf\tkind\tinterval_ms\tdb_ms\trender_ms\tfb_ms\tdb_bytes\n");
++    }
++    return perf_on;
++}
++void port_perf_begin(void) { if (port_perf()) perf_t0 = plat_counter(); }
++void port_perf_db(long bytes) { if (port_perf()) { perf_t1 = plat_counter(); perf_db = bytes; } }
++static uint64_t perf_r0, perf_r1;
++
+ #define W W16
+ 
+ void cZoom(unsigned zoom)
+@@ -35,7 +59,17 @@ void cZoom(unsigned zoom)
+     port_far_entry(SEG019, 0x0C34, w, 1);
+ }
+ 
+-void cFBtoScreen(void) { port_far_entry(SEG019, 0x0C7E, 0, 0); }
++void cFBtoScreen(void)
++{
++    uint64_t a = port_perf() ? plat_counter() : 0;
++    port_far_entry(SEG019, 0x0C7E, 0, 0);
++    if (perf_on && port_perf_kind == 0 && perf_t0) {
++        uint64_t b = plat_counter();
++        fprintf(perf_f, "perf\t0\t%.4f\t%.4f\t%.4f\t%.4f\t%ld\n", perf_prev ? perf_ms(perf_prev, perf_t0) : 0.0,
++                perf_ms(perf_t0, perf_t1), perf_ms(perf_r0, perf_r1), perf_ms(a, b), perf_db);
++        perf_prev = perf_t0; perf_t0 = 0;
++    }
++}
+ 
+ void cFillFB(int c)
+ {
+@@ -77,7 +111,12 @@ void cRender(void)
+     if (!frames++) first_tick = *Time;
+     else if (*Time - last_tick < PORT_FRAME_TICKS) short_frames++;
+     last_tick = *Time;
++    if (port_perf()) perf_r0 = plat_counter();
+     port_far_entry(SEG019, 0x0D7A, 0, 0);
++    if (perf_on) {
++        perf_r1 = plat_counter();
++        if (port_perf_kind) fprintf(perf_f, "perf\t%d\t0\t0\t%.4f\t0\t0\n", port_perf_kind, perf_ms(perf_r0, perf_r1));
++    }
+ }
+ 
+ /* UW1PORT_POS_LOG in the environment (main.c, at the end of a run): the player's position

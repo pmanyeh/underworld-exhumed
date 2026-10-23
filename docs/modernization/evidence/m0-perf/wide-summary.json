@@ -1,0 +1,20 @@
+{
+  "wide-pitch": {
+    "rc": 0,
+    "frames": 7119,
+    "render_mean": 1.1694,
+    "db_bytes_max": 4880,
+    "frames_db_gt_2800": 5241,
+    "render_mean_db_gt_2800": 1.1233,
+    "render_max": 3.8947
+  },
+  "wide-pitch-noback": {
+    "rc": 0,
+    "frames": 7119,
+    "render_mean": 0.6851,
+    "db_bytes_max": 2574,
+    "frames_db_gt_2800": 0,
+    "render_mean_db_gt_2800": null,
+    "render_max": 3.0372
+  }
+}
