@@ -1,0 +1,45 @@
+{
+  "batch": "p10b-18",
+  "blocks": [
+    3793,
+    3794,
+    3797,
+    3801,
+    3803,
+    3804,
+    3806,
+    3815
+  ],
+  "drafted": 272,
+  "grammar_sensitive": 2,
+  "waivers": 5,
+  "layout_errors": 0,
+  "layout_by_box": {
+    "talk": {
+      "rows": 132,
+      "multi_page": 0
+    },
+    "message": {
+      "rows": 140,
+      "multi_page": 0
+    }
+  },
+  "catalog_entries": 4118,
+  "catalog_sha256": "2cc32f432f172b40e5b824e564c0cf42cc7ae77e42de18506cbd369a3efb5743",
+  "build_repeatable": true,
+  "coverage": {
+    "translatable": 6983,
+    "translated_draft_or_better": 4118,
+    "reviewed_or_better": 485,
+    "approved": 0,
+    "completion_percent": 58.97,
+    "handling": {
+      "bitmap-ui": 261,
+      "direct": 5104,
+      "grammar": 961,
+      "input-token": 90,
+      "object-name": 413,
+      "template": 154
+    }
+  }
+}

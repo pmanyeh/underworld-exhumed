@@ -3705,6 +3705,88 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3792	42	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
 3792	43	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
 3792	44	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
+3793	1	conversation	6d32957b31b11ed3a812f60c3d996c226c40a10e1fb690cc59e22fdcb31cec5b	喂！你在這幹嘛？你的徽章呢？	draft		p10b-18 draft	
+3793	2	conversation	4a2a3b09850ecff14db684dcf5fc2c5022a9e2a3964c8071ff589f875c4d788e	你為什麼在這？你有徽章，嗯？	draft		p10b-18 draft	
+3793	3	conversation	04b2e608aa0224e84ea5ae3606474e4efcc9ad99ea53fed4bc9ac9a5b619461e	你有徽章嗎？徽章在哪？	draft		p10b-18 draft	
+3793	4	conversation	df3ec42df408ad37c32507081bd70c32e46dd3b375591ec8c826bebc16cd4ea9	沒徽章不准過。看看徽章……給我看！	draft		p10b-18 draft	
+3793	5	conversation	9ef6e2c73d20907f34ff3f62f889c2dc2859540ab5e96650d7ca93f6471126d6	徽章？！我不需要徽章！	draft		p10b-18 draft	
+3793	6	conversation	cb0284c1c09fbca2d6fc422a2096b0fa38c3213423729aeef262279f000d6f37	在這裡。	draft		p10b-18 draft	
+3793	7	conversation	4ad9bd95b17df4f9f7e80783bd695c95f16a442e6943ddd06a03bbfd7e1388ea	警告過你不准待在這！你去死！	draft		p10b-18 draft	
+3793	8	conversation	f99f1245d8faa818d1d46053488878d0696cace7de12215f87dfc2b26069ea25	徽章讓你通過，不准待著。你走你的路。	draft		p10b-18 draft	
+3793	9	conversation	abbaf786abf5787d9dca91c43d7cef878bab2427e4cc81697df41317423caaf5	你為什麼在這，嗯？你不准過。滾！	draft		p10b-18 draft	
+3793	10	conversation	67a544898a087cfde8e21c10f2bd164c658668f71dad0aed31819a29f269380c	嗯……好，我開門，讓你過。你直直穿過去。不准在這附近逗留。	draft		p10b-18 draft; authority-ok:Open（open gates 是開門，不是法術）	
+3793	11	conversation	d162f92fd2099e48dc2cbd945a8b0a0b43f3afcf571b3af3a041c4b043ff2f93	那不是徽章……給我看徽章，不然就去死！	draft		p10b-18 draft	
+3793	12	conversation	eb5095ab90d0e33284f6e685d6d62a64e70e36078ae4548a81b05d8c41a072fb	抱歉——在這裡。	draft		p10b-18 draft	
+3793	13	conversation	df714abfbda452857918094308de9986b8fd760b3aaefcfa3c3c14d4e0b16d42	我好像忘了帶。在這裡等著，我馬上回來。	draft		p10b-18 draft	
+3793	14	conversation	4fff68d535f0ba4073c0f1fd1c5b55cdf4596045a1c0138bbce68e40b32f6fbf	哈！你現在沒徽章，你去死！	draft		p10b-18 draft	
+3793	15	conversation	d76dbd385e5fd35b8f3dddd3a8612894971f2de81b8b1e2e08642642331310a8	不，是你去死！	draft		p10b-18 draft	
+3793	16	conversation	d4a1269d28b594e9da5ce13ba5d401e93172979080aad8ffbb14694a09d19aa1	什麼？……你以為我笨。我沒看到徽章。	draft		p10b-18 draft	
+3793	18	conversation	d1fbc7e48487ebe7b2eefb1afbafb88f8568a728472087cc7ffd5b25c3217dc7	我好像忘了帶。在這裡等著，我會回來。	draft		p10b-18 draft	
+3793	19	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
+3793	20	conversation	d1a7c55fdf3520bc34173d9a6216e0d6b6a8dd6bca2e222b4fffdbbf7d8e91fe	我煩了。你現在去死！	draft		p10b-18 draft	
+3793	21	conversation	b0c5b14d9bbd0b6cb2a73869d9351a9c65115200f714326a2ad121a56550fbb4	抱歉。我這就上路。	draft		p10b-18 draft	
+3793	22	conversation	82342efe28f3b8fdfbb2449d10e14a0c9fcf3d500845febc05351a3d0ac08662	別命令我，惡鬼，不然我就砍了你的頭。	draft		p10b-18 draft	
+3793	23	conversation	f03596d7561485c630db76ea8f6ce23495bd005771c9c9f505ead3c06735a540	你最好是。	draft		p10b-18 draft	
+3793	24	conversation	df1357e9e6707fe3b94e1cb9fbd604888b1d30991123cee92a3559fa2f8dd38e	不，請等一下！	draft		p10b-18 draft	
+3793	25	conversation	6b17f0170266338d3f0d6bd2c6cd2a08328de9e44b03f42729babae7687bc38f	哈，走著瞧。	draft		p10b-18 draft	
+3793	26	conversation	a01ebe3cfbf1f67b0e20e4b24b3cbe145ba17c322d07b9dcbcd108d7d70435f5	咕啊啊啊啊！！！	draft		p10b-18 draft	
+3793	27	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的惡鬼。	draft		p10b-18 draft	
+3793	28	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	29	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	30	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	31	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	32	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	33	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	34	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	35	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	36	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	37	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	38	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	39	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	40	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	41	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3793	42	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3794	1	conversation	4708b7728adfb5893e9f1f1942efa79ac00170042b6a27211f408d3549c9ce45	什麼風把你吹來的？	draft		p10b-18 draft	
+3794	2	conversation	447195b92fe163bb392c97772ac8ece149606707e81a5df0d5e4cec09b6c7c32	我要去救一個被綁架的女孩。	draft		p10b-18 draft	
+3794	3	conversation	818b0d57300dfe13dae5b6a8bc6222f853c4bf16ba9454c4b575a9cb52f0b675	我必須打倒巫師泰瑞爾。	draft		p10b-18 draft	
+3794	4	conversation	46163d1ba80e9baca0e7279a9d6f9e583270aa9fae7f3a0bd2ddf4df2ba5f20c	那你要小心。這附近到處都是討厭的蜘蛛。我的朋友剛被一隻殺了，就在北邊不遠處。他身上有一把鑰匙，能進入一個重要的地方。在那裡也許能找到一件東西，讓持有者穿過泰瑞爾的迷宮。	draft		p10b-18 draft	
+3794	5	conversation	72384b2fc30ffb30e0fcbd72247cdc2f2ec41599a9d3c78ac7dfc25c649a088c	那把鑰匙能進入什麼地方？	draft		p10b-18 draft	
+3794	6	conversation	8317e65cab920c96064a43131dd07bf9b6e6837b3a4ebf7e3fa1ea04172ecebc	謝謝你。關於這一帶，你還能告訴我什麼？	draft		p10b-18 draft	
+3794	7	conversation	f37b6c2e9c9758acc2545335af0516127016a58cee4a38ae93f52e34bd376c89	你知道我的魔力為什麼被吸乾了嗎？	draft		p10b-18 draft	
+3794	8	conversation	7786c40abb6f7b6d0c4542cdfd335048d03e5d4735b0db0981a3ebb61a98b46d	我說了，那是一把能進入秘密地點的鑰匙。那裡有一件東西，能讓人穿過泰瑞爾的迷宮。你沒在聽嗎？入口在火焰深谷裡。	draft		p10b-18 draft	
+3794	9	conversation	d5562afd6434b4c711af8415a916b6ea071c26e77d3ded4585b7f011842282f4	我會去殺了那隻蜘蛛，拿到這把鑰匙。	draft		p10b-18 draft	
+3794	10	conversation	4812ffd061d2ebf6400a25b3942a8a6b715a8df093f9b8f4f7becfed31d242f4	關於這一帶，你還能告訴我什麼？	draft		p10b-18 draft	
+3794	11	conversation	f37b6c2e9c9758acc2545335af0516127016a58cee4a38ae93f52e34bd376c89	你知道我的魔力為什麼被吸乾了嗎？	draft		p10b-18 draft	
+3794	12	conversation	a266ef42389c305e70c95be009c1624b03c1c589db0a3fd2a305039ac6be5902	等等！我還有些可能派得上用場的情報。	draft		p10b-18 draft	
+3794	13	conversation	8a0a68ff967e4a1664cfa8d9290ea8a360e814423a507ce69ffff70623a76c53	說吧？	draft		p10b-18 draft	
+3794	14	conversation	56251162f3d72c847d34fe2605d3b743d9dc7ff5add5870affbf1eb289c56662	什麼情報？	draft		p10b-18 draft	
+3794	15	conversation	15ed28dc0e5c4b60e6fe150c378544e324f9f63ee4d8cd02a73f86b49730a618	我不需要你幫忙。再會。	draft		p10b-18 draft	
+3794	16	conversation	62537ffdf17c0021936866fd9676633efa80c12c55ea5401d5f3e045ae80fb6c	一顆神秘的寶珠會吸走這一層所有生物的魔力。	draft		p10b-18 draft	
+3794	17	conversation	3a95c19688ad0cb7737a8ab7423681f69db62ab04297908bb9bf0534f41deaec	所以我才施展不了法術？	draft		p10b-18 draft	
+3794	18	conversation	6d94d1dfdc4fc891f8dc2eedfeb3f994ff1ee7a0efba3dc2014034ae75e0d51a	謝謝你的忠告。再會。	draft		p10b-18 draft	
+3794	19	conversation	aad7b44933536a03cdf9f49908ae9747eb11614905678b299c4c9670539fde15	沒錯。寶珠吸走你的力量，再把它轉到——某個地方——拿去做某種邪惡的用途。	draft		p10b-18 draft	
+3794	20	conversation	8fce06dd0059502fcaceda8ac5812d98d57d5ceb10313b3502246eea6b354e27	你知道是誰在背後搞鬼嗎？	draft		p10b-18 draft	
+3794	21	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3794	22	conversation	34a90fdd0dbf248148af0ca776fb28463c235ddf0b952d0d45b97174890cd688	我只知道有一個名叫泰瑞爾的魔法師，似乎不受它影響。	draft		p10b-18 draft	
+3794	23	conversation	5dc34c5b73843e90a39aed016079bed4b51fc74cdcee3821a6998cf149aa30de	結論似乎很明顯了。	draft		p10b-18 draft	
+3794	24	conversation	9f6fe7880f281c7d4c06c015df00a6e876872928e9c403a415c15a56bbf0bef2	我知道這個泰瑞爾。他就是邪惡的化身。	draft		p10b-18 draft	
+3794	25	conversation	3752bae1ef697c000cd3816877f8268d9ac1f7e8c9ac29ca2586f13d1f1ba74c	確實。不過，你要是想打破寶珠對這一帶的控制，最好準備法術以外的手段。	draft		p10b-18 draft	
+3794	26	conversation	fa32e8c850d6cb10b461bde9f676a5e3a2b0d14bbd6ec62d4b36afe77d7672cc	要怎麼做到？	draft		p10b-18 draft	
+3794	27	conversation	3b1a15c3043ff86c20acd18599dcbe4871b92d6f9fba3cb30bbb110978a39c46	好吧。謝謝你。再會。	draft		p10b-18 draft	
+3794	28	conversation	2b4589201f0804547ccf3582b9e01a9027c4f44e7567cef82ba5f04c95b3fcfd	我只想得到，要是你能查出寶珠從哪裡來，從它的原產地取得一塊同樣材質的碎片，也許就能用它摧毀寶珠。	draft		p10b-18 draft	
+3794	29	conversation	5cad1446cf38f29636b23502897dbd121951d0e14e93df66b0a28c8975f290b2	這主意太好了！可是誰知道它從哪裡來？	draft		p10b-18 draft	
+3794	30	conversation	c80f1359eb7997b986ab5b257be70ad4d5f07d13cc98be715dff4c0ca8d72425	我不知道，不過我想我有些朋友在被泰瑞爾抓走之前，發現了它的秘密，他們現在在牢裡受苦。要是你能跟他們談談，也許他們能幫你。	draft		p10b-18 draft	
+3794	31	conversation	247ef68613d739decf33a6f28933ef2033edbcc3272b7831ab54f3d3091852f9	好吧。謝謝你的幫忙。	draft		p10b-18 draft	
+3794	32	conversation	86f5d57febf9f9a3ef962468439fba3bc5f1219cd55f496de08ad609a1df1c79	我會去跟他們談。	draft		p10b-18 draft	
+3794	33	conversation	19a6c59f1ca4050d7522a0f07fcd6540a1717bd73483ac37ec919dab28ae4fc8	祝你好運。	draft		p10b-18 draft	
+3794	34	conversation	a8050c51fb1b757dd194964fa9473151509d4af92491343023a32ccf4bc57a3a	不客氣。再會。	draft		p10b-18 draft	
+3794	35	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3794	36	conversation	b8e22f72e9bd43cb20abfff3a9251e887b3a08cab5ed4963be677fa629baa256	你終究決定跟我說話了？	draft		p10b-18 draft	
+3794	37	conversation	370481904e328bde4694a31ea4e0d3c7bbb18c6a3a8c2f3de19deb3aeb531b1a	是的，關於這一帶，你能告訴我什麼？	draft		p10b-18 draft	
+3794	38	conversation	a54514ea1a019e11a99940e58c9d3fc499226ab86e36635a657dcb266112eccf	不，我想不用了。	draft		p10b-18 draft	
+3794	39	conversation	abb4e89086c90966f1c190fa344dbf8e6a631ff55ec8aa10ab86b47c99d3f849	抱歉，我能告訴你的都說了。也許我在牢裡的朋友能告訴你更多寶珠和同樣材質的岩石的事。	draft		p10b-18 draft	
+3794	40	conversation	ceaa96061b32523df6e76da0cb826ccf81400d9e8eb72dae3ef6ba0a7f465c3c	我會去跟他們談。	draft		p10b-18 draft	
+3794	41	conversation	b5fe8542cdc0d3163691967be69469e80a58d13bd3733a4153e369195a71e71b	謝謝你，再會。	draft		p10b-18 draft	
 3795	1	conversation	7ed7cf4dd1c3646251713b9b8626130a2859b8baa897b9d08c8ed4f767e1067e	你好，朋友。我是丹特斯。	draft		p10b-16 draft	
 3795	2	conversation	5a026cbb1ebbd82b789c897c67cb52652305e69a1eca6bb0372aeda3bbd2173e	幸會，丹特斯。我能怎麼幫你？	draft		p10b-16 draft	
 3795	3	conversation	4c6c05f58a74f42570c9fe5e2d20f55547242f9095edb8f97749a63ef0cc5b10	你好，丹特斯。你是怎麼被抓的？	draft		p10b-16 draft	
@@ -3843,6 +3925,29 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3796	77	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-16 draft; 交易用語沿用 3672:16-30	
 3796	78	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-16 draft; 交易用語沿用 3672:16-30	
 3796	79	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-16 draft; 交易用語沿用 3672:16-30	
+3797	1	conversation	659c627cde6bc25ab83bf8bf800357fc57a9db824196785cbd4346728245042d	泰瑞爾！我們終於見面了！有人警告過我你的事。被關了這麼多年，我終於能報仇了！	draft		p10b-18 draft	
+3797	2	conversation	06d1fc53aec83c9e67f1aabc55ccb60ea7f5f1bfa4721194308c9475af2533a6	你一定是瘋了！我不是泰瑞爾。	draft		p10b-18 draft	
+3797	3	conversation	4b88b059e6f3f45269ad8fe8f29f873bb8f3f367bd4a453fe0ffe12bce65022d	哈！你根本沒機會打敗我！	draft		p10b-18 draft	
+3797	4	conversation	39307e9432fca4acb5a29971a0e56735d90b3831a2aec483099da2abf961ad3f	走著瞧。好了，受死吧！	draft		p10b-18 draft	
+3797	5	conversation	c864ae86db07140b22e1855bfdac6e134d960e3b2359a9cea93703e434839d86	不，要死的是你！	draft		p10b-18 draft	
+3797	6	conversation	3faaa4ad1f1f5e7062919fd2dea3851a3e35a6ec20269958e90a9580dc77ef76	等等！我不是泰瑞爾！	draft		p10b-18 draft	
+3797	7	conversation	97962112a4946f16087d817cf4b0fc391992900b07f187a8649b5d73c541ea99	不是泰瑞爾，嗯？確實，你看起來挺瘦弱的，一點也不像強大的魔法師。我想想，來個測驗，測驗……啊哈！好，老實回答我——你對古墓群裡的暗門知道多少？	draft		p10b-18 draft	
+3797	8	conversation	dcb2628237d7848583798f0cbc6be4a18935ee1bee1e2bb307f4a84843ac2931	古墓群裡有暗門？	draft		p10b-18 draft	
+3797	9	conversation	b8eacc3f431a46ed2352ab6738d70b68af773c407ac5b7adfac00b6cfbc60f11	我對這些暗門一無所知。	draft		p10b-18 draft	
+3797	10	conversation	5ada63a9dd359169609cf1ffdcb174f0e7505811c1d33a5ca95e57bff07c5b16	那是我親手建造的！	draft		p10b-18 draft	
+3797	11	conversation	278f1af40e623a212c07034d89528ef99b818c426287070aa711ac05b98a20e5	啊！所以你終究是泰瑞爾！我們終於又見面了！	draft		p10b-18 draft	
+3797	12	conversation	d08fac56def5260f5b15000eb22708fd0b75146c63c28aa51dcc7b835ff289cb	對，就是我，泰瑞爾！你打不倒我的！	draft		p10b-18 draft	
+3797	13	conversation	0096ee152f0e2cde25162047f475d2a4cd6b3fd167e5548966833c9cb618e177	不，不，我只是開玩笑。你剛才說暗門怎麼了？	draft		p10b-18 draft	
+3797	14	conversation	3de1ba13c7ac9ebc8320b749343683ad381366529c8449c9579167b392ea8e65	暗門？是誰告訴你這些暗門的？他也告訴你那些門通往火焰深谷嗎？這年頭在這裡越來越守不住秘密了。	draft		p10b-18 draft	
+3797	15	conversation	fa6a2b1791b78d6e182404c22809b4035c5633cc2bc0c7a3e73bcb3965b69e62	別擔心，我守得住秘密。	draft		p10b-18 draft	
+3797	16	conversation	d5c7f3d8eebb71eba966769363f6aed2656cfded4aa00d64c6b65881839fbe68	火焰深谷？我為什麼要去什麼火焰深谷？	draft		p10b-18 draft	
+3797	17	conversation	ce84ff6c19d5b1a35fd0fd411c15ee2ddab01d456f8e1d6b04ae72bf5a7c2759	嗯，別告訴任何人，不過我在那邊藏了一些東西。不過那不重要。	draft		p10b-18 draft	
+3797	18	conversation	0c28fb735477d2a6f8813f6310c0231198b603141517ccbcc6a51cdffe1bf5a8	如果那些東西能幫我打倒泰瑞爾，那當然重要！	draft		p10b-18 draft	
+3797	19	conversation	14abc67971d4bf258b620364850d7e862a82782899fe17f147556748ebe04a56	是些什麼東西？	draft		p10b-18 draft	
+3797	20	conversation	e82b0832f9dde67c6e88e6cd215fbe165aa7791d96a5e37436cbd7674025b060	我不記得是什麼了。那是好多好多年前的事了，至少感覺是這樣……	draft		p10b-18 draft	
+3797	21	conversation	0963f195a9b3a5a9ab353200d89c2f7e644db7c69677c218b104c36beea5ae79	也許它們對付泰瑞爾會有用。	draft		p10b-18 draft	
+3797	22	conversation	052accc4ee94e325dab708abaeaab49f91077296b99041e7de66a725a88f7134	謝謝你，再會。	draft		p10b-18 draft	
+3797	23	conversation	5161a55dc516e9aa8198e835ce5eacd1696736768524c63f931d8c8235a7ebfc	泰瑞爾！又是你！你已經打敗我、把我關起來了。現在讓我安靜一下吧。	draft		p10b-18 draft	
 3798	1	conversation	8fbef108576cb9e6f7e2d3f7fad956e4b065c0846b3c7295e76fd5b53ce0b610	嗯？你在這裡做什麼？	draft		p10b-17 draft	
 3798	2	conversation	09681dc38acebddbcbfee36cba2b6a181decc91304c75436ceccaa0cd5394e91	我是來救你的。	draft		p10b-17 draft	
 3798	3	conversation	6970ae42b65735fef8374a5fb7f8a9268e3f7754d2449685825864c2d44bf490	我正在試著拯救世界，對抗一個強大的惡魔。	draft		p10b-17 draft	
@@ -3979,6 +4084,44 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3800	43	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
 3800	44	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
 3800	45	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
+3801	1	conversation	025d34d2238362eaf8e2f39f962337a147b778cdc203cdbfc9368e0afd3821d3	啊……所以打敗泰瑞爾的一定就是你了。很好……很好……我感覺到他死了，可是我還怕自己會死在這裡，被人遺忘。	draft		p10b-18 draft	
+3801	2	conversation	eb5669fb7c2ea74d3a996520918ff3d2790a402ba0ee9e11f65812e1001ff811	你是誰？	draft		p10b-18 draft	
+3801	3	conversation	bdd704b1957429cdcb85139405ca3751cf0f8ab74616a4f534aa9874fda605fd	放心吧。他已經死了。	draft		p10b-18 draft; authority-ok:rest（Rest easy 是「放心吧」）	
+3801	4	conversation	bc3d56dde7fd9c488d517ba4969a97e4f6dc6b53e7d28f9e71b812aa503aa936	我是古爾斯坦。我來這下面尋找真理之鑰。	draft		p10b-18 draft	
+3801	5	conversation	8aa68704f29890a006d84c151b08c05d644f26c9bdec033cc43f14b599da40b9	古爾斯坦？我見過你的同伴伊洛莫。他很擔心你。	draft		p10b-18 draft	
+3801	6	conversation	e0d9931a9ada8fdf54c0a9ee68d177881c3880f4a20b05784da59b7465bc9608	我也在找那把鑰匙。	draft		p10b-18 draft	
+3801	7	conversation	b5431eb939613b97d168e6a10bacfbed71376cb49f5d8f996908bc1ae91e01a1	伊洛莫！所以伊洛莫跟你說過我的事了。很好，這表示我可以相信你。我想我已經發現那把鑰匙的下落了。告訴伊洛莫「Folanae」。他會知道該去哪裡找，也會解釋該怎麼做。至於我，我在這下面還有別的事要處理。再會。	draft		p10b-18 draft; Folanae 是暗語，保留原文（伊洛莫 3771 要玩家輸入）	
+3801	8	conversation	ee14fe6e070f0186c11a5c94c37af83c96cc16d0a586c48d972e689726359687	這確實是個崇高的任務，應該要完成，雖然我已經不是能完成它的人了。嗯。我只好冒個險，相信你。去月之石預言者那一帶找一個人。他叫伊洛莫。見到他時，告訴他是我推薦你去的，然後說出這個詞：「Folanae」。他會知道接下來該怎麼做。	draft		p10b-18 draft; Folanae 是暗語，保留原文（伊洛莫 3771 要玩家輸入）; authority-ok:Seers of the Moonstone（譯「月之石預言者」，同一組織的另一譯名）	
+3801	9	conversation	080dcd84159985f89c34860485a30cae8e5224f1f219bf842ea6c581ecfddf84	哎呀，謝謝你。	draft		p10b-18 draft	
+3801	10	conversation	daecdc8ddb4446467cba7565e8f906c4191f1762ba79fc70ab5131b17c3e6370	我有更重要的事要做，才不替你跑腿！再見！	draft		p10b-18 draft	
+3801	11	conversation	d76c9805ceac1100edbbd4952e73e5b962a51fd44ba650153e6492cf17337613	不用謝，只要你完成任務就好。好了，去吧！	draft		p10b-18 draft	
+3801	12	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	13	conversation	054eac23027060f826c609c791b7c5bad6883e4f3f3ced76b8b918af79ce0976	你回來了！	draft		p10b-18 draft	
+3801	14	conversation	b2672da17eb03a79b79f6d2ef7f2c037728060b28440ac42d61f9bed13f583b4	我還有別的事。再會。	draft		p10b-18 draft	
+3801	15	conversation	f25e88e916ba78877c514da7610d8c614215c9e48e7554fa5bba8714ce60b68e	繼續你的任務吧！我不會有事的。	draft		p10b-18 draft	
+3801	16	conversation	d3a53987b3c974f1c995756b51af7c6203fe056b4b25708d138d9f081fdba4be	再會！我忙得沒空說話！	draft		p10b-18 draft	
+3801	17	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	18	conversation	733bf679727c35d3d2a295f6270fa67d10a13dbd89b4757c12a5820f0af5d4cb	死了？對，我想也是。可是他的惡意還在，不是嗎？	draft		p10b-18 draft	
+3801	19	conversation	86f41251665d92257d1596316d67bbe8c2c8944f1e0d706bb44b3234f3c4bcc4	是的。我還有事情沒了結。	draft		p10b-18 draft	
+3801	20	conversation	f6b3b8c1f9090674041c82dbc0842025b8daf51594cc078292ad1f11596f81ec	那是我的問題。是什麼把你帶到這裡的？	draft		p10b-18 draft	
+3801	21	conversation	6b764d901f70e65cbef255e15107469ca4f7ba474db3b78d5ce4fd483d5be32e	你在找真理之鑰嗎？它也許能幫上你。	draft		p10b-18 draft	
+3801	22	conversation	98994d24ef0ddd7c8cc1ab848846ea3e850f7317906896769cfb425cf0bfc0a4	確實在找。	draft		p10b-18 draft	
+3801	23	conversation	facc7513d3eed76e4e1f9f3ec1c8dec3725940ef36ed535b5d81be067d5a7925	不，我沒有。	draft		p10b-18 draft	
+3801	24	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	25	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	26	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	27	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	28	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	29	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	30	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	31	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	32	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	33	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	34	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	35	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	36	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	37	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3801	38	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3802	1	conversation	6db4d64f25a814ccb888b6a668d78a469031162b7f10c7d4354072f9a4ecd9b3	你是誰？你是來把我帶回礦坑的嗎？不，你不是他們的人……那你是來救我們的嗎？	draft		p10b-17 draft	
 3802	2	conversation	a1f7e12d54d36a02625a56685b472ba43acff16458c61f66c11da335b2e6430b	不，我自己暫時也被困在這裡。	draft		p10b-17 draft	
 3802	3	conversation	b680c9c813faa100ead6a377643d334c8c9d6e6efe2bb31a6b4dfe3faeb7796e	當然。不過可能要花一點時間。	draft		p10b-17 draft	
@@ -4031,6 +4174,89 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3802	50	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
 3802	51	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
 3802	52	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
+3803	1	conversation	1a8d85344026f6c034ff5967907ac3c5e4719fdd15eb4dd650c090720de4b919	喂！你在這幹嘛？你的徽章呢？	draft		p10b-18 draft	
+3803	2	conversation	4a2a3b09850ecff14db684dcf5fc2c5022a9e2a3964c8071ff589f875c4d788e	你為什麼在這？你有徽章，嗯？	draft		p10b-18 draft	
+3803	3	conversation	797b13688001e7117f8b187b721c9c50095112f682eb3b9e21777edfe9a0099c	你有徽章嗎？徽章在哪？	draft		p10b-18 draft	
+3803	4	conversation	73a5ffcb8fc673c52aa9840b8af998e07d569566b0718c1f54c2475a77c05d9b	沒徽章不准過。看看徽章……給我看！	draft		p10b-18 draft	
+3803	5	conversation	e5db374218f37170deee4fdcb4d4b94818e81780663ec9f8a0d8c5ca15d8e584	徽章？！我才不需要什麼臭徽章！	draft		p10b-18 draft	
+3803	6	conversation	cb0284c1c09fbca2d6fc422a2096b0fa38c3213423729aeef262279f000d6f37	在這裡。	draft		p10b-18 draft	
+3803	7	conversation	5c52f0ee9b110fe5f417f3109d7479b112b8a857471c8be0881a8275c9e52593	啊啊！警告過你不准待著。現在去死！	draft		p10b-18 draft	
+3803	8	conversation	c67a6d22df65f7d8fa5fefbdbd84150cd2797def75459ad443b530c638e1820c	徽章讓你通過，去別的地方，不准待在這。現在走，不然你會後悔。最後警告。	draft		p10b-18 draft	
+3803	9	conversation	ba3500030c0e31eff14d2a4a773a48bd713209a261a5599c04969e252f8c5db8	你要幹嘛？走上坡道穿過北門，那才是你要去的路。快滾！	draft		p10b-18 draft	
+3803	10	conversation	7c2de7b86a88a580529400338773a7ff72bce4e33b18b09d689cca9cdd5f4b1e	嗯……好，我開門。你直直往北走上坡道到北門。你要走那條路。這裡其他地方不准進。	draft		p10b-18 draft; authority-ok:Open（open gate 是開門，不是法術）	
+3803	11	conversation	d162f92fd2099e48dc2cbd945a8b0a0b43f3afcf571b3af3a041c4b043ff2f93	那不是徽章……給我看徽章，不然就去死！	draft		p10b-18 draft	
+3803	12	conversation	d4a4796dbfe858c957c76d4b73ea09db24b3e4c4aaec7a289963ff2e1dc7c8ee	真抱歉，在這裡。	draft		p10b-18 draft	
+3803	13	conversation	33b23ba252adcd5affd8dd07cbd610cdfc162beed74e2882a273976ba9c4e2c5	我好像放錯地方了。在這裡等著，我馬上回來。	draft		p10b-18 draft	
+3803	14	conversation	e77fcd27134d8f1046ef2d4e3657a06389e501315dd182f9b40eb81db7114f01	你現在拿出徽章，不然就永遠別拿了！	draft		p10b-18 draft	
+3803	15	conversation	677295818deea3e11a0f73e3a6a158f15115b9e9c3bff37348cf998d890911df	不，是你去死！！	draft		p10b-18 draft	
+3803	16	conversation	d4a1269d28b594e9da5ce13ba5d401e93172979080aad8ffbb14694a09d19aa1	什麼？……你以為我笨。我沒看到徽章。	draft		p10b-18 draft	
+3803	18	conversation	f77ed9212e0af7819d2ed22c48ae67272407f233de87fa4483dda19ba6a3500d	我到處都找不到。等一下，我會拿回來。	draft		p10b-18 draft	
+3803	19	conversation	e77fcd27134d8f1046ef2d4e3657a06389e501315dd182f9b40eb81db7114f01	你現在拿出徽章，不然就永遠別拿了！	draft		p10b-18 draft	
+3803	20	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
+3803	21	conversation	d1a7c55fdf3520bc34173d9a6216e0d6b6a8dd6bca2e222b4fffdbbf7d8e91fe	我煩了。你現在去死！	draft		p10b-18 draft	
+3803	22	conversation	b0c5b14d9bbd0b6cb2a73869d9351a9c65115200f714326a2ad121a56550fbb4	抱歉。我這就上路。	draft		p10b-18 draft	
+3803	23	conversation	daca08eddb4ff0fd774917c4c2a3267c905f8920b01dee0174312b8e9b613a00	別命令我，惡鬼，不然我就砍了你的頭。	draft		p10b-18 draft	
+3803	24	conversation	f03596d7561485c630db76ea8f6ce23495bd005771c9c9f505ead3c06735a540	你最好是。	draft		p10b-18 draft	
+3803	25	conversation	df1357e9e6707fe3b94e1cb9fbd604888b1d30991123cee92a3559fa2f8dd38e	不，請等一下！	draft		p10b-18 draft	
+3803	26	conversation	6b17f0170266338d3f0d6bd2c6cd2a08328de9e44b03f42729babae7687bc38f	哈，走著瞧。	draft		p10b-18 draft	
+3803	27	conversation	a01ebe3cfbf1f67b0e20e4b24b3cbe145ba17c322d07b9dcbcd108d7d70435f5	咕啊啊啊啊！！！	draft		p10b-18 draft	
+3803	28	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的惡鬼。	draft		p10b-18 draft	
+3803	29	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	30	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	31	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	32	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	33	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	34	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	35	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	36	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	37	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	38	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	39	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	40	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	41	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	42	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3803	43	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	1	conversation	3528e4e5c0530d7cc29f1eba97c4db78a9fff3d559508d4d5a8317d0abc79878	嘿！你逃出來了！你怎麼辦到的？現在你去死！	draft		p10b-18 draft	
+3804	2	conversation	229d047b08b9570b4b19a11b7fe4d4ec602078bede7e946c8498200719339bef	嘿，你被關在那裡，嗯？嘿嘿。你要出去，去跟獄卒說。	draft		p10b-18 draft	
+3804	3	conversation	56582781c4f9d438214951c992bb06ec4060a839268e54f3329529a08bc02606	給我看徽章才能過。	draft		p10b-18 draft	
+3804	4	conversation	2cd77010b237581aba114e235c912a114c3eca638d131a77cadd42c2adc435b5	別拿你的廢話煩我。	draft		p10b-18 draft	
+3804	5	conversation	cb0284c1c09fbca2d6fc422a2096b0fa38c3213423729aeef262279f000d6f37	在這裡。	draft		p10b-18 draft	
+3804	6	conversation	27dccd7de4bcb22e1b6032cff61f9e21837dd146075c8006edde2d499001d36b	你不是笨就是間諜！不管哪個，你都死定了！	draft		p10b-18 draft	
+3804	7	conversation	20a5f5c9e4edc439b869b1e0f5d003332fb5f5f6da0eeb34a2aa36fd0ff2c3cd	哼！你為什麼在這？你是間諜？現在走！西門！	draft		p10b-18 draft	
+3804	8	conversation	e67466540d3bd49aa65ea8b7eec1ad088dc0f62490cfe20b04f8cae07489215d	又怎樣？你要過，那就過。往西的門才是路。	draft		p10b-18 draft	
+3804	9	conversation	42e37fcca244aaaf478b8a4f8eb973f10f54ec0b48e0d9710f56b62ffd8f3b54	對，就是那個。好，穿過左邊的門……快走。	draft		p10b-18 draft	
+3804	10	conversation	d162f92fd2099e48dc2cbd945a8b0a0b43f3afcf571b3af3a041c4b043ff2f93	那不是徽章……給我看徽章，不然就去死！	draft		p10b-18 draft	
+3804	11	conversation	8162e8c6b805cf547e87a8fa219e4c53d2e4eb88b5a1e5c22b0e78fb3bbd6a55	抱歉，在這裡。	draft		p10b-18 draft	
+3804	12	conversation	db0904e1afcae42a243ba71c7eb2ff3c168644f4552a2c0e07aac5f420e3395b	我好像放錯地方了。在這裡等著，我馬上回來。	draft		p10b-18 draft	
+3804	13	conversation	3a0f0cefe42f1434833b0bbe1a1af8cdd025911c91673c19e69b5c1d70a0fbb2	不，我不等……你去死！	draft		p10b-18 draft	
+3804	14	conversation	638c8126e31c837785b5dbe44229ad9c98a5866730da02a37032d6fc587bd0f3	不，是你去死！	draft		p10b-18 draft	
+3804	15	conversation	f36f8e2660a3fbddb2029a1ff51c528e19e0948e602cce0aba363d1b333df5fe	什麼？……你以為我笨。我沒看到徽章。	draft		p10b-18 draft	
+3804	17	conversation	04dddd531715f67a995ab92b5c8187ecfb72705ecc1c5bf99c0464e058ec4593	我一定是忘了帶。在這裡等著，我很快回來。	draft		p10b-18 draft	
+3804	18	conversation	3a0f0cefe42f1434833b0bbe1a1af8cdd025911c91673c19e69b5c1d70a0fbb2	不，我不等……你去死！	draft		p10b-18 draft	
+3804	19	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
+3804	20	conversation	d1a7c55fdf3520bc34173d9a6216e0d6b6a8dd6bca2e222b4fffdbbf7d8e91fe	我煩了。你現在去死！	draft		p10b-18 draft	
+3804	21	conversation	b0c5b14d9bbd0b6cb2a73869d9351a9c65115200f714326a2ad121a56550fbb4	抱歉。我這就上路。	draft		p10b-18 draft	
+3804	22	conversation	daca08eddb4ff0fd774917c4c2a3267c905f8920b01dee0174312b8e9b613a00	別命令我，惡鬼，不然我就砍了你的頭。	draft		p10b-18 draft	
+3804	23	conversation	f03596d7561485c630db76ea8f6ce23495bd005771c9c9f505ead3c06735a540	你最好是。	draft		p10b-18 draft	
+3804	24	conversation	df1357e9e6707fe3b94e1cb9fbd604888b1d30991123cee92a3559fa2f8dd38e	不，請等一下！	draft		p10b-18 draft	
+3804	25	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	走著瞧。	draft		p10b-18 draft	
+3804	26	conversation	a01ebe3cfbf1f67b0e20e4b24b3cbe145ba17c322d07b9dcbcd108d7d70435f5	咕啊啊啊啊！！！	draft		p10b-18 draft	
+3804	27	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的惡鬼。	draft		p10b-18 draft	
+3804	28	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	29	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	30	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	31	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	32	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	33	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	34	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	35	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	36	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	37	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	38	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	39	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	40	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	41	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3804	42	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3805	1	conversation	48a05df8298ced9e2ed88ca60b75104b98407f5f80bd88eeaeb260dd6421f876	在找東西，是不是？\n 要找一條路走？\n 一失足就成蟲子的飯，\n 嚐嚐泰瑞爾的怒吼。	draft		p10b-16 draft	
 3805	2	conversation	eb5669fb7c2ea74d3a996520918ff3d2790a402ba0ee9e11f65812e1001ff811	你是誰？	draft		p10b-16 draft	
 3805	3	conversation	f99dca955151ac39b3fd763e3e35ec36c034ea82ff67a03e97b09b3e5330d845	你是什麼意思？	draft		p10b-16 draft	
@@ -4112,3 +4338,51 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3805	79	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-16 draft; 交易用語沿用 3672:16-30	
 3805	80	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-16 draft; 交易用語沿用 3672:16-30	
 3805	81	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-16 draft; 交易用語沿用 3672:16-30	
+3806	1	conversation	56582781c4f9d438214951c992bb06ec4060a839268e54f3329529a08bc02606	給我看徽章才能過。	draft		p10b-18 draft	
+3806	2	conversation	946c59b26cfa928886684126285de33fffd923ee30f05637a76bd0867fded205	哈，有沒有徽章，我都愛去哪就去哪。	draft		p10b-18 draft	
+3806	3	conversation	cb0284c1c09fbca2d6fc422a2096b0fa38c3213423729aeef262279f000d6f37	在這裡。	draft		p10b-18 draft	
+3806	4	conversation	d7e4bd42fe8ba325074cf5b0146a04c8a54e615d8792fad005c3e9570fc36057	好！你不聽！我們給你教訓！	draft		p10b-18 draft	
+3806	5	conversation	5edc65bb7e24deaa60e5a5b80df0e2181a7bd52bf7feee80422cbb2cfa38d1c2	你耳朵不好。徽章讓你過，南門！	draft		p10b-18 draft	
+3806	6	conversation	8ab51477b8a6a958b82b2f875fd387c7bd8f680e56464a9040305a3e724d61be	快走，門給你開了，你走。滾！滾！	draft		p10b-18 draft; authority-ok:Open（door open 是開門，不是法術）	
+3806	7	conversation	fcf13c2ad1f0731fa13fc0379d32dc86b7820347ecffb9bafe918d574ea5859f	好，穿過南邊的門就是路。現在走。	draft		p10b-18 draft	
+3806	8	conversation	55be3cfa8650929d24840da60673df8d362639e0b6528717ef89488429bb6f9f	那不是徽章……給我看徽章，不然就去死！！	draft		p10b-18 draft	
+3806	9	conversation	28bf9c86c87be556cd8e3ac5a7e03f1c29d69edf580937ae565eaca2688a8271	請你見諒。在這裡。	draft		p10b-18 draft	
+3806	10	conversation	ccae71ec877cef6d6636d8b20518fe8a19fba2ae0ea3fadaf0d074a243d62397	在這裡等著。我馬上拿徽章回來。	draft		p10b-18 draft	
+3806	11	conversation	d565a9c7668f63e68488b065f232ad71a005911abc93e2bc9777ddcbbd6d2098	你現在沒徽章，你去死！	draft		p10b-18 draft	
+3806	12	conversation	677295818deea3e11a0f73e3a6a158f15115b9e9c3bff37348cf998d890911df	不，是你去死！！	draft		p10b-18 draft	
+3806	13	conversation	7848dc15cd624348d62cd071630a6cb63b70cf762078a2a4d98ca0e099109ea1	什麼？……你以為我笨，我沒看到徽章。	draft		p10b-18 draft	
+3806	15	conversation	5e830c13bc1b1ec8802f9b28467bedcaa658a3e48de08eec92855a3ea2545c2d	在這裡等著。我會拿徽章回來。	draft		p10b-18 draft	
+3806	16	conversation	d565a9c7668f63e68488b065f232ad71a005911abc93e2bc9777ddcbbd6d2098	你現在沒徽章，你去死！	draft		p10b-18 draft	
+3806	17	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
+3806	18	conversation	d1a7c55fdf3520bc34173d9a6216e0d6b6a8dd6bca2e222b4fffdbbf7d8e91fe	我煩了。你現在去死！	draft		p10b-18 draft	
+3806	19	conversation	b0c5b14d9bbd0b6cb2a73869d9351a9c65115200f714326a2ad121a56550fbb4	抱歉。我這就上路。	draft		p10b-18 draft	
+3806	20	conversation	82342efe28f3b8fdfbb2449d10e14a0c9fcf3d500845febc05351a3d0ac08662	別命令我，惡鬼，不然我就砍了你的頭。	draft		p10b-18 draft	
+3806	21	conversation	f03596d7561485c630db76ea8f6ce23495bd005771c9c9f505ead3c06735a540	你最好是。	draft		p10b-18 draft	
+3806	22	conversation	df1357e9e6707fe3b94e1cb9fbd604888b1d30991123cee92a3559fa2f8dd38e	不，請等一下！	draft		p10b-18 draft	
+3806	23	conversation	6b17f0170266338d3f0d6bd2c6cd2a08328de9e44b03f42729babae7687bc38f	哈，走著瞧。	draft		p10b-18 draft	
+3806	24	conversation	a01ebe3cfbf1f67b0e20e4b24b3cbe145ba17c322d07b9dcbcd108d7d70435f5	咕啊啊啊啊！！！	draft		p10b-18 draft	
+3806	25	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的惡鬼。	draft		p10b-18 draft	
+3806	26	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	27	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	28	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	29	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	30	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	31	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	32	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	33	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	34	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	35	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	36	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	37	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	38	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	39	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3806	40	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
+3815	1	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b		untranslated		grammar-sensitive: 稱呼片段（Sir），代入 3815:11 的 @SS1 模板，P11 處理	grammar-sensitive
+3815	2	conversation	026486846129ede4c959b03b699cf53e1dc92ab0953f0d8b7d47ce90851f5ba0		untranslated		grammar-sensitive: 稱呼片段（Madam），代入 3815:11 的 @SS1 模板，P11 處理	grammar-sensitive
+3815	4	conversation	fc4642efd1c83877454e3b07c4959b82e65a4bd0c8008afec85f5392dd05d704	我要求你放了艾莉雅！	draft		p10b-18 draft	
+3815	5	conversation	0dcbe5aa1edc5a77e64329879742087c10cf1944e16da57c9a17b8964a0371d9	你的邪惡陰謀是什麼？	draft		p10b-18 draft	
+3815	6	conversation	0086584fa63edf88f5fc4bb3de5f3a84cb7d5ace967027b6b372c4a60b765df2	喔，恐怕那是辦不到的。我需要一個無辜者的身體當作容器，恐怕你的不行。再說，我費了那麼大的工夫，現在放她走就太可惜了，你不覺得嗎？	draft		p10b-18 draft	
+3815	7	conversation	8fd39db52f9c7218296f05c9d4453b8d303bd001f2c40fbf60a237facc6e4e9b	喔，你想知道我為什麼要綁走可憐的艾莉雅？也許我該饒你一命，讓你親眼看看我的咒語。惡魔進入人類身體的景象，可不能錯過。	draft		p10b-18 draft	
+3815	8	conversation	efeccc45e332b74e50317842b3a09217937932777bbed570b60e04cfdb293113	我認為你是個惡棍，不配活著！	draft		p10b-18 draft	
+3815	9	conversation	1d3c2b8bf9fab53ffc276ff786f2c865b251a09859161369d46d9c2cb8a963a8	啊，不管我配不配，恐怕活下來的會是我，而不是你。	draft		p10b-18 draft	
+3815	10	conversation	c9fdee373b4aa9c4dfb43506a6c8d244ba98273ad71c3a76bbe1950bfea37ff8	很好。如果非殺了你不可，我就殺了你。	draft		p10b-18 draft	
