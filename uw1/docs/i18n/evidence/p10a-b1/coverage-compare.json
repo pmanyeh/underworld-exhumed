@@ -10,19 +10,22 @@
   "blocked": 0,
   "needs_context": 0,
   "grammar_handling": 692,
-  "production_translated": 52
+  "production_translated": 52,
+  "debug": 101
  },
  "after": {
-  "production": 6990,
-  "direct_total": 5251,
-  "direct_translated": 203,
-  "direct_untranslated": 5048,
-  "draft": 203,
+  "production": 6983,
+  "debug": 108,
+  "direct_total": 5244,
+  "direct_translated": 225,
+  "direct_untranslated": 5019,
+  "draft": 225,
   "reviewed": 0,
   "approved": 0,
   "blocked": 0,
   "needs_context": 0,
   "grammar_handling": 885,
-  "production_translated": 209
- }
+  "production_translated": 231
+ },
+ "note": "before = committed P9/authority-ready rules; after = P10A Batch 1 rules (193 grammar-sensitive, 7 unread keys to debug scope)"
 }

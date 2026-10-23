@@ -80,10 +80,20 @@ class ClassificationTests(unittest.TestCase):
         self.assertEqual(classify(1, 169, "@GS1"), "template")
 
     def test_scope(self):
-        self.assertEqual([l10n.scope(*k) for k in ((1, 0, "x"), (24, 0, "x"), (1, 2, ""), (2, 600, ""),
-                                                   (2, 600, "x"), (1, 169, "x"), (2, 0x33, "RA"))],
+        self.assertEqual([l10n.scope(*k) for k in ((1, 3, "x"), (24, 0, "x"), (1, 2, ""), (2, 600, ""),
+                                                   (2, 600, "x"), (1, 169, "x"), (2, 0x33, "RA"),
+                                                   (1, 7, "x"), (1, 197, "x"))],
                          ["production", "debug", "empty", "unaddressable", "unaddressable", "production",
-                          "production"])
+                          "production", "production", "production"])
+        # An audited unread key is debug only while its source is the audited text.
+        audited = dict(l10n.UNREAD_KEYS)
+        try:
+            l10n.UNREAD_KEYS[1, 7] = (source_hash("Use it on...\n"), "test")
+            self.assertEqual(l10n.scope(1, 7, "Use it on...\n"), "debug")
+            self.assertEqual(l10n.scope(1, 7, "Other text\n"), "production")
+        finally:
+            l10n.UNREAD_KEYS.clear()
+            l10n.UNREAD_KEYS.update(audited)
 
     def test_derived_flags(self):
         self.assertEqual(l10n.derived_flags(3651, 2, "Hail, @SS1!\\m"), {"dynamic-template", "control-code"})

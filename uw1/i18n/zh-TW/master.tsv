@@ -8,6 +8,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	10	game	f7c16ea4ba55e218b2511efb25ffe8f331a837c5bbf22dbaa279f53ed91854fb	種子似乎找不到扎根的空間，毫無動靜。\n	draft	P10A-B1 core system: silver seed		
 1	11	game	f527b6fb1c4a146525cdfddbec56a4d4289d39fa4512973c345b933dd0690c30	種子消失了。\n	draft	P10A-B1 core system: silver seed		
 1	12	game	8d863938a1a1c16c3a4a43d2038c80356e147b2c4c7f80283da4d520ce464bf5	你種下種子，一株小小的銀樹迅速長了出來。\n	draft	P10A-B1 core system: silver seed		
+1	13	game	ccf1f047fb2dfbcc5d52ba2ea7236646eaa288a60c83c754c5134f0d7a5088d5	歡迎來到地下世界。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
 1	14	game	1983ca6999a462ddd22ab86dd97665be17a76ca24e99c9eacaff4019d42dc365	附近有敵對的生物！\n	draft	P10A-B1 core system: sleep		
 1	15	game	4d220119a749f67ac696f4f30cd2d95256460933bd9c675f594d6fffe16c980d	你紮營休息。\n	draft	P10A-B1 core system: sleep		
 1	16	game	eef5e122b2718752aa05dd799923bff9da7bbd9430d9f5ac799e9a8fa24f2c5e	你躺下睡覺。\n	draft	P10A-B1 core system: sleep		
@@ -21,6 +22,8 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	26	game	4c96d95e7654f394150e54554a896873270bd5251e58492a8fff493e42b1ca40	知識與理解充滿了你的心靈。\n	draft	P10A-B1 core system: shrine		
 1	27	game	fc863e33322e36bfda6b65dccfb242b79bfdaede20abc75d3c7a26cf87096de1	你在這項技能上已無法再進步。\n	draft	P10A-B1 core system: shrine		
 1	30	game	86385feb1b1840be84a2a0ba428a549d1ccf1d190e41bdff982dc3f62edcddef	你的技能都沒有提升。\n	draft	P10A-B1 core system: shrine		
+1	32	game	369f6dce1abb9d90f31b3cd3acd775531f623fc9b81e27bce366de67d91ca0fa	需要真理之鑰。好好運用它吧。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	33	game	54ad5c015473c7bec820132012f2192ef26a9e9319aca5a75293f33bb7ee6c13	你聽見遠處傳來一陣鐘鳴。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
 1	36	game	d07d84c5e2c055414aedff0134f9baa637323e672ec1e0d344dff47c047d09e1		untranslated	P10A-B1 audit: composed sentence, not direct	P11: direction, MISCUTIL.C print_path_to (prefix 1:59-61/1:245/1:35 + direction 1:36-43 + literal and + distance 1:44-58 + literal stop); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	37	game	d88ebf8b996b6a77f22f85f9f7619bb9effdc9689de824489c780ef86a8f6ba7		untranslated	P10A-B1 audit: composed sentence, not direct	P11: direction, MISCUTIL.C print_path_to (prefix 1:59-61/1:245/1:35 + direction 1:36-43 + literal and + distance 1:44-58 + literal stop); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	38	game	1721c3b7905ccbf5f58526370715c856ad01af284ec03ee6b0e5efd23c370fd2		untranslated	P10A-B1 audit: composed sentence, not direct	P11: direction, MISCUTIL.C print_path_to (prefix 1:59-61/1:245/1:35 + direction 1:36-43 + literal and + distance 1:44-58 + literal stop); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
@@ -67,6 +70,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	94	game	005c6a2988ead370fcac9d0141cd9fa96fe859ce0387fe36c1f0958ecaa0150d	你搆不到那個。\n	draft	P10A-B1 core system: pick up		
 1	95	game	16ef222772ca9b7b722664588813f9aef66e82049416f4d0be097ffad4654454	那太重了，你拿不起來。\n	draft	P10A-B1 core system: pick up		
 1	96	game	87757b6ed2d7f23f3958d86afc731c16e3badccd131d00a7ba3e34d953b06de7	你無法拿起那個。\n	draft	P10A-B1 core system: pick up		
+1	97	game	bbe6f18fef13f79f4cccdfc422b9e29819007248b0dfe40e93e4b2865ef7ffe1	你沒有偵測到任何陷阱。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
 1	99	game	50f474713805ae44853d126377ef74291dae38cdf82dd28b012df1f1878577ad	你釣到了一條漂亮的魚。\n	draft	P10A-B1 core system: fishing		
 1	100	game	a56730c7e9f18c520b04d28844964d64f38ed17ba91ea0fea4ac1a218c477c94	這次運氣不好。\n	draft	P10A-B1 core system: fishing		
 1	101	game	ee20629fb6c42e948cab1b743b9b3b2594e1e171356977901d2032658bf3d365	你不能在那裡釣魚。也許換個地方吧。\n	draft	P10A-B1 core system: fishing		
@@ -104,6 +108,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	135	game	afd6c61d51a78a0c50b7e74dc2893b12bb16f0a964def173d59dfdda6c2f503c	岩石碎成了更小的碎塊。\n	draft	P10A-B1 core system: rock hammer		
 1	136	game	7fe376abb1b2e70cb32c0a47787657fcb7af37a2008fd8f405de4510fb466910	一件物品憑空出現，落入你的手中……\n	draft	P10A-B1 core system: spell		
 1	142	game	fba2816b5bd128165f942f28b4481218876c03da990607b3025a96214d9fa6aa	你無法修理那個。\n	draft	P10A-B1 core system: repair (WORLDEV.C)		
+1	146	game	2bd3e767c6d13fd19d56c67c6e8f79c95a67d17e00ca466ccf64c86ccdde4595	你發出的聲響引起了注意！\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
 1	148	game	d6a2c336c87b8c57e481c73b047a47fb04cd3e95a5a19f913b48784c498125cc	碗裡的材料不對。\n	draft	P10A-B1 core system: cooking		
 1	149	game	e12a28c7d018b82444ce4c69c94c26da963d6036fa6c64697e3c7f1d51f67fd6	你把材料混在一起，做成了一鍋燉湯。\n	draft	P10A-B1 core system: cooking		
 1	150	game	1f1dab2643a2fc4f2520d65402d7c86db59c2c58a9185d4e0433f21edda6d515	你需要一個碗才能混合材料。\n	draft	P10A-B1 core system: cooking		
@@ -138,11 +143,28 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	191	game	6bcb92b7a4c733b2f4cd2cf3c2226a29d6779e641133e357c4825fb0c360dfb2	傳來一陣痛苦的嗚咽聲。\n	draft	P10A-B1 core system: world event		
 1	192	game	f67df2f1ccbb529143d1bd6d9c3c133d73e12ea119cf20846596410d1b4637c4	傳來一陣空洞的喀噠聲。\n	draft	P10A-B1 core system: world event		
 1	193	game	f497cfafd581fac2a948e9affaf0452b53d4b2c99f0d1a606f9894eb6b8cde56	一個聲音說出這句話：「重置已啟動。」\n	draft	P10A-B1 core system: world event		
+1	194	game	82d6efee202a23b562d32bdcbd34a7d73b3791fd5afc5c91d6fad1b01d507352	你按下了按鈕。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	195	game	82d6efee202a23b562d32bdcbd34a7d73b3791fd5afc5c91d6fad1b01d507352	你按下了按鈕。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	196	game	82d6efee202a23b562d32bdcbd34a7d73b3791fd5afc5c91d6fad1b01d507352	你按下了按鈕。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	197	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	198	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	199	game	1ebd55f5f899d3bdd3c625ccf8740752eeaa0dd523da3556f94a0b5e2dbe428c	你拉下了拉桿。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	原文把 lever 拼成 level，依語意譯為拉桿。	
+1	200	game	6bad542050a9340b55b0d564ea9de43c25f9dd50edb6de948865fd53031014c8	你拉動了鏈條。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	201	game	6bad542050a9340b55b0d564ea9de43c25f9dd50edb6de948865fd53031014c8	你拉動了鏈條。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	202	game	70cc08d2744cd045a0848341c793785cf1f2164e51575217d86fb2656ce03c8f	按鈕恢復了原狀。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	203	game	70cc08d2744cd045a0848341c793785cf1f2164e51575217d86fb2656ce03c8f	按鈕恢復了原狀。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	204	game	70cc08d2744cd045a0848341c793785cf1f2164e51575217d86fb2656ce03c8f	按鈕恢復了原狀。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	205	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	206	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	207	game	4ac9d4987276bc51a556a0ad6330fdeeb1d80811e4650f390c445d5525c796dc	你推動了拉桿。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	208	game	3748a5c4c64efdd513d008fd1f744a1989a41284e6e15935119398cf2af3fa5f	你把鏈條放回了原位。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	209	game	3748a5c4c64efdd513d008fd1f744a1989a41284e6e15935119398cf2af3fa5f	你把鏈條放回了原位。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
 1	210	game	5ca027d17ee260e03c015923ca6a6f6b457ecbc4e9fbb5e909e602f6649d62ab	你的經驗不足，還無法施展這個法術環級的法術。\n	draft	P10A-B1 core system: casting		
 1	211	game	7a238f9ccfee25503b3723f1bcbaaebc6eb4c928e725e6899a5f3dc3cd0cb365	你的法力不足，無法施展這個法術。\n	draft	P10A-B1 core system: casting		
 1	212	game	28d6df452620a887f0d7dcc8a7b40524abdd423cadcc7d104119d0e17542a217	咒文詠唱失敗了。\n	draft	P10A-B1 core system: casting		
 1	213	game	a4f22310f2742cc5a5d21564b11e6ea9cf23cb337364a62e9d8eb3d0f737a55a	施法沒有成功。\n	draft	P10A-B1 core system: casting		
 1	214	game	bc2ba042cd482ff3de8dc4f5e5f16015c545a5ac648fa3f43c1990179ee2aef6	法術反噬了。\n	draft	P10A-B1 core system: casting		
+1	215	game	0b79fb8c22a769933fa98fb42c12dc308d82cc84ff55ae4b373e83ce1865ce05	你試著使用魔杖。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
 1	219	game	6d4c9cf5e022a07ea8013a4b07a30a88270c65dfd5223ccc3964d9a7b4525008		untranslated	P10A-B1 audit: composed sentence, not direct	P11: repair estimate, WORLDEV.C between 1:216 and 1:217; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	220	game	a7a39b72f29718e653e73503210fbb597057b7a1c77d1fe321a1afcff041d4e1		untranslated	P10A-B1 audit: composed sentence, not direct	P11: repair estimate, WORLDEV.C between 1:216 and 1:217; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	221	game	c4773daf2e6a2e27ea8eda78dd9e3ab3793cbb122698d941f50dc6f74b91b72c		untranslated	P10A-B1 audit: composed sentence, not direct	P11: repair estimate, WORLDEV.C between 1:216 and 1:217; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive

@@ -108,6 +108,27 @@ BITMAP_KEYS = {
 }
 
 
+# Block 1 strings that no Native UW1 code reads (P10A Batch 1 consumer audit,
+# docs/i18n/P10A_BATCH1_REPORT.md): developer text, the demo's message and
+# prompts UW1 replaced. Like block 24 they are debug scope: kept in the
+# inventory, outside the completion metric. Other unread block 1 strings
+# (switches, chimes) stay production, as level data might still name them.
+# Keyed with the audited source_hash: different data stays production.
+UNREAD_KEYS = {
+    (1, 0): ("7aef6b5daf11cd5b77ffe9adfd3adbb513d7ec2444128cb3d3627029a3d71929", "developer placeholder"),
+    (1, 1): ("f5e7d231ead38cb3efb3c2c8dc168faa03c9305f210e5a89f527b6387842d5cd", "developer test string"),
+    (1, 7): ("cfa49458ae37fef2f83451b6a906b3dbe5eaab173a3281afdbab4764cb16f501",
+             "replaced by USEITEMS.C UseThing's hard-coded prompt"),
+    (1, 8): ("24cc7fa172050163d413fd154a24801d01b8ad190a1128d0b974fd8dac07e0c0",
+             "replaced by USEITEMS.C UseThing's hard-coded prompt"),
+    (1, 98): ("9f61d122187f923bbc12e7d24b351f0cb0906f5f13d5b45f1f4af20489c702f6",
+              "replaced by 1:244, INTERACT.C's yes/no trap question (wyorn)"),
+    (1, 130): ("40f3bd0691e0ce4819bef644bbea3ac62d5266ce0b9b522e8b2111485f3584bd",
+               "replaced by USEITEMS.C UseThing's hard-coded prompt"),
+    (1, 281): ("76ff9dfaacb096b1e40d70fb11794a28ed06d5c3fc54535faa9cd684a57214b7", "demo version only"),
+}
+
+
 def rule(block, index):
     """(handling, reason) for a verified per-key/range rule, else None."""
     if block == 24:
@@ -138,6 +159,8 @@ def scope(block, index, source):
     if not source:
         return "empty"
     if block == 24:
+        return "debug"
+    if (block, index) in UNREAD_KEYS and UNREAD_KEYS[block, index][0] == source_hash(source):
         return "debug"
     return "production"
 

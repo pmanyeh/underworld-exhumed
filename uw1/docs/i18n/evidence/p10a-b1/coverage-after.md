@@ -3,9 +3,9 @@
 PAK `e8c9848a14c49620...`. Direct + Special = the production scope: player-facing,
 non-empty, addressable entries. Debug (block 24 dungeon report) is inventory only.
 
-**Production completion (draft or better): 209 / 6990 (2.99%)**; reviewed or better 0, approved 0.
+**Production completion (draft or better): 231 / 6983 (3.31%)**; reviewed or better 0, approved 0.
 
-All inventory: 10984 entries = 6990 production + 101 debug + 3852 empty + 41 unaddressable.
+All inventory: 10984 entries = 6983 production + 108 debug + 3852 empty + 41 unaddressable.
 
 | Category | Total | Empty | Unaddr. | Debug | Direct | Special | Untransl. | Draft | Reviewed | Approved | Blocked | Runtime seen | Runtime hit | Runtime fallback |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -15,19 +15,19 @@ All inventory: 10984 entries = 6990 production + 101 debug + 3852 empty + 41 una
 | conversation_common | 512 | 403 | 0 | 0 | 2 | 107 | 106 | 3 | 0 | 0 | 0 | 5 | 1 | 4 |
 | cutscene | 122 | 0 | 0 | 0 | 0 | 122 | 122 | 0 | 0 | 0 | 0 | 42 | 0 | 42 |
 | dungeon_report | 512 | 411 | 0 | 101 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| game | 512 | 102 | 0 | 0 | 156 | 254 | 283 | 127 | 0 | 0 | 0 | 13 | 8 | 5 |
+| game | 512 | 102 | 0 | 7 | 149 | 254 | 254 | 149 | 0 | 0 | 0 | 13 | 8 | 5 |
 | object_look | 544 | 409 | 32 | 0 | 0 | 103 | 103 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |
 | object_names | 512 | 108 | 0 | 0 | 0 | 404 | 404 | 0 | 0 | 0 | 0 | 2 | 0 | 2 |
 | spells | 512 | 299 | 0 | 0 | 0 | 213 | 213 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | textures | 512 | 248 | 0 | 0 | 0 | 264 | 264 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | trap_text | 512 | 498 | 0 | 0 | 14 | 0 | 14 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | writings | 512 | 396 | 0 | 0 | 98 | 18 | 116 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| **total** | 10984 | 3852 | 41 | 101 | 5251 | 1739 | 6781 | 209 | 0 | 0 | 0 | 125 | 34 | 91 |
+| **total** | 10984 | 3852 | 41 | 108 | 5244 | 1739 | 6752 | 231 | 0 | 0 | 0 | 125 | 34 | 91 |
 
 | Production handling | Count |
 | --- | ---: |
 | bitmap-ui | 261 |
-| direct | 5251 |
+| direct | 5244 |
 | grammar | 885 |
 | input-token | 26 |
 | object-name | 413 |
@@ -35,7 +35,7 @@ All inventory: 10984 entries = 6990 production + 101 debug + 3852 empty + 41 una
 
 | Special list | Count |
 | --- | ---: |
-| untranslated | 6781 |
+| untranslated | 6752 |
 | template | 154 |
 | grammar_sensitive | 1298 |
 | bitmap_ui | 261 |

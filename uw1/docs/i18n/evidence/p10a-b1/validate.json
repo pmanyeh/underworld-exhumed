@@ -1,9 +1,9 @@
 {
   "status": "PASS",
   "inventory_checked": true,
-  "master_rows": 402,
+  "master_rows": 424,
   "literal_rows": 1,
-  "packed_rows": 209,
+  "packed_rows": 231,
   "source_drift": [],
   "problems": []
 }

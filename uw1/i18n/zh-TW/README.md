@@ -71,8 +71,9 @@ python3 tools/i18n/l10n.py export --pak "$UW1_DATA/DATA/STRINGS.PAK" --cnv "$UW1
 ## 處理分類（coverage report 用）
 
 每個條目有一個 **scope**：`production`（玩家版中文化範圍，完成率的分母）、`debug`
-（block 24 的 dungeon report：遊戲程式從不讀取，仍保留在 inventory，可翻但不計入完成率）、
-`empty`、`unaddressable`。
+（block 24 的 dungeon report，以及 P10A 稽核確認沒有程式讀取的 block 1 七筆：開發者字串、試玩版訊息、
+被 UW1 改用其他文字取代的提示；遊戲程式從不讀取，仍保留在 inventory，可翻但不計入完成率）、
+`empty`、`unaddressable`。這七筆列在 `l10n.py` 的 `UNREAD_KEYS`，只在原文 hash 與稽核時相同時適用。
 
 以及一個 **handling**，回答「它現在能不能直接走既有的 HD 顯示路徑」。
 人工 flags 只能讓條目變成特殊處理：

@@ -1,6 +1,7 @@
 # P10A Batch 1 — Core / System / Runtime High-Priority Direct Strings
 
-**結論：`P10A_BATCH1_PASS_WITH_FINDINGS`**（2026-10-23）。157 筆 direct 字串譯為 `draft`，
+**結論：`P10A_BATCH1_PASS_WITH_FINDINGS`**（2026-10-23）。157 筆 direct 字串譯為 `draft`
+（人工審閱 F3 後，另補 22 筆，共 179 筆，見 [F3 處理](#f3-處理人工決定後)），
 全部經 import／validate／authority lint／deterministic build／Native QA；沒有 Authority 違規、沒有 source drift。
 另有一項需要人工決定的 regression 設計問題（[F1](#i-findings--blockers)）與數項交給 P11／P12 的發現。
 **本批完成後停止**：沒有開始 Batch 2、P10B／P10C、P11、P12 或 M0–M2，沒有任何譯文標為 `approved`。
@@ -58,7 +59,7 @@ Evidence：[evidence/p10a-b1](evidence/p10a-b1/)。本報告與 evidence 只以 
 | --- | ---: | --- |
 | 整句、單獨送到 scroll | 125 | 本批翻譯 |
 | 由多次 `scroll_print` 組成一句（方向、距離、時段、飢餓／疲勞、中毒程度、修理難度、美德聖物、序數、版本字首、存讀檔的進度點、句尾） | 172 | **不翻**；加 `grammar-sensitive`，notes 記程式位置 → P11 |
-| Native C 中找不到任何讀取者 | 29 | 不動，留在 direct；見 F3 |
+| Native C 中找不到任何讀取者 | 29 | 先不動；人工決定後 7 筆移到 debug scope、22 筆翻譯（見 F3） |
 
 HD scroll 以每次 `scroll_print` 的指標各自查譯文，所以只翻組句中的片段會產生中英夾雜的句子，
 屬於 P11 grammar 機制。spells 的 `6:384`–`6:404`（21 筆，作用中法術名）同理：`RUNES.C` 先印法術名，
@@ -69,14 +70,14 @@ HD scroll 以每次 `scroll_print` 的指標各自查譯文，所以只翻組句
 
 | 項目 | 數量 |
 | --- | ---: |
-| Translated（本批） | 157 |
-| draft | 157 |
+| Translated（本批） | 157＋22（F3 處理）＝ **179** |
+| draft | 179 |
 | reviewed | 0（repo 沒有可驗證的 review workflow，故不提升） |
 | approved | 0 |
 | blocked | 0 |
 | needs-context | 0 |
 | P11 finding（`grammar-sensitive`，未翻） | 193 |
-| Deferred（找不到讀取者） | 29 |
+| 移到 debug scope（無讀取者、已被取代或開發用） | 7 |
 
 做法：從玩家資料 export 新的 workbook（只留本機）→ 填入譯文／context／notes → `l10n.py import`
 （逐列比對英文、寫入 `source_hash`）。對話不加外層「」，與 P8 Bragit 譯文及遊戲原本的顯示一致；
@@ -94,13 +95,13 @@ Authority 使用重點：深淵、貪金王、不列顛尼亞、山岳族（the 
 
 | 項目 | 結果 |
 | --- | --- |
-| `l10n.py validate`（含 PAK） | PASS — 402 rows、0 problems、0 drift（[validate.json](evidence/p10a-b1/validate.json)） |
+| `l10n.py validate`（含 PAK） | PASS — 424 rows、0 problems、0 drift（[validate.json](evidence/p10a-b1/validate.json)） |
 | `l10n.py validate`（無資料，CI 模式） | PASS |
 | Authority lint（本批 blocks 1／7／3672） | **0 errors、0 warnings**、16 info（[authority-lint-batch.json](evidence/p10a-b1/authority-lint-batch.json)） |
 | Authority lint（整份 master） | 0 errors、5 warnings、30 info；5 個 warning 全是批次前就存在的 PoC 列（[before](evidence/p10a-b1/authority-lint-before.json)／[after](evidence/p10a-b1/authority-lint-all.json)） |
-| Source hash | import 時逐列由目前資料計算；validate 重算 402 列皆相符 |
+| Source hash | import 時逐列由目前資料計算；validate 重算 424 列皆相符 |
 | Stale workbook | 竄改本批 workbook 一列英文後 import：整份拒絕（`stale export`），master SHA-256 不變 |
-| Catalog determinism | 兩次 build 相同：209 entries、24,420 bytes、`94c8d9253179d9a8dc720336a8856115d973f96d26bf0c50ef15a6fd038733bc`（[catalog.json](evidence/p10a-b1/catalog.json)） |
+| Catalog determinism | 兩次 build 相同：231 entries、25,967 bytes、`fb2f31fc5039174fc42812e2004f662b2ccc8fd994223807e5089bf73081ff3d`（[catalog.json](evidence/p10a-b1/catalog.json)）。F3 處理前的 157 筆版本為 209 entries、`94c8d925…33bc`，本報告的 Native QA 截圖與 scroll log 以該版本產生；新增的 22 筆在這些場景都不會出現 |
 | UTF-8／控制碼 | validator 全數通過；runtime 確認 `\6` 綠色、`\4`／`\0` 色碼正常 |
 | English source 不入庫 | 掃描 master 與 evidence：沒有任何完整英文遊戲句；僅 context 標籤含 Authority 已收錄的法術名 |
 
@@ -144,16 +145,16 @@ tooheavy、items。本批在 runtime 可達的 **23 個 key 全數 `hit`**，每
 
 | 指標 | Before | After |
 | --- | ---: | ---: |
-| Production scope | 6,990 | 6,990 |
-| Direct total | 5,444 | **5,251**（193 筆經稽核改為 grammar） |
-| Direct translated（draft 以上） | 46 | **203** |
-| Direct untranslated | 5,398 | **5,048**（= 5,398 − 157 譯 − 193 改分類） |
+| Production scope | 6,990 | **6,983**（7 筆移到 debug） |
+| Debug scope | 101 | 108 |
+| Direct total | 5,444 | **5,244**（193 筆改為 grammar、7 筆移出） |
+| Direct translated（draft 以上） | 46 | **225** |
+| Direct untranslated | 5,398 | **5,019**（= 5,398 − 179 譯 − 193 改分類 − 7 移出） |
 | Grammar handling | 692 | 885 |
-| draft／reviewed／approved | 52／0／0 | 209／0／0 |
+| draft／reviewed／approved | 52／0／0 | 231／0／0 |
 | blocked | 0 | 0 |
 | needs-context | 0 | 0 |
-| Deferred（本批稽核，無讀取者） | — | 29 |
-| Production completion | 52（0.74%） | **209（2.99%）** |
+| Production completion | 52（0.74%，分母 6,990） | **231（3.31%，分母 6,983）** |
 | Runtime hit／fallback（19 sessions） | 11／114 | **34／91** |
 | Authority violations（error＋warning，整份） | 5（PoC） | 5（PoC，無新增） |
 | Authority violations（本批） | — | 0 |
@@ -172,7 +173,7 @@ English fallback 不計為 translated；coverage 只計 `draft`／`reviewed`／`
 | P8 recordings：english、resize | PASS（各兩次） |
 | P8 recordings：walk、dialogue、restore（HD） | 以本批 catalog **不相同**——原因與隔離證明見 **F1** |
 | 同上，以 P8 catalog | PASS（walk 250、dialogue 307、restore 123 checkpoints，各兩次，saves 相同） |
-| 同上，以本批 catalog 去掉這些錄影顯示的 5 筆 | PASS（三者全部相同） |
+| 同上，以本批 catalog 去掉這些錄影顯示的 5 筆 | PASS（三者全部相同；F3 處理後的 231 筆 catalog 去掉同 5 筆再跑一次，仍全部相同） |
 | Text／font／cursor／scroll（含 ASan／UBSan） | inventory、l10n、layout、runtime、font、no-FreeType、cursor、mouse、flow、render、window：PASS（[text-tests.json](evidence/p10a-b1/text-tests.json)） |
 | Native probe（10,984 strings＋runtime hook） | 第一次執行失敗（`text-tests.json` 記為 1，原因見 F7）；修正 `verify_native.py` 後重跑，本批與 P8 catalog 皆 PASS（[native-probe.json](evidence/p10a-b1/native-probe.json)） |
 | Native build | PASS；本批未改任何 C 程式 |
@@ -185,9 +186,10 @@ DOS／Borland 依計畫不是 P10 blocker，未執行。
 
 | 檔案 | 用途 |
 | --- | --- |
-| `uw1/i18n/zh-TW/master.tsv` | +157 draft 譯文；+193 列 `grammar-sensitive` 稽核標記（無譯文）；52 → 402 rows，僅 `source_hash`，不含英文 |
-| `uw1/tools/i18n/l10n.py` | 新增 `authority` 子指令（authority lint，locale-neutral） |
-| `uw1/tools/i18n/test_l10n.py` | authority lint 的 5 個 asset-free tests |
+| `uw1/i18n/zh-TW/master.tsv` | +179 draft 譯文；+193 列 `grammar-sensitive` 稽核標記（無譯文）；52 → 424 rows，僅 `source_hash`，不含英文 |
+| `uw1/tools/i18n/l10n.py` | 新增 `authority` 子指令（authority lint，locale-neutral）；`UNREAD_KEYS` 把 7 筆無讀取者的 block 1 字串歸入 debug scope（F3） |
+| `uw1/tools/i18n/test_l10n.py` | authority lint 的 5 個 asset-free tests；scope 測試涵蓋 `UNREAD_KEYS` 與 hash 比對 |
+| `uw1/i18n/zh-TW/README.md` | debug scope 的定義加入這 7 筆 |
 | `uw1/tools/i18n/verify_native.py` | runtime hook 的預期 key 集合允許已翻譯的 `1:3`（F7） |
 | `uw1/i18n/README.md` | workflow 加入 `authority`；連到本報告 |
 | `uw1/docs/i18n/P10A_BATCH1_REPORT.md` | 本報告 |
@@ -211,7 +213,24 @@ walk／dialogue／restore 錄製時，`1:156`、`1:162`、`1:165`、`1:168`、`1
 
 **F3 — block 1 有 29 筆在 Native C 找不到讀取者**（`1:0`、`1:1`、`1:7`、`1:8`、`1:13`、`1:32`、`1:33`、`1:97`、
 `1:98`、`1:130`、`1:146`、`1:194`–`1:209`、`1:215`、`1:281`）。其中有開發者字串與 UW1 改用 hard-coded 文字的提示。
-是否移出 production 分母需要人工決定；本批未動。
+
+#### F3 處理（人工決定後）
+
+依人工審閱採用的分類（[block1-consumer-audit.json](evidence/p10a-b1/block1-consumer-audit.json)）：
+
+| 處理 | Keys | 理由 |
+| --- | --- | --- |
+| 移到 **debug scope**（不計入完成率，仍留在 inventory） | `1:0`、`1:1`、`1:281` | 開發者字串、試玩版專用 |
+| 同上 | `1:7`、`1:8`、`1:130` | UW1 改用 `USEITEMS.C` `UseThing` 寫死的「Use ‹物品› on what?」 |
+| 同上 | `1:98` | 實際使用的是 `1:244`（`INTERACT.C` 的 yes/no 問句，grammar） |
+| **翻譯為 draft**，留在 production | `1:13`、`1:32`、`1:33`、`1:97`、`1:146`、`1:194`–`1:209`、`1:215`（22 筆） | 程式找不到讀取者，但可能由關卡資料觸發；翻譯沒有壞處 |
+
+移出規則沿用 P9 對 block 24 的定義（遊戲程式從不讀取 → debug），以 `l10n.py` 的 `UNREAD_KEYS` 明列，
+並記錄稽核時的 `source_hash`：資料不同時自動回到 production，不會誤排除其他版本的字串。
+人工 flag 機制沒有被用來做這件事，也沒有新增 scope 種類。22 筆譯文使用 Authority 的地下世界、真理之鑰、陷阱、
+按鈕、開關、拉桿、魔杖；`1:199` 原文把 lever 拼成 level，依語意譯為拉桿。
+這 22 筆在現有的遊玩記錄中都不會出現，所以沒有 runtime 截圖；validate、authority lint（0／0）、
+deterministic build、zh-TW lookup replay、native probe 與 P8 隔離重播都已用新 catalog 重跑並通過。
 
 **F4 — 存檔說明輸入時提示文字不顯示（→ P12）。** 輸入框暫停 HD scroll；P8 catalog 下相同，是既有行為。
 
@@ -231,8 +250,8 @@ pole 用「長竿」（info）。這些列被 `test_poc_catalog_equals_p8` 固�
 **`P10A_BATCH1_PASS_WITH_FINDINGS`**
 
 流程（Authority → workbook → import → validate → authority lint → build → Native QA → trace → coverage）
-已完整走過且可重複，本批沒有 Authority、drift 或 runtime 退回英文的問題。請在擴大 P10 前先決定 F1 的 regression
-策略與 F3 的分母處理，並審閱 157 筆 `draft`。
+已完整走過且可重複，本批沒有 Authority、drift 或 runtime 退回英文的問題。F3 已依人工決定處理。
+請在擴大 P10 前先決定 F1 的 regression 策略，並審閱 179 筆 `draft`。
 
 建立本機 commit 與 checkpoint tag `zh-tw-native-p10a-batch1`（未 push；`zh-tw-native-p10` 保留給整個 P10 驗收）。
 
