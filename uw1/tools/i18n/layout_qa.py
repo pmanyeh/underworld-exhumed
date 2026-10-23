@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Layout QA for translated conversation rows (P10B): lay each target out with the HD
 scroll's own code and the default font, in the box the game shows it in, and report lines,
-[MORE] pages and failures. A player's menu option goes to the message scroll (box 0, three
-lines), anything else to the conversation's box (1, nine lines); the role comes from
-babl_audit. Needs the player's STRINGS.PAK/CNV.ARK for the roles; reports keys and counts."""
+[MORE] pages and failures. A player's menu option, and any string outside a conversation
+(game messages, books, writings, trap text), goes to the message scroll (box 0, three lines);
+an NPC's line to the conversation's box (1, nine lines); the role comes from babl_audit. Needs the player's STRINGS.PAK/CNV.ARK for the roles; reports keys and counts."""
 import argparse
 import collections
 import json
@@ -15,6 +15,10 @@ import subprocess
 
 import babl_audit
 import l10n
+
+# conversation strings live in blocks 0xE00 + slot; everything below (game messages, books,
+# writings, trap text) prints in the message scroll
+CONVERSATION_BASE = 0xE00
 
 
 def build(uw1):
@@ -59,7 +63,8 @@ def main():
     with open(feed, 'w', encoding='utf-8', newline='\n') as f:
         for r in rows:
             menu = roles.get((int(r['block']), int(r['index'])), set()) & {'babl_menu', 'babl_fmenu'}
-            f.write(f"{r['block']}:{r['index']}\t{0 if menu else 1}\t{l10n.escape(r['target_zh_TW'])}\n")
+            scroll = menu or int(r['block']) < CONVERSATION_BASE
+            f.write(f"{r['block']}:{r['index']}\t{0 if scroll else 1}\t{l10n.escape(r['target_zh_TW'])}\n")
     exe = build(uw1)
     env = dict(os.environ)
     env['PATH'] = str(uw1 / 'tools/libs/bin') + os.pathsep + env['PATH']
