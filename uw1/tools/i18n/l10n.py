@@ -841,7 +841,8 @@ def authority_lint(master, inventory, terms, blocks=None):
     given as one of its listed aliases. Terms that share an English form (Mana the
     attribute and the skill) are satisfied by any of them. A reviewer who finds the
     word is not the glossary sense (guard the verb, not the title) writes
-    `authority-ok:<source_en>` in the row's notes; the finding stays, as 'info'."""
+    `authority-ok:<source_en>` in the row's notes; the finding stays, as 'info'.
+    A term found only inside a longer term's match is left to the longer term."""
     patterns = [(t, whole_words([t["source_en"]] + split_aliases(t["aliases_en"]),
                                 re.IGNORECASE if t["category"] in AUTHORITY_ANY_CASE and
                                 t["translation_policy"] != "preserve-input-token" else 0)) for t in terms]
@@ -856,11 +857,20 @@ def authority_lint(master, inventory, terms, blocks=None):
         source = inventory.source(block, index)
         in_runes = " ".join(m.group(0) for m in rune_run.finditer(source)) if rune_run else ""
         groups = defaultdict(list)
+        spans = defaultdict(set)
         for t, pattern in patterns:
-            match = pattern.search(in_runes if t["term_kind"] == "rune-token" else source)
-            if match:
-                groups[t["source_en"]].append((t, pattern, match.group(0)))
-        for group in groups.values():
+            rune = t["term_kind"] == "rune-token"
+            matches = list(pattern.finditer(in_runes if rune else source))
+            if matches:
+                groups[t["source_en"]].append((t, pattern, matches[0].group(0)))
+                if not rune:
+                    spans[t["source_en"]].update(m.span() for m in matches)
+        longer = [span for found in spans.values() for span in found]
+        for name, group in groups.items():
+            # a word only inside a longer term ("Standard" in "Standard of Honor") is that term's business
+            if spans[name] and all(any(a <= s and e <= b and (a, b) != (s, e) for a, b in longer)
+                                   for s, e in spans[name]):
+                continue
             terms_found = [t for t, _, _ in group]
             tokens = [p for t, p, _ in group if t["translation_policy"] == "preserve-input-token"]
             if tokens:

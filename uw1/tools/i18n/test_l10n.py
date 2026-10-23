@@ -499,6 +499,15 @@ class AuthorityLintTests(unittest.TestCase):
         master[0]["target_zh_TW"] = "繪有聖符。"
         self.assertEqual(l10n.authority_lint(master, inv, terms), [])
 
+    def test_a_word_inside_a_longer_term_is_left_to_that_term(self):
+        # "Standard" in "Standard of Honor" is the Talisman's name, not the object; elsewhere it still counts.
+        terms = [term("standard", "旗幟", "object"), term("Standard of Honor", "榮譽之旆", "quest-object")]
+        inv = inventory({(1, 0): "Bear the Standard of Honor.", (1, 1): "The Standard of Honor is a standard."})
+        master = [{"block": "1", "index": str(i), "target_zh_TW": t, "status": "draft"}
+                  for i, t in enumerate(("帶著榮譽之旆。", "榮譽之旆是一面錦旗。"))]
+        found = {f["key"]: f["level"] for f in l10n.authority_lint(master, inv, terms)}
+        self.assertEqual(found, {"1:1": "info"})
+
     def test_untranslated_blocked_and_other_blocks_are_skipped(self):
         inv = inventory(self.SOURCES)
         master = [{"block": "1", "index": "0", "target_zh_TW": "", "status": "untranslated"},
