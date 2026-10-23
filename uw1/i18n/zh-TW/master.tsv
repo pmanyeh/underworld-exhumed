@@ -1205,6 +1205,166 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3596	137	conversation	29aa28519a780c3cf239972b94823605b39e34f80887c68909b66801996642b6	那我會小心應付他。	draft		p10b-7 draft	
 3596	138	conversation	7a602b00bec967d7bff1fa6c54bf99dd4f12523460284079f837edb634b5d084	我可以加入你們的騎士團嗎？	draft		p10b-7 draft	
 3596	139	conversation	71b8e1072ae520133caad417e655bb50bf6bd6831d80d9a40465297a6f510b27	謝謝你的忠告，再會。	draft		p10b-7 draft	
+3597	1	conversation	10a9a5e51227af716dbd529da05ef44d8aa1b1881e93defdc7afe2917e458b0e	你好，勇敢的旅人。我是莫洛克。	draft		p10b-13 draft	
+3597	2	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	draft		p10b-13 draft	
+3597	3	conversation	a82243eccf814877e0edf129afe990840964f0a3b9a0ce4a0b932d3db39aa38d	你能跟我說說你的族人嗎？	draft		p10b-13 draft	
+3597	4	conversation	61e4c2fb524d9bf00f5f83eab6a9347c4bab56588d275905436c129cf3d56c71	我有東西要給你。	draft		p10b-13 draft	
+3597	5	conversation	1bd730216c98a4b11fceeedbe36d1c15b356113db2c9f23fd4e7022f47049dc1	我在尋找冒險。	draft		p10b-13 draft	
+3597	6	conversation	09e9e1ed0f87d3dd1e4e205b0bd3fb8540d262bb5e5c1bc18374dbfdd7ba403a	嗯，我可以告訴你，我的同伴之一，魔法師布羅努斯，需要你幫忙。把他的一件東西交給我，你就會得到獎賞。	draft		p10b-13 draft	
+3597	7	conversation	26ffa7fc51707aaf289804acc828b4669124855c1666f08beda6ee1122f0cc24	其實，我已經從他那裡拿到那件東西了。	draft		p10b-13 draft	
+3597	8	conversation	e437ef784ebc3908c3b4533bd82e159c331f65b13a59ccbfdcef7e1f666ef0f2	也許我會碰到他。	draft		p10b-13 draft	
+3597	9	conversation	1c1f1ace311f6b8a5770bf3a0b33ffda04195ed3586823ec1bc438089721d12f	我對跑腿沒興趣。	draft		p10b-13 draft	
+3597	10	conversation	132615b529505e40d61e9e4c78b0f546cc591d52e3441acf04064db2eed32dcd	啊！嗯，我想我的魔法師同伴布羅努斯有東西要給我。你要是願意把它交給我，也許我能進一步幫你。	draft		p10b-13 draft	
+3597	11	conversation	26ffa7fc51707aaf289804acc828b4669124855c1666f08beda6ee1122f0cc24	其實，我已經從他那裡拿到那件東西了。	draft		p10b-13 draft	
+3597	12	conversation	e437ef784ebc3908c3b4533bd82e159c331f65b13a59ccbfdcef7e1f666ef0f2	也許我會碰到他。	draft		p10b-13 draft	
+3597	13	conversation	1c1f1ace311f6b8a5770bf3a0b33ffda04195ed3586823ec1bc438089721d12f	我對跑腿沒興趣。	draft		p10b-13 draft	
+3597	14	conversation	c0a6e8f12dfc526f9b0320913623df71b336034c8f861c5974c896efe53a0043	真可惜。要是你改變主意，儘管再來找我！	draft		p10b-13 draft	
+3597	15	conversation	14ce55c3e7f61921216f741a58935dc93a758a578fc484743d3bf860528930f9	啊！你帶來了我的書！太好了！	draft		p10b-13 draft	
+3597	16	conversation	231bcd3515ae64beb9efb16fc9135b8bcc0e12c1630f3f4d3e933096f86ce2cd	你說你有東西要給我？	draft		p10b-13 draft	
+3597	17	conversation	50b1af3704de57c079a08fa2c18643845cc7f9ee15b0aa8ad49cb12b8132f652	是的，在這裡。	draft		p10b-13 draft	
+3597	18	conversation	56779376aabf2ed2b2c968287f0818c2bc7bf80113bcfae002a6a37ff7cb4d19	不，你誤會了。	draft		p10b-13 draft	
+3597	19	conversation	bdf31e02cf4c212cae949426b7aa960303eb55b3d13c4cd6abdc1f1fcd385e19	這些都不是我的。你真的有我的東西嗎？	draft		p10b-13 draft	
+3597	20	conversation	50b1af3704de57c079a08fa2c18643845cc7f9ee15b0aa8ad49cb12b8132f652	是的，在這裡。	draft		p10b-13 draft	
+3597	21	conversation	8e080fd7d9a4918cdc37a4a69c94baafcea640b477562e253bbe0f701c407b0d	不，恐怕沒有。	draft		p10b-13 draft	
+3597	22	conversation	ab875d11cc1e759284d1ab934b71ab88b1b0ee447317b84ed0924616caf3fb8b	也許這差事對你來說太難了。不過沒關係。	draft		p10b-13 draft	
+3597	23	conversation	f5f323173d578f4e03d54978a353d1a67031a6bf310b2db6312de5726bb953a0	嗯，你要是拿到那件東西，請盡快帶來給我。	draft		p10b-13 draft	
+3597	25	conversation	caa257ae9233298ea1def70b83a0e9fbaf3eceb049a833b1a5f72280653b7216	是的，那是我的名字。	draft		p10b-13 draft	
+3597	27	conversation	46131985a1692cf2c7c34216a4e08eb174b1791281f61c634b016e817d7bc5e1	你知道我是。	draft		p10b-13 draft	
+3597	28	conversation	784df1d9bee4819b0bff02c7a705f581f3ec028399238680fed76926fa8bce05	啊！你怎麼不早說？	draft		p10b-13 draft	
+3597	29	conversation	86f36a31a208cec2a9ea392c9c256ee17975bfdeec9b31814ab86410cc4e292c	我原本只打算獎賞你把書帶來給我，可是現在我聽說，你遇上並殺死了可怕的火焰多頭蛇。那隻八頭怪物長久以來一直威脅著我們這些愛好和平的人。幹得好！你應該得到更大的獎賞！	draft		p10b-13 draft	
+3597	30	conversation	5ce3d810eae6e7e6e502365dce1c66a7e8f0cc3d48d35e513a59b2c6c5a240c1	那當然。我正想知道該向誰領賞呢。	draft		p10b-13 draft	
+3597	31	conversation	d3691ee45388a7d5a4196190322e09c20f17505fdae2d5694f27771af96936f3	請見諒。我沒殺過那種野獸。	draft		p10b-13 draft	
+3597	32	conversation	5a7cf4ac138054a82f60f73e4d078b4bcb964184c9a97c19375b4d78770b99ba		untranslated		grammar-sensitive: 代名詞片段（him），代入同對話的模板句，P11 處理	grammar-sensitive
+3597	33	conversation	354cbfc814262a7a81d343f7d6ebc4adfb4266e5081a78f6a19ff16802dce8b2		untranslated		grammar-sensitive: 代名詞片段（her），代入同對話的模板句，P11 處理	grammar-sensitive
+3597	36	conversation	728add554c678beeeb7a305b986f744cdd30ba9ae04c137e578302ebb159fcaf	你聽說了什麼？	draft		p10b-13 draft	
+3597	37	conversation	372f7e2fd2d01ce2a1d71dc072acbba4c6fd25a1087cd7f153f4ec0ce37e1ede		untranslated		grammar-sensitive: 代名詞片段（he），代入同對話的模板句，P11 處理	grammar-sensitive
+3597	38	conversation	2cda85e504e155f30a40f1f1cc4e83f3f8ec178033f6b6170cc9381f5e4f9d3d		untranslated		grammar-sensitive: 代名詞片段（she），代入同對話的模板句，P11 處理	grammar-sensitive
+3597	40	conversation	5a7cf4ac138054a82f60f73e4d078b4bcb964184c9a97c19375b4d78770b99ba		untranslated		grammar-sensitive: 代名詞片段（him），代入同對話的模板句，P11 處理	grammar-sensitive
+3597	41	conversation	354cbfc814262a7a81d343f7d6ebc4adfb4266e5081a78f6a19ff16802dce8b2		untranslated		grammar-sensitive: 代名詞片段（her），代入同對話的模板句，P11 處理	grammar-sensitive
+3597	42	conversation	00431852eb9cf8fe4ba17fb3f8e505bc4c541cbb80af2768d56ca364b9b9e822	啊，那你說的就是我了。你把我的名字唸得太走樣，我才會誤會。	draft		p10b-13 draft	
+3597	44	conversation	b9923406c803e7a8664f01d3babaa0cd167a756eb799bbc3c9e720345adb4c66	啊，我就這麼想。你跟描述很符合。	draft		p10b-13 draft	
+3597	45	conversation	32c1ce42382f800bbaea72e7201ad8cf66d47cdcaa7a0fabcebbdda2cb38871a	你的獎賞是一本強大的書。你會在圖書館一扇暗門後面的房間裡找到它。	draft		p10b-13 draft	
+3597	46	conversation	b8f71c7eceb3eec4fd48f41e5da6453c7eda0a7ca889b0d45fc32494be2fe91f	謝謝你。我這就去領我的獎賞。	draft		p10b-13 draft	
+3597	47	conversation	5871d9a43d8cd137f4805fedf4ccdfd7c0138d10fbd919d046e950d830662cc6	嗯。那麼，抱歉，我得走了。	draft		p10b-13 draft	
+3597	48	conversation	19b3e5fc529de27e541c42edfb40476ff30e182ea0a8ab0946b24d5a22aca6ff	你的誠實值得嘉許，你的獎賞將是真實之書。誠實與真理超越時間，所以你會在沙漏後面、鑰匙旁邊找到它。	draft		p10b-13 draft	
+3597	49	conversation	3fa5fe6330cdc4c9c7031bd73b55ca81e28ccb0ea1154f90d0952194f8f711f8	好，謝謝你。我這就去拿。	draft		p10b-13 draft	
+3597	50	conversation	9e0eaf84713327bc5ae2fb7e67a852f33eebdcc568962ee59c6a6f8657cc5f8c	你能跟我說說這本書嗎？	draft		p10b-13 draft	
+3597	51	conversation	4f839a0bf9da9ec136412e3265736376c33066f67019620e0c2c9ba901f66774	這本書是凱布勒斯爵士的聖物之一。它出自月光城的雷赫斯特之手，他收集了許多關於誠實的偉大著作和論真理的文章。它本身具有強大的力量，書中的智慧也是。	draft		p10b-13 draft	
+3597	52	conversation	3fa5fe6330cdc4c9c7031bd73b55ca81e28ccb0ea1154f90d0952194f8f711f8	好，謝謝你。我這就去拿。	draft		p10b-13 draft	
+3597	53	conversation	892d8d4d0a04a19f52ff2b167c3d88caaa8a88abd98fa1963ce996605796742b	謝謝你。	draft		p10b-13 draft	
+3597	54	conversation	710971e6e8749f91aabddff65b7f7abbc6a93f42ebbd107b65447f19560957ba	又見面了。你有東西要給我嗎？	draft		p10b-13 draft	
+3597	55	conversation	50b1af3704de57c079a08fa2c18643845cc7f9ee15b0aa8ad49cb12b8132f652	是的，在這裡。	draft		p10b-13 draft	
+3597	56	conversation	facc7513d3eed76e4e1f9f3ec1c8dec3725940ef36ed535b5d81be067d5a7925	不，我沒有。	draft		p10b-13 draft	
+3597	57	conversation	2a246c878172fe6386fb9131b410058afb8cf844842fc65c3cfb92f122048776	你說的是什麼東西？	draft		p10b-13 draft	
+3597	58	conversation	5917e53ed1a5ca510d486c92c784000ae8c522c328d522c616be8736cc93af08	我的魔法師同伴布羅努斯想把一件東西交給我。去找他吧。你要是把東西帶來給我，我也許會獎賞你。	draft		p10b-13 draft	
+3597	62	conversation	07678ca56b32e8bea585b207c9eb7250018dd7a0230d1f0806261195afa548b2	不，我還沒找到。	draft		p10b-13 draft	
+3597	64	conversation	9d8c129b1a3c7329aeafc53bfd6c348105657e558ea3607aadaa3bc7ed964bae	又見面了。這次你想從我這裡得到什麼？	draft		p10b-13 draft	
+3597	65	conversation	6631ae031c4e75f0d69486d4931afc96b4219435cf785eebc83cedf32a745268	我只是想再謝謝你一次。	draft		p10b-13 draft	
+3597	66	conversation	d51bd2f92319c5c39f9aef193c2dbaa13a2a9821fe5aea9d626127d1e2fd3b4b	我只是順道來打聲招呼。	draft		p10b-13 draft	
+3597	67	conversation	ce87ab7bbd4bc2862a31415db4bb1b4567030c40e992472e4c0dd072257be905	我必須承認，我沒殺過什麼火焰多頭蛇。	draft		p10b-13 draft	
+3597	69	conversation	fa3e4f036e211f7af923322ff63c8afc4a5cbe199684ce5d4b2dc998379a9d41	找到了，謝謝你。	draft		p10b-13 draft	
+3597	70	conversation	c96bff8e2ebfaeff920aeb3e8c52c88c617f5fdefd8ff7a4aceb9c260a72e021	不，還沒有。	draft		p10b-13 draft	
+3597	71	conversation	3b504e51c3bb63cc19495e735471c604eb51f09977b76b3c5a7b5796904ab6ef	我必須承認，我不配得到這份獎賞。我沒殺過什麼火焰多頭蛇。	draft		p10b-13 draft	
+3597	72	conversation	cdf999327b56858abf2460b87d385fa4491b884719aa4742ce62f76f5acada89	你真好心。祝你的任務一路順利。	draft		p10b-13 draft	
+3597	73	conversation	105839c9d90d976781ac28618a3961ae202b3f9703d3d30fa4e8c8417d4c6474	希望你好好使用它，這是你應得的。	draft		p10b-13 draft	
+3597	74	conversation	17aae74def47dfe74a482b892c8b7e0bd94b02fa7305636ff371e94472dfeca3	應該不難找。	draft		p10b-13 draft	
+3597	75	conversation	a7e8893f79adacb4e83fd1eea42e893a70c14f82ad9c897408cd232aed95c0b5	記住，它就在沙漏後面、鑰匙旁邊。	draft		p10b-13 draft	
+3597	76	conversation	7315357dca01a87342ce2d5dfb8537a091a61068668157166c70fc4b456a431f	記住，它在圖書館一扇暗門後面。	draft		p10b-13 draft	
+3597	77	conversation	987717e0c3a0436d8b8b1a7a83b64c5d99f58d8958d9943cda24048ddc2b4bea	啊！真相大白了！嗯，至少你最後還是誠實了。我不確定你是不是真的配得上真實之書，不過也許你已經從錯誤中學到了教訓。誠實與真理超越時間，所以你會在沙漏後面、鑰匙旁邊找到它。	draft		p10b-13 draft	
+3597	78	conversation	052accc4ee94e325dab708abaeaab49f91077296b99041e7de66a725a88f7134	謝謝你，再會。	draft		p10b-13 draft	
+3597	80	conversation	ebe40ec25198100a7e4aa01a997b1dbe7ff2907b5dce9e2f1df460cf4d5f61ef	找到了，非常感謝你。	draft		p10b-13 draft	
+3597	81	conversation	c96bff8e2ebfaeff920aeb3e8c52c88c617f5fdefd8ff7a4aceb9c260a72e021	不，還沒有。	draft		p10b-13 draft	
+3597	82	conversation	2bac7c9769016c360b60a81c76e7be1668cb51032a5e1b8ad989788bcc0a31d6	你的指示讓人很困惑。	draft		p10b-13 draft	
+3597	83	conversation	e0d2dbd14fd213b804b04036cb846ef727b926c3c4eb22e3d9616806df904faa	恭喜！希望它對你有用。	draft		p10b-13 draft	
+3597	84	conversation	2cf0ea659a85772b612204b5ab774f072fc0880de474898d5764010a229e78e6	再次恭喜你找到它。祝你的任務順利。	draft		p10b-13 draft	
+3597	85	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	86	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	87	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	88	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	89	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	90	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	91	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	92	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	93	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	94	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	95	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	96	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	97	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	98	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3597	99	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3598	1	conversation	b4b42613b224ca0dc2401e9af5051f4b38f48021023d75cf39431a3188e3c020	哼！又有人來偷貓頭鷹博士寶貴的時間！你又想要什麼？	draft		p10b-13 draft	
+3598	2	conversation	a264d6aea84ef7dabd78d8a120e0f97a3cb5340f20e387c4cdb8b1b30bc2ccb4	我需要你的幫忙。	draft		p10b-13 draft	
+3598	3	conversation	daaa9c02bab3d5ebcfd9bd6e10c4ab540a65714b049758da557ae72e06bed4a4	我遇上了麻煩，只有睿智的貓頭鷹博士幫得了我。	draft		p10b-13 draft	
+3598	4	conversation	13adf5badc683618750cc50f94fb4ee4462bb4c00f577f4ff6751a5a32b3481a	沒什麼特別的事。我只是來享受你的陪伴。	draft		p10b-13 draft	
+3598	5	conversation	f503b3ad085ee39fdb68a461a4ad6c0cc326bea47239b06791eb9e03401c8806	我是來向大師學習禮貌的。	draft		p10b-13 draft	
+3598	6	conversation	9939ff32837649c04d13f090d88df246092400c525d82fdfe68422cf741015e8	啊！諷刺！很好，你的意思我懂了！好了，快說，你需要什麼？	draft		p10b-13 draft	
+3598	7	conversation	70c89be2ef832aa626e88ed4d85e611b18368d439a83ed42ae2185b7d399e0d5	你能跟我說說凱布勒斯爵士的聖物嗎？	draft		p10b-13 draft	
+3598	8	conversation	9072f9aefa17eae4b8596f0c2f1564302de3b3a48fcd6821abbd7f482a6fc498	我在找一些遺失的符石。	draft		p10b-13 draft	
+3598	9	conversation	28c1f80fc88115eb40cdf9adef435076dbd8d8d7d58efd2d95d0565916198c75	我沒有符石可以再給你了！也許你該學學怎麼用你手上那些。	draft		p10b-13 draft	
+3598	10	conversation	9cbc81b3faa1477f759a891af5f9e7bf87b06f68c37b35f48cc31bcd92cc42d8	也許我終究能幫你，不過我得先看看你的符石袋。	draft		p10b-13 draft	
+3598	11	conversation	90fed3cf7ccf9eb8e6117b88c37327d7c723e7484aa8f266faee31a610615a8b	當然。在這裡。	draft		p10b-13 draft	
+3598	12	conversation	dd770208f946a488e242a24cfa0a266e957c90dffcf0a3b9406829918200b2fd	不，抱歉。我不敢讓它離手。	draft		p10b-13 draft	
+3598	13	conversation	1dfa0c18f75d95d149c6536d025b05d864cb6fade7381d5b1bba9cd576054ae0	啊，對。果然是個初出茅廬的魔法師。我想你會想要一塊 Flam（火焰）符石吧？	draft		p10b-13 draft	
+3598	14	conversation	127140b57563357e8df0570997d13eec53ea03caa61efbd8ac56601cade81489	當然。	draft		p10b-13 draft	
+3598	15	conversation	d86bbd6877249169018bcb681084e2784ec6353969c89800028c9bff4c9c9501	謝謝你，不過不用了。	draft		p10b-13 draft	
+3598	16	conversation	b8b7cfdf4758ef90476310dd4bffc7be69cdefdf57c1b98935a2fdc474fab753	什麼事？	draft		p10b-13 draft	
+3598	17	conversation	71a022d747eb3b4e94d30fd915ec3b1dd6971adaa87a9990d80e480ca1228f14	是的，這是我的符石袋。	draft		p10b-13 draft	
+3598	18	conversation	d02cdb347ca2875a2bcbb1d6a982347480d3a032d2e4601fbad8e8ef72dc6fe6	不，我不敢交出去。	draft		p10b-13 draft	
+3598	19	conversation	a522409c3a4d2d6d0314b87784ec60709f8f1a710ce3f6541cf253668c2cf929	拿去吧。祝你用得順利。	draft		p10b-13 draft	
+3598	20	conversation	376764c4bb0d44e433b55464cddba127e0a851783178499461e7030c07e5e52f	拿去吧。好了，別指望我教你怎麼用。那不是我的工作！還有別的事嗎，還是我可以安安靜靜回去工作了？	draft		p10b-13 draft	
+3598	21	conversation	844d145c138833f043ddc105b03e8e5f77c1383bd13d5d173a58bdcf71fe0ba3	沒有，不過謝謝你。	draft		p10b-13 draft	
+3598	22	conversation	55206b6cb4f052cde9df78cf781f286026cc071c9cf462b7c91bedf20463b10b	有。你能跟我說說凱布勒斯爵士的聖物嗎？	draft		p10b-13 draft	
+3598	23	conversation	5c01ec48a431a8d24a40a2a0a6ef0843848b3debe7620485b679fb2bc940d412	你在做什麼工作？	draft		p10b-13 draft	
+3598	24	conversation	1ce56ff9a25532f7a95259479846eccc433a1b57d5019ac736b344a5411346f2	那塊該死的石頭在哪裡？我一定是弄丟了。	draft		p10b-13 draft	
+3598	25	conversation	0bf08c1cb4fce7ea5ccc7febf5cbc1a1e586a4aff51700218cea103558567c35	非常感謝你，貓頭鷹博士。	draft		p10b-13 draft	
+3598	26	conversation	e40672aa078b14e5e3f88e9a30f0ca7b8b8524ea5a60460b53973434d72fe454	我會好好使用它。	draft		p10b-13 draft	
+3598	27	conversation	bcc2a345a8f0ee2a91879cbb597ebd9d71a7cd9a512b49454a44e13f62cfcfda	好啦，好啦。現在快走吧！	draft		p10b-13 draft	
+3598	28	conversation	6060fc33f799695ec87c65065c9a703b7e320f7cabe3587387838e93dff4082b	我在占卜。我在找我那個不會說話的僕人穆爾戈，他失蹤了。	draft		p10b-13 draft	
+3598	29	conversation	291664fc473ad7b2fab795f2b92f18e8be401d40d640df03054ee82d3c8ecdd0	也許我能幫你找到他。	draft		p10b-13 draft	
+3598	30	conversation	616d49d7fc55cd8e10d5081269456bf756c12f758126989197f9e71583142c78	聽到這件事我很遺憾。	draft		p10b-13 draft	
+3598	31	conversation	f715a163ee8373f93f57c29ab750698782a5a5d7584c100611088fba91016d2b	哼！這次又是什麼事？	draft		p10b-13 draft	
+3598	32	conversation	ebc9722dc28ef2a4d483832b629649d1f43a580849eeaf9ad47a8e11c46c0417	你能跟我說說凱布勒斯爵士的聖物嗎？	draft		p10b-13 draft	
+3598	33	conversation	9072f9aefa17eae4b8596f0c2f1564302de3b3a48fcd6821abbd7f482a6fc498	我在找一些遺失的符石。	draft		p10b-13 draft	
+3598	34	conversation	2d0d359b6c1ad3af6748036763a24debe9667ad58280b1e472d4471844f41317	請見諒，我以為你是別人。	draft		p10b-13 draft	
+3598	35	conversation	269d0cb1011e50bac337dd76b1a84d7541542dfa955ae6b3f89df604c917886f	我知道哪裡有一瓶所謂的憐憫之酒！哼！真是無稽之談。只有小孩和傻瓜才信那種童話故事。	draft		p10b-13 draft	
+3598	36	conversation	6bdc9fbed9bef852c5c9d923319ba198762b89006d386d7d49f91c540c5b5910	你願意告訴我在哪裡找到它嗎？	draft		p10b-13 draft	
+3598	37	conversation	39da6d59f37639b044bcc066a740f5908d29a53333b72ed4ecdbb09f57fe631d	你大概說得對。抱歉打擾你了。	draft		p10b-13 draft	
+3598	38	conversation	660326dcfa24dcf2c1497361d0a6d618215c73782ad3732cfc27b5ead78cd6b2	你要是能找到我失蹤的僕人穆爾戈，把他帶回來，我就告訴你在哪裡找到憐憫之酒。	draft		p10b-13 draft	
+3598	39	conversation	eddee9787f330098346b8eee22bba15f6eb24494416e96203b9438d56aab4e68	那我會找到他，把他帶回來。	draft		p10b-13 draft	
+3598	40	conversation	c1fa30b099769ab5182b1ab9557d0c0e68767c41d917232340fd63096f4fe7c3	算了。你太麻煩了。	draft		p10b-13 draft	
+3598	41	conversation	cde22567d2f86c8d41d859d8bc7edebbcb2dd3c9c4cc8012e6738aad7b27c229	我要是看到他，會告訴你。	draft		p10b-13 draft	
+3598	42	conversation	a892736c84ab2e07ba7b7d6dcf25e258ce2c44a563287677cf8e78867479ead3	好啊，隨你便！還有別的事嗎，還是我可以安安靜靜回去工作了？	draft		p10b-13 draft	
+3598	43	conversation	844d145c138833f043ddc105b03e8e5f77c1383bd13d5d173a58bdcf71fe0ba3	沒有，不過謝謝你。	draft		p10b-13 draft	
+3598	44	conversation	dcebe055a2afb3419d54a048905f5f6eec742541b0ba49b4f03f41103b36d400	有。你能跟我說說凱布勒斯爵士的聖物嗎？	draft		p10b-13 draft	
+3598	45	conversation	5c01ec48a431a8d24a40a2a0a6ef0843848b3debe7620485b679fb2bc940d412	你在做什麼工作？	draft		p10b-13 draft	
+3598	46	conversation	c274ddc7622468fb45a9208399e155d314983c21b1a142d02b381426dfa5aa19	我沒時間閒聊！走開！	draft		p10b-13 draft	
+3598	47	conversation	a2bef83ce6b70755d6372549127cd001b88ffc1e178b7fa4ce712135d861d776	哼！胡說八道！給我滾，不然我會讓你後悔沒走！	draft		p10b-13 draft	
+3598	48	conversation	1bf7f30b12dd97b2931d4d39530570fd4b4dbdb599a908375324126e9b0d0f0f	好吧，那麼。再見！	draft		p10b-13 draft	
+3598	49	conversation	1c0baf48e817af3597f131fb0a53fae91f768b3f8705f668bc0184f98490b3db	不！等等！我真的很需要幫忙。	draft		p10b-13 draft	
+3598	50	conversation	bd1f42cb1c92b40037392b3905e19e92926dd2b42a0be3efb71ef46df68f9856	可惜你對長輩不夠客氣。要怎樣你才肯讓我清靜？	draft		p10b-13 draft	
+3598	51	conversation	70c89be2ef832aa626e88ed4d85e611b18368d439a83ed42ae2185b7d399e0d5	能跟我說說凱布勒斯爵士的聖物嗎？	draft		p10b-13 draft	
+3598	52	conversation	9072f9aefa17eae4b8596f0c2f1564302de3b3a48fcd6821abbd7f482a6fc498	我在找一些遺失的符石。	draft		p10b-13 draft	
+3598	53	conversation	5d0d1943b5d353a9d59bd25734476147e7415c5f63e2c7f1b3717632c9f3bc98	沒事。我不會再打擾你了。	draft		p10b-13 draft	
+3598	54	conversation	013621733b9968369f554f2e9edb2655c0c7e08c234a6159bffc75e8a6e05b12	怎樣？你有我僕人的消息了嗎？	draft		p10b-13 draft	
+3598	55	conversation	2db0a73551f8986b88c50a988a3169b26892ef1f7aa0ce58fd63b1213bd80c4e	有。穆爾戈在上面蜥蜴人的地牢裡。	draft		p10b-13 draft	
+3598	56	conversation	4ebb61ca3f410b138ab4023879fe3680704ceeef26d0d018be765ae51896e571	沒有。我沒見到他。	draft		p10b-13 draft	
+3598	57	conversation	ce5aa339f96b246a4eb5e1fbee8c94eff8027041b0cf5129899d97f6f34eb26c	你會在學院會議廳東邊的棋盤房裡找到憐憫之酒。掀起東南角的地磚，酒就會出現。	draft		p10b-13 draft	
+3598	58	conversation	052accc4ee94e325dab708abaeaab49f91077296b99041e7de66a725a88f7134	謝謝你，再會。	draft		p10b-13 draft	
+3598	59	conversation	3338f9ae1297619dbe55753db5917dab0506a7498fa57bf37a4dbf46deb904f2	既然我來了，你知道哪裡能找到符石嗎？	draft		p10b-13 draft	
+3598	60	conversation	05daea4b44e6c59ee7ef3e47ce5265e0b2651997c6646a05d48758feb7a33331	又是你。我注意到穆爾戈還沒被帶回來。你不是說要找到他，好換取憐憫之酒的下落嗎？	draft		p10b-13 draft	
+3598	61	conversation	ef0a242d55482950c9def0e5aa208b698a8fc66c05ddce230c1a65dee51bae2d	是的，我還在找。	draft		p10b-13 draft	
+3598	62	conversation	43a71e998583af79f19cbdb17bfe2bc948176e4d7195a2437df6b6e27f3133d0	我會盡快把他帶回來。	draft		p10b-13 draft	
+3598	63	conversation	aacb4dc9ed1dd82ddb9b06dc3412fa4ae59e9c3b94475b8c77f010b5b0df9ceb	也許晚一點吧。	draft		p10b-13 draft	
+3598	64	conversation	c919f0064d10bae3905b148709d3469d32fcb50d3b926390c40f466471276fb4	你顯然不是什麼了不起的冒險者。了不起的冒險者，現在一定早就完成任務了！	draft		p10b-13 draft	
+3598	65	conversation	ca5b915dfd417d88ee5de8c40620b3669c50e8944dd0d7cc9321dedcf20d0c1d	又是你。你想要什麼？	draft		p10b-13 draft	
+3598	66	conversation	281dca87b940f1c84ab8e6c0d6898b7901fe5450001a4d6548c339a394598e09	沒事，我正要走。	draft		p10b-13 draft	
+3598	67	conversation	230647356661e525e7334ac4b919099610d5b0d5b8121729cf20e95f19eb5cfc	你在忙什麼？	draft		p10b-13 draft	
+3598	68	conversation	ceb407a12a31da3f0fafae01f5f6aadb10aab58c00c2922b5e58e2b80dbeeb71	我在找新的符石。	draft		p10b-13 draft	
+3598	69	conversation	05067fa1e5e16deef4345f36213336b15f669f60b4dac933d1d04a350b1172cc	啊，是救出我僕人穆爾戈的那個人！你比我想像的更懂得憐憫同伴。你的獎賞會配得上你的作為。	draft		p10b-13 draft	
+3598	71	conversation	6d12d66cb66df1cf26aaac1dcc588f911f85c426c40126e2613c4fba13fc19f5	我好像找不到憐憫之酒。	draft		p10b-13 draft	
+3598	72	conversation	bdcfef24f7319a73dfb50d58522840a7a21c9ec089f4ac10d624489b2581385e	很簡單。	draft		p10b-13 draft	
+3598	73	conversation	b374832af7194ce3a4cd19dbed1da22b11d82cdfc90c52e35e787d943676ace0	你能告訴我哪裡還有符石嗎？	draft		p10b-13 draft	
+3598	74	conversation	3b5b36cf15903108d5eb461b7ac7dfb3ad894244f31940c45bf49023dc8a917b	抱歉，我不是有意打擾你。	draft		p10b-13 draft	
 3599	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
 3599	2	conversation	cd89962085b98100536660b9f3242798bc34fff2430ea9346a66c4b154a618f5	你自己才 Bica 咧。	draft		p10b-5 draft	
 3599	3	conversation	d1e5cb33afbb66cf80c56823fc70f5ea6e6a74eb8acd58ca1d4b410e4466a20c	呃……你好。	draft		p10b-5 draft	
@@ -3061,3 +3221,72 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3746	51	conversation	f5ed804928dc3da1557c14f8f998b486aae3dc895d664c8f9e95ca0449ce57bd	我會帶魚回來。	draft		p10b-12 draft	
 3746	52	conversation	421648d0664fda20aeab7f7ce5c3f733e71271472acc362d35822bd72afa331d	好吧。再會。	draft		p10b-12 draft	
 3746	53	conversation	1bf1d25a27862158191763e0aaf317216e796bfeb89ffc3948b80227e7202571	再次謝謝你的魚。抱歉，我得走了。再見。	draft		p10b-12 draft	
+3771	1	conversation	91f8ee17ad4ed4053884c0c5ca0c417fd024a9b302c4071183ba6400e684f423	你好，冒險者。你見過我的朋友古爾斯坦嗎？	draft		p10b-13 draft	
+3771	2	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	見過。	draft		p10b-13 draft	
+3771	3	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	沒見過。	draft		p10b-13 draft	
+3771	4	conversation	d991a24e8e04231cbae0f2b1372ebefd45b169c3855830d33b17fb3e98a68c96	誰？	draft		p10b-13 draft	
+3771	5	conversation	9c59ebb06c28cfa8c11befabab290d561ef2b743d297217a05e0aade1fdc5372	聽到這個我很高興！那他一定告訴過你他在找的暗語了！	draft		p10b-13 draft	
+3771	6	conversation	275699052e9f383fe54b0550635129b5e75b3a661117962cb5f573026b2dd5b3	恐怕沒有。	draft		p10b-13 draft	
+3771	7	conversation	931d7d3e357a63750ed30111873e8d41a4f646bfba9a23d99492ef5a86124e1c	他確實告訴過我。	draft		p10b-13 draft	
+3771	8	conversation	f10827dd8e42e3dd61fd67ac3cf1f5f25da7e65047aa5c071c14615d62c14786	也許是我弄錯了。也許我沒見過這位古爾斯坦。	draft		p10b-13 draft	
+3771	9	conversation	2d4e40b61e94af845aad078d847fcb76df5e83f219d64ee14d0244441db34b4e	那似乎不太可能。也許你把別的魔法師錯認成我的朋友古爾斯坦了。如果你真的找到古爾斯坦，請告訴我！	draft		p10b-13 draft	
+3771	10	conversation	95e035f8acb52b17cc357b6acb1b657609fd8a95bd43c3e26acb7b112a7777c5	是嗎？那是什麼？	draft		p10b-13 draft	
+3771	11	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-13 draft; 「其他……」讓玩家輸入古爾斯坦的暗語（3771:17 Folanae，不翻）	
+3771	12	conversation	3f16e9857943bf31767b3f4d71936d979722ae719b5ccf020d9b938dccf5ff71	我想我不該告訴你。	draft		p10b-13 draft	
+3771	13	conversation	3635f534fd4de42e026ae8e1b7407e3d85aff4c721682a599372726f51d8c7f2	你要是告訴我那個詞，我也許能幫你。	draft		p10b-13 draft	
+3771	14	conversation	ff4d36619df9ab9d3b5b847713ee37bb1b688d0ea992cc6ec7f5e27628459e76	好吧，那個詞是……	draft		p10b-13 draft; 玩家接著輸入暗語（Folanae，不翻）	
+3771	15	conversation	fea4deb0a0b018c127095838abf94389e5c12ad34ed6a53b0b5d5a61ed1f4bff	不，我不會告訴你。	draft		p10b-13 draft	
+3771	16	conversation	b76263db3d8fc6521c5e5305eb877cccaae491b1446ec0e0ef47b108755d8a39	嗯。我開始覺得你根本沒見過古爾斯坦。要是你見到他，希望你能把他告訴你的詞告訴我。	draft		p10b-13 draft	
+3771	19	conversation	43c6fd2e5aa1aaad9945e719b8d4ae24c2d562c62f1c1f887a23a1f8f7ba9927	也許不是。也許那個詞是……	draft		p10b-13 draft; 玩家接著輸入暗語（Folanae，不翻）	
+3771	20	conversation	7a6f7c907091a053cc3cd2f539f1290953e24ca3b13e39bfc5b2da77fcdaf7c7	我以為是。	draft		p10b-13 draft	
+3771	21	conversation	02a1fba6d21dfcf64c6d96dff8e2b41e8dc31d4a3d6f7d4a6e7eabd23243e9ae	也許是我弄錯了。	draft		p10b-13 draft	
+3771	22	conversation	a8790a9c0ca3414c347a25705fa599c3748560682ddd375d36e5d597029b82ff	我建議你再去找古爾斯坦，這次把暗語確認清楚。	draft		p10b-13 draft	
+3771	23	conversation	dc3f1b18bf2c3e2d5f952f883d16efd050a5885571e79e915ba09d81b43184d3	嗯……你說，Folanae……\\p 也許……\\p 對，一定就是它！謎題越來越清楚了！	draft		p10b-13 draft; Folanae 是暗語，保留原文	control-code
+3771	24	conversation	08c971940e190f714ebe0c2405d2fb64905c596c654f5c9224675c7a6dfccef9	什麼謎題？	draft		p10b-13 draft	
+3771	25	conversation	4e03bedc5f06c381d5c3b68e787e218fde172b924a62071a71a2d99003b8b080	太好了。那麼，我得走了。	draft		p10b-13 draft	
+3771	26	conversation	69f36ac6355f6c1c7245e3bc0343f774ad62bccab1b0f4a8eea68d16fff2046e	古爾斯坦在尋找真理之鑰的線索，那是一件失落已久的傳說之物。看來它已經不在這個世界了，所以古爾斯坦和我在研究，有什麼辦法能把它從它現在所在的世界帶回來。古爾斯坦找到的這個詞是重要的線索。	draft		p10b-13 draft	
+3771	27	conversation	7c81a40aa04cde46fc826430b8ccdf950c32b448ec395b3acff3f0d26e99c800	它是什麼意思？	draft		p10b-13 draft	
+3771	28	conversation	85159883906d9f58a242ae89ea4271627fcb4e0cac391b5bf2f9f52fcf0ca5ad	我們認為在神殿祈禱也許能把它帶回來。我猜圖書館裡可能有資料，說明要用哪一座神殿。我懷疑任何提到古爾斯坦那個詞「Folanae」的書，都藏著取回鑰匙的最後線索。	draft		p10b-13 draft; Folanae 是暗語，保留原文	
+3771	29	conversation	34b1976520510920bd944390e345b93e2cc613bcc418e6cfaf9256db815a72bc	我會去找這些資料。	draft		p10b-13 draft	
+3771	30	conversation	853d0afd9c941f2ab62cd22ac74c341b0a2463184d18904870b796628f313cfc	祝你好運！	draft		p10b-13 draft	
+3771	31	conversation	d73fb80bf3c39f6400acf6a9bae8d95302ec76a51c13ed51dff045db761ea3ee	這座圖書館在哪裡？	draft		p10b-13 draft	
+3771	32	conversation	489080041fedd10c31ecc68cf6d64a50ecd08b784e1fda102fddfada0604420a	它在西北邊的舊學院裡。走進學院的大廳往西走，它應該在你的左手邊。祝你好運！	draft		p10b-13 draft	
+3771	33	conversation	70f4e0cbecdfcf66b7a75f8bdc90835017527143efb0c3dd55d8c7b9f9ead779	真糟糕。不知道他出了什麼事。希望他沒有被殺，或者遭遇更糟的事！	draft		p10b-13 draft	
+3771	34	conversation	5c7b8c10c7a1c2255a5eca970a20b959e42cf7beeec8e9115804b3bb869c8433	我的朋友古爾斯坦，也是預言者。他幾個月前下樓去，之後我就再也沒見過他。	draft		p10b-13 draft	
+3771	35	conversation	ac9ba48fce39783e931ed10ee09f6c0a45a09f36e15f4a5d4b922dee871b2889	喔，那個古爾斯坦！我剛剛碰到他。	draft		p10b-13 draft	
+3771	36	conversation	3036340232c6501eb6ed86299f1336b8e371528993dcb433d99d21c291883aa3	真糟糕！我沒見過他。	draft		p10b-13 draft	
+3771	37	conversation	e4a8ab05a869257eb458a1d7250bca08ec40c78de0fd0f7b8c8f61d989cb1f9f	他到下面去做什麼？	draft		p10b-13 draft	
+3771	38	conversation	e6630a422d3ca012d5078194f032946c65354425ff3e7cef68d4b68e3865fb4a	他去尋找傳說中的真理之鑰。他一定是落入了下面那個巫師泰瑞爾的手裡。	draft		p10b-13 draft	
+3771	39	conversation	0b92ee6492764921d8ae17f00999a96cae41c9988258d72765a46fa263055d2b	我想我見過他。	draft		p10b-13 draft	
+3771	40	conversation	c1b41a8a4faf52a84ca366eea8a7822d8286d4c1b7e864c934bd6b74a28ea497	我要是找到他，會告訴你。	draft		p10b-13 draft	
+3771	41	conversation	d95a7ba66db4c989457d2f689e726640b3b2d2bdaeb267f75bb0dafe542d2ca2	拜託了。我很擔心他的安危。	draft		p10b-13 draft	
+3771	43	conversation	cf226b19fd239c685acebfc14244eab72d56dc395ca6f2c63428ad72d6aecf93	是的，我找到了。	draft		p10b-13 draft	
+3771	44	conversation	46438371960f0974b3c15f54488a09d835f9c48094ef97ad65355a1765ae921f	還沒。	draft		p10b-13 draft	
+3771	45	conversation	89f3f658a9b26f8f630a33e03033bfb9fdf4b4a1fe04c6b2753fdfa065fe0dc8	你能再說一次你之前說的那些嗎？	draft		p10b-13 draft	
+3771	47	conversation	19a9836d4d73d7e4608cdc581d6a9cc3ce67d1aad683e32375e22dd4cf33e9ba	好，請告訴我。	draft		p10b-13 draft	
+3771	48	conversation	c2840297fc85989c3fb1b818a43ffc47b3641f27de719a1c32aba8d7d72d3618	沒什麼興趣。	draft		p10b-13 draft	
+3771	50	conversation	096de4409edd6c85f621463ba2299c301dc9c0cff3b9316c1f1678afe3e885b3	是的，我找到他了。	draft		p10b-13 draft	
+3771	51	conversation	275699052e9f383fe54b0550635129b5e75b3a661117962cb5f573026b2dd5b3	恐怕沒有。	draft		p10b-13 draft	
+3771	52	conversation	17f201e336d888b5e0b7dffa9f8024f6e91d02fd73c89c96ab26a3d4288cf07c	我就知道一定找得到！希望這把鑰匙能幫助你完成任務。	draft		p10b-13 draft	
+3771	53	conversation	6ff055f3401cb9e6b8b5e786e94f81ac6b3cc34799bd7ef35cd0a32eebebebf0	祝你順利、早日找到它。	draft		p10b-13 draft	
+3771	54	conversation	528ff11a01b784adf6a8188c570acf0fed61923c1224eede119344257af04a87	謝謝你，我會繼續尋找它。	draft		p10b-13 draft	
+3771	55	conversation	55b94e958f48ef23ec285eaa2069e33c4810ddfa2dd8afc77913ebc32705654a	你說要怎麼才能找到它？	draft		p10b-13 draft	
+3771	56	conversation	a537a55800c6b0b0bc63a7c1a11aeb6e9c75d91cbe9550fa2e72f15a9d36d43b	我想在神殿祈禱一定跟它有關。我會去圖書館找一本含有「Folanae」這個詞的書，那是古爾斯坦發現的詞，裡面應該有線索。	draft		p10b-13 draft; Folanae 是暗語，保留原文	
+3771	57	conversation	8fd4323fb1ee2dcf25b3e76a13d9d1b3cdee9cc2e075b155cd0e884b296da290	我會去那裡找。謝謝你！	draft		p10b-13 draft	
+3771	58	conversation	bc5f485da55160f671fb226b2134bc36bb21427220df8f0255ba2ca503664be0	那座圖書館在哪裡來著？	draft		p10b-13 draft	
+3771	59	conversation	5d0d3ae5e845a01f8beb83dd3a42f9ede4419c41556a8c2aaa1a73fd2c99490c	恭喜你找到真理之鑰！希望它對你有幫助。	draft		p10b-13 draft	
+3771	60	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	61	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	62	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	63	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	64	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	65	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	66	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	67	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	68	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	69	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	70	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	71	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	72	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	73	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
+3771	74	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-13 draft; 交易用語沿用 3672:16-30	
