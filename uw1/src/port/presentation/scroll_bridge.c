@@ -1,5 +1,7 @@
 #include "scroll_bridge.h"
 #include "i18n/utf8.h"
+#include "i18n/input_alias.h"
+#include "plat.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -63,4 +65,56 @@ int port_scroll_write(int which,const char *legacy,int escapes)
     result=scroll_text_write(which,text,escapes,choice_context);free(converted);
     if(result<0)port_fatal("HD scroll: invalid text, metrics or display capacity");
     return result;
+}
+
+#define ASK_BACKSPACE 0x08              /* ui.h's KEY_BACKSPACE, KEY_ENTER (13) and KEY_ESC */
+#define ASK_ENTER 13
+#define ASK_ESC 27
+#define ASK_CHARS 30                    /* the line on the 320-wide scroll, prompt and caret too */
+static size_t ask_chars(const char *s) { size_t n=0;for(;*s;s++)if((*s&0xC0)!=0x80)n++;return n; }
+static void ask_draw(const ScrollBox *mark,const char *typed,const char *end)
+{
+    char line[200];
+    snprintf(line,sizeof line,">%s%s",typed,end);
+    scroll_text_rewind(0,mark);
+    if(scroll_text_write(0,line,0,0)<0)port_fatal("HD scroll: the typed answer does not fit");
+}
+int port_scroll_ask(int slot,char *result,int maxlen,int (*next_key)(void))
+{
+    ScrollBox mark;char typed[160]="",got[64];size_t len=0,i;int key,changed=1,ascii;
+    if(!scroll_text_enabled() || !input_alias_loaded() || maxlen<1)return -2;
+    scroll_text_clear(0);               /* as the original prompt's HD path leaves it after */
+    scroll_text_mark(0,&mark);
+    plat_text_input(1);
+    for(;;) {
+        if(changed)ask_draw(&mark,typed,"_");
+        changed=0;
+        key=next_key();
+        if(plat_text_take(got,sizeof got))
+            for(i=0;got[i];) {
+                size_t n=1;
+                while(got[i+n] && (got[i+n]&0xC0)==0x80)n++;
+                /* ASCII comes as keys; the input method's own characters only from here */
+                if((unsigned char)got[i]>=0x80 && len+n<sizeof typed && ask_chars(typed)<ASK_CHARS) {
+                    memcpy(typed+len,got+i,n);len+=n;typed[len]=0;changed=1;
+                }
+                i+=n;
+            }
+        if(key==ASK_ENTER || key==ASK_ESC)break;
+        if(key==ASK_BACKSPACE && len) {
+            while(len && (typed[len-1]&0xC0)==0x80)len--;
+            if(len)len--;
+            typed[len]=0;changed=1;
+        } else if(key>=0x20 && key<=0x7E && len+1<sizeof typed && ask_chars(typed)<ASK_CHARS) {
+            typed[len++]=(char)key;typed[len]=0;changed=1;
+        } else if(key==-1 && !changed)
+            plat_sleep_ns(1000000);
+    }
+    plat_text_input(0);
+    ask_draw(&mark,key==ASK_ESC?"-":typed,"");
+    for(ascii=1,i=0;typed[i];i++)if((unsigned char)typed[i]>=0x80)ascii=0;
+    if(key==ASK_ESC)result[0]=0;
+    else if(ascii) {strncpy(result,typed,(size_t)maxlen);result[maxlen]=0;}
+    else input_alias_map(slot,typed,result,(size_t)maxlen+1);
+    return key;
 }

@@ -660,6 +660,10 @@ int far conv_pause_ovr103_10DD(int16 far *stack)
 int far getInputText_ovr103_1117(void)
 {
     char response[0xa0];
+#ifndef __TURBOC__
+    /* P11.4: typed in the locale's language on the HD scroll, mapped to the script's English */
+    if (port_scroll_ask(cnv_id, response, 0x32, mouse_get_input) == -2)
+#endif
     wdialog(0, 0, response, 1, 0x32);
     scroll_print("\n");
     set_workspace();

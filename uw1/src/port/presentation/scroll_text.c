@@ -25,6 +25,12 @@ static void publish(void)
     lock(); published=work;if(suspended)published.boxes[0].count=0;unlock();
 }
 void scroll_text_enable(int on) { enabled=on!=0; }
+void scroll_text_mark(int which,ScrollBox *out) { if(out && which>=0 && which<=1)*out=work.boxes[which]; }
+void scroll_text_rewind(int which,const ScrollBox *mark)
+{
+    if(!enabled || !mark || which<0 || which>1)return;
+    work.boxes[which]=*mark;publish();
+}
 int scroll_text_enabled(void) { return enabled && !suspended; }
 void scroll_text_start(ScrollMeasure m,void *context,ScrollWait w,void *wc)
 {

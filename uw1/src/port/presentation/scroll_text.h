@@ -41,4 +41,7 @@ int scroll_text_y(int which);
 int scroll_text_lines(int which);
 int scroll_text_color(int which);
 int scroll_text_suspend(int on); /* typed ASCII editing keeps the original path */
+/* A box as it stands, and back to it: a line being typed is drawn again after each key. */
+void scroll_text_mark(int which, ScrollBox *out);
+void scroll_text_rewind(int which, const ScrollBox *mark);
 #endif

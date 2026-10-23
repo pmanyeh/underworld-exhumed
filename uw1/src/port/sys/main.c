@@ -23,6 +23,7 @@
 #include "sys/inscript.h"
 #include "ui/settings.h"
 #include "i18n/localization.h"
+#include "i18n/input_alias.h"
 #include "presentation/overlay_demo.h"
 #include "presentation/hd_demo.h"
 #include "presentation/presentation.h"
@@ -708,6 +709,18 @@ int main(int argc, char *argv[])
     }
     hd_cursor_enable(hd_cursor);
     scroll_text_enable(modern_scroll);
+    if (modern_scroll) {
+        /* P11.4: the locale's words for what a conversation compares, the home folder's first */
+        char aliases[1200];
+        FILE *probe;
+        snprintf(aliases, sizeof aliases, "%s/i18n/%s/input-aliases.tsv", home, locale);
+        if ((probe = fopen(aliases, "rb")) != NULL) fclose(probe);
+        else snprintf(aliases, sizeof aliases, "i18n/%s/input-aliases.tsv", locale);
+        if (input_alias_load(aliases))
+            fprintf(stderr, "uw1port: input aliases: %s not loaded; conversations take English words only\n", aliases);
+        else
+            fprintf(stderr, "uw1port: input aliases: %s\n", aliases);
+    }
     presentation.demo = hd_demo;
     if (!test_hd_text) presentation.demo.font = NULL;
     presentation.demo.geometry = test_overlay;
