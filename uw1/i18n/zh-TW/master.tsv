@@ -1833,3 +1833,244 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3720	82	conversation	f882d0abdd6dc243dbb1cd2153576b8713cdc39d709a8f81a99fe549fd0242e2	不，你完全誤會我的意思了。	draft		p10b-7 draft	
 3720	83	conversation	77386079b8ea8f84b56d49246bb0058ac4b22bd66586f488f3420971197653e1	你要是窮到得用偷的，我不會阻止你。	draft		p10b-7 draft	
 3720	84	conversation	532cd34cce57676c22d98548c1aadc3ebd740195f0c4e76767671921117e02cb	惡棍！我要給你一點教訓！	draft		p10b-7 draft	
+3723	1	conversation	cb113596b2fd2cb051b9df5d8a4eb70bdf55088096f4836c6a817774dc2dd577	旅人，歡迎來到深淵裡最後的文明堡壘。	draft		p10b-8 draft	
+3723	2	conversation	28ca893af76dd053f1f5c94afe566f49f5486aa41da8585614fe613ea10718b6	你讓我放心了，我還以為文明已經消失了。	draft		p10b-8 draft	
+3723	3	conversation	b65e8332f6babbda3ec2b3b7e34272a1d8fdb7fa393d404b1ead3a366a0e9e7f	不管你怎麼說，這裡實在沒什麼了不起的。	draft		p10b-8 draft	
+3723	4	conversation	77781feeadae699bd33f0b27602a5aa9876e0df87fc279259e5ea5a3d452820e	我跟你沒什麼好說的。	draft		p10b-8 draft	
+3723	5	conversation	67f5a1457947cc796e867356f147fc1dd361e1b4fec2f174010a7ae035b7c952	如果你希望如此。	draft		p10b-8 draft	
+3723	6	conversation	31c311fd249db309b64467abf2382b24ec8e58818b776fb3846fc91317b50a0c	等等！我必須跟你談談。	draft		p10b-8 draft	
+3723	7	conversation	b7e3685f8f06a62c647bbf0cbaa17c4f68cd68ff95d53ed6acb1523a9196750b	你回來了。你想談什麼？	draft		p10b-8 draft	
+3723	8	conversation	f01c82ecc2ad5008e74b2025af92c22db7a2cf84519f698bf8a63acb180f4aea	沒事。再會。	draft		p10b-8 draft	
+3723	9	conversation	62505a96aa416076994ade5055f32f31a6f40d2067bbb52ce71e417b3b88e4b3	安卡十字騎士團。	draft		p10b-8 draft	
+3723	10	conversation	0074cdc5f98dd61cd1c14f70696f6a8f39d8d966f783aeb3b83172fe7bce7b14	那支失落的細蠟燭。	draft		p10b-8 draft	
+3723	11	conversation	dcce951d77fa3341cf966b064a90c8dc4c736faf14a958998e5cc05c0f915dc9	很高興再見到你。你會以找回失落已久的犧牲之燭的勇士之名，留在我們騎士團的歷史裡。再次感謝你。	draft		p10b-8 draft	
+3723	12	conversation	fa1e48d0b247c68b929a79639bb5c1f500e0de9de58489c956fb56cb1e473737	從深淵殖民聚落建立之初，我們騎士團就在這裡了，出過許多有美德的成員。凱布勒斯死後的混亂中，我們試著收集美德的聖物。可是大部分都已經失落，有些據說被毀了。\n 我們確實曾經短暫擁有犧牲之燭，但它被某個瘋子拿走了。據說榮譽之旆也在某處，只等著一件榮譽之舉。	draft		p10b-8 draft	
+3723	13	conversation	f8ed842e2ad1fea8c872a1713aae2364b348d08289537dee204b4edd5a12772a	跟我說說這支細蠟燭。	draft		p10b-8 draft	
+3723	14	conversation	392ea9c645bdfbe270b1c029854941bffc1185cd6c5ae44af263af17924a76c6	它原本在我們這裡，可是不久前有個瘋子闖進我們的住處，偷走了很多東西。	draft		p10b-8 draft	
+3723	15	conversation	d490a5731e580fd9b98dd19f649d82a8e0544b9dab7f796fed03a8a7f3b09223	謝謝你提供的消息。	draft		p10b-8 draft	
+3723	16	conversation	3328abef1f53631c6e75a71e78195ca20f27504be682c17bdfa7d432c3ec1b13	能為騎士團的成員提供消息，是我的榮幸。	draft		p10b-8 draft	
+3723	17	conversation	866f40e8e870f557322678294bf97e093a91b3c20428c309fa52132454d64105	從深淵殖民聚落建立之初，騎士團就在這裡了，出過許多有美德的成員。對不是成員的人，我不能多說，不過等你入團之後可以再來找我，我能告訴你更多。	draft		p10b-8 draft	
+3723	18	conversation	0a2eeae496ee94294f32e12e82238bf4ca4d62a446562e3a3da22df0ea60f702	我會的。	draft		p10b-8 draft	
+3723	19	conversation	1093c49546f477451bd2fa9c6072c4874c55915f9dfbab9c6e84354d0c2de13f	我想我不會費這個事。	draft		p10b-8 draft	
+3723	20	conversation	d915314c27c1360dc0e7dad2f011c810d8aebb5797a1dcc4775f8949ac62f4f4	嗯，你的路只能由你自己選擇，不過我覺得你應該跟我們同行一段時間。	draft		p10b-8 draft	
+3723	21	conversation	472ebf59fe389c7c9120a8a6de00004d320821ccb4e9bfaddaf60524654b370c	你有聽人說起過它，或者甚至見過它嗎？	draft		p10b-8 draft	
+3723	22	conversation	a9b7abb8876846ca13bed0086294bd1056689efec3d64c6fc094279ef01ce3da	有，我聽別人提起過。	draft		p10b-8 draft	
+3723	23	conversation	82f793288cf39c104e19df0be38e333b21e6f408a9e4f3f49071e18577c81b4b	那是好消息。繼續找，你也許會找到它。	draft		p10b-8 draft	
+3723	24	conversation	5cfc2045bb9eb6830c5b6de18aa9f495ab71543a5668f566eeb2e4d4b6af6703	有。其實它就在我身上。	draft		p10b-8 draft	
+3723	25	conversation	a356a1e2cd744b91efa832d54d870b0e4a31203a51939b22fbdfd553b055829d	沒有。你能多告訴我一些嗎？	draft		p10b-8 draft	
+3723	26	conversation	c18bcd022b244ebc7f598d7b2f7c9fa5e0f23e048c255ab28649433a62417ff0	聽說拿走它的那個瘋子逃到上面的樓層去了。也許有別人聽說過他，或能用別的方式幫你。	draft		p10b-8 draft	
+3723	27	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-8 draft	
+3723	28	conversation	1ad120d5ac8bdd9078ca78770130a78cc9de907997a4ebda59772ef4b40b45a1	它現在就在你手上？能讓我看看嗎？	draft		p10b-8 draft	
+3723	29	conversation	ad45c00ac59f5564b62bf210130dd64987e4e03c10c2799762716e30f5af8666	好吧，在這裡。	draft		p10b-8 draft	
+3723	30	conversation	a4ef77241765156b1f595725b663cb3f2fab65a33ab2d24e0e9f5c4f1bf07432	不。這樣不太恰當。	draft		p10b-8 draft	
+3723	31	conversation	0a2bff2481415b4b6a26b3aea7f9f9383e94ad9d29d4c983155053ab79ad389e	拜託，能讓我看看嗎？	draft		p10b-8 draft	
+3723	32	conversation	5cbc8b564a08cf3b33bedf63e42c930c750efda1dbdaea5dc9f7b1d18c21e48d	請再考慮一下。	draft		p10b-8 draft	
+3723	33	conversation	bd12cf1f46e20d46f60d93e146de00e66ff268633a9e5d9c0b8d09024079e781	我求求你，就讓我看一眼吧。	draft		p10b-8 draft	
+3723	34	conversation	03440da385758223e97f187b8c2b0613950e645fe5cf49c7e3afc7c63a0b39a4	你真殘忍，連看一眼犧牲之燭都不肯讓我看。	draft		p10b-8 draft	
+3723	35	conversation	dd71d1f012eed7115bb2e943cad99f935b432cda00e63b79e86d74777b420eaf	那不是犧牲之燭。等你真的找到了再回來。	draft		p10b-8 draft	
+3723	36	conversation	fc4a486130d25120d58b43fcb081f27a05c0cc93dc61eb01834a03a5bbd0868d	啊！能再見到這支細蠟燭，真是太好了。	draft		p10b-8 draft	
+3723	37	conversation	2f683baff4b351847b35c4a9fe6e08de10f1ea1da6feb1730edffabdb88530bc	啊！能再次沐浴在細蠟燭的光輝裡，真好。	draft		p10b-8 draft	
+3723	38	conversation	e319f158f1191302822809221208a3d85236f377d55554e7842821fbcce4c1c8	謝謝你讓我再見到這支細蠟燭。既然是你找到的，就該由你保管。你會發現它發出的光非常穩定，因為它不斷犧牲自己，為你發光。\n 不過凱布勒斯賦予了它美德，所以它雖然不停燃燒自己來發光，卻也不斷地自我補充。	draft		p10b-8 draft	
+3723	39	conversation	2003c672084ea1b428400be22484d3167c31a7421b87195d84439e9b136551b0	那我就留著它，好好保管。	draft		p10b-8 draft	
+3723	40	conversation	b78af270f2ef996b9530d853f696da8c0c2c8ab947478222fa291b247729ba08	祝你好運。	draft		p10b-8 draft	
+3723	41	conversation	892d8d4d0a04a19f52ff2b167c3d88caaa8a88abd98fa1963ce996605796742b	謝謝你。	draft		p10b-8 draft	
+3723	42	conversation	6c16a6302b39c2aedc834fa2321a00b5f07a0f1d3c13613d42fc86c3d1973e5c	我也謝謝你找到了它。	draft		p10b-8 draft	
+3723	43	conversation	2f0974bd4c9b0404408a09813e1e1f76a38b4f8065e26c1d75363cbf6ec538e1	你想要什麼？	draft		p10b-8 draft	
+3723	44	conversation	f01c82ecc2ad5008e74b2025af92c22db7a2cf84519f698bf8a63acb180f4aea	沒事。再會。	draft		p10b-8 draft	
+3723	45	conversation	367db84f21c0cb6479a48c0a4af0e56e328ccc21baae326edfb7a55ae428957f	你能跟我說說凱布勒斯爵士的事嗎？我以為大家都已經放棄他的夢想了。	draft		p10b-8 draft	
+3723	46	conversation	f3c9760e44235e1762c663f884fe9318e404c1d20ee38df046670eadf6c394fe	你說的是褻瀆之語。收回你的話，不然就嚐嚐我的劍。	draft		p10b-8 draft	
+3723	47	conversation	6d35717002f0b766e8a9ca9476b1f564e5c23c0de4c5a82ee362437cc2218cd5	我必須說出我所相信的。	draft		p10b-8 draft	
+3723	48	conversation	665b63e6fbec73be84dda9c532932f8425ece8456d090746c1784c074ce0227e	那也只好如此，就像我必須以騎士團之名殺了你一樣。	draft		p10b-8 draft	
+3723	49	conversation	1ce19fcfc711318c2d6bc631295fdb92ca5febc28a84cff34ac7b97881a5232b	你說得很對。這裡的文化真是了不起。	draft		p10b-8 draft	
+3723	50	conversation	ab13699a773a17a78ddc447a6480965fb07776706be0026bd9effb9ca64aa948	這樣才得體。我相信你會記住這個教訓。現在離開吧。	draft		p10b-8 draft	
+3723	51	conversation	5e42e7ad855f4931a0ca1c919faf7d3f98ca84c48f058c5959302d488092d479	你不幸走過這片荒地的其他樓層，難怪你會這麼想。不過，我們仍然遵循凱布勒斯的夢想和八大美德。	draft		p10b-8 draft	
+3723	52	conversation	c284e3f3397f282696c66c9a3f56926dcf304eb188f4d55a9802ad81f101acf1	我以為大家都已經放棄凱布勒斯的夢想了。	draft		p10b-8 draft	
+3723	53	conversation	7cb47c4f90bf4d7f4023ef5310ae2ad43c2c779fe9b3aa1ac0828a2f4cc8bf51	那些似乎已經過時，而且失敗了。也許你們該認輸，重新開始。	draft		p10b-8 draft	
+3723	54	conversation	acfeb3cee3fc8afceae6ea8ed4fd43bf73534c2a13a50b55ce7bd5edeb2320d1	不！我們仍在努力，讓深淵重回昔日的榮光。只要殖民聚落的各個種族能再次相信美德、相信彼此，就還有希望。\n 可惜，我覺得希望渺茫。這個殖民聚落裡大多數的居民，都已經忘了他們曾經對它的宗旨僅有的一點認識。\\m	draft		p10b-8 draft	control-code
+3723	55	conversation	8a3111cbd03c26b7e8d8b3e4a45ccf7e80fffbe32b8b7a88279a103ef1e28d9a	連最堅定的信徒現在也起了疑心。再也沒有人記得美德了。真是可悲。\n 唉，幾個月前，有人從上面下來，偷走了凱布勒斯時代留下來最珍貴的寶物之一。	draft		p10b-8 draft	
+3723	56	conversation	7498cfb1ed43de2743eb16dbcce2d3237029d972310751f46e451c7d010e6e5f	真是悲劇。	draft		p10b-8 draft	
+3723	57	conversation	680984d737e26e77d54e47a832912b6967f7269241be42ef17f6ac44ea278aee	確實是。\n	draft		p10b-8 draft	
+3723	58	conversation	98a8c46b2294a19941a34bf814f60863e3c0cf821ac13d5c98d9ff5edf947db5	被偷走的是什麼？	draft		p10b-8 draft	
+3723	59	conversation	a21993ecd72e17fe8c1327cc68e4554353ecc20a5c41f2814f3692cc10438858	我們丟了很多小東西，大多是儲藏室裡的。我們所有的火把和提燈都被拿走了。還有幾樣食物，不過其實大部分是照明用品。真奇怪。\n 不過最慘重的損失，是犧牲之燭。它是凱布勒斯爵士親手製作、賦予了美德的。我們把它供奉在神殿裡，輪流守夜看守。它在那裡點了整整三年。\\m	draft		p10b-8 draft	control-code
+3723	60	conversation	d5908522a34223eac5ee57fe7d92f0f2921689e2e11dd724885562c82e8f5ee5	可是有一天，一個男人來到我們的一處守衛哨。他胡言亂語、大吼大叫，不過按照基本禮節，我們當然還是讓他進來了。他開始到處亂跑，抓走蠟燭之類的東西。我們全都驚呆了，一時反應不過來。然後他抓起犧牲之燭就跑了。\n 等我們穿好防具準備追趕時，已經追丟了。真是一場悲劇。	draft		p10b-8 draft	
+3723	61	conversation	1d719e61b0b7e30073ddaf36697b8199b6c94c4cae294d7b7bca68f59cfe720d	也許我會去找你說的這支犧牲之燭。	draft		p10b-8 draft	
+3723	62	conversation	86677164790009be99c248f616955cc043006c58f6c8dc080847e392553dffe9	祝你好運。去上面找吧，我們相信那個瘋子是從那裡來的。	draft		p10b-8 draft	
+3723	63	conversation	0e4580d1642aa7d5c35284b60e2822a702a25b94bbbd12db03e4b11f1e36fc37	我想我已經找到這支犧牲之燭了。	draft		p10b-8 draft	
+3723	64	conversation	8ea165b44faede4c6654746885b0add7697408d521924af212cd8a86be99d6f7	住在這麼荒涼的地方，一定很辛苦吧。	draft		p10b-8 draft	
+3723	65	conversation	18c3567ff3f1357753992637bfbbe2da424eded745f0721e44114e14490cbc58	確實很累人。不過不管任務有多艱難，安卡十字騎士團都不會被打倒。	draft		p10b-8 draft	
+3723	66	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-8 draft	
+3723	67	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	68	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	69	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	70	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	71	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	72	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	73	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	74	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	75	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	76	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	77	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-8 draft	
+3723	78	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	79	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	80	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3723	81	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	1	conversation	3e09c9305b07d46eada3d106bebb9c3fd63c8a9589166e1114f01974cbfac41f	你若想成為騎士，就該到我們領地的南邊去找我們的團長多納談談。入團儀式時信任他，一切都會沒事的。加入我們的騎士團，幫助我們追尋榮譽。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	2	conversation	f3f4f722eb1d09d2fe92060e315d1752fa06920790fd0f931aa6719604b41a44	你若想成為騎士，就該去找我們的團長多納談談。他就住在這個房間。入團儀式時信任他，一切都會沒事的。加入我們的騎士團，幫助我們追尋榮譽。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	3	conversation	678ae42456357144ed8e55fb2c784bb9f8f08206ec050b998be2f47958b5a7fa	我會去找他。再會。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	4	conversation	833ca3bee4e939cb5e8c45fcc9126c4b0510ec5b168f8e39dc9666013c752083	謝謝你，再見。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	5	conversation	be5a5e4de727eff136103547a9d73a2b73880f3dca2aec52d19aae13155502ae	你好，陌生人。你是戰士嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	6	conversation	f4c4d8762552842b974d910b43e47c21cc5fffee74e3ef569bda8d697a86e8d4	是的。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	7	conversation	b87c8ff0969b804bfeab65e9aaf515b8267b3d59eafc6962acd870bfc8ac9b65	不。我的本事是另一種。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	8	conversation	e15ff660f54dd6128c43d514b4f29597717ce0dff863862305810fdf88c17b66	有時候是。必要的時候。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	9	conversation	c162f16a50fb31f99d946d49b1f161f5b64d4d82fb25ae9f487b949d4ac7ffa2	你為什麼這麼問？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	10	conversation	6c3c7e1f25c67416d56c67454ae3b724ba0ec3f1604d223b6be93feaffc9e3b9	你回來了。我能怎麼幫你？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	11	conversation	d79b01c198923dd068bf7dd1bfed4192572a1fe431cccefef0a68badc45f8638	我想成為安卡十字騎士團的騎士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	12	conversation	a8c56f475c569f7bfb07e6d80b3bc14d452d3b0c18c8d4fc929132b9b0b24031	我在哪裡能找到你們的團長？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	13	conversation	8a23c686f416e165e2acb5061124521cf4328aabbf8cf4a6fb94aab5613661e6	抱歉，我不是有意打擾你。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	14	conversation	8a23c686f416e165e2acb5061124521cf4328aabbf8cf4a6fb94aab5613661e6	抱歉，我不是有意打擾你。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	15	conversation	d10203d72ffc81c337d84b08688132b3914f7a51a63690a14b167be77c63729b	我重新考慮過了，現在想成為騎士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	16	conversation	a8c56f475c569f7bfb07e6d80b3bc14d452d3b0c18c8d4fc929132b9b0b24031	我在哪裡能找到你們的團長？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	17	conversation	c9129e52ae7618ea150a1be3fd7b567021e4194716c7eddd0572f8ef5603586f	多納・鐵拳在我們領地的南邊。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	18	conversation	b4c6f8132546794ec947bc6e2f9bc68d1e4d6639bc728bc13978c35037d88994	你運氣真好！多納・鐵拳就住在這個房間。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7		untranslated		grammar-sensitive: 稱呼片段（Brother），代入 3730:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3730	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5		untranslated		grammar-sensitive: 稱呼片段（Sister），代入 3730:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3730	22	conversation	2b2b6721cc1270dce49f647b290429ee3edff0cd45859dbc48c8cf8fb0218f15	是你的好榜樣激勵我完成任務的。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	23	conversation	d6a1b39748b08bb955129b61a5d2b27cc0f30b8fc022d8e2682121ae59befa81	在我追尋美德的路上，你能幫我嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	24	conversation	ac7cff20bab7d0b05be766e8348c8f993b1cc751fa6e6b3a8dac671e915b5c48	你想交換物品嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	25	conversation	e2d8594ef10f888a7bc21fd3a989f228428c150fc3b9984f3214c55efa8eb4d8	當然。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	28	conversation	722fd811a61be0af654a7f915347e8685794c6540f0ab37dfee54c6fa760683e	你有什麼知識，能幫助我邁向騎士身分嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	29	conversation	28885de27958f45213a68c1c34b54b649eb1d7aa4aad783b1152c6612cf04cc7	你的好話就已經夠幫忙了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	30	conversation	432c1e7d57f7e52a7f9f416434ec8ee983693558bbe28c23f808a6f3fc74506c	你有洛恩的文書的消息嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	31	conversation	c6f7efdc4905226323301c540222303c01860e11eb8b07808809465f3b832a2b	我想我已經告訴過你了，不過我很樂意再說一次。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	32	conversation	f05b641e6fd972a90136f83722ce26d20066cfa5137aa377f1e6e63bcf50ea2a	同為騎士，我很樂意幫你。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	33	conversation	25da607453bfcbcee13b92b049372b1950716f58fa6fa1b027c04836e0ffb0f3	念誦祈禱語 AMO，可以增進你的劍術。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	34	conversation	09a31268aafad1ffa7f21ce40991c7d8d429aa3b46f63e7fdc1e8b6f2ee3c0ea	祈禱語 GAR 能讓你更熟練地使用斧頭。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	35	conversation	4b11df1aa58ce71f4fb6cba9138b317279f3b2e6d906a358eda1d0234936c723	你若使用鈍器，祈禱語 KOH 會派上用場。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	36	conversation	4a398a6fa16cea0c450dc3c8a42ceebeec2dbc3b514162904e67aadc0d67420d	念誦祈禱語 FAHM，能讓你的箭射得更準。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	37	conversation	f577e1ed0244a18d2516bc49148c045350cc29411a8a8e4ac6fbe3e327b89d73	謝謝你的幫忙。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	38	conversation	ba036dcba5021c2c4b650393eb8b528b066ae27d88ce63d614a1b94b512a6d53	我會盡早試試這句祈禱語。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	39	conversation	9a487b7d22943e7ecd827c1ce838b98d1191bb7d3035c4bbf622c31edfcb1522	我聽說它在洞穴巨人的地盤。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	40	conversation	efcbd5557d38c3605a0fd2972b41a4969ebc121afe39c6b560867d8f6ea13c0a	謝謝你。我會去那裡找。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	41	conversation	7052b84dbb9c963f2c06c8ecfb963053ae967522d6260c3fef2320284aa29233	我到處都找過了，可是沒找到。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	42	conversation	a9ce11b034f3e7ff38df9934af6244bc5650fdfdf1e9a5af57368b85b2c191f5	要是容易找到，那就不算是騎士該有的任務了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	44	conversation	9708c15f8ee729436b6b204c12343c4c5e93c7e9f5de3d2480bc3c2d74bb9dd2	我需要一些戰鬥技巧上的幫助。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	45	conversation	cb32b2ea3bd3e903272c02cccf1a0cc97bd77d3cb62ef6295c6a735620d66c07	還在進行。我現在得繼續了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	46	conversation	70cf61aeb2d6fbe6bdea4a5fe3ea342ccbc68e483f9c7d942467744c622eb591	你能幫我找到金盤嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	47	conversation	403cf4c0bde10fdc8f791ec2791bbbb900b4566f52a07b6d83a09029b1996fae	你想以物易物嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	48	conversation	b08d578fc0b70f03138786abd0597ba9c5b99ba41b9df5f8146269942b007e01	據說可怕的混沌騎士羅德里克身上有你需要的鑰匙。他後面是一座有很多密室的迷宮。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	49	conversation	3bb067ab7857cf56cf4177e844d2c426a38afc458808d656c395300675ee7718	我會考慮你的忠告。再會。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	50	conversation	df9373d062fd1f941098e4c78fe8e972e68e7b5c23f1297167c63121d985afe0	謝謝你的幫忙。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	51	conversation	27a25aaf14502d6331b1defb8cbc7aa643866bae1e1f935d9e5e26d2208484a9	是嗎！那你為何而戰？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	52	conversation	807ea23aa8e77586c82499d6c610ca67a73b3574749011a503c4c262c71b0a79	我喜歡讓對手血濺當場。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	53	conversation	0995650a0cbbf9ac15dcc08f1a3b26b30df928270c879ed50bbfe5aa1631da3b	無論在哪裡發現邪惡，都必須與之對抗。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	54	conversation	cfe0692c75161a9427b95b5e5d497ff049ee719b1b02d2d630f37bbdad982063	我必須不惜一切捍衛我的榮譽。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	55	conversation	d7e608c5091b821eadc96c31e0ba83b86357ad73883adce3322522cb658bb29f	我只為維護美德的原則而戰。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	56	conversation	7c8624e234390ae0f4960704db5f793c3e12898cd6bde66219c51a3c98c0f07d	那你就不適合安卡十字騎士團。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	57	conversation	40f0982ef772c816a55f2e2fcf64ae934a62d747b749d110aed71a3494a603cd	你大概說得對。再會。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	58	conversation	4ae32c977fd436b1526fe71046d2173abf9ba02a63d7ad91e92154c3e540c7c0	我的戰鬥技巧沒那麼差吧。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	59	conversation	4c3cb814b47ed08f4c2886a2f090af91ad0abecdc272c28eb186937accd08524	你必定與我志同道合。只要你證明自己英勇，我就邀你加入我的騎士團。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	60	conversation	7c41d483d77a529387d0da538d9af233bd8463dadc64203625e23aab4d6d04fe	謝謝你，我接受。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	61	conversation	bab38b412280101ea4ed0e2bb0bdbc0eb39785f7c3bd821df6f3540e5eacdc23	不了，謝謝你，美麗的騎士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	62	conversation	670110d0848c75aca0f678ad2213b8c5701cf69f7319b4f3a84dfb29c00ab232	我們的原則似乎不同。再會。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	63	conversation	5f70888bd53b6995926e4447f7a05cf0d4424b2164ea41160fda302ba671e1bd	真可惜，你看起來很適合我們的騎士團。請再考慮一下，如果你決定要加入，再回來找我談。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	64	conversation	c2fc88dc78e9d8700a92bcbb00386a9ced3bae47555bed659a159c59bfff7b91	是的，我確實想成為騎士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	65	conversation	4ffa1a65a88ce7e3444ea3dd92adad288bcc9794009bee683fe9bf3086b1d910	那就再會了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	66	conversation	6b8c65700ec63aff84e475fc019bc635edaf56ed3d57904d048d3cd777eca120	說真的，戰士的勇氣是美德最高貴的展現。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	67	conversation	d78f9b6fc6af002c38565d87a1ab60bf7aab07d8c8939aa371b6327b9bc157eb	我就是這樣的戰士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	68	conversation	b040ae97aa64c33776dcdc4fa5d8427d42df853059be8502df090e6b5752140e	能避免戰鬥時，我盡量避免。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	69	conversation	8bcbde01c6264603396cec8e0a4b44849002331ca0e4ba8c12303df82e50b2f5	必要時我才會戰鬥。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	70	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	71	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	72	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	73	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	74	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	75	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	76	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	77	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	78	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	79	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	80	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	81	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	82	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	83	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3730	84	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	1	conversation	3e09c9305b07d46eada3d106bebb9c3fd63c8a9589166e1114f01974cbfac41f	你若想成為騎士，就該到我們領地的南邊去找我們的團長多納談談。入團儀式時信任他，一切都會沒事的。加入我們的騎士團，幫助我們追尋榮譽。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	2	conversation	f3f4f722eb1d09d2fe92060e315d1752fa06920790fd0f931aa6719604b41a44	你若想成為騎士，就該去找我們的團長多納談談。他就住在這個房間。入團儀式時信任他，一切都會沒事的。加入我們的騎士團，幫助我們追尋榮譽。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	3	conversation	678ae42456357144ed8e55fb2c784bb9f8f08206ec050b998be2f47958b5a7fa	我會去找他。再會。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	4	conversation	833ca3bee4e939cb5e8c45fcc9126c4b0510ec5b168f8e39dc9666013c752083	謝謝你，再見。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	5	conversation	be5a5e4de727eff136103547a9d73a2b73880f3dca2aec52d19aae13155502ae	你好，陌生人。你是戰士嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	6	conversation	f4c4d8762552842b974d910b43e47c21cc5fffee74e3ef569bda8d697a86e8d4	是的。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	7	conversation	b87c8ff0969b804bfeab65e9aaf515b8267b3d59eafc6962acd870bfc8ac9b65	不。我的本事是另一種。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	8	conversation	e15ff660f54dd6128c43d514b4f29597717ce0dff863862305810fdf88c17b66	有時候是。必要的時候。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	9	conversation	c162f16a50fb31f99d946d49b1f161f5b64d4d82fb25ae9f487b949d4ac7ffa2	你為什麼這麼問？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	10	conversation	6c3c7e1f25c67416d56c67454ae3b724ba0ec3f1604d223b6be93feaffc9e3b9	你回來了。我能怎麼幫你？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	11	conversation	d79b01c198923dd068bf7dd1bfed4192572a1fe431cccefef0a68badc45f8638	我想成為安卡十字騎士團的騎士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	12	conversation	a8c56f475c569f7bfb07e6d80b3bc14d452d3b0c18c8d4fc929132b9b0b24031	我在哪裡能找到你們的團長？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	13	conversation	8a23c686f416e165e2acb5061124521cf4328aabbf8cf4a6fb94aab5613661e6	抱歉，我不是有意打擾你。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	14	conversation	8a23c686f416e165e2acb5061124521cf4328aabbf8cf4a6fb94aab5613661e6	抱歉，我不是有意打擾你。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	15	conversation	d10203d72ffc81c337d84b08688132b3914f7a51a63690a14b167be77c63729b	我重新考慮過了，現在想成為騎士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	16	conversation	a8c56f475c569f7bfb07e6d80b3bc14d452d3b0c18c8d4fc929132b9b0b24031	我在哪裡能找到你們的團長？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	17	conversation	c9129e52ae7618ea150a1be3fd7b567021e4194716c7eddd0572f8ef5603586f	多納・鐵拳在我們領地的南邊。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	18	conversation	b4c6f8132546794ec947bc6e2f9bc68d1e4d6639bc728bc13978c35037d88994	你運氣真好！多納・鐵拳就住在這個房間。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7		untranslated		grammar-sensitive: 稱呼片段（Brother），代入 3731:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3731	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5		untranslated		grammar-sensitive: 稱呼片段（Sister），代入 3731:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3731	22	conversation	2b2b6721cc1270dce49f647b290429ee3edff0cd45859dbc48c8cf8fb0218f15	是你的好榜樣激勵我完成任務的。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	23	conversation	d6a1b39748b08bb955129b61a5d2b27cc0f30b8fc022d8e2682121ae59befa81	在我追尋美德的路上，你能幫我嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	24	conversation	ac7cff20bab7d0b05be766e8348c8f993b1cc751fa6e6b3a8dac671e915b5c48	你想交換物品嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	25	conversation	e2d8594ef10f888a7bc21fd3a989f228428c150fc3b9984f3214c55efa8eb4d8	當然。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	28	conversation	722fd811a61be0af654a7f915347e8685794c6540f0ab37dfee54c6fa760683e	你有什麼知識，能幫助我邁向騎士身分嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	29	conversation	28885de27958f45213a68c1c34b54b649eb1d7aa4aad783b1152c6612cf04cc7	你的好話就已經夠幫忙了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	30	conversation	432c1e7d57f7e52a7f9f416434ec8ee983693558bbe28c23f808a6f3fc74506c	你有洛恩的文書的消息嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	31	conversation	c6f7efdc4905226323301c540222303c01860e11eb8b07808809465f3b832a2b	我想我已經告訴過你了，不過我很樂意再說一次。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	32	conversation	f05b641e6fd972a90136f83722ce26d20066cfa5137aa377f1e6e63bcf50ea2a	同為騎士，我很樂意幫你。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	33	conversation	25da607453bfcbcee13b92b049372b1950716f58fa6fa1b027c04836e0ffb0f3	念誦祈禱語 AMO，可以增進你的劍術。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	34	conversation	09a31268aafad1ffa7f21ce40991c7d8d429aa3b46f63e7fdc1e8b6f2ee3c0ea	祈禱語 GAR 能讓你更熟練地使用斧頭。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	35	conversation	4b11df1aa58ce71f4fb6cba9138b317279f3b2e6d906a358eda1d0234936c723	你若使用鈍器，祈禱語 KOH 會派上用場。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	36	conversation	4a398a6fa16cea0c450dc3c8a42ceebeec2dbc3b514162904e67aadc0d67420d	念誦祈禱語 FAHM，能讓你的箭射得更準。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	37	conversation	f577e1ed0244a18d2516bc49148c045350cc29411a8a8e4ac6fbe3e327b89d73	謝謝你的幫忙。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	38	conversation	ba036dcba5021c2c4b650393eb8b528b066ae27d88ce63d614a1b94b512a6d53	我會盡早試試這句祈禱語。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	39	conversation	9a487b7d22943e7ecd827c1ce838b98d1191bb7d3035c4bbf622c31edfcb1522	我聽說它在洞穴巨人的地盤。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	40	conversation	efcbd5557d38c3605a0fd2972b41a4969ebc121afe39c6b560867d8f6ea13c0a	謝謝你。我會去那裡找。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	41	conversation	7052b84dbb9c963f2c06c8ecfb963053ae967522d6260c3fef2320284aa29233	我到處都找過了，可是沒找到。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	42	conversation	a9ce11b034f3e7ff38df9934af6244bc5650fdfdf1e9a5af57368b85b2c191f5	要是容易找到，那就不算是騎士該有的任務了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	44	conversation	9708c15f8ee729436b6b204c12343c4c5e93c7e9f5de3d2480bc3c2d74bb9dd2	我需要一些戰鬥技巧上的幫助。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	45	conversation	cb32b2ea3bd3e903272c02cccf1a0cc97bd77d3cb62ef6295c6a735620d66c07	還在進行。我現在得繼續了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	46	conversation	70cf61aeb2d6fbe6bdea4a5fe3ea342ccbc68e483f9c7d942467744c622eb591	你能幫我找到金盤嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	47	conversation	403cf4c0bde10fdc8f791ec2791bbbb900b4566f52a07b6d83a09029b1996fae	你想以物易物嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	48	conversation	b08d578fc0b70f03138786abd0597ba9c5b99ba41b9df5f8146269942b007e01	據說可怕的混沌騎士羅德里克身上有你需要的鑰匙。他後面是一座有很多密室的迷宮。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	49	conversation	3bb067ab7857cf56cf4177e844d2c426a38afc458808d656c395300675ee7718	我會考慮你的忠告。再會。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	50	conversation	df9373d062fd1f941098e4c78fe8e972e68e7b5c23f1297167c63121d985afe0	謝謝你的幫忙。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	51	conversation	27a25aaf14502d6331b1defb8cbc7aa643866bae1e1f935d9e5e26d2208484a9	是嗎！那你為何而戰？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	52	conversation	807ea23aa8e77586c82499d6c610ca67a73b3574749011a503c4c262c71b0a79	我喜歡讓對手血濺當場。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	53	conversation	0995650a0cbbf9ac15dcc08f1a3b26b30df928270c879ed50bbfe5aa1631da3b	無論在哪裡發現邪惡，都必須與之對抗。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	54	conversation	cfe0692c75161a9427b95b5e5d497ff049ee719b1b02d2d630f37bbdad982063	我必須不惜一切捍衛我的榮譽。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	55	conversation	d7e608c5091b821eadc96c31e0ba83b86357ad73883adce3322522cb658bb29f	我只為維護美德的原則而戰。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	56	conversation	7c8624e234390ae0f4960704db5f793c3e12898cd6bde66219c51a3c98c0f07d	那你就不適合安卡十字騎士團。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	57	conversation	40f0982ef772c816a55f2e2fcf64ae934a62d747b749d110aed71a3494a603cd	你大概說得對。再會。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	58	conversation	4ae32c977fd436b1526fe71046d2173abf9ba02a63d7ad91e92154c3e540c7c0	我的戰鬥技巧沒那麼差吧。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	59	conversation	4c3cb814b47ed08f4c2886a2f090af91ad0abecdc272c28eb186937accd08524	你必定與我志同道合。只要你證明自己英勇，我就邀你加入我的騎士團。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	60	conversation	7c41d483d77a529387d0da538d9af233bd8463dadc64203625e23aab4d6d04fe	謝謝你，我接受。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	61	conversation	bab38b412280101ea4ed0e2bb0bdbc0eb39785f7c3bd821df6f3540e5eacdc23	不了，謝謝你，美麗的騎士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	62	conversation	670110d0848c75aca0f678ad2213b8c5701cf69f7319b4f3a84dfb29c00ab232	我們的原則似乎不同。再會。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	63	conversation	5f70888bd53b6995926e4447f7a05cf0d4424b2164ea41160fda302ba671e1bd	真可惜，你看起來很適合我們的騎士團。請再考慮一下，如果你決定要加入，再回來找我談。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	64	conversation	c2fc88dc78e9d8700a92bcbb00386a9ced3bae47555bed659a159c59bfff7b91	是的，我確實想成為騎士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	65	conversation	4ffa1a65a88ce7e3444ea3dd92adad288bcc9794009bee683fe9bf3086b1d910	那就再會了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	66	conversation	6b8c65700ec63aff84e475fc019bc635edaf56ed3d57904d048d3cd777eca120	說真的，戰士的勇氣是美德最高貴的展現。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	67	conversation	d78f9b6fc6af002c38565d87a1ab60bf7aab07d8c8939aa371b6327b9bc157eb	我就是這樣的戰士。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	68	conversation	b040ae97aa64c33776dcdc4fa5d8427d42df853059be8502df090e6b5752140e	能避免戰鬥時，我盡量避免。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	69	conversation	8bcbde01c6264603396cec8e0a4b44849002331ca0e4ba8c12303df82e50b2f5	必要時我才會戰鬥。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	70	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	71	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	72	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	73	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	74	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	75	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	76	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	77	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	78	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	79	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	80	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	81	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	82	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	83	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
+3731	84	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-8 draft; 交易用語沿用 3672:16-30	
