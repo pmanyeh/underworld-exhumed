@@ -1756,6 +1756,26 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3605	18	conversation	ee2708c40b58e7ca49f5c3030a8b02cd6e8966c88e76aaf46749d708ae39c6cd	這裡不准探險！好了，走開！	draft		p10b-4 draft	
 3605	19	conversation	30390115b066968fc0628684c0e97b2805049e3e5d7c9ffed69c551632a492e7		untranslated		grammar-sensitive: 稱呼片段（sir），代入 3605:21 的 @SS1 模板，P11 處理	grammar-sensitive
 3605	20	conversation	765cc52b3dbc1bb8ec279ef9c8ec3d0f251c0c92a6ecdc1870be8f7dc7538b21		untranslated		grammar-sensitive: 稱呼片段（madam），代入 3605:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3606	1	conversation	412d366ded1c317223e0f63a2f19fa5cfdd9cbb5251fc50dd186cf715b0985ed	你打敗了我，贏得了勇氣之盾；你在這裡已經沒什麼需要證明的了。	draft		p10b-15 draft	
+3606	2	conversation	659743abc61b6b97b8ef5af4fbcb86ceb83055599983d809dd89dee21419fe45	站住，渺小的凡人！我就是你的末日！	draft		p10b-15 draft	
+3606	3	conversation	61c3be7d3c396063e99e9cc20087718b19fa76abac078c0e931a0899f6bacb77	那是你說的！	draft		p10b-15 draft	
+3606	4	conversation	a627919d78ec4cce6252b297f0ffb7f02eeadb3fdd6767d973b2e0b936c5efd0	也許吧。	draft		p10b-15 draft	
+3606	5	conversation	ec0930f8a0867afdc7251d38fe623ddc651e99884c70668496167a10506b293e	我正要走。	draft		p10b-15 draft	
+3606	6	conversation	6511d031461695be79be52f00ae479f8d0b0f764e18101107ae1dc2c8432d340	我生來就是要成為的那樣——不列顛尼亞最偉大的戰士。你若沒有過人的勇氣，現在就回頭，不會有任何恥辱。否則，就準備迎接你的末日吧。	draft		p10b-15 draft	
+3606	7	conversation	eda9a8b0439b5ea8aacc2ba28fff47c3d6da58fc5b4892def376419d35011b7a	我要是贏了，有什麼獎賞？	draft		p10b-15 draft	
+3606	8	conversation	bc0b82fbf796845bdce004b52eb0735765ff90970c267a91d825b4d63c31fdbe	謝謝你，不過我得走了。	draft		p10b-15 draft	
+3606	9	conversation	7045d0824cb7e095a98ff060696a11f3b4a65e8086d4e50efd8c2c012a24a5f7	你用你的性命，來賭一件強大的聖物——勇氣之盾。打敗我，它就是你的。失敗了，你必死無疑。	draft		p10b-15 draft; authority-ok:Talismans（a mighty talisman 譯「一件強大的聖物」，用詞相同）	
+3606	10	conversation	a24a35a2e214312101d39825211cc1bd9fcc0296d3b031a16d7578f569f7d2fb	那就來吧，我什麼都不怕！	draft		p10b-15 draft	
+3606	11	conversation	aded7ecc9e3a6d3001d827f149377d5466e14d9468a270cf28aa54a35479dde0	我在別處有急事。	draft		p10b-15 draft	
+3606	13	conversation	f6dd7ab6bb80c47f40cc24137dc9071c725efd33239358ffff0816ebb8e92c16	謝謝你。也許我們後會有期。	draft		p10b-15 draft	
+3606	14	conversation	939283e29257fb94ec84252679422d1aa4c34e1f7974a777bb2e0f869f17f340	你在虛張聲勢。去死吧，怪物！	draft		p10b-15 draft	
+3606	15	conversation	aad684feaff72b6adcf176bb3793efd39c21d56ddbb9ab7c8639e40a8257a4d3	住手，凡人！你打敗了我！從沒有人展現過這樣的勇氣！你理應成為這面盾的主人！	draft		p10b-15 draft	
+3606	16	conversation	f855bd2cd2b871948c5a4af5f2b953aceb84b16e093590e8da199ce3d15a78f0	我把它留在這裡給你。好好使用它！	draft		p10b-15 draft	
+3606	17	conversation	eea754e1a9d1633411423e5648a74e5eea0b13476bc0ae84a83fa92013042337	你是個高貴的對手。我饒你一命。再會。	draft		p10b-15 draft	
+3606	18	conversation	c020e25a1963f4965aec80ab2b75b432b1f1526b2a27176d9a2317da1118e1b7	謝謝你的盾，可是你太危險了，不能留你活口：去死吧，惡魔！	draft		p10b-15 draft	
+3606	19	conversation	ec4089679caa7d9dca8e33c7e0f14b2419e6d2946a764164d3868ff8a6c95094	你為什麼一直跟我說話？你不急著繼續我們的戰鬥嗎？	draft		p10b-15 draft	
+3606	20	conversation	f5b157fbef471dbc11aa4491b8fa54888868f98884165e272b8e5ecd93628e20	急，這次我會贏！	draft		p10b-15 draft	
+3606	21	conversation	c2bd657f1ce6622da7f18001434e3b1218e73848b35e3b78bf4e6616d3997a15	改天吧。	draft		p10b-15 draft	
 3607	1	conversation	336c7c7d3a236ce2f8443c399cb3ca1be28a138f599e4087317af2ad3a6b24cb	你走近時，老婦人抬起頭，瞇起眼睛。她顯然是近視。\n 「湯姆？」她說，「是你嗎？」\n 看清你的臉後，她眼中的希望熄滅了。	draft		p10b-12 draft	
 3607	2	conversation	42856350ad077af3f044a27f83a7814128275256e537587bcc0fcbfaca91bc9b	是啊，剛才我還滿懷希望，以為你是我的湯姆小子終於回來了。	draft		p10b-12 draft	
 3607	3	conversation	9f643713c64f12af26360f688b2133d8e5b55ef47e7dc63659949e4850e46ccf	你好，老媽媽。	draft		p10b-12 draft	
@@ -3221,6 +3241,72 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3746	51	conversation	f5ed804928dc3da1557c14f8f998b486aae3dc895d664c8f9e95ca0449ce57bd	我會帶魚回來。	draft		p10b-12 draft	
 3746	52	conversation	421648d0664fda20aeab7f7ce5c3f733e71271472acc362d35822bd72afa331d	好吧。再會。	draft		p10b-12 draft	
 3746	53	conversation	1bf1d25a27862158191763e0aaf317216e796bfeb89ffc3948b80227e7202571	再次謝謝你的魚。抱歉，我得走了。再見。	draft		p10b-12 draft	
+3768	1	conversation	a15b148f19b262e58b7009eaed5ed8abf64c243037ae685755fb5d67a3e076cd	嘿，冒險者！我一直在找像你這樣的人。你認識一個叫札克的冒險者嗎？	draft		p10b-15 draft	
+3768	2	conversation	f7ece3062e04b231c95bfa5a5673745abf25b7c17776d163cd8ad20148aa7f99	我沒見過這個人。	draft		p10b-15 draft	
+3768	3	conversation	4ea3b708902fb1cd24248bafbbcbe5083deb4715b7e09931d88c7d584fa22ce5	我確實認識。他住在上面，跟蜥蜴人在一起。	draft		p10b-15 draft	
+3768	4	conversation	1767a8ff3d7e22e7cef6ef28db175a6237342f3d0c9324715d9c922e65dcde53	札克？	draft		p10b-15 draft	
+3768	5	conversation	9fd8b45dae847e0625c49975c919723ef6339bea8b98dc0802543fea4bb45e04	聽到這個我很遺憾。我一直找不到另一座像他從我這裡偷走的那種燭台。	draft		p10b-15 draft	
+3768	6	conversation	a51127f0365fe1ee918b9c5f45710f21c1c7f61e3a0c4db3c80baf5d3be15a84	聽到這個我很高興！也許現在我能從他那裡要回我的燭台了。	draft		p10b-15 draft	
+3768	7	conversation	2cd0aac96ec20e68c3685115225ea1c26784fb957c7cebc46830c147013bc7db	我不知道他的真名，不過大家都只叫他札克。據我所知，他曾經是個騎士，後來在冒險中發現了什麼東西，就發瘋了。最近他晃到這裡，偷走了我的燭台。我不指望能再見到它了。我還聽說，他也從騎士們那裡偷走了一支他們非常珍視的蠟燭。	draft		p10b-15 draft	
+3768	8	conversation	c0835205096d6e64c4ac976a72dbf2ba8ef5890b7c0df743b218fff6b7f67218	我從沒見過他。	draft		p10b-15 draft	
+3768	9	conversation	37abf4e5e6aa5bfe744de75f901c343086acd25f2472b0cf08a4a62d0d959f4c	我確實見過他！他住在我們上面，在蜥蜴人那一層。	draft		p10b-15 draft	
+3768	11	conversation	eff8d6ce3e3232f4fb9b7e0e88e60d33cd06c06b9ef46055a1131c15cda62cd3	喔，又見面了。你找到札克了嗎？	draft		p10b-15 draft	
+3768	12	conversation	b1616ee7f030a49ba7f66d5c46c8f59c197ea6a00030dcbe3cfca5f5b28a175b	沒有，我還是沒見到他。	draft		p10b-15 draft	
+3768	13	conversation	cdff4a76c33eae0380edf95b5e0a76b7c503d813547a82327a9c31686bec5d56	有，其實我見過他。他住在上面，跟蜥蜴人在一起。	draft		p10b-15 draft	
+3768	14	conversation	345c6e122b7703637da67fd018dd087d9e29afaeb05582ec3c826ffaf3c051f4	抱歉——札克是誰來著？	draft		p10b-15 draft	
+3768	15	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	16	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	17	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	18	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	19	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	20	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	21	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	22	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	23	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	24	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	25	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	26	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	27	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	28	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3768	29	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	1	conversation	8c6cb00e24c5d44bb8b5f731c7c34f4c86d21fbfa6abf1cdef509b480497ab8a	看得出你是個冒險者。你是來這裡找魔像的嗎？	draft		p10b-15 draft	
+3769	2	conversation	fd2c4cbe927065fcb8343e2250de8400b035554550ad92d3ffacf22364fe9ee6	是的。你能告訴我怎麼去嗎？	draft		p10b-15 draft	
+3769	3	conversation	ab383555456e486e5b28e13982a6d4860a4c4c3d02f9bebdae77de1ab6627970	我不用再找了，因為我已經打敗它了！	draft		p10b-15 draft	
+3769	4	conversation	6f4dfbab4049c6dcc1f6e2851a60b6d4e871d39f4fb7cc7e0a04d1dcca443fa3	不，我對你的魔像沒興趣。	draft		p10b-15 draft	
+3769	5	conversation	7e88613eac54dff3f017ada206105245aec9aade6aad6afe42f6be0ad55138d1	你說的這個魔像是什麼？	draft		p10b-15 draft	
+3769	6	conversation	e523329beb39546cf4f9b7fba24da59c79b7c547b99758412ff900f972b11737	那好吧，不管你在找什麼，祝你好運。	draft		p10b-15 draft	
+3769	7	conversation	f1de29d1f1d2eb1510b5c0cfb5be698da15072983b8ed45a8e8f5a31309f2c18	從中央大廳盡量往西走，然後左轉，就能找到他。他在被熔岩包圍的島上。先警告你——他非常難纏！	draft		p10b-15 draft	
+3769	8	conversation	18e82bcfc1caf85c8349ae293e262027bcb79a32ee65156e8a4a0561dfc94c41	那個魔像是預言者勒林應騎士們的要求打造的，用來考驗勇氣。已經有好一陣子沒有騎士下來跟他較量了，不過以前常常有。我相信能打敗他的人，會得到一份相稱的獎賞。	draft		p10b-15 draft	
+3769	9	conversation	05e457ea822d7d24730313d8436f97012636cdae5709ad669e19f3b8295b93fa	我相信我打得過他！	draft		p10b-15 draft	
+3769	10	conversation	257cadfa797dd64b8869fca22b9ac938137ea018b75df797db0c7e67c4543c85	他聽起來是我應付不了的強敵。	draft		p10b-15 draft	
+3769	11	conversation	2cba4e0ac34e8bcbf036b5aeb4cb7586b6d787c97ccde238b471fa5123ffb50f	恭喜！你真的跟騎士一樣英勇。	draft		p10b-15 draft	
+3769	12	conversation	2172da6b1a978dd92ea3979c1151024e66b59a7f8240b7027f72fe9296af7611	再次恭喜你打敗了魔像。希望你的勇氣能讓你把深淵裡剩下的邪惡生物一掃而空。	draft		p10b-15 draft	
+3769	13	conversation	1a89a0336aa9b30e27ebad4c0233dfbc62eba01c8d56785fc61960265b3e6229	你好！我跟你說的那個魔像，你打敗了嗎？	draft		p10b-15 draft	
+3769	14	conversation	c96bff8e2ebfaeff920aeb3e8c52c88c617f5fdefd8ff7a4aceb9c260a72e021	不，還沒。	draft		p10b-15 draft	
+3769	15	conversation	e763d2618d2329c93efc9fb9ac5d34695260bca27f991b410d76a5975cbd12ff	打敗了！	draft		p10b-15 draft	
+3769	16	conversation	7a4e74956adff865ea725ebf7623b82b965322351bca7883305ba8a6b9a350ee	你好！你終究決定要挑戰魔像了嗎？	draft		p10b-15 draft	
+3769	17	conversation	c09b4ba772a714f1065112b22875ccb674322740f74f577d6db1a6711c502f4d	是的，我準備好面對他了。	draft		p10b-15 draft	
+3769	18	conversation	84846de394e158b8b856bdf5e1c71558929a7f77aa4a638b3d46fd47f88ea668	不，我想我打不過他。	draft		p10b-15 draft	
+3769	19	conversation	9acddaf33384d87c3770de63d6c4a1a3f92edf1e5db3a0833c542e60f5289c05	為什麼不？	draft		p10b-15 draft	
+3769	20	conversation	4f9670bd55ca2b1354a58f1a8b91f17543c57dcc8888fb3ea9dd2e961fe7b62f	我一直找不到他。	draft		p10b-15 draft	
+3769	21	conversation	de706402f186004124d03346fc270a2d59241695a3e5df86ae2fe5dc14f17d9a	他是比我更強的戰士。	draft		p10b-15 draft	
+3769	22	conversation	2ff1a451d0c5a72d61a81cb29101282145441c575fc76e767b80b68d4dae339a	我怕他會殺了我。	draft		p10b-15 draft	
+3769	23	conversation	b47ac828c2cdb55043706fa725e7c9a8a3ba11be2813ceeb6035c2d320da767b	別覺得丟臉——只有最英勇的人才打得倒魔像。	draft		p10b-15 draft	
+3769	24	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	25	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	26	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	27	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	28	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	29	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	30	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	31	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	32	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	33	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	34	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	35	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	36	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	37	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
+3769	38	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-15 draft; 交易用語沿用 3672:16-30	
 3771	1	conversation	91f8ee17ad4ed4053884c0c5ca0c417fd024a9b302c4071183ba6400e684f423	你好，冒險者。你見過我的朋友古爾斯坦嗎？	draft		p10b-13 draft	
 3771	2	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	見過。	draft		p10b-13 draft	
 3771	3	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	沒見過。	draft		p10b-13 draft	
@@ -3479,6 +3565,48 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3775	59	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-14 draft; 交易用語沿用 3672:16-30	
 3775	60	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-14 draft; 交易用語沿用 3672:16-30	
 3775	61	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-14 draft; 交易用語沿用 3672:16-30	
+3776	1	conversation	9e58813d97a39f054587d69dd10e2e2f4290b648e278820a51ae0d907ea86f65	啊啊！那是什麼？\\p……喔，你嚇了我一跳。我剛用了些薰香，正在做一個很逼真的夢。我看到了一個巨大惡魔的可怕幻象。	draft		p10b-15 draft	control-code
+3776	2	conversation	549c49fd28372015b3a3d697978d3d805632fae42f0e42e2dc7f95d7f4061d7d	你夢到這個惡魔什麼？	draft		p10b-15 draft	
+3776	3	conversation	83a41eda2f2033de313f8b2d2c0f714b11d74c402d246cf07b136aaf70935767	用了薰香才讓你做了這個夢？	draft		p10b-15 draft	
+3776	4	conversation	b44d8f382f0e1bf59f72febab05e1e60b516ee969c1f97197ce9b2cc7857f8ac	我不是故意嚇你的。	draft		p10b-15 draft	
+3776	5	conversation	bea4c3b6007b33d71588a3312e8f8d59471ad45c0c558c0df58acba57589cfb7	太可怕了！那個惡魔強大得超乎你的想像。我想任何凡人都打不倒他。	draft		p10b-15 draft	
+3776	6	conversation	11ce77f4969d54c2cd8678622a903cc5f3cbe6b2b6f17b794ac5a9c035e0baaf	你說得好像那是真的，而不只是夢。	draft		p10b-15 draft	
+3776	7	conversation	4581d191a217a07fbbf7708e60fae9ed74506a155843aa891c844b80bc70dfd1	你怎麼會做這個夢？	draft		p10b-15 draft	
+3776	8	conversation	ef1516e10084cccae9168faa7cd849e555307513c5d675433032cadd16fd6c29	這不是普通的夢，而是燒了薰香之後做的夢。薰香會讓人做逼真的夢，而且那些夢總會以某種方式成真。\n 只要把一塊薰香放在火把上掠過，就會冒出煙霧，吸進去就會做夢。\n 既然我夢到了惡魔，那就真的有某個惡魔在威脅我們。	draft		p10b-15 draft	
+3776	9	conversation	23f13320cef867a411925a6f370fb81ed239b6f4ca22f92841be50ec4c945065	為了我們好，希望你錯了。	draft		p10b-15 draft	
+3776	10	conversation	d27a7ad74a6d7e16d32d926c4a234d35f43dd2d216363ad8c4fb43ff76ebfa35	難道一點辦法也沒有嗎？	draft		p10b-15 draft	
+3776	11	conversation	f5b1fc477a40775243bc5aa3a2f62ee2e270eaa558168a0bfc94e895e4d711ad	根據我的夢，那個惡魔強大到任何凡人都殺不了它。必須用別的方法把它逼離這個世界。希望辦得到！	draft		p10b-15 draft	
+3776	12	conversation	a81b9ebaf20ff7ba1d1f02b949e9a59c342655f81e4dfb5d907d2038a6d3fbf7	我要是遇到惡魔，會記住你的忠告。	draft		p10b-15 draft	
+3776	13	conversation	86c2c01e79c71f91bfbb8ea5e9f9de10ff322665e442133f2484d8598d4b01b9	謝謝你撥空。	draft		p10b-15 draft	
+3776	14	conversation	b2bf4fd39c348ca270238614fd0ce00909b7dc25526768e7691f3c61900cb914	啊，又是你。	draft		p10b-15 draft	
+3776	15	conversation	cefd603d5ce3f9e76c6e9faa8770906d907f6f6f302b8fb14e4f784314845a1a	你看起來比我們第一次見面時放鬆多了。	draft		p10b-15 draft	
+3776	16	conversation	c4da69c5e15a90aedff8b2de77aa61171e16295718ebc0b63e71c23d6326d341	關於你夢裡的那個惡魔，你還有更多消息嗎？	draft		p10b-15 draft	
+3776	17	conversation	99f518f3b7378da4781605d8a7de9b7052d34ae8d59020f576730e6d4cd2ea58	從我們見面以後，我就沒再用過薰香，所以也沒再夢到惡魔了。也許這樣比較好——那個夢真的很嚇人。	draft		p10b-15 draft	
+3777	1	conversation	6366cefdee7d80e1f2fe70d7dceb0adf5aee6c90a4067b0a6068227c8671189a	啊，你好。你跟我一樣是魔法師嗎？	draft		p10b-15 draft	
+3777	2	conversation	d21baa8a6a29347697e7d5823598b535cf2d72957ba57bb087ee06c343b0a9c8	我偶爾涉獵一點神秘學問。	draft		p10b-15 draft	
+3777	3	conversation	a4425be0e91b1c80d7621658ce431489e1e97e892e27a88c9bcf3b0ef492d1ed	是的，我自認是魔法師。	draft		p10b-15 draft	
+3777	4	conversation	8fa6fe74febdefcc1a8d8d5cbd65a2e7d5388fb39170b426d21a71812cc4ef15	我比較喜歡不靠魔法解決遇到的問題。	draft		p10b-15 draft	
+3777	5	conversation	6c5c836cdfc778dca33c1d1a1de31ae74cc574c97b666913b361705a3d456312	那我相信你一定會對我的研究有興趣。我在探索祈禱語與神殿的特性。	draft		p10b-15 draft	
+3777	6	conversation	fd6f3ddcefd53ef783938c33a795cb5ac6ff93bcfd1d8998c2200c7492b58dfe	你發現了什麼？	draft		p10b-15 draft	
+3777	7	conversation	d3690936ef8e28550971b7e78e5576cf8e39a341e4e0bc75970b45bdcfe42afd	也許我的研究對你有幫助，雖然你大概看不懂。我在探索祈禱語與神殿的特性。	draft		p10b-15 draft	
+3777	8	conversation	fd6f3ddcefd53ef783938c33a795cb5ac6ff93bcfd1d8998c2200c7492b58dfe	你發現了什麼？	draft		p10b-15 draft	
+3777	9	conversation	ab57ea8a00ac5cf92aabf39d285157a501ff90a8c1e5ab3517514b6d7afb12b6	長久以來，大家都以為深淵的神殿只能增進某項技能。不過我發現不一定是這樣。顯然有些祈禱語能變出物品，或給予資訊。	draft		p10b-15 draft	
+3777	10	conversation	6fd397ec2ae87a615226729f2424cd549376c3c763cade513cdb8a0f8b79f473	是哪些祈禱語？	draft		p10b-15 draft	
+3777	11	conversation	7a68c95dbff75e30a74bd6d6bafcfb5424005503ad1aeb3f1943e6f1328f374a	你的研究聽起來很有意思。	draft		p10b-15 draft	
+3777	12	conversation	c1197dd9a2fcd34ebc966bb91753994e8f49c7b13a5aa1eed82710d8a3eff552	我還沒能找出任何具有這些特性的祈禱語。不過，據說有一句祈禱語能指引人找到一件強大的物品。這句祈禱語被分成三部分，必須重新組合起來，才能得到原本的詞。這是很久以前流傳下來的故事，所以我不知道是真是假。	draft		p10b-15 draft	
+3777	13	conversation	b6618f18a81d89a3a038e22b992184b5bfd90597275daae32b93eeb0f53ec5e1	你還知道其他祈禱語嗎？	draft		p10b-15 draft	
+3777	14	conversation	86c2c01e79c71f91bfbb8ea5e9f9de10ff322665e442133f2484d8598d4b01b9	謝謝你撥空。	draft		p10b-15 draft	
+3777	15	conversation	5bbcb033c731066907eafc3bac2dd25f21c57cbdf342b12814c0ef43ef72bdbd	不客氣。祝你任務順利！	draft		p10b-15 draft	
+3777	16	conversation	d428f565f865758434e7831695a3a7f92a6a9f3005e80f111fc2df3bd54b3348	可惜，我對個別的祈禱語沒有更多了解了。不過，希望我的研究對你有些用處。	draft		p10b-15 draft	
+3777	17	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	再看看吧。	draft		p10b-15 draft	
+3777	18	conversation	4cdaf854fcccf537c0a0acb11f3601ba4e8cd2836a9d3e444c2ad036daec08ce	確實有用。非常感謝你。	draft		p10b-15 draft	
+3777	19	conversation	2d68fb44c92d97b62371238cc5c81b7b799a4e4c97245cd64f4578288b4df347		untranslated		grammar-sensitive: 招呼語片段（Hail, fellow mage!），代入 3777:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3777	20	conversation	5343845a3d2618bc326df42bbb679de69e88764c33125d3f4f41dec5308e9423		untranslated		grammar-sensitive: 招呼語片段（Greetings, adventurer.），代入 3777:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3777	22	conversation	75d9857463e04dfb11d3dcfa65f685d23264a4b8810c4d9070032ba3f67bad78	我想多了解一些祈禱語的事。	draft		p10b-15 draft	
+3777	23	conversation	e005a1c735c1ae09a452ee1df65a10e31ba9b7eda35adc1c79da1faff39c653d	謝謝你，不過我不再需要你幫忙了。	draft		p10b-15 draft	
+3777	24	conversation	fab2b0429497a74fa0ccc9c62ccec3ea5a6b4fdd25ea7c82e79b91eb439eb95e	可惜，除了之前跟你說過的那句——被分成三部分的祈禱語——我不知道其他傳說中的祈禱語了。魔法研究是漫長又艱辛的過程，很少能發現真正有意思的資訊。	draft		p10b-15 draft	
+3777	25	conversation	fd13b34ca4b22c071b474d39cb40c7f419cec8d146b1577b9cc85f4f751621bc	謝謝你的幫忙。	draft		p10b-15 draft	
+3777	26	conversation	71f8970026e37340938af8b3452eb8d818275d6dc6d3f00a65d7103b41cbba4a	這是我的榮幸。	draft		p10b-15 draft	
 3778	1	conversation	35dcab40c277651cf9e1baf72cf61d0f4fd4773eb9d76d0e18bfffadf451d1ea	啊，又是你。你帶東西來讓我鑑定了嗎？	draft		p10b-14 draft	
 3778	2	conversation	f987fca9b8bce7ca858131ace67d73173c373e99706df314936c9e0da855b2c1	有，這裡有一件。	draft		p10b-14 draft	
 3778	3	conversation	d27d5e363bf8373e5576f8f1108c126cc283f3389e620e46079b27c4695274b1	不，現在沒有。	draft		p10b-14 draft	
