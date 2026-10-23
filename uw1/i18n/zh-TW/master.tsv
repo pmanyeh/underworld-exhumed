@@ -1,29 +1,29 @@
 block	index	category	source_hash	target_zh_TW	status	context	notes	flags
-1	2	game	31d190a0704d9efed5116d57a04a58851200e61f0f37b9989eac7f8318288711	這把鑰匙不合。\n	draft	PoC role: scroll	PoC draft	
-1	3	game	307d72083a9c9dd4d04a6ce5328a1078233264e8268eedb54a791d1eed1776e3	那上面沒有鎖。\n	draft	P10A-B1 core system: key use (USEITEMS.C)		
-1	4	game	0419f5cdc9840c9f6c6b8a006cc50c045af1a50556165c5288ff12cad5999f77	鑰匙把鎖鎖上了。\n	draft	P10A-B1 core system: key use (USEITEMS.C)		
-1	5	game	c1423871b6aafb4c9ec8cd95c2ee839520b952396990ebeb4c5e841e46ff0c79	鑰匙打開了鎖。\n	draft	PoC role: scroll	PoC draft	
-1	6	game	bcd126126e11aae75f292c11d51f2544f9e8d844741854fbf58451fa4a711bcd	那已經是開著的。\n	draft	P10A-B1 core system: key use (USEITEMS.C)		
-1	9	game	a0305c72d9ed747ebf245ed70541d6b51317353f9a76a05f7016e4fe838208fb	當你伸手觸碰那棵樹，它便枯萎消散，露出一顆銀色種子。\n	draft	P10A-B1 core system: silver tree		
-1	10	game	f7c16ea4ba55e218b2511efb25ffe8f331a837c5bbf22dbaa279f53ed91854fb	種子似乎找不到扎根的空間，毫無動靜。\n	draft	P10A-B1 core system: silver seed		
-1	11	game	f527b6fb1c4a146525cdfddbec56a4d4289d39fa4512973c345b933dd0690c30	種子消失了。\n	draft	P10A-B1 core system: silver seed		
-1	12	game	8d863938a1a1c16c3a4a43d2038c80356e147b2c4c7f80283da4d520ce464bf5	你種下種子，一株小小的銀樹迅速長了出來。\n	draft	P10A-B1 core system: silver seed		
-1	13	game	ccf1f047fb2dfbcc5d52ba2ea7236646eaa288a60c83c754c5134f0d7a5088d5	歡迎來到地下世界。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	14	game	1983ca6999a462ddd22ab86dd97665be17a76ca24e99c9eacaff4019d42dc365	附近有敵對的生物！\n	draft	P10A-B1 core system: sleep		
-1	15	game	4d220119a749f67ac696f4f30cd2d95256460933bd9c675f594d6fffe16c980d	你紮營休息。\n	draft	P10A-B1 core system: sleep		
-1	16	game	eef5e122b2718752aa05dd799923bff9da7bbd9430d9f5ac799e9a8fa24f2c5e	你躺下睡覺。\n	draft	P10A-B1 core system: sleep		
-1	17	game	35c2b8c98b87969ce53297890396ae6db6003e8192eaec83b330e96073ea8f82	你快餓死了。\n	draft	P10A-B1 core system: sleep		
-1	18	game	5d2c729eaa5c2a9ac629f4c1aabf1df8d54a1e2895f2692be04513a7fbf99bbe	你覺得精神飽滿。\n	draft	P10A-B1 core system: sleep		
-1	19	game	514cf47bd913e14f2d665dc697ca676af1a4fe9d033a753f438acf49e224430a	你睡得很不安穩。\n	draft	P10A-B1 core system: sleep		
-1	20	game	0fe64eb8ea0825828b6c5d9b1475e6a0d987ab0a18187c5ab6eee419695354d7	你不能在這裡睡覺！\n	draft	P10A-B1 core system: sleep		
-1	21	game	eefbf357764c9c6f8a4de1bfe80c5f5c6b5736e4b983c8a8dfe00e4e31d98168	你的睡眠被打斷了！\n	draft	P10A-B1 core system: sleep		
-1	24	game	58a22a519b8616b57590d6784f9c44c1a3d82cdbf1c63c20ba59be323f3bbe79	你還沒有準備好提升。\n	draft	P10A-B1 core system: shrine		
-1	25	game	39b621189b85963d87837da900916f6a704afbdbe93990d398df65470006a7e6	那不是祈禱語。\n	draft	P10A-B1 core system: shrine		
-1	26	game	4c96d95e7654f394150e54554a896873270bd5251e58492a8fff493e42b1ca40	知識與理解充滿了你的心靈。\n	draft	P10A-B1 core system: shrine		
-1	27	game	fc863e33322e36bfda6b65dccfb242b79bfdaede20abc75d3c7a26cf87096de1	你在這項技能上已無法再進步。\n	draft	P10A-B1 core system: shrine		
-1	30	game	86385feb1b1840be84a2a0ba428a549d1ccf1d190e41bdff982dc3f62edcddef	你的技能都沒有提升。\n	draft	P10A-B1 core system: shrine		
-1	32	game	369f6dce1abb9d90f31b3cd3acd775531f623fc9b81e27bce366de67d91ca0fa	需要真理之鑰。好好運用它吧。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	33	game	54ad5c015473c7bec820132012f2192ef26a9e9319aca5a75293f33bb7ee6c13	你聽見遠處傳來一陣鐘鳴。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	2	game	31d190a0704d9efed5116d57a04a58851200e61f0f37b9989eac7f8318288711	這把鑰匙對不上這個鎖。\n	draft	PoC role: scroll	PoC draft P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	
+1	3	game	307d72083a9c9dd4d04a6ce5328a1078233264e8268eedb54a791d1eed1776e3	那上面沒有鎖。\n	reviewed	P10A-B1 core system: key use (USEITEMS.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	4	game	0419f5cdc9840c9f6c6b8a006cc50c045af1a50556165c5288ff12cad5999f77	鑰匙把鎖鎖上了。\n	reviewed	P10A-B1 core system: key use (USEITEMS.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	5	game	c1423871b6aafb4c9ec8cd95c2ee839520b952396990ebeb4c5e841e46ff0c79	鑰匙打開了鎖。\n	reviewed	PoC role: scroll	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	6	game	bcd126126e11aae75f292c11d51f2544f9e8d844741854fbf58451fa4a711bcd	那已經是開著的。\n	reviewed	P10A-B1 core system: key use (USEITEMS.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	9	game	a0305c72d9ed747ebf245ed70541d6b51317353f9a76a05f7016e4fe838208fb	當你伸手觸碰那棵樹，它便枯萎消散，露出一顆銀色種子。\n	reviewed	P10A-B1 core system: silver tree	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	10	game	f7c16ea4ba55e218b2511efb25ffe8f331a837c5bbf22dbaa279f53ed91854fb	種子似乎找不到扎根的空間，毫無動靜。\n	reviewed	P10A-B1 core system: silver seed	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	11	game	f527b6fb1c4a146525cdfddbec56a4d4289d39fa4512973c345b933dd0690c30	種子消失了。\n	reviewed	P10A-B1 core system: silver seed	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	12	game	8d863938a1a1c16c3a4a43d2038c80356e147b2c4c7f80283da4d520ce464bf5	你種下種子，一株小小的銀樹迅速長了出來。\n	reviewed	P10A-B1 core system: silver seed	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	13	game	ccf1f047fb2dfbcc5d52ba2ea7236646eaa288a60c83c754c5134f0d7a5088d5	歡迎來到地下世界。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	14	game	1983ca6999a462ddd22ab86dd97665be17a76ca24e99c9eacaff4019d42dc365	附近有敵對的生物！\n	reviewed	P10A-B1 core system: sleep	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	15	game	4d220119a749f67ac696f4f30cd2d95256460933bd9c675f594d6fffe16c980d	你紮營休息。\n	reviewed	P10A-B1 core system: sleep	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	16	game	eef5e122b2718752aa05dd799923bff9da7bbd9430d9f5ac799e9a8fa24f2c5e	你躺下睡覺。\n	reviewed	P10A-B1 core system: sleep	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	17	game	35c2b8c98b87969ce53297890396ae6db6003e8192eaec83b330e96073ea8f82	你快餓死了。\n	reviewed	P10A-B1 core system: sleep	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	18	game	5d2c729eaa5c2a9ac629f4c1aabf1df8d54a1e2895f2692be04513a7fbf99bbe	你覺得精神飽滿。\n	reviewed	P10A-B1 core system: sleep	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	19	game	514cf47bd913e14f2d665dc697ca676af1a4fe9d033a753f438acf49e224430a	你睡得很不安穩。\n	reviewed	P10A-B1 core system: sleep	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	20	game	0fe64eb8ea0825828b6c5d9b1475e6a0d987ab0a18187c5ab6eee419695354d7	你不能在這裡睡覺！\n	reviewed	P10A-B1 core system: sleep	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	21	game	eefbf357764c9c6f8a4de1bfe80c5f5c6b5736e4b983c8a8dfe00e4e31d98168	你的睡眠被打斷了！\n	reviewed	P10A-B1 core system: sleep	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	24	game	58a22a519b8616b57590d6784f9c44c1a3d82cdbf1c63c20ba59be323f3bbe79	你還沒有準備好提升。\n	reviewed	P10A-B1 core system: shrine	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	25	game	39b621189b85963d87837da900916f6a704afbdbe93990d398df65470006a7e6	那不是祈禱語。\n	reviewed	P10A-B1 core system: shrine	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	26	game	4c96d95e7654f394150e54554a896873270bd5251e58492a8fff493e42b1ca40	知識與理解充滿了你的心靈。\n	reviewed	P10A-B1 core system: shrine	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	27	game	fc863e33322e36bfda6b65dccfb242b79bfdaede20abc75d3c7a26cf87096de1	你在這項技能上已無法再進步。\n	reviewed	P10A-B1 core system: shrine	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	30	game	86385feb1b1840be84a2a0ba428a549d1ccf1d190e41bdff982dc3f62edcddef	你的技能都沒有提升。\n	reviewed	P10A-B1 core system: shrine	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	32	game	369f6dce1abb9d90f31b3cd3acd775531f623fc9b81e27bce366de67d91ca0fa	需要真理之鑰。好好運用它吧。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	33	game	54ad5c015473c7bec820132012f2192ef26a9e9319aca5a75293f33bb7ee6c13	你聽見遠處傳來一陣鐘鳴。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	36	game	d07d84c5e2c055414aedff0134f9baa637323e672ec1e0d344dff47c047d09e1		untranslated	P10A-B1 audit: composed sentence, not direct	P11: direction, MISCUTIL.C print_path_to (prefix 1:59-61/1:245/1:35 + direction 1:36-43 + literal and + distance 1:44-58 + literal stop); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	37	game	d88ebf8b996b6a77f22f85f9f7619bb9effdc9689de824489c780ef86a8f6ba7		untranslated	P10A-B1 audit: composed sentence, not direct	P11: direction, MISCUTIL.C print_path_to (prefix 1:59-61/1:245/1:35 + direction 1:36-43 + literal and + distance 1:44-58 + literal stop); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	38	game	1721c3b7905ccbf5f58526370715c856ad01af284ec03ee6b0e5efd23c370fd2		untranslated	P10A-B1 audit: composed sentence, not direct	P11: direction, MISCUTIL.C print_path_to (prefix 1:59-61/1:245/1:35 + direction 1:36-43 + literal and + distance 1:44-58 + literal stop); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
@@ -46,8 +46,8 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	56	game	ddb827f0e434836509f7f79e62063addc8ef6058b6f095c659bdee07fe95b6aa		untranslated	P10A-B1 audit: composed sentence, not direct	P11: vertical distance, MISCUTIL.C print_path_to (see 1:36-43); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	57	game	4a07344286b2fa33ddeadb5f8a4b370aa2dd62edb99e3552e5cbcd76ef70da66		untranslated	P10A-B1 audit: composed sentence, not direct	P11: vertical distance, MISCUTIL.C print_path_to (see 1:36-43); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	58	game	4a07344286b2fa33ddeadb5f8a4b370aa2dd62edb99e3552e5cbcd76ef70da66		untranslated	P10A-B1 audit: composed sentence, not direct	P11: vertical distance, MISCUTIL.C print_path_to (see 1:36-43); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
-1	62	game	e8bdbaccc885c1e1ac9b9041388d087bd11c386ae8ef5a1940d8685450fad19f	你沒有偵測到任何怪物的動靜。\n	draft	P10A-B1 core system: Detect Monster		
-1	69	game	a6f8ce34668263f96854d34ab4205b0ce025aeb0b49a42cbed60c3d98e7acf36	自從你進入深淵以來，已經過了數不清的日子。\n	draft	P10A-B1 core system: status (INTERACT.C)		
+1	62	game	e8bdbaccc885c1e1ac9b9041388d087bd11c386ae8ef5a1940d8685450fad19f	你沒有偵測到任何怪物的動靜。\n	reviewed	P10A-B1 core system: Detect Monster	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	69	game	a6f8ce34668263f96854d34ab4205b0ce025aeb0b49a42cbed60c3d98e7acf36	自從你進入深淵以來，已經過了數不清的日子。\n	reviewed	P10A-B1 core system: status (INTERACT.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	71	game	176473d7313395b6e209bc6b1d57aa160b628706860aa0554d7af60a1d40ab87		untranslated	P10A-B1 audit: composed sentence, not direct	P11: time of day, INTERACT.C game_strings_3(1:70, 1:71-82, 1:83); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	72	game	176473d7313395b6e209bc6b1d57aa160b628706860aa0554d7af60a1d40ab87		untranslated	P10A-B1 audit: composed sentence, not direct	P11: time of day, INTERACT.C game_strings_3(1:70, 1:71-82, 1:83); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	73	game	8326e09ce4e90a419a510ed74895cf6713f2fb42b0b3ffc126527ec2b9e95872		untranslated	P10A-B1 audit: composed sentence, not direct	P11: time of day, INTERACT.C game_strings_3(1:70, 1:71-82, 1:83); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
@@ -66,15 +66,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	86	game	b17dfa9c87ed4decdd5027d74a97d613aeb07e87876235f1795cf4d802d6296b		untranslated	P10A-B1 audit: composed sentence, not direct	P11: poison severity, INTERACT.C game_strings_3(1:91, 1:84-88, 1:92); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	87	game	3fc96cc70eab1f1e4887ba4219436b7df9a1e4d93dd477152ed4d4ce26caea15		untranslated	P10A-B1 audit: composed sentence, not direct	P11: poison severity, INTERACT.C game_strings_3(1:91, 1:84-88, 1:92); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	88	game	dfae430ef0c32ee8070cd294712987d0f5ee9c61676695c91c94f51d505bf36d		untranslated	P10A-B1 audit: composed sentence, not direct	P11: poison severity, INTERACT.C game_strings_3(1:91, 1:84-88, 1:92); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
-1	93	game	5d8c7b430f54959e9f73b3d95aa2a2b5788b804e2644b1a3ee695c2df36b8a65	那太遠了，拿不到。\n	draft	P10A-B1 core system: pick up		
-1	94	game	005c6a2988ead370fcac9d0141cd9fa96fe859ce0387fe36c1f0958ecaa0150d	你搆不到那個。\n	draft	P10A-B1 core system: pick up		
-1	95	game	16ef222772ca9b7b722664588813f9aef66e82049416f4d0be097ffad4654454	那太重了，你拿不起來。\n	draft	P10A-B1 core system: pick up		
-1	96	game	87757b6ed2d7f23f3958d86afc731c16e3badccd131d00a7ba3e34d953b06de7	你無法拿起那個。\n	draft	P10A-B1 core system: pick up		
-1	97	game	bbe6f18fef13f79f4cccdfc422b9e29819007248b0dfe40e93e4b2865ef7ffe1	你沒有偵測到任何陷阱。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	99	game	50f474713805ae44853d126377ef74291dae38cdf82dd28b012df1f1878577ad	你釣到了一條漂亮的魚。\n	draft	P10A-B1 core system: fishing		
-1	100	game	a56730c7e9f18c520b04d28844964d64f38ed17ba91ea0fea4ac1a218c477c94	這次運氣不好。\n	draft	P10A-B1 core system: fishing		
-1	101	game	ee20629fb6c42e948cab1b743b9b3b2594e1e171356977901d2032658bf3d365	你不能在那裡釣魚。也許換個地方吧。\n	draft	P10A-B1 core system: fishing		
-1	102	game	902ac4536c724fd387c8c2c5c0bb4a0550a15e10553d9a447caa5aec5e576e5e	你感覺有魚咬餌，但魚溜走了。\n	draft	P10A-B1 core system: fishing		
+1	93	game	5d8c7b430f54959e9f73b3d95aa2a2b5788b804e2644b1a3ee695c2df36b8a65	那太遠了，拿不到。\n	reviewed	P10A-B1 core system: pick up	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	94	game	005c6a2988ead370fcac9d0141cd9fa96fe859ce0387fe36c1f0958ecaa0150d	你搆不到那個。\n	reviewed	P10A-B1 core system: pick up	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	95	game	16ef222772ca9b7b722664588813f9aef66e82049416f4d0be097ffad4654454	那太重了，你拿不起來。\n	reviewed	P10A-B1 core system: pick up	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	96	game	87757b6ed2d7f23f3958d86afc731c16e3badccd131d00a7ba3e34d953b06de7	你無法拿起那個。\n	reviewed	P10A-B1 core system: pick up	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	97	game	bbe6f18fef13f79f4cccdfc422b9e29819007248b0dfe40e93e4b2865ef7ffe1	你沒有偵測到任何陷阱。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	99	game	50f474713805ae44853d126377ef74291dae38cdf82dd28b012df1f1878577ad	你釣到了一條漂亮的魚。\n	reviewed	P10A-B1 core system: fishing	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	100	game	a56730c7e9f18c520b04d28844964d64f38ed17ba91ea0fea4ac1a218c477c94	這次運氣不好。\n	reviewed	P10A-B1 core system: fishing	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	101	game	ee20629fb6c42e948cab1b743b9b3b2594e1e171356977901d2032658bf3d365	你不能在那裡釣魚。也許換個地方吧。\n	reviewed	P10A-B1 core system: fishing	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	102	game	902ac4536c724fd387c8c2c5c0bb4a0550a15e10553d9a447caa5aec5e576e5e	你感覺有魚咬餌，但魚溜走了。\n	reviewed	P10A-B1 core system: fishing	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	104	game	573d414d61facf3a98d489d873f0c3ff3258a4ee0f41606484da722c65568cad		untranslated	P10A-B1 audit: composed sentence, not direct	P11: hunger state, INTERACT.C game_strings_3(1:64, 1:104-112, 1:103); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	105	game	751ad1f3fd818ad9c6dd99d279e0b5a9ea873012dd8dbefb688678986a27be3f		untranslated	P10A-B1 audit: composed sentence, not direct	P11: hunger state, INTERACT.C game_strings_3(1:64, 1:104-112, 1:103); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	106	game	d1c8cca103ed6ddf7168889c64995e35438eae835dba2f7c6e23507247ba4040		untranslated	P10A-B1 audit: composed sentence, not direct	P11: hunger state, INTERACT.C game_strings_3(1:64, 1:104-112, 1:103); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
@@ -90,115 +90,115 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	116	game	f245940166d1611d76b3def5535433a738cd431035a42a245fa921bb37d9ec02		untranslated	P10A-B1 audit: composed sentence, not direct	P11: fatigue state, INTERACT.C game_sprint(0x76 - n) inside the composed status line; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	117	game	5a0cc465ad68c3d8e5d80ae1876aecf405996711f9ae99a0cd1c1943e9f50bd5		untranslated	P10A-B1 audit: composed sentence, not direct	P11: fatigue state, INTERACT.C game_sprint(0x76 - n) inside the composed status line; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	118	game	7eef67b3585dadcb60713eaf55ee7aaf218e3962ed1accf5ac3e0a3c3a43df70		untranslated	P10A-B1 audit: composed sentence, not direct	P11: fatigue state, INTERACT.C game_sprint(0x76 - n) inside the composed status line; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
-1	119	game	096d2c669ec486ab47b6198d85296ca2d6786f8c61f1822840f40c84a9ac8418	這些東西只能一個一個使用。若要使用，請從這一組中拿出一個。\n	draft	P10A-B1 core system: use stack		
-1	120	game	e76751edd638967e126cac8ac445e478b41590420cbc8c5e87cf0aa322679512	你開鎖失敗了。\n	draft	P10A-B1 core system: lockpick		
-1	121	game	7d8b36eebe17abd0bc74ffadb87c14d057446f19928d8269798e86429f7f6038	你成功打開了鎖。\n	draft	P10A-B1 core system: lockpick		
-1	122	game	bd5648c8e2744e1ec618f74b3cdc1d40ed09a34d3ee47a108aae4fdd53d8118d	那沒有上鎖。\n	draft	P10A-B1 core system: lockpick		
-1	123	game	d50ed49e2bd110ed6df8b68d68a232d864f7a2d9d108ccde8bb735b1ab7013a4	光源必須裝備後才能使用。\n	draft	P10A-B1 core system: light source		
-1	124	game	afdd7b80136ad66458af51f7f018b76fe5fd8991d576b3cc5146d7195f7ad521	那個光源已經用盡了。\n	draft	P10A-B1 core system: light source		
-1	125	game	4e70e3acb93ad7c833a88f179c447da4148f44328b936ab9397d2000663a5887	隨著響亮的「啪！」一聲，魔杖裂開了。\n	draft	P10A-B1 core system: wand		
-1	126	game	bfd0bac8c80b73cbc884fcaa6da4d46ed361a234714545fcbfec14ac2e7fcd39	你太飽了，現在吃不下。\n	draft	P10A-B1 core system: eat		
-1	127	game	c51f950b897bc329422b85776d25e4a6370438690ba23542bfe662bd622d1f07	你打不開這瓶葡萄酒。\n	draft	P10A-B1 core system: wine		
-1	128	game	d1bf9a3e35bfb24cb6c15111b041996890e455db5419e7e4ec3f509e0fc2e33c	鐵釘只能用來釘住關著的門。\n	draft	P10A-B1 core system: spike		
-1	129	game	32232cd82bb0713ce737242d9fa1c4e1781b4dced7e52c52f30ee850666999df	門已經被鐵釘釘死了。\n	draft	P10A-B1 core system: spike		
-1	131	game	7878a714bee3bc12f0af3a7d2c530f54f12ed3c9a14fe9810a6cf759453981ce	這扇門被鐵釘釘死了。\n	draft	P10A-B1 core system: look at door		
-1	132	game	9c909d9d941db602f462ad873103919e78e3cb690563f6073f1a306cccb03624	似乎沒有任何效果。\n	draft	P10A-B1 core system: use		
-1	133	game	2ee3ddcbcd20c0bcab7c7f7b30ad1ff0883edccb73d832a8e8fe3908496d16f6	寶珠被摧毀了！\n	draft	P10A-B1 core system: Tyball's orb		
-1	134	game	982bcc1cdc383e7237522fa83239818dc55fc704b5d19c306f0bfeaa5d26c13d	你體貼地讓這些骨頭得以安息。\n	draft	P10A-B1 core system: Garamon's bones		
-1	135	game	afd6c61d51a78a0c50b7e74dc2893b12bb16f0a964def173d59dfdda6c2f503c	岩石碎成了更小的碎塊。\n	draft	P10A-B1 core system: rock hammer		
-1	136	game	7fe376abb1b2e70cb32c0a47787657fcb7af37a2008fd8f405de4510fb466910	一件物品憑空出現，落入你的手中……\n	draft	P10A-B1 core system: spell		
-1	142	game	fba2816b5bd128165f942f28b4481218876c03da990607b3025a96214d9fa6aa	你無法修理那個。\n	draft	P10A-B1 core system: repair (WORLDEV.C)		
-1	146	game	2bd3e767c6d13fd19d56c67c6e8f79c95a67d17e00ca466ccf64c86ccdde4595	你發出的聲響引起了注意！\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	148	game	d6a2c336c87b8c57e481c73b047a47fb04cd3e95a5a19f913b48784c498125cc	碗裡的材料不對。\n	draft	P10A-B1 core system: cooking		
-1	149	game	e12a28c7d018b82444ce4c69c94c26da963d6036fa6c64697e3c7f1d51f67fd6	你把材料混在一起，做成了一鍋燉湯。\n	draft	P10A-B1 core system: cooking		
-1	150	game	1f1dab2643a2fc4f2520d65402d7c86db59c2c58a9185d4e0433f21edda6d515	你需要一個碗才能混合材料。\n	draft	P10A-B1 core system: cooking		
-1	151	game	dbcbbac2a95cfcdc560c24029a63ed538f73b4aaa86fe49c1a98d5fba3c5cc16	卷軸上記載著的，是你的地圖。\n	draft	P10A-B1 core system: read map scroll		
-1	152	game	e9c8c41bf55b97cfd8c2f6dd70d6957b54039f703d704811ad09723fb9663a75	你無法使用那個。\n	draft	P10A-B1 core system: use nothing		
-1	153	game	9aa3c60e94dcb68d2b6dc19a249d914d274e465639ce4810c93c783db3e27c36	為什麼會顯示這行字？\n	draft	P10A-B1 core system: look_nothing fallback (developer message, unreachable in normal modes)		
-1	154	game	977bd9cf717e2ae4150007d484051bc4578854a5ca8e3c50a723aaf5a7413e6d	你什麼也沒看到。\n	draft	P10A-B1 core system: look nothing		
-1	155	game	525d2466de7334da611ef9db6baf91a93b2e66e62d5b487658cb691fce06f038	沒有東西可拿。\n	draft	P10A-B1 core system: get nothing		
-1	156	game	7898d3eeb4cd20dfdebd8b3cf95299ed118feb94b23e58ac27cc0c2ae4d043be	你無法與那個對話。\n	draft	P10A-B1 core system: talk to nothing		
-1	157	game	5b546a220a295ff4d7304ebabc508e13b08d93b77c7a6770b6f26fcb81a4cf22	你用長竹竿觸動了開關。\n	draft	P10A-B1 core system: pole		
-1	158	game	ca887cdd9a3b21e13e8eb4e7a5e20f3d511196372be520d5d21175d1455fc98a	長竹竿不能用在那上面。\n	draft	P10A-B1 core system: pole		
-1	159	game	37071ba66d51b8d5cc4d3272e47a65fa736febcda99e60eae99f69456083328c	不行，你正處於世界與世界之間。\n	draft	P10A-B1 core system: save guard on level 9		
-1	160	game	48c0714ea811e410cb182a217e65375b3ae0682d6f9c4e7f3306cd3041712151	動作進行到一半時，無法選擇選項。\n	draft	P10A-B1 core system: options guard		
-1	161	game	cdf569c8c8f827bfc532a2d1457731d1c46be1fdd89079e0dbba4b23131e0cb1	那裡沒有存檔。\n	draft	P10A-B1 core system: restore		
-1	162	game	972b1ccbd8d5179c2fe33990961a00d968dd34ffe7a2b18a06dc479382ff11b4	讀取遊戲完成。\n	draft	P10A-B1 core system: restore		
-1	163	game	576e06e16b9ae3f4528f35e9df80470226cf7433a532844028048b3a9805d00d	\\4讀取遊戲失敗。\n\\0	draft	P10A-B1 core system: restore		control-code
-1	164	game	e448f0486d7dabd5e95a3a3a9c948edaff63d0f55b96d9990ee9cb5d84a26519	\\4儲存遊戲失敗。\n\\0	draft	P10A-B1 core system: save		control-code
-1	165	game	3666f475aa15e3b9479dd950ed1200c4fea77e9c6f44b8eb3a23f53fb734d098	\\6儲存遊戲成功。\n\\0	draft	P10A-B1 core system: save		control-code
-1	168	game	7007ca6c97401155f45cd3306aa70f39e9d0c93029c278a226942fd1d189a886	\\6     請輸入存檔說明：\n	draft	P10A-B1 core system: save description prompt	保留原文 \\6 後的五個前導空白（版面縮排）。	control-code
+1	119	game	096d2c669ec486ab47b6198d85296ca2d6786f8c61f1822840f40c84a9ac8418	這些東西只能一個一個使用。若要使用，請從這一組中拿出一個。\n	reviewed	P10A-B1 core system: use stack	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	120	game	e76751edd638967e126cac8ac445e478b41590420cbc8c5e87cf0aa322679512	你開鎖失敗了。\n	reviewed	P10A-B1 core system: lockpick	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	121	game	7d8b36eebe17abd0bc74ffadb87c14d057446f19928d8269798e86429f7f6038	你成功打開了鎖。\n	reviewed	P10A-B1 core system: lockpick	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	122	game	bd5648c8e2744e1ec618f74b3cdc1d40ed09a34d3ee47a108aae4fdd53d8118d	那沒有上鎖。\n	reviewed	P10A-B1 core system: lockpick	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	123	game	d50ed49e2bd110ed6df8b68d68a232d864f7a2d9d108ccde8bb735b1ab7013a4	光源必須裝備後才能使用。\n	reviewed	P10A-B1 core system: light source	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	124	game	afdd7b80136ad66458af51f7f018b76fe5fd8991d576b3cc5146d7195f7ad521	那個光源已經用盡了。\n	reviewed	P10A-B1 core system: light source	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	125	game	4e70e3acb93ad7c833a88f179c447da4148f44328b936ab9397d2000663a5887	隨著響亮的「啪！」一聲，魔杖裂開了。\n	reviewed	P10A-B1 core system: wand	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	126	game	bfd0bac8c80b73cbc884fcaa6da4d46ed361a234714545fcbfec14ac2e7fcd39	你太飽了，現在吃不下。\n	reviewed	P10A-B1 core system: eat	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	127	game	c51f950b897bc329422b85776d25e4a6370438690ba23542bfe662bd622d1f07	你打不開這瓶葡萄酒。\n	reviewed	P10A-B1 core system: wine	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	128	game	d1bf9a3e35bfb24cb6c15111b041996890e455db5419e7e4ec3f509e0fc2e33c	鐵釘只能用來釘住關著的門。\n	reviewed	P10A-B1 core system: spike	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	129	game	32232cd82bb0713ce737242d9fa1c4e1781b4dced7e52c52f30ee850666999df	門已經被鐵釘釘死了。\n	reviewed	P10A-B1 core system: spike	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	131	game	7878a714bee3bc12f0af3a7d2c530f54f12ed3c9a14fe9810a6cf759453981ce	這扇門被鐵釘釘死了。\n	reviewed	P10A-B1 core system: look at door	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	132	game	9c909d9d941db602f462ad873103919e78e3cb690563f6073f1a306cccb03624	似乎沒有任何效果。\n	reviewed	P10A-B1 core system: use	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	133	game	2ee3ddcbcd20c0bcab7c7f7b30ad1ff0883edccb73d832a8e8fe3908496d16f6	寶珠被摧毀了！\n	reviewed	P10A-B1 core system: Tyball's orb	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	134	game	982bcc1cdc383e7237522fa83239818dc55fc704b5d19c306f0bfeaa5d26c13d	你體貼地讓這些骨頭得以安息。\n	reviewed	P10A-B1 core system: Garamon's bones	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	135	game	afd6c61d51a78a0c50b7e74dc2893b12bb16f0a964def173d59dfdda6c2f503c	岩石碎成了更小的碎塊。\n	reviewed	P10A-B1 core system: rock hammer	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	136	game	7fe376abb1b2e70cb32c0a47787657fcb7af37a2008fd8f405de4510fb466910	一件物品憑空出現，落入你的手中……\n	reviewed	P10A-B1 core system: spell	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	142	game	fba2816b5bd128165f942f28b4481218876c03da990607b3025a96214d9fa6aa	你無法修理那個。\n	reviewed	P10A-B1 core system: repair (WORLDEV.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	146	game	2bd3e767c6d13fd19d56c67c6e8f79c95a67d17e00ca466ccf64c86ccdde4595	你發出的聲響引起了注意！\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	148	game	d6a2c336c87b8c57e481c73b047a47fb04cd3e95a5a19f913b48784c498125cc	碗裡的材料不對。\n	reviewed	P10A-B1 core system: cooking	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	149	game	e12a28c7d018b82444ce4c69c94c26da963d6036fa6c64697e3c7f1d51f67fd6	你把材料混在一起，做成了一鍋燉湯。\n	reviewed	P10A-B1 core system: cooking	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	150	game	1f1dab2643a2fc4f2520d65402d7c86db59c2c58a9185d4e0433f21edda6d515	你需要一個碗才能混合材料。\n	reviewed	P10A-B1 core system: cooking	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	151	game	dbcbbac2a95cfcdc560c24029a63ed538f73b4aaa86fe49c1a98d5fba3c5cc16	卷軸上記載著的，是你的地圖。\n	reviewed	P10A-B1 core system: read map scroll	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	152	game	e9c8c41bf55b97cfd8c2f6dd70d6957b54039f703d704811ad09723fb9663a75	你無法使用那個。\n	reviewed	P10A-B1 core system: use nothing	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	153	game	9aa3c60e94dcb68d2b6dc19a249d914d274e465639ce4810c93c783db3e27c36	為什麼會顯示這行字？\n	reviewed	P10A-B1 core system: look_nothing fallback (developer message, unreachable in normal modes)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	154	game	977bd9cf717e2ae4150007d484051bc4578854a5ca8e3c50a723aaf5a7413e6d	你什麼也沒看到。\n	reviewed	P10A-B1 core system: look nothing	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	155	game	525d2466de7334da611ef9db6baf91a93b2e66e62d5b487658cb691fce06f038	沒有東西可拿。\n	reviewed	P10A-B1 core system: get nothing	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	156	game	7898d3eeb4cd20dfdebd8b3cf95299ed118feb94b23e58ac27cc0c2ae4d043be	你無法與那個對話。\n	reviewed	P10A-B1 core system: talk to nothing	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	157	game	5b546a220a295ff4d7304ebabc508e13b08d93b77c7a6770b6f26fcb81a4cf22	你用長竹竿觸動了開關。\n	reviewed	P10A-B1 core system: pole	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	158	game	ca887cdd9a3b21e13e8eb4e7a5e20f3d511196372be520d5d21175d1455fc98a	長竹竿不能用在那上面。\n	reviewed	P10A-B1 core system: pole	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	159	game	37071ba66d51b8d5cc4d3272e47a65fa736febcda99e60eae99f69456083328c	不行，你正處於世界與世界之間。\n	reviewed	P10A-B1 core system: save guard on level 9	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	160	game	48c0714ea811e410cb182a217e65375b3ae0682d6f9c4e7f3306cd3041712151	動作進行到一半時，無法選擇選項。\n	reviewed	P10A-B1 core system: options guard	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	161	game	cdf569c8c8f827bfc532a2d1457731d1c46be1fdd89079e0dbba4b23131e0cb1	那裡沒有存檔。\n	reviewed	P10A-B1 core system: restore	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	162	game	972b1ccbd8d5179c2fe33990961a00d968dd34ffe7a2b18a06dc479382ff11b4	讀取遊戲完成。\n	reviewed	P10A-B1 core system: restore	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	163	game	576e06e16b9ae3f4528f35e9df80470226cf7433a532844028048b3a9805d00d	\\4讀取遊戲失敗。\n\\0	reviewed	P10A-B1 core system: restore	reviewed: 使用者確認（Claude 預審）2026-10-23	control-code
+1	164	game	e448f0486d7dabd5e95a3a3a9c948edaff63d0f55b96d9990ee9cb5d84a26519	\\4儲存遊戲失敗。\n\\0	reviewed	P10A-B1 core system: save	reviewed: 使用者確認（Claude 預審）2026-10-23	control-code
+1	165	game	3666f475aa15e3b9479dd950ed1200c4fea77e9c6f44b8eb3a23f53fb734d098	\\6儲存遊戲成功。\n\\0	reviewed	P10A-B1 core system: save	reviewed: 使用者確認（Claude 預審）2026-10-23	control-code
+1	168	game	7007ca6c97401155f45cd3306aa70f39e9d0c93029c278a226942fd1d189a886	\\6     請輸入存檔說明：\n	reviewed	P10A-B1 core system: save description prompt	保留原文 \\6 後的五個前導空白（版面縮排）。 reviewed: 使用者確認（Claude 預審）2026-10-23	control-code
 1	170	game	ab5df625bc76dbd4e163bed2dd888df828f90159bb93556525c31821b6541d46		untranslated	P10A-B1 audit: composed sentence, not direct	P11: progress dots printed after 1:166/1:167 while restoring or saving (GAMEWRAP.C); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
-1	171	game	8c492f72e0b486cf0f5b62f2864c0291efaef83e027e955af3c0ee6941453028	你看到一座橋。\n	draft	P10A-B1 core system: look at bridge		
-1	177	game	c6bec676aa82a2b3eb51bbb5caa2636e2abb4a8a2a4b08705147e918c42bfdcb	油不能用在那上面。\n	draft	P10A-B1 core system: oil flask		
-1	178	game	fbe9c42c6b82bcd297557160f6084be6ceece42314497277b9ea71d18da4a469	你覺得替點燃的提燈加油不是個好主意。\n	draft	P10A-B1 core system: oil flask		
-1	179	game	cc006e31bcb731ae19ce14dace5d7cf12b87568c6dff33f05913935197c0b0a3	你倒入燈油，替提燈補足了燃料。\n	draft	P10A-B1 core system: oil flask		
-1	180	game	aa75fbead985705480926b827c165061d5b71938763ea13a5c3a8bd7cad18da1	提燈的油已經滿了。\n	draft	P10A-B1 core system: oil flask		
-1	181	game	ec2e4fac8f7ba03f457929fca19a475eed35817404e9a328effe70c9a24cc585	你用油浸濕一塊布，纏在木棍上，做成了一支火把。\n	draft	P10A-B1 core system: oil flask		
-1	182	game	e349b751eebeeba12518989febd1442723d64d60d274d55c45de2ec56cecb4bb	你覺得替點燃的火把加油不是個好主意。\n	draft	P10A-B1 core system: oil flask		
-1	183	game	4db61585a7a50486bc3b5c12ef0aedd0c9058a22d6cd131990fe6a03f5d24336	你替火把重新補足了燃料。\n	draft	P10A-B1 core system: oil flask		
-1	184	game	9b874b739cc1620dc21fdb11cec0a1741b63fe4c131f97bcc9e60e6d35025189	這支火把尚未使用過。\n	draft	P10A-B1 core system: oil flask		
-1	185	game	f6553efc088054f4d46d2b29437b6f1c7b5e8f5be96e69ddd707d84d058669d6	你無法從這裡使用那個。\n	draft	P10A-B1 core system: use		
-1	186	game	952548ac361f015ec4080919c6b4b0fb693c9051d71a196f8db0ede42cd4c3da	容器不能拿來以物易物。請把想交易的東西從裡面取出。\n	draft	P10A-B1 core system: barter		
-1	191	game	6bcb92b7a4c733b2f4cd2cf3c2226a29d6779e641133e357c4825fb0c360dfb2	傳來一陣痛苦的嗚咽聲。\n	draft	P10A-B1 core system: world event		
-1	192	game	f67df2f1ccbb529143d1bd6d9c3c133d73e12ea119cf20846596410d1b4637c4	傳來一陣空洞的喀噠聲。\n	draft	P10A-B1 core system: world event		
-1	193	game	f497cfafd581fac2a948e9affaf0452b53d4b2c99f0d1a606f9894eb6b8cde56	一個聲音說出這句話：「重置已啟動。」\n	draft	P10A-B1 core system: world event		
-1	194	game	82d6efee202a23b562d32bdcbd34a7d73b3791fd5afc5c91d6fad1b01d507352	你按下了按鈕。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	195	game	82d6efee202a23b562d32bdcbd34a7d73b3791fd5afc5c91d6fad1b01d507352	你按下了按鈕。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	196	game	82d6efee202a23b562d32bdcbd34a7d73b3791fd5afc5c91d6fad1b01d507352	你按下了按鈕。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	197	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	198	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	199	game	1ebd55f5f899d3bdd3c625ccf8740752eeaa0dd523da3556f94a0b5e2dbe428c	你拉下了拉桿。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	原文把 lever 拼成 level，依語意譯為拉桿。	
-1	200	game	6bad542050a9340b55b0d564ea9de43c25f9dd50edb6de948865fd53031014c8	你拉動了鏈條。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	201	game	6bad542050a9340b55b0d564ea9de43c25f9dd50edb6de948865fd53031014c8	你拉動了鏈條。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	202	game	70cc08d2744cd045a0848341c793785cf1f2164e51575217d86fb2656ce03c8f	按鈕恢復了原狀。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	203	game	70cc08d2744cd045a0848341c793785cf1f2164e51575217d86fb2656ce03c8f	按鈕恢復了原狀。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	204	game	70cc08d2744cd045a0848341c793785cf1f2164e51575217d86fb2656ce03c8f	按鈕恢復了原狀。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	205	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	206	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	207	game	4ac9d4987276bc51a556a0ad6330fdeeb1d80811e4650f390c445d5525c796dc	你推動了拉桿。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	208	game	3748a5c4c64efdd513d008fd1f744a1989a41284e6e15935119398cf2af3fa5f	你把鏈條放回了原位。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	209	game	3748a5c4c64efdd513d008fd1f744a1989a41284e6e15935119398cf2af3fa5f	你把鏈條放回了原位。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
-1	210	game	5ca027d17ee260e03c015923ca6a6f6b457ecbc4e9fbb5e909e602f6649d62ab	你的經驗不足，還無法施展這個法術環級的法術。\n	draft	P10A-B1 core system: casting		
-1	211	game	7a238f9ccfee25503b3723f1bcbaaebc6eb4c928e725e6899a5f3dc3cd0cb365	你的法力不足，無法施展這個法術。\n	draft	P10A-B1 core system: casting		
-1	212	game	28d6df452620a887f0d7dcc8a7b40524abdd423cadcc7d104119d0e17542a217	咒文詠唱失敗了。\n	draft	P10A-B1 core system: casting		
-1	213	game	a4f22310f2742cc5a5d21564b11e6ea9cf23cb337364a62e9d8eb3d0f737a55a	施法沒有成功。\n	draft	P10A-B1 core system: casting		
-1	214	game	bc2ba042cd482ff3de8dc4f5e5f16015c545a5ac648fa3f43c1990179ee2aef6	法術反噬了。\n	draft	P10A-B1 core system: casting		
-1	215	game	0b79fb8c22a769933fa98fb42c12dc308d82cc84ff55ae4b373e83ce1865ce05	你試著使用魔杖。\n	draft	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it		
+1	171	game	8c492f72e0b486cf0f5b62f2864c0291efaef83e027e955af3c0ee6941453028	你看到一座橋。\n	reviewed	P10A-B1 core system: look at bridge	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	177	game	c6bec676aa82a2b3eb51bbb5caa2636e2abb4a8a2a4b08705147e918c42bfdcb	油不能用在那上面。\n	reviewed	P10A-B1 core system: oil flask	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	178	game	fbe9c42c6b82bcd297557160f6084be6ceece42314497277b9ea71d18da4a469	你覺得替點燃的提燈加油不是個好主意。\n	reviewed	P10A-B1 core system: oil flask	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	179	game	cc006e31bcb731ae19ce14dace5d7cf12b87568c6dff33f05913935197c0b0a3	你倒入燈油，替提燈補足了燃料。\n	reviewed	P10A-B1 core system: oil flask	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	180	game	aa75fbead985705480926b827c165061d5b71938763ea13a5c3a8bd7cad18da1	提燈的油已經滿了。\n	reviewed	P10A-B1 core system: oil flask	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	181	game	ec2e4fac8f7ba03f457929fca19a475eed35817404e9a328effe70c9a24cc585	你用油浸濕一塊布，纏在木棍上，做成了一支火把。\n	reviewed	P10A-B1 core system: oil flask	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	182	game	e349b751eebeeba12518989febd1442723d64d60d274d55c45de2ec56cecb4bb	你覺得替點燃的火把加油不是個好主意。\n	reviewed	P10A-B1 core system: oil flask	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	183	game	4db61585a7a50486bc3b5c12ef0aedd0c9058a22d6cd131990fe6a03f5d24336	你替火把重新補足了燃料。\n	reviewed	P10A-B1 core system: oil flask	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	184	game	9b874b739cc1620dc21fdb11cec0a1741b63fe4c131f97bcc9e60e6d35025189	這支火把尚未使用過。\n	reviewed	P10A-B1 core system: oil flask	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	185	game	f6553efc088054f4d46d2b29437b6f1c7b5e8f5be96e69ddd707d84d058669d6	你無法從這裡使用那個。\n	reviewed	P10A-B1 core system: use	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	186	game	952548ac361f015ec4080919c6b4b0fb693c9051d71a196f8db0ede42cd4c3da	容器不能拿來以物易物。請把想交易的東西從裡面取出。\n	reviewed	P10A-B1 core system: barter	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	191	game	6bcb92b7a4c733b2f4cd2cf3c2226a29d6779e641133e357c4825fb0c360dfb2	傳來一陣痛苦的嗚咽聲。\n	reviewed	P10A-B1 core system: world event	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	192	game	f67df2f1ccbb529143d1bd6d9c3c133d73e12ea119cf20846596410d1b4637c4	傳來一陣空洞的喀噠聲。\n	reviewed	P10A-B1 core system: world event	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	193	game	f497cfafd581fac2a948e9affaf0452b53d4b2c99f0d1a606f9894eb6b8cde56	一個聲音說出這句話：「重置已啟動。」\n	reviewed	P10A-B1 core system: world event	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	194	game	82d6efee202a23b562d32bdcbd34a7d73b3791fd5afc5c91d6fad1b01d507352	你按下了按鈕。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	195	game	82d6efee202a23b562d32bdcbd34a7d73b3791fd5afc5c91d6fad1b01d507352	你按下了按鈕。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	196	game	82d6efee202a23b562d32bdcbd34a7d73b3791fd5afc5c91d6fad1b01d507352	你按下了按鈕。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	197	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	198	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	199	game	1ebd55f5f899d3bdd3c625ccf8740752eeaa0dd523da3556f94a0b5e2dbe428c	你拉下了拉桿。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	原文把 lever 拼成 level，依語意譯為拉桿。 reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	200	game	6bad542050a9340b55b0d564ea9de43c25f9dd50edb6de948865fd53031014c8	你拉動了鏈條。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	201	game	6bad542050a9340b55b0d564ea9de43c25f9dd50edb6de948865fd53031014c8	你拉動了鏈條。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	202	game	70cc08d2744cd045a0848341c793785cf1f2164e51575217d86fb2656ce03c8f	按鈕恢復了原狀。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	203	game	70cc08d2744cd045a0848341c793785cf1f2164e51575217d86fb2656ce03c8f	按鈕恢復了原狀。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	204	game	70cc08d2744cd045a0848341c793785cf1f2164e51575217d86fb2656ce03c8f	按鈕恢復了原狀。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	205	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	206	game	0f841192e1b3f97f2804036de3ba736fe0d9902f18ed9a8d0220566212e7e250	你扳動了開關。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	207	game	4ac9d4987276bc51a556a0ad6330fdeeb1d80811e4650f390c445d5525c796dc	你推動了拉桿。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	208	game	3748a5c4c64efdd513d008fd1f744a1989a41284e6e15935119398cf2af3fa5f	你把鏈條放回了原位。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	209	game	3748a5c4c64efdd513d008fd1f744a1989a41284e6e15935119398cf2af3fa5f	你把鏈條放回了原位。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	210	game	5ca027d17ee260e03c015923ca6a6f6b457ecbc4e9fbb5e909e602f6649d62ab	你的經驗還不夠，無法施展這個環級的法術。\n	draft	P10A-B1 core system: casting	P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	
+1	211	game	7a238f9ccfee25503b3723f1bcbaaebc6eb4c928e725e6899a5f3dc3cd0cb365	你的法力不足，無法施展這個法術。\n	reviewed	P10A-B1 core system: casting	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	212	game	28d6df452620a887f0d7dcc8a7b40524abdd423cadcc7d104119d0e17542a217	咒文詠唱失敗了。\n	reviewed	P10A-B1 core system: casting	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	213	game	a4f22310f2742cc5a5d21564b11e6ea9cf23cb337364a62e9d8eb3d0f737a55a	施法沒有成功。\n	reviewed	P10A-B1 core system: casting	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	214	game	bc2ba042cd482ff3de8dc4f5e5f16015c545a5ac648fa3f43c1990179ee2aef6	法術反噬了。\n	reviewed	P10A-B1 core system: casting	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	215	game	0b79fb8c22a769933fa98fb42c12dc308d82cc84ff55ae4b373e83ce1865ce05	你試著使用魔杖。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	219	game	6d4c9cf5e022a07ea8013a4b07a30a88270c65dfd5223ccc3964d9a7b4525008		untranslated	P10A-B1 audit: composed sentence, not direct	P11: repair estimate, WORLDEV.C between 1:216 and 1:217; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	220	game	a7a39b72f29718e653e73503210fbb597057b7a1c77d1fe321a1afcff041d4e1		untranslated	P10A-B1 audit: composed sentence, not direct	P11: repair estimate, WORLDEV.C between 1:216 and 1:217; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	221	game	c4773daf2e6a2e27ea8eda78dd9e3ab3793cbb122698d941f50dc6f74b91b72c		untranslated	P10A-B1 audit: composed sentence, not direct	P11: repair estimate, WORLDEV.C between 1:216 and 1:217; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	222	game	ed5465b9220df9ce176d0bf30d6a317729bd9d37e4ae1cc015cb24c99af1df49		untranslated	P10A-B1 audit: composed sentence, not direct	P11: repair estimate, WORLDEV.C between 1:216 and 1:217; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	223	game	2da3c70c5a7be98f209582ada92b0dff89d03a6b3d194ad11c6c83067607d997		untranslated	P10A-B1 audit: composed sentence, not direct	P11: repair estimate, WORLDEV.C between 1:216 and 1:217; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
-1	224	game	9f5a1d93f4f11d8d6475b086dbddb3585677446ed3b458b497c8ad5d1acf7605	水蛭吸走了毒素，也吸走了你一些皮肉和血液。\n	draft	P10A-B1 core system: leeches		
-1	228	game	b507658d8d93c0819a759185ec1b145fb8612b6310838de02935a1e881d35fac	你的視線扭曲，感到頭暈目眩。\n	draft	P10A-B1 core system: eat/drink		
-1	229	game	8bfe832b036cc75f592b27ccf7e31f0b17f7ecf097c1b61aeccea542a02355e8	你好不容易把水蛭吃完了。真是勉強。\n	draft	P10A-B1 core system: eat		
-1	230	game	cbdbe16287af31e5863c74bbf59659372d35e06d5173065e2679e97f44416005	你吃下了蠟燭，但懷疑這對你有沒有好處。\n	draft	P10A-B1 core system: eat		
-1	231	game	589717600f598b78bc9d9abfb56aca976c4b458237b8ed243b105f0d51968235	毒蕈的味道很怪，你開始覺得不舒服。\n	draft	P10A-B1 core system: eat		
-1	232	game	dd9e06bd0946d634ed1097ac2b7f4eb72a58c7a847df516c1af5d11515b7123a	蘑菇讓你頭昏腦脹，視線也模糊起來。\n	draft	P10A-B1 core system: eat		
-1	233	game	662726aec82e2b6d81fd1dcfa7149b4d0be9c112b6c5102918252ca53e6f8c15	這株植物味道平淡，但很有營養。\n	draft	P10A-B1 core system: eat		
-1	234	game	6fabe1faf5ec898dbbc8d6e7d66fc0243da9bc28c5e5f170556c0a18c6727759	腐蟲的屍體吃起來相當淡而無味，口感倒是挺有意思。要是加點好調味料，會美味得多。\n	draft	P10A-B1 core system: eat		
-1	235	game	4eb4f4a5c8c46c410e7e01cc2e597b1cf16994e2d2c10885ec95407d08bad64d	腐蟲燉湯的風味細膩，完全吃不出是用什麼做的。\n	draft	P10A-B1 core system: eat		
-1	236	game	1b6cd8669da2c355dbafe58b2615a57a10876ba4910cd6a6fbbe8e7d3bcd28d2	雖然得避開那些帶刺的花，這株植物還是相當好吃。\n	draft	P10A-B1 core system: eat		
-1	237	game	328b25f661cd7e96d6d230ace979de9d5ef65ebe8c7aa375127c99676bda3ee6	水讓你精神一振。\n	draft	P10A-B1 core system: drink		
-1	238	game	ea98f68c5badffb919620b9dad6eba96969e1c82f4c60b9c9259b37e5d1f81aa	你喝下了波特酒。\n	draft	P10A-B1 core system: drink		
-1	239	game	49c30e32511ac2fcf577b8f43051057ffbef5b48046bb85fef77126b72c903c2	你喝下了深色麥酒。\n	draft	P10A-B1 core system: drink		
-1	240	game	2ba78bea68e747dac47ddf38c47fb97afa304e4824d9da95d89217b7a2ca9b10	你一口氣喝光了藥劑。\n	draft	P10A-B1 core system: drink		
-1	241	game	6055141e1d2981919bb3209f3d6010226b31fb1593b1ab27d4c50f4550bca476	酒勁一上來，你腳步踉蹌，倒頭就睡著了。\n	draft	P10A-B1 core system: drink		
-1	242	game	47db3d21e6efb3d7667d81fb09133c7baac4a745eac2a48eda563300a28d3dd4	這杯酒讓你暫時覺得好過一些。\n	draft	P10A-B1 core system: drink		
-1	243	game	eee194888468b4f8f71a7877ff92d10b236e8766d53143769b58e87aca309177	你醒來時覺得有點站不穩，但好多了。\n	draft	P10A-B1 core system: drink		
-1	246	game	d758f6bc2ba7508ad3368518aef409ab5cdcc1fd22cd32759bd57fa81082013c	你的手上已經拿滿了。\n	draft	P10A-B1 core system: inventory		
-1	247	game	33a7054b8a8469cbc1e27b880a0c13f138ecd67567744d10a3d58546d9a2ae75	符石袋裡只能放符石。\n	draft	P10A-B1 core system: inventory		
-1	248	game	471160b2b58be5ff386ca53de58bd70cb0a432eda1bd3dcc90430d6e0a6a9785	那件物品放不進去。\n	draft	P10A-B1 core system: inventory		
-1	249	game	63e38d03be1d1a96709aece4e0045d2d3a0c19825e69a582442727c1bbe20ee1	泉水讓你恢復了力氣。\n	draft	P10A-B1 core system: fountain		
-1	250	game	91cf0898b41cf317a0e9aad23f5e46bbb7662964ae22b42423f89508e1cb8134	你開始演奏樂器。（按 0-9 演奏，按 ESC 返回遊戲）\n	draft	P10A-B1 core system: instrument	0-9 與 ESC 為實際按鍵，保留原樣。	
-1	251	game	6e97f956c230d810afe8fd876d8c1bfaba0af7c406dfcd9680b215e6e4c6a0f4	你放下了樂器。\n	draft	P10A-B1 core system: instrument		
-1	252	game	663929cbb83e16c4ecfcae57345561fa8482bf862fcef4b36dbb91de79853b58	那太重了，拿不動。\n	draft	P10A-B1 core system: pick up		
-1	253	game	dbd0aeb574dd2238082896ecea98f4271670859bd8b2496d7ac0572b5cb6daef	沒有空間可以放下那個。\n	draft	P10A-B1 core system: drop		
-1	254	game	87b8d8f552e9956c99c4d6056bfeb7970948e4aec68cde95542ae26cbd1243c1	你需要更多空間才能發射那件武器。\n	draft	P10A-B1 core system: missile weapon		
-1	255	game	132d55db312ebbe2c7f4ad4d643a5d14898ac5071da230369b85ea34a89cd0fb	這裡空間不足，無法釋放那個法術。\n	draft	P10A-B1 core system: casting		
-1	258	game	e72a8ff215eb13f74c760371966ae19e392421ec4c4e021955e7e6bd001b97c0	沒有地方可以放那個。\n	draft	P10A-B1 core system: drop		
-1	259	game	58945ece966c020ac0d72efde9388fd7ca0f42fd324f05c7e171c5264fa7387b	這些骨頭似乎無法在墓中安息，你又把它們拿了回來。\n	draft	P10A-B1 core system: Garamon's bones		
+1	224	game	9f5a1d93f4f11d8d6475b086dbddb3585677446ed3b458b497c8ad5d1acf7605	水蛭吸走了毒素，也吸走了你一些皮肉和血液。\n	reviewed	P10A-B1 core system: leeches	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	228	game	b507658d8d93c0819a759185ec1b145fb8612b6310838de02935a1e881d35fac	你的視線扭曲，感到頭暈目眩。\n	reviewed	P10A-B1 core system: eat/drink	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	229	game	8bfe832b036cc75f592b27ccf7e31f0b17f7ecf097c1b61aeccea542a02355e8	你好不容易把水蛭吃完了。真是勉強。\n	reviewed	P10A-B1 core system: eat	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	230	game	cbdbe16287af31e5863c74bbf59659372d35e06d5173065e2679e97f44416005	你吃下了蠟燭，但懷疑這對你有沒有好處。\n	reviewed	P10A-B1 core system: eat	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	231	game	589717600f598b78bc9d9abfb56aca976c4b458237b8ed243b105f0d51968235	毒蕈的味道很怪，你開始覺得不舒服。\n	reviewed	P10A-B1 core system: eat	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	232	game	dd9e06bd0946d634ed1097ac2b7f4eb72a58c7a847df516c1af5d11515b7123a	蘑菇讓你頭昏腦脹，視線也模糊起來。\n	reviewed	P10A-B1 core system: eat	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	233	game	662726aec82e2b6d81fd1dcfa7149b4d0be9c112b6c5102918252ca53e6f8c15	這株植物味道平淡，但很有營養。\n	reviewed	P10A-B1 core system: eat	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	234	game	6fabe1faf5ec898dbbc8d6e7d66fc0243da9bc28c5e5f170556c0a18c6727759	腐蟲的屍體吃起來相當淡而無味，口感倒是挺有意思。要是加點好調味料，會美味得多。\n	reviewed	P10A-B1 core system: eat	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	235	game	4eb4f4a5c8c46c410e7e01cc2e597b1cf16994e2d2c10885ec95407d08bad64d	腐蟲燉湯的風味細膩，完全吃不出是用什麼做的。\n	reviewed	P10A-B1 core system: eat	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	236	game	1b6cd8669da2c355dbafe58b2615a57a10876ba4910cd6a6fbbe8e7d3bcd28d2	雖然得避開那些帶刺的花，這株植物還是相當好吃。\n	reviewed	P10A-B1 core system: eat	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	237	game	328b25f661cd7e96d6d230ace979de9d5ef65ebe8c7aa375127c99676bda3ee6	水讓你精神一振。\n	reviewed	P10A-B1 core system: drink	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	238	game	ea98f68c5badffb919620b9dad6eba96969e1c82f4c60b9c9259b37e5d1f81aa	你喝下了波特酒。\n	reviewed	P10A-B1 core system: drink	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	239	game	49c30e32511ac2fcf577b8f43051057ffbef5b48046bb85fef77126b72c903c2	你喝下了深色麥酒。\n	reviewed	P10A-B1 core system: drink	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	240	game	2ba78bea68e747dac47ddf38c47fb97afa304e4824d9da95d89217b7a2ca9b10	你一口氣喝光了藥劑。\n	reviewed	P10A-B1 core system: drink	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	241	game	6055141e1d2981919bb3209f3d6010226b31fb1593b1ab27d4c50f4550bca476	酒勁一上來，你腳步踉蹌，倒頭就睡著了。\n	reviewed	P10A-B1 core system: drink	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	242	game	47db3d21e6efb3d7667d81fb09133c7baac4a745eac2a48eda563300a28d3dd4	這杯酒讓你暫時覺得好過一些。\n	reviewed	P10A-B1 core system: drink	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	243	game	eee194888468b4f8f71a7877ff92d10b236e8766d53143769b58e87aca309177	你醒來時覺得有點站不穩，但好多了。\n	reviewed	P10A-B1 core system: drink	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	246	game	d758f6bc2ba7508ad3368518aef409ab5cdcc1fd22cd32759bd57fa81082013c	你的手上已經拿滿了。\n	reviewed	P10A-B1 core system: inventory	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	247	game	33a7054b8a8469cbc1e27b880a0c13f138ecd67567744d10a3d58546d9a2ae75	符石袋裡只能放符石。\n	reviewed	P10A-B1 core system: inventory	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	248	game	471160b2b58be5ff386ca53de58bd70cb0a432eda1bd3dcc90430d6e0a6a9785	那件物品放不進去。\n	reviewed	P10A-B1 core system: inventory	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	249	game	63e38d03be1d1a96709aece4e0045d2d3a0c19825e69a582442727c1bbe20ee1	泉水讓你恢復了力氣。\n	reviewed	P10A-B1 core system: fountain	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	250	game	91cf0898b41cf317a0e9aad23f5e46bbb7662964ae22b42423f89508e1cb8134	你開始演奏樂器。（按 0-9 演奏，按 ESC 返回遊戲）\n	reviewed	P10A-B1 core system: instrument	0-9 與 ESC 為實際按鍵，保留原樣。 reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	251	game	6e97f956c230d810afe8fd876d8c1bfaba0af7c406dfcd9680b215e6e4c6a0f4	你放下了樂器。\n	reviewed	P10A-B1 core system: instrument	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	252	game	663929cbb83e16c4ecfcae57345561fa8482bf862fcef4b36dbb91de79853b58	那太重了，拿不動。\n	reviewed	P10A-B1 core system: pick up	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	253	game	dbd0aeb574dd2238082896ecea98f4271670859bd8b2496d7ac0572b5cb6daef	沒有空間可以放下那個。\n	reviewed	P10A-B1 core system: drop	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	254	game	87b8d8f552e9956c99c4d6056bfeb7970948e4aec68cde95542ae26cbd1243c1	你需要更多空間才能發射那件武器。\n	reviewed	P10A-B1 core system: missile weapon	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	255	game	132d55db312ebbe2c7f4ad4d643a5d14898ac5071da230369b85ea34a89cd0fb	這裡空間不足，無法釋放那個法術。\n	reviewed	P10A-B1 core system: casting	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	258	game	e72a8ff215eb13f74c760371966ae19e392421ec4c4e021955e7e6bd001b97c0	沒有地方可以放那個。\n	reviewed	P10A-B1 core system: drop	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	259	game	58945ece966c020ac0d72efde9388fd7ca0f42fd324f05c7e171c5264fa7387b	這些骨頭似乎無法在墓中安息，你又把它們拿了回來。\n	reviewed	P10A-B1 core system: Garamon's bones	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	261	game	4882480786872b4d815e4e2d34dfca2d2dbc22edff2fc20de1ac0805699214c7		untranslated	P10A-B1 audit: composed sentence, not direct	P11: virtue item, LOOK.C after game_sprint(0x104) (1:260); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	262	game	0110f57ecc40dbcaa8c79410c33c3da3af05a245b51e895c4cc3d6b432d8d0c8		untranslated	P10A-B1 audit: composed sentence, not direct	P11: virtue item, LOOK.C after game_sprint(0x104) (1:260); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	263	game	0110f57ecc40dbcaa8c79410c33c3da3af05a245b51e895c4cc3d6b432d8d0c8		untranslated	P10A-B1 audit: composed sentence, not direct	P11: virtue item, LOOK.C after game_sprint(0x104) (1:260); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
@@ -208,17 +208,17 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	267	game	cb74e90d4d4111726b6f01ac79d22f80ef9a120cecb6e4708f6f63d8cae62d5f		untranslated	P10A-B1 audit: composed sentence, not direct	P11: virtue item, LOOK.C after game_sprint(0x104) (1:260); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	268	game	e12125bb325e44955f28202918754f80a8f47a6fe4457d3c455ae7c56f53e288		untranslated	P10A-B1 audit: composed sentence, not direct	P11: virtue item, LOOK.C after game_sprint(0x104) (1:260); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	269	game	ff394b7396578b459c8c0e6369c5d5d56579db50aee826dc747c1411ae6b47f4		untranslated	P10A-B1 audit: composed sentence, not direct	P11: virtue item, LOOK.C after game_sprint(0x104) (1:260); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
-1	270	game	9c0e048d4a92aa7fc8f93431bf52008a42cdcb29b4e51e5f4d7e5ef55682fc20	法術打開了鎖。\n	draft	P10A-B1 core system: Open spell		
-1	271	game	76bb3711a477919e0cdbc64b6ed53b91f212bacc5027d5c4bc84ed22c9af700a	法術沒有任何明顯的效果。\n	draft	P10A-B1 core system: casting		
-1	272	game	2aa61338cf75898c0cab0eb240be266c03f400de7abd3aa8f457ad1055a74c32	少女沒有任何反應。\n	draft	P10A-B1 core system: talk to the princess wall texture (CONVERSE.C TERR_PRINCESS)	princess 指 TERR_PRINCESS 牆面貼圖，依 Authority「鎖在磚牆上的少女」譯為少女。	
-1	273	game	bcf1b79f88a32dbc02e130dcd6bc83178996dec63358a812903d4dfe3144071c	沒有可用的月之石。\n	draft	P10A-B1 core system: Gate Travel without a bound moonstone		
-1	274	game	e31ce7308ef3133d8d9fcd246b12d31c2bb8ea4062ce6f97834b6d05e347f51c	大鍋是空的。\n	draft	P10A-B1 core system: cauldron		
+1	270	game	9c0e048d4a92aa7fc8f93431bf52008a42cdcb29b4e51e5f4d7e5ef55682fc20	法術打開了鎖。\n	reviewed	P10A-B1 core system: Open spell	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	271	game	76bb3711a477919e0cdbc64b6ed53b91f212bacc5027d5c4bc84ed22c9af700a	法術沒有任何明顯的效果。\n	reviewed	P10A-B1 core system: casting	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	272	game	2aa61338cf75898c0cab0eb240be266c03f400de7abd3aa8f457ad1055a74c32	少女沒有任何反應。\n	reviewed	P10A-B1 core system: talk to the princess wall texture (CONVERSE.C TERR_PRINCESS)	princess 指 TERR_PRINCESS 牆面貼圖，依 Authority「鎖在磚牆上的少女」譯為少女。 reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	273	game	bcf1b79f88a32dbc02e130dcd6bc83178996dec63358a812903d4dfe3144071c	沒有可用的月之石。\n	reviewed	P10A-B1 core system: Gate Travel without a bound moonstone	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	274	game	e31ce7308ef3133d8d9fcd246b12d31c2bb8ea4062ce6f97834b6d05e347f51c	大鍋是空的。\n	reviewed	P10A-B1 core system: cauldron	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	275	game	c26b669303604778fb9a3037bcf5cd539ba4da63fb1e4c65b319c73a01cd2780		untranslated	P10A-B1 audit: composed sentence, not direct	P11: version banner prefix, PLAYER.C followed by the version number; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
-1	276	game	e2d3f73dccd2f9ec63a6b563669bc20cd5c7cc03de1bee18293efd92138144b3	守護之符已經設下。\n	draft	P10A-B1 core system: Rune of Warding		
-1	277	game	0c2657f58ddd967bb48c26bd568fda2e3e2d335cc391fb5b4fcb29ea860d9f0f	沒有空間可以創造那個。\n	draft	P10A-B1 core system: summon/create spell		
-1	278	game	33717247b699aac6fb0d0faa5068440d7eda95614bdef5d70c0631ba5a00f59a	一陣撕裂般的聲響充斥四周。\n	draft	P10A-B1 core system: endgame		
-1	279	game	77e0326733c6e5ee4f20b24eaabbd1578662ea6d0d5570a60bb9ee01e22fe090	破帷者被拖離了這個世界。\n	draft	P10A-B1 core system: endgame		
-1	280	game	f3e150833d9cf8136d3853581ec4d43b8d1693bc2c8b4310af94f26564544842	你被吸進了月門……\n	draft	P10A-B1 core system: moongate		
+1	276	game	e2d3f73dccd2f9ec63a6b563669bc20cd5c7cc03de1bee18293efd92138144b3	守護之符已經設下。\n	reviewed	P10A-B1 core system: Rune of Warding	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	277	game	0c2657f58ddd967bb48c26bd568fda2e3e2d335cc391fb5b4fcb29ea860d9f0f	沒有空間可以創造那個。\n	reviewed	P10A-B1 core system: summon/create spell	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	278	game	33717247b699aac6fb0d0faa5068440d7eda95614bdef5d70c0631ba5a00f59a	一陣撕裂般的聲響充斥四周。\n	reviewed	P10A-B1 core system: endgame	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	279	game	77e0326733c6e5ee4f20b24eaabbd1578662ea6d0d5570a60bb9ee01e22fe090	破帷者被拖離了這個世界。\n	reviewed	P10A-B1 core system: endgame	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	280	game	f3e150833d9cf8136d3853581ec4d43b8d1693bc2c8b4310af94f26564544842	你被吸進了月門……\n	reviewed	P10A-B1 core system: moongate	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	411	game	a7937b64b8caa58f03721bb6bacf5c78cb235febe0e70b1b84cd99541461a08e		untranslated	P10A-B1 audit: composed sentence, not direct	P11: ordinal, INTERACT.C level/day status lines (1:65+n+1:66, 1:67+n+1:68); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	412	game	16367aacb67a4a017c8da8ab95682ccb390863780f7114dda0a0e0c55644c7c4		untranslated	P10A-B1 audit: composed sentence, not direct	P11: ordinal, INTERACT.C level/day status lines (1:65+n+1:66, 1:67+n+1:68); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	413	game	b1e99324505bd32da0e1f85dcf5e19a09db0481e8a15f62c41eb320304a8e927		untranslated	P10A-B1 audit: composed sentence, not direct	P11: ordinal, INTERACT.C level/day status lines (1:65+n+1:66, 1:67+n+1:68); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
@@ -341,85 +341,85 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 6	402	spells	980d4a4cdaa6c3c40391157efbdaa40fd7299d242f0d151eb0bf47bc92609e1f		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
 6	403	spells	4cbe4ae9154d2b8ce3ad05bc9fd107420e66d7a62d465ccd5096ccd87cd7284d		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
 6	404	spells	30dfa1dd5d120984b43fa7d79997665d9bc6dc7a0c94dc6c87b106a804127aab		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-7	0	conversation_common	f71e90d787d4406d805af3d4fe4a87144cc4410d8981825902c66fcdd95622a6	你無法與那個對話！\n	draft	P10A-B1 conversation system: talk target refused (CONVERSE.C)		
-7	1	conversation_common	d0a21149b0b2ef0822a85bbc671dd6803c35b38e25762f0f956c65fd25593f19	沒有任何回應。\n	draft	P10A-B1 conversation system: no response (CONVERSE.C, BABL.C)		
-7	83	conversation_common	6e2438a46d02f906a83dfef80fd9d898f2faf4ddfbd7904b7b292cfa27aad77b	布拉吉特	draft	PoC role: npc_name	PoC draft	showcase
-3651	1	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d	小伙子	draft	PoC role: template_fragment	PoC draft; native rendering pending	grammar-sensitive,showcase
-3651	2	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c	姑娘	draft	PoC role: template_fragment	PoC draft; native rendering pending	grammar-sensitive,showcase
-3651	3	conversation	d432ede95023399e87ade8c791956bc66bad5b0da3bbbbf1bd237a6b70e7d464	你好，陌生人！你來這裡有何貴幹？我以前沒在這地方見過你。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	4	conversation	d3bbed82c89b0532f5f1c1c724cf04ad7cc2b0badfcb978542d9d21ef8f6ad34	我只是在探索深淵。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	5	conversation	e444a0be5971517562e708be0465fbd6e9e8af02ee8e1e40d97680970444935b	我正試著救出一名無辜的女孩。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	6	conversation	406eb93854960bf58cec875bbc908dda3b005c414dd21ba2aaca4c5cb3d67253	我被丟進這裡，為一樁並非我所犯的罪受罰。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	7	conversation	4b0ab750c6425bd9313e76bf30ca943667d78921b6e34769171fec7766274544	探索，是嗎？哈，這藉口真不錯。不過，你要是不願說自己犯了什麼罪，我也無意過問。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	control-code,showcase
-3651	8	conversation	c3e0b1a49600381795ad7460b35497e81d153d7661c4fe78c49f7ceb93524a5d	啊，是來救人的？男爵的守衛怎麼沒跟著你，幫忙找人呢？依我看，倒比較像是其中一人把你丟進來的吧？\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。	control-code,showcase
-3651	9	conversation	6a68b078d8e6641664000bea0d186b7b3f67497b44b83994ac3257d1cf46f10a	啊，你是冤枉入獄的？我的@SS1，大家都這麼說，但也不表示你的話就是假的。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	dynamic-template,control-code,showcase
-3651	10	conversation	287bfb9bbe6508004c771cdc12eb23cbc1cf00544fbd8bbb016ee4778a86b86e	@SS1，別為自己的遭遇感到羞恥；如今你和我們都在同一條船上了。你若想在深淵裡多活些時日，就得先熟悉這裡的情況。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	dynamic-template,showcase
-3651	11	conversation	98c755504300666080e79c5e012dab18166ed37ff92bd6bd919ce4eeb692b19a	的確，我很想多了解這一帶。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	12	conversation	f651b98088243754179170649dc8ca8df2994a078a4d15e9c08b685301943e2e	我自己應付得來。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	13	conversation	f91b1089d14969662ad795fd43c10e159af7a5f1b088e49e7e71524ac8d36ca0	也許吧。我聽過許多人說出和你一樣的話，其中倒也有幾個至今還活著。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	14	conversation	eae088b57f10a9bc1b437b495a300a75b7d75cfe5bada8aba25d27e7f96d1b24	那麼，你有什麼實用的消息？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	15	conversation	f294f1ce8c1f695441c8203ae6d4269dc07c676c102297d0b686df0ae3530324	那麼，告辭了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	16	conversation	48bfdac64e2528a401ef1709916577d75bc263b9625f89e24202d6efd16b8633	首先，我勸你把找到的有用東西都撿起來。這裡的物資十分稀少，能拿多少就拿多少。\n 你儘管搜集散落的東西，但最好別偷竊。深淵裡多數居民都會嚴加看守自己僅有的那點財物。\n 戰場是搜集物資的好地方。我就是為此而來。不久前，惡鬼族和地面上的人在這裡打了一仗。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 authority-ok:guard（此處為動詞「看守」，非守衛頭銜）	showcase
-3651	17	conversation	f30e65846e68f1566d1a5c5500895fefd440f00bd7bfdd0ac217d27ff363b400	這裡住著哪些人？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	18	conversation	c6f6e2e6af93327e70e7fde5287ef3dbbc1129fc756ba2d2f966e1e297b9dc56	那場戰役是怎麼引起的？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	19	conversation	3ad873af13e29a0a4c85be2c1895e3d7e9f300b8a3c5745fe7c2a3a44ec052b4	我不知道。男爵很少派人進入深淵，想必是有要事。不過，看樣子惡鬼族輕易就打敗了他們。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。	control-code,showcase
-3651	20	conversation	b7b3861928ed1dbb835f6b869b206e7b59c3a8c2cce4e988d3696671eb0dd7db	惡鬼族控制著上層洞穴的大部分地區。牠們分成兩族：綠色惡鬼族與灰色惡鬼族。兩族至今還沒消滅彼此，可不是因為不夠賣力。\n 你要特別小心灰色惡鬼族。我前不久才因為闖入牠們的地盤而被關起來。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。	showcase
-3651	21	conversation	0056e555e3c6b462bda9b4579af8bb7957667b790d4b7b9af4f9718d954ee3d0	那一定很可怕！	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	22	conversation	178d55e8373c3bbb3d20c1de1ba6b4c14ffd749d359fdb92a858dbfa9431a0be	你是怎麼逃出來的？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	23	conversation	46dcde194eef16cf91b5514c3c8e5b600b3bb4b45f2f1de15f4a7d0626321870	我的牢房顯然是儲藏室改建的，裡面還放著不少有用的東西，包括一根長竹竿。我用長竹竿碰到了開門的按鈕，偷偷溜走，回到自己人那裡。我想，我不會再去那地方冒險了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。	showcase
-3651	24	conversation	1210f45235107ed058c6763a560dfb3e4ca138517485addf77ad10ccdcf93617	深淵裡還有哪些居民？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	25	conversation	3550fe18549c7476b9633171e86e91e6952cdcd45333a688e55676f5b7ecea54	跟我說說你的同伴吧。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	26	conversation	8d07d42ef1e729f645dccfc2300b4376716ccd6636b6836cc7fe0617398feab2	像你我這樣的人類，在一小塊地方落腳，日子還算平靜。我們下面住著山岳族，再往下我就不清楚了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。	showcase
-3651	27	conversation	74d26abc289ff28f4f2e5433bfa4574debbcf33ca37c0a3184eb1c839470477d	這個人類聚落在哪裡？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	28	conversation	3771dda2a82d04b6fa30e01d5ef57b6665e751c861cb54b21402812048c536ba	除了人類以外，其他種族都懷有敵意嗎？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	29	conversation	f82c0a7c19e021e6a2ed0dd70674b87b3ece4532e58fcef56a74c4da16955165	這是個險惡的地方，這點你大可相信。上層洞穴裡沒有惡鬼族佔據的地方，也有巨蜘蛛和蠕蟲。我們這一小群人，是少數崇尚和平的居民之一。\\m	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。	control-code,showcase
-3651	30	conversation	65489bc43446662b97e0d80366453c6a52650148beddae803aebd9054f6ba2f2	從深淵入口往西走，再往北，就能找到我的同伴。途中有一道小深谷要跳過，不過你看起來是個身手靈活的@SS1。過了深谷，就會看到深淵各處代表文明的標誌：凱布勒斯的旗幟，上面繪著聖者的符號——生命十字。\n 在沒有旗幟標示的地方，你可得格外小心。多數不尊重凱布勒斯遺志的生物，都不怎麼友善。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。	dynamic-template,showcase
-3651	31	conversation	0c8abcb83b369001671ca04c40d733ebeb46d4a97fa03efbaa2042ea7fe97890	也許我會去找找這地方。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	32	conversation	f577e1ed0244a18d2516bc49148c045350cc29411a8a8e4ac6fbe3e327b89d73	謝謝你的幫助。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	33	conversation	a5c93821aa4eb3b61599193f9d6d5c9260a1d8a256899a6a771d1312054cb125	祝你旅途順利。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	34	conversation	3262ea83d678ed279e52c2ddee60e28b0f50c10a12c7c2c529e9f769fabef91d	又見面了！真高興你還活著。在深淵裡，沒有他人的幫助，要活下來可不容易。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	35	conversation	447cfa7af99e676b25b6685c7d23d4505f72238efbff1334641647b587d30221	對我來說很容易。我不需要你的幫助。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	36	conversation	cb11e9e960bf0d89d4889026b8bbe853792a49699c12186127ee7f91e8319ac4	那麼，你有什麼實用的消息可以告訴我？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	37	conversation	3f2f9837335273678f3f7163c839246d5bd1eff5b9b952a3ab540fa3c246b919	你好！你去過我們的聚落了嗎？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	38	conversation	e37bdceef0668460d85654fa74609aa547f32a93a1e50d65b624ca5a3576c0b4	還沒有，我抽不出時間。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	39	conversation	b6fef13821e9ddfc272a063c64bcba2e8c7ec1b2def4e106fda65f4cc22c950a	我一直找不到。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	40	conversation	a7700a56086f054423bba189f2a6d5cd1855f7fd86d05e93b10002e5a55cf991	是的，我去過了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	41	conversation	0a9f4dfcd023a98af0c09b61b670bf76fade8a210ef8df017f9389ad8209573d	好吧，這由你決定。我相信他們會歡迎你的。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	42	conversation	4d5de8d196831edd37bbab7051024999b97c1534d2b6b2efcecb9c9b196887ad	從入口的大廳往西走，穿過一道門，再往北跳過深谷。記住，凱布勒斯的旗幟——上面繪有生命十字——就是深淵裡文明的標誌。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。	showcase
-3651	43	conversation	f3971dc44134d64ab7ec2a5a12da5df91ee524a0a109cbe8fda79c7cf227ba23	很高興聽你這麼說。你若厭倦了四處奔波，隨時歡迎來和我們一起住。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	44	conversation	df5aeddb9ebe333eeaa6065ad9c492a00c6fc524b8b418f2e29d213cca8e7906	非常感謝。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	45	conversation	b0fcdbe1599b1ed35b61274aff17cf68f8bd38acf537efaeda74203027f7ab5e	謝謝你，不過我的命運另有安排。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	46	conversation	c6d6db1526baaf3d28d75da14776e26fe0e74280181bd6b439cc27bd0b06e80a	啊，又是你。決定留下來和我們一起住了嗎？	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	47	conversation	ae72c2dd0a88d8bebaa04c77a0d42dc69b09e22e0cc2808bd600d7d179eaaeff	我想還是不了。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	48	conversation	22623848eed4ddc4f036497b7fb851e0e0a565b595fd9ea409bd0f74fc28c750	不，我還有許多事要做。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3651	49	conversation	6c39070a4a850159ffb2f38d4d8781eb3cd56aa9dc56ea4929cb603f87320ff1	也許我會暫時住上一陣子。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending	showcase
-3672	1	conversation	5b99068b548f936e82e0fd5b55b0a38c14c23e740d3c832c01c684317fe7e6fb	我們山岳族已經很久沒見過像你這樣的人了。你是從地面上被放逐下來的放逐者，還是外來的人？	draft	P10A-B1 Brawnclan (slot 88): greeting (NPC)	the Folk 指山岳族（Mountainfolk）。	
-3672	2	conversation	d96892b66c4cdb729d075520a68d0dc5c0683bd97aecca449b599d70bb381a79	我最近才被冤枉關了進來。	draft	P10A-B1 Brawnclan (slot 88): reply option (player)		
-3672	3	conversation	4948a1c0f984fd456ed20658293c410793bbbdceeca779eebce1aca7379d4fdc	我正試著救出一名被綁架的女孩。	draft	P10A-B1 Brawnclan (slot 88): reply option (player)		
-3672	4	conversation	a53d934540d8af3c3cee00dead864ff983464cfda07ca62ec1f5770f3cd69140	我是個追尋財富的冒險者。	draft	P10A-B1 Brawnclan (slot 88): reply option (player)		
-3672	5	conversation	ceff0f83605de06df14ac7febf785a7932b53989b0cff99303dcfa892bf9d76e	是啊，你們每個都這麼說。好吧，輪不到我來評斷你。跟山岳族打交道時規矩點，我們只要求這個。其他的事你愛怎麼做，那是你的事。那麼，你想要些什麼？	draft	P10A-B1 Brawnclan (slot 88): to 'imprisoned' (NPC)		
-3672	6	conversation	161b5fb548fd767cbf14c269e6e67b55b0d6d58fc61dd0145b0c59f5fc5a0aef	是啊，我聽說過這種事。我跟你說，這年頭深淵可不是什麼安全的地方。也許其他族人知道得更多。還有什麼我能幫你的嗎？	draft	P10A-B1 Brawnclan (slot 88): to 'kidnapped girl' (NPC)		
-3672	7	conversation	798b8aae47e243e4952d7dc8b148f22ac3c6e15fa91556f9ea913bca4804c529	是嗎？哼，深淵可不是尋找財富的地方，如今它只剩下昔日的影子了。不過在整個深淵裡，只有我們還懂得什麼叫財富，也知道該怎麼運用它。我們的國王貪金王擁有的寶藏，足以媲美整個不列顛尼亞的任何寶庫。\n 那麼，還有什麼我能為你做的嗎？	draft	P10A-B1 Brawnclan (slot 88): to 'adventurer' (NPC)	保留原文換行後的一個前導空白，與 P8 Bragit 譯文的段落格式一致。	
-3672	8	conversation	1054b4f18afc4d16f1b5e98fe4821be020e5c72f6b4f772e8927443c7ff9b5c8	你有被綁架女孩的消息嗎？	draft	P10A-B1 Brawnclan (slot 88): menu option (player)		
-3672	9	conversation	3876a7414e56291e77e261c9c8297df5344e4083029d4eda025de306a0af6507	我想跟你交易一些物品。	draft	P10A-B1 Brawnclan (slot 88): menu option (player)		
-3672	10	conversation	0e8f256fec6c8004f45697ac7f3126509b45c10ecaa76f30ca29a285d023a048	你能讓我通過這道鐵柵門嗎？	draft	P10A-B1 Brawnclan (slot 88): menu option (player)		
-3672	11	conversation	8a6c1d754183306c717b4fea6abe1f9a5949067217eebca0c33cc33e5527ede8	就這樣了。幸會，再見。	draft	P10A-B1 Brawnclan (slot 88): menu option (player)		
-3672	12	conversation	bb814836a55b63512ef9c1282486a2b8bd512c2afce71da01a2aecd3da4ac68b	好吧，你看來是個講道理的人。只要注意禮貌，就不會跟我們族人起衝突。那麼，在你見到族裡其他人之前，還有什麼想要的嗎？	draft	P10A-B1 Brawnclan (slot 88): (NPC)		
-3672	13	conversation	8a1a8c61cc798d072adccc2b8bcfad3f31652d5df89d50e825a28b7b1fa2e5a5	好吧，來看看你在冒險途中找到了些什麼。	draft	P10A-B1 Brawnclan (slot 88): trade start (NPC)		
-3672	14	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft	P10A-B1 Brawnclan (slot 88): farewell (speaker not observed at runtime; wording fits either)		
-3672	15	conversation	4123bedd02500b2838be30453bfa8da313afad37793e51d317078b2f058ffb01	熱烈歡迎你——真高興又見面了。這回我能為你做些什麼？	draft	P10A-B1 Brawnclan (slot 88): repeat greeting (NPC)		
-3672	16	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft	P10A-B1 Brawnclan (slot 88): barter option (player)		
-3672	17	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft	P10A-B1 Brawnclan (slot 88): barter option (player): demand		
-3672	18	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft	P10A-B1 Brawnclan (slot 88): barter option (player)		
-3672	19	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft	P10A-B1 Brawnclan (slot 88): barter option (player)		
-3672	20	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft	P10A-B1 Brawnclan (slot 88): barter end option (player; observed in the overpay replay)		
-3672	21	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft	P10A-B1 Brawnclan (slot 88): barter reply (NPC)		
-3672	22	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft	P10A-B1 Brawnclan (slot 88): barter reply (NPC)		
-3672	23	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft	P10A-B1 Brawnclan (slot 88): barter reply (NPC)		
-3672	24	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft	P10A-B1 Brawnclan (slot 88): barter reply (NPC)		
-3672	25	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft	P10A-B1 Brawnclan (slot 88): barter reply (NPC)		
-3672	26	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft	P10A-B1 Brawnclan (slot 88): barter reply to a demand (NPC)		
-3672	27	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft	P10A-B1 Brawnclan (slot 88): demand option (player)		
-3672	28	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft	P10A-B1 Brawnclan (slot 88): demand option (player)		
-3672	29	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft	P10A-B1 Brawnclan (slot 88): demand reply (NPC)		
-3672	30	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft	P10A-B1 Brawnclan (slot 88): demand reply (NPC)		
+7	0	conversation_common	f71e90d787d4406d805af3d4fe4a87144cc4410d8981825902c66fcdd95622a6	你無法與那個對話！\n	reviewed	P10A-B1 conversation system: talk target refused (CONVERSE.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+7	1	conversation_common	d0a21149b0b2ef0822a85bbc671dd6803c35b38e25762f0f956c65fd25593f19	沒有任何回應。\n	reviewed	P10A-B1 conversation system: no response (CONVERSE.C, BABL.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+7	83	conversation_common	6e2438a46d02f906a83dfef80fd9d898f2faf4ddfbd7904b7b292cfa27aad77b	布拉吉特	reviewed	PoC role: npc_name	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	1	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d	小伙子	reviewed	PoC role: template_fragment	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	grammar-sensitive,showcase
+3651	2	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c	姑娘	reviewed	PoC role: template_fragment	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	grammar-sensitive,showcase
+3651	3	conversation	d432ede95023399e87ade8c791956bc66bad5b0da3bbbbf1bd237a6b70e7d464	你好，陌生人！你來這裡有何貴幹？我以前沒在這地方見過你。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	4	conversation	d3bbed82c89b0532f5f1c1c724cf04ad7cc2b0badfcb978542d9d21ef8f6ad34	我只是在探索深淵。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	5	conversation	e444a0be5971517562e708be0465fbd6e9e8af02ee8e1e40d97680970444935b	我正試著救出一名無辜的女孩。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	6	conversation	406eb93854960bf58cec875bbc908dda3b005c414dd21ba2aaca4c5cb3d67253	我被丟進這裡，為一樁並非我所犯的罪受罰。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	7	conversation	4b0ab750c6425bd9313e76bf30ca943667d78921b6e34769171fec7766274544	探索，是嗎？哈，這藉口真不錯。不過，你要是不願說自己犯了什麼罪，我也無意過問。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	control-code,showcase
+3651	8	conversation	c3e0b1a49600381795ad7460b35497e81d153d7661c4fe78c49f7ceb93524a5d	啊，是來救人的？男爵的守衛怎麼沒跟著你，幫忙找人呢？依我看，倒比較像是其中一人把你丟進來的吧？\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	control-code,showcase
+3651	9	conversation	6a68b078d8e6641664000bea0d186b7b3f67497b44b83994ac3257d1cf46f10a	啊，你是冤枉入獄的？我的@SS1，大家都這麼說，但也不表示你的話就是假的。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	dynamic-template,control-code,showcase
+3651	10	conversation	287bfb9bbe6508004c771cdc12eb23cbc1cf00544fbd8bbb016ee4778a86b86e	@SS1，別為自己的遭遇感到羞恥；如今你和我們都在同一條船上了。你若想在深淵裡多活些時日，就得先熟悉這裡的情況。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	dynamic-template,showcase
+3651	11	conversation	98c755504300666080e79c5e012dab18166ed37ff92bd6bd919ce4eeb692b19a	的確，我很想多了解這一帶。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	12	conversation	f651b98088243754179170649dc8ca8df2994a078a4d15e9c08b685301943e2e	我自己應付得來。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	13	conversation	f91b1089d14969662ad795fd43c10e159af7a5f1b088e49e7e71524ac8d36ca0	也許吧。我聽過許多人說出和你一樣的話，其中倒也有幾個至今還活著。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	14	conversation	eae088b57f10a9bc1b437b495a300a75b7d75cfe5bada8aba25d27e7f96d1b24	那麼，你有什麼實用的消息？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	15	conversation	f294f1ce8c1f695441c8203ae6d4269dc07c676c102297d0b686df0ae3530324	那麼，告辭了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	16	conversation	48bfdac64e2528a401ef1709916577d75bc263b9625f89e24202d6efd16b8633	首先，我勸你把找到的有用東西都撿起來。這裡的物資十分稀少，能拿多少就拿多少。\n 你儘管搜集散落的東西，但最好別偷竊。深淵裡多數居民都會嚴加看守自己僅有的那點財物。\n 戰場是搜集物資的最佳地點。我就是為此而來。不久前，惡鬼族和地面上的人在這裡打了一仗。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 authority-ok:guard（此處為動詞「看守」，非守衛頭銜） P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	showcase
+3651	17	conversation	f30e65846e68f1566d1a5c5500895fefd440f00bd7bfdd0ac217d27ff363b400	這裡住著哪些人？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	18	conversation	c6f6e2e6af93327e70e7fde5287ef3dbbc1129fc756ba2d2f966e1e297b9dc56	那場戰役是怎麼引起的？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	19	conversation	3ad873af13e29a0a4c85be2c1895e3d7e9f300b8a3c5745fe7c2a3a44ec052b4	我不知道。男爵很少派人進入深淵，想必是有要事。不過，看樣子惡鬼族輕易就打敗了他們。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	control-code,showcase
+3651	20	conversation	b7b3861928ed1dbb835f6b869b206e7b59c3a8c2cce4e988d3696671eb0dd7db	惡鬼族控制著上層洞穴的大部分地區。牠們分成兩族：綠色惡鬼族與灰色惡鬼族。兩族至今還沒消滅彼此，可不是因為不夠賣力。\n 你要特別小心灰色惡鬼族。我前不久才因為闖入牠們的地盤而被關起來。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	21	conversation	0056e555e3c6b462bda9b4579af8bb7957667b790d4b7b9af4f9718d954ee3d0	那一定很可怕！	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	22	conversation	178d55e8373c3bbb3d20c1de1ba6b4c14ffd749d359fdb92a858dbfa9431a0be	你是怎麼逃出來的？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	23	conversation	46dcde194eef16cf91b5514c3c8e5b600b3bb4b45f2f1de15f4a7d0626321870	我的牢房顯然是儲藏室改建的，裡面還放著不少有用的東西，包括一根長竹竿。我用長竹竿碰到了開門的按鈕，偷偷溜走，回到自己人那裡。我想，我不會再去那地方冒險了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	24	conversation	1210f45235107ed058c6763a560dfb3e4ca138517485addf77ad10ccdcf93617	深淵裡還有哪些居民？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	25	conversation	3550fe18549c7476b9633171e86e91e6952cdcd45333a688e55676f5b7ecea54	跟我說說你的同伴吧。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	26	conversation	8d07d42ef1e729f645dccfc2300b4376716ccd6636b6836cc7fe0617398feab2	像你我這樣的人類，在一小塊地方落腳，日子還算平靜。我們下面住著山岳族，再往下我就不清楚了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	27	conversation	74d26abc289ff28f4f2e5433bfa4574debbcf33ca37c0a3184eb1c839470477d	這個人類聚落在哪裡？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	28	conversation	3771dda2a82d04b6fa30e01d5ef57b6665e751c861cb54b21402812048c536ba	除了人類以外，其他種族都懷有敵意嗎？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	29	conversation	f82c0a7c19e021e6a2ed0dd70674b87b3ece4532e58fcef56a74c4da16955165	這是個險惡的地方，這點你大可相信。上層洞穴裡沒有惡鬼族佔據的地方，也有巨蜘蛛和蠕蟲。我們這一小群人，是少數崇尚和平的居民之一。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	control-code,showcase
+3651	30	conversation	65489bc43446662b97e0d80366453c6a52650148beddae803aebd9054f6ba2f2	從深淵入口往西走，再往北，就能找到我的同伴。途中有一道小深谷要跳過，不過你看起來是個身手靈活的@SS1。過了深谷，就會看到深淵各處代表文明的標誌：凱布勒斯的旗幟，上面繪著聖者的符號——聖符。\n 在沒有旗幟標示的地方，你可得格外小心。多數不尊重凱布勒斯遺志的生物，都不怎麼友善。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	dynamic-template,showcase
+3651	31	conversation	0c8abcb83b369001671ca04c40d733ebeb46d4a97fa03efbaa2042ea7fe97890	也許我會去找找這地方。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	32	conversation	f577e1ed0244a18d2516bc49148c045350cc29411a8a8e4ac6fbe3e327b89d73	謝謝你的幫助。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	33	conversation	a5c93821aa4eb3b61599193f9d6d5c9260a1d8a256899a6a771d1312054cb125	祝你旅途順利。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	34	conversation	3262ea83d678ed279e52c2ddee60e28b0f50c10a12c7c2c529e9f769fabef91d	又見面了！真高興你還活著。在深淵裡，沒有他人的幫助，要活下來可不容易。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	35	conversation	447cfa7af99e676b25b6685c7d23d4505f72238efbff1334641647b587d30221	對我來說很容易。我不需要你的幫助。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	36	conversation	cb11e9e960bf0d89d4889026b8bbe853792a49699c12186127ee7f91e8319ac4	那麼，你有什麼實用的消息可以告訴我？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	37	conversation	3f2f9837335273678f3f7163c839246d5bd1eff5b9b952a3ab540fa3c246b919	你好！你去過我們的聚落了嗎？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	38	conversation	e37bdceef0668460d85654fa74609aa547f32a93a1e50d65b624ca5a3576c0b4	還沒有，我抽不出時間。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	39	conversation	b6fef13821e9ddfc272a063c64bcba2e8c7ec1b2def4e106fda65f4cc22c950a	我一直找不到。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	40	conversation	a7700a56086f054423bba189f2a6d5cd1855f7fd86d05e93b10002e5a55cf991	是的，我去過了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	41	conversation	0a9f4dfcd023a98af0c09b61b670bf76fade8a210ef8df017f9389ad8209573d	好吧，這由你決定。我相信他們會歡迎你的。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	42	conversation	4d5de8d196831edd37bbab7051024999b97c1534d2b6b2efcecb9c9b196887ad	從入口的大廳往西走，穿過一道門，再往北跳過深谷。記住，凱布勒斯的旗幟——上面繪有聖符——就是深淵裡文明的標誌。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	showcase
+3651	43	conversation	f3971dc44134d64ab7ec2a5a12da5df91ee524a0a109cbe8fda79c7cf227ba23	很高興聽你這麼說。你若厭倦了四處奔波，隨時歡迎來和我們一起住。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	44	conversation	df5aeddb9ebe333eeaa6065ad9c492a00c6fc524b8b418f2e29d213cca8e7906	非常感謝。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	45	conversation	b0fcdbe1599b1ed35b61274aff17cf68f8bd38acf537efaeda74203027f7ab5e	謝謝你，不過我的命運另有安排。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	46	conversation	c6d6db1526baaf3d28d75da14776e26fe0e74280181bd6b439cc27bd0b06e80a	啊，又是你。決定留下來和我們一起住了嗎？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	47	conversation	ae72c2dd0a88d8bebaa04c77a0d42dc69b09e22e0cc2808bd600d7d179eaaeff	我想還是不了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	48	conversation	22623848eed4ddc4f036497b7fb851e0e0a565b595fd9ea409bd0f74fc28c750	不，我還有許多事要做。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	49	conversation	6c39070a4a850159ffb2f38d4d8781eb3cd56aa9dc56ea4929cb603f87320ff1	也許我會暫時住上一陣子。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3672	1	conversation	5b99068b548f936e82e0fd5b55b0a38c14c23e740d3c832c01c684317fe7e6fb	我們山岳族已經很久沒見過像你這樣的人了。你是從地面上來的放逐者，還是外地人？	draft	P10A-B1 Brawnclan (slot 88): greeting (NPC)	the Folk 指山岳族（Mountainfolk）。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	
+3672	2	conversation	d96892b66c4cdb729d075520a68d0dc5c0683bd97aecca449b599d70bb381a79	我最近才被冤枉關了進來。	reviewed	P10A-B1 Brawnclan (slot 88): reply option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	3	conversation	4948a1c0f984fd456ed20658293c410793bbbdceeca779eebce1aca7379d4fdc	我正試著救出一名被綁架的女孩。	reviewed	P10A-B1 Brawnclan (slot 88): reply option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	4	conversation	a53d934540d8af3c3cee00dead864ff983464cfda07ca62ec1f5770f3cd69140	我是個追尋財富的冒險者。	reviewed	P10A-B1 Brawnclan (slot 88): reply option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	5	conversation	ceff0f83605de06df14ac7febf785a7932b53989b0cff99303dcfa892bf9d76e	是啊，你們每個都這麼說。好吧，輪不到我來評斷你。跟山岳族打交道時規矩點，我們只要求這個。其他的事你愛怎麼做，那是你的事。那麼，你想要些什麼？	reviewed	P10A-B1 Brawnclan (slot 88): to 'imprisoned' (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	6	conversation	161b5fb548fd767cbf14c269e6e67b55b0d6d58fc61dd0145b0c59f5fc5a0aef	是啊，我聽說過這種事。我跟你說，這年頭深淵可不是什麼安全的地方。也許其他族人知道得更多。還有什麼我能幫你的嗎？	reviewed	P10A-B1 Brawnclan (slot 88): to 'kidnapped girl' (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	7	conversation	798b8aae47e243e4952d7dc8b148f22ac3c6e15fa91556f9ea913bca4804c529	是嗎？哼，深淵可不是尋找財富的地方，如今它只剩下昔日的影子了。不過在整個深淵裡，只有我們還懂得什麼叫財富，也知道該怎麼運用它。我們的國王貪金王擁有的寶藏，足以媲美整個不列顛尼亞的任何寶庫。\n 那麼，還有什麼我能為你做的嗎？	reviewed	P10A-B1 Brawnclan (slot 88): to 'adventurer' (NPC)	保留原文換行後的一個前導空白，與 P8 Bragit 譯文的段落格式一致。 reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	8	conversation	1054b4f18afc4d16f1b5e98fe4821be020e5c72f6b4f772e8927443c7ff9b5c8	你有被綁架女孩的消息嗎？	reviewed	P10A-B1 Brawnclan (slot 88): menu option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	9	conversation	3876a7414e56291e77e261c9c8297df5344e4083029d4eda025de306a0af6507	我想跟你交易一些物品。	reviewed	P10A-B1 Brawnclan (slot 88): menu option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	10	conversation	0e8f256fec6c8004f45697ac7f3126509b45c10ecaa76f30ca29a285d023a048	你能讓我通過這道鐵柵門嗎？	reviewed	P10A-B1 Brawnclan (slot 88): menu option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	11	conversation	8a6c1d754183306c717b4fea6abe1f9a5949067217eebca0c33cc33e5527ede8	就這樣了。幸會，再見。	reviewed	P10A-B1 Brawnclan (slot 88): menu option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	12	conversation	bb814836a55b63512ef9c1282486a2b8bd512c2afce71da01a2aecd3da4ac68b	好吧，你看來是個講道理的人。只要注意禮貌，就不會跟我們族人起衝突。那麼，在你見到族裡其他人之前，還有什麼想要的嗎？	reviewed	P10A-B1 Brawnclan (slot 88): (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	13	conversation	8a1a8c61cc798d072adccc2b8bcfad3f31652d5df89d50e825a28b7b1fa2e5a5	好吧，來看看你在冒險途中找到了些什麼。	reviewed	P10A-B1 Brawnclan (slot 88): trade start (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	14	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	reviewed	P10A-B1 Brawnclan (slot 88): farewell (speaker not observed at runtime; wording fits either)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	15	conversation	4123bedd02500b2838be30453bfa8da313afad37793e51d317078b2f058ffb01	熱烈歡迎你——真高興又見面了。這回我能為你做些什麼？	reviewed	P10A-B1 Brawnclan (slot 88): repeat greeting (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	16	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	reviewed	P10A-B1 Brawnclan (slot 88): barter option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	17	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	reviewed	P10A-B1 Brawnclan (slot 88): barter option (player): demand	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	18	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	reviewed	P10A-B1 Brawnclan (slot 88): barter option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	19	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	reviewed	P10A-B1 Brawnclan (slot 88): barter option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	20	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	reviewed	P10A-B1 Brawnclan (slot 88): barter end option (player; observed in the overpay replay)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	21	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	reviewed	P10A-B1 Brawnclan (slot 88): barter reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	22	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	reviewed	P10A-B1 Brawnclan (slot 88): barter reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	23	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	reviewed	P10A-B1 Brawnclan (slot 88): barter reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	24	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	reviewed	P10A-B1 Brawnclan (slot 88): barter reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	25	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	reviewed	P10A-B1 Brawnclan (slot 88): barter reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	26	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	reviewed	P10A-B1 Brawnclan (slot 88): barter reply to a demand (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	27	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	reviewed	P10A-B1 Brawnclan (slot 88): demand option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	28	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	reviewed	P10A-B1 Brawnclan (slot 88): demand option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	29	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	reviewed	P10A-B1 Brawnclan (slot 88): demand reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3672	30	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	reviewed	P10A-B1 Brawnclan (slot 88): demand reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
