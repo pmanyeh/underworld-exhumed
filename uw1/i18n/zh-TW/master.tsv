@@ -633,6 +633,136 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3587	95	conversation	a8050c51fb1b757dd194964fa9473151509d4af92491343023a32ccf4bc57a3a	不客氣。再會。	draft		p10b-3 draft	
 3587	96	conversation	c685b68c0d68ed6e801ea7f5310a3241cf2985b22abcfa295bbf7353a480a750	很高興您喜歡。	draft		p10b-3 draft	
 3587	97	conversation	f3259074fa43d566424f6377e51db45cdf57059669bebfd33def3e9520a88b8c	天哪！我從沒見過這麼大塊的金子！你一定配得上這把斧頭，這是從我祖先那時代代相傳的光榮兵器。好好用它，比它好的兵器可沒幾把。	draft		p10b-3 draft	
+3588	1	conversation	3379feb6ae9fed3b989470c591c5aa7ec00269580b84f1737c9e63202645e4b2		untranslated		grammar-sensitive: 稱呼片段（guy），代入 @GS46（3588:42、74、126），P11 處理	grammar-sensitive
+3588	2	conversation	431ba1c6936744f659289a8ff5292f004a51ba6a96dcecc65ef8f0783018dd5f		untranslated		grammar-sensitive: 稱呼片段（girl），代入 @GS46（3588:42、74、126），P11 處理	grammar-sensitive
+3588	3	conversation	272c7b7d9dc77afd5ba3de258763d763e7ac160d901181f698206dea5629aded	你為什麼在這？	draft		p10b-11 draft	
+3588	4	conversation	6abdfef52b14c834a873729a1eb0359fbb0bf9a0e0ce50eac5286e0fea3d1c29	你都沒說你為什麼在這。	draft		p10b-11 draft	
+3588	5	conversation	1efece15f811c2f4569eadb6760048ff41e07fb96a49b97554ce946698e5dce2	我在探索深淵的深處。	draft		p10b-11 draft	
+3588	6	conversation	25827580c85f39c1edba0a4ec3834a4e32b678b95c190b53479c9f0fef4ab662	我被冤枉關進這裡。	draft		p10b-11 draft	
+3588	7	conversation	e1dbb981b011d304e26c0973b594de8c7bba2b321304c0a4cd00ccecb08d28c0	滾開，你這可惡的惡魔！	draft		p10b-11 draft	
+3588	8	conversation	3b195984f2178e60c3dffa832fb74f3f35c4a87fa4d6525b4233918971baa1dd	抱歉，我這就走。	draft		p10b-11 draft	
+3588	9	conversation	5ad1024bde9af12a0c6365ba6a9471ab55ae9c7a9a8da38a1415a9c68df88b04	嗯。你出來探險？你看起來不像安卡十字騎士，也不像月之石預言者。他們會去探險。\n 看起來你可能是大門附近那些放逐者。可是他們意志薄弱又膽小，不會去探險。你從哪來？	draft		p10b-11 draft	
+3588	10	conversation	e23f2d84e50f63c83e23c7c2676267ae6993a60bc3c280499c03edcebcbe6d6f	那你從哪來？	draft		p10b-11 draft	
+3588	11	conversation	4e8e9df7b13a58df2ec02e7ac1715e02cd860bcbffb65bdad3d2f2ebc1354985	我被阿姆瑞克男爵關進這裡。	draft		p10b-11 draft	
+3588	12	conversation	bf7269017d1a1e68bf54e0cd06fa288aead4a576807ea7d77d83e0c3bf7802b8	其實，我是安卡十字騎士。	draft		p10b-11 draft	
+3588	13	conversation	5f845bea7918a2b723c4962b7fd8f30e94b7990dbb74154ffdfb186569a824af	其實，我是月之石預言者。	draft		p10b-11 draft	
+3588	14	conversation	287144b1e1a9b3390702cdeed326237056a38b8621d8bf70d56a4fa643352846	抱歉，我得走了。	draft		p10b-11 draft	
+3588	15	conversation	b4c8a9e49a37058b8ecc3fb4a02feadf1027da765d4491be139343f50db8ad13	你被冤枉關起來，哈？聽起來像上面那些放逐者。他們老是抱怨另一邊那個瘋男爵把他們送來這裡當懲罰。我無所謂。他們好吃。\n 可是你不是他們，你在這下面。誰把你關起來？	draft		p10b-11 draft	
+3588	16	conversation	2cb48a6d6bd9960cd357de819a3d2db36d57d595bf7fbd323d5b311351a4b7d8	我問誰把你關起來。	draft		p10b-11 draft	
+3588	17	conversation	46b75a766c78ee5e4b686eb3658f011463dad92e286d8e934a74700d80546aa7	阿姆瑞克男爵。	draft		p10b-11 draft	
+3588	18	conversation	f873ddbff50b66612e90de3d57a7400f25e59ba04c18fb492e1d42c5ac394a46	不列顛王。	draft		p10b-11 draft	
+3588	19	conversation	752fd9e0d455e3900a7dec6ca2b626f35c0f01eb57242dafa1d199b88436a810	我不想談這件事。	draft		p10b-11 draft	
+3588	20	conversation	ec73c654f8ddda9cbe8bcb4ebb425346fd43bc027ea65c27e5e4db052e43ff56	呃……我得走了。	draft		p10b-11 draft	
+3588	21	conversation	bd3846bb9a325a60d17ad6a3fa6e80932e176fa090b3cc0f1fb0c80f1f61dc04	阿姆瑞克，哈？對，我從放逐者那聽過這名字。他們大多被那傢伙用各種罪名關起來。他為什麼關你？	draft		p10b-11 draft	
+3588	22	conversation	73641833748b617ac71a521d70dfbaca74815f7c0e2825c0837ab34752bb6405	那阿姆瑞克為什麼關你？	draft		p10b-11 draft	
+3588	23	conversation	8137cc4e8824f8b1d111a2469118f2dc2d574e9585d4abed7926db9e085d0d57	我被指控綁架他的女兒。	draft		p10b-11 draft	
+3588	24	conversation	05235d62e4dfbe2a8afb30c332e72fdc73f0e949dab5f020e649cb571fc25f42	他不喜歡我。	draft		p10b-11 draft	
+3588	25	conversation	ae62275a530498efc84d728e6c09aa297ef9f2df916eb1b4650c1c9ed168fdb0	嘿，我聽過這件事。前一陣子有個大洞穴巨人拖著一個女孩到處走。聽說她是男爵的女兒。	draft		p10b-11 draft	
+3588	26	conversation	cced4a2ee45e60b39ea713e9122028799fa94071399d3e0959575f5d2d5b437d	前一陣子我看到大洞穴巨人扛著年輕女孩。聽說她是關放逐者那個男爵的女兒。	draft		p10b-11 draft	
+3588	27	conversation	b00095f339f2205ced76be12c7c9d11fa8be0fcdc359142986c47d45cf4706c6	那個洞穴巨人去哪了？	draft		p10b-11 draft	
+3588	28	conversation	7928094bb8c536f6501c9f7a970191f694caad84a5ea02fb354185e1d05a7d48	那個洞穴巨人要她做什麼？	draft		p10b-11 draft	
+3588	29	conversation	7a4878616eebac6e2ee97760b1455979509431f468ef0999613419fb203964e5	他只因為不喜歡你就關你？聽起來不像放逐者說的那個阿姆瑞克。我打賭，他指控你什麼。他指控你什麼？	draft		p10b-11 draft	
+3588	30	conversation	01c377b265f20b2bd4130bbc4ae33762ecd9ced03fd949c6e826e0293a9e0a92	好啦，他們指控你什麼？	draft		p10b-11 draft	
+3588	31	conversation	b0e9723d480e7f26a22defc971f891268f5e51374034accab2fda32ffc95f91c	好吧，我被指控綁架阿姆瑞克的女兒。	draft		p10b-11 draft	
+3588	32	conversation	dcec6b5713b4cbdf10f5d2e6fe9329f91e093c13ad102d7b84d21b8565478cfa	抱歉，我現在得走了。	draft		p10b-11 draft	
+3588	33	conversation	02b676a5d22951c7071f043e3c48301713cd67638c2fe8779cd2a2c45a9ce4ab	我不確定。也許他想吃她。也許他替別人做事。	draft		p10b-11 draft	
+3588	34	conversation	203acd564f18b51f117b59904e1fe76b407910756a9d53c1bef3831ccaa21a75	他可能替誰做事？	draft		p10b-11 draft	
+3588	35	conversation	c17fb5f03fc06ec98dd419077101e2627aa69bff3648abafe57c9b122bc914f1	你知道他去哪了嗎？	draft		p10b-11 draft	
+3588	36	conversation	fed8999a8420c165609b5b051932e4cb84e43b9594dbe87ddde62258369de583	外面的事我知道不多，可是我知道不列顛王不會把囚犯關到這裡。你在耍什麼花樣，跟我說！	draft		p10b-11 draft	
+3588	37	conversation	aabbe077b0c0a21727edf097c53e6166f8be1d8ef84c35ebf692797ba6263731	啊，對，是阿姆瑞克男爵。	draft		p10b-11 draft	
+3588	38	conversation	68e038680b71ef6a923a43d31fa3a09076d9bbccbc086bae4ab14de3b1c7c980	不，真的，是不列顛王。	draft		p10b-11 draft	
+3588	39	conversation	f21b58ac27c64cb5dff938b0702b8f985e8c47df817fa81b76b0ebb87f1399f5	我不相信你。你不安好心，想藏什麼東西。我不跟你說話了。	draft		p10b-11 draft	
+3588	40	conversation	6e0a132130c16c0efe9eba74146650650945a74b92e4abeca4839ba55345d851	你相信那種話？你是又醜又笨嗎？	draft		p10b-11 draft	
+3588	41	conversation	521064a3996843fe3221d3c19b74faac95d310676b4131fbd24d25a78c8a7ec4	滾開！	draft		p10b-11 draft	
+3588	43	conversation	f7e48a90d5d76cfc49d378535781243d1f222928f2b3636c798b3278130cc41b	我能怎麼幫你？	draft		p10b-11 draft	
+3588	44	conversation	bc92413a1f04d42967f19f2bdf82e6fb7c26aac8a794a62a0e555c5f7ed8333f	不了，謝謝，我得走了。	draft		p10b-11 draft	
+3588	45	conversation	69a94fac7666961b9c126ca94f3225c31018ab0e82618ee7260c7d5c197847d0	好吧。也許你之後再幫。	draft		p10b-11 draft	
+3588	46	conversation	c4f39b047d9e72dbdc56f5420e972e851f84528eb7ea797a2e1b777c8fdc250d	你在我看來不像安卡十字騎士。沒有他們那些裝備。	draft		p10b-11 draft	
+3588	47	conversation	26366f7ac571c25d12fd63bb254960c5470ef8103974c4905fcad79baf248d54	一下是預言者，一下又是騎士？	draft		p10b-11 draft	
+3588	48	conversation	ecfad091e1483d15917a7b32e15c2d618321fbc5c6021024e0c8e2ceb2fbaba5	我最近才加入他們的騎士團。	draft		p10b-11 draft	
+3588	49	conversation	d6adda721d7e96ee6570562469e3bd118c7d8aee20f72afd964474bfe4211d44	好吧，我其實不是騎士。	draft		p10b-11 draft	
+3588	50	conversation	35531e7b36ea520c2f69b598b1a0798fc66d42ff35112fcbf7a9a1e67726e2bd	抱歉，我得走了。	draft		p10b-11 draft	
+3588	51	conversation	46fdb63b900b99f8cdc0dfcfdc3e946a1fd1e374718d0e64cecc9813212acef8	新騎士，哈？你一定在執行任務。你在執行什麼任務？	draft		p10b-11 draft	
+3588	52	conversation	7c6c7dc821b1c9900015e234d7a7895b86d004de2eb308c3a4f2fc5876b2fcb6	你有任務了嗎？	draft		p10b-11 draft	
+3588	53	conversation	8fe91bd324faaa5c557f88545c1a2d9425bc9ed29675ab9156e1ac003d14df8a	我要去救一個被綁架的年輕女孩。	draft		p10b-11 draft	
+3588	54	conversation	aa0a65ea3e6863108874cbd529308cdd8d73a82ea69570c9a3e1fa67df8dd844	我在尋找凱布勒斯爵士的聖物。	draft		p10b-11 draft	
+3588	55	conversation	8dbbd7bc3965f648b47ad2ee72bed1bb863b47c94117e3f14af365ed6fdf2b9b	我目前沒有任務。	draft		p10b-11 draft	
+3588	56	conversation	7c4b3e6d81bbfb47d09b4ee228f96459c78e1dc5658e5029bf01663617d4ea66	嗯。沒任務，哈？沒任務算什麼騎士？	draft		p10b-11 draft	
+3588	57	conversation	95121dbb0179819ef1636107ce390768d8f79af89d83c779012bdbee49a2b610	凱布勒斯要送出去的禮物？那是很久以前的事，我們還沒變成食屍鬼的時候。自從那個講公正的瘋巫師來把古墓群封起來以後，我就沒聽說過那些聖物了。	draft		p10b-11 draft	
+3588	58	conversation	1304cb1879cd5c3bde47f1c75da4d50b265ebc45a7b35584168551d2b0a31a06	跟我說說這個巫師。	draft		p10b-11 draft	
+3588	59	conversation	0baebff930fdf1af7724688340ec3182346dbc23231b15fb9c3e7e201561e149	在你們變成食屍鬼之前？	draft		p10b-11 draft	
+3588	60	conversation	e8ec423156c5073f7f196d3c543db8ff3dc5c4a54928c5a5f34630da145d012f	食屍鬼不是一直在這裡。崩潰以後，有些人開始住在古墓群裡，吃埋在那的屍體。過了好多年，現在我們是食屍鬼，再也不用擔心找不到東西吃。	draft		p10b-11 draft	
+3588	61	conversation	709b501288d62e64a115b0b8a379c29e17d049a2ca352f2fd9f7b7365d27ce25	我明白了。你能跟我說說那個巫師嗎？	draft		p10b-11 draft	
+3588	62	conversation	9226234367e68d4adc6b05bfa786a192c7f85f1353002f9f8b63dba6b2dfc83f	你真是可惡的惡魔！	draft		p10b-11 draft	
+3588	63	conversation	f5626b969a14a7042e654b9677de00ec321f4f1c1edc5ccc13d937f03e87dc79	我就不覺得你是騎士。	draft		p10b-11 draft	
+3588	64	conversation	a60e281c3d868e4c083ac9779438d56a2ebf32294fae68e560c857810f9a8153	你在我看來不像月之石預言者。你沒穿長袍，說話也沒像他們那樣怪腔怪調。	draft		p10b-11 draft	
+3588	65	conversation	888d9b11a7689f2688b96dd42dae986aea6ba1ae1637aad3c04a06fefb64862d	我是預言者的新成員。	draft		p10b-11 draft	
+3588	66	conversation	234e94972c26dea9e71e4eabf74f2e672f22b1b0131e92430a0f2d670950bd5d	好吧，我其實不是預言者。	draft		p10b-11 draft	
+3588	67	conversation	147d511758a5611de647d96dcb6974d01546d76864b83adcd4d4718c4b49fc5c	抱歉，我得走了。	draft		p10b-11 draft	
+3588	68	conversation	9d725f52ee03a1fc9c185e060be8d2e738d2f5fe71ba734723ceaa03ef64a6e8	嘿！預言者是一群自命清高的魔法師，不收新成員。你在想什麼？你以為我笨還是怎樣？	draft		p10b-11 draft	
+3588	69	conversation	73cffb96f34dab1e2cfcb7eb0f958b34276efcc2639090e3d566e239e2efdef3	喔，抱歉，我不是預言者。	draft		p10b-11 draft	
+3588	70	conversation	370f3e0382f819b0eb06e663dfe88fc8b45759646074d7727552b08671d05e6a	對，其實我真的覺得你很笨。	draft		p10b-11 draft	
+3588	71	conversation	0202da1055fdd2cc2516e301ff00097c7c14f1ec36f746e6b81733743a43c33a	對，我也覺得你笨！再見！	draft		p10b-11 draft	
+3588	72	conversation	35531e7b36ea520c2f69b598b1a0798fc66d42ff35112fcbf7a9a1e67726e2bd	抱歉，我得走了。	draft		p10b-11 draft	
+3588	73	conversation	2c2a35d03bae41d9bbc5a728ab04c234617036b8e232a3ba9cfea1f8ccc211f7	我就不覺得你是預言者。	draft		p10b-11 draft	
+3588	75	conversation	3a00edf5eb9fb4771ac3272c484e5553b89e6cb5f4209f16ba9c3a6ee5f2f30b	怎樣，你以為你是什麼大人物，可以這樣跟我說話？我不跟你這種人說話。	draft		p10b-11 draft	
+3588	76	conversation	0ba1bf19f56e4e84f008cbcb5d7914bae9947682c9db6dca7ee8f43e2893a3be	我聽到一些傳聞，也許我知道洞穴巨人替誰做事。我為什麼要告訴你？	draft		p10b-11 draft	
+3588	77	conversation	fbd3685848cec4432fba4cc0f70f940433e586e9160164d5dc606add6745f305	也許我知道洞穴巨人去哪了。我為什麼要告訴你？	draft		p10b-11 draft	
+3588	78	conversation	b83a4f75318f31ba5440af2321ab59faf5ac06d3183bba503251b50f2a1f0fb6	我真正想要的是你的腦袋！	draft		p10b-11 draft	
+3588	79	conversation	bd561222116a1d1e2a9d1aaa94168232a4ce884c53f940341d084c69bc3cf3d0	我想我還是趁你還沒動手，先走為妙！	draft		p10b-11 draft	
+3588	80	conversation	596972fe2da6b0e59bb3bb8d630285e1caceb1e0aed8bc3ea4d1e1540e27c569	你到底想要什麼？	draft		p10b-11 draft	
+3588	81	conversation	a4d36f4beeb314358078924d7fda7bb2141f77e7813d32b93330655af6408781	我是食屍鬼的首領。我有個問題，也許你能解決。\n 我的一個族人得了狂笑病，是吃了壞腦袋得的。我覺得是有人故意給他壞腦袋。\n 我要怎麼找出是誰？生病的那個不能說話，只會笑。	draft		p10b-11 draft	
+3588	82	conversation	c91b9b5f0ed5373fa38623820363b24a0fa2591ed1b84b76cdf951b984e8751a	好，問題再說一次。這次仔細聽！\n 我的一個族人得了狂笑病，是吃了壞腦袋得的。我覺得是有人故意給他壞腦袋。\n 我要怎麼找出是誰？生病的那個不能說話，只會笑。	draft		p10b-11 draft	
+3588	85	conversation	e50ac3de5b97e6ff540cd2c4b3d2e89f6664083e0c5119d107144625dad97f69	你就說，有人毒死這個食屍鬼你很高興，因為他想對你毛手毛腳。等犯人來討賞時，就抓住他！	draft		p10b-11 draft	
+3588	86	conversation	fd64e05cc2b2f1492c2c2a9209dc0cd223e8f90f3d441ca2a3bde06f53974966	等一下……你能再說一次你的問題嗎？	draft		p10b-11 draft	
+3588	87	conversation	7ab9b70af24b57f6327981482b453d88dac45996757b18a4d24c58dda44e09ea	你真狡猾。我喜歡！	draft		p10b-11 draft	
+3588	89	conversation	8b48f1bf212dcc7f3f87194c187d7102a9013bef912d426baa10c03e821c8e26	謝謝你。那麼，那個洞穴巨人替誰做事？	draft		p10b-11 draft	
+3588	90	conversation	79f58f28e7c859def213ffd734acdd3e25485f9e79b454e0b9d36eaaaded36bb	好了，我得走了。	draft		p10b-11 draft	
+3588	91	conversation	9a922231a9e274b93ee3011cb80d17290654c630e0ef245413baef8fa8729555	我會試試你的計策。謝了！	draft		p10b-11 draft	
+3588	92	conversation	0165d9feca0bd2cfe9595fd1b12792c58bc27a9f152b520b01ded8a6be0fb1a6	你能跟我說說那個洞穴巨人嗎？	draft		p10b-11 draft	
+3588	93	conversation	3a8144218129bcc463e9298a34dcb4170924da5c43a3c703d8b14585a12f6bd4	那個洞穴巨人替誰做事？	draft		p10b-11 draft	
+3588	94	conversation	b72bc01716e5fd36e9c179b6fd30be7e7d3f4c1155655794951710a444c946ee	我現在得上路了。	draft		p10b-11 draft	
+3588	95	conversation	88e5243f7625089a4823100d140a9f6f20a5edf39732c4ce13d64db8a7610017	我跟著洞穴巨人走下中央房間東邊的樓梯。聽預言者說，再往下一段樓梯，是怪魔法師的巢穴。我覺得洞穴巨人帶著女孩去找怪巫師。我不知道為什麼。	draft		p10b-11 draft	
+3588	96	conversation	fb6e75e65a5a1ccd53dd69140552daf79deb54747e598a0afbe9f2da4f5ffdb4	原來如此。那個瘋巫師又是怎麼回事？	draft		p10b-11 draft	
+3588	97	conversation	ae075cbbe13169de8699d5e89f5ef96fa528dfdcc580e090fb3a0776d78de9a1	謝謝你。再會。	draft		p10b-11 draft	
+3588	98	conversation	23f1f1746becc9d38378b674ce8e9db3b14b018f317dd6149a8bfd18ac7499f5	我覺得洞穴巨人替住在預言者家正下方的怪魔法師做事。我跟著洞穴巨人走下東邊的樓梯，聽到預言者在談那個怪魔法師。洞穴巨人把女孩帶去那裡。我不知道為什麼。	draft		p10b-11 draft	
+3588	99	conversation	fb6e75e65a5a1ccd53dd69140552daf79deb54747e598a0afbe9f2da4f5ffdb4	原來如此。那個瘋巫師又是怎麼回事？	draft		p10b-11 draft	
+3588	100	conversation	ae075cbbe13169de8699d5e89f5ef96fa528dfdcc580e090fb3a0776d78de9a1	謝謝你。再會。	draft		p10b-11 draft	
+3588	101	conversation	50ead5166ec08d5dbf9e7c539b0339b684397508bfacd98d33330bce53fead06	我很高興你回來！	draft		p10b-11 draft	
+3588	102	conversation	95be6514b217c96b1996771ad0d15dbbef7d107bb56bf97f56a10e7451dd97cb	喔，又是你。	draft		p10b-11 draft	
+3588	103	conversation	a893bc5e52b0c9aedd7e2e37cf3564e6c53ce6310f4fda88fcc5ff693a6ef830	你為什麼又來？	draft		p10b-11 draft	
+3588	104	conversation	a3d94635268a34d9dd35a53398ef482a153e33250442afc40328d55b80193263	討厭的人，你還跟我說話？	draft		p10b-11 draft	
+3588	105	conversation	1dd5859fd4e7a9ea277ff4fdb80f0d92e6cfde7ec4d092e91cb3cb65106a8a57	我不想跟你說話。	draft		p10b-11 draft	
+3588	106	conversation	fdca23924044211f0ab3517b16fce96a9743fb1283f32791a845c0f9f0bd0109	辦一場宴會，吃到一半時宣布，這些菜是用被毒死那個的存糧做的。犯人知道那些東西有毒，就會露出馬腳。	draft		p10b-11 draft	
+3588	107	conversation	6bedc845a2d7c694e55d316646852a0191176ea41c92a9b4182ea3b7faba017c	等等……你的問題是什麼來著？	draft		p10b-11 draft	
+3588	108	conversation	a92305fc98e0d046fbdfb4795918596567e6c1de0de182be517d802616970589	你真聰明！又聰明又公平！在深淵很少聽到有誰公平。上一次是那個講公正的瘋巫師還在的時候。	draft		p10b-11 draft	
+3588	109	conversation	bd4d7b00a1e211dcfb0e4218d9f96e38c37ed30a74d547b76bef0f6596cfa9ba	我盡力而為。那麼，能跟我說說那個洞穴巨人嗎？	draft		p10b-11 draft	
+3588	110	conversation	d6faa4d5be5e4ed5e06d350e66ab706ea547c9ee78a7585f19287e913c514bf4	我盡力而為。那麼，你能跟我說說那個洞穴巨人嗎？	draft		p10b-11 draft	
+3588	111	conversation	ae2a0685000709761cef9b4745e701e615e280d67c77756daeb03d8ed7e5d760	跟我說說這個巫師。	draft		p10b-11 draft	
+3588	112	conversation	b3d0e6a7bf0c9991ca1d79876e200b6fa410e657ad006fb621c9a12b9bdadf88	也許吧。再看看。謝謝你。	draft		p10b-11 draft	
+3588	113	conversation	c70f13d4001ceccb9083c9cfbc8eae756d2f9f0a0ba52eb2c7be9cc76db1e160	食屍鬼以前住在古墓群，那裡好多食物。大崩潰以後，瘋巫師來這裡，講什麼公正。他把我們趕出古墓群。說食屍鬼不在乎公正，所以我們不能再住那裡。我想，他也把劍的一部分放在古墓群裡。	draft		p10b-11 draft	
+3588	114	conversation	8cda2f18fceed885576e3f2cc80b2fd204acbff707a627a4d22c5ee12f247231	你說的古墓群在哪裡？	draft		p10b-11 draft	
+3588	115	conversation	0341ba9889a0f63467883b35f7d6149f15aff52a4481c38b265e06912d4952c1	謝謝你。我得走了。	draft		p10b-11 draft	
+3588	116	conversation	736e4c034a16ce6ae6e920206ab87231fb45fc881e5d9d1522c4a221b7baf80c	再見。	draft		p10b-11 draft	
+3588	117	conversation	f27213ec06fe99fc635b2a17e644d79b3bfbef29fe017fc75aade84d1af80e8e	古墓群在這裡的東北邊。我很久沒去了。入口以前在東邊大走廊的左側，可是巫師把它藏起來，我們現在找不到。	draft		p10b-11 draft	
+3588	118	conversation	ae075cbbe13169de8699d5e89f5ef96fa528dfdcc580e090fb3a0776d78de9a1	謝謝你。再會。	draft		p10b-11 draft	
+3588	119	conversation	d7284a17dac54641c5a28cf8d0ef677cac1f7e68e7a1b12afe925e51970c2999	你能跟我說說你的問題嗎？	draft		p10b-11 draft	
+3588	120	conversation	0165d9feca0bd2cfe9595fd1b12792c58bc27a9f152b520b01ded8a6be0fb1a6	你能跟我說說那個洞穴巨人嗎？	draft		p10b-11 draft	
+3588	121	conversation	62f49ddaeef0b4ee50c6831b49899392af2bebbcf81c6db3b1e4d921ea28e6fc	你能跟我說說那個巫師嗎？	draft		p10b-11 draft	
+3588	122	conversation	ec0930f8a0867afdc7251d38fe623ddc651e99884c70668496167a10506b293e	我正要走。	draft		p10b-11 draft	
+3588	123	conversation	1b728d86be15a2940e7d6322e2d25613a88a10dc5c87fef48895678763576365	我不是故意冒犯你。	draft		p10b-11 draft	
+3588	124	conversation	34ce03e8e61e8c025d8e20cc2e7156a06699de2d5e1a1eb167906bf76173ec3b	卑鄙的傢伙！	draft		p10b-11 draft	
+3588	125	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	draft		p10b-11 draft	
+3588	127	conversation	c84d54a381641e6b02d1bdf7dd0d9d3af10901e8d89e69fbd9f4124a25145240	嘿，你不能話說到一半就走！	draft		p10b-11 draft	
+3588	128	conversation	52b1069efeb01373bfb6856160d8527d3909397110146baaaaae3946693a7687	喔，抱歉。請繼續說。	draft		p10b-11 draft	
+3588	129	conversation	041f403d7e5b7e63b9a4b07e8e7c9c6573df9ce9eda15221e9c0cda0cada2586	我當然可以。	draft		p10b-11 draft	
+3588	130	conversation	49044223f92c47bce31a4a1234af8b87aaba3e83cd9dcaa832f53e5a2a40dd3a	好啊。隨便你。走了正好！	draft		p10b-11 draft	
+3588	131	conversation	5d11a4f0bfa52a554bb49529c350ac497a2b1bd24927a2bcf743136d7bbfea3a	有什麼我能為你做的嗎？	draft		p10b-11 draft	
+3588	132	conversation	2f0974bd4c9b0404408a09813e1e1f76a38b4f8065e26c1d75363cbf6ec538e1	你想要什麼？	draft		p10b-11 draft	
+3588	133	conversation	e4c1e92d64006f6c6b7622218365122acd0c3e34df0a53bc82e5c043a0d75bb9	我不想跟你說話。你讓我生氣。	draft		p10b-11 draft	
+3588	134	conversation	5ac058ef6dc01105da58bc909665de778316578a2fe5bad5c1283e2e8f6a7cb5	抱歉。我不是故意惹你不快。	draft		p10b-11 draft	
+3588	135	conversation	cfcc5be29f03d9f6718ff137724ac124716ce1d9b4f83ccc6baddbd28238117f	那我也不想跟你說話。	draft		p10b-11 draft	
+3588	136	conversation	c7e08ab98aab5eaa7fb3e32b94e0472fda7ef374b23288ddc303605f1817c5d2	好啊！	draft		p10b-11 draft	
 3591	1	conversation	a5f9b2a07dcba6f58b0b50b9550bcccbaba4f8c81a30bc043b813cf28cd4e938	你是誰？來這裡做什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	3	conversation	de04d3d096ab06f2c6af01ea9168324047fdd1686bd01ce6e1f65d030068d831	我正在執行一項任務。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	4	conversation	6f9c5fe1b7df6d40c71569575863c4a22e4fd04129409f3ba89e74571d584de2	你又是誰？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -2592,3 +2722,89 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3733	82	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-9 draft; 交易用語沿用 3672:16-30	
 3733	83	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-9 draft; 交易用語沿用 3672:16-30	
 3733	84	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-9 draft; 交易用語沿用 3672:16-30	
+3745	1	conversation	a175d20c71fd1c6c336a1bd095f97d7bb7c2a8db33110e2d53aacec9aff1d996	你好，旅人。是什麼把你帶到深淵裡這麼危險的地方？你也跟我一樣，身負任務嗎？	draft		p10b-11 draft	
+3745	2	conversation	eeeb011c97e4bc2dfc6b20d93edd96e053d2c2c53a8bc1ec57515a3166a50fb6	你的任務是什麼？	draft		p10b-11 draft	
+3745	3	conversation	536623abab0c0d0691b53d294b45c7abc1ef3ef4d8a5e85d6f50913dbbca3bde	不，我沒有任務。	draft		p10b-11 draft	
+3745	4	conversation	be03a8bdbf9b5fc2f74cc6cc0bcb16f51eb4935ac025e18e7a9548c41a10ab72	多年前，我開始研究把賤金屬變成黃金的方法。研究過程中，我發現了一種更新、更好的方法，但需要一種非常稀有的物質。我的任務就是找到更多這種物質。	draft		p10b-11 draft	
+3745	5	conversation	52aeb8afbec878f33d0147674f0635f5ce43d8b11aa35bda74b66f6f003ac300	這個方法為什麼好那麼多？	draft		p10b-11 draft	
+3745	6	conversation	ab7b2cf55be2b0b25c379c570cfde7d0a376333552ebeaf9e62792b3598b109a	跟我說說這種物質。	draft		p10b-11 draft	
+3745	7	conversation	1b056b8b71c298761ab8d9ae4d4b5e98aced8376641dbe7ff6f0d1db2572474a		untranslated		grammar-sensitive: 組句片段（zanium），代入同對話的模板句，P11 處理	grammar-sensitive
+3745	8	conversation	ee5f192eda0d2d49fcc964717fdb5f27b6c48e9637c7805fec1efbbd5503bd2b		untranslated		grammar-sensitive: 組句片段（the principal reagent），代入同對話的模板句，P11 處理	grammar-sensitive
+3745	10	conversation	ab7b2cf55be2b0b25c379c570cfde7d0a376333552ebeaf9e62792b3598b109a	跟我說說這種物質。	draft		p10b-11 draft	
+3745	11	conversation	c01239f91d89d793e249b6bc5b7202928f647b0c7cca57ff6ad523316d3c8e1a	這種礦物要怎麼採集？	draft		p10b-11 draft	
+3745	12	conversation	357f4f3560a4177e88b6d524a3db4aee7b4cc73e1c7b80dcb2e4ee11c6fb4dd0	跟我說說那個礦區。	draft		p10b-11 draft	
+3745	13	conversation	2608471cfd54aea3564865bc706d57a69732d8ca9742659e3f31b016b5f66f3c	你在哪裡找到這種試劑的？	draft		p10b-11 draft	
+3745	14	conversation	fa44aa5969cc4630aafca840fd969e134e05fabef25e01a9220ddaaf7f2c5063	那是一種藍色、像岩石的礦物，叫做札尼礦。我找到的樣本都在深淵這一層、牆壁粗糙的坑道裡。我相信西南邊有個礦區，可能有更大的礦藏，可是我進不去。	draft		p10b-11 draft	
+3745	15	conversation	bd7782395a1774c76d6f2b35f55862a2206c15784e925a94e2f7590a39aeb6ca	新方法好在哪裡？	draft		p10b-11 draft	
+3745	16	conversation	79b80f039cef072b95406ed45fd73600f7a5c2e5fef0e1db8577fec6643f41b0	這種礦物要怎麼採集？	draft		p10b-11 draft	
+3745	17	conversation	357f4f3560a4177e88b6d524a3db4aee7b4cc73e1c7b80dcb2e4ee11c6fb4dd0	跟我說說那個礦區。	draft		p10b-11 draft	
+3745	18	conversation	27177b13b22470b59bbfc1b526ed679bb312a0694a48f27662a67a7269799c0f	札尼礦有互相吸引的特性。只要帶著一塊樣本走過，靠近表面的礦藏就會被收集起來。在這種地底環境裡，只要有札尼礦，表面附近多半也會有一些。所以某種意義上，它是自動收集的。	draft		p10b-11 draft	
+3745	19	conversation	aca76c9fb06b89eb4fcae7cb130011bb7ce6895ecfee43ae9f99581faa2619cc	跟我說說這個礦區。	draft		p10b-11 draft	
+3745	20	conversation	751ed55b80139c5eb2de372e6fcc23e3897e46b651ab7b42a61f0111a361dcee	誰可能更了解那座礦坑？	draft		p10b-11 draft	
+3745	21	conversation	ab4520f81923d36bec16c19b94d7335968ec04ca6f6273322e4c37177dfe9a6f	那也許我能幫你。	draft		p10b-11 draft	
+3745	22	conversation	5ebaca43c58802bedeff2be25c70627fe100f040680d4ce8359087660df919ea	我知道的不多。西南區有個小房間，標示著「礦坑調度室」。裡面似乎有些控制裝置，可是我不知道怎麼操作。	draft		p10b-11 draft	
+3745	23	conversation	85215eca11476c8ab07fd6f7f8dc37bdbdc9e2ce2dd6201d6b3d056e2d45fdfa	有沒有人知道那些控制裝置怎麼用？	draft		p10b-11 draft	
+3745	24	conversation	79b80f039cef072b95406ed45fd73600f7a5c2e5fef0e1db8577fec6643f41b0	這種礦物要怎麼採集？	draft		p10b-11 draft	
+3745	25	conversation	7e08343b5fa1cdb18f84fae1c8e5b78a17493a6c1ff2071c5301ed487f75fbbc	經你這麼一提，對，有一個人可能知道些什麼。墓窟裡那些可怕的食屍鬼之中，有一個以前是礦區的工頭。自從我為了自衛殺了他們一個，就沒有食屍鬼肯跟我說話了。也許你能幫我？	draft		p10b-11 draft; authority-ok:Defense（self-defense 是自衛，不是法術）	
+3745	26	conversation	5dfb0772a7484b966af475249f817c0108ed50dd445b4656f112403b191950e9	你需要什麼幫忙？	draft		p10b-11 draft	
+3745	27	conversation	66a000442c33871b24421b2179ba6a516919462c8c6cda2151572ad4a5aa0aa6	抱歉，我幫不了你。	draft		p10b-11 draft	
+3745	28	conversation	83cb7a527cfe8a2f13dc98bba3dd17cc4d9e53efe0b15fc5de951352f32cc21d	要是你能去跟那個礦工食屍鬼談談，問出調度室怎麼操作，我會非常感激。另外，要是你願意進入礦區、冒險收集至少八十份札尼礦樣本，我會用鉛變出一塊大金塊送給你。	draft		p10b-11 draft	
+3745	29	conversation	04870d61c17be960de8c69e7110479a035d13ed722525e2991a34513a37cd63f	我會幫你問出控制裝置的設定。	draft		p10b-11 draft	
+3745	30	conversation	127084d0cbf68622e532f3b06a0ef456f384f5333166a619b3356e810d79f87a	我會把札尼礦帶給你。	draft		p10b-11 draft	
+3745	31	conversation	980df551c284f9809de6f9671071d64f6df50415dd00b0f4e083e8111e53f531	好吧，要是你改變主意，再來找我。再會。	draft		p10b-11 draft	
+3745	32	conversation	c4fe597803aade05cceabd2decdb4d8a4af4d74231efa06d2d65e57558d5e869	等等！我會幫你。	draft		p10b-11 draft	
+3745	33	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-11 draft; 交易用語沿用 3672:16-30	
+3745	34	conversation	778c7ec7612658c3de2a96a7c85bcfd03d139e9d232f6af77ee06fe8c8cdd4e2	真的嗎？你真是個好心人！拿著這塊小樣本。帶著它走過礦坑，它就會吸引更多同類。	draft		p10b-11 draft	
+3745	35	conversation	9579108857709d491263f8fd0b756318878ac6558702367fc209a89d6cc34e06	我把它放在這裡的地上給你。	draft		p10b-11 draft	
+3745	36	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-11 draft; 交易用語沿用 3672:16-30	
+3745	37	conversation	6a503aab8caa1c10e11e367d313271fc2c032a019642ece0b3885145d5ee34ac	非常感謝你。等你問到相關的消息再來找我。再會。	draft		p10b-11 draft	
+3745	38	conversation	305264dfe5090172d58e5f8501c1d0408675313241ae9ff5d57432b0c82adcbe	等等，我會去拿札尼礦。	draft		p10b-11 draft	
+3745	39	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-11 draft; 交易用語沿用 3672:16-30	
+3745	40	conversation	a96b6d12a06ddc3f79638f8814676c9de842ef40f59829e6d6d3f96d58a51dc1	原來如此。那你真是個無畏的探險家，敢深入這麼深的地方。	draft		p10b-11 draft	
+3745	41	conversation	535823842d4f6ca7a98f03dc56c8fe3a8010a9584688efe198e31e351b88cd35	雖然我沒有任務，還是說說你的任務吧。	draft		p10b-11 draft	
+3745	42	conversation	5fa0d2096ed9bc93d602c35e618c29770d345a1e7ff835a38d507ef42255db23	確實。我得繼續上路了。再會。	draft		p10b-11 draft	
+3745	43	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-11 draft; 交易用語沿用 3672:16-30	
+3745	44	conversation	7d2b942971bb27b29e00b9e089d0b27fa726552e962de5ddb974c618f9efb9d1	你問到我需要的消息了嗎？	draft		p10b-11 draft	
+3745	45	conversation	a7700a56086f054423bba189f2a6d5cd1855f7fd86d05e93b10002e5a55cf991	是的，問到了。	draft		p10b-11 draft	
+3745	46	conversation	07678ca56b32e8bea585b207c9eb7250018dd7a0230d1f0806261195afa548b2	不，還沒有。	draft		p10b-11 draft	
+3745	47	conversation	a5dbe7ede01c2cc8b3b57f0696b54e7270a31c1b5040a07b32139d125fb0b38f	我決定去拿札尼礦了。	draft		p10b-11 draft	
+3745	48	conversation	39f4c657c4000e388d4c1d482dbe4134e84b8f02f714a4775d36871da2884de1	太好了！控制裝置的設定是什麼？	draft		p10b-11 draft	
+3745	49	conversation	4de2b07cbe0b5056bfe0c6ca276e5f87937fbdc1e4eeca6636ed38491beb42cc	設定是……	draft		p10b-11 draft; 「設定是……」讓玩家輸入調度室的設定（3745:52 的 726，不翻）	
+3745	50	conversation	0ba2796247d3c47708a534b0da2ee235ac519c4dfcd1aa8d69987dfd8435d872	喔，抱歉。我沒有設定。	draft		p10b-11 draft	
+3745	51	conversation	3affb9fcb6b7c7acfe4aa40d089b6d7d9c2a2644bb4c0cb1848ce6248159c92d	真可惜。等你問到了再回來。	draft		p10b-11 draft	
+3745	53	conversation	08c69f290908de9f92a513d1848e1efe14dd82f724f0eb2fc53a0517b47d20a0	非常感謝你。我會試著進入礦坑。	draft		p10b-11 draft	
+3745	54	conversation	56c8724d27a6c008b4ea8ef1fd9c007cd029d29bd91995a4be3a28338235033b	謝謝你提供的消息。它確實是對的，可是礦區裡有好多幽靈，我沒辦法取得札尼礦。你願意去拿嗎？	draft		p10b-11 draft	
+3745	55	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	好。	draft		p10b-11 draft	
+3745	56	conversation	e34f4bc9ed699098120919a1cb2ff745b49d2627a7436b9d34196a38b7f0fa15	不，我辦不到。	draft		p10b-11 draft	
+3745	57	conversation	dfe688791240d95db8173a1a3c521c4a680b2d5f39da4a16bd1866f3c5852bc4	好吧，要是你重新考慮，告訴我一聲。	draft		p10b-11 draft	
+3745	58	conversation	4d144e8971b952f2ebfaddf64663c78de6acf6acae7f7edec3506e4ddb3d0cc0	你給我的消息是錯的。你要更正嗎？	draft		p10b-11 draft	
+3745	59	conversation	27282b999a04ddc63b41567e687d9b5109651c26ba0caf653ded126f30648d61	是的，我要。	draft		p10b-11 draft	
+3745	60	conversation	6b4a8117cfb7f8e4be5fe566fdfb48c1a509b271879fe364a95ad6c2f3dc2773	不，我不要。再會。	draft		p10b-11 draft	
+3745	61	conversation	abadf38fa7ddbc9448f0dff61bd1e5b830a6326eeaf007353b57cb3d562424f5	我會去拿札尼礦。	draft		p10b-11 draft	
+3745	62	conversation	11e17c7b506324d56e1df4362694cfc1931bba7a3bf23b116bb697b7154571a5	你找到八十份札尼礦樣本了嗎？	draft		p10b-11 draft	
+3745	63	conversation	a7700a56086f054423bba189f2a6d5cd1855f7fd86d05e93b10002e5a55cf991	是的，找到了。	draft		p10b-11 draft	
+3745	64	conversation	07678ca56b32e8bea585b207c9eb7250018dd7a0230d1f0806261195afa548b2	不，還沒有。	draft		p10b-11 draft	
+3745	65	conversation	60089dcad1f03b74471f20a02950a683f3a05795d32c36335bbb54c1099c3e76	太好了！可以給我嗎？	draft		p10b-11 draft	
+3745	66	conversation	5aae2ada187a2d3172b8472552f8d3a3cd147075227854d283a2d68118ea1dfb	在這裡。	draft		p10b-11 draft	
+3745	67	conversation	a9237b0f7ec76391d7e8926ae57c405beb939df81ec47cc867d0e601208f7961	喔，抱歉。我沒帶在身上。	draft		p10b-11 draft	
+3745	68	conversation	f6a72b91be4e05b481b60b6411973e3e0e4169bb123bd0c8092ae34ab68a6675	好吧。找到了再回來。	draft		p10b-11 draft	
+3745	69	conversation	9dce5384702dc699804e0c65009ee90829dd710253eba8da4e00ea878acec5b9	我一份也沒看到！	draft		p10b-11 draft	
+3745	70	conversation	af2bdbe1aa9b6ec1e2ade1d694f41fc71a831d0268e9891562113d8a62add1bf		untranslated		grammar-sensitive: 組句片段（sample），代入同對話的模板句，P11 處理	grammar-sensitive
+3745	71	conversation	24baa7a731ce04b431af93d94cba8e0160a0e6a4607edc2d70c595dd098e56cf		untranslated		grammar-sensitive: 組句片段（samples），代入同對話的模板句，P11 處理	grammar-sensitive
+3745	73	conversation	f7dd2221a8b228e501455c883b65297d6506577ef8349eac19c51846b64517ba	非常感謝你。一小時後回來，我會給你一塊大到你難以想像的金塊。	draft		p10b-11 draft	
+3745	74	conversation	28cdd20eaf134a05f18369414cb2df5e36c6a4e4f551b8c9cff8548029c41d6c		untranslated		grammar-sensitive: 組句片段（minute），代入同對話的模板句，P11 處理	grammar-sensitive
+3745	75	conversation	90e63d85fa1ab2c8ed65222f3ebd794b1e524b4b7cf84bec451542d0451b2985		untranslated		grammar-sensitive: 組句片段（minutes），代入同對話的模板句，P11 處理	grammar-sensitive
+3745	77	conversation	83ada66bcffb0209954cd84fcbdd941d4fb6ee3b791f6a77e8b0c8ffa71c9191	這是你的獎賞。再次感謝你。	draft		p10b-11 draft	
+3745	78	conversation	a9d8d07100a98fbaa494ef90120b449324e706d73fa5e472e3d7c0f12cc10bef	又見面了，旅人。我能怎麼幫你？	draft		p10b-11 draft	
+3745	79	conversation	3b631397a5d71c503dfb0c3a05d3e863923ebfbd64268faa74b53c179b3ad64e	請告訴我你的任務。	draft		p10b-11 draft	
+3745	80	conversation	eb25e42712abddbbd317155728d60a997cafe752cb0a69e731ec7a780a71353c	我正要走	draft		p10b-11 draft	
+3745	81	conversation	18c6a97060b03ef969d1326c71037c0da28b6388243a5aaee70657abb73e9461	你重新考慮了嗎？願意幫我了嗎？	draft		p10b-11 draft	
+3745	82	conversation	3fa726a8ddf8962710d771156264b19a1df20f470d0c3363ab62094f1b875165	好。你需要什麼？	draft		p10b-11 draft	
+3745	83	conversation	f336e871350003d62b9bd58e817bf04e4f7f28cb7470eb0063ad749cfb7d48df	不。我幫不了你。	draft		p10b-11 draft	
+3745	84	conversation	f86144a422c21793a9e33ced8525b60db13b7e19b0df5e3543501bc6f44bf311	你重新考慮了嗎？願意去拿札尼礦了嗎？	draft		p10b-11 draft	
+3745	85	conversation	3b8890448b5f1270513fc20a195b69d2936cca230d46d3180695d18ae142dcc6	好，我會去。	draft		p10b-11 draft	
+3745	86	conversation	33827760307041001a2cf9c99e91b7df8798cd66f04e460c529628dff23addb0	不。再會。	draft		p10b-11 draft	
+3745	87	conversation	97830237066cb138d0ae89fa07d6d6d38ce6ed454db24d4b04c8377878284767	我得再次感謝你取回札尼礦。抱歉，我得失陪了，我還在忙實驗。	draft		p10b-11 draft	
+3745	88	conversation	a4a8086d292427907b3b5f0ce6250d03534b2f8e0be431f47de6d3b7babe9250	抱歉。這是你要的八十份札尼礦樣本。	draft		p10b-11 draft	
+3745	89	conversation	3de1e9fe4614779933186a0769e7e47d4365b502861eb58ea535a2f021217815	那我再去取更多札尼礦。	draft		p10b-11 draft	
+3745	90	conversation	a1fd3ab9f08eb015184ba4cc82bff5bd304fc3cff9600fd5a7c3dd31756162a6	請便。	draft		p10b-11 draft	
