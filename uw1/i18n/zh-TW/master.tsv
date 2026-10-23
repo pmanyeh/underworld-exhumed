@@ -420,6 +420,21 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 6	404	spells	30dfa1dd5d120984b43fa7d79997665d9bc6dc7a0c94dc6c87b106a804127aab		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
 7	0	conversation_common	f71e90d787d4406d805af3d4fe4a87144cc4410d8981825902c66fcdd95622a6	你無法與那個對話！\n	reviewed	P10A-B1 conversation system: talk target refused (CONVERSE.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	1	conversation_common	d0a21149b0b2ef0822a85bbc671dd6803c35b38e25762f0f956c65fd25593f19	沒有任何回應。\n	reviewed	P10A-B1 conversation system: no response (CONVERSE.C, BABL.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+7	2	conversation_common	3ddc95c559cd83921b3582bcd83957a50176152011155549f831e491d1999384	我這是	draft		p11-1 draft	
+7	3	conversation_common	fbd84b305aa9c00e65eaf01cf26ad24788b2a4d2390bcc3ce8daa0c10a3a7435	……我猜	draft		p11-1 draft	
+7	4	conversation_common	163d0867c9b2c99e72d9716cc6cf6a42366237194217cc038fe47561f305ba46	……我想也許	draft		p11-1 draft	
+7	5	conversation_common	8c744c4a1d274e56dc9bd680a2f655aa5e962cc1ac72f6672535bfa2880c009c	……我想	draft		p11-1 draft	
+7	6	conversation_common	70ff979824701df60a438b4b6b8ca2de6a04bc51d6895deade4a80233a9927bf	……我確定	draft		p11-1 draft	
+7	7	conversation_common	76f61f92c0f449c4cfff9b45fde2fd425ca60a86ac70da70b17a31f65769a377	……我知道	draft		p11-1 draft	
+7	8	conversation_common	63633a7fe97188e1f42001615fa658d22e7de2b9b1a483abe46cece0885d7faf	一筆糟透的交易……	draft		p11-1 draft	
+7	9	conversation_common	8e299761b609e84de5bd0d373dff73d825e01fcf6e3cd96572ee5636c5df5689	一筆很差的交易……	draft		p11-1 draft	
+7	10	conversation_common	2d2ded30eae0cdf27ca33c7e9480d06268bf61e4f06d8ba3a2450cf0e6e0f489	一筆差勁的交易……	draft		p11-1 draft	
+7	11	conversation_common	a13b1877b6324950ce0c350cd374faed8e2f32503516e441c5e4e023abc12df1	一筆不太好的交易……	draft		p11-1 draft	
+7	12	conversation_common	762b0bc64d7323e7c20b50bffca3697d0b0224aa15a32ec445be4b8320cd795d	一筆公平的交易……	draft		p11-1 draft	
+7	13	conversation_common	ab71b82fdf63fa526242a0a8b570c4f93af741efee43684bd5ca3acbf9137f3b	一筆不錯的交易……	draft		p11-1 draft	
+7	14	conversation_common	983a5d17853f30070a484ede51ff13c051bda320afb79a8975dae9270c3a0808	一筆很好的交易……	draft		p11-1 draft	
+7	15	conversation_common	e1774b1b9e4105170ed82918644d23ba9ec2923de5253bfa9b074202a09d3653	一筆划算的交易……	draft		p11-1 draft	
+7	16	conversation_common	2660693b90e6a97e0cc5912bdb662a5869bc9b8b85e1b8c89d5ff6f7bb42aab7	一筆絕佳的交易……	draft		p11-1 draft	
 7	83	conversation_common	6e2438a46d02f906a83dfef80fd9d898f2faf4ddfbd7904b7b292cfa27aad77b	布拉吉特	reviewed	PoC role: npc_name	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 8	0	writings	a135540ebb60551f6e9d0067854f5a7c194985c3204d8934ccb242f254c04b1c	某種難以辨認的東西	draft		p10c-1 draft	
 8	33	writings	5567a9a6f465a6f03c2a6010c8450dd176389aaf9008c0079fd9921188092b6d	加拉蒙的空墳	draft		p10c-1 draft	
@@ -594,29 +609,35 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3586	13	conversation	e34f4bc9ed699098120919a1cb2ff745b49d2627a7436b9d34196a38b7f0fa15	不，我付不起。	draft		p10b-3 draft	
 3586	14	conversation	0d11b5fa471093f78b170c1aa7783c0a27a5ab2fb9e6a97dfb2862dde1bcd4b3	付得起，價錢公道我就付。	draft		p10b-3 draft	
 3586	15	conversation	c43899d19196eced9c759db1d703736f8b7b963cf722a6f16bcb4d60a5bdaba8	唉，你在浪費我的時間。	draft		p10b-3 draft	
-3586	16	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d		untranslated		grammar-sensitive: 組句片段（lad），代入同對話的模板句，P11 處理	grammar-sensitive
-3586	17	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c		untranslated		grammar-sensitive: 組句片段（lass），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	16	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d	小伙子	draft		grammar-sensitive: 組句片段（lad），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	17	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c	姑娘	draft		grammar-sensitive: 組句片段（lass），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	18	conversation	b0ca015c22c8e3934ce91b32f8912d782cc71a301e96b183d6385e155661fd57	對，@SS1，這把劍真不錯。不過恐怕它已經過了巔峰。別擔心，我會替你把它修好。不過這麼好的手藝，我得收你 20 枚金幣，取件時付。	draft		p11-1 draft	dynamic-template
 3586	19	conversation	238d038cd569f634ecde3d33940fac17f540816ac3e223d93fae6f441b673cdf	還不行，我得先去辦點別的事。	draft		p10b-3 draft	
 3586	20	conversation	31f8cdcbb8d77190cdd2eee46e214deb6cfe843ffc38ca5c99c332c0fb93ac53	好吧。東西在這裡。	draft		p10b-3 draft	
 3586	21	conversation	c33597d6dc35899bd611bac2a023769ac38bd233e29176edbcc8875dc5ba3e32	唉，你在浪費我的時間	draft		p10b-3 draft	
+3586	22	conversation	fe001d6b3ec0bcf4346190768d9be0ffae463597227ef09e5bf27ffc1237dab8	唉，我看起來像有四隻手嗎？我一次只能修一樣東西，你知道的。	draft		p11-1 draft	
 3586	23	conversation	59764b3b637dabd3f1b953769183f540f238bbe77307e9c757e1931b3d580a93	唉，這東西已經打完它最後一仗了。根本不值得修。	draft		p10b-3 draft	
 3586	24	conversation	bfa5e3761ddee9b2158b02bb942e1d9f9d5c644b0c7025cb0811df163d7852b7	啊，看來這是凱利班之劍的一半。不過少了另一半，我也沒轍！	draft		p10b-3 draft	
 3586	25	conversation	3216960ee009946d64d2b589d4b4161559e893f397218eb598aeaddfbd75ebd5	唉，你當我是什麼？這裡是鐵匠鋪，不是小飾品店。武器跟防具，那才是我的活兒！	draft		p10b-3 draft	
 3586	26	conversation	993d43146dcc6f70511c3444fd913876e600d4740dd6f6e64cd7e3a2f614c181	啊，你不會拿這種破爛來給我修吧？不值得我花時間。你瞧瞧！一文不值！八成是惡鬼族做的。不，你該買把新的才對，我敢說。	draft		p10b-3 draft	
+3586	27	conversation	ea869b5073900aa050b9a035668e10a25b1abe7516bb6738110601e89ca85f86	啊！這個@SS2完好無缺！我沒什麼能替你做的。	draft		p11-1 draft	dynamic-template
 3586	28	conversation	3e71ab7281acd910cc0b62a52946914e3d7a0eecc4e761e0ee5680979ac8a35a	那你要修什麼？	draft		p10b-3 draft	
 3586	29	conversation	b953cac89f7cf36ca0a11b39bb1488d938c8c96d0b9bbdd9a6f50f3c3abf21fb	喔，在這裡。	draft		p10b-3 draft	
 3586	30	conversation	bef3bbe8cdbd4764ce7b38c71061a9e6843ce97ff8c63fa5b0e85cb6b9b7105c	喔，算了……	draft		p10b-3 draft	
-3586	31	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d		untranslated		grammar-sensitive: 組句片段（lad），代入同對話的模板句，P11 處理	grammar-sensitive
-3586	32	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c		untranslated		grammar-sensitive: 組句片段（lass），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	31	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d	小伙子	draft		grammar-sensitive: 組句片段（lad），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	32	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c	姑娘	draft		grammar-sensitive: 組句片段（lass），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	33	conversation	1cd54faaecba6b98a7bd6648d7dd1b1aea6a37678564ffa1084d1419597ddcf2	嗯，抱歉。你看起來是個挺不錯的@SS1。你何不出去殺點什麼，把牠的寶藏拿來？	draft		p11-1 draft	dynamic-template
 3586	34	conversation	2a525692a9425397caf9e273beea428014b73a5362219ba1927eb3ac0e822915	我是可以，但那樣不對！	draft		p10b-3 draft	
 3586	35	conversation	01862984efddcd8506c7c83fc831746a5a65b3d437dde2cee394b0b2c90f1b02	好吧。我會再回來。	draft		p10b-3 draft	
 3586	36	conversation	6de2915b8c2f311e95f8670536c4362e51a12d7468002edf16868dd55d081aec	唉，好吧。讓我瞧瞧。	draft		p10b-3 draft	
 3586	37	conversation	e7e997ad0cd0d96105fc23aa7b74fae84bbc51d254d58e03758ab4784e0284bd	你能告訴我這是什麼嗎？	draft		p10b-3 draft	
 3586	38	conversation	a68aa2e4916443d56cc486897f8f37513f5faf7fc65e6f3233a7b692e3d48ba2	這需要修理。你能修嗎？	draft		p10b-3 draft	
-3586	39	conversation	442c621dafad2a69126dfd65d498ed9579f821696023e2c70ce9fc944d6ae47f		untranslated		grammar-sensitive: 組句片段（himself），代入同對話的模板句，P11 處理	grammar-sensitive
-3586	40	conversation	ced636336aacc18b987f37718c1c09712b54863ee2abe7042e382bf3abe4a9df		untranslated		grammar-sensitive: 組句片段（herself），代入同對話的模板句，P11 處理	grammar-sensitive
-3586	41	conversation	28cdd20eaf134a05f18369414cb2df5e36c6a4e4f551b8c9cff8548029c41d6c		untranslated		grammar-sensitive: 組句片段（minute），代入同對話的模板句，P11 處理	grammar-sensitive
-3586	42	conversation	90e63d85fa1ab2c8ed65222f3ebd794b1e524b4b7cf84bec451542d0451b2985		untranslated		grammar-sensitive: 組句片段（minutes），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	39	conversation	442c621dafad2a69126dfd65d498ed9579f821696023e2c70ce9fc944d6ae47f	他自己	draft		grammar-sensitive: 組句片段（himself），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	40	conversation	ced636336aacc18b987f37718c1c09712b54863ee2abe7042e382bf3abe4a9df	她自己	draft		grammar-sensitive: 組句片段（herself），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	41	conversation	28cdd20eaf134a05f18369414cb2df5e36c6a4e4f551b8c9cff8548029c41d6c	分鐘	draft		grammar-sensitive: 組句片段（minute），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	42	conversation	90e63d85fa1ab2c8ed65222f3ebd794b1e524b4b7cf84bec451542d0451b2985	分鐘	draft		grammar-sensitive: 組句片段（minutes），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	43	conversation	72fe111d95049e2d62410d6c6f57f1ce8e63b34b7656d3ea348d2ea29b59dae5	唉，我跟你說過要 @GI3C2 分鐘。@SI3C2 @SS2後再來！	draft		p11-1 draft	dynamic-template
+3586	44	conversation	ece000cdba03a2528d7992e75225f17a8eddd212905e57720abdc7e1eebf62cd	唉，是勇敢的@SS1啊！有什麼能為你效勞的？	draft		p11-1 draft	dynamic-template
 3586	45	conversation	a68aa2e4916443d56cc486897f8f37513f5faf7fc65e6f3233a7b692e3d48ba2	這需要修理。你能修嗎？	draft		p10b-3 draft	
 3586	46	conversation	e7e997ad0cd0d96105fc23aa7b74fae84bbc51d254d58e03758ab4784e0284bd	你能告訴我這是什麼嗎？	draft		p10b-3 draft	
 3586	47	conversation	78ec80ba59a155e4fb602501551ce5912cdbc3f8fa337828a8d0dd086bf8d04a	你知道凱布勒斯的聖物嗎？	draft		p10b-3 draft	
@@ -657,18 +678,21 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3586	82	conversation	c9f5d144888f27c52321c5ebaef7b4d83b3fc8e6393962a77c6590a7212b9106	對，這凱利班真是個美人兒。我很快就會把她弄好。一個鐘頭後回來，別忘了那 20 枚金幣。	draft		p10b-3 draft	
 3586	83	conversation	bc78acd2389fa78233c959ace39817b65cde08e8c7f02818a418482ddd1c09ed	太好了。到時候見。	draft		p10b-3 draft	
 3586	84	conversation	d56379b708bbf709fad7b6bcbff833bbf8ed4cad8aac97228c99f4b7ad38314a	好，不過要快。時間比你以為的還少。	draft		p10b-3 draft	
-3586	85	conversation	34235a2c502e3919d3f00af5dabb87cb58aef4566b10631f2a5db94950ebffbd		untranslated		grammar-sensitive: 組句片段（piece），代入同對話的模板句，P11 處理	grammar-sensitive
-3586	86	conversation	b6aa423de4f79355751cdf73a26b069d5da4c248288cb8bdafc8f552f0adfc44		untranslated		grammar-sensitive: 組句片段（pieces），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	85	conversation	34235a2c502e3919d3f00af5dabb87cb58aef4566b10631f2a5db94950ebffbd	枚	draft		grammar-sensitive: 組句片段（piece），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	86	conversation	b6aa423de4f79355751cdf73a26b069d5da4c248288cb8bdafc8f552f0adfc44	枚	draft		grammar-sensitive: 組句片段（pieces），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	87	conversation	4eb917676032d2cf52827416400734d58034aa3abe2640f967ecffabe473340c	把這個@SS5修好要花你 @SI4 @SS6金子。要我現在動手修嗎？	draft		p11-1 draft	dynamic-template
 3586	88	conversation	d59e3c4920492e310a0aefdb6f4ab1d3e079590884b1a091da8f5bfa91283a13	好，請修吧。	draft		p10b-3 draft	
 3586	89	conversation	cf19e441727d50220ebe957979561675a3e854bdcff46f899aaad1bdb16fd6ac	不，我改變主意了。	draft		p10b-3 draft	
 3586	90	conversation	3854a1dd885418bf735fb9f7f05c289d864b5fbb387b5b91e3c90cae33bcd488	你到底要不要修？	draft		p10b-3 draft	
 3586	91	conversation	452e60bd16afdf08e4be967c17b87ed5d1501e1f4dcf3a4d685c59e4b744b1e3	要，抱歉，在這裡。	draft		p10b-3 draft	
 3586	92	conversation	859f70d56eb3460e65fde4cc20d6659a50ced8aa4f46dd5496c009db3ea8a976	唉！你白白浪費我的時間。	draft		p10b-3 draft	
 3586	93	conversation	cf19e441727d50220ebe957979561675a3e854bdcff46f899aaad1bdb16fd6ac	不，我改變主意了。	draft		p10b-3 draft	
+3586	94	conversation	a6f95dfe1b8ed8e41750979891b757087a7f3d4eaa1dba16ae2a963090921ed5	好吧，我會在 @GI3C2 分鐘後替你弄好。別忘了那 @SI4 @SS6金子！	draft		p11-1 draft	dynamic-template
 3586	95	conversation	bc78acd2389fa78233c959ace39817b65cde08e8c7f02818a418482ddd1c09ed	太好了。到時候見。	draft		p10b-3 draft	
 3586	96	conversation	b2a6a998d6a0f20fa37c2795d80cc876174c8d95dae2566d9dbce2f2a4f068a3	好，不過要快。時間不多了。	draft		p10b-3 draft	
 3586	97	conversation	49081cae13e5e0fb05d5ddecb064f3ea0d28be1ea80136bbf8636d739b9ec185	修好啦。現在跟新的一樣好。	draft		p10b-3 draft	
 3586	98	conversation	907849660a84ea41ce727d23c5c706ea58002924eb07ca67ae2cb55220112f6a	來，我就把它放在地上給你。	draft		p10b-3 draft	
+3586	99	conversation	c3c1692b461dbae844193a799ba4669f515c746d06163e1710396bf03b234735	謝謝你。你真是個好工匠。	draft		p11-1 draft	
 3586	100	conversation	9af6b2c38e6a14812331105565a912018a0b4a759381c3738df28de93ef25e3c	哼，也該修好了吧！	draft		p10b-3 draft	
 3586	101	conversation	5b21df05eb7df287ab374e84028a4132c3b1f7f5380f980940bea3339ee2a3f5	那麼，等你付得起錢再來吧。這可是上等的手藝，你知道的！	draft		p10b-3 draft	
 3586	102	conversation	fd055c62559cedf93ac1e79d652e81f38298fab0d61ab442b0095a15feeefcfa	唉，你在浪費我的時間！	draft		p10b-3 draft	
@@ -678,9 +702,11 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3586	106	conversation	f66082f39a5ab81aa78bc683e8336d1017cd488c4f47f839f7fb351ef7d6e6a1	啊，拜託，一次一件，可以嗎？	draft		p10b-3 draft	
 3586	107	conversation	4cc8e2cf9a55c1d74e6c4be02df52c7746f5b041fbaad513c87d3d35a7e7b7b8	喔，那就這件。	draft		p10b-3 draft	
 3586	108	conversation	10e6f3f173619914e8de8d70b80281d8964ded38e402305ac489806b8acfd50d	抱歉，算了。	draft		p10b-3 draft	
-3586	109	conversation	5214479071cd44989c58880bcd6855d381c25a88391bd5c443c7cfbaed282977		untranslated		grammar-sensitive: 組句片段（gold piece），代入同對話的模板句，P11 處理	grammar-sensitive
-3586	110	conversation	cd022c7876efbc0e70008d24da67526255b683f916e115f8f21cc25d4ef0a7e7		untranslated		grammar-sensitive: 組句片段（gold pieces），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	109	conversation	5214479071cd44989c58880bcd6855d381c25a88391bd5c443c7cfbaed282977	枚金幣	draft		grammar-sensitive: 組句片段（gold piece），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	110	conversation	cd022c7876efbc0e70008d24da67526255b683f916e115f8f21cc25d4ef0a7e7	枚金幣	draft		grammar-sensitive: 組句片段（gold pieces），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
 3586	111	conversation	92940fae45f0e559caac1b0c0793d7f128e88f7e413e5598c9cf5d97a61bad72	哎呀，看來你找到凱利班之劍的一部分了。要是能合成一把，那可是把好劍！好啦，還有別的事嗎？	draft		p10b-3 draft	
+3586	112	conversation	8c63f53d27c8c4aa4a29a12ecf1cdbedf89deffe8321301212c85ed104d77c0a	哎呀，那是@SS15。還有別的嗎？	draft		p11-1 draft	dynamic-template
+3586	113	conversation	3b8a6e08dd357799e6c38fc705d9fd3dc7a2b015ccf232b5c12ac01b4a0a787b	哎呀，那是@SS15，大約值 @SI18 @SS16。還有別的嗎？	draft		p11-1 draft	dynamic-template
 3586	114	conversation	284819bc6d354faa304dd76a8b24871a066d4ff03785f7e963ee9c1435df9ad5	我有東西需要修理。	draft		p10b-3 draft	
 3586	115	conversation	bb28db1ff26ab486a228fd77be05123e211c03ce4617a15644b41e504bdcf7da	我還有別的東西要請你鑑定。	draft		p10b-3 draft	
 3586	116	conversation	3d266ed2804a39ee9ef529295ac20456c09c3312cd93e4552ab8f320d64c4ed3	能跟我說說凱布勒斯的聖物嗎？	draft		p10b-3 draft	
@@ -700,8 +726,10 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3586	130	conversation	80ba56e39b6ddded7b04b09ae8d07dc4c1480718fe1b88d0ab5d6a3008317bbd	你能告訴我這是什麼嗎？	draft		p10b-3 draft	
 3586	131	conversation	0157b090bb4b481831f8d30785aecc8183fe1e60030734d1826e3d0d405e0fdb	這也需要修理。你能幫忙嗎？	draft		p10b-3 draft	
 3586	132	conversation	844d145c138833f043ddc105b03e8e5f77c1383bd13d5d173a58bdcf71fe0ba3	不用了，不過謝謝你。	draft		p10b-3 draft	
-3586	133	conversation	5214479071cd44989c58880bcd6855d381c25a88391bd5c443c7cfbaed282977		untranslated		grammar-sensitive: 組句片段（gold piece），代入同對話的模板句，P11 處理	grammar-sensitive
-3586	134	conversation	cd022c7876efbc0e70008d24da67526255b683f916e115f8f21cc25d4ef0a7e7		untranslated		grammar-sensitive: 組句片段（gold pieces），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	133	conversation	5214479071cd44989c58880bcd6855d381c25a88391bd5c443c7cfbaed282977	枚金幣	draft		grammar-sensitive: 組句片段（gold piece），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	134	conversation	cd022c7876efbc0e70008d24da67526255b683f916e115f8f21cc25d4ef0a7e7	枚金幣	draft		grammar-sensitive: 組句片段（gold pieces），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3586	135	conversation	bad4f197508d3c6afa68f58e7ab0a052744af81ff26cb7f524a48779bdfbc007	那麼，你帶了你欠我的工錢 @PI-3 @SS23嗎？	draft		p11-1 draft	dynamic-template
+3586	136	conversation	077de5ee67bc50f75070f0aa4fb62ecbeeff5ccfbdf4e84ccc33b7f6a9932a29	那就是 @PI-3 @SS23了！	draft		p11-1 draft	dynamic-template
 3586	137	conversation	3f50fa1fdd7959742c24752c99063b72a1b0b609ccad4381e51be170dfb4d6df	有，拿去吧。	draft		p10b-3 draft	
 3586	138	conversation	012cf4148d4ca301e53da79f2e370d254c80a3b5eabacc21b46115ac87d2cafa	不，我現在沒有。	draft		p10b-3 draft	
 3586	139	conversation	b52fcce064c300d7e0751f84052c9a0e798cc3d35d57025127e7652ee0252ea3	抱歉，這是你的錢。	draft		p10b-3 draft	
@@ -770,6 +798,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3587	39	conversation	8c8edf55343160f11294ac099193634d9650c83a836d1b968f64f03535b35df8	您的恩典真教人受寵若驚。告辭了。	draft		p10b-3 draft	
 3587	40	conversation	579cbb1e8ad07368cf1cd2df052b138b9026cfb0575ca9bfe60e0f232c01b5a7	可不是嘛，我想你當然想看。想看我寶藏的人可多了……摸摸它、撫弄它，說不定還想偷走它！你就是想這樣，對吧？趁我傻到請你進來，把我洗劫一空！\n 衛兵！衛兵！把這個小偷抓起來！	draft		p10b-3 draft	
 3587	41	conversation	262021adc3baf7b110f5f83290d422cef70a48b5bd1e9a37db25e3cb0a61be27	我無意惹您不快。叫您的衛兵退下吧。我這就走。	draft		p10b-3 draft	
+3587	42	conversation	b74eb30bf62b32c44254c8e4e0ff59f2955e6f05306f09dd7e0a2cca894423c7	你們休想活捉@GS8！	draft		p11-1 draft	dynamic-template
 3587	43	conversation	fba695bb2c62a833ac0e70a3b345fcfd5143b63741afc79e5891f513ccb39719	那麼，你來訪的理由是什麼？	draft		p10b-3 draft	
 3587	44	conversation	86bd5e9c8f54700c8853b533dc220d131f353fc2a89d32de5930c9ba3e696893	我帶了這份禮物給您。	draft		p10b-3 draft	
 3587	45	conversation	fba690bbfff90d5bab29225b2d026eef5fceae2ae2ec34cf8bf521a8d7426114	我在尋找冒險。	draft		p10b-3 draft	
@@ -797,9 +826,11 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3587	67	conversation	44b41f29217f7801ff9d2b52e265f581ea5ad1209b6e5a3997492a49bcc393f6	\\m我就把它放在這裡給你。	draft		p10b-3 draft	control-code
 3587	68	conversation	d6bad9f6a7cea8d3297bc44a1275cac1144a39aff0bae143412f4e10a402283e	不客氣。也請您收下這份回禮。	draft		p10b-3 draft	
 3587	69	conversation	ae075cbbe13169de8699d5e89f5ef96fa528dfdcc580e090fb3a0776d78de9a1	謝謝您。再會。	draft		p10b-3 draft	
+3587	70	conversation	518d15ef05c38816cbb14542563647ac8f3038f835875d2098e4eb8b1f9d9fdf	你好，勇敢的@GS8。你殺掉那隻在我們礦坑作亂的兇猛怪物了嗎？	draft		p11-1 draft	dynamic-template
 3587	71	conversation	38e4b39e87d52e80da813a69d8a63fcc49ac0bc733681d911ac9d97aabb5209e	是的，事情已經辦好了。	draft		p10b-3 draft	
 3587	72	conversation	cf48660f560830f1dd0b9bffd625fae39d4f74d5e11efd94ec22feb449d3411b	不，它還是躲過了我。	draft		p10b-3 draft	
 3587	73	conversation	f8c334aa1d7cdfbf7995129aaf0a5be7c6f6a6631da79b979c4f7a42f349dfcd	我一直在忙別的任務。	draft		p10b-3 draft	
+3587	74	conversation	018d102a412c28192148a59ef171fe21f987f252c6d6b210c972fdb4215e0a88	啊，@GS8！真高興再見到你。你的名字將載入我們氏族的史冊！	draft		p11-1 draft	dynamic-template
 3587	75	conversation	b1676d833104d8340ab96728bdcb48db94ca6f2a9bb02c5781cfc4d601ce6684	這是理所當然的。	draft		p10b-3 draft	
 3587	76	conversation	1d2dcfa681a14ae5c8653103a6d401d770eeead239a3f86eb25316015992babe	我擔當不起這樣的稱讚。	draft		p10b-3 draft	
 3587	77	conversation	f75a5780ce0d494107ea07c798b5d9ceceeab612188dafacad8b3495619dcd30	謝謝您。這是給您的禮物。	draft		p10b-3 draft	
@@ -810,6 +841,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3587	82	conversation	3a389f4fefdb8f2eb7bf754017626875b9e660d1f9cba1f1eb67dce291069943	您也許說得對。	draft		p10b-3 draft	
 3587	83	conversation	a230e5e09e17c4de90ce470715603e780089684595c75204cfa37e559c7c1ebf	我會盡全力打倒那頭怪物。	draft		p10b-3 draft	
 3587	84	conversation	d150b215b4e4fd48fd8053607a8472e1c8881b7346e822edef56ca25809d5f72	喔，又是你。你來有什麼理由嗎？	draft		p10b-3 draft	
+3587	85	conversation	8cb6e8da48f985a3e8006f7812e8e5b00fceb6ec0ef77c0fc2694943eb46fa35	你好，勇敢的@GS8。什麼風又把你吹回我們的大廳？	draft		p11-1 draft	dynamic-template
 3587	86	conversation	a91d5393d024896852b975d3ef03cfd263d7ce63f315bc218ab604693abfa3c6	我有份禮物要獻給大人您。希望您會喜歡。	draft		p10b-3 draft	
 3587	87	conversation	0786dfeaa3580e2548b5ac7efbc207fe38c5c524f8570eae728e783eb2224baf	我還有一份禮物要獻給大人您。	draft		p10b-3 draft	
 3587	88	conversation	1bd730216c98a4b11fceeedbe36d1c15b356113db2c9f23fd4e7022f47049dc1	我在尋找冒險。	draft		p10b-3 draft	
@@ -822,8 +854,8 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3587	95	conversation	a8050c51fb1b757dd194964fa9473151509d4af92491343023a32ccf4bc57a3a	不客氣。再會。	draft		p10b-3 draft	
 3587	96	conversation	c685b68c0d68ed6e801ea7f5310a3241cf2985b22abcfa295bbf7353a480a750	很高興您喜歡。	draft		p10b-3 draft	
 3587	97	conversation	f3259074fa43d566424f6377e51db45cdf57059669bebfd33def3e9520a88b8c	天哪！我從沒見過這麼大塊的金子！你一定配得上這把斧頭，這是從我祖先那時代代相傳的光榮兵器。好好用它，比它好的兵器可沒幾把。	draft		p10b-3 draft	
-3588	1	conversation	3379feb6ae9fed3b989470c591c5aa7ec00269580b84f1737c9e63202645e4b2		untranslated		grammar-sensitive: 稱呼片段（guy），代入 @GS46（3588:42、74、126），P11 處理	grammar-sensitive
-3588	2	conversation	431ba1c6936744f659289a8ff5292f004a51ba6a96dcecc65ef8f0783018dd5f		untranslated		grammar-sensitive: 稱呼片段（girl），代入 @GS46（3588:42、74、126），P11 處理	grammar-sensitive
+3588	1	conversation	3379feb6ae9fed3b989470c591c5aa7ec00269580b84f1737c9e63202645e4b2	小子	draft		grammar-sensitive: 稱呼片段（guy），代入 @GS46（3588:42、74、126），P11 處理; p11-1 draft	grammar-sensitive
+3588	2	conversation	431ba1c6936744f659289a8ff5292f004a51ba6a96dcecc65ef8f0783018dd5f	丫頭	draft		grammar-sensitive: 稱呼片段（girl），代入 @GS46（3588:42、74、126），P11 處理; p11-1 draft	grammar-sensitive
 3588	3	conversation	272c7b7d9dc77afd5ba3de258763d763e7ac160d901181f698206dea5629aded	你為什麼在這？	draft		p10b-11 draft	
 3588	4	conversation	6abdfef52b14c834a873729a1eb0359fbb0bf9a0e0ce50eac5286e0fea3d1c29	你都沒說你為什麼在這。	draft		p10b-11 draft	
 3588	5	conversation	1efece15f811c2f4569eadb6760048ff41e07fb96a49b97554ce946698e5dce2	我在探索深淵的深處。	draft		p10b-11 draft	
@@ -863,6 +895,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3588	39	conversation	f21b58ac27c64cb5dff938b0702b8f985e8c47df817fa81b76b0ebb87f1399f5	我不相信你。你不安好心，想藏什麼東西。我不跟你說話了。	draft		p10b-11 draft	
 3588	40	conversation	6e0a132130c16c0efe9eba74146650650945a74b92e4abeca4839ba55345d851	你相信那種話？你是又醜又笨嗎？	draft		p10b-11 draft	
 3588	41	conversation	521064a3996843fe3221d3c19b74faac95d310676b4131fbd24d25a78c8a7ec4	滾開！	draft		p10b-11 draft	
+3588	42	conversation	6c7ec7c646ce61ce9cdc38db7e8544212975e546b1df21fd7a223b3f0ddf30f9	不想談被關的事，嗯？好吧，我也不想談被關的事。可是你看起來是個聰明的@GS46。也許你幫我，嗯？	draft		p11-1 draft	dynamic-template
 3588	43	conversation	f7e48a90d5d76cfc49d378535781243d1f222928f2b3636c798b3278130cc41b	我能怎麼幫你？	draft		p10b-11 draft	
 3588	44	conversation	bc92413a1f04d42967f19f2bdf82e6fb7c26aac8a794a62a0e555c5f7ed8333f	不了，謝謝，我得走了。	draft		p10b-11 draft	
 3588	45	conversation	69a94fac7666961b9c126ca94f3225c31018ab0e82618ee7260c7d5c197847d0	好吧。也許你之後再幫。	draft		p10b-11 draft	
@@ -894,6 +927,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3588	71	conversation	0202da1055fdd2cc2516e301ff00097c7c14f1ec36f746e6b81733743a43c33a	對，我也覺得你笨！再見！	draft		p10b-11 draft	
 3588	72	conversation	35531e7b36ea520c2f69b598b1a0798fc66d42ff35112fcbf7a9a1e67726e2bd	抱歉，我得走了。	draft		p10b-11 draft	
 3588	73	conversation	2c2a35d03bae41d9bbc5a728ab04c234617036b8e232a3ba9cfea1f8ccc211f7	我就不覺得你是預言者。	draft		p10b-11 draft	
+3588	74	conversation	f806978902fad9aa95ddb82aeaa73c562f69d9cc77b7e16fbfc88bf286b8a168	我是惡魔，哈？你這個強悍的大@GS46，好到不屑跟我這種惡魔說話？	draft		p11-1 draft	dynamic-template
 3588	75	conversation	3a00edf5eb9fb4771ac3272c484e5553b89e6cb5f4209f16ba9c3a6ee5f2f30b	怎樣，你以為你是什麼大人物，可以這樣跟我說話？我不跟你這種人說話。	draft		p10b-11 draft	
 3588	76	conversation	0ba1bf19f56e4e84f008cbcb5d7914bae9947682c9db6dca7ee8f43e2893a3be	我聽到一些傳聞，也許我知道洞穴巨人替誰做事。我為什麼要告訴你？	draft		p10b-11 draft	
 3588	77	conversation	fbd3685848cec4432fba4cc0f70f940433e586e9160164d5dc606add6745f305	也許我知道洞穴巨人去哪了。我為什麼要告訴你？	draft		p10b-11 draft	
@@ -902,9 +936,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3588	80	conversation	596972fe2da6b0e59bb3bb8d630285e1caceb1e0aed8bc3ea4d1e1540e27c569	你到底想要什麼？	draft		p10b-11 draft	
 3588	81	conversation	a4d36f4beeb314358078924d7fda7bb2141f77e7813d32b93330655af6408781	我是食屍鬼的首領。我有個問題，也許你能解決。\n 我的一個族人得了狂笑病，是吃了壞腦袋得的。我覺得是有人故意給他壞腦袋。\n 我要怎麼找出是誰？生病的那個不能說話，只會笑。	draft		p10b-11 draft	
 3588	82	conversation	c91b9b5f0ed5373fa38623820363b24a0fa2591ed1b84b76cdf951b984e8751a	好，問題再說一次。這次仔細聽！\n 我的一個族人得了狂笑病，是吃了壞腦袋得的。我覺得是有人故意給他壞腦袋。\n 我要怎麼找出是誰？生病的那個不能說話，只會笑。	draft		p10b-11 draft	
+3588	83	conversation	a4498a36e20e4f89f13412102ace16766e65773283e94e7fc6bb045b5a96bd19	這裡有個抓住那個無賴的計策……	draft		p11-1 draft	
+3588	84	conversation	62cda9704ee1efd8adc7a9c00e9dec6c6c63c6cadf26ccc23861bbd96be28eb7	我想我有辦法讓壞人招供……	draft		p11-1 draft	
 3588	85	conversation	e50ac3de5b97e6ff540cd2c4b3d2e89f6664083e0c5119d107144625dad97f69	你就說，有人毒死這個食屍鬼你很高興，因為他想對你毛手毛腳。等犯人來討賞時，就抓住他！	draft		p10b-11 draft	
 3588	86	conversation	fd64e05cc2b2f1492c2c2a9209dc0cd223e8f90f3d441ca2a3bde06f53974966	等一下……你能再說一次你的問題嗎？	draft		p10b-11 draft	
 3588	87	conversation	7ab9b70af24b57f6327981482b453d88dac45996757b18a4d24c58dda44e09ea	你真狡猾。我喜歡！	draft		p10b-11 draft	
+3588	88	conversation	bf50980fc0417b81b2eb9f03221e6cef655d8d72ef1abddb7e5ec42eb8083e43	謝謝你。那麼，說到那個洞穴巨人……	draft		p11-1 draft	
 3588	89	conversation	8b48f1bf212dcc7f3f87194c187d7102a9013bef912d426baa10c03e821c8e26	謝謝你。那麼，那個洞穴巨人替誰做事？	draft		p10b-11 draft	
 3588	90	conversation	79f58f28e7c859def213ffd734acdd3e25485f9e79b454e0b9d36eaaaded36bb	好了，我得走了。	draft		p10b-11 draft	
 3588	91	conversation	9a922231a9e274b93ee3011cb80d17290654c630e0ef245413baef8fa8729555	我會試試你的計策。謝了！	draft		p10b-11 draft	
@@ -942,6 +979,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3588	123	conversation	1b728d86be15a2940e7d6322e2d25613a88a10dc5c87fef48895678763576365	我不是故意冒犯你。	draft		p10b-11 draft	
 3588	124	conversation	34ce03e8e61e8c025d8e20cc2e7156a06699de2d5e1a1eb167906bf76173ec3b	卑鄙的傢伙！	draft		p10b-11 draft	
 3588	125	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	draft		p10b-11 draft	
+3588	126	conversation	6768a09de2a2b83c636cfcbbe8b20850bac2e9a09d030eca389f2f4c74f1fae7	嗯。你一下是壞@GS46，一下又是好@GS46。好吧，這次我放過你。別再有下次。	draft		p11-1 draft	dynamic-template
 3588	127	conversation	c84d54a381641e6b02d1bdf7dd0d9d3af10901e8d89e69fbd9f4124a25145240	嘿，你不能話說到一半就走！	draft		p10b-11 draft	
 3588	128	conversation	52b1069efeb01373bfb6856160d8527d3909397110146baaaaae3946693a7687	喔，抱歉。請繼續說。	draft		p10b-11 draft	
 3588	129	conversation	041f403d7e5b7e63b9a4b07e8e7c9c6573df9ce9eda15221e9c0cda0cada2586	我當然可以。	draft		p10b-11 draft	
@@ -954,12 +992,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3588	136	conversation	c7e08ab98aab5eaa7fb3e32b94e0472fda7ef374b23288ddc303605f1817c5d2	好啊！	draft		p10b-11 draft	
 3589	1	conversation	70eb1121be618420868a57c94b7521870294e631b6ff8e03985ff132a3743e78	又是你。	draft		p10b-12 draft	
 3589	2	conversation	3392fe1dc7aec3087499553b73208d896b4c631800af108e549b05c03fb7e156	我很高興見到你。	draft		p10b-12 draft	
+3589	4	conversation	7e088f9d487b6fa2f0f22c36e5fea7c9fe482f4607830a6ff2ac0b4bede38712	我能幫你什麼@SS2？	draft		p11-1 draft	dynamic-template
+3589	5	conversation	6c5ae135feb2ac20d01e8a6785404ace615eb31e7165cd665f8abe82dba652df	還有什麼	draft		p11-1 draft	
 3589	6	conversation	8f4d8719aead606faee6bf4c39568f1c509f1fe118bb91d80b2ebeec89d97a62	你能跟我說說食屍鬼嗎？	draft		p10b-12 draft	
 3589	7	conversation	108d16315da8131a3ddc29b87cf4920d2961eb0723d4ffa4c454c96671e0751a	你能跟我說說那場崩潰嗎？	draft		p10b-12 draft	
 3589	8	conversation	df28efa3d63048918786e5189fc1b212c82924ae59811c3b13371e0f2d38a5b6	你能再告訴我一次那首歌嗎？	draft		p10b-12 draft	
 3589	9	conversation	607913db16d794714149bcc385dd40e9ba624047ac58b936e0f9aa772b0ae5f7	曲子的音是 3 5 4 2 3 7 8 7 5。	draft		p10b-12 draft	
 3589	10	conversation	59682bf25987bcf816658131912ed30278c6090e38b6adf554139927ac45cee6	抱歉，我得走了。	draft		p10b-12 draft	
 3589	11	conversation	7c2806b23b7acae976fafb19ad90a19f3ef9c79f1335a7b91bf0c78c5811f344	你誰？我好久沒在這裡看到活人了。	draft		p10b-12 draft; authority-ok:human（live human 譯「活人」）	
+3589	12	conversation	77caf3588b1935e76f88ef4ee957ab1867692b136c50ae70a7f642d18106af5c	我是@GS8。你是誰？	draft		p11-1 draft	dynamic-template
 3589	13	conversation	7a03601f8f6eae999e20ed96f8db6990e526d69bb684595f85f9dda69690a67e	你上次在這裡看到活人是什麼時候？	draft		p10b-12 draft; authority-ok:human（live human 譯「活人」）	
 3589	14	conversation	7762e9abeffa68f18f439d3efc963fd1f82fb56500ccde7be9b0b787ba45dcd0	不關你的事！	draft		p10b-12 draft	
 3589	15	conversation	26695629df73c1d2321666597a8ae91ecff911e95975a1d6378b46840be793b9	我噬眼者。你在這裡幹嘛？	draft		p10b-12 draft	
@@ -998,6 +1039,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3589	48	conversation	63b81754025025857807abcf0ff4da84f9742df2c77f3ef9a19f6ec94280111f	崩潰以前你在這裡做什麼工作？	draft		p10b-12 draft	
 3589	49	conversation	b5bc56f0ff99290f420da37c2b2fb154993dac8569ad728d0bbd64e71fe55545	那我就去問她。再會。	draft		p10b-12 draft	
 3589	51	conversation	6528c001bec78c31687461a07765e9e00704e5c628b6aa956dea3b4ab97ea70b	嘿，你還好意思說。你的名字跟我一樣。	draft		p10b-12 draft	
+3589	52	conversation	203080365dd55a3ca120ad4cc50221e7c9cd1510268fa667d2ed0d748804fe25	沒@GS8奇怪。	draft		p11-1 draft	dynamic-template
 3589	53	conversation	320aa8d513286cc9bdd42f83c35418fbee97141b0cb5c7472175c6d91918a2d2	名字從最愛的食物來。這是傳統。我喜歡眼睛。又小又好吃，好帶著走，好吃。	draft		p10b-12 draft	
 3589	54	conversation	426e71a7366b375a5effc84e685d66d49abb77d489fdc62b601fa12b24887e0b	呃……原來如此。你剛才說到人類的事？	draft		p10b-12 draft	
 3589	55	conversation	80e1af916f39d52f739733d84e2ecf875f37c21992c1c9942f4554bddc3cfe70	聽起來很好吃。	draft		p10b-12 draft	
@@ -1012,6 +1054,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3589	64	conversation	20e64454343e1e7cfba10d22071be12bcc2173db734f4c185ff7d70adc1d3caa	那我也不想跟你說話。	draft		p10b-12 draft	
 3589	65	conversation	a0d7ce8c360ce42ca16394929f14c0fcb116bae1a05f6f9c23ae7815f6ae7de7	好啊！	draft		p10b-12 draft	
 3590	1	conversation	378124483152b92ea303eb307dee224b3490f6831ecb15e3c34b802db0b084c8	你誰？	draft		p10b-12 draft	
+3590	2	conversation	77caf3588b1935e76f88ef4ee957ab1867692b136c50ae70a7f642d18106af5c	我是@GS8。你是誰？	draft		p11-1 draft	dynamic-template
 3590	3	conversation	7762e9abeffa68f18f439d3efc963fd1f82fb56500ccde7be9b0b787ba45dcd0	不關你的事！	draft		p10b-12 draft	
 3590	4	conversation	d6505e44781c3ebe414d0af5db38621525eaa2e80d3e5c31d468bcc45acc42be	哼。我吸髓者，裁縫。	draft		p10b-12 draft	
 3590	5	conversation	a5160fa7872828a3b7dcf9b8ad69664964021e459e6b27be05b0a82a834c58f8	裁縫？你是食屍鬼，不是嗎？	draft		p10b-12 draft	
@@ -1056,13 +1099,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3590	44	conversation	ee1f092ada251c8703c8c3e5ac2aa397dce62bf62991b6d4aaa00cf8e04bc011	太好了。到時候我會回來。	draft		p10b-12 draft	
 3590	45	conversation	103d0d87c203a12f483a39453dd9fd254c451143482edbf555dda74b97983378	你能做快一點嗎？	draft		p10b-12 draft	
 3590	46	conversation	6d18e4d0ae4ecb1823c484804c7110804c2e44936a1283e04487bb8d44f43e0e	不行。我要特別做。半小時。	draft		p10b-12 draft	
-3590	47	conversation	28cdd20eaf134a05f18369414cb2df5e36c6a4e4f551b8c9cff8548029c41d6c		untranslated		grammar-sensitive: 組句片段（minute），代入 3590:49 的模板，P11 處理	grammar-sensitive
-3590	48	conversation	90e63d85fa1ab2c8ed65222f3ebd794b1e524b4b7cf84bec451542d0451b2985		untranslated		grammar-sensitive: 組句片段（minutes），代入 3590:49 的模板，P11 處理	grammar-sensitive
+3590	47	conversation	28cdd20eaf134a05f18369414cb2df5e36c6a4e4f551b8c9cff8548029c41d6c	分鐘	draft		grammar-sensitive: 組句片段（minute），代入 3590:49 的模板，P11 處理; p11-1 draft	grammar-sensitive
+3590	48	conversation	90e63d85fa1ab2c8ed65222f3ebd794b1e524b4b7cf84bec451542d0451b2985	分鐘	draft		grammar-sensitive: 組句片段（minutes），代入 3590:49 的模板，P11 處理; p11-1 draft	grammar-sensitive
+3590	49	conversation	6e9c19ead627aecb9349d44326a71f4edca6b5ad20d3b80681e98b0fd3f58aff	我說了要半小時。@SI1C2 @SS6後再來。	draft		p11-1 draft	dynamic-template
 3590	50	conversation	c4d671ab7be1a2646d05158fac6a9498ba2f0fd46f23a549cb9c2c578ec2d1f9	好，我做好靴子了。你有食物付嗎？	draft		p10b-12 draft	
 3590	51	conversation	b146d536118e85a675e20a493b67b2033d81fe75e82377ad2fbc0d0060e25ada	沒食物，沒靴子。再見。	draft		p10b-12 draft	
 3590	52	conversation	64102117c7aada1d54930c4da62d54b4f77d89980d605730ddd13b76bb5f4943	好，這是你的靴子。再見。	draft		p10b-12 draft	
 3590	53	conversation	211697133d848c9be982cf7e9f867a298df6ac12a1a6238433ca1be48926df05	你手拿滿了，我放地上。	draft		p10b-12 draft	
 3590	54	conversation	8b25804e448d58e73b93666b40aba310a97a7bf1fc19dad4cdf6b1f27cc14841	好啊！我也不跟你說話！	draft		p10b-12 draft	
+3590	55	conversation	f25aee8d775f35212e4fbc6f919f3d337aa86590cfc1b84008d4be61ade98602	等等！抱歉。我是@GS8。	draft		p11-1 draft	dynamic-template
 3590	56	conversation	8e6dac70befa78f8091c7827b8c9f5eb504770d9950d4f33ec9dc6d31065c64b	那就再見了！	draft		p10b-12 draft	
 3590	57	conversation	9584862baafe200f6435e69741ca26aa14e65e87181fe0e58a6be8e5065caa12	我有些小東西，看起來是你的尺寸。拿去！	draft		p10b-12 draft	
 3590	58	conversation	0c4849d92c6b528497306717ce7a8fa45d3f5917f3df4795b1e334bc7d45bbd6	嘿，我已經給你靴子了。	draft		p10b-12 draft	
@@ -1088,8 +1133,11 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3590	78	conversation	222171e2a97e50dced50e3038801c164479491cf49b08c1fd93d405f50353978	好吧，好吧。我給你。	draft		p10b-12 draft	
 3590	79	conversation	7119a1e555a30dff9c19482ec16fb1a3e9bb78ed87c1ac170d2723cb437ebe8d	不！我不給！	draft		p10b-12 draft	
 3591	1	conversation	a5f9b2a07dcba6f58b0b50b9550bcccbaba4f8c81a30bc043b813cf28cd4e938	你是誰？來這裡做什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	2	conversation	c65f3562533b08d26619dae2c58178c8cfa88e30e6098aff6df32268d3812ebb	我是@GS8。我想跟你談談。	draft		p11-1 draft	dynamic-template
 3591	3	conversation	de04d3d096ab06f2c6af01ea9168324047fdd1686bd01ce6e1f65d030068d831	我正在執行一項任務。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	4	conversation	6f9c5fe1b7df6d40c71569575863c4a22e4fd04129409f3ba89e74571d584de2	你又是誰？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	5	conversation	82f00aad8b62e979bd469cf164a4b74cf83e31ff821479cf6378804202962830	我是@GS8。也許你聽說過我？	draft		p11-1 draft	dynamic-template
+3591	6	conversation	66dbdddaa4f7ccb4229c0dc9e3e8fa1eedf97d9a1262f592ce04fd0e57ba9728	我叫@GS8。你能幫我嗎？	draft		p11-1 draft	dynamic-template
 3591	7	conversation	795569b6f83c9560710b31f22874463e5c525a469927aa079b216b657d53fa0b	從沒聽過你。你是維尼克斯的朋友嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	8	conversation	718ba640b973e4b08a9eeeb7c7675ca5228cd45b4ffb1a273038e238f79ca098	哪個維尼克斯？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	9	conversation	cc07850c5e9229139005fd230419a5d512fb253e67cf4cfd4d58100b9d016a20	對，我是。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -1136,6 +1184,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3591	50	conversation	2f3e5ad1d3bcd5f5c72623ece76029824d5e5fd464fff4183fa40f55655ed5bf	我的時間可不能讓你這樣浪費！你就沒別人可以去煩了嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	51	conversation	b7db6d32486c0bf8c7c4179580135235ce76e8ab5f7045abbcb47947bedcae58	又是你！趁我叫守衛之前快滾！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	52	conversation	2f838d2c0da50cfa5183bc3d9e43ad3f3050bd0299a752e8e9e1f3c0b69e9a5e	你又來煩我？這次又是什麼事？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	53	conversation	c3f7aea65518dbedc8645eeb009483225f05335e6727abcff6268bad58fe344d	是@GS8！我能為你做什麼，我的朋友？	draft		p11-1 draft	dynamic-template
 3591	54	conversation	f4e47ded0e80699e0b0f74c152122b274b121052ee15bb5d6559f779b5887b69	抱歉，我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	55	conversation	33ff368d250d992f2f9bfb2b531bcc590889e60ac0fdc36b0089f4961e51da94	我想問你一個問題。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	56	conversation	a264d6aea84ef7dabd78d8a120e0f97a3cb5340f20e387c4cdb8b1b30bc2ccb4	我需要你的幫助。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -1220,10 +1269,11 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3594	6	conversation	87117495bd548ef085e65e09f92fcfae4ac04fb307eb6333bc20960fbea7a8b0	那麼，我先告辭了。	draft		p10b-2 draft	
 3594	7	conversation	9e0a481c7bc1ae85fccdf3d516ca08f45c7bd2c7fce6a4e57dfadffe9c7a2d3b	那就沒事啦。嘿，我得去顧我的燉菜了。想吃的話再回來。	draft		p10b-2 draft	
 3594	8	conversation	d019612237d92bd23c10fba9190578c11a9be820ba0e30940759f8a4c329a86f	或許你能問問你們老大，他願不願意見我？	draft		p10b-2 draft	
-3594	9	conversation	372f7e2fd2d01ce2a1d71dc072acbba4c6fd25a1087cd7f153f4ec0ce37e1ede		untranslated		grammar-sensitive: 稱呼片段（he），代入 3594:13 的 @SS1 模板，P11 處理	grammar-sensitive
-3594	10	conversation	2cda85e504e155f30a40f1f1cc4e83f3f8ec178033f6b6170cc9381f5e4f9d3d		untranslated		grammar-sensitive: 稱呼片段（she），代入 3594:13 的 @SS1 模板，P11 處理	grammar-sensitive
-3594	11	conversation	442c621dafad2a69126dfd65d498ed9579f821696023e2c70ce9fc944d6ae47f		untranslated		grammar-sensitive: 稱呼片段（himself），代入 3594:13 的 @SS2 模板，P11 處理	grammar-sensitive
-3594	12	conversation	ced636336aacc18b987f37718c1c09712b54863ee2abe7042e382bf3abe4a9df		untranslated		grammar-sensitive: 稱呼片段（herself），代入 3594:13 的 @SS2 模板，P11 處理	grammar-sensitive
+3594	9	conversation	372f7e2fd2d01ce2a1d71dc072acbba4c6fd25a1087cd7f153f4ec0ce37e1ede	他	draft		grammar-sensitive: 稱呼片段（he），代入 3594:13 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3594	10	conversation	2cda85e504e155f30a40f1f1cc4e83f3f8ec178033f6b6170cc9381f5e4f9d3d	她	draft		grammar-sensitive: 稱呼片段（she），代入 3594:13 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3594	11	conversation	442c621dafad2a69126dfd65d498ed9579f821696023e2c70ce9fc944d6ae47f	他自己	draft		grammar-sensitive: 稱呼片段（himself），代入 3594:13 的 @SS2 模板，P11 處理; p11-1 draft	grammar-sensitive
+3594	12	conversation	ced636336aacc18b987f37718c1c09712b54863ee2abe7042e382bf3abe4a9df	她自己	draft		grammar-sensitive: 稱呼片段（herself），代入 3594:13 的 @SS2 模板，P11 處理; p11-1 draft	grammar-sensitive
+3594	13	conversation	c575d32d683652c0a55c0e36cd14dc7a4b948522f9d1f8891d828a3b6a118775	喔，聰明的傢伙，嗯？那些賢者之一。覺得@SS1比我聰明，嗯？我看是聰明過頭，連@SS2都顧不好。算了——我在忙著弄晚餐。這燉菜很費工的，你知道。	draft		p11-1 draft; authority-ok:Seer（拉努戈的俗話「賢者」，不是預言者）	dynamic-template
 3594	14	conversation	aa60073b7c2622c382e748c02b85d4887d4efed6774d371be2eb3e09c961be02	是啦，我是可以幫你問。可是老大不喜歡被那種，呃，雜事煩。他心裡想的都是，呃，比較高尚的事。	draft		p10b-2 draft	
 3594	15	conversation	c136700dab4ba2a76dca49b2deab09d5cc4a936475b664d024b7ff5c20b33ccd	你的忠告我記下了。	draft		p10b-2 draft	
 3594	16	conversation	7065915b74f93e571b59d87abe9559586875cb02020e04dc9723fea4159d1ad4	或許我可以送你一點小禮物，表示我的謝意。	draft		p10b-2 draft	
@@ -1291,12 +1341,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3595	25	conversation	bf08f2863db3c7ddd4b2948fb03a1185a83cda361186006cd347b37785046f5a	什麼事，我的朋友？	draft		p10b-22 draft	
 3595	26	conversation	403a0b37d54a0c2c2846cdea6ea2616404b7d7663524310a4cb4d2e33bf4e30e	只要跟著我，你就能戰死沙場。	draft		p10b-22 draft	
 3595	27	conversation	b708509690638d401db5e149969b56942f4113cd4a45fa8b909147f2c6721eb6	殺你不是我該做的事，老人家。	draft		p10b-22 draft	
+3595	28	conversation	82362c536e9fabb0ec95bff26dc195b58522a8ad84dc153becfc360eb931f669	你真是個傻瓜，浪費自己的生命，還來煩我兩次！	draft		p11-1 draft	
 3595	29	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-22 draft	
 3595	30	conversation	d1a937e3216146141734c70b34f843714b53fac28e1de12e5582d8c8347a65cf	好。我會殺了你。	draft		p10b-22 draft	
 3596	1	conversation	1d10506c146d6480d937fe77b0337bc9b4ff97668681910ef3f406fa8a973fb7	\n你好！我是多納・鐵拳，安卡十字騎士團的團長。\\m	draft		p10b-7 draft	control-code
 3596	2	conversation	eb5669fb7c2ea74d3a996520918ff3d2790a402ba0ee9e11f65812e1001ff811	你是誰？	draft		p10b-7 draft	
+3596	3	conversation	4a472d6831b37f224695b9a20be4013ce0f646822b4f6a2ecddd1b5efcca76d9	我是@GS8。	draft		p11-1 draft	dynamic-template
 3596	4	conversation	7dc3df309b9a3e13c429d98440a5791b5278b52dfef960d0d90efbf9e56db0b0	我是追尋知識的普通旅人。	draft		p10b-7 draft	
 3596	5	conversation	bf794120026611630f3037291be640ab5a4fe8878fdde21d8e255cd3f738e5fc	我希望加入你們的騎士團。	draft		p10b-7 draft	
+3596	6	conversation	aa692142c2157475e1df47371ea5962088070b0e2395267e41163925c63cb80e	祝你有美好的一天，@GS8。	draft		p11-1 draft	dynamic-template
 3596	7	conversation	dd13d45a5383f8680f69ed6922972456b80779a35da067944646ce5085654ba8	你為何來此？	draft		p10b-7 draft	
 3596	8	conversation	5cbf83f8b03e88663e7731ad568486873c7e87de40b843552b9ab6b428739380	我想加入你們的騎士團。	draft		p10b-7 draft	
 3596	9	conversation	9b68de50384e4016ee5aba60d262a027cd85b8256d9280d70110dbedeffced70	我在尋找凱布勒斯的聖物。	draft		p10b-7 draft	
@@ -1305,8 +1358,8 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3596	12	conversation	be6e45ea41515f2fd437108f4fbfaab898732c3028e99a10d3c50a0e0b78ed93	雖然我是騎士團的團長，挑選入團人選卻不是我的職責。你若想成為團員，必須由現任團員邀請。\n 去吧，去跟他們談談，時機成熟時再回來找我。	draft		p10b-7 draft	
 3596	13	conversation	517aebe6451533bb4e8f851ffc9b6bf8c5a47acb5ed8586772996abe61461110	我會的，謝謝你。	draft		p10b-7 draft	
 3596	14	conversation	420c703b11610f7b7a8e910dc406505b7bda360bb628955d4625a5a8d7c3005c	我明白了。	draft		p10b-7 draft	
-3596	15	conversation	98aa6675482552881925fe70d82559692d811b3bcd33f53b9a702c24d5322696		untranslated		grammar-sensitive: 組句片段（son），代入同對話的模板句，P11 處理	grammar-sensitive
-3596	16	conversation	4ed28f82ca96c3342a5c591668270f78c26dae22fd953772a6c14e52f46e1b22		untranslated		grammar-sensitive: 組句片段（daughter），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	15	conversation	98aa6675482552881925fe70d82559692d811b3bcd33f53b9a702c24d5322696	兒子	draft		grammar-sensitive: 組句片段（son），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	16	conversation	4ed28f82ca96c3342a5c591668270f78c26dae22fd953772a6c14e52f46e1b22	女兒	draft		grammar-sensitive: 組句片段（daughter），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
 3596	17	conversation	af9d58c55cb8f22e586e7e5568dde6db0ce23bb5e3959e742e9b0791339b82ae	你想再次嘗試加入安卡十字騎士團？我們來看看你是否從過去的錯誤中學到了教訓。	draft		p10b-7 draft	
 3596	18	conversation	9d7eb3e133492ff7d939268f05fe385e09a08cc226921b83fa058cad41d3f074	你想加入安卡十字騎士團？很好，你必須盡你所能回答我的問題，由我來判斷你是否配得上入團。	draft		p10b-7 draft	
 3596	19	conversation	c4bf76bca698d01679c9c1fd9d59fd3a520c82abe6da9063b9a4172ced504c97	報上你的身分，讓我知道我在詢問的是誰。	draft		p10b-7 draft	
@@ -1314,6 +1367,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3596	21	conversation	0dbc1b09e88d33548ccd8deda60d7ff8f1f1820a87c425dd19c7e46b8d3a82e8	若你在謙遜這項美德上也同樣精通，或許會更適合我們的騎士團。	draft		p10b-7 draft	
 3596	22	conversation	adeb948a4129b79d0c8ef1f7e047396a5d857280769d6fe4e987f09098712f46	一名不列顛尼亞的貴族，配得上騎士身分。	draft		p10b-7 draft	
 3596	23	conversation	7b3f63bdb97bca76ab7cac10728b7e08822cace597878679f6e53b1645d9d02a	令人欽佩。不過，我不確定我們目前是否有空缺……\n\\p 不，我們沒有。或許改天吧。	draft		p10b-7 draft	control-code
+3596	24	conversation	9d5db9f133f2b541eca3b5cfde1ae3afc92e1c96290fd573909cc0f5e439a7f3	我母親那可憐的@SS1。	draft		p11-1 draft	dynamic-template
 3596	25	conversation	e822b185d62c1c4cf31bed0b2730602ff4d9673801133f47f800275e266f996c	說得樸實！你願意為了加入我們的騎士團而犧牲性命嗎？	draft		p10b-7 draft	
 3596	26	conversation	cc07850c5e9229139005fd230419a5d512fb253e67cf4cfd4d58100b9d016a20	是的，我願意。	draft		p10b-7 draft	
 3596	27	conversation	4dcb71f5bfeb57f690a9df36a6b7872e5d60674acecb042d4719bc602bf9d210	不！	draft		p10b-7 draft	
@@ -1329,20 +1383,23 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3596	37	conversation	55f6aa6afbe9ba9d9defaf6b1f88f96e2acf14b443d747e68a11eb4915a60804	啊，善良的凱布勒斯爵士！我們騎士團有許多人在尋找他的聖物，據說無論是追尋它們還是找到它們，都能讓人增長美德。不過，我們對這些東西的了解，不能告訴尚未入團的人。	draft		p10b-7 draft	
 3596	38	conversation	b66b621c21efd58036a2e2a595afbc90bb9671ad9dc4695311b148c12edb89b7	我可以加入你們的騎士團嗎？	draft		p10b-7 draft	
 3596	39	conversation	7b746ba4e49ca8cd511f005c3bfbc9c88afab4a5597fe4d50a145060f3483bb7	好吧。我明白。祝你有美好的一天。	draft		p10b-7 draft	
+3596	40	conversation	932d9514a96849f2be907f777790611a3d1d3cd97faa4a790c2ecb40746bf14d	你接過杯子。杯裡是清澈無味的液體。你把它舉到唇邊，然後……	draft		p11-1 draft	
 3596	41	conversation	e959a9cd4c3007e7a52d353d24921b54f764d91384ebe234bd51642ed81028f3	把它摔到地上。	draft		p10b-7 draft	
 3596	42	conversation	b59bcfc58f5d94c25898c3a9af48f81d8ead5740188f265c1c5e47eed30f6452	一口氣喝下去。	draft		p10b-7 draft	
-3596	43	conversation	30efdfb52ff67f80dab7cb89dcfe0eec8412966cfe58324993674b4616d6bd11		untranslated		grammar-sensitive: 組句片段（He），代入同對話的模板句，P11 處理	grammar-sensitive
-3596	44	conversation	d602e91d93c835ee2aa640ccffe314c61328ea2c1dbc45bec4277a9e94f91206		untranslated		grammar-sensitive: 組句片段（She），代入同對話的模板句，P11 處理	grammar-sensitive
-3596	45	conversation	73c9c98668a34c54d131ff609d0bf129068d1b5ed3efd7cdfe753f909596456c		untranslated		grammar-sensitive: 組句片段（his），代入同對話的模板句，P11 處理	grammar-sensitive
-3596	46	conversation	354cbfc814262a7a81d343f7d6ebc4adfb4266e5081a78f6a19ff16802dce8b2		untranslated		grammar-sensitive: 組句片段（her），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	43	conversation	30efdfb52ff67f80dab7cb89dcfe0eec8412966cfe58324993674b4616d6bd11	他	draft		grammar-sensitive: 組句片段（He），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	44	conversation	d602e91d93c835ee2aa640ccffe314c61328ea2c1dbc45bec4277a9e94f91206	她	draft		grammar-sensitive: 組句片段（She），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	45	conversation	73c9c98668a34c54d131ff609d0bf129068d1b5ed3efd7cdfe753f909596456c	他	draft		grammar-sensitive: 組句片段（his），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	46	conversation	354cbfc814262a7a81d343f7d6ebc4adfb4266e5081a78f6a19ff16802dce8b2	她	draft		grammar-sensitive: 組句片段（her），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	47	conversation	ddf7ab302a7d557dac02f93b705bf879c54af9ffee9b36531935b3b229c379cb	嚐起來就像清水。你等了好一會兒，什麼事也沒發生。接著，一個聲音哀聲大哭，喪禮的輓歌響起。	draft		p11-1 draft	
+3596	48	conversation	6ce6c837ba4643794ad7155bbea848458d3579241adb5f364c0e76c120ae41c5	喝下這杯的那個@SS1已經死了。取代@SS2的，是安卡十字騎士團的扈從@GS8。告訴我，你害怕嗎？	draft		p11-1 draft	dynamic-template
 3596	49	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-7 draft	
 3596	50	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不。	draft		p10b-7 draft	
 3596	51	conversation	6c8b913a8ed33ebf3770b9c8ea83886e17786295ee30d26fba706e72ef37960d	很好！懂得恐懼，是認識勇氣的第一步。你現在是本騎士團的扈從了。\\m	draft		p10b-7 draft	control-code
 3596	52	conversation	44711e40a59ce7ebb6e61deb213ff7288245a9be4cefb96d05ddeec58f4e1a95	你的任務是找回洛恩的文書，那是最早把騎士團帶進深淵的騎士之一所寫的文件。\n  這份文件寫於殖民聚落建立之初的那幾年，記載了許多當時的知識。可是它現在不見了，不過很多人懷疑它在洞穴巨人的老家。\n 去找它，等你帶著它回來，你就能成為本騎士團的騎士。	draft		p10b-7 draft	
 3596	53	conversation	5d9074a054d33372ae3e6f472aa62e9402696bf241b20970596f783796536582	謝謝你。願我能證明自己配得上這份榮譽。保重了。	draft		p10b-7 draft	
 3596	54	conversation	0ff04febba54c2331c3f24d4d1525b93c6ea31f97ac23635f0d9dd8bf77baeb3	謝謝你。你能告訴我任何有關凱布勒斯聖物的事嗎？那也是我的任務。	draft		p10b-7 draft	
-3596	55	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7		untranslated		grammar-sensitive: 組句片段（Brother），代入同對話的模板句，P11 處理	grammar-sensitive
-3596	56	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5		untranslated		grammar-sensitive: 組句片段（Sister），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	55	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7	兄弟	draft		grammar-sensitive: 組句片段（Brother），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	56	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5	姊妹	draft		grammar-sensitive: 組句片段（Sister），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
 3596	57	conversation	63102e14973cc6035ebb7ce406dec2d68eed07af2075ff25b08a1e3826b1d81d	少之又少。聖物一共八件，凱布勒斯原本打算把它們分別交給定居深淵的八個族群的首領。唉，他過世了，八件聖物也全都失落了。\n 據說它們是一本書、一瓶葡萄酒、一面盾、一把劍、一支細蠟燭、一面旗幟、一只杯子和一枚戒指。每一件都蘊含一項美德的強大力量，據說無論是追尋它們還是找到它們，都能讓人增長美德。\\m	draft		p10b-7 draft	control-code
 3596	58	conversation	b56c93bda72b62633704346af58914bc5fefd2fdb4d426fbede01297e449caeb	旗幟的事你已經知道了，因為你打敗了混沌騎士羅德里克，贏得了它。可惜，細蠟燭被偷走了。你看得出來，自從凱布勒斯死後，美德受到了多大的損害。	draft		p10b-7 draft	
 3596	59	conversation	1b2d1916d96665794810f77ff9647e7c58270a88ace26bd0efacabdf2d245b47	我只知道細蠟燭和旗幟的事。犧牲之燭最近才從我們這裡被偷走，我們不知道它現在在哪裡。至於榮譽之旆，據說它在等待一位做出足夠榮譽之舉的人。	draft		p10b-7 draft	
@@ -1355,14 +1412,17 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3596	66	conversation	97d34aef53f8f2507d5bb61e555ff83e6f176dc82993c5e39867cb15103756b2	洞穴巨人？他們是我們的宿敵。幸運的是，他們之中有很多人以自己的方式講究榮譽。當然，有些不是。我們稱那些為野蠻洞穴巨人。要提防他們。洞穴巨人都是致命的敵人，但至少文明的那些會光明正大地戰鬥。	draft		p10b-7 draft	
 3596	67	conversation	c422f224d450215c1ac590f0a6145bf0d537d46349dc67db953526f15f4d59fe	謝謝你的忠告。	draft		p10b-7 draft	
 3596	68	conversation	9950286651fae61127204cd59432aaf8bc8a3629872fc360ca331f0591081787	你們的準則很吸引我。我要如何加入你們的騎士團？	draft		p10b-7 draft	
+3596	69	conversation	5b8a94ba97b4d6cf31d39062b6ee2fe2bfc975d1506ae4f41e7135d53786497f	你好，扈從@GS8！你的任務進行得怎樣？	draft		p11-1 draft	dynamic-template
 3596	70	conversation	8b8a7cc700afaf860793bd584e04049b8bca5ac522aa01fa8be9023bf217ee2c	我成功了！這是洛恩的文書。	draft		p10b-7 draft	
 3596	71	conversation	d23f86737e5e37a6fd3a80657e277a3eea2ba9a8fa626caefad704d5fa2aaf28	我還沒完成任務。	draft		p10b-7 draft	
-3596	72	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b		untranslated		grammar-sensitive: 組句片段（Sir），代入同對話的模板句，P11 處理	grammar-sensitive
-3596	73	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5		untranslated		grammar-sensitive: 組句片段（Lady），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	72	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b	爵士	draft		grammar-sensitive: 組句片段（Sir），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	73	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5	女爵	draft		grammar-sensitive: 組句片段（Lady），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	74	conversation	aeffda0b9df39afb43c272a326b9195c9ec30ed0e9bcfaf6a0e4689d450d45f2	你好，@GS8@SS1！你的任務進行得如何？	draft		p11-1 draft	dynamic-template
 3596	75	conversation	954420250ca1fb6ceb4c6dcadc60276b0c7bb11b136fe648e209934c7a0e0341	我成功了！這是金盤。	draft		p10b-7 draft	
 3596	76	conversation	d23f86737e5e37a6fd3a80657e277a3eea2ba9a8fa626caefad704d5fa2aaf28	我還沒完成任務。	draft		p10b-7 draft	
-3596	77	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b		untranslated		grammar-sensitive: 組句片段（Sir），代入同對話的模板句，P11 處理	grammar-sensitive
-3596	78	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5		untranslated		grammar-sensitive: 組句片段（Lady），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	77	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b	爵士	draft		grammar-sensitive: 組句片段（Sir），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	78	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5	女爵	draft		grammar-sensitive: 組句片段（Lady），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3596	79	conversation	b2997d3b1dd6d9822a45fd144d32c7843bf97da06f241004812b64e1af2fb0d6	現在你是@GS8@SS1，安卡十字騎士團的騎士了。收下這頂板甲頭盔，它配得上一位騎士。真希望我們也有匹馬能給你，那才是騎士該有的。	draft		p11-1 draft	dynamic-template
 3596	80	conversation	d92086f30e8c831c7ab480c59604b22d916b1ae414854a8bdc585589ea5c7990	來，我就把它放在地上給你。	draft		p10b-7 draft	
 3596	81	conversation	fd0ef5d7ae2e624b12d3750d2d2b9b5dccee90a395369629a1a291dca939196d	還有其他失落的寶物需要找回來嗎？	draft		p10b-7 draft	
 3596	82	conversation	bc37fd84ab12b304db5575271680d94828149d0ea396b1f5798803ea78ce95e3	我還能如何為騎士團效力？	draft		p10b-7 draft	
@@ -1446,20 +1506,26 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3597	21	conversation	8e080fd7d9a4918cdc37a4a69c94baafcea640b477562e253bbe0f701c407b0d	不，恐怕沒有。	draft		p10b-13 draft	
 3597	22	conversation	ab875d11cc1e759284d1ab934b71ab88b1b0ee447317b84ed0924616caf3fb8b	也許這差事對你來說太難了。不過沒關係。	draft		p10b-13 draft	
 3597	23	conversation	f5f323173d578f4e03d54978a353d1a67031a6bf310b2db6312de5726bb953a0	嗯，你要是拿到那件東西，請盡快帶來給我。	draft		p10b-13 draft	
+3597	24	conversation	36e51f5a1940b079dc291d54ecf8c046b4c9777584a4bb53826d914250f1404d	你就是@GS8，對吧？	draft		p11-1 draft	dynamic-template
 3597	25	conversation	caa257ae9233298ea1def70b83a0e9fbaf3eceb049a833b1a5f72280653b7216	是的，那是我的名字。	draft		p10b-13 draft	
+3597	26	conversation	610d0ad2252c2f301de72dc3a6f2756ecdabc8737be7c24f4aa45b9e0c9191a8	不。我沒聽說過這位@GS8。	draft		p11-1 draft	dynamic-template
 3597	27	conversation	46131985a1692cf2c7c34216a4e08eb174b1791281f61c634b016e817d7bc5e1	你知道我是。	draft		p10b-13 draft	
 3597	28	conversation	784df1d9bee4819b0bff02c7a705f581f3ec028399238680fed76926fa8bce05	啊！你怎麼不早說？	draft		p10b-13 draft	
 3597	29	conversation	86f36a31a208cec2a9ea392c9c256ee17975bfdeec9b31814ab86410cc4e292c	我原本只打算獎賞你把書帶來給我，可是現在我聽說，你遇上並殺死了可怕的火焰多頭蛇。那隻八頭怪物長久以來一直威脅著我們這些愛好和平的人。幹得好！你應該得到更大的獎賞！	draft		p10b-13 draft	
 3597	30	conversation	5ce3d810eae6e7e6e502365dce1c66a7e8f0cc3d48d35e513a59b2c6c5a240c1	那當然。我正想知道該向誰領賞呢。	draft		p10b-13 draft	
 3597	31	conversation	d3691ee45388a7d5a4196190322e09c20f17505fdae2d5694f27771af96936f3	請見諒。我沒殺過那種野獸。	draft		p10b-13 draft	
-3597	32	conversation	5a7cf4ac138054a82f60f73e4d078b4bcb964184c9a97c19375b4d78770b99ba		untranslated		grammar-sensitive: 代名詞片段（him），代入同對話的模板句，P11 處理	grammar-sensitive
-3597	33	conversation	354cbfc814262a7a81d343f7d6ebc4adfb4266e5081a78f6a19ff16802dce8b2		untranslated		grammar-sensitive: 代名詞片段（her），代入同對話的模板句，P11 處理	grammar-sensitive
+3597	32	conversation	5a7cf4ac138054a82f60f73e4d078b4bcb964184c9a97c19375b4d78770b99ba	他	draft		grammar-sensitive: 代名詞片段（him），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3597	33	conversation	354cbfc814262a7a81d343f7d6ebc4adfb4266e5081a78f6a19ff16802dce8b2	她	draft		grammar-sensitive: 代名詞片段（her），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3597	34	conversation	bb4f784bae67230499973957e2d5cc23eeef4f2e83ebb5ab37d3694535286f75	真可惜。我聽過很多關於@SS1的好話。	draft		p11-1 draft	dynamic-template
+3597	35	conversation	8ec5885da210cc14d6a247da76f7e71680d62820197adcb431f82bcd889e73f3	喔，就是那位@GS8！啊，對，那就是我。	draft		p11-1 draft	dynamic-template
 3597	36	conversation	728add554c678beeeb7a305b986f744cdd30ba9ae04c137e578302ebb159fcaf	你聽說了什麼？	draft		p10b-13 draft	
-3597	37	conversation	372f7e2fd2d01ce2a1d71dc072acbba4c6fd25a1087cd7f153f4ec0ce37e1ede		untranslated		grammar-sensitive: 代名詞片段（he），代入同對話的模板句，P11 處理	grammar-sensitive
-3597	38	conversation	2cda85e504e155f30a40f1f1cc4e83f3f8ec178033f6b6170cc9381f5e4f9d3d		untranslated		grammar-sensitive: 代名詞片段（she），代入同對話的模板句，P11 處理	grammar-sensitive
-3597	40	conversation	5a7cf4ac138054a82f60f73e4d078b4bcb964184c9a97c19375b4d78770b99ba		untranslated		grammar-sensitive: 代名詞片段（him），代入同對話的模板句，P11 處理	grammar-sensitive
-3597	41	conversation	354cbfc814262a7a81d343f7d6ebc4adfb4266e5081a78f6a19ff16802dce8b2		untranslated		grammar-sensitive: 代名詞片段（her），代入同對話的模板句，P11 處理	grammar-sensitive
+3597	37	conversation	372f7e2fd2d01ce2a1d71dc072acbba4c6fd25a1087cd7f153f4ec0ce37e1ede	他	draft		grammar-sensitive: 代名詞片段（he），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3597	38	conversation	2cda85e504e155f30a40f1f1cc4e83f3f8ec178033f6b6170cc9381f5e4f9d3d	她	draft		grammar-sensitive: 代名詞片段（she），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3597	39	conversation	205e347bd132fed9740bd872407ed33dc9b9a43258b5db76479a65db1945cb7c	只聽說@SS1是誠實的典範。	draft		p11-1 draft	dynamic-template
+3597	40	conversation	5a7cf4ac138054a82f60f73e4d078b4bcb964184c9a97c19375b4d78770b99ba	他	draft		grammar-sensitive: 代名詞片段（him），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3597	41	conversation	354cbfc814262a7a81d343f7d6ebc4adfb4266e5081a78f6a19ff16802dce8b2	她	draft		grammar-sensitive: 代名詞片段（her），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
 3597	42	conversation	00431852eb9cf8fe4ba17fb3f8e505bc4c541cbb80af2768d56ca364b9b9e822	啊，那你說的就是我了。你把我的名字唸得太走樣，我才會誤會。	draft		p10b-13 draft	
+3597	43	conversation	026e5634eed5063b070696f2f5af3d9995ec8fc603353eb8c118544e80de2963	那麼，要是我遇到@GS8，我會替你向@SS1問好。再見。	draft		p11-1 draft	dynamic-template
 3597	44	conversation	b9923406c803e7a8664f01d3babaa0cd167a756eb799bbc3c9e720345adb4c66	啊，我就這麼想。你跟描述很符合。	draft		p10b-13 draft	
 3597	45	conversation	32c1ce42382f800bbaea72e7201ad8cf66d47cdcaa7a0fabcebbdda2cb38871a	你的獎賞是一本強大的書。你會在圖書館一扇暗門後面的房間裡找到它。	draft		p10b-13 draft	
 3597	46	conversation	b8f71c7eceb3eec4fd48f41e5da6453c7eda0a7ca889b0d45fc32494be2fe91f	謝謝你。我這就去領我的獎賞。	draft		p10b-13 draft	
@@ -1475,11 +1541,16 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3597	56	conversation	facc7513d3eed76e4e1f9f3ec1c8dec3725940ef36ed535b5d81be067d5a7925	不，我沒有。	draft		p10b-13 draft	
 3597	57	conversation	2a246c878172fe6386fb9131b410058afb8cf844842fc65c3cfb92f122048776	你說的是什麼東西？	draft		p10b-13 draft	
 3597	58	conversation	5917e53ed1a5ca510d486c92c784000ae8c522c328d522c616be8736cc93af08	我的魔法師同伴布羅努斯想把一件東西交給我。去找他吧。你要是把東西帶來給我，我也許會獎賞你。	draft		p10b-13 draft	
+3597	59	conversation	1184f80fcc7cf4ce2da24d72b2e6959f080361fc5786011e27b3f0ca696702d6	啊，又是@GS8。	draft		p11-1 draft	dynamic-template
+3597	60	conversation	d658e3214ee82c10812b3581ea26d1e6921b29e0aa855bed5aa73a9253b81f45	又見面了。你找到@GS8了嗎？	draft		p11-1 draft	dynamic-template
+3597	61	conversation	35a5865383c4b75d284554bf4a671a5cd5aaf467f01e255a010a700df2c794af	其實，我就是@GS8。	draft		p11-1 draft	dynamic-template
 3597	62	conversation	07678ca56b32e8bea585b207c9eb7250018dd7a0230d1f0806261195afa548b2	不，我還沒找到。	draft		p10b-13 draft	
+3597	63	conversation	a5a9b23d9e6da6221dd836b83aefe7ece521c07f6cde95ac1234585861ca9fbd	那麼，要是你找到@GS8，請告訴我。我在找他。	draft		p11-1 draft	dynamic-template
 3597	64	conversation	9d8c129b1a3c7329aeafc53bfd6c348105657e558ea3607aadaa3bc7ed964bae	又見面了。這次你想從我這裡得到什麼？	draft		p10b-13 draft	
 3597	65	conversation	6631ae031c4e75f0d69486d4931afc96b4219435cf785eebc83cedf32a745268	我只是想再謝謝你一次。	draft		p10b-13 draft	
 3597	66	conversation	d51bd2f92319c5c39f9aef193c2dbaa13a2a9821fe5aea9d626127d1e2fd3b4b	我只是順道來打聲招呼。	draft		p10b-13 draft	
 3597	67	conversation	ce87ab7bbd4bc2862a31415db4bb1b4567030c40e992472e4c0dd072257be905	我必須承認，我沒殺過什麼火焰多頭蛇。	draft		p10b-13 draft	
+3597	68	conversation	15776c0cfa9402310378388abd3b8b89b2373d90cbc98c411aea69bd37c3e6e3	你好，@GS8！你找到你的獎賞了嗎？	draft		p11-1 draft	dynamic-template
 3597	69	conversation	fa3e4f036e211f7af923322ff63c8afc4a5cbe199684ce5d4b2dc998379a9d41	找到了，謝謝你。	draft		p10b-13 draft	
 3597	70	conversation	c96bff8e2ebfaeff920aeb3e8c52c88c617f5fdefd8ff7a4aceb9c260a72e021	不，還沒有。	draft		p10b-13 draft	
 3597	71	conversation	3b504e51c3bb63cc19495e735471c604eb51f09977b76b3c5a7b5796904ab6ef	我必須承認，我不配得到這份獎賞。我沒殺過什麼火焰多頭蛇。	draft		p10b-13 draft	
@@ -1490,6 +1561,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3597	76	conversation	7315357dca01a87342ce2d5dfb8537a091a61068668157166c70fc4b456a431f	記住，它在圖書館一扇暗門後面。	draft		p10b-13 draft	
 3597	77	conversation	987717e0c3a0436d8b8b1a7a83b64c5d99f58d8958d9943cda24048ddc2b4bea	啊！真相大白了！嗯，至少你最後還是誠實了。我不確定你是不是真的配得上真實之書，不過也許你已經從錯誤中學到了教訓。誠實與真理超越時間，所以你會在沙漏後面、鑰匙旁邊找到它。	draft		p10b-13 draft	
 3597	78	conversation	052accc4ee94e325dab708abaeaab49f91077296b99041e7de66a725a88f7134	謝謝你，再會。	draft		p10b-13 draft	
+3597	79	conversation	15776c0cfa9402310378388abd3b8b89b2373d90cbc98c411aea69bd37c3e6e3	你好，@GS8！你找到你的獎賞了嗎？	draft		p11-1 draft	dynamic-template
 3597	80	conversation	ebe40ec25198100a7e4aa01a997b1dbe7ff2907b5dce9e2f1df460cf4d5f61ef	找到了，非常感謝你。	draft		p10b-13 draft	
 3597	81	conversation	c96bff8e2ebfaeff920aeb3e8c52c88c617f5fdefd8ff7a4aceb9c260a72e021	不，還沒有。	draft		p10b-13 draft	
 3597	82	conversation	2bac7c9769016c360b60a81c76e7be1668cb51032a5e1b8ad989788bcc0a31d6	你的指示讓人很困惑。	draft		p10b-13 draft	
@@ -1579,6 +1651,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3598	67	conversation	230647356661e525e7334ac4b919099610d5b0d5b8121729cf20e95f19eb5cfc	你在忙什麼？	draft		p10b-13 draft	
 3598	68	conversation	ceb407a12a31da3f0fafae01f5f6aadb10aab58c00c2922b5e58e2b80dbeeb71	我在找新的符石。	draft		p10b-13 draft	
 3598	69	conversation	05067fa1e5e16deef4345f36213336b15f669f60b4dac933d1d04a350b1172cc	啊，是救出我僕人穆爾戈的那個人！你比我想像的更懂得憐憫同伴。你的獎賞會配得上你的作為。	draft		p10b-13 draft	
+3598	70	conversation	9770acb8877adc773fcebf899f06a3e4dff2bc32eb5add7a2e58aa0f134d13b5	你好，@GS11。你想要什麼？我先警告你，我很忙。	draft		p11-1 draft	dynamic-template
 3598	71	conversation	6d12d66cb66df1cf26aaac1dcc588f911f85c426c40126e2613c4fba13fc19f5	我好像找不到憐憫之酒。	draft		p10b-13 draft	
 3598	72	conversation	bdcfef24f7319a73dfb50d58522840a7a21c9ec089f4ac10d624489b2581385e	很簡單。	draft		p10b-13 draft	
 3598	73	conversation	b374832af7194ce3a4cd19dbed1da22b11d82cdfc90c52e35e787d943676ace0	你能告訴我哪裡還有符石嗎？	draft		p10b-13 draft	
@@ -1594,6 +1667,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3599	9	conversation	dec881db76fd80d6322aba7a7d690c3405b37c8dcd24b6ad9a2ef1a912064210	Yeshor'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
 3599	10	conversation	637f35969af59a3816865187e15c3c085cd301b426f80dc8b86e5362d8807225	'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
 3599	11	conversation	d34c6000ceedf798656647b74e9cfeced43371c1cbf80e5a271ed1c90fe2f09f	「'click」是「是」的意思嗎？	draft		p10b-5 draft	
+3599	12	conversation	99acc7dc62883eec77b4bb81b1b2d6fd6a0ddfa5c7c8e083fc5d756f3f295af5	「'click」是「不」的意思嗎？	draft		p11-1 draft	
 3599	13	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	draft		p10b-5 draft	
 3599	14	conversation	637f35969af59a3816865187e15c3c085cd301b426f80dc8b86e5362d8807225	'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
 3599	15	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
@@ -1791,6 +1865,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3602	9	conversation	4d5448dbc24dce497ce85115de98a0c7d963fc60b27f833d0320ae1c8fb0a941	也許。你問問題，我回答。	draft		p10b-10 draft	
 3602	10	conversation	3fec95ac3a883683776fe59ba9b289a2037b98dece8e992b88c0472cb3aaecfe	你能告訴我關於……	draft		p10b-10 draft; 讓玩家自行輸入話題（door、rawstag、sethar、knight(s)、pit、lorne、writ 不翻）	
 3602	11	conversation	ccd7232748855fa7c99f1dffda671c163f94e17b2062f1e0eef9f243402f40cf	謝謝你的幫忙。再會。	draft		p10b-10 draft	
+3602	12	conversation	815627348c87e984d06e997f0a948e4b569078cb94241383a0d90e2d9ae2e252	\\1@SS1\\0	draft		p11-1 draft; 玩家輸入的回顯（玩家顏色），與原文相同	dynamic-template,control-code
 3602	15	conversation	134f234e98fdc657271aaa9438d4c09e0e27a8e8c6fbe8540e08bd1a0c39f588	羅斯塔格還是年輕的洞穴巨人，不一定聽話。你給他紅色寶石，也許他對你好一點。	draft		p10b-10 draft	
 3602	17	conversation	d8773a115a35da703611678208aefdec2ea2ab560dcbe8d22604f9d44d0fad90	塞薩爾住在這裡北邊、西側的洞穴裡。他是很棒的洞穴巨人，年輕時是偉大的戰士。我們都很敬重他。	draft		p10b-10 draft	
 3602	20	conversation	b85931476a8d5987b12f32c4c6d78f24fbbfa098755ce79249cd989dee32f48c	騎士說話很兇，可是他們通常不管別人。不過有一個討厭的騎士。他住在宴會廳。你要小心他。	draft		p10b-10 draft	
@@ -1811,8 +1886,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3602	38	conversation	5d1e9a239e3f4707284f984aa1fa21cbe8de3e69bb4a286027cbf38260b6a638	不，我們別打了。	draft		p10b-10 draft	
 3602	39	conversation	0ffae19a76b4db51f8316be5b23711c593ef37917b80a5ebe8e3e8938f72c79a	哈！你試試看啊！	draft		p10b-10 draft	
 3602	40	conversation	a815cf212a5a2d4baaaa9c0e2427c1a53f2e0d7ac7d5ed0e19877e26d0434683	你把我搞糊塗了，一下要打，一下又不要打。	draft		p10b-10 draft	
-3603	1	conversation	98aa6675482552881925fe70d82559692d811b3bcd33f53b9a702c24d5322696		untranslated		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理	grammar-sensitive
-3603	2	conversation	4ed28f82ca96c3342a5c591668270f78c26dae22fd953772a6c14e52f46e1b22		untranslated		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理	grammar-sensitive
+3603	1	conversation	98aa6675482552881925fe70d82559692d811b3bcd33f53b9a702c24d5322696	小子	draft		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理; p11-1 draft	grammar-sensitive
+3603	2	conversation	4ed28f82ca96c3342a5c591668270f78c26dae22fd953772a6c14e52f46e1b22	丫頭	draft		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理; p11-1 draft	grammar-sensitive
+3603	3	conversation	0d2fd91f13998208b5aa043516c540041a18402a0fd3540fea7dbfcc5abca113	哈！又一條魚游進桶子裡了！你犯了什麼罪，倒楣的@SS1？	draft		p11-1 draft	dynamic-template
 3603	4	conversation	7ff1536c1df56b604ba927f4aba0980ba11df6fa309480460d35a6368be1f734	我是無辜的！我被冤枉了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	5	conversation	72d4dee1c6e02ffbe595e529f366c01f0adf90fef8a9bcd7f0a75ebb5c9cd600	他們說我綁架了一個女孩。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	6	conversation	6404881a85ada8be7496d55b4e3dce302590d1f27e2e963832c6b6b8eee590b7	我唯一的罪，就是運氣不好。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -1876,6 +1952,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3603	64	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	1	conversation	eb5669fb7c2ea74d3a996520918ff3d2790a402ba0ee9e11f65812e1001ff811	你是誰？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	2	conversation	8b47604a2033cd6e940db5ac72655a73e4b7b104c1ce9b6ee9c9410ee855b9e1	陌生人，你叫什麼名字？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	3	conversation	4a472d6831b37f224695b9a20be4013ce0f646822b4f6a2ecddd1b5efcca76d9	我是@GS8。	draft		p11-1 draft	dynamic-template
 3604	4	conversation	7762e9abeffa68f18f439d3efc963fd1f82fb56500ccde7be9b0b787ba45dcd0	不關你的事！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	5	conversation	ead3a403f0061355f3f35f2865e1668fa617694bd829bd5e489b2208dad76882	我倒想問你同樣的問題。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	6	conversation	fff00e768524e9291ec690261d2ca3737e95a2dc18eb0ff78c49dcfea0ee7a53	我是古利克，人稱「有福的」。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -1899,6 +1976,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3604	24	conversation	d16623c73730982f137621554326daedbcf91eff6537f2ee581e63d438d8cab0	再多告訴我一些這座深淵的事。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	25	conversation	e1269d7604bd1f00aea8809f9637705414743996c8672b34ff08e31dcc14bf05	你是怎麼來到這裡的？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	26	conversation	002a32ded619d7cb70fc52804cd5c2eff4fd2444f63ef825041c66f39931bbb6	從來沒有人逃出去過嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	27	conversation	0d3e85340c915644b4ecfe837db0651fe0059c99d0709b6bfbb02b6d81a51fbf	你好，@GS8！你跟哈格巴德談過了嗎？	draft		p11-1 draft	dynamic-template
 3604	28	conversation	1db56404a5ea6b35798952c2a00393896f5e8a614f8395c57e27f779ce209343	又見面了，陌生人。你跟我們的首領談過了嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	29	conversation	c2974a9e21206584ea27515daea4b9376dd03db45ff236b531b1f3ceb589ec06	他是誰來著？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	30	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	談過了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -1958,6 +2036,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3604	84	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	85	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3605	1	conversation	7eb33762519b366f8ec6b20266f8c248bbd22bf1c8b516bbe3c12f3e9764bb82	站住！什麼人？	draft		p10b-4 draft	
+3605	2	conversation	4a472d6831b37f224695b9a20be4013ce0f646822b4f6a2ecddd1b5efcca76d9	我是@GS8。	draft		p11-1 draft	dynamic-template
 3605	3	conversation	c4d554cc72b1c604c67ed481074bdeb90bb6963a74d21044ee9b2cf15dff18e0	誰想知道？	draft		p10b-4 draft	
 3605	4	conversation	a121e807494308314e3dc2173987fc32a21008e5e90492208e7e6229f2466520	你來這裡有什麼事？	draft		p10b-4 draft	
 3605	5	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-4 draft; 「其他……」讓玩家自行輸入通關語（Deco Morono，3605:6／16 不翻）	
@@ -1972,8 +2051,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3605	15	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-4 draft; 「其他……」讓玩家自行輸入通關語（Deco Morono，3605:6／16 不翻）	
 3605	17	conversation	646a8ecd23923f85ace209652e315b985f2abf31dcefcd68115b3a693e849765	不對！滾！	draft		p10b-4 draft	
 3605	18	conversation	ee2708c40b58e7ca49f5c3030a8b02cd6e8966c88e76aaf46749d708ae39c6cd	這裡不准探險！好了，走開！	draft		p10b-4 draft	
-3605	19	conversation	30390115b066968fc0628684c0e97b2805049e3e5d7c9ffed69c551632a492e7		untranslated		grammar-sensitive: 稱呼片段（sir），代入 3605:21 的 @SS1 模板，P11 處理	grammar-sensitive
-3605	20	conversation	765cc52b3dbc1bb8ec279ef9c8ec3d0f251c0c92a6ecdc1870be8f7dc7538b21		untranslated		grammar-sensitive: 稱呼片段（madam），代入 3605:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3605	19	conversation	30390115b066968fc0628684c0e97b2805049e3e5d7c9ffed69c551632a492e7	先生	draft		grammar-sensitive: 稱呼片段（sir），代入 3605:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3605	20	conversation	765cc52b3dbc1bb8ec279ef9c8ec3d0f251c0c92a6ecdc1870be8f7dc7538b21	女士	draft		grammar-sensitive: 稱呼片段（madam），代入 3605:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3605	21	conversation	c291cef7ddc1da9dff83286f99e2db55daaea6e1ce36d88348fb636963b2a99a	你好，尊貴的@SS1！請帶著榮譽進去，觀賞貪金王大人壯麗的寶庫。不得有任何其他舉動。	draft		p11-1 draft; authority-ok:Lord（Lord Goldthirst 是敬稱「貪金王大人」）	dynamic-template
 3606	1	conversation	412d366ded1c317223e0f63a2f19fa5cfdd9cbb5251fc50dd186cf715b0985ed	你打敗了我，贏得了勇氣之盾；你在這裡已經沒什麼需要證明的了。	draft		p10b-15 draft	
 3606	2	conversation	659743abc61b6b97b8ef5af4fbcb86ceb83055599983d809dd89dee21419fe45	站住，渺小的凡人！我就是你的末日！	draft		p10b-15 draft	
 3606	3	conversation	61c3be7d3c396063e99e9cc20087718b19fa76abac078c0e931a0899f6bacb77	那是你說的！	draft		p10b-15 draft	
@@ -1985,6 +2065,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3606	9	conversation	7045d0824cb7e095a98ff060696a11f3b4a65e8086d4e50efd8c2c012a24a5f7	你用你的性命，來賭一件強大的聖物——勇氣之盾。打敗我，它就是你的。失敗了，你必死無疑。	draft		p10b-15 draft; authority-ok:Talismans（a mighty talisman 譯「一件強大的聖物」，用詞相同）	
 3606	10	conversation	a24a35a2e214312101d39825211cc1bd9fcc0296d3b031a16d7578f569f7d2fb	那就來吧，我什麼都不怕！	draft		p10b-15 draft	
 3606	11	conversation	aded7ecc9e3a6d3001d827f149377d5466e14d9468a270cf28aa54a35479dde0	我在別處有急事。	draft		p10b-15 draft	
+3606	12	conversation	8fcead24ed30218ecc48f9bc57f63c788a19b7cac8972b277492928562b9184a	住手！凡人，你打得很好。比這些年來任何人都好。我願給你一條生路，這樣的勇氣不該就此消逝。現在逃走，我就饒你一命。	draft		p11-1 draft	
 3606	13	conversation	f6dd7ab6bb80c47f40cc24137dc9071c725efd33239358ffff0816ebb8e92c16	謝謝你。也許我們後會有期。	draft		p10b-15 draft	
 3606	14	conversation	939283e29257fb94ec84252679422d1aa4c34e1f7974a777bb2e0f869f17f340	你在虛張聲勢。去死吧，怪物！	draft		p10b-15 draft	
 3606	15	conversation	aad684feaff72b6adcf176bb3793efd39c21d56ddbb9ab7c8639e40a8257a4d3	住手，凡人！你打敗了我！從沒有人展現過這樣的勇氣！你理應成為這面盾的主人！	draft		p10b-15 draft	
@@ -1997,6 +2078,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3607	1	conversation	336c7c7d3a236ce2f8443c399cb3ca1be28a138f599e4087317af2ad3a6b24cb	你走近時，老婦人抬起頭，瞇起眼睛。她顯然是近視。\n 「湯姆？」她說，「是你嗎？」\n 看清你的臉後，她眼中的希望熄滅了。	draft		p10b-12 draft	
 3607	2	conversation	42856350ad077af3f044a27f83a7814128275256e537587bcc0fcbfaca91bc9b	是啊，剛才我還滿懷希望，以為你是我的湯姆小子終於回來了。	draft		p10b-12 draft	
 3607	3	conversation	9f643713c64f12af26360f688b2133d8e5b55ef47e7dc63659949e4850e46ccf	你好，老媽媽。	draft		p10b-12 draft	
+3607	4	conversation	a36131fd9807fae4b966342d5b789609cc18e0de9d93b372b52c96836f9c4447	抱歉。我是@GS8。湯姆是誰？	draft		p11-1 draft	dynamic-template
 3607	5	conversation	6169104dc2cba786c3b49ca1673cd729719093fb8beb6208274767315660bf02	你在胡說什麼？	draft		p10b-12 draft	
 3607	6	conversation	82f32d40b77be64919afeb425b0b5a9007413632a619d91b7a7d9f8cf8cffce4	抱歉，我得走了。	draft		p10b-12 draft	
 3607	7	conversation	2cf8117b460c148139a5b01420ca3f1850fc417f043109c71fcc90a232975abd	原諒我。我只是個老糊塗。	draft		p10b-12 draft	
@@ -2042,6 +2124,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3607	47	conversation	584cab2946b74e11d6a956e2970be7c20debe1314fb7516ebad75a12afcb4f81	也願你蒙福，老媽媽。	draft		p10b-12 draft	
 3607	48	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-12 draft	
 3607	49	conversation	64f77b89c69147cb186065bb5c8b50211726eb47e1220d15aa90a7bf8514cab6	不！他只是躲著我。這是他在跟我玩。湯姆！湯姆，快上來，小子，你嚇到我了！	draft		p10b-12 draft	
+3607	50	conversation	9e8b4a17309a304e7cd51e7d4119db824dc0a75e458fdd1a298bfa1975ecb85d	抱歉，我得走了。	draft		p11-1 draft	
 3607	51	conversation	9262d30bb2281dd7c57ebd341a1c9dca3119cf30404425456bc1950bccfd5702	祝你守候順利，再會。	draft		p10b-12 draft	
 3607	52	conversation	e4006c29ee722d24446cb8367a67ea8bc33b8dafb95c96cba9925a9f01cd5620	啊，不，你真好心，可是我相信像你這樣的大人物，一定有更好的事要做。你要是想幫我，就帶來我俊俏的湯姆的消息吧。	draft		p10b-12 draft	
 3607	53	conversation	d26a83951d0d8fae84e0413c57b4c6c8b660228e26c47d634af751262ee5dfc8	好吧。祝你有美好的一天。	draft		p10b-12 draft	
@@ -2049,8 +2132,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3607	55	conversation	0e9e38f2e28afcf903fec573f78e9c221c8223a229b68b73a26c5fcb95b84fb5	畫像！可以讓我看看嗎？	draft		p10b-12 draft	
 3607	56	conversation	90fed3cf7ccf9eb8e6117b88c37327d7c723e7484aa8f266faee31a610615a8b	當然。在這裡。	draft		p10b-12 draft	
 3607	57	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不行。	draft		p10b-12 draft	
-3607	58	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03		untranslated		grammar-sensitive: 稱呼片段（man），代入 3607:60 的 @SS1 模板，P11 處理	grammar-sensitive
-3607	59	conversation	cf2e5bff1ef03dcd20d1a0b18ef7d89fc80a3554434165753672f6f40fde1d25		untranslated		grammar-sensitive: 稱呼片段（woman），代入 3607:60 的 @SS1 模板，P11 處理	grammar-sensitive
+3607	58	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03	人	draft		grammar-sensitive: 稱呼片段（man），代入 3607:60 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3607	59	conversation	cf2e5bff1ef03dcd20d1a0b18ef7d89fc80a3554434165753672f6f40fde1d25	女人	draft		grammar-sensitive: 稱呼片段（woman），代入 3607:60 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3607	60	conversation	8a2336b3938d9d0a7f93767261822cf73207be6732e8da38756d96eeea9ea202	喔，你真是個殘忍的@SS1！你對一個可憐、日夜思念的老婦人難道沒有一點憐憫嗎？	draft		p11-1 draft	dynamic-template
 3607	61	conversation	7e03ff1ba4070e594ef548b72f2f5162c347e40a7d49c4f6b9ba904efdf99d25	抱歉。這是畫像。	draft		p10b-12 draft	
 3607	62	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不行。	draft		p10b-12 draft	
 3607	63	conversation	5443f60c8031a5e7ca5dabe2c11b3116d6c31041ac52f6bc2a82ee6a9e3f4232	你的心真是石頭做的。讓我一個人傷心吧！別再嘲弄我了！	draft		p10b-12 draft	
@@ -2070,6 +2154,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3608	8	conversation	c629a576dcde16e2bc37b2e1e6bc6ffc55690ab2524a220ca8bd047086c3604a	你能告訴我你的名字嗎？	draft		p10b-5 draft	
 3608	9	conversation	0aea4a8e89c6392657051a2bb7e6f6a83ffe007ae4ab89e3ea66683e4a37b0e9	這裡有東西給你吃。	draft		p10b-5 draft	
 3608	10	conversation	2f3310f39bf7de431098332ec4ed2c79f373550fa60afee35e9ad007795d2b57	他的眼睛一亮，費了好大的勁，咕噥出一個聽起來像「Uurghoo」的聲音。	draft		p10b-5 draft	
+3608	11	conversation	34c67cb311d9ef90cc3b474b9dd6fa61af9af8b94ff382b2f6dce30c4b37cb6f	我知道了。你的名字是……	draft		p11-1 draft	
 3608	12	conversation	114d1a08440f10c86d3ef4de17762a11c23fdd3781dd7cef3d74a8398ea483e8	抱歉，我聽不懂你的意思。	draft		p10b-5 draft	
 3608	13	conversation	387fd993016e45b57944f8cfe2991da288ddb93393a5d642cfab289912136947	他露出一副悲傷到近乎滑稽的表情，然後誇張地聳聳肩。	draft		p10b-5 draft	
 3608	14	conversation	1de44ad550aae77cbe283064ecabd3e04849cb87e718e6c3ad14d732a88d20e5	你不能離開嗎？你是囚犯嗎？	draft		p10b-5 draft	
@@ -2186,8 +2271,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3609	50	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
 3609	51	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
 3609	52	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
-3610	1	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03		untranslated		grammar-sensitive: 稱呼片段（man），代入同對話的 @SS1 模板，P11 處理	grammar-sensitive
-3610	2	conversation	49547872a664dd8e63283cdd747e9682229880a9111aaaa9a397c0458bbb0ae6		untranslated		grammar-sensitive: 稱呼片段（lady），代入同對話的 @SS1 模板，P11 處理	grammar-sensitive
+3610	1	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03	年輕人	draft		grammar-sensitive: 稱呼片段（man），代入同對話的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3610	2	conversation	49547872a664dd8e63283cdd747e9682229880a9111aaaa9a397c0458bbb0ae6	小姑娘	draft		grammar-sensitive: 稱呼片段（lady），代入同對話的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3610	3	conversation	2274e8e1c8f0fbcc847f7ae4c7915cb7d8bf73de6b33d02fe786b4cc5d7bb4b9	你好，@SS1。我是賽拉文，我在找一根魔杖。你見過嗎？	draft		p11-1 draft	dynamic-template
 3610	4	conversation	09f17599389ecb5f5b8434fd56926402bbffd8fb231e558a54691bc31a1a84fd	那是什麼樣的魔杖？	draft		p10b-20 draft	
 3610	5	conversation	58f6d6e856e70f9d57e30fe50cbef8e1cc81ee719d357dcefd2dd0e93d3cd279	有，我想我身上就有。	draft		p10b-20 draft	
 3610	6	conversation	235a5e7e7bba2d322b8654fa77e59bb2ac7d8a020d55b3f91e1526d64768eacd	我沒見過什麼魔杖。	draft		p10b-20 draft	
@@ -2197,8 +2283,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3610	10	conversation	5df8d2ba44809e367e4197d02a5f6ccd4f15aaaa48ef0f271492653cedac1fd6	真可惜。我還以為像你這樣的探險家可能碰到過它。你知道，落到壞人手裡可能很危險。你確定你沒見過嗎？	draft		p10b-20 draft	
 3610	11	conversation	df3a8e26414834e84a19327eed443e557ae7c09e2d129c4e1c8469dd691acdfc	嗯，這麼說來，我這裡確實有一根魔杖。會不會是你的？	draft		p10b-20 draft	
 3610	12	conversation	19248891d1d6f63dc0fdfb0975f5545fb4f035158d9056550ce06471ed601b92	非常確定。這種東西我會記得的。	draft		p10b-20 draft	
-3610	13	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03		untranslated		grammar-sensitive: 稱呼片段（man），代入同對話的 @SS1 模板，P11 處理	grammar-sensitive
-3610	14	conversation	49547872a664dd8e63283cdd747e9682229880a9111aaaa9a397c0458bbb0ae6		untranslated		grammar-sensitive: 稱呼片段（lady），代入同對話的 @SS1 模板，P11 處理	grammar-sensitive
+3610	13	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03	年輕人	draft		grammar-sensitive: 稱呼片段（man），代入同對話的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3610	14	conversation	49547872a664dd8e63283cdd747e9682229880a9111aaaa9a397c0458bbb0ae6	小姑娘	draft		grammar-sensitive: 稱呼片段（lady），代入同對話的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3610	15	conversation	f64ee74add081fe5ef472e49b6971bc47b66a4783b85d338c95f5c257aa0b733	那就祝你有美好的一天，@SS1。要是你找到我的魔杖，我很樂意給你送還的謝禮。	draft		p11-1 draft	dynamic-template
 3610	16	conversation	404cba15a4acdcfea85caa97d009b1042d20f0967c26f9a1abf59aecbeddf9bd	當然。	draft		p10b-20 draft	
 3610	17	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	再看看吧。	draft		p10b-20 draft	
 3610	18	conversation	7e925fa61f5057c58523663efa348efad3cd43a544cf749bef259d624d08aa50	啊，終於！可以讓我看看嗎？	draft		p10b-20 draft	
@@ -2276,10 +2363,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3611	46	conversation	3de171c61ec30bcee87bf8a14f0a9e83743dc3abfafcff230066989c88e7963e	美德之室位於深淵的最底層。它就在火山的正中心，冥河深淵的能量場在那裡最強。據說要進去需要一把特殊的三合一鑰匙，不過我不知道這個傳說是真是假。	draft		p10b-21 draft	
 3611	47	conversation	aaf6d028290ff5747a96d23a4d2e089d06a8a4363ded5939738d8546ccea8b6e	我會設法到那裡去。	draft		p10b-21 draft	
 3611	48	conversation	b76e1292c7242433478f67c26b4d53d86cabd4a555d3b19f03782f66f503d74d	快！沒有時間可以浪費了！	draft		p10b-21 draft	
+3611	49	conversation	dc06710df3d298dde8bfab643c9dc460baea15fd315222b9a5cd89672cd10ff1	快，@GS8，沒有時間可以浪費了！你必須把凱布勒斯的八件聖物全都投進深淵最底層的火山。千萬別讓你的任務失敗！	draft		p11-1 draft	dynamic-template
 3611	50	conversation	5ead3e1d7b9bd2590b694ea2303f142f6722f6d07db45f9b6f1cbbacd4ae1227	怎樣？你找到能釋放凱布勒斯聖物力量的能量來源了嗎？	draft		p10b-21 draft	
 3611	51	conversation	7a464b08d2654ffb1284a877bb3d1ff86e2f45c0882168d56bfab05cb51671dc	怎樣？你想到一個純淨的力量與美德之源，能給我所需的魔法能量了嗎？	draft		p10b-21 draft	
 3612	1	conversation	f6a8e7d227e8738408e5cac5d5316c46a7f9680944d2a5350651ac7a91e5f5de	冒險者	draft		p10b-6 draft	
 3612	2	conversation	553c7d8088fbcae96a98d8c384975048c4f1d43cfc8d872dccb4f1430a208330	你好。我叫札克。你叫什麼？	draft		p10b-6 draft	
+3612	3	conversation	2ba35ad2ecdcf39fe3ce81350660097b15486b60706a3de8bc6370a7dc70843a	我是@GS9。	draft		p11-1 draft	dynamic-template
 3612	4	conversation	c41b50d068ed1fa47f0b7284b2e87d038fe62ab9448fcb04a3bd4826e6f0266f	不關你的事。	draft		p10b-6 draft	
 3612	5	conversation	61a29a129dbdd18a09ce109852e5ab9ca96d28330fcf96cec3b17556f40f4117	好啦，快進來，把門關上，好嗎？	draft		p10b-6 draft	
 3612	6	conversation	e2d8594ef10f888a7bc21fd3a989f228428c150fc3b9984f3214c55efa8eb4d8	當然。	draft		p10b-6 draft	
@@ -2288,21 +2377,27 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3612	9	conversation	20bf71665b4503906149b04d3d5db019c5610adbfc8d9f42de48fa4120328604	啊，對。你說什麼就是什麼。	draft		p10b-6 draft	
 3612	10	conversation	0ca82746290ad5eaa52953f6cd95cd7fa02844b2b7bd9f728e131cbdec7ff867	你這個瘋子！	draft		p10b-6 draft	
 3612	11	conversation	ebfbf0214745b7fe07c11ad428ba3bc34e1b49fdd750e3cbe1c250035b75f294	你好，冒險者。我跟你說過我是札克嗎？	draft		p10b-6 draft	
+3612	12	conversation	0d095fb0b8593b2972088526bf8e01538d7a890b472853f086b30e5c429e13c1	幸會，札克。我是@GS9。	draft		p11-1 draft	dynamic-template
 3612	13	conversation	a7b95134584a363d65b380fb0181f57f4c2c9f9844fadb8765e74b39379489e9	啊，是的。很高興認識你。	draft		p10b-6 draft	
 3612	14	conversation	d10a2ad6c1ec0dbae1dc72afb792e3663c32e9196723d557876931802b9ec4fe	我是不是在哪裡見過你？	draft		p10b-6 draft	
+3612	15	conversation	916fb8547ae61921b2bdd20bce01044fe22be824ffa1f819a4e55212a788b63c	你好啊，札克！我是@GS9。	draft		p11-1 draft	dynamic-template
 3612	16	conversation	862f4182fc79558880e4969be1f0f0371a1a4244d0839dfe23277beed5d5dc2f	你好啊，札克！	draft		p10b-6 draft	
 3612	17	conversation	f4e47ded0e80699e0b0f74c152122b274b121052ee15bb5d6559f779b5887b69	抱歉，我得走了。	draft		p10b-6 draft	
 3612	18	conversation	bca96d6757456dda95594b410c50af5f9acd5425a76bf7f76fb51a5b2f447769	札克，祝你身體硬朗、精神飽滿！	draft		p10b-6 draft	
+3612	19	conversation	d626f00111b46ae8582d646832f855d57e63319234ee97bd14356d999a1d9b06	不，你不是。你是札克。我是@GS9。	draft		p11-1 draft	dynamic-template
 3612	20	conversation	1751defed096b1727b37685a9dc40214b308844809e35ed73092707e3083e349	硬朗？好奇怪的詞。這裡很暗嗎？黑暗會悄悄爬進來，所以我盡量讓這裡保持明亮。	draft		p10b-6 draft	
 3612	21	conversation	f2d4db75fd2c9e798fc655bb2136e97864201a443cea8bf1d278d4b1d3208a58	你是怎麼做到的？	draft		p10b-6 draft	
 3612	22	conversation	e4b9174e5af46cfc50b1c995e27eced341aa37d08f08de3518bfe7b3359d0039	那很好。我現在得走了。	draft		p10b-6 draft	
 3612	23	conversation	9eaa731bf8f7b50c101e399f78e771c1ad83604bb9732f0ea8d522a7f356cb5b	黑暗確實可以對抗！用光明的武器與防具！	draft		p10b-6 draft	
 3612	24	conversation	0127adfb1eff10d09878707de4f2c6275afa4932dc2066f40409e86ce20952c9	你這是什麼意思？	draft		p10b-6 draft	
 3612	25	conversation	97288d43018709668c9c635dd0df9c4897d5c8d8ad9af07532370f246c53fb24	你瘋了！	draft		p10b-6 draft	
+3612	26	conversation	9859d0c9218ba526be4c131ddc57ca6d6d41e4c2412e6e5a46257d441f54f1a3	好吧，「@GS9」。你想的話，可以叫我「札克」。	draft		p11-1 draft	dynamic-template
 3612	27	conversation	54773438ae8a98f0ccdc021a57096a40f96fa34c7b4940b5ae182c3051654799	謝謝你。札克，你在這裡做什麼？	draft		p10b-6 draft	
 3612	28	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	draft		p10b-6 draft	
 3612	29	conversation	40a94a09208623b44e09d218bcd4c3477f9ed154e7b0652e0a18def471928da3	很好。那麼，札克，什麼風把你吹來的？	draft		p10b-6 draft	
+3612	30	conversation	4021897b88d767055b0072c9edd7032e56afccbf41425190daa244204e168986	我不叫札克。我叫@GS9。	draft		p11-1 draft	dynamic-template
 3612	31	conversation	ec0930f8a0867afdc7251d38fe623ddc651e99884c70668496167a10506b293e	我正要走。	draft		p10b-6 draft	
+3612	32	conversation	679c609979133be9cfa446bfd029093e14654aef77f094817cdb70ed866b025e	你怕什麼，@GS70？	draft		p11-1 draft	dynamic-template
 3612	33	conversation	5253066db096b842ef4b17cbe431b9bc1850858b53b51f77984df536c39b5ba2	我什麼都不怕！	draft		p10b-6 draft	
 3612	34	conversation	13ad20cc8ac4ceb0c2593ed572dc2289119083b2a4867e560f55cbf356029daf	很多東西。札克，你怕什麼？	draft		p10b-6 draft	
 3612	35	conversation	e465666ee28828b978b84584d51c830a0028ba66af966a88dbcd70eb8d4bb198	喔，我只怕黑暗。	draft		p10b-6 draft	
@@ -2369,17 +2464,21 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3649	1	conversation	d656eca7ba24124a537b62fe2559e0167691dbf699e0ca9c16623b80aa6bd8f3	喂！誰在那裡？	draft		p10b-2 draft	
 3649	2	conversation	31e24322c7d6292084c048386103b4fa1261f00b14779529c7380e76c0601242	我替綠色惡鬼族辦緊急的事。	draft		p10b-2 draft	
 3649	3	conversation	5af8c28f636afc747798b294b0d7dc8bebf2da4f402c9a18d15080aee6b2050d	我必須跟你們的首領談談。	draft		p10b-2 draft	
+3649	4	conversation	67724b4791651632bec52dfdbf641942e716af829cf1d9aa9609a28ce492c346	我叫@GS8。	draft		p11-1 draft	dynamic-template
 3649	5	conversation	2d65918363e66685eceff75ccb2ac2c97d368847d1fe0c2d5f9fc9c142bb7dc8	哈！我就知道！給我滾出這裡！	draft		p10b-2 draft	
 3649	6	conversation	429e413d2909ea3243d81cf09a843572c4db8c6a75cda462c945a83012c4435b	要跟凱查瓦爾國王講話，嗯？	draft		p10b-2 draft	
 3649	7	conversation	c9296a18d7b6f73f4272fedefd70886e8ba8caaecd544df18aba274d942f4352	那你誰，要跟凱查瓦爾國王講話？	draft		p10b-2 draft	
+3649	8	conversation	67724b4791651632bec52dfdbf641942e716af829cf1d9aa9609a28ce492c346	我叫@GS8。	draft		p11-1 draft	dynamic-template
 3649	9	conversation	cc4d69c6eb22eb4103b28b65d3fe8638f25835aa5fa2a9e5ff7664f06677d568	這不關你的事。	draft		p10b-2 draft	
 3649	10	conversation	ddb142cdd98695c2bc68d57cd533a02e92590992a43f1dcd651ebd269f4a8ad2	那好！你也不關我們的事！	draft		p10b-2 draft	
+3649	11	conversation	4fe22622e8ac0dec27b7491066c156410143c82f19239de4bd1d6e435b20867f	@GS8，嗯？我想我聽說過你。你新來的，嗯？你來對地方了。灰色惡鬼族是這裡最強的族群。	draft		p11-1 draft	dynamic-template
 3649	12	conversation	2acdec1ae89bed97e536c3acee75c3de87128fb072da652154f1a823c5892151	不過你要小心，要守規矩。不是我們每個都喜歡你這種怪人。你要乖乖的。	draft		p10b-2 draft	
 3649	13	conversation	3302563c3a929cbd43d73ab2612cf29d1788c2d5cb6f913c3c4240811633b2ac	謝謝你，我會的。	draft		p10b-2 draft	
 3649	14	conversation	ccac86890bd7f1438238fca6552bc637c4a35a528bb79ee665cadc9659a67aaa	我會盡力。	draft		p10b-2 draft	
 3649	15	conversation	22997f9350930575a3c371f6048055e3c20d197c098322f52a0b63778a1a8c05	跟凱查瓦爾國王講話，好主意。他很聰明又很強。不過你最好先跟瑞緹查爾女王講話。去吧，快去。	draft		p10b-2 draft	
 3649	16	conversation	c422f224d450215c1ac590f0a6145bf0d537d46349dc67db953526f15f4d59fe	謝謝你的忠告。	draft		p10b-2 draft	
 3649	17	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-2 draft	
+3649	18	conversation	893f00d9fdcc6de435ff1ec39f2d3cf211cd7364e16d747b11068bddf397cdf1	喲，@GS8！你為什麼又來？	draft		p11-1 draft	dynamic-template
 3649	19	conversation	49aac3217ee55a0bf9bd5e4b1ea0c2275ac126513edd749fb8ce9661ccea31cf	嘿，又是你！你要幹嘛？	draft		p10b-2 draft	
 3649	20	conversation	eb3689ce1d44b4a2ccdfe66096e12b09f5ae362de9e41c6fdff91f6567d1416b	我只是隨便走走。	draft		p10b-2 draft	
 3649	21	conversation	c8a4498391fc79014be0897992ddeb793dafa25aa26d79e05af576d495cd9b10	那你要小心。不是每個地方都可以隨便走。	draft		p10b-2 draft	
@@ -2488,9 +2587,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3672	28	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	reviewed	P10A-B1 Brawnclan (slot 88): demand option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 3672	29	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	reviewed	P10A-B1 Brawnclan (slot 88): demand reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 3672	30	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	reviewed	P10A-B1 Brawnclan (slot 88): demand reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3673	1	conversation	4e915dadac992336bc66656b3fedf134daaa4fdb36bd0dcadf8f27838df6782d	唉，@GS8，想當礦工的那位！有什麼能為你效勞的？	draft		p11-1 draft	dynamic-template
 3673	2	conversation	09e4ed513d79b07e5a34b9a13c85ed47afb54c67866236cd8f20f96cad06c608	唉，你看起來不像礦工。你是誰？	draft		p10b-4 draft	
+3673	3	conversation	42a6c50dca3083be1e5730c503553fced0d629ce6144ebde34e0d1007e7ced3c	我是@GS8，一名冒險者。	draft		p11-1 draft	dynamic-template
 3673	4	conversation	d6cd837cdef32da0229622eb01299101c91a0a3fe8247941277a24e1211b52f8	那是我的事，不關你的事。	draft		p10b-4 draft	
 3673	5	conversation	ecb5f40fe1de40b19d9ed6f65350690c3c40bbfbf8449a747d93cf0223fe2eed	那好，滾吧！	draft		p10b-4 draft	
+3673	6	conversation	d9ff34ef584cf0a82a165d07a078dfc869e6eee878d83bc57a955fb5b1cccc66	幸會，@GS8。我是修石。你在這一帶做什麼？	draft		p11-1 draft	dynamic-template
 3673	7	conversation	9221063689a73e5a86a5cfe263af893d32b6dda00a92cbd31f84923fc4b1531a	我想學習當礦工的門道。	draft		p10b-4 draft	
 3673	8	conversation	899e3aab241ebd09ce24e11937ed55f16ca64d5a594ae88656ad458e50fadda8	我在找寶藏。	draft		p10b-4 draft	
 3673	9	conversation	002ea2e3e9426a2888c0effcb2e7d82f0f6fe2e89fb529f9b00917acacb509ec	我在找一隻怪物來消滅。	draft		p10b-4 draft	
@@ -2507,6 +2609,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3673	20	conversation	4443d99086170988f5f44ccd1e56eb43cc2ca85c3435da1123d8d3a983b3386f	我想跟你交易。	draft		p10b-4 draft	
 3673	21	conversation	378ffe59000634737ad9a9d2c72778a8cacdd111093a23aea92d21c8461457c8	謝謝你，我要上路了。	draft		p10b-4 draft	
 3673	22	conversation	16a95c75a04efcc0ef78dc3c250ca2da1174ca53f2c08a30b0995cb210241483	決定友善一點了，嗯？	draft		p10b-4 draft	
+3673	23	conversation	3b7ee1147adc637af3764d4d1cb003adf1d7b48ca502b4ddfddbb7dbb45cb668	是的。我叫@GS8。	draft		p11-1 draft	dynamic-template
 3673	24	conversation	cf1d71dec9dcbae35275e41cd076ca9972220245a99bdb2387da6e0e615e0fc3	你怎麼會這麼覺得？再見。	draft		p10b-4 draft	
 3673	25	conversation	59e186383fd668b752ad27062f9c6fbfe457bf9d5658272d2db8e383d4d6f788	走了正好！	draft		p10b-4 draft	
 3673	26	conversation	61aa35720851b73d45e0d34fa58d5617baac3589aeb5018b322d2f6204dca697	這樣好多了。我是修石。你在這一帶做什麼？	draft		p10b-4 draft	
@@ -2534,10 +2637,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3674	5	conversation	918f345b8150cf1dbc6a15eea2621ae75c55509be767004ebc518484d5b45f18	那你肯定不是我的藍圖了！它們可從沒開口說過一句話，你倒是挺會說話的。它們又啞又不吭聲，就像我靠它們幫忙鑿的石頭一樣，可我還是好想念它們。也許你能幫我找到它們？	draft		p10b-4 draft	
 3674	6	conversation	78d31b415e7003b2388005af0092cfa43a2ca1925b11a35848838c5966b25449	我可以試試。	draft		p10b-4 draft	
 3674	7	conversation	54e96a9313c956ece029bbd91f70eb6f653c738adbfa652628e5cff381b2b471	我為什麼要幫你找？	draft		p10b-4 draft	
-3674	8	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d		untranslated		grammar-sensitive: 稱呼片段（lad），代入 3674:10、3674:13 的 @SS18 模板，P11 處理	grammar-sensitive
-3674	9	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c		untranslated		grammar-sensitive: 稱呼片段（lass），代入 3674:10、3674:13 的 @SS18 模板，P11 處理	grammar-sensitive
+3674	8	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d	小伙子	draft		grammar-sensitive: 稱呼片段（lad），代入 3674:10、3674:13 的 @SS18 模板，P11 處理; p11-1 draft	grammar-sensitive
+3674	9	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c	姑娘	draft		grammar-sensitive: 稱呼片段（lass），代入 3674:10、3674:13 的 @SS18 模板，P11 處理; p11-1 draft	grammar-sensitive
+3674	10	conversation	71236aee91cdfa7c39f27b187ac72782b11a7b8e9e81fc453bf7b18757435dbd	找我的藍圖？唉，那可是件大好事！它們就在附近——多半在儲藏室。我想是在我這片地方的東南邊——還是儲藏室在那裡來著？來，我給你一套這一帶的藍圖，好讓你找得到路……\\p 唉！我的藍圖！跑哪兒去了？你看起來是個不錯的@SS18——也許你能幫我找到它們？	draft		p11-1 draft	dynamic-template,control-code
 3674	11	conversation	a5efb6d649b5a6792ae327cb0e2d5c5e2950fafb63ab86d221f00d8dfc5d006e	我很樂意。	draft		p10b-4 draft	
 3674	12	conversation	a627919d78ec4cce6252b297f0ffb7f02eeadb3fdd6767d973b2e0b936c5efd0	也許吧。	draft		p10b-4 draft	
+3674	13	conversation	0d8f81baea3202ccef2cc17a920d960ec8755c3e101a00245bbe1c36807e5fd8	你真是個好@SS18。我想藍圖在儲藏室。可是你不會飛，對吧？唉，那可麻煩了，儲藏室在高處。哪裡有一瓶飛行藥劑……在螺旋室？唉，可是那裡鎖著……你給我添了這麼多麻煩，真不知道我幹嘛幫你。	draft		p11-1 draft; authority-ok:spiral（spiral room 是「螺旋室」）	dynamic-template
 3674	14	conversation	d1b221d5d686ae62ae3b68f1d80db4d134d778a153b917814d81ae3635136886	可是是我在幫你啊。	draft		p10b-4 draft	
 3674	15	conversation	60dda3ab7925b3a418692e6cc8e3741d320817f71364366dfb78189545e12c4f	非常感謝你的幫忙。	draft		p10b-4 draft	
 3674	16	conversation	a45731388830eecdf3f4d93f083545fc5d22433b6bc87f50bbb4f1d57942942a	唉，說到幫忙，要是你能找到我的藍圖，那可就幫了我這個老頭子一個大忙。對了，螺旋室的門鑰匙在哪兒來著？我想是在黃金迷宮室吧。唉，對，你得沿著黃金路徑走，不然可能會中毒……不對，那是螺旋室裡的毒藥。還是說那是飛行藥劑？也許兩種藥劑都有——唉，就是這樣！	draft		p10b-4 draft; authority-ok:spiral（spiral room 是房間名「螺旋室」，不是生物「螺旋體」）	
@@ -2567,14 +2672,19 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3674	40	conversation	3ce5fd0f2b5842c3cc009793674df0f5a15585482f29a221c2b1f3eb1d218215	你的頭盔就戴在你頭上。	draft		p10b-4 draft	
 3674	41	conversation	70bb14b49899259dd1bad2d335520dab341cbadd9f63b65551ae9e2fb788893e	唉，還真是，還真是！你真是一套很能幫忙的藍圖。多謝你啦，孩子。	draft		p10b-4 draft	
 3696	1	conversation	7bb957058d53aaea2835dce93b19d3b62145d614c103004f09e2f580abd936c7	站住！什麼人？	draft		p10b-6 draft	
+3696	2	conversation	698500aacd4cf9369c4127da2bed14a6a08632ef4d223da0a490cb0f6002c507	只是我，@GS8。	draft		p11-1 draft	dynamic-template
 3696	3	conversation	ebb28896c14d269a893e38ec06324bcb5739758e2d06d54afb5d9e443862d7ff	你為什麼想知道？	draft		p10b-6 draft	
 3696	4	conversation	2e74a01d22e9e053378664a45a235f4d36149ede074399d28584047741bad9a5	這裡由我發問。這次給我回答，無賴，不然我一劍刺穿你！	draft		p10b-6 draft	
+3696	5	conversation	67724b4791651632bec52dfdbf641942e716af829cf1d9aa9609a28ce492c346	我叫@GS8。	draft		p11-1 draft	dynamic-template
 3696	6	conversation	308b210529524f27f0574048f86e72e45c0a4a6b8f2dd8459d10cb1ba656ad3b	我不想再這樣下去了。再見。	draft		p10b-6 draft	
 3696	7	conversation	50090523270f05d465cdda39a61e0d331d74710276ddab9e23ba896446edac91	你得學會回答比你高等的人！	draft		p10b-6 draft	
+3696	8	conversation	366cdc4e98546bdb0d42630f5041ee663787696254356e82fac9c97cb1bba0ce	你在找什麼，@GS8？	draft		p11-1 draft	dynamic-template
 3696	9	conversation	276829c814ccdbac7dccab807ae45f23823e67a9b260cc88ff780e977ff294c1	我在追尋黃金與財富。	draft		p10b-6 draft	
 3696	10	conversation	881ddec44cd7f2ffddb99812acd213719784dae8bea18aae3a9b0661e73caa96	我也在追尋你的！	draft		p10b-6 draft	
 3696	11	conversation	8353e959529a57be118ae090d309036eea0c08e24b6d8479e3a6bb21420f1743	我在找男爵的女兒。	draft		p10b-6 draft	
+3696	12	conversation	4954be1032e485dfbc8d5aed547ceb61e3ca01ca348ed996c1be54376c136153	這件事我一無所知。	draft		p11-1 draft	
 3696	13	conversation	f94c6b0f0148be99f52c53cf5f88ea2d28d6eb63b5fe734e70f25bb51c517b01	我在找情報，也想交易。	draft		p10b-6 draft	
+3696	14	conversation	c516117cffdd75b3aecfa0cbf32825c12812de231fe08180a2f95298d75aee61	我兩樣都沒有。	draft		p11-1 draft	
 3696	15	conversation	acea025f2894a94775f5a30b18fdabe2ed3c16280de3142dd9f20d665102be88	給我滾！	draft		p10b-6 draft	
 3696	16	conversation	3233039a33490bb7100d6715424e18dc646c7dcc80772b6cfb2d686ea61402e7	保重了，好心的先生。	draft		p10b-6 draft	
 3696	17	conversation	da85ddf19c4fa1611030e45ff5750fda8cf92d8a2f9d394563b97230dc8f9412	你想交換物品嗎？	draft		p10b-6 draft	
@@ -2584,6 +2694,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3696	21	conversation	af74c492fc407cc928bee6d8dc7cf9699337a253dc813a0ff38bfc795f0fcbd3	也許我這裡有些東西適合你。	draft		p10b-6 draft	
 3696	22	conversation	6db4d998a0c4814461f2c2716f342d5f69e720b7ebc4ebac33b3a6f7a84b0f63	抱歉惹你這麼生氣。我這就告辭。	draft		p10b-6 draft	
 3696	23	conversation	3fff83cee6cc66214e786e9372d55eb1d489e1de42ab5e5bb60d6c5b6657b089	我可不容許別人這樣跟我說話——準備戰鬥吧！	draft		p10b-6 draft	
+3696	24	conversation	2bd33e5c5588d03ae81fd8521d82e04db38a3eeacb68ae9267b962809bf79777	@GS8，你現在又想要什麼？	draft		p11-1 draft	dynamic-template
 3696	25	conversation	414a1f43b9497ea5888390665df13aa9b27d0b5193eb1f6b079b26516af899f3	只是想交換物品和情報。	draft		p10b-6 draft	
 3696	26	conversation	ef40bcaa5202f72f7dcc727110c90c13135cbb59532c3d7ad77949fcccc9d7fa	抱歉，我得走了。	draft		p10b-6 draft	
 3696	27	conversation	e4462ed1e82477e7485eeef3726e4068d967fa89b9dc3a35681c9d0a063910a3	你為什麼一定要這麼充滿敵意？	draft		p10b-6 draft	
@@ -2609,14 +2720,19 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3696	47	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-6 draft; 交易用語沿用 3672:16-30	
 3696	48	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-6 draft; 交易用語沿用 3672:16-30	
 3696	49	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-6 draft; 交易用語沿用 3672:16-30	
+3697	1	conversation	ea115971dda8aec2b33548a114ff0e9625ae017c8c1ba9877cd2eee2b749d0cf	你在這裡做什麼？	draft		p11-1 draft	
+3697	2	conversation	432d4b67a471c4a7dc4a135c3cee12f4fad4b2833d17d149d9385541c668cda3	你又來這裡做什麼？	draft		p11-1 draft	
 3697	3	conversation	b6f5e6fa8a2de9cc96c5637102f653930ca062534a91d24bbf7a3d77f3a1988f	在我叫守衛之前，現在就離開。	draft		p10b-6 draft	
 3697	4	conversation	f1ea3cd0597b4a786393134463ddf983c84ed43f5e4ca10705f0a0e6e9c98935	抱歉。我這就走。	draft		p10b-6 draft	
 3697	5	conversation	b67f4b9be63add44a45c911301f10829ce05d8df7fe6369f85ed338a9858c4a1	拿起武器吧，無賴！	draft		p10b-6 draft	
 3697	6	conversation	cf28a14d3394f55267c11d9907a304de8255f5e41624d92581eccbac45237f85	我們不能談一談嗎？	draft		p10b-6 draft	
+3697	7	conversation	286eabc250b3cd644b057596597f9196389849a98d196aa1cdbe074dfe97813c	哈囉，@GS8。我聽說過你。你需要什麼？	draft		p11-1 draft	dynamic-template
+3697	8	conversation	d40b889e308c6dfe1e620109f8b9713b6110fccde4b2a41d269202c8a277e15b	又見面了，@GS8。我能為你做什麼？	draft		p11-1 draft	dynamic-template
 3697	9	conversation	910ef63976e96d292e2059e69761b39eb9e1d274e34583918ce69703a3243bd4	抱歉打擾你了。再見。	draft		p10b-6 draft	
 3697	10	conversation	a45cec1ac0838c91531c67d178307c3ae7afc9e668e5641d1fca131551bb94b7	我在追尋寶藏和名聲！	draft		p10b-6 draft	
 3697	11	conversation	560c181176f8dad4b5167754482948dd2b7db7919431c9974c032d296c3c0b6e	我在找情報，也想交易。	draft		p10b-6 draft	
 3697	12	conversation	e2b9cee8ea853f6447eee862f1de753ed729e5ed6235d61f6851a78da3b7538b	我想找更多情報，也想交易。	draft		p10b-6 draft	
+3697	13	conversation	dcbe37806d132b4e1e25ba51b9a6f9c34c3e29eecddef057f932a0dbe8108a9d	我現在能為你做哪一件事，@GS8？	draft		p11-1 draft	dynamic-template
 3697	14	conversation	589060294fc08a8c9e8682c848288b6602a31ff8fda081a62cf30e434d94ed0b	請給我一些情報。	draft		p10b-6 draft	
 3697	15	conversation	c055b459cafc39db5c708ae3b82bfa05b0c8ac957975f9a934bb508b5b0031ee	做點交易。	draft		p10b-6 draft	
 3697	16	conversation	6188f2b5f15072c4c4178d6c5c0c79e021f3dc15669e3d216a3acf461991715e	我跟你沒什麼好談的。在你繼續煩我之前，先去跟我的手下打交道。現在走吧。	draft		p10b-6 draft	
@@ -2632,13 +2748,16 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3697	26	conversation	afa34401c88e5e09637b3b701577fbd56304d4fc62e4b6601e86fe978573e198	那就全部交給我！	draft		p10b-6 draft	
 3697	27	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-6 draft	
 3697	28	conversation	bf0b49bc4a0125eef8fc3f889ebdec1d99b616423c9ee9655c6a3f4a0f00c5e7	你想打聽什麼情報？	draft		p10b-6 draft	
+3697	29	conversation	794c0c62ce02d370e0a38bad6d506f76184662314754435c3ec371838ea8ab23	那……呢？	draft		p11-1 draft	
 3697	30	conversation	c547da1d7f0ce6336c9dc2aea26e484a0cc43c90914c6b27fef46d8a01a9c72b	我得走了。	draft		p10b-6 draft	
 3697	32	conversation	f5cb7136ea8dc070e2c88ce8912f2859d4491f882055d30604ae0d3c0729d7b0	他被綠蜥蜴人族關起來當囚犯。	draft		p10b-6 draft	
 3697	36	conversation	dc955a9733e90574188f34b127cfe7f47e3df0f1c54a5e9350256bd0fcf96e00	我只聽說灰蜥蜴人族知道得比較多。	draft		p10b-6 draft	
 3697	39	conversation	f659c0ad9e53881befae59c833e96f5dc6e7a41e7ba5be5996c032fd2e2a9d42	北邊那個瘋子偷了各式各樣的燈，連我們的蠟燭也偷了！	draft		p10b-6 draft	
+3697	42	conversation	97950968e2e86bc7a746482b547ebb29e8bfad02a2cae1e29d069a8653ca6d6b	凱布勒斯爵士是個偉人。他死後，一切都亂了套。深淵的各個種族分裂成許多像我們這樣的小團體。跟其他人打交道可不容易。	draft		p11-1 draft	
 3697	44	conversation	bda56aa008c82823a4062771cbbe92fb140831f6acfdfa9337737a03cd626c03	八聖物？我知道得不多，只知道灰蜥蜴人族對公正之劍一清二楚。	draft		p10b-6 draft	
 3697	46	conversation	36ed5fa50f1376d1eacf602b2bc53e4d506405cba96b040de93530deac77e5c1	他們是這一層的統治者。有綠的、紅的，還有神秘的灰色族人，他們被稱為靜默族。他們甚至會說一點我們的語言。	draft		p10b-6 draft	
 3697	47	conversation	ebe0b0c59a7d8f3027143cda4c66c598c28c02327471757d29f57a9e0a827e46	抱歉，這方面我幫不上你。	draft		p10b-6 draft	
+3697	48	conversation	454521a7135bbf72b1e42acee8be60d9cf427aa1a05717f01b866c057c124b25	「@SS2」是什麼意思？	draft		p11-1 draft	dynamic-template
 3697	49	conversation	1bc2c6cbb5721d856ddef6cd0d1d2d0d336c0042dfb94ac8f8cf1c6f1fb9ff0a	我不知道。	draft		p10b-6 draft	
 3697	50	conversation	466d5e4c9aa54a613289b9b2a6f0d7405fc6c6898f9354115a6d8778ba865028	抱歉。我聽不懂。	draft		p10b-6 draft	
 3697	51	conversation	4fdd8943466c4b74711aead2e6e30744ed9f54091ab2760172dc125c28d095d5	還有什麼我能告訴你的嗎？	draft		p10b-6 draft	
@@ -2845,6 +2964,8 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3721	53	conversation	77386079b8ea8f84b56d49246bb0058ac4b22bd66586f488f3420971197653e1	你要是窮到得用偷的，我不會阻止你。	draft		p10b-10 draft	
 3721	54	conversation	532cd34cce57676c22d98548c1aadc3ebd740195f0c4e76767671921117e02cb	惡棍！我要給你一點教訓！	draft		p10b-10 draft	
 3722	1	conversation	1ff38814e104fa5e0ba5c583e283ca2d7a8ade0772f453f69fe3bd0d2d146aef	我是德瑞克，騎士兼工匠。你是誰？	draft		p10b-10 draft	
+3722	2	conversation	fd85aa30697fa8587f8b82ceaae0cdcde644d9bebe7d85deaed8117ba7b7bf5c	我叫@GS8。我正在執行任務。	draft		p11-1 draft	dynamic-template
+3722	3	conversation	6b23ba81b4a29e779046d77df3a52243b5af794442119df7da4c72aa012caa52	@GS8，有志成為騎士的人。	draft		p11-1 draft	dynamic-template
 3722	4	conversation	89513ccb8f32e31437148bebbc52bdedc0a46695e35c2b208a6928f6e6bbffdd	啊，冒險的生活不適合我。我很滿足於留在這裡做我的手藝。	draft		p10b-10 draft	
 3722	5	conversation	db26d7c294d3895c6f02a50fcd8ef394ab3fbf3ae4cdb07ef5a65b332d99f5a2	也許你只是個懦夫。	draft		p10b-10 draft	
 3722	6	conversation	c096ed2139ab84464162d782c5dc607088b3b6754658c454feb5a058b1513dd7	你的手藝是什麼？	draft		p10b-10 draft	
@@ -2867,8 +2988,10 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3722	23	conversation	fd3b4d35940ef610e15b3650001f00c2db8e2de1a2c3525a4d7d747b14841770	啊，恐怕這對我沒用。	draft		p10b-10 draft	
 3722	24	conversation	436286b9e46d96bd8719e9c706e3c564612482c389e8e79394ff2c99a96c76f3	我要是找到更有用的東西，會告訴你。	draft		p10b-10 draft	
 3722	25	conversation	68585a7c96ac3c50edd71968eea4a77d1a049ed6ac09370766ca621b196763fb	也許這個對你更有幫助。	draft		p10b-10 draft	
+3722	26	conversation	2b8f8095839111133f77c84bb4e716505031e7e89d447b923350667e8f7fb5f8	你好，@GS8。一切還好嗎？	draft		p11-1 draft	dynamic-template
 3722	27	conversation	00eff5b1adda91b3ec904047fdf2038e85cb0341afd4d5c4ce0584e8057ee659	我想我找到一件可能幫得上你的東西。	draft		p10b-10 draft	
 3722	28	conversation	af9d36a0a4a5f1ee0bbbaa9d3021b088b220825b20fedcb10a6c0bd32b421946	還算順利。現在我得繼續我的任務了。	draft		p10b-10 draft	
+3722	29	conversation	c84648004cb14cdeecc35eb66418612cf3fe82f72c2a866fefa03d87ba58ec25	你好，@GS8。你送我的寶石切割器，我會永遠感激你。它讓我的效率提高了十倍。	draft		p11-1 draft	dynamic-template
 3722	30	conversation	4cfd298266db323e594eaffadf84489c96924ad00c2abd76768fc274515f6c12	不客氣。	draft		p10b-10 draft	
 3722	31	conversation	7de277e933c0f2e81b3dc51b9f31e9ce8530984b150568df9b890ae2842f13dd	很高興它派得上用場。	draft		p10b-10 draft	
 3722	32	conversation	4ffa1a65a88ce7e3444ea3dd92adad288bcc9794009bee683fe9bf3086b1d910	那就再會了。	draft		p10b-10 draft	
@@ -2987,8 +3110,8 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3724	31	conversation	1c50dae95bb3253311f1933ff88688e2c3da33da0cc36137f15c12904b416b18	出了什麼問題？	draft		p10b-10 draft	
 3724	32	conversation	3958961ba104b91eb48c2a95813dc65bcb01276f33389271eba6f4fccfc5d59f	可以的話，我想加入騎士團。	draft		p10b-10 draft	
 3724	33	conversation	d48ce7c65faab18947ba505bc6ea3f785dbfd6465e0ce637ebdd13cb559ee9dd	你要是想加入，就去找我們的團長多納・鐵拳。	draft		p10b-10 draft	
-3724	34	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03		untranslated		grammar-sensitive: 稱呼片段（man），代入同對話的模板句，P11 處理	grammar-sensitive
-3724	35	conversation	cf2e5bff1ef03dcd20d1a0b18ef7d89fc80a3554434165753672f6f40fde1d25		untranslated		grammar-sensitive: 稱呼片段（woman），代入同對話的模板句，P11 處理	grammar-sensitive
+3724	34	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03	男人	draft		grammar-sensitive: 稱呼片段（man），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3724	35	conversation	cf2e5bff1ef03dcd20d1a0b18ef7d89fc80a3554434165753672f6f40fde1d25	女人	draft		grammar-sensitive: 稱呼片段（woman），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
 3724	36	conversation	bfd058c1b2d907f1f6264c740fceb31cbd0908f5b85f23ce9e0e45035acfd99a	要是在從前，你可不會那麼說！沒有人了解凱布勒斯的成就有多壯麗……\\p 喔，你不會懂的。	draft		p10b-10 draft	control-code
 3724	37	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-10 draft; 交易用語沿用 3672:16-30	
 3725	1	conversation	dc2982bbde647320301819bbe0da30ffba230f3995e1ee3f229c4f808f1ce74f	歡迎，旅人。我能怎麼幫你？	draft		p10b-9 draft	
@@ -3068,9 +3191,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3727	5	conversation	09f2b36188f9e8b96d5148887dc6311b6b739535a499af304891cc41581cd298	他是個難纏的對手，力氣又大。找對你有利的地形，經常移動，別讓他直接用蠻力壓倒你。小心他的劈砍。祝你好運。\\m	draft		p10b-10 draft	control-code
 3727	6	conversation	69c0bd5adac736f3961a3ff054ac4326486daa67404ac412f0d955edc39e4197	我想是吧。	draft		p10b-10 draft	
 3727	7	conversation	eca41917c3b073b4ac6007146805b0a34408b91a35aad408238deac26409e3e1	我剛才好像還聽到他在遠處的聲音。也許你把別人錯認成他了。\\m	draft		p10b-10 draft	control-code
-3727	8	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b		untranslated		grammar-sensitive: 稱呼片段（Sir），代入同對話的模板句，P11 處理	grammar-sensitive
-3727	9	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5		untranslated		grammar-sensitive: 稱呼片段（Lady），代入同對話的模板句，P11 處理	grammar-sensitive
+3727	8	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b	爵士	draft		grammar-sensitive: 稱呼片段（Sir），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3727	9	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5	女爵	draft		grammar-sensitive: 稱呼片段（Lady），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3727	10	conversation	e47294a3f19fe8312d5b2bdcb9251d627a5b1e0b5cccb16004827fbe95ceb07d	@SS1，你是我們騎士團的一員。你同樣努力維護騎士團所信奉的榮譽理想。你了解美德，也了解騎士之道。請聽我說說我的故事。	draft		p11-1 draft	dynamic-template
+3727	11	conversation	7ef949b62d56a5348fb952196f43c5046e41e8adc31b7cb75a66ffce99966864	好心的@SS1，你看起來英勇又公正，裝備齊全，足以面對深淵的重重危險，也準備好闖蕩這一帶的險境。請聽我說說我的故事。	draft		p11-1 draft	dynamic-template
 3727	12	conversation	9c95804a5fed08a1e06e92040ed2492a7108d5f46c07eec0ad9ad0e83ff04b33	我很樂意聽你的故事。	draft		p10b-10 draft	
+3727	13	conversation	a2c8e1660ad30eb16960d5c39a9627e75ee25da0c57f6d1fd3b559d41cb58343	@SS1，這不是個愉快的故事，不過我還是要說。\\m	draft		p11-1 draft	dynamic-template,control-code
 3727	14	conversation	5a37cbbf63fd0104cc356b1bd5faad20037a44554dbe23c29080bbd6b834b164	我會的。現在就開始吧。	draft		p10b-10 draft	
 3727	15	conversation	b927e16d2bb64657c81ac6588de4ddf90710aff6a5b238fc4e31f370e468b87c	我很忙。改天吧。	draft		p10b-10 draft	
 3727	16	conversation	eaad79b8003f9d44e6e9593ff3fbc7dd1588340289248455159c950aeb9f4eb0	羅德里克爵士曾經是我們騎士團的一員，可是他背棄了騎士團的原則，現在自稱混沌騎士，在整個北區作威作福。以多欺少有失榮譽，所以我們的團長多納挑選我，與他一對一決鬥。\\m	draft		p10b-10 draft	control-code
@@ -3086,8 +3212,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3727	26	conversation	5afe25347c6cca9de3194feba3f4bdcdb79b183832bcdafa2e68a66d7860e465	我必須打敗他，恢復我和騎士團的榮譽，這是真的。但真正的騎士是帶著力量與智慧面對戰鬥的，就算以我的智慧來看，我現在顯然還沒準備好跟他交手。\\m	draft		p10b-10 draft	control-code
 3727	27	conversation	aad66c65f47445c0b9751b781333b8a4a7a28b6b4dcd770b58feb5dec3547f8d	請你回來，幫幫我。	draft		p10b-10 draft	
 3727	28	conversation	204dd08f1cf613bf529125ee4a5ef8393531a9174ec297eedd356f57b88ab8a6	你這麼缺乏憐憫之心，讓我很失望。	draft		p10b-10 draft	
-3727	29	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b		untranslated		grammar-sensitive: 稱呼片段（Sir），代入同對話的模板句，P11 處理	grammar-sensitive
-3727	30	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5		untranslated		grammar-sensitive: 稱呼片段（Lady），代入同對話的模板句，P11 處理	grammar-sensitive
+3727	29	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b	爵士	draft		grammar-sensitive: 稱呼片段（Sir），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3727	30	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5	女爵	draft		grammar-sensitive: 稱呼片段（Lady），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3727	31	conversation	40198ee4882d6170834b2b2e19c0e3b070d9a020a49706285e72a6613dad5825	尊貴的@SS2，我懇求你聽一聽，這件事非常重要，還會帶來可怕的後果。	draft		p11-1 draft	dynamic-template
 3727	32	conversation	2ecbdcf338d483d1abb2fd9b15fe18802f09167234cb2e63fcbb085b6836f034	我沒時間。可以的話我會再回來，可是我得先處理急事。	draft		p10b-10 draft	
 3727	33	conversation	fa6588b885f17861532d0ed22f3e2429337ad792083395ecab3478f974329fb2	好吧，不過長話短說。	draft		p10b-10 draft	
 3727	34	conversation	8787163f0235e9bb4eea626f85b1c5d2250cd29e203deff1c96a6e0ae03c6b00	只要能再跟那個惡棍交手一次，我願意賠上剩下的右臂。他會見識到我是什麼樣的騎士。	draft		p10b-10 draft	
@@ -3100,20 +3227,32 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3727	41	conversation	c7f16b75c5c0147d5aaa5cc8a2cd31cbec80d2d575538b7a54d632f2b47cf31b	你要是碰到那個惡棍並打敗他，不只會為你帶來極大的榮譽，或許還能救我一命。	draft		p10b-10 draft	
 3727	42	conversation	a3d67e05202eaf99325bddde7ce98493e3c8dab18d1c35f788d00d025af64755	我會去找他。	draft		p10b-10 draft	
 3727	43	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-10 draft; 交易用語沿用 3672:16-30	
+3727	44	conversation	19ab5068baa5694e9f5e9c53a86ad5206db71244cd04f4c00f0437af8008bc47	@GS8！能再見到你，我真是高興極了。我已經把你的事蹟告訴這裡的每個人，他們跟我一樣感激你。\n 啊，對了，我回家的路上碰巧撿到這張卷軸，想說也許對你的旅途有用。請收下，當作我的謝意。	draft		p11-1 draft	dynamic-template
 3727	45	conversation	e5b6e936db8ca728fca0603e1425bb69cc166716ffbb01f49dd94284f4405d87	\\m我就把它放在這裡給你。	draft		p10b-10 draft	control-code
+3727	46	conversation	4ea10ae8b9e6fede6aa416f986da344e8e6e36d4530e6d75260a8c14c9ee579b	衷心向你問好，@GS8。很高興你願意撥出寶貴的時間跟老朋友聊聊。不過，也許你該繼續上路，去找新的挑戰了。	draft		p11-1 draft	dynamic-template
+3727	47	conversation	12b83281fc73be7d8403b211b0815204d3c630898e1428ccaabd84169e4175a8	很高興再見到你，@GS8。我現在沒空聊，我得回家跟同伴會合。等我到了那裡，很樂意跟你聊聊。	draft		p11-1 draft	dynamic-template
 3727	48	conversation	9196959226a492fc3d0da3b1a08ce37991c6745133443b8a27d05d0be072b879	你打敗了羅德里克，挽回了我的榮譽！我打從心底感謝你。你一定跟我們騎士團的任何人一樣英勇。現在我可以毫無遺憾地回到同伴身邊了。	draft		p10b-10 draft	
 3727	49	conversation	eb5669fb7c2ea74d3a996520918ff3d2790a402ba0ee9e11f65812e1001ff811	你是誰？	draft		p10b-10 draft	
+3727	50	conversation	30cea6f286cfae302a5192502942abd20939b75bb576a62074da3b5608e3cbeb	我是@GS25，安卡十字騎士團的一員。	draft		p11-1 draft	dynamic-template
 3727	51	conversation	69ccd592418161b663931cb626b584ce38a77aa88e513d9b78c94c9b4c95cd02	我屬於安卡十字騎士團。	draft		p10b-10 draft	
 3727	52	conversation	b3aa374d3a7a1654ba02db8948baf3f773ad991750f8300d858875eed32ee377	我的名字也是我自己的，不過我很自豪能與尊重它的人分享。不願意的人嘛，我寧可他們離開。	draft		p10b-10 draft	
-3727	53	conversation	0b4bd77cec705cf5df016344c0fc673fb3c2240078e6af572b2c5c6fa76114af		untranslated		grammar-sensitive: 稱呼片段（brother），代入同對話的模板句，P11 處理	grammar-sensitive
-3727	54	conversation	1980d3927f07fec9c8d727f187ddde727da7e45247dbb71c7555e5ae0eca66d5		untranslated		grammar-sensitive: 稱呼片段（sister），代入同對話的模板句，P11 處理	grammar-sensitive
+3727	53	conversation	0b4bd77cec705cf5df016344c0fc673fb3c2240078e6af572b2c5c6fa76114af	兄弟	draft		grammar-sensitive: 稱呼片段（brother），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3727	54	conversation	1980d3927f07fec9c8d727f187ddde727da7e45247dbb71c7555e5ae0eca66d5	姊妹	draft		grammar-sensitive: 稱呼片段（sister），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3727	55	conversation	df26481ab8ffcc3252aef3ff987299d754fa58f14b2aced78b13179172f3bfae	你好，@SS2。你叫什麼名字？	draft		p11-1 draft	dynamic-template
+3727	56	conversation	db295ad67c7e3e636a7182114834a1629bcf872cb85e52f7b56100a324002812	我是@GS25，很高興認識你。	draft		p11-1 draft	dynamic-template
+3727	57	conversation	d4d597a0b89a0af9937a564b262c0a17c9f3b7f46d8b287ab6e3ce48f9941195	能跟你說話是莫大的榮幸，@GS8。	draft		p11-1 draft	dynamic-template
+3727	58	conversation	90ff378ed63a85de44fd5437be5930ef593a0049f8c654b524f893c63290a309	我是@GS25，很高興認識為我們騎士團帶來如此榮譽的人。	draft		p11-1 draft	dynamic-template
 3727	59	conversation	15e68fa63b5fc3793abc917c7bdb8f569e37ccd6d84561a7f3ae8dedf28b10d7	抱歉，你剛才說你叫什麼名字？	draft		p10b-10 draft	
+3727	60	conversation	189cac031f482c135cd1264a7def713e9674d10cb170c07ceae5335ebf639489	啊。我是@GS25。	draft		p11-1 draft	dynamic-template
 3727	61	conversation	3eff303f5211e35f09071fc95aa5064b0bb39dc0ed539b61809a1f12678c8496	我是安卡十字騎士團的人。	draft		p10b-10 draft	
 3727	62	conversation	78af673f2e397a3c9a9000fe3a0814ec8e825a2ddfd37ece8d940f1df2385d2a	啊，我應該沒聽漏你的名字——是你沒說吧。嗯，我想隱私是該尊重的，不過名字要是保密，就很難為它增添榮譽了。	draft		p10b-10 draft	
+3727	63	conversation	4a472d6831b37f224695b9a20be4013ce0f646822b4f6a2ecddd1b5efcca76d9	我是@GS8。	draft		p11-1 draft	dynamic-template
 3727	64	conversation	cc4d69c6eb22eb4103b28b65d3fe8638f25835aa5fa2a9e5ff7664f06677d568	這不關你的事。	draft		p10b-10 draft	
 3727	65	conversation	924179f54b82b4ada4668d564a9223c19b21e8e8dbc459c85aa05506e63875d0	我是冒險者。	draft		p10b-10 draft	
-3727	66	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b		untranslated		grammar-sensitive: 稱呼片段（Sir），代入同對話的模板句，P11 處理	grammar-sensitive
-3727	67	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5		untranslated		grammar-sensitive: 稱呼片段（Lady），代入同對話的模板句，P11 處理	grammar-sensitive
+3727	66	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b	爵士	draft		grammar-sensitive: 稱呼片段（Sir），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3727	67	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5	女爵	draft		grammar-sensitive: 稱呼片段（Lady），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3727	68	conversation	ab08365ad35ad2b687ed8d34bd26c88e4ebc4e6448644f6d5e5b925377771715	我能幫你嗎，@GS8？	draft		p11-1 draft	dynamic-template
+3727	69	conversation	46da220d7da0b688e6173a742ad2b863dd5e5f807732e1dab3990ccf431054a2	我能幫你嗎，@SS1？	draft		p11-1 draft	dynamic-template
 3727	70	conversation	f52645d730eaa3eeeb1b42fd469407f19af27a29af2642d295a9b6af24ea4061	你們的團長在哪裡？	draft		p10b-10 draft	
 3727	71	conversation	b80c72b55a66d51f165ccd8f7a59d6142313da935c79d8f2d154afab24e21046	他住在我們領地的南邊。	draft		p10b-10 draft	
 3727	72	conversation	78079034a969c6564358f5db3327e8dcfd5246cd613b2a39fb756388445e5ef2	跟我說說洞穴巨人。	draft		p10b-10 draft	
@@ -3121,9 +3260,11 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3727	74	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-10 draft; 交易用語沿用 3672:16-30	
 3727	75	conversation	e6ccb7cbe58f7eb5ddb89c96f9472bf8221fe9c966e5dcec5c1d8f7014206417	謝謝你。	draft		p10b-10 draft	
 3728	1	conversation	a9f5108a318c46beae02c77f4ecb78fba82ed816a282819efa354b8e7d62e372	你誰？我沒見過你。	draft		p10b-10 draft	
+3728	2	conversation	4a472d6831b37f224695b9a20be4013ce0f646822b4f6a2ecddd1b5efcca76d9	我是@GS8。	draft		p11-1 draft	dynamic-template
 3728	3	conversation	924179f54b82b4ada4668d564a9223c19b21e8e8dbc459c85aa05506e63875d0	我是冒險者。	draft		p10b-10 draft	
 3728	4	conversation	868f71b18339785b44a30614a741b440f420935fdf8508c6d8e0bc36b46c23a4	我是你的末日！	draft		p10b-10 draft	
 3728	5	conversation	5b37bea46dd732a151c57d8d12fec29389536bdd07c74575f4ff6a57d2409259	聽起來好複雜。我叫你羅德里格斯好不好？	draft		p10b-10 draft	
+3728	6	conversation	7468966679fb12111f45beff8cde86deb4ecb73598f4920dcdeaee4a813b58bf	我介意！我叫@GS8。	draft		p11-1 draft	dynamic-template
 3728	7	conversation	d44e9805188daee86482f35c023a3c3f598e0c2d52903d09a1ca0374cbd19780	一點也不介意，羅德里格斯是個好名字。	draft		p10b-10 draft	
 3728	8	conversation	53dafb2661c11f79d62e5e3f3c4c15c28c127f8b24db3771b7c0c9119132b25a	既然你堅持。	draft		p10b-10 draft	
 3728	9	conversation	ae9742741e793ebbb0161fb2a82a4fd20b484081b4b7440778e3ab29aaad06ca	你說什麼都好，羅德里格斯。	draft		p10b-10 draft	
@@ -3132,6 +3273,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3728	12	conversation	c82b85ea0adb04fec201b99ae83c4932ea46cf164bac13a9125ee9f4ee1fecc5	你能讓我通過你的門嗎？	draft		p10b-10 draft	
 3728	13	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-10 draft; 「其他……」讓玩家自行輸入話題（door、open、help、knights、lava、bridge、bye 不翻）	
 3728	14	conversation	f5ee553a9d80b530c1532366f89d791b443cb06caffcb5616c00989ad38c1653	沒事，謝謝你。再會。	draft		p10b-10 draft	
+3728	15	conversation	815627348c87e984d06e997f0a948e4b569078cb94241383a0d90e2d9ae2e252	\\1@SS1\\0	draft		p11-1 draft; 玩家輸入的回顯（玩家顏色），與原文相同	dynamic-template,control-code
 3728	19	conversation	8332fe36ab019704c58d70bf28c5b4225d4029d37ad12cff9a1829ade3bd04b3	喔……我想，我能幫就幫。	draft		p10b-10 draft	
 3728	21	conversation	31fff961f0c4a45cf5938abe0ef2523d8b7fee12947ff564803996ed4ff728c5	我寧可待在這裡，守我的門。比出去騎士那邊安全。	draft		p10b-10 draft	
 3728	23	conversation	1bbcf6b84c68d49b332ac979a27981672e93341487fac2e8b170d4ab0ed805b3	熔岩很燙。我不靠近。	draft		p10b-10 draft	
@@ -3181,12 +3323,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3730	16	conversation	a8c56f475c569f7bfb07e6d80b3bc14d452d3b0c18c8d4fc929132b9b0b24031	我在哪裡能找到你們的團長？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	17	conversation	c9129e52ae7618ea150a1be3fd7b567021e4194716c7eddd0572f8ef5603586f	多納・鐵拳在我們領地的南邊。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	18	conversation	b4c6f8132546794ec947bc6e2f9bc68d1e4d6639bc728bc13978c35037d88994	你運氣真好！多納・鐵拳就住在這個房間。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
-3730	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7		untranslated		grammar-sensitive: 稱呼片段（Brother），代入 3730:21 的 @SS1 模板，P11 處理	grammar-sensitive
-3730	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5		untranslated		grammar-sensitive: 稱呼片段（Sister），代入 3730:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3730	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7	兄弟	draft		grammar-sensitive: 稱呼片段（Brother），代入 3730:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3730	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5	姊妹	draft		grammar-sensitive: 稱呼片段（Sister），代入 3730:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3730	21	conversation	ce34e963e1c6cc33e02517c2de3fef631fd4ff49966b87663960fad439418e15	你好，@SS1@GS8。你的許多成就，必定已證明你是安卡十字騎士團真正的騎士。	draft		p11-1 draft	dynamic-template
 3730	22	conversation	2b2b6721cc1270dce49f647b290429ee3edff0cd45859dbc48c8cf8fb0218f15	是你的好榜樣激勵我完成任務的。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	23	conversation	d6a1b39748b08bb955129b61a5d2b27cc0f30b8fc022d8e2682121ae59befa81	在我追尋美德的路上，你能幫我嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	24	conversation	ac7cff20bab7d0b05be766e8348c8f993b1cc751fa6e6b3a8dac671e915b5c48	你想交換物品嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	25	conversation	e2d8594ef10f888a7bc21fd3a989f228428c150fc3b9984f3214c55efa8eb4d8	當然。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	26	conversation	20c8de21a040d2e0469af78aad2cd503e4c75d0d7cc437aac8d7eb8b2ad753e2	再會，@GS8。	draft		p11-1 draft	dynamic-template
+3730	27	conversation	c9972f022a8181ec7d6996fe05e6b4b36984e5845346f4dce07995ca7fe7c77b	歡迎，扈從@GS8。很高興看到你努力成為我們的一員。我能怎麼幫你？	draft		p11-1 draft	dynamic-template
 3730	28	conversation	722fd811a61be0af654a7f915347e8685794c6540f0ab37dfee54c6fa760683e	你有什麼知識，能幫助我邁向騎士身分嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	29	conversation	28885de27958f45213a68c1c34b54b649eb1d7aa4aad783b1152c6612cf04cc7	你的好話就已經夠幫忙了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	30	conversation	432c1e7d57f7e52a7f9f416434ec8ee983693558bbe28c23f808a6f3fc74506c	你有洛恩的文書的消息嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
@@ -3202,6 +3347,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3730	40	conversation	efcbd5557d38c3605a0fd2972b41a4969ebc121afe39c6b560867d8f6ea13c0a	謝謝你。我會去那裡找。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	41	conversation	7052b84dbb9c963f2c06c8ecfb963053ae967522d6260c3fef2320284aa29233	我到處都找過了，可是沒找到。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	42	conversation	a9ce11b034f3e7ff38df9934af6244bc5650fdfdf1e9a5af57368b85b2c191f5	要是容易找到，那就不算是騎士該有的任務了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3730	43	conversation	cbb4e15a9281eb2a660c821bc383a3bc1323b83cf2e7b215873ea6f92c1ce7f8	很高興再見到你，騎士@GS8。你的任務進行得如何？	draft		p11-1 draft	dynamic-template
 3730	44	conversation	9708c15f8ee729436b6b204c12343c4c5e93c7e9f5de3d2480bc3c2d74bb9dd2	我需要一些戰鬥技巧上的幫助。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	45	conversation	cb32b2ea3bd3e903272c02cccf1a0cc97bd77d3cb62ef6295c6a735620d66c07	還在進行。我現在得繼續了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3730	46	conversation	70cf61aeb2d6fbe6bdea4a5fe3ea342ccbc68e483f9c7d942467744c622eb591	你能幫我找到金盤嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
@@ -3261,12 +3407,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3731	16	conversation	a8c56f475c569f7bfb07e6d80b3bc14d452d3b0c18c8d4fc929132b9b0b24031	我在哪裡能找到你們的團長？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	17	conversation	c9129e52ae7618ea150a1be3fd7b567021e4194716c7eddd0572f8ef5603586f	多納・鐵拳在我們領地的南邊。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	18	conversation	b4c6f8132546794ec947bc6e2f9bc68d1e4d6639bc728bc13978c35037d88994	你運氣真好！多納・鐵拳就住在這個房間。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
-3731	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7		untranslated		grammar-sensitive: 稱呼片段（Brother），代入 3731:21 的 @SS1 模板，P11 處理	grammar-sensitive
-3731	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5		untranslated		grammar-sensitive: 稱呼片段（Sister），代入 3731:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3731	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7	兄弟	draft		grammar-sensitive: 稱呼片段（Brother），代入 3731:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3731	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5	姊妹	draft		grammar-sensitive: 稱呼片段（Sister），代入 3731:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3731	21	conversation	ce34e963e1c6cc33e02517c2de3fef631fd4ff49966b87663960fad439418e15	你好，@SS1@GS8。你的許多成就，必定已證明你是安卡十字騎士團真正的騎士。	draft		p11-1 draft	dynamic-template
 3731	22	conversation	2b2b6721cc1270dce49f647b290429ee3edff0cd45859dbc48c8cf8fb0218f15	是你的好榜樣激勵我完成任務的。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	23	conversation	d6a1b39748b08bb955129b61a5d2b27cc0f30b8fc022d8e2682121ae59befa81	在我追尋美德的路上，你能幫我嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	24	conversation	ac7cff20bab7d0b05be766e8348c8f993b1cc751fa6e6b3a8dac671e915b5c48	你想交換物品嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	25	conversation	e2d8594ef10f888a7bc21fd3a989f228428c150fc3b9984f3214c55efa8eb4d8	當然。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	26	conversation	20c8de21a040d2e0469af78aad2cd503e4c75d0d7cc437aac8d7eb8b2ad753e2	再會，@GS8。	draft		p11-1 draft	dynamic-template
+3731	27	conversation	c9972f022a8181ec7d6996fe05e6b4b36984e5845346f4dce07995ca7fe7c77b	歡迎，扈從@GS8。很高興看到你努力成為我們的一員。我能怎麼幫你？	draft		p11-1 draft	dynamic-template
 3731	28	conversation	722fd811a61be0af654a7f915347e8685794c6540f0ab37dfee54c6fa760683e	你有什麼知識，能幫助我邁向騎士身分嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	29	conversation	28885de27958f45213a68c1c34b54b649eb1d7aa4aad783b1152c6612cf04cc7	你的好話就已經夠幫忙了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	30	conversation	432c1e7d57f7e52a7f9f416434ec8ee983693558bbe28c23f808a6f3fc74506c	你有洛恩的文書的消息嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
@@ -3282,6 +3431,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3731	40	conversation	efcbd5557d38c3605a0fd2972b41a4969ebc121afe39c6b560867d8f6ea13c0a	謝謝你。我會去那裡找。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	41	conversation	7052b84dbb9c963f2c06c8ecfb963053ae967522d6260c3fef2320284aa29233	我到處都找過了，可是沒找到。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	42	conversation	a9ce11b034f3e7ff38df9934af6244bc5650fdfdf1e9a5af57368b85b2c191f5	要是容易找到，那就不算是騎士該有的任務了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
+3731	43	conversation	cbb4e15a9281eb2a660c821bc383a3bc1323b83cf2e7b215873ea6f92c1ce7f8	很高興再見到你，騎士@GS8。你的任務進行得如何？	draft		p11-1 draft	dynamic-template
 3731	44	conversation	9708c15f8ee729436b6b204c12343c4c5e93c7e9f5de3d2480bc3c2d74bb9dd2	我需要一些戰鬥技巧上的幫助。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	45	conversation	cb32b2ea3bd3e903272c02cccf1a0cc97bd77d3cb62ef6295c6a735620d66c07	還在進行。我現在得繼續了。	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
 3731	46	conversation	70cf61aeb2d6fbe6bdea4a5fe3ea342ccbc68e483f9c7d942467744c622eb591	你能幫我找到金盤嗎？	draft		p10b-8 draft; 與 3730／3731 同一腳本，譯文相同	
@@ -3341,12 +3491,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3732	16	conversation	a8c56f475c569f7bfb07e6d80b3bc14d452d3b0c18c8d4fc929132b9b0b24031	我在哪裡能找到你們的團長？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	17	conversation	c9129e52ae7618ea150a1be3fd7b567021e4194716c7eddd0572f8ef5603586f	多納・鐵拳在我們領地的南邊。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	18	conversation	b4c6f8132546794ec947bc6e2f9bc68d1e4d6639bc728bc13978c35037d88994	你運氣真好！多納・鐵拳就住在這個房間。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
-3732	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7		untranslated		grammar-sensitive: 稱呼片段（Brother），代入 3732:21 的 @SS1 模板，P11 處理	grammar-sensitive
-3732	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5		untranslated		grammar-sensitive: 稱呼片段（Sister），代入 3732:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3732	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7	兄弟	draft		grammar-sensitive: 稱呼片段（Brother），代入 3732:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3732	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5	姊妹	draft		grammar-sensitive: 稱呼片段（Sister），代入 3732:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3732	21	conversation	ce34e963e1c6cc33e02517c2de3fef631fd4ff49966b87663960fad439418e15	你好，@SS1@GS8。你的許多成就，必定已證明你是安卡十字騎士團真正的騎士。	draft		p11-1 draft	dynamic-template
 3732	22	conversation	2b2b6721cc1270dce49f647b290429ee3edff0cd45859dbc48c8cf8fb0218f15	是你的好榜樣激勵我完成任務的。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	23	conversation	d6a1b39748b08bb955129b61a5d2b27cc0f30b8fc022d8e2682121ae59befa81	在我追尋美德的路上，你能幫我嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	24	conversation	ac7cff20bab7d0b05be766e8348c8f993b1cc751fa6e6b3a8dac671e915b5c48	你想交換物品嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	25	conversation	e2d8594ef10f888a7bc21fd3a989f228428c150fc3b9984f3214c55efa8eb4d8	當然。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
+3732	26	conversation	20c8de21a040d2e0469af78aad2cd503e4c75d0d7cc437aac8d7eb8b2ad753e2	再會，@GS8。	draft		p11-1 draft	dynamic-template
+3732	27	conversation	c9972f022a8181ec7d6996fe05e6b4b36984e5845346f4dce07995ca7fe7c77b	歡迎，扈從@GS8。很高興看到你努力成為我們的一員。我能怎麼幫你？	draft		p11-1 draft	dynamic-template
 3732	28	conversation	722fd811a61be0af654a7f915347e8685794c6540f0ab37dfee54c6fa760683e	你有什麼知識，能幫助我邁向騎士身分嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	29	conversation	28885de27958f45213a68c1c34b54b649eb1d7aa4aad783b1152c6612cf04cc7	你的好話就已經夠幫忙了。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	30	conversation	432c1e7d57f7e52a7f9f416434ec8ee983693558bbe28c23f808a6f3fc74506c	你有洛恩的文書的消息嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
@@ -3362,6 +3515,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3732	40	conversation	efcbd5557d38c3605a0fd2972b41a4969ebc121afe39c6b560867d8f6ea13c0a	謝謝你。我會去那裡找。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	41	conversation	7052b84dbb9c963f2c06c8ecfb963053ae967522d6260c3fef2320284aa29233	我到處都找過了，可是沒找到。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	42	conversation	a9ce11b034f3e7ff38df9934af6244bc5650fdfdf1e9a5af57368b85b2c191f5	要是容易找到，那就不算是騎士該有的任務了。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
+3732	43	conversation	cbb4e15a9281eb2a660c821bc383a3bc1323b83cf2e7b215873ea6f92c1ce7f8	很高興再見到你，騎士@GS8。你的任務進行得如何？	draft		p11-1 draft	dynamic-template
 3732	44	conversation	9708c15f8ee729436b6b204c12343c4c5e93c7e9f5de3d2480bc3c2d74bb9dd2	我需要一些戰鬥技巧上的幫助。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	45	conversation	cb32b2ea3bd3e903272c02cccf1a0cc97bd77d3cb62ef6295c6a735620d66c07	還在進行。我現在得繼續了。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3732	46	conversation	70cf61aeb2d6fbe6bdea4a5fe3ea342ccbc68e483f9c7d942467744c622eb591	你能幫我找到金盤嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
@@ -3421,12 +3575,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3733	16	conversation	a8c56f475c569f7bfb07e6d80b3bc14d452d3b0c18c8d4fc929132b9b0b24031	我在哪裡能找到你們的團長？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	17	conversation	c9129e52ae7618ea150a1be3fd7b567021e4194716c7eddd0572f8ef5603586f	多納・鐵拳在我們領地的南邊。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	18	conversation	b4c6f8132546794ec947bc6e2f9bc68d1e4d6639bc728bc13978c35037d88994	你運氣真好！多納・鐵拳就住在這個房間。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
-3733	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7		untranslated		grammar-sensitive: 稱呼片段（Brother），代入 3733:21 的 @SS1 模板，P11 處理	grammar-sensitive
-3733	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5		untranslated		grammar-sensitive: 稱呼片段（Sister），代入 3733:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3733	19	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7	兄弟	draft		grammar-sensitive: 稱呼片段（Brother），代入 3733:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3733	20	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5	姊妹	draft		grammar-sensitive: 稱呼片段（Sister），代入 3733:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3733	21	conversation	ce34e963e1c6cc33e02517c2de3fef631fd4ff49966b87663960fad439418e15	你好，@SS1@GS8。你的許多成就，必定已證明你是安卡十字騎士團真正的騎士。	draft		p11-1 draft	dynamic-template
 3733	22	conversation	2b2b6721cc1270dce49f647b290429ee3edff0cd45859dbc48c8cf8fb0218f15	是你的好榜樣激勵我完成任務的。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	23	conversation	d6a1b39748b08bb955129b61a5d2b27cc0f30b8fc022d8e2682121ae59befa81	在我追尋美德的路上，你能幫我嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	24	conversation	ac7cff20bab7d0b05be766e8348c8f993b1cc751fa6e6b3a8dac671e915b5c48	你想交換物品嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	25	conversation	e2d8594ef10f888a7bc21fd3a989f228428c150fc3b9984f3214c55efa8eb4d8	當然。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
+3733	26	conversation	20c8de21a040d2e0469af78aad2cd503e4c75d0d7cc437aac8d7eb8b2ad753e2	再會，@GS8。	draft		p11-1 draft	dynamic-template
+3733	27	conversation	c9972f022a8181ec7d6996fe05e6b4b36984e5845346f4dce07995ca7fe7c77b	歡迎，扈從@GS8。很高興看到你努力成為我們的一員。我能怎麼幫你？	draft		p11-1 draft	dynamic-template
 3733	28	conversation	722fd811a61be0af654a7f915347e8685794c6540f0ab37dfee54c6fa760683e	你有什麼知識，能幫助我邁向騎士身分嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	29	conversation	28885de27958f45213a68c1c34b54b649eb1d7aa4aad783b1152c6612cf04cc7	你的好話就已經夠幫忙了。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	30	conversation	432c1e7d57f7e52a7f9f416434ec8ee983693558bbe28c23f808a6f3fc74506c	你有洛恩的文書的消息嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
@@ -3442,6 +3599,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3733	40	conversation	efcbd5557d38c3605a0fd2972b41a4969ebc121afe39c6b560867d8f6ea13c0a	謝謝你。我會去那裡找。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	41	conversation	7052b84dbb9c963f2c06c8ecfb963053ae967522d6260c3fef2320284aa29233	我到處都找過了，可是沒找到。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	42	conversation	a9ce11b034f3e7ff38df9934af6244bc5650fdfdf1e9a5af57368b85b2c191f5	要是容易找到，那就不算是騎士該有的任務了。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
+3733	43	conversation	cbb4e15a9281eb2a660c821bc383a3bc1323b83cf2e7b215873ea6f92c1ce7f8	很高興再見到你，騎士@GS8。你的任務進行得如何？	draft		p11-1 draft	dynamic-template
 3733	44	conversation	9708c15f8ee729436b6b204c12343c4c5e93c7e9f5de3d2480bc3c2d74bb9dd2	我需要一些戰鬥技巧上的幫助。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	45	conversation	cb32b2ea3bd3e903272c02cccf1a0cc97bd77d3cb62ef6295c6a735620d66c07	還在進行。我現在得繼續了。	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
 3733	46	conversation	70cf61aeb2d6fbe6bdea4a5fe3ea342ccbc68e483f9c7d942467744c622eb591	你能幫我找到金盤嗎？	draft		p10b-9 draft; 與 3730／3731 同一腳本，譯文相同	
@@ -3489,8 +3647,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3745	4	conversation	be03a8bdbf9b5fc2f74cc6cc0bcb16f51eb4935ac025e18e7a9548c41a10ab72	多年前，我開始研究把賤金屬變成黃金的方法。研究過程中，我發現了一種更新、更好的方法，但需要一種非常稀有的物質。我的任務就是找到更多這種物質。	draft		p10b-11 draft	
 3745	5	conversation	52aeb8afbec878f33d0147674f0635f5ce43d8b11aa35bda74b66f6f003ac300	這個方法為什麼好那麼多？	draft		p10b-11 draft	
 3745	6	conversation	ab7b2cf55be2b0b25c379c570cfde7d0a376333552ebeaf9e62792b3598b109a	跟我說說這種物質。	draft		p10b-11 draft	
-3745	7	conversation	1b056b8b71c298761ab8d9ae4d4b5e98aced8376641dbe7ff6f0d1db2572474a		untranslated		grammar-sensitive: 組句片段（zanium），代入同對話的模板句，P11 處理	grammar-sensitive
-3745	8	conversation	ee5f192eda0d2d49fcc964717fdb5f27b6c48e9637c7805fec1efbbd5503bd2b		untranslated		grammar-sensitive: 組句片段（the principal reagent），代入同對話的模板句，P11 處理	grammar-sensitive
+3745	7	conversation	1b056b8b71c298761ab8d9ae4d4b5e98aced8376641dbe7ff6f0d1db2572474a	札尼礦	draft		grammar-sensitive: 組句片段（zanium），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3745	8	conversation	ee5f192eda0d2d49fcc964717fdb5f27b6c48e9637c7805fec1efbbd5503bd2b	那種主要試劑	draft		grammar-sensitive: 組句片段（the principal reagent），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3745	9	conversation	1f06202558408fb8e76dd0497edaa5fd9141f20de85b60b0bcd82b82824cfb17	我剛開始研究時，現有的方法需要大量試劑，每磅賤金屬只能產出不到一盎司的黃金。\n 新方法需要的試劑少得多，產出的黃金也多得多。可是，@SS1很稀有，我只找到一點點微量。	draft		p11-1 draft	dynamic-template
 3745	10	conversation	ab7b2cf55be2b0b25c379c570cfde7d0a376333552ebeaf9e62792b3598b109a	跟我說說這種物質。	draft		p10b-11 draft	
 3745	11	conversation	c01239f91d89d793e249b6bc5b7202928f647b0c7cca57ff6ad523316d3c8e1a	這種礦物要怎麼採集？	draft		p10b-11 draft	
 3745	12	conversation	357f4f3560a4177e88b6d524a3db4aee7b4cc73e1c7b80dcb2e4ee11c6fb4dd0	跟我說說那個礦區。	draft		p10b-11 draft	
@@ -3550,11 +3709,13 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3745	67	conversation	a9237b0f7ec76391d7e8926ae57c405beb939df81ec47cc867d0e601208f7961	喔，抱歉。我沒帶在身上。	draft		p10b-11 draft	
 3745	68	conversation	f6a72b91be4e05b481b60b6411973e3e0e4169bb123bd0c8092ae34ab68a6675	好吧。找到了再回來。	draft		p10b-11 draft	
 3745	69	conversation	9dce5384702dc699804e0c65009ee90829dd710253eba8da4e00ea878acec5b9	我一份也沒看到！	draft		p10b-11 draft	
-3745	70	conversation	af2bdbe1aa9b6ec1e2ade1d694f41fc71a831d0268e9891562113d8a62add1bf		untranslated		grammar-sensitive: 組句片段（sample），代入同對話的模板句，P11 處理	grammar-sensitive
-3745	71	conversation	24baa7a731ce04b431af93d94cba8e0160a0e6a4607edc2d70c595dd098e56cf		untranslated		grammar-sensitive: 組句片段（samples），代入同對話的模板句，P11 處理	grammar-sensitive
+3745	70	conversation	af2bdbe1aa9b6ec1e2ade1d694f41fc71a831d0268e9891562113d8a62add1bf	份樣本	draft		grammar-sensitive: 組句片段（sample），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3745	71	conversation	24baa7a731ce04b431af93d94cba8e0160a0e6a4607edc2d70c595dd098e56cf	份樣本	draft		grammar-sensitive: 組句片段（samples），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3745	72	conversation	451dc4771089dc65197208063fa418709b5ca90e252754e8e19b1c34cadd8cd3	我只看到 @GI53 @SS2！	draft		p11-1 draft	dynamic-template
 3745	73	conversation	f7dd2221a8b228e501455c883b65297d6506577ef8349eac19c51846b64517ba	非常感謝你。一小時後回來，我會給你一塊大到你難以想像的金塊。	draft		p10b-11 draft	
-3745	74	conversation	28cdd20eaf134a05f18369414cb2df5e36c6a4e4f551b8c9cff8548029c41d6c		untranslated		grammar-sensitive: 組句片段（minute），代入同對話的模板句，P11 處理	grammar-sensitive
-3745	75	conversation	90e63d85fa1ab2c8ed65222f3ebd794b1e524b4b7cf84bec451542d0451b2985		untranslated		grammar-sensitive: 組句片段（minutes），代入同對話的模板句，P11 處理	grammar-sensitive
+3745	74	conversation	28cdd20eaf134a05f18369414cb2df5e36c6a4e4f551b8c9cff8548029c41d6c	分鐘	draft		grammar-sensitive: 組句片段（minute），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3745	75	conversation	90e63d85fa1ab2c8ed65222f3ebd794b1e524b4b7cf84bec451542d0451b2985	分鐘	draft		grammar-sensitive: 組句片段（minutes），代入同對話的模板句，P11 處理; p11-1 draft	grammar-sensitive
+3745	76	conversation	f0ce724f1a4a8ed4545de6cde2300fbb215f91e94ec63bc1cdc12c2c8464e708	我說了要一小時。@SI6C2 @SS3後再來。	draft		p11-1 draft	dynamic-template
 3745	77	conversation	83ada66bcffb0209954cd84fcbdd941d4fb6ee3b791f6a77e8b0c8ffa71c9191	這是你的獎賞。再次感謝你。	draft		p10b-11 draft	
 3745	78	conversation	a9d8d07100a98fbaa494ef90120b449324e706d73fa5e472e3d7c0f12cc10bef	又見面了，旅人。我能怎麼幫你？	draft		p10b-11 draft	
 3745	79	conversation	3b631397a5d71c503dfb0c3a05d3e863923ebfbd64268faa74b53c179b3ad64e	請告訴我你的任務。	draft		p10b-11 draft	
@@ -3612,6 +3773,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3746	41	conversation	facc7513d3eed76e4e1f9f3ec1c8dec3725940ef36ed535b5d81be067d5a7925	不，我沒有。	draft		p10b-12 draft	
 3746	42	conversation	013f1c3472539ec4317ca17f7e674d199bb3403db29fd938ad93598a5d493a40	帶魚回來！	draft		p10b-12 draft	
 3746	43	conversation	90cfdb9373f97e705e69a098a8af9b88a0cd9a3934c1025d5f29f9e86f45b06b	我沒看到魚！你有魚嗎？	draft		p10b-12 draft	
+3746	44	conversation	7eddd54c39b9b8737fd7179100953bdf1d8b72851372ae8b66b0f0da4f285c8d	我只看到 @GI37 條魚！你有十條嗎？	draft		p11-1 draft	dynamic-template
 3746	45	conversation	e3744f9fb6db388ac98ac4c96584405c6eff8c267291807cf2e8d8d647e97d30	謝謝。最近人很少，魚是不錯的替代品。	draft		p10b-12 draft	
 3746	46	conversation	d234e9ab01ecdda80e7f7e4ebeec704d77194dd3b0c47dbfb69c429d478aa03a	牆上有三個轉盤，每個從零到七。零在正上方，順時針增加。從左到右把轉盤設成 7-2-6。然後拉下拉桿。傳送室的門就會打開。走進去，就傳送到礦坑。	draft		p10b-12 draft	
 3746	47	conversation	68b497b137b437dc2fba7bfb4729444093b2143829be2fd3d1286eb4aa084f1d	非常感謝你。再會。	draft		p10b-12 draft	
@@ -3630,6 +3792,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3768	7	conversation	2cd0aac96ec20e68c3685115225ea1c26784fb957c7cebc46830c147013bc7db	我不知道他的真名，不過大家都只叫他札克。據我所知，他曾經是個騎士，後來在冒險中發現了什麼東西，就發瘋了。最近他晃到這裡，偷走了我的燭台。我不指望能再見到它了。我還聽說，他也從騎士們那裡偷走了一支他們非常珍視的蠟燭。	draft		p10b-15 draft	
 3768	8	conversation	c0835205096d6e64c4ac976a72dbf2ba8ef5890b7c0df743b218fff6b7f67218	我從沒見過他。	draft		p10b-15 draft	
 3768	9	conversation	37abf4e5e6aa5bfe744de75f901c343086acd25f2472b0cf08a4a62d0d959f4c	我確實見過他！他住在我們上面，在蜥蜴人那一層。	draft		p10b-15 draft	
+3768	10	conversation	d127e4a19b1aa66eaf6448c36fd5cf5fbeb48e3da36a754b9123d9ecd7570e46	你好，@GS8！再次謝謝你告訴我札克的下落。	draft		p11-1 draft	dynamic-template
 3768	11	conversation	eff8d6ce3e3232f4fb9b7e0e88e60d33cd06c06b9ef46055a1131c15cda62cd3	喔，又見面了。你找到札克了嗎？	draft		p10b-15 draft	
 3768	12	conversation	b1616ee7f030a49ba7f66d5c46c8f59c197ea6a00030dcbe3cfca5f5b28a175b	沒有，我還是沒見到他。	draft		p10b-15 draft	
 3768	13	conversation	cdff4a76c33eae0380edf95b5e0a76b7c503d813547a82327a9c31686bec5d56	有，其實我見過他。他住在上面，跟蜥蜴人在一起。	draft		p10b-15 draft	
@@ -3705,6 +3868,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3770	16	conversation	5994f685b518cf2477df732cc6ad711cba57b2e45ab3a260a621473f9dc5a1bb	又見面了！再次衷心感謝你的靴子！祝你旅途順利。	draft		p10b-21 draft	
 3770	17	conversation	f106b3ee0a9cd0c7f9573b2d9689397de47ce307b352d4df060491544a30ffb5	謝謝你的祝福。	draft		p10b-21 draft	
 3770	18	conversation	6a758c960c599b8c0577c3a8d3b5723b8453c42cb83954cc5e58019edf0dc070	不客氣，不過現在我自己需要那雙靴子。	draft		p10b-21 draft	
+3770	19	conversation	c3f774cf9e65f223014e3496dadbcc1f53755731746b2a1509e42dd7a6ae2d5f	你好，@GS8！你決定幫我了嗎？	draft		p11-1 draft	dynamic-template
 3770	20	conversation	3a98fcdc1f75b116d3370b3ff36ec85d9fe57351ae9cde2c8a54b62ce92fec09	你想找的是什麼幫助來著？	draft		p10b-21 draft	
 3770	21	conversation	e9718af5b1727f441ececb3aa1980d0b5251efd64ff791c8b651745cf92a8e43	有，這是你要找的靴子。	draft		p10b-21 draft	
 3770	22	conversation	0366ca1154962eca5e3dcc30fe96529b2559d7b3e9b7af2e5f6a6dc7d3ee055c	不，我還是幫不了。	draft		p10b-21 draft	
@@ -3742,6 +3906,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3771	14	conversation	ff4d36619df9ab9d3b5b847713ee37bb1b688d0ea992cc6ec7f5e27628459e76	好吧，那個詞是……	draft		p10b-13 draft; 玩家接著輸入暗語（Folanae，不翻）	
 3771	15	conversation	fea4deb0a0b018c127095838abf94389e5c12ad34ed6a53b0b5d5a61ed1f4bff	不，我不會告訴你。	draft		p10b-13 draft	
 3771	16	conversation	b76263db3d8fc6521c5e5305eb877cccaae491b1446ec0e0ef47b108755d8a39	嗯。我開始覺得你根本沒見過古爾斯坦。要是你見到他，希望你能把他告訴你的詞告訴我。	draft		p10b-13 draft	
+3771	18	conversation	f0767b7e0075c091ed26cf3d577d2d384032679eebe30e43240a18ad73f4aaf9	嗯……你說，@PS-2。不，好像不太對。你確定是那個詞嗎？	draft		p11-1 draft	dynamic-template
 3771	19	conversation	43c6fd2e5aa1aaad9945e719b8d4ae24c2d562c62f1c1f887a23a1f8f7ba9927	也許不是。也許那個詞是……	draft		p10b-13 draft; 玩家接著輸入暗語（Folanae，不翻）	
 3771	20	conversation	7a6f7c907091a053cc3cd2f539f1290953e24ca3b13e39bfc5b2da77fcdaf7c7	我以為是。	draft		p10b-13 draft	
 3771	21	conversation	02a1fba6d21dfcf64c6d96dff8e2b41e8dc31d4a3d6f7d4a6e7eabd23243e9ae	也許是我弄錯了。	draft		p10b-13 draft	
@@ -3765,11 +3930,14 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3771	39	conversation	0b92ee6492764921d8ae17f00999a96cae41c9988258d72765a46fa263055d2b	我想我見過他。	draft		p10b-13 draft	
 3771	40	conversation	c1b41a8a4faf52a84ca366eea8a7822d8286d4c1b7e864c934bd6b74a28ea497	我要是找到他，會告訴你。	draft		p10b-13 draft	
 3771	41	conversation	d95a7ba66db4c989457d2f689e726640b3b2d2bdaeb267f75bb0dafe542d2ca2	拜託了。我很擔心他的安危。	draft		p10b-13 draft	
+3771	42	conversation	0423d393c19b05928d75bf7103ed7d47fed570b60fddc677c83dd074fc728bf0	你好，@GS8！你找到真理之鑰了嗎？	draft		p11-1 draft	dynamic-template
 3771	43	conversation	cf226b19fd239c685acebfc14244eab72d56dc395ca6f2c63428ad72d6aecf93	是的，我找到了。	draft		p10b-13 draft	
 3771	44	conversation	46438371960f0974b3c15f54488a09d835f9c48094ef97ad65355a1765ae921f	還沒。	draft		p10b-13 draft	
 3771	45	conversation	89f3f658a9b26f8f630a33e03033bfb9fdf4b4a1fe04c6b2753fdfa065fe0dc8	你能再說一次你之前說的那些嗎？	draft		p10b-13 draft	
+3771	46	conversation	4d3eadac209969dd8e6bbebea19faea5edfa32c1bc8e9b155dd4af4e3acc13de	你好，@GS8！你不想知道古爾斯坦給你的那個詞有什麼意義嗎？	draft		p11-1 draft	dynamic-template
 3771	47	conversation	19a9836d4d73d7e4608cdc581d6a9cc3ce67d1aad683e32375e22dd4cf33e9ba	好，請告訴我。	draft		p10b-13 draft	
 3771	48	conversation	c2840297fc85989c3fb1b818a43ffc47b3641f27de719a1c32aba8d7d72d3618	沒什麼興趣。	draft		p10b-13 draft	
+3771	49	conversation	0165cd6a92e22347e3ee9aa98319cc846dc8e8238247ef9cbaff92608b7a2120	你好，@GS8！你找到我的朋友古爾斯坦了嗎？	draft		p11-1 draft	dynamic-template
 3771	50	conversation	096de4409edd6c85f621463ba2299c301dc9c0cff3b9316c1f1678afe3e885b3	是的，我找到他了。	draft		p10b-13 draft	
 3771	51	conversation	275699052e9f383fe54b0550635129b5e75b3a661117962cb5f573026b2dd5b3	恐怕沒有。	draft		p10b-13 draft	
 3771	52	conversation	17f201e336d888b5e0b7dffa9f8024f6e91d02fd73c89c96ab26a3d4288cf07c	我就知道一定找得到！希望這把鑰匙能幫助你完成任務。	draft		p10b-13 draft	
@@ -3969,6 +4137,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3775	43	conversation	edfcd53717b78c361adb3a511da93ed0217b9e8cdf78cf186981424500e47d8e	是嗎？在哪裡？	draft		p10b-14 draft	
 3775	44	conversation	cb0284c1c09fbca2d6fc422a2096b0fa38c3213423729aeef262279f000d6f37	在這裡。	draft		p10b-14 draft	
 3775	45	conversation	0f45358922d9ffb78f544af598bb71ed45ca9b77dad1fd31f130de80955916aa	抱歉，我沒有。	draft		p10b-14 draft	
+3775	46	conversation	34546b7bc346f79336083580fb484b5c749925bbc5f638796feabfc8ac3c78fe	你好，@GS8！你把那本書帶來給我，我欠你一份人情。等我不那麼忙的時候，記得來坐坐。	draft		p11-1 draft	dynamic-template
 3775	47	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-14 draft; 交易用語沿用 3672:16-30	
 3775	48	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-14 draft; 交易用語沿用 3672:16-30	
 3775	49	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-14 draft; 交易用語沿用 3672:16-30	
@@ -4019,8 +4188,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3777	16	conversation	d428f565f865758434e7831695a3a7f92a6a9f3005e80f111fc2df3bd54b3348	可惜，我對個別的祈禱語沒有更多了解了。不過，希望我的研究對你有些用處。	draft		p10b-15 draft	
 3777	17	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	再看看吧。	draft		p10b-15 draft	
 3777	18	conversation	4cdaf854fcccf537c0a0acb11f3601ba4e8cd2836a9d3e444c2ad036daec08ce	確實有用。非常感謝你。	draft		p10b-15 draft	
-3777	19	conversation	2d68fb44c92d97b62371238cc5c81b7b799a4e4c97245cd64f4578288b4df347		untranslated		grammar-sensitive: 招呼語片段（Hail, fellow mage!），代入 3777:21 的 @SS1 模板，P11 處理	grammar-sensitive
-3777	20	conversation	5343845a3d2618bc326df42bbb679de69e88764c33125d3f4f41dec5308e9423		untranslated		grammar-sensitive: 招呼語片段（Greetings, adventurer.），代入 3777:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3777	19	conversation	2d68fb44c92d97b62371238cc5c81b7b799a4e4c97245cd64f4578288b4df347	你好，魔法師同道！	draft		grammar-sensitive: 招呼語片段（Hail, fellow mage!），代入 3777:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3777	20	conversation	5343845a3d2618bc326df42bbb679de69e88764c33125d3f4f41dec5308e9423	你好，冒險者。	draft		grammar-sensitive: 招呼語片段（Greetings, adventurer.），代入 3777:21 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3777	21	conversation	2321f66bceaa2d5955a0856fd663ec99201e03493202c65452026788b113230e	@SS1我能怎麼幫你？	draft		p11-1 draft	dynamic-template
 3777	22	conversation	75d9857463e04dfb11d3dcfa65f685d23264a4b8810c4d9070032ba3f67bad78	我想多了解一些祈禱語的事。	draft		p10b-15 draft	
 3777	23	conversation	e005a1c735c1ae09a452ee1df65a10e31ba9b7eda35adc1c79da1faff39c653d	謝謝你，不過我不再需要你幫忙了。	draft		p10b-15 draft	
 3777	24	conversation	fab2b0429497a74fa0ccc9c62ccec3ea5a6b4fdd25ea7c82e79b91eb439eb95e	可惜，除了之前跟你說過的那句——被分成三部分的祈禱語——我不知道其他傳說中的祈禱語了。魔法研究是漫長又艱辛的過程，很少能發現真正有意思的資訊。	draft		p10b-15 draft	
@@ -4041,11 +4211,14 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3778	13	conversation	8f233432229dd052b75a34baf59c54323dce1cfb88a5ae26b71112e251d007d3	我想我自己應付得來。	draft		p10b-14 draft	
 3778	14	conversation	0237f28ecac4002062c2767730e52427591ba40e2761173668d815bcdb8f9792	你能幫我鑑定這個嗎？	draft		p10b-14 draft	
 3778	15	conversation	a99483c5f92dc06404e323b6cf6d59e438f31b2b1ac3d960add48ed102193db5	需要你的服務時，我會再回來。	draft		p10b-14 draft	
+3778	16	conversation	ea1c1cc6b015a60e3f9c4564a3a78c66196954b4d57a04f7116ce50f6f7f3600	要鑑定那件物品，我得收 @SI4 枚金幣。	draft		p11-1 draft	dynamic-template
+3778	17	conversation	592ecdec4cb883ffb3be6042ac7a8778ef119240e0640d33d2258793ab0a87d9	那是@SS15。還有別的事嗎？	draft		p11-1 draft	dynamic-template
 3778	18	conversation	eea507a8ca7fa52885e3b76b96bc3d48d3a7825b018ca1a055b0145605b814ba	有，你能鑑定這個嗎？	draft		p10b-14 draft	
 3778	19	conversation	c24dd8e50af7e820a6300789320bfcbec6fb483b3bb42d8747a38790b6c9129d	沒有，就這樣。	draft		p10b-14 draft	
 3778	20	conversation	0036bcbbe749943bc70228086f24290d3bdc028df5810cdc71b689376a8f5095	抱歉，你要是付不出合理的價錢，我就幫不了你。	draft		p10b-14 draft	
 3778	21	conversation	32839130ca49d25703886219744dee4d524e106a3037026f567dbfc92d4e4ca5	那就再見了。	draft		p10b-14 draft	
 3778	22	conversation	0055e06ba3dd0584726b6a29eba6ee33a3a73160eb461f1f9c92df3e321cc65d	我會照你開的價付錢。	draft		p10b-14 draft	
+3778	23	conversation	147c5198f6bc2f01741139e8f52d21ed57d82526612120242ba2e6d3fba17e6a	那麼！我的 @SI4 枚金幣呢？	draft		p11-1 draft	dynamic-template
 3778	24	conversation	d322fa01c49ae60276503ab53217d68c41ac5ce161dfbc91d59a5c417733da6c	我可不鑑定看不見的東西！你到底有沒有東西要我鑑定？	draft		p10b-14 draft	
 3778	25	conversation	50b1af3704de57c079a08fa2c18643845cc7f9ee15b0aa8ad49cb12b8132f652	有，在這裡。	draft		p10b-14 draft	
 3778	26	conversation	d27d5e363bf8373e5576f8f1108c126cc283f3389e620e46079b27c4695274b1	不，現在沒有。	draft		p10b-14 draft	
@@ -4140,6 +4313,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3793	14	conversation	4fff68d535f0ba4073c0f1fd1c5b55cdf4596045a1c0138bbce68e40b32f6fbf	哈！你現在沒徽章，你去死！	draft		p10b-18 draft	
 3793	15	conversation	d76dbd385e5fd35b8f3dddd3a8612894971f2de81b8b1e2e08642642331310a8	不，是你去死！	draft		p10b-18 draft	
 3793	16	conversation	d4a1269d28b594e9da5ce13ba5d401e93172979080aad8ffbb14694a09d19aa1	什麼？……你以為我笨。我沒看到徽章。	draft		p10b-18 draft	
+3793	17	conversation	045bd15a8e6612ad85a8f400dce80c13a08e572992ff9ad7147867661d03fe14	抱歉，在這裡。	draft		p11-1 draft	
 3793	18	conversation	d1fbc7e48487ebe7b2eefb1afbafb88f8568a728472087cc7ffd5b25c3217dc7	我好像忘了帶。在這裡等著，我會回來。	draft		p10b-18 draft	
 3793	19	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
 3793	20	conversation	d1a7c55fdf3520bc34173d9a6216e0d6b6a8dd6bca2e222b4fffdbbf7d8e91fe	我煩了。你現在去死！	draft		p10b-18 draft	
@@ -4271,7 +4445,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3795	63	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-16 draft; 交易用語沿用 3672:16-30	
 3795	64	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-16 draft; 交易用語沿用 3672:16-30	
 3796	1	conversation	9fc5e7c9ba88870e2d2ade8915622733e06dcfb5bf8003b7c3b8aee67fa79b11	你是誰？	draft		p10b-16 draft	
+3796	2	conversation	2281e7bd5246fedfd8fe419572fa194a3654b05753d91daee5a7b97b8dcd0d17	我是@GS12。你是誰？	draft		p11-1 draft	dynamic-template
 3796	3	conversation	7762e9abeffa68f18f439d3efc963fd1f82fb56500ccde7be9b0b787ba45dcd0	不關你的事！	draft		p10b-16 draft	
+3796	4	conversation	69ec34afb2a0a1d9d7763793655add378aa92e773d692b0b4fd8c7ac6f3f2719	我是卡利斯坦。你在這裡做什麼，@GS12？	draft		p11-1 draft	dynamic-template
 3796	5	conversation	9a25cef9c19e9bbb50a5beb8b4265211af66f636ad0deb12cd747b6f1faa9eda	我在找離開這些該死牢房的路。	draft		p10b-16 draft	
 3796	6	conversation	e2676d42fb7f27b08c931888135c8e4846bd07acfbaf64d4786ed8a870d56834	我是泰瑞爾的朋友。	draft		p10b-16 draft	
 3796	7	conversation	a5951e14d6fff09381eff2a8897d42c908705883b21b1aaf92799b0f0124aa1a	我想把某個邪惡巫師從這一帶除掉。	draft		p10b-16 draft	
@@ -4287,11 +4463,13 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3796	17	conversation	06469f21cd76cef0ee2822be0dd09013b68242b6d710d5be4306ca0df93f741e	那你一定知道他寶庫的通關語了，對吧？	draft		p10b-16 draft	
 3796	18	conversation	c911b187c51618b918d150530445a3b9ddc3223e67d7928d911efef5ba60a7c3	我當然知道！是……	draft		p10b-16 draft; 玩家接著輸入貪金王寶庫的通關語（3796:19 Deco Morono，不翻）	
 3796	20	conversation	414421aa204f25bb31d6e601d0aa292db8cf34184bbef56564891115996b647f	不，恐怕我不知道。你只好相信我了。	draft		p10b-16 draft	
+3796	21	conversation	4035f2d24871fa46556dac09920944cc604de272dd55660b3fd27707deca20a4	你現在又想要什麼，@GS12？	draft		p11-1 draft	dynamic-template
 3796	22	conversation	efe01c18b198704a48d7236eb61643a35f62a469f827e8d70825b1f61999779c	你現在又想要什麼？	draft		p10b-16 draft	
 3796	23	conversation	9a25cef9c19e9bbb50a5beb8b4265211af66f636ad0deb12cd747b6f1faa9eda	我在找離開這些該死牢房的路。	draft		p10b-16 draft	
 3796	24	conversation	e2676d42fb7f27b08c931888135c8e4846bd07acfbaf64d4786ed8a870d56834	我是泰瑞爾的朋友。	draft		p10b-16 draft	
 3796	25	conversation	a5951e14d6fff09381eff2a8897d42c908705883b21b1aaf92799b0f0124aa1a	我想把某個邪惡巫師從這一帶除掉。	draft		p10b-16 draft	
 3796	26	conversation	826501181c888e316d1aa2116510f9ab468a4133ea1ffcef2d6c536c3bd61aab	我跟你沒什麼好說的了，忘恩負義的蠢貨。滾！	draft		p10b-16 draft	
+3796	27	conversation	6d5e9a5fa22b85bb8d2ed89f2c6d4e33d499cfb30673edb597780593a314a9a2	我現在能為你做什麼，@GS12？	draft		p11-1 draft	dynamic-template
 3796	28	conversation	8fc6af9e65cc9f7c7413ae5982be2002176a4a296fffae6bed3216cab076d435	你現在又想要什麼？	draft		p10b-16 draft	
 3796	29	conversation	870a4d3086981266a795e2d25c8168c4bfc7d360e42ed9ba57fd5a48e6212d34	沒事。我這就上路。	draft		p10b-16 draft	
 3796	30	conversation	18901d89211aade1117bd48994bbdb4204d5032561caa7f72501355aab81caa9	再跟我說說古墓群的事。	draft		p10b-16 draft	
@@ -4609,6 +4787,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3803	14	conversation	e77fcd27134d8f1046ef2d4e3657a06389e501315dd182f9b40eb81db7114f01	你現在拿出徽章，不然就永遠別拿了！	draft		p10b-18 draft	
 3803	15	conversation	677295818deea3e11a0f73e3a6a158f15115b9e9c3bff37348cf998d890911df	不，是你去死！！	draft		p10b-18 draft	
 3803	16	conversation	d4a1269d28b594e9da5ce13ba5d401e93172979080aad8ffbb14694a09d19aa1	什麼？……你以為我笨。我沒看到徽章。	draft		p10b-18 draft	
+3803	17	conversation	045bd15a8e6612ad85a8f400dce80c13a08e572992ff9ad7147867661d03fe14	抱歉，在這裡。	draft		p11-1 draft	
 3803	18	conversation	f77ed9212e0af7819d2ed22c48ae67272407f233de87fa4483dda19ba6a3500d	我到處都找不到。等一下，我會拿回來。	draft		p10b-18 draft	
 3803	19	conversation	e77fcd27134d8f1046ef2d4e3657a06389e501315dd182f9b40eb81db7114f01	你現在拿出徽章，不然就永遠別拿了！	draft		p10b-18 draft	
 3803	20	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
@@ -4650,6 +4829,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3804	13	conversation	3a0f0cefe42f1434833b0bbe1a1af8cdd025911c91673c19e69b5c1d70a0fbb2	不，我不等……你去死！	draft		p10b-18 draft	
 3804	14	conversation	638c8126e31c837785b5dbe44229ad9c98a5866730da02a37032d6fc587bd0f3	不，是你去死！	draft		p10b-18 draft	
 3804	15	conversation	f36f8e2660a3fbddb2029a1ff51c528e19e0948e602cce0aba363d1b333df5fe	什麼？……你以為我笨。我沒看到徽章。	draft		p10b-18 draft	
+3804	16	conversation	045bd15a8e6612ad85a8f400dce80c13a08e572992ff9ad7147867661d03fe14	抱歉，在這裡。	draft		p11-1 draft	
 3804	17	conversation	04dddd531715f67a995ab92b5c8187ecfb72705ecc1c5bf99c0464e058ec4593	我一定是忘了帶。在這裡等著，我很快回來。	draft		p10b-18 draft	
 3804	18	conversation	3a0f0cefe42f1434833b0bbe1a1af8cdd025911c91673c19e69b5c1d70a0fbb2	不，我不等……你去死！	draft		p10b-18 draft	
 3804	19	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
@@ -4770,6 +4950,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3806	11	conversation	d565a9c7668f63e68488b065f232ad71a005911abc93e2bc9777ddcbbd6d2098	你現在沒徽章，你去死！	draft		p10b-18 draft	
 3806	12	conversation	677295818deea3e11a0f73e3a6a158f15115b9e9c3bff37348cf998d890911df	不，是你去死！！	draft		p10b-18 draft	
 3806	13	conversation	7848dc15cd624348d62cd071630a6cb63b70cf762078a2a4d98ca0e099109ea1	什麼？……你以為我笨，我沒看到徽章。	draft		p10b-18 draft	
+3806	14	conversation	38e9b975971b40549adbee85defa4b0b69d7eecf501e1a0fba82727d5ad73a48	請你見諒。在這裡。	draft		p11-1 draft	
 3806	15	conversation	5e830c13bc1b1ec8802f9b28467bedcaa658a3e48de08eec92855a3ea2545c2d	在這裡等著。我會拿徽章回來。	draft		p10b-18 draft	
 3806	16	conversation	d565a9c7668f63e68488b065f232ad71a005911abc93e2bc9777ddcbbd6d2098	你現在沒徽章，你去死！	draft		p10b-18 draft	
 3806	17	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
@@ -4796,8 +4977,9 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3806	38	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3806	39	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3806	40	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
-3815	1	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b		untranslated		grammar-sensitive: 稱呼片段（Sir），代入 3815:11 的 @SS1 模板，P11 處理	grammar-sensitive
-3815	2	conversation	026486846129ede4c959b03b699cf53e1dc92ab0953f0d8b7d47ce90851f5ba0		untranslated		grammar-sensitive: 稱呼片段（Madam），代入 3815:11 的 @SS1 模板，P11 處理	grammar-sensitive
+3815	1	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b	先生	draft		grammar-sensitive: 稱呼片段（Sir），代入 3815:11 的 @SS1 模板，P11 處理; p11-1 draft; authority-ok:Sir（稱呼片段「先生」，不是爵位）	grammar-sensitive
+3815	2	conversation	026486846129ede4c959b03b699cf53e1dc92ab0953f0d8b7d47ce90851f5ba0	女士	draft		grammar-sensitive: 稱呼片段（Madam），代入 3815:11 的 @SS1 模板，P11 處理; p11-1 draft	grammar-sensitive
+3815	3	conversation	6112bd04b1a71c82536a863630b3691365ae6bd4b5d05d98212d6208caddf781	啊，是@GS8！真高興再見到你。可惜我們的相識注定短暫。	draft		p11-1 draft	dynamic-template
 3815	4	conversation	fc4642efd1c83877454e3b07c4959b82e65a4bd0c8008afec85f5392dd05d704	我要求你放了艾莉雅！	draft		p10b-18 draft	
 3815	5	conversation	0dcbe5aa1edc5a77e64329879742087c10cf1944e16da57c9a17b8964a0371d9	你的邪惡陰謀是什麼？	draft		p10b-18 draft	
 3815	6	conversation	0086584fa63edf88f5fc4bb3de5f3a84cb7d5ace967027b6b372c4a60b765df2	喔，恐怕那是辦不到的。我需要一個無辜者的身體當作容器，恐怕你的不行。再說，我費了那麼大的工夫，現在放她走就太可惜了，你不覺得嗎？	draft		p10b-18 draft	
@@ -4805,9 +4987,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3815	8	conversation	efeccc45e332b74e50317842b3a09217937932777bbed570b60e04cfdb293113	我認為你是個惡棍，不配活著！	draft		p10b-18 draft	
 3815	9	conversation	1d3c2b8bf9fab53ffc276ff786f2c865b251a09859161369d46d9c2cb8a963a8	啊，不管我配不配，恐怕活下來的會是我，而不是你。	draft		p10b-18 draft	
 3815	10	conversation	c9fdee373b4aa9c4dfb43506a6c8d244ba98273ad71c3a76bbe1950bfea37ff8	很好。如果非殺了你不可，我就殺了你。	draft		p10b-18 draft	
+3815	11	conversation	376da65f7dc215a997cbc072edc6796491713394273c81451b82ce5a89b693c5	嗯。親愛的@SS1，我認為問題不在於你是否非殺我不可，而在於你殺不殺得了。答案當然是不行。	draft		p11-1 draft	dynamic-template
+3815	12	conversation	a3a3000022163f83b0d01eab5d3432948e7ffe0a37589ebd7610581765bc4e74	親愛的@GS8，我非常享受你的陪伴，可是恐怕我還有比跟你聊天更重要的事。要是你能行行好，快點斷氣，我會非常感激。	draft		p11-1 draft	dynamic-template
 3816	1	conversation	489753cc37d2e5c65b1a6978b6e26e7e69e360c484b88826646bb77ba62beb47	你來這裡想做什麼？你是來放怪物咬我的嗎？	draft		p10b-19 draft	
 3816	2	conversation	57419e5c845b2db2814a8c3c886560532cce316c54a9695c46aa37fcdf545cdb	我在打聽住在這深處的惡魔的消息。	draft		p10b-19 draft	
 3816	3	conversation	bb235316f446d2517873416f4a66ee0111bb55718fc5e516953270221012f34c	我在找一位偉大巫師的骨骸。	draft		p10b-19 draft	
+3816	4	conversation	8987597ad57376c25e94a5fbf4ab3cf0061c1b99aa5ec89a77789f1e2de1eaf4	我是@GS8。我無意傷害你。	draft		p11-1 draft	dynamic-template
 3816	5	conversation	aed6d689c77126621c17dd39548cbd19f7f7610cfb7c86dd4e8ddb5e5b5d27a5	你為什麼要找惡魔？你跟它是一夥的嗎？	draft		p10b-19 draft	
 3816	6	conversation	150e8fcdb528bac7382d1c672efcfee2563601b10b1babe5b3993ed0078eb181	我打算消滅這個惡魔。	draft		p10b-19 draft	
 3816	7	conversation	cf2789e0643be9931c8628d02d31f58168109f3fbe9fa851e7bd798943025772	我跟它不是一夥的，不過你為什麼在這裡？	draft		p10b-19 draft	
@@ -4987,6 +5172,8 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3856	32	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3856	33	conversation	a95d744a494b9cb91192e7d0f63ffc25f9cd77b60a28e42c1983613bf16ce8e7	你很不公平。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3856	34	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從惡鬼族手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3860	1	conversation	2b0427860cbcdb7100027cc34a9750efca287e5f6c39edcdea3d1ac5ea0e54e9	你好，@GS8。什麼風把你吹來的？	draft		p11-1 draft	dynamic-template
+3860	2	conversation	1f76f4ca7c4e9515fcdb70ad9c5ddf693a7bea066a7c93d92411415b6394efc9	啊，你一定就是我聽說過的那位@GS8。有什麼能為你效勞的？	draft		p11-1 draft	dynamic-template
 3860	3	conversation	5689e95272faa25d96de2c0cbc4df4eb48a91e4f75e28042e17c0aeff00d3765	我在找一個被綁架的女孩。	draft		p10b-21 draft	
 3860	4	conversation	7554bf7417361099f52fc58fcb49b9b850148ca2557df0da516a5255bd4c5d18	我的任務是剷除深淵裡的邪惡。	draft		p10b-21 draft	
 3860	5	conversation	4b122cc87fb7ab463d9ae364884db4def7a9d2f55ad94cc90e5ec4ef77ab434c	我在打聽消息。	draft		p10b-21 draft	
@@ -5097,6 +5284,8 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3861	64	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3861	65	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
 3861	66	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3862	1	conversation	2b0427860cbcdb7100027cc34a9750efca287e5f6c39edcdea3d1ac5ea0e54e9	你好，@GS8。什麼風把你吹來的？	draft		p11-1 draft	dynamic-template
+3862	2	conversation	1f76f4ca7c4e9515fcdb70ad9c5ddf693a7bea066a7c93d92411415b6394efc9	啊，你一定就是我聽說過的那位@GS8。有什麼能為你效勞的？	draft		p11-1 draft	dynamic-template
 3862	3	conversation	5689e95272faa25d96de2c0cbc4df4eb48a91e4f75e28042e17c0aeff00d3765	我在找一個被綁架的女孩。	draft		p10b-21 draft	
 3862	4	conversation	7554bf7417361099f52fc58fcb49b9b850148ca2557df0da516a5255bd4c5d18	我的任務是剷除深淵裡的邪惡。	draft		p10b-21 draft	
 3862	5	conversation	4b122cc87fb7ab463d9ae364884db4def7a9d2f55ad94cc90e5ec4ef77ab434c	我在打聽消息。	draft		p10b-21 draft	

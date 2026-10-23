@@ -7,14 +7,24 @@
 #include <string.h>
 int scroll_print(char *text);
 void port_fatal(const char *format,...);
+char *port_template_shown(const char *source);  /* BABL.C (P11.1) */
 static const char *choices[20];
+static char *expanded_choices[20];   /* a translated template's display text, owned until the next menu */
 static int choice_context;
 int port_scroll_choice(void) { return choice_context; }
-void port_scroll_choices_reset(void) { memset(choices,0,sizeof choices); }
+void port_scroll_choices_reset(void)
+{
+    int i;
+    for(i=0;i<20;i++)free(expanded_choices[i]);
+    memset(choices,0,sizeof choices);memset(expanded_choices,0,sizeof expanded_choices);
+}
 void port_scroll_choice_bind(int option,const char *legacy)
 {
     const char *translated=port_i18n_display(legacy);
-    if(option>0 && option<20)choices[option]=translated!=legacy?translated:NULL;
+    if(option<=0 || option>=20)return;
+    free(expanded_choices[option]);
+    expanded_choices[option]=port_template_shown(legacy);
+    choices[option]=expanded_choices[option]?expanded_choices[option]:translated!=legacy?translated:NULL;
 }
 const char *port_scroll_choice_text(int option,const char *expanded)
 { return option>0 && option<20 && choices[option]?choices[option]:expanded; }

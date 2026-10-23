@@ -1,0 +1,20 @@
+{
+  "replays": {
+    "sessions": 16,
+    "all_saves_match_en_and_goldens": true,
+    "hd_scroll_texts": 366,
+    "texts_with_unexpanded_variables": 0
+  },
+  "bragit_fixture": {
+    "option1": {
+      "rc": 0,
+      "text_events": 9,
+      "english_template_left": false
+    },
+    "option3": {
+      "rc": 0,
+      "text_events": 9,
+      "english_template_left": false
+    }
+  }
+}

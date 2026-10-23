@@ -45,6 +45,10 @@ enum BablOp {
 int far DoReadHeader_ovr095_12C3(void);
 void far DoCopyCode_ovr095_14B1(void);
 char far * far convert_string(char far *text);
+#ifndef __TURBOC__
+char *port_convert_display(const char *text);   /* P11.1: BABL.C, display only */
+char *port_template_shown(const char *source);
+#endif
 int far AtIndex_ovr095_11C0(char far **s);
 void far vmAdd_ovr095_18CF(void);
 void far babl_neg_ovr095_1908(void);

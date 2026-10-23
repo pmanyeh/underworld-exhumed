@@ -22,7 +22,7 @@ static struct entry *entries;
 static unsigned count;
 static FILE *trace, *qa;
 static unsigned char traced[MAX_ENTRIES];
-static struct { const char *address, *target; char source[512]; } display[8];
+static struct { const char *address, *target; int is_template; char source[512]; } display[8];
 static unsigned display_next;
 
 void port_i18n_forget(const char *legacy)
@@ -30,14 +30,24 @@ void port_i18n_forget(const char *legacy)
     unsigned i;
     for (i = 0; i < 8; i++) if (display[i].address == legacy) display[i].address = NULL;
 }
-const char *port_i18n_display(const char *legacy)
+static const char *provenance(const char *legacy, int is_template)
 {
     unsigned i;
-    if (!legacy) return "";
     for (i = 0; i < 8; i++)
-        if (display[i].address == legacy && !strcmp(display[i].source, legacy))
-            return display[i].target ? display[i].target : legacy;
-    return legacy;
+        if (display[i].address == legacy && display[i].is_template == is_template && !strcmp(display[i].source, legacy))
+            return display[i].target;
+    return NULL;
+}
+const char *port_i18n_display(const char *legacy)
+{
+    const char *target;
+    if (!legacy) return "";
+    target = provenance(legacy, 0);
+    return target ? target : legacy;
+}
+const char *port_i18n_template(const char *legacy)
+{
+    return legacy ? provenance(legacy, 1) : NULL;
 }
 
 static unsigned word(const unsigned char *p)
@@ -218,10 +228,11 @@ char *port_i18n_observe(unsigned block, unsigned index, char *fallback)
                  block, index);
     }
     port_i18n_forget(fallback);
-    if (translated != fallback && !strchr(translated, '@') && strlen(fallback) < 512) {
+    if (translated != fallback && strlen(fallback) < 512) {
         unsigned slot = display_next++ % 8;
         display[slot].address = fallback;
         display[slot].target = translated;
+        display[slot].is_template = strchr(translated, '@') != NULL;
         strcpy(display[slot].source, fallback);
     }
     if (trace && translated != fallback) {

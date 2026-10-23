@@ -18,6 +18,9 @@ char *port_i18n_observe(unsigned block, unsigned index, char *fallback);
 /* Display-only provenance for the eight decoded ring slots. No gameplay string
    replacement. Templates containing @ retain their expanded English fallback. */
 const char *port_i18n_display(const char *legacy);
+/* P11.1: a template's translation (with its @-variables), for display-only expansion
+   (BABL.C's port_convert_display); NULL when legacy has none. */
+const char *port_i18n_template(const char *legacy);
 void port_i18n_forget(const char *legacy);
 int port_i18n_trace_open(const char *path);
 /* Phase 9 QA trace (JSONL, game thread): every resolved lookup as hit, template

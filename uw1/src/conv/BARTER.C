@@ -59,6 +59,10 @@
 #include "object.h"
 #include "player.h"
 #include "sys.h"
+#ifndef __TURBOC__
+#include <string.h>
+#include "presentation/scroll_bridge.h"
+#endif
 #include "ui.h"
 #include "uw2.h"
 
@@ -780,6 +784,17 @@ void far do_judgement(void)
     str_copy(appraisal, get_string((certainty + 3) | STR_CONV)); /* "...I guess" .. "...I know" */
     str_cat(appraisal, get_string(2 | STR_CONV));  /* " that I am getting " */
     str_cat(appraisal, get_string((result + 8) | STR_CONV)); /* "a terrible deal.." .. "an excellent deal.." */
+#ifndef __TURBOC__
+    if (scroll_text_enabled()) {
+        /* P11.1: the same three pieces in their translations, display only */
+        char shown[600];
+        strcpy(shown, port_i18n_display(get_string((certainty + 3) | STR_CONV)));
+        strcat(shown, port_i18n_display(get_string(2 | STR_CONV)));
+        strcat(shown, port_i18n_display(get_string((result + 8) | STR_CONV)));
+        play_say(shown);
+        return;
+    }
+#endif
     play_say(appraisal);
 }
 

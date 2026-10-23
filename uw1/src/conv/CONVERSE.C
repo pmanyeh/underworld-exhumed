@@ -628,9 +628,11 @@ void far conv_print(int16 far *stack)
     expanded = convert_string(original);
 #ifndef __TURBOC__
     if (scroll_text_enabled()) {
+        char *shown = port_template_shown(original);   /* P11.1 */
         do_npc_scroll();
-        port_scroll_emit("\\2", expanded == original ? port_i18n_display(original) : expanded, "\\0\n", 0);
+        port_scroll_emit("\\2", shown ? shown : expanded == original ? port_i18n_display(original) : expanded, "\\0\n", 0);
         do_main_scroll();set_workspace();
+        free(shown);
         if (expanded != original) bab_free(expanded);
         return;
     }

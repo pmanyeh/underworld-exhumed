@@ -26,6 +26,12 @@ static void reset(int width,int height)
 }
 int scroll_print(char *text) { CHECK(port_scroll_write(0,text,1)==0);return scroll_text_lines(0); }
 void port_fatal(const char *format,...) { (void)format;CHECK(0);abort(); }
+/* the game's and the backend's side of P11 (BABL.C, plat_sdl3.c): no template expansion or
+   input method here; the bridge's own logic is what is checked */
+char *port_template_shown(const char *source) { (void)source;return NULL; }
+void plat_text_input(int on) { (void)on; }
+size_t plat_text_take(char *out,size_t n) { if(n)out[0]=0;return 0; }
+void plat_sleep_ns(uint64_t ns) { (void)ns; }
 static void bounds(void)
 {
     int i;ScrollBox *b;
@@ -127,6 +133,15 @@ int main(int argc,char **argv)
     port_i18n_forget(original);CHECK(port_i18n_display(original)==original); /* dynamic pointer invalidation */
     port_i18n_observe(3651,3,original);original[0]='X';CHECK(port_i18n_display(original)==original);original[0]='H';
     port_i18n_observe(3651,4,templ);CHECK(port_i18n_display(templ)==templ); /* templates retain expanded English */
+    CHECK(port_i18n_template(templ) && !strcmp(port_i18n_template(templ),"你好@SS1")); /* P11.1: the template for display */
+    CHECK(port_i18n_template(original)==NULL && port_i18n_template(other)==NULL);
+    {   /* P11.4: a typed line drawn again from the mark */
+        ScrollBox mark;int count;
+        reset(160,40);CHECK(scroll_text_write(0,"前文\n",1,0)==0);bounds();count=snapshot.boxes[0].count;
+        scroll_text_mark(0,&mark);CHECK(scroll_text_write(0,">聖物_",0,0)==0);
+        scroll_text_rewind(0,&mark);bounds();CHECK(snapshot.boxes[0].count==count);
+        CHECK(scroll_text_write(0,">聖",0,0)==0);bounds();CHECK(snapshot.boxes[0].count==count+2);
+    }
     CHECK(port_scroll_write(0,"\x82",0)==0);bounds();CHECK(snapshot.boxes[0].cells[snapshot.boxes[0].count-1].scalar==0xe9);
     port_i18n_shutdown();CHECK(port_i18n_display(original)==original);port_scroll_choices_reset();
     styles();
