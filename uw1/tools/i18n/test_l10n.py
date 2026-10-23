@@ -499,6 +499,13 @@ class AuthorityLintTests(unittest.TestCase):
         master[0]["target_zh_TW"] = "繪有聖符。"
         self.assertEqual(l10n.authority_lint(master, inv, terms), [])
 
+    def test_an_object_names_article_marker_is_a_word_boundary(self):
+        # "a_hand axe&hand axes": the whole name is the term, not the "axe" inside it
+        terms = [term("axe", "斧頭", "weapon"), term("hand axe", "手斧", "weapon")]
+        inv = inventory({(4, 0): "a_hand axe&hand axes"})
+        master = [{"block": "4", "index": "0", "target_zh_TW": "手斧", "status": "draft"}]
+        self.assertEqual(l10n.authority_lint(master, inv, terms), [])
+
     def test_a_word_inside_a_longer_term_is_left_to_that_term(self):
         # "Standard" in "Standard of Honor" is the Talisman's name, not the object; elsewhere it still counts.
         terms = [term("standard", "旗幟", "object"), term("Standard of Honor", "榮譽之旆", "quest-object")]

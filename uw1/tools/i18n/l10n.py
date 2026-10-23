@@ -854,7 +854,8 @@ def authority_lint(master, inventory, terms, blocks=None):
         block, index = int(r["block"]), int(r["index"])
         if not target or r["status"] == "blocked" or (blocks and block not in blocks):
             continue
-        source = inventory.source(block, index)
+        # an object name's article marker and plural ("a_hand axe&hand axes") are not part of a word
+        source = re.sub(r"[_&]", " ", inventory.source(block, index))
         in_runes = " ".join(m.group(0) for m in rune_run.finditer(source)) if rune_run else ""
         groups = defaultdict(list)
         spans = defaultdict(set)
