@@ -3,6 +3,7 @@ from collections import Counter
 import hashlib
 import os
 from pathlib import Path
+import subprocess
 import tempfile
 import unittest
 
@@ -15,6 +16,7 @@ OUT = UW1 / "build/i18n"
 OUT.mkdir(parents=True, exist_ok=True)
 # Catalog of the 52 static PoC rows that P8 accepted (docs/i18n/evidence/p8/manifest.json).
 P8_CATALOG_SHA256 = "fd133b9a159b10e3eb178e6b798867ac3663ea5b5bdbf54e4fba2db68d1dff98"
+P8_MASTER_TAG = "zh-tw-native-authority-ready"
 
 
 class FakePak:
@@ -122,8 +124,8 @@ class DatasetTests(unittest.TestCase):
         self.assertEqual(render_tsv(normalize_master(rows), MASTER_FIELDS), l10n.MASTER.read_bytes())
         self.assertEqual(check_master(rows), ([], []))
 
-    def poc_rows(self):
-        return [r for r in l10n.load_master() if r["block"] == "3651" or (r["block"], r["index"]) in
+    def poc_rows(self, path=l10n.MASTER):
+        return [r for r in l10n.load_master(path) if r["block"] == "3651" or (r["block"], r["index"]) in
                 {("1", "2"), ("1", "5"), ("7", "83")}]
 
     def test_poc_migration_is_lossless(self):
@@ -135,8 +137,17 @@ class DatasetTests(unittest.TestCase):
 
     @unittest.skipUnless(os.environ.get("UW1_DATA"), "needs the player's game data (UW1_DATA)")
     def test_poc_catalog_equals_p8_with_player_data(self):
+        # P10A aligned the PoC rows with the Authority, so the P8 catalog (which the
+        # P8 HD recordings replay with) is rebuilt from the master before that change.
+        try:
+            old = subprocess.run(["git", "show", f"{P8_MASTER_TAG}:uw1/i18n/zh-TW/master.tsv"], cwd=UW1,
+                                 capture_output=True, check=True).stdout
+        except (OSError, subprocess.CalledProcessError):
+            self.skipTest(f"needs the {P8_MASTER_TAG} tag")
+        path = Path(self.tmp.name) / "p8-master.tsv"
+        path.write_bytes(old)
         inv = Inventory.load(Path(os.environ["UW1_DATA"]) / "DATA/STRINGS.PAK")
-        data, count = pack(self.poc_rows(), inv)
+        data, count = pack(self.poc_rows(path), inv)
         self.assertEqual((count, hashlib.sha256(data).hexdigest()), (52, P8_CATALOG_SHA256))
 
     def test_committed_master_holds_no_english(self):
@@ -439,6 +450,15 @@ class AuthorityLintTests(unittest.TestCase):
                            (1, 4): "對矮人守規矩。", (1, 5): "一隻哥布林和一把門閂。", (1, 8): "唸出咒文。"})
         self.assertEqual(found, {"1:0": "warning", "1:2": "warning", "1:3": "error", "1:4": "warning",
                                  "1:5": "info", "1:8": "error"})
+
+    def test_reviewer_waiver_downgrades_one_term(self):
+        inv = inventory(self.SOURCES)
+        row = {"block": "1", "index": "3", "target_zh_TW": "我們的國王。", "status": "draft",
+               "notes": "authority-ok:Goldthirst"}
+        finding, = l10n.authority_lint([row], inv, self.TERMS)
+        self.assertEqual((finding["level"], finding["waived"]), ("info", True))
+        row["notes"] = "authority-ok:Abyss"   # another term's waiver does not apply
+        self.assertEqual(l10n.authority_lint([row], inv, self.TERMS)[0]["level"], "error")
 
     def test_case_and_rune_runs_avoid_false_positives(self):
         # "light" is not the Light spell; the English word "In" is not a rune.

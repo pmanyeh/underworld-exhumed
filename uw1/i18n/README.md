@@ -48,6 +48,7 @@ P10 以小批次進行；第一批見 [P10A Batch 1 report](../docs/i18n/P10A_BA
 `authority` 以英文原文的整字、大小寫相符找出術語：`approved` 的專名或輸入碼（符文需在符文串中、
 祈禱語）缺漏為 error；其他 `approved` 與專名類（人名、地名、種族、法術、生物等）的 canonical 缺漏為
 warning；一般名詞只列 info，因句中常見字常不是詞表的詞義。`aliases_zh_tw` 視為允許的異名（info）。
+審閱者確認某個字不是詞表詞義時（例如動詞 guard），在該列 notes 寫 `authority-ok:<英文詞>`，該項降為 info 並標示 waived。
 error 或 warning 使指令失敗。
 驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md)、[Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)
 與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)、[Phase 4](../docs/i18n/OVERLAY-FOUNDATION.md)。

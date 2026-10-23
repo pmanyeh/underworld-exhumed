@@ -812,7 +812,9 @@ def authority_lint(master, inventory, terms, blocks=None):
     missing; 'warning': another approved or enforced (proper-noun) canonical is
     missing; 'info': any other term whose canonical the target lacks, or a term
     given as one of its listed aliases. Terms that share an English form (Mana the
-    attribute and the skill) are satisfied by any of them."""
+    attribute and the skill) are satisfied by any of them. A reviewer who finds the
+    word is not the glossary sense (guard the verb, not the title) writes
+    `authority-ok:<source_en>` in the row's notes; the finding stays, as 'info'."""
     patterns = [(t, whole_words([t["source_en"]] + split_aliases(t["aliases_en"]))) for t in terms]
     runes = [t["source_en"] for t in terms if t["term_kind"] == "rune-token"]
     rune_run = re.compile(r"%s(?:\s+%s)+" % ((whole_words(runes).pattern,) * 2)) if runes else None
@@ -846,7 +848,10 @@ def authority_lint(master, inventory, terms, blocks=None):
                 level = "warning"
             else:
                 level = "info"
-            findings.append({"key": f"{block}:{index}", "level": level, "found": group[0][2],
+            waived = f"authority-ok:{terms_found[0]['source_en']}" in r.get("notes", "")
+            if waived and not tokens:
+                level = "info"
+            findings.append({"key": f"{block}:{index}", "level": level, "found": group[0][2], "waived": waived,
                              "terms": [{"term_id": t["term_id"], "category": t["category"], "status": t["status"],
                                         "canonical": t["canonical_zh_tw"]} for t in terms_found]})
     return findings

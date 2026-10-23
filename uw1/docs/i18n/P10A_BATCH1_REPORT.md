@@ -98,10 +98,10 @@ Authority 使用重點：深淵、貪金王、不列顛尼亞、山岳族（the 
 | `l10n.py validate`（含 PAK） | PASS — 424 rows、0 problems、0 drift（[validate.json](evidence/p10a-b1/validate.json)） |
 | `l10n.py validate`（無資料，CI 模式） | PASS |
 | Authority lint（本批 blocks 1／7／3672） | **0 errors、0 warnings**、16 info（[authority-lint-batch.json](evidence/p10a-b1/authority-lint-batch.json)） |
-| Authority lint（整份 master） | 0 errors、5 warnings、30 info；5 個 warning 全是批次前就存在的 PoC 列（[before](evidence/p10a-b1/authority-lint-before.json)／[after](evidence/p10a-b1/authority-lint-all.json)） |
+| Authority lint（整份 master） | 批次後 0 errors、5 warnings（全是批次前就存在的 PoC 列）；F6 處理後 **0 errors、0 warnings**、22 info（[before](evidence/p10a-b1/authority-lint-before.json)／[after](evidence/p10a-b1/authority-lint-all.json)） |
 | Source hash | import 時逐列由目前資料計算；validate 重算 424 列皆相符 |
 | Stale workbook | 竄改本批 workbook 一列英文後 import：整份拒絕（`stale export`），master SHA-256 不變 |
-| Catalog determinism | 兩次 build 相同：231 entries、25,967 bytes、`fb2f31fc5039174fc42812e2004f662b2ccc8fd994223807e5089bf73081ff3d`（[catalog.json](evidence/p10a-b1/catalog.json)）。F3 處理前的 157 筆版本為 209 entries、`94c8d925…33bc`，本報告的 Native QA 截圖與 scroll log 以該版本產生；新增的 22 筆在這些場景都不會出現 |
+| Catalog determinism | 兩次 build 相同：231 entries、25,979 bytes、`48e68d6ebb1c4e8ec2d9bef4a6629bc288be78ae2f5766df1fe3c96c2d37219f`（[catalog.json](evidence/p10a-b1/catalog.json)，含 F6 的 Bragit 對齊；之前為 `fb2f31fc…`）。F3 處理前的 157 筆版本為 209 entries、`94c8d925…33bc`，本報告的 Native QA 截圖與 scroll log 以該版本產生；新增的 22 筆在這些場景都不會出現 |
 | UTF-8／控制碼 | validator 全數通過；runtime 確認 `\6` 綠色、`\4`／`\0` 色碼正常 |
 | English source 不入庫 | 掃描 master 與 evidence：沒有任何完整英文遊戲句；僅 context 標籤含 Authority 已收錄的法術名 |
 
@@ -156,7 +156,7 @@ tooheavy、items。本批在 runtime 可達的 **23 個 key 全數 `hit`**，每
 | needs-context | 0 | 0 |
 | Production completion | 52（0.74%，分母 6,990） | **231（3.31%，分母 6,983）** |
 | Runtime hit／fallback（19 sessions） | 11／114 | **34／91** |
-| Authority violations（error＋warning，整份） | 5（PoC） | 5（PoC，無新增） |
+| Authority violations（error＋warning，整份） | 5（PoC） | **0**（PoC 已依 F6 對齊） |
 | Authority violations（本批） | — | 0 |
 | Source-drift violations | 0 | 0 |
 
@@ -188,7 +188,7 @@ DOS／Borland 依計畫不是 P10 blocker，未執行。
 | --- | --- |
 | `uw1/i18n/zh-TW/master.tsv` | +179 draft 譯文；+193 列 `grammar-sensitive` 稽核標記（無譯文）；52 → 424 rows，僅 `source_hash`，不含英文 |
 | `uw1/tools/i18n/l10n.py` | 新增 `authority` 子指令（authority lint，locale-neutral）；`UNREAD_KEYS` 把 7 筆無讀取者的 block 1 字串歸入 debug scope（F3） |
-| `uw1/tools/i18n/test_l10n.py` | authority lint 的 5 個 asset-free tests；scope 測試涵蓋 `UNREAD_KEYS` 與 hash 比對 |
+| `uw1/tools/i18n/test_l10n.py` | authority lint 的 6 個 asset-free tests（含 `authority-ok` 標記）；scope 測試涵蓋 `UNREAD_KEYS` 與 hash 比對；P8 catalog 測試改由 tag 的 master 重建 |
 | `uw1/i18n/zh-TW/README.md` | debug scope 的定義加入這 7 筆 |
 | `uw1/tools/i18n/verify_native.py` | runtime hook 的預期 key 集合允許已翻譯的 `1:3`（F7） |
 | `uw1/i18n/README.md` | workflow 加入 `authority`；連到本報告 |
@@ -207,6 +207,11 @@ walk／dialogue／restore 錄製時，`1:156`、`1:162`、`1:165`、`1:168`、`1
 沒有多出的 MORE 分頁，輸入時序不受影響。所以這不是翻譯或程式錯誤，但**之後每一批只要翻到這些錄影會顯示的字串
 就會重現**。可選方案：(a) 把 P8 HD 錄影定位為「HD code path regression」，固定用 P8 catalog 重播（本批採此做法）；
 (b) 從 canonical 比對排除 scroll 游標欄位；(c) 每批重新錄製。另需在 P13 確認這些欄位是否進入存檔（save compatibility）。
+
+**人工決定（2026-10-23）：** 錄影重錄延到 UW1 完成後（P13）。在那之前採 (a)：P8 HD 錄影一律用 **P8 catalog** 重播，
+這個 catalog 由 `zh-tw-native-authority-ready` tag 的 master 重建（`fd133b9a…`），不受之後譯文修改影響。
+新譯文的 runtime 驗證改用 zh-TW lookup replay 與 HD scroll log。依此規則重跑：walk、dialogue、restore、english、
+resize 全部 PASS（regression2）。
 
 **F2 — 193 筆 direct 實為組句片段（→ P11）。** 見 C 節。另外 `7:3`–`7:16` 的交易估價句已是 grammar，
 在 Brawnclan 交易流程中仍以英文出現。
@@ -239,6 +244,14 @@ deterministic build、zh-TW lookup replay、native probe 與 P8 隔離重播都�
 **F6 — PoC Bragit 列與 Authority 不一致（Authority decision／P10B）。** 5 個 warning：Cabirus×2（凱布勒斯）、
 Mountainmen（山岳族）、guard（守衛）、Gray Goblins（灰色惡鬼族）；另 Goblins 用異名「哥布林」（info）、
 pole 用「長竿」（info）。這些列被 `test_poc_catalog_equals_p8` 固定為 P8 catalog，修改會破壞該基準，所以本批不改。
+
+**人工決定後已處理：** 依決定改成與 Authority 一致，修改 9 列 Bragit 譯文（`3651:8`、`16`、`19`、`20`、`23`、`26`、`29`、
+`30`、`42`）：哥布林→惡鬼族（含綠色／灰色惡鬼族）、卡比魯斯→凱布勒斯（含凱布勒斯的旗幟）、裂谷→深谷、山民→山岳族、
+長竿→長竹竿、衛兵→守衛、巨大的蜘蛛→巨蜘蛛；各列 notes 註明。`3651:16` 的 guard 是動詞（看守），不是守衛頭銜，
+以新的 `authority-ok:guard` 標記保留原譯（lint 仍列出為 info）。整份 master 的 authority lint 因此成為
+**0 errors、0 warnings**。`test_poc_catalog_equals_p8` 改為從 `zh-tw-native-authority-ready` tag 的 master 重建
+P8 catalog 並比對 SHA，維持 P8 基準可重現，但不再鎖住目前的 PoC 譯文。P8 dialogue 錄影重播中，可到達的 5 列
+都顯示新用詞，舊用詞出現 0 次。
 
 **F7 — `verify_native.py` 的預期 hook keys 原本寫死 PoC catalog。** probe 以 `1:3` 轉動 string ring；
 `1:3` 翻譯後也會 hit。改為必須包含原三筆、且只能另含 `1:3`。

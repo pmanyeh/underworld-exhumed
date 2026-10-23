@@ -9,7 +9,7 @@ import sys
 workspace = Path('D:/git/uw1-native-poc')
 repo = workspace / 'underworld-exhumed'
 root = repo / 'uw1'
-out = root / 'build/i18n/p10a-b1/regression'
+out = root / 'build/i18n/p10a-b1/regression2'
 slice_dir = root / 'build/vertical-slice'
 data = workspace / '.poc-private/game/UW'
 py = sys.executable
@@ -20,6 +20,13 @@ env['PATH'] = os.pathsep.join([str(workspace / '.poc-tools/msys64/clang64/bin'),
 config = root / 'build/poc/native-v22.toml'
 env['EXHUME_CONFIG'] = str(config)
 catalog = root / 'build/i18n/zh-TW.uwloc'
+# P8 HD recordings replay with the P8 catalog: built from the master at the
+# authority-ready tag (the PoC rows before P10A aligned them with the Authority).
+p8_master = out / 'p8-master.tsv'
+p8_catalog = out / 'p8.uwloc'
+out.mkdir(parents=True, exist_ok=True)
+p8_master.write_bytes(subprocess.run(['git', 'show', 'zh-tw-native-authority-ready:uw1/i18n/zh-TW/master.tsv'],
+                                     cwd=root, capture_output=True, check=True).stdout)
 font = root / 'tools/fonts/NotoSansCJKtc-Regular.otf'
 only = sys.argv[1:]
 
@@ -27,6 +34,9 @@ commands = [
     ('catalog', [py, 'tools/i18n/l10n.py', 'build', '--pak', str(data / 'DATA/STRINGS.PAK'),
                  '--cnv', str(data / 'DATA/CNV.ARK'), '--output', str(catalog),
                  '--manifest', str(out / 'catalog.json')]),
+    ('p8-catalog', [py, 'tools/i18n/l10n.py', 'build', '--pak', str(data / 'DATA/STRINGS.PAK'),
+                    '--cnv', str(data / 'DATA/CNV.ARK'), '--master', str(p8_master), '--output', str(p8_catalog),
+                    '--manifest', str(out / 'p8-catalog.json')]),
     ('replay-en', [py, str(workspace / '.poc-tools/p10a-b1-replay-en.py')]),
     ('replay-zh-TW', [py, 'tools/i18n/verify_localized_replay.py', '--config', str(config),
                       '--catalog', str(catalog), '--master', 'i18n/zh-TW/master.tsv',
@@ -42,7 +52,7 @@ for name, home, stage, modern in [('walk', 'walk-01', None, True), ('dialogue', 
     if stage:
         command += ['--stage', str(slice_dir / 'stages' / stage)]
     if modern:
-        command += ['--modern', '--catalog', str(catalog), '--font', str(font)]
+        command += ['--modern', '--catalog', str(p8_catalog), '--font', str(font)]
     commands.append((f'p8-{name}', command))
 
 results = {}
