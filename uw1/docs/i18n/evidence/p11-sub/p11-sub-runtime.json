@@ -1,0 +1,10 @@
+{
+  "replays": {
+    "sessions": 16,
+    "all_saves_match_en_and_goldens": true
+  },
+  "intro_shots_ms": [
+    16000,
+    26000
+  ]
+}

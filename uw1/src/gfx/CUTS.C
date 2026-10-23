@@ -58,6 +58,10 @@ int far cutsop_stop(uint16 far *code, struct CutsState *st);
 #include "gfx.h"
 #include "map.h"
 #include "sound.h"
+#ifndef __TURBOC__
+#include "i18n/localization.h"
+#include "presentation/caption.h"
+#endif
 #include "sys.h"
 #include "ui.h"
 #include "view3d.h"
@@ -279,6 +283,21 @@ unsigned char far * far free_block(void)
 /* 0x3B6, opcode 0: txt(colour, string): a subtitle, string string of the cutscene's
    string block, split at newlines and then to lines 320 pixels wide; drawn after the
    frame. Nothing while skipping. */
+#ifndef __TURBOC__
+/* zh-TW: the subtitle's translation in the HD font, in the same area, with or without speech
+   (the original shows the text only when there is no speech); none when it has no translation */
+static void cuts_caption(uint16 far *code, struct CutsState *st)
+{
+    char far *text;
+    const char *shown;
+    if (!caption_enabled()) return;
+    text = get_string(code[1]);
+    shown = port_i18n_display(text);
+    if (shown != text) caption_set(shown, *(unsigned char far *)code, st->x, st->y, st->w, st->h);
+    else caption_clear();
+}
+#endif
+
 int far cutsop_txt(uint16 far *code, struct CutsState *st)
 {
     char far *text;
@@ -290,6 +309,9 @@ int far cutsop_txt(uint16 far *code, struct CutsState *st)
     char far *lines[6];
     register int count, line;
     if (!st->flags.bit.b0) return 2;
+#ifndef __TURBOC__
+    cuts_caption(code, st);
+#endif
     st->color38 = *(unsigned char far *)code;
     text = get_string(code[1]);
     lines[0] = text;
@@ -332,6 +354,9 @@ int far cutsop_txt(uint16 far *code, struct CutsState *st)
 /* 0x5B6, opcode 1 */
 int far cutsop_erase(uint16 far *code, struct CutsState *st)
 {
+#ifndef __TURBOC__
+    caption_clear();
+#endif
     st->flag39 = 0;
     return 0;
 }
@@ -427,6 +452,9 @@ int far cutsop_say(uint16 far *code, register struct CutsState *st)
         } else {
             st->speech43 = code[2];
             if (code[2] == 999) st->speech43 = -1;
+#ifndef __TURBOC__
+            if (st->flags.bit.b0) cuts_caption(code, st);
+#endif
         }
     } else cutsop_txt(code, st);
     return 3;
@@ -592,6 +620,9 @@ void far show_anm(int cuts, int x, int y, int w, int h)
                 st.name[13] = '0';
             }
             st.flag39 = 0;
+#ifndef __TURBOC__
+            caption_clear();
+#endif
 restart:
             ahead_page = ems_page = -1;
             reading = 0;
@@ -675,7 +706,11 @@ restart:
                         }
                     }
                     if (st.flags.bit.b0) {
+#ifndef __TURBOC__
+                        if (st.flag39 > 0 && !caption_active()) {
+#else
                         if (st.flag39 > 0) {
+#endif
                             key = 0;
                             *foreground_color = st.color38;
                             *background_color = st.color38;
@@ -770,6 +805,9 @@ fail:
     }
     free_speech_stuff();
     close(n00_fd);
+#ifndef __TURBOC__
+    caption_clear();
+#endif
 }
 
 /* 0x1402: the entry point (see the file comment). Sets the big font and the string block

@@ -1,0 +1,47 @@
+{
+  "batch": "p11-sub",
+  "blocks": [
+    3072,
+    3073,
+    3074,
+    3075,
+    3096,
+    3097,
+    3098,
+    3099,
+    3100,
+    3101,
+    3102,
+    3103,
+    3104,
+    3105
+  ],
+  "drafted": 122,
+  "grammar_sensitive": 0,
+  "waivers": 1,
+  "layout_errors": 0,
+  "layout_by_box": {
+    "message": {
+      "rows": 122,
+      "multi_page": 0
+    }
+  },
+  "catalog_entries": 5492,
+  "catalog_sha256": "4d5d0d1e04d9cdc23fa646d18efa70bcc026b56a83053c51f979287199dabcbe",
+  "build_repeatable": true,
+  "coverage": {
+    "translatable": 6983,
+    "translated_draft_or_better": 5485,
+    "reviewed_or_better": 485,
+    "approved": 0,
+    "completion_percent": 78.55,
+    "handling": {
+      "bitmap-ui": 261,
+      "direct": 5088,
+      "grammar": 977,
+      "input-token": 90,
+      "object-name": 413,
+      "template": 154
+    }
+  }
+}

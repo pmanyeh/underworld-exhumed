@@ -24,6 +24,7 @@
 #include "ui/settings.h"
 #include "i18n/localization.h"
 #include "i18n/input_alias.h"
+#include "presentation/caption.h"
 #include "presentation/overlay_demo.h"
 #include "presentation/hd_demo.h"
 #include "presentation/presentation.h"
@@ -137,6 +138,7 @@ static int same_font(void)
     return !strcmp(scroll_font_file[1], scroll_font_file[0]) && !strcmp(scroll_fallback_file[1], scroll_fallback_file[0]);
 }
 typedef struct ScrollMetrics { HdFont *font; int em64; } ScrollMetrics;
+static ScrollMetrics caption_metrics;
 void scroll_wait(int ticks, char mouse);
 static int scroll_measure(uint32_t cp, void *m) { return hd_scroll_advance(((ScrollMetrics *)m)->font,cp,((ScrollMetrics *)m)->em64); }
 static int to64(double v) { return (int)lround(v * 64); }
@@ -168,6 +170,10 @@ static int game(void *arg)
             metrics[box].em64 = to64(scroll_style[box].size);
         }
         scroll_text_start(scroll_measure,&metrics[0],scroll_pause,NULL);
+        /* cutscene subtitles: the message font, larger (P11 subtitles) */
+        caption_metrics.font = measure_font[0];
+        caption_metrics.em64 = metrics[0].em64 * 7 / 5;
+        caption_start(scroll_measure, &caption_metrics, caption_metrics.em64);
         for (box = 0; box < 2; box++) {
             scroll_text_measure_context(box, &metrics[box]);
             scroll_text_style(box, metrics[box].em64, to64(scroll_style[box].letter_spacing),
@@ -709,6 +715,7 @@ int main(int argc, char *argv[])
     }
     hd_cursor_enable(hd_cursor);
     scroll_text_enable(modern_scroll);
+    caption_enable(modern_scroll);
     if (modern_scroll) {
         /* P11.4: the locale's words for what a conversation compares, the home folder's first */
         char aliases[1200];
