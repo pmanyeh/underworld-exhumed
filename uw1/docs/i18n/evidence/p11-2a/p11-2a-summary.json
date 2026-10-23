@@ -1,0 +1,38 @@
+{
+  "batch": "p11-2a",
+  "blocks": [
+    4,
+    5,
+    6,
+    7,
+    10
+  ],
+  "drafted": 993,
+  "grammar_sensitive": 0,
+  "waivers": 1,
+  "layout_errors": 0,
+  "layout_by_box": {
+    "message": {
+      "rows": 1011,
+      "multi_page": 0
+    }
+  },
+  "catalog_entries": 6485,
+  "catalog_sha256": "dd3253049acde27a96d27af350ee38a2323cb9018f2a703a631b58bae6f9be52",
+  "build_repeatable": true,
+  "coverage": {
+    "translatable": 6983,
+    "translated_draft_or_better": 6478,
+    "reviewed_or_better": 485,
+    "approved": 0,
+    "completion_percent": 92.77,
+    "handling": {
+      "bitmap-ui": 261,
+      "direct": 5088,
+      "grammar": 977,
+      "input-token": 90,
+      "object-name": 413,
+      "template": 154
+    }
+  }
+}

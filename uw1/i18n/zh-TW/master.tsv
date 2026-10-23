@@ -397,27 +397,726 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3	201	books	7ca0d354b2aacb0f27e2a34302e06b35568b41394272ef94e628dfa9097388cb	勒布朗：霍雷修已經探索過熔岩坑了。他現在在西北邊繪製那一帶的地圖。他回來後會把兩份都寄給你。	draft		p10c-1 draft	
 3	202	books	d9a237d4e05e28151e33297ad22ca2aa65e458f793916acaf80a28fe99c19951	深淵之謎	draft		p10c-1 draft	
 3	257	books	5043529a46cacbec277b6910e82e9036f9a459abac6380b146eb8c6a0f7d475d	這份燉蟲肉的食譜需要波特酒、一朵綠蘑菇、一隻腐蟲屍體，以及一個用來攪拌的碗。\n	draft		p10c-1 draft	
-6	384	spells	0ef7c11a8b4117a452f626c5a294310e534a5d010b54906f21374e91a7d7f4fb		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	385	spells	71a0d6109cf22a67b32a6f719e928066405ed0bc965b9f0528bdc5a1a7dbec6c		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	386	spells	03a0beaa38ee0bf08b0d777424f080ea40892cfd774048fd838e63916c252a0a		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	387	spells	c471c8f83cfb98238594a4e67a2acf3143cdcbccf8f093be1d5c291ebabc6328		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	388	spells	31bbe05d43158cd2f6cec70821ac4571c76d77eda3cfe8889f81cd785150b1c0		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	389	spells	88b3d8eed54f6ff0f810aacca7226460fdb72ab34c99e5c4d002192a463a2e72		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	390	spells	526a40a447ddd7aa52d34bb62dbf1da04dc4aba8403769d239ade80893ffef7a		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	391	spells	32f782a89cf8691b16dbff4ebae8f84863ea9cd1899b8e6bc1c983e01efe0240		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	392	spells	d53895c6eb7816fb44ec7f46db45019172de4793a42ccaf893ed71ec8ed00743		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	393	spells	cfe81db361cf58a602c7241c62a8d351e44f3c1a3ab312e62233aa1a9dc68f4b		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	394	spells	0c81bb99659a126f9f6be1f706a5150632fd08932ef1272e6c5af4f1236a3582		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	395	spells	1c869adbc2fdcc63b64b5da1def0d23196e10eb4b1a6d96acef5f403e2c43e4b		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	396	spells	1a60b5af063e6822d3e099505e8407270035b00bcebe9c640aebebabc16be604		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	397	spells	de3b46da4da8a98c381a34e6ef1326411f01962e4bb094b007055b41e1d37ce4		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	398	spells	f410d53a7a4787a7ed6c4b9df3f67eb1d79789df4d108a670b2c99b598c8a593		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	399	spells	5ac4d0695cd710362a6db4660eeb1eea0914625d45365dd624d94c366cba947e		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	400	spells	a57da6677cdb9bb5c4f32e447d6790bcb2f29902c9ab1e7b72fb59eaa2b8735c		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	401	spells	dbcd5e7bb7a0f538810de44c3efbd813037ee3fa358747bb71fa58e157af45f7		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	402	spells	980d4a4cdaa6c3c40391157efbdaa40fd7299d242f0d151eb0bf47bc92609e1f		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	403	spells	4cbe4ae9154d2b8ce3ad05bc9fd107420e66d7a62d465ccd5096ccd87cd7284d		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
-6	404	spells	30dfa1dd5d120984b43fa7d79997665d9bc6dc7a0c94dc6c87b106a804127aab		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
+4	0	object_names	1ae02dd504bd1f90c58099ccdf0800643071a82d2ffb7045c5174a534388f136	手斧	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	1	object_names	49d9cd46d1b9a8e6338127dba1481b67ae46dca89c54b24643a5b24648b199a9	戰斧	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	2	object_names	6ff7c026b0adaae4ffd999883c0d2f7fdf035960508640dd2bc8ef52fec704fd	斧頭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	3	object_names	7d124d4dfc96dbd7b1a53c1d3f7394b526344ef0c1c6e6ee57a501b6cd7d0625	匕首	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	4	object_names	866b0f305e5e439ad82b13e62b2e1578368f4c3c003e9360637e1569ccc45665	短劍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	5	object_names	bab98f2e8dbb189488c4bfe2ef91afe5726aa92421af9893b5b2db926b8b65dd	長劍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	6	object_names	5421928d7b3a63f3cef3f62b7c1b2ac07f37fb7dcd914e66e0b4b1a70fec57c3	闊劍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	7	object_names	c04f4c50c9d524cb0e1ef5de83982072c6edd412287b3e1b1bff536f564a948c	短棍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	8	object_names	28080296bf97b2779156ee70cbde68d0d6e72369f491a936178bfe86edbb1d7a	輕型釘頭錘	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	9	object_names	04bcf892d47d092c1158c366876a2c915fe1a602dc6894b73fb760b176b1041b	釘頭錘	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	10	object_names	2cf87b3871fd384f8cd2079afae804c4cfb2af29528ec0ea35c39d1275f81d16	亮劍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	11	object_names	2bab66d1a715788389f72d57b5e98101f8e21685f1f04688ef1da09c6cc4d3f0	鑲寶石斧	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	12	object_names	548f051d956083da30bee900f7c4e7a4717787bf6a8b347a5dd97918172f8ae6	黑劍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	13	object_names	a9f674326405ac0e6f7c8bc462fa467eb6ba6de1e8be722a65098e2ee0ae925c	鑲寶石劍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	14	object_names	ad866bf0d000f10959bf47fc2e0e65e2e924489ea228962ce3571dc5b0f4e9a4	鑲寶石釘頭錘	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	15	object_names	4313624f3c9b22c43bd2a3607c56cd6bd62965eee6153cfd78997a666d6d8b3a	拳頭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	16	object_names	cf7e48b9132980ab085d17c842d1076c419ee967eba7e6aaf78f25373790db92	石彈	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	17	object_names	65131802cb9dfc3e3bd57602524d949719e90a3baf689823b0502cc5b905e5c6	弩箭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	18	object_names	a4d5ab948ffa39c6bb603cfb53f40987e7173af93e408d8e8269c3cde08a45ce	箭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	19	object_names	078af8806c0b787a1e9775995fad42451a0f4bc34407ab95e1fd1856a792cce6	石頭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	20	object_names	05a66631e18c096505ca07e78fa6a92a864a774af4e112a510667dc10623b1eb	火球術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	21	object_names	bc52afee357d9ff29f9c4cbcce36863acc3eb38729a7a620bee9ca2ed2441a33	閃電	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	22	object_names	ae5eebff12dd75af2fc959fa5ef8bf7c23fb4fde38a0176be14c991d8ff2c440	酸液術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	23	object_names	089325ef292b6f75d6d09b147ec4417995c5c3cd0c3aae498e0649a26765525d	魔法飛彈	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	24	object_names	db9403ceb804898acfbb30e8ba2394898be033739882e346433b52f86befe43e	投石器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	25	object_names	a7666bbeb5bdf96df9dde7386ef702842c4a0e54d34465b4a6d631dad74f668b	弓	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	26	object_names	76181a110165691edca9957f9a9c787e90a45b6a506e8a8323d99822c25aaa75	十字弓	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	31	object_names	aa665e545b8444ccce125261396347195a1d2845314efbaa0df38b2f0ab8403b	鑲寶石弓	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	32	object_names	39be0965351a8428865cad8e664a6168b79e7a041b5bc201f208984568f45332	皮甲	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	33	object_names	66b2261a57b9ac5f0c6a86a52ff5448a352d2a9a45a83b71c31a829d36db03d3	鎖子甲	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	34	object_names	497ae187b227fb777ada49c479160e878ed8e02208335928232fab3028774dc1	胸甲	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	35	object_names	a1540d8194e94f3f5bc40204a639ea4573d817b8447b6868dd888643fb11b4a8	皮護腿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	36	object_names	e2a0676d92407a3b7e2e1aecc301cf00ad9ae6ef526c9bd6d96ded025f64c80c	鎖甲護腿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	37	object_names	ddfe1d7284bcfa86ad44a76543a1c0f8175b4adc1c5acf450537cef4a9332a64	板甲護腿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	38	object_names	073a78746a3a6645ab7fc0e5861f45d0be21417423e15bf2de5e009bdf1d434a	皮手套	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	39	object_names	8cf6d52034e7dc3a4ee71229ceb2893cac846d320a02f5e2729498046e3af0bf	鎖甲手套	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	40	object_names	137ef0d6a9847fd0694676394d75ca8046de6601869d938a50814dc4b930cecc	板甲手套	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	41	object_names	ffb7c4be72e07fcd400f66f590dbc29a30932180b9b7dcd047eaaadfb431c1b9	皮靴	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	42	object_names	7a0772d79d78b99d12feed9a8657223d1e2cd7c43ad24e7c3bb64dde9f4958ed	鎖甲靴	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	43	object_names	f528f9f96780b3fddd18850588ed9d27ef35a174f0545c94fe9ffd616ddae422	板甲靴	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	44	object_names	dcd33d53de45c377460b6f985a93221a82c8ea73cdc5fa6b3361cd8384e3041d	皮帽	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	45	object_names	cc4cd0cdc3ea09aada18c2e58c632a580e75991f90cc95a460e06e35a74a3919	鎖甲頭罩	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	46	object_names	3aff2993c06e27958b4497ff5a4fe0a5325c94e698f2d2030bd66e36bbe02dcc	頭盔	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	47	object_names	dbe318e694be1f3f518edfdd3ce1a9a65126c31e413d074546a50e2fa3342779	龍皮靴	draft		p11-2a draft	object-name
+4	48	object_names	6e50134d4d570be819cf05c3179a8628701ef15086278abcc1720aa29fcd07ac	王冠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	49	object_names	6e50134d4d570be819cf05c3179a8628701ef15086278abcc1720aa29fcd07ac	王冠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	50	object_names	6e50134d4d570be819cf05c3179a8628701ef15086278abcc1720aa29fcd07ac	王冠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	54	object_names	fead11777484aae3027156ff66449effea5b82e1e49240cb6ba7d98b43e79d94	鐵戒指	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	55	object_names	ef69de210e0499884cf78610e5e4fd71af5f45cce52897ab3ebf0d8d623edd43	亮盾	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	56	object_names	678889fbe44bf41ad42c8de0c9c646fd71e4d06900cb573043f0f3cc143b17aa	金戒指	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	57	object_names	fd7d592386a7587493bbfbe6ce4a9b29bb736182fe2155f0633d7cf3d1be86e8	銀戒指	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	58	object_names	b273d7b2510333f0d3c541666cb588773c77dadc2ec20cacb542d0cc7022936a	紅戒指	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	59	object_names	a78e05457dd749996e4b9b6fc1777ea8aca378fa44aa0802bc2211af0c47ac73	塔盾	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	60	object_names	f46f5447260b770bf4f5598181d215333a0c0f131f54a92bdc586521c0ccebc6	木盾	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	61	object_names	850ec767e68fad611123e0350c5707f12dfef6f769f3496f3dc34ed8138bb2d8	小盾	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	62	object_names	1b1b11f36ba5024dd0770a4518408ce5e4bf3fddd4033f5614b6e5e82cd4ca3f	圓盾	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	63	object_names	b551979185ed66a6216353571846fb310cc4f9acbc8dbe06f6f6b09090c4842f	鑲寶石盾	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	64	object_names	ac3ea1509d2775f77a3e53cd7fb408bafe216ac97d349a9e36ec6765c2c71aa2	腐蟲	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	65	object_names	b002f7271ec5c8399243326d7fd178c751298a9afe6191c27b6db775eb3c4a84	肉色蛞蝓	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	66	object_names	538b45e747eb9c14cc51a9b8b5d1e277ff499a2a8dd1e4d2e2438563b6319977	洞穴蝙蝠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	67	object_names	63ab5d3a30da2f08088d8fd46bc9884dfe2920223944556ee01658ad5bf7cc08	巨鼠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	68	object_names	8ad429280b6a5a9c89f30c63a047ddd2d79bfa57d8fb9826915304d1c4acc805	巨蜘蛛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	69	object_names	bd0cad9a7f6e84812b924fbfb49291853438b21205d08a33a0ff1133041c8151	強酸蛞蝓	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	70	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	71	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	72	object_names	63ab5d3a30da2f08088d8fd46bc9884dfe2920223944556ee01658ad5bf7cc08	巨鼠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	73	object_names	5596b885e8f70903cfa3d27f18b470ade7f05d2b2a82a02c245f1873a3064e58	吸血蝙蝠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	74	object_names	3e5fc21de4601842c96f1d1d2f3c42d79be727e97ff3dc9121c519a470378243	骷髏人	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	75	object_names	554d197f7cad1202b850200321199d6218686316527a8cd22bf3a0d96e28bce6	小惡魔	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	76	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	77	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	78	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	80	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	81	object_names	986cf7a86028c65882b0029e274c91d8970b70536895c0e38b907a4d58663e0f	蝙蝠猿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	82	object_names	28339595241c8f816199be5139374a820c59de53018e05d4d315609fbef4a189	血蟲	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	83	object_names	b5ec2b79995a551bf0ae96ac8488b359a34c8e09945293c820418a3c7b747443	狼蜘蛛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	84	object_names	2923beb11a3bdfcd8ed9da2c4879c109354cbd90b61e821407336441f8190122	山岳族	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	85	object_names	a5155e6330efbdeebccf537d59b4e24b4bbf21d4a39263096b1ae9d6fa89b129	綠蜥蜴人	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	86	object_names	2923beb11a3bdfcd8ed9da2c4879c109354cbd90b61e821407336441f8190122	山岳族	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	87	object_names	e47a4898417e8c0172db18a51a0344f18eedbc230fe3954dddf69ddd7b246b94	潛伏者	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	88	object_names	1684626faf542baf45947a9ce4d87101ae51dd6ffb8d66428bcfb589321e7081	紅蜥蜴人	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	89	object_names	4efd0d33f78fc8744adc10b95908a2c36be40d754ad22a2f46cd13e5bf318d0b	灰蜥蜴人	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	90	object_names	ea617f9b25f12246b6f194aaeecc2a00b4a92c85c827e8dde00a4f4b5dcc42d7	放逐者	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	91	object_names	06585644982978c494ba1d53da9ed78ee430c36f8bd1dec20e73191e90cdd618	無頭人	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	92	object_names	96d37a384ed53d42f8014e2eaf885a9d96ecb86af311473a4b5b9e07d0cc3125	恐怖蜘蛛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	93	object_names	5f018a0e527d88e97a6a3dc7afba44f02c5ce03c944029e906aacaaaa8cb0d89	戰士	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	94	object_names	5f018a0e527d88e97a6a3dc7afba44f02c5ce03c944029e906aacaaaa8cb0d89	戰士	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	95	object_names	5f018a0e527d88e97a6a3dc7afba44f02c5ce03c944029e906aacaaaa8cb0d89	戰士	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	96	object_names	101743c02d643e988686fccc58cc835f5dce63fa07107008c1f4ca6ad6eaa400	洞穴巨人	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	97	object_names	877550b33f5141cb7cf12b6a7679e76493c4fd41875251bcf8067fe8875d28e5	鬼魂	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	98	object_names	5f018a0e527d88e97a6a3dc7afba44f02c5ce03c944029e906aacaaaa8cb0d89	戰士	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	99	object_names	0ea64e1999de864234c63006251fc94a21926f4be68ae0c5062ca5c79a39cc95	食屍鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	100	object_names	877550b33f5141cb7cf12b6a7679e76493c4fd41875251bcf8067fe8875d28e5	鬼魂	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	101	object_names	877550b33f5141cb7cf12b6a7679e76493c4fd41875251bcf8067fe8875d28e5	鬼魂	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	102	object_names	25d967fd9df72d303812d9ea0904171268625803be76ea568cd7293498f979cf	眼魔	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	103	object_names	39ebba68bb1ad1c56bb47e594896294680bd19d0deecd20599925eeed86e8083	魔法師	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	104	object_names	5f018a0e527d88e97a6a3dc7afba44f02c5ce03c944029e906aacaaaa8cb0d89	戰士	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	105	object_names	2d82bb9c8ceb0aa825f562b5d1bf6dec74afed76b586d56478f65e1fb55fbaf5	暗黑食屍鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	106	object_names	39ebba68bb1ad1c56bb47e594896294680bd19d0deecd20599925eeed86e8083	魔法師	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	107	object_names	39ebba68bb1ad1c56bb47e594896294680bd19d0deecd20599925eeed86e8083	魔法師	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	108	object_names	39ebba68bb1ad1c56bb47e594896294680bd19d0deecd20599925eeed86e8083	魔法師	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	109	object_names	39ebba68bb1ad1c56bb47e594896294680bd19d0deecd20599925eeed86e8083	魔法師	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	110	object_names	0ea64e1999de864234c63006251fc94a21926f4be68ae0c5062ca5c79a39cc95	食屍鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	111	object_names	96fb07c697a3d9f6aedaaa1f43d967746f39c50418939501c31f77f1ef7d1662	野性巨魔	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	112	object_names	8221e21fe5661364097477ed63424ef2bc57919c0a8ef28bc989ba7fb4417d15	巨型巨魔	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	113	object_names	92c7110850e8ff9e89ba6b10df26a6dd8a46fed7867cc890f3443b7a25000e83	凶惡鬼魂	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	114	object_names	1b2a9350fb916e485335a8c508759800f1516dfc0e1099a4abaae5bc3327f435	土魔像	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	115	object_names	39ebba68bb1ad1c56bb47e594896294680bd19d0deecd20599925eeed86e8083	魔法師	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	116	object_names	a639847dfa0ef8860d6210f0ee5f80b8bb165cc17b32002b45cd52896c6b0516	深處潛伏者	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	117	object_names	40fc3e3afc5394c730bc97ee748e5a4d4040c387dd8063571cae880375a80aef	暗影獸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	118	object_names	3805a9b200175e8b2c9cd1a42c487478c4e21e251f4e136210170bbae7d8c992	樹精	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	119	object_names	b95cac1dfa4dc979acd64b51eb4a47555a56493dbc4cc84ed21a8339e2d6f107	石魔像	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	120	object_names	ee3751406107e9907bd0d71991112fa63f79c620d87b4a8b7cbd160778ee60d0	火元素	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	121	object_names	63c382f3e44119a9be6e27891de03c9c49ebe881f27f39a2a305de41659ae7ed	金屬魔像	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	122	object_names	a1d069191367644e8828d7b41d5eedf77b9582334bd76ab5c11df53b26856ccd	鬼火	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	127	object_names	fadf601050ca507f63f81a3c61094a3dbfcdbfc3c38d113c58106dd70d2a6346	冒險者	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	128	object_names	d96e7c153af5b5cf29cf68ea5aedc77decb8c327ba6a31dd2ea25547d228613e	布袋	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	129	object_names	476379eb040831f1d89fa9d278949b8a807271d8565d5df69094f0b077f0cd90	打開的布袋	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	130	object_names	a0565dde536e381e94caf92eae671cddf7c782d1d38b3aed11b1c25b78784325	背包	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	131	object_names	e06cdff24453bf3327930cc382e7fc765f6257d636a207bc84fb052aa12b7aca	打開的背包	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	132	object_names	8b5bf353c0b3915ec930612425001ae32f1076d4ff5372a2c54a0d8504197176	盒子	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	133	object_names	f2cb90ca10a97b6fb439475a28ec279420bfab0f1c3f5c581707f959ae7daeaf	打開的盒子	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	134	object_names	bbdaa7dd131b7d24107c1fcab42f0d315d5c2dd6370663ad4367aa5cf6c12954	小袋	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	135	object_names	4684f6cd7fcaeed30f296f4e5c6b6964ff036d14197e78a2db98a16053170011	打開的小袋	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	136	object_names	9f0ca1e97e96528992fb3a7d5c2b9a238e262af790d075634fe26f94b23a9eb4	地圖筒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	137	object_names	ceb8e31e6be0cc9e19c17b2e029f93ac0b99d3862f5cbe229894c6b55c1994c9	打開的地圖筒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	138	object_names	cad230260dfec8b0fe302a8373e3ee721f11f1d03f0c23b891c8aa2ca868e8b3	金匣	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	139	object_names	53b832306f0d28b8a218c0c6c2047627a8ca3083fb2037d1e5818eac74ae1679	打開的金匣	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	140	object_names	753c9c01a530cc7b2864fc6d7cc764a79293f026997870fa1cd99191e4e7042e	甕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	141	object_names	5253e2a1c95606fdfd09b7c6b0fa5c12ccea07237661553a0bddc8ba6c5e15c3	箭袋	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	142	object_names	fe517e501ac0d7fa85a1ab46b00159cbe5a5453fa6a59daf5110af4b764f9723	碗	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	143	object_names	3600b91cec1d963109438280057f5d995d4539d2a1ccd3eea0964bbaa16b21f6	符石袋	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	144	object_names	b4a9909a8d18e7583fb161615dace4d165df198c93e07ac032f852570aa7ccec	提燈	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	145	object_names	edbc1ef8c30ca118b346b4d39afe1b1ef50cede7433291ec8383922434f17eba	火把	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	146	object_names	80c3eb161550f53366e4880949462b9e49bf3d21e81a858037507a6308d131b7	蠟燭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	147	object_names	c3ea6c516ab47018f533016aaacde2a8d18889ed17b9ba335d8b595fef12b7f0	細蠟燭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	148	object_names	b0d2521fb188be73d0a0051943d3f425a38734bed1db1cc082d8ada2c9c7c594	點燃的提燈	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	149	object_names	e47a27ea2e49845243ff8e3b4256704b03fd62264852b48cbbcf29f0f2f57412	點燃的火把	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	150	object_names	c03c064c09cb336c2fa97c5d878a0f6ad7d934909d6ff303d33c17c3de5a9d6f	點燃的蠟燭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	151	object_names	82eeaf25d19d93f66d29b0e91e51653cd2278cec241c3301a56a939bedd160b3	點燃的細蠟燭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	152	object_names	ce4b11998dacc3bd17b48425b78404fd60d1bab9191fb97082fd6bd5f756bef5	魔杖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	153	object_names	ce4b11998dacc3bd17b48425b78404fd60d1bab9191fb97082fd6bd5f756bef5	魔杖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	154	object_names	ce4b11998dacc3bd17b48425b78404fd60d1bab9191fb97082fd6bd5f756bef5	魔杖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	155	object_names	ce4b11998dacc3bd17b48425b78404fd60d1bab9191fb97082fd6bd5f756bef5	魔杖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	156	object_names	55d79058a2b70c3834f09a03079c4e9583482e9d6ce78ca16319f6becc00f0c0	折斷的魔杖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	157	object_names	55d79058a2b70c3834f09a03079c4e9583482e9d6ce78ca16319f6becc00f0c0	折斷的魔杖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	158	object_names	55d79058a2b70c3834f09a03079c4e9583482e9d6ce78ca16319f6becc00f0c0	折斷的魔杖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	159	object_names	55d79058a2b70c3834f09a03079c4e9583482e9d6ce78ca16319f6becc00f0c0	折斷的魔杖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	160	object_names	a0437802d46f2f215e38617f241bf243d3c937695e767e9ddc634da3d8d2b247	錢幣	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	161	object_names	c3c52d797d831badf4e88d1a3dca3211a07061766b642647a49bb445eb8c3101	金幣	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	162	object_names	35c6f574aa97aa83df23b11386a2c08b463e21064c0550d173f28637e1ec9338	紅寶石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	163	object_names	7db75559c3453f229ae5b1e15165e1b62f215605dc15b93f0c14c8f2c49b23d1	紅色寶石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	164	object_names	f7ed0c44281d7f3c2dc86d1ad9c3031c7795a3878e40ea74acb2317c41ae6451	小型藍色寶石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	165	object_names	12ef54fdc2e708958ffa9058792e6dcf33f1340596e2e8a29ecc4efafd84b89a	大型藍色寶石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	166	object_names	39134fd338270a0b09bfc5b2dc78ff274cf9e7718320ae93ba28794db9057041	藍寶石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	167	object_names	b418403c1564247adf422605a3f95b99d0624e6f6417563b53d6225476644709	祖母綠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	168	object_names	d20efab519e1fd34365f3ea97a8075a98c1506afbb96aaac223bf5ef8a64ed39	護身符	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	169	object_names	2e2d3348080916b107af97431c1d518569c26707d0aa602023d144c62b0d9299	高腳杯	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	170	object_names	d6263cea5222a88dd42e941b0c2f4d5fa6f9db1d3573581fa9c259d39e43142e	權杖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	171	object_names	2391cded300ec30e95aeefdc58ff53cf74ca7a2c856732166058d52f287c488f	金鍊	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	172	object_names	50811cd2bab1677690ee1ac953a12b1f62eed5d27c4a1a2063fd1695a1228532	金盤	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	173	object_names	5bdc8e16a65de43830e0da4e007675745ba5dee47560c4d74638a6f83b08b2a1	聖符墜飾	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	174	object_names	c8e02d8da3bca9314aa9c8e3813594f455df86cf36fd279fbc04e148a1f63789	亮杯	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	175	object_names	12ec2de8d3218a3060980cacb2401bb07ed54f5a6dcee649753d8077ed799fa7	大金塊	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	176	object_names	8fdccc461066e0dd7a4e8af4e89327b91a1ba87324ce2d52294bcb46f634597d	肉塊	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	177	object_names	ff0008aaa038cc0e7ea280d435dbde0d8cf501f8d5a0a09473ecd22b31c9307a	麵包	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	178	object_names	4402a1e5f161ed3c6e0c68b9f8ec0029a0fd04dc3f508544739cb0dec65d5dfc	乳酪塊	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	179	object_names	c841eb0fd5ef9807861bf83d77cd564284958c120d3afd6f5f1c9c295ac404db	蘋果	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	180	object_names	96bc8e57b725200a5d26c266b28335cd79f310ea447038f05d5bb058731613f6	玉米	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	181	object_names	ff0008aaa038cc0e7ea280d435dbde0d8cf501f8d5a0a09473ecd22b31c9307a	麵包	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	182	object_names	f948e54f294043dfa3b8338542d1ca7b0210fea68bd35227d622a8c7e7589f65	魚	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	183	object_names	da5b75462d63278fbe1b9c848b0d81f5897a339a4a1e7306e181707295eb6345	爆米花	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	184	object_names	628c79335f8fb2b7deffba7b84c286d7fc019a15f5d9496f136cb251b9d3b668	蘑菇	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	185	object_names	c13fa8be309aa06f139e599f57d8dadea1dc82f73b579531af7b35e0d455eed8	毒蕈	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	186	object_names	4a47640b8fcc9f9f6eb6ee91f01a7bd72be882b63d815432a4c50748bae2b193	麥酒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	187	object_names	d4e536d7f046794e19d36edb14382b1a0b45a231821064d274009222aadf584d	紅色藥劑	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	188	object_names	95806034c8cace2439eca5d6deb3e743c87f0fa9f8828def2d10a95156297f80	綠色藥劑	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	189	object_names	47a36656fe696a82d1a4428db0041278adeb3a360153297b447fe353b91adb4f	瓶裝水	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	190	object_names	7d2fe339f70841531ed6a0b37d22e61236c87c8ba79d09461d53c2776a12f5f6	波特酒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	191	object_names	461902aa07151559fa9c754f95e80a5f4802ab3dafd765541c236d03aa1f4d02	葡萄酒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	192	object_names	6274486e9e7540a8877b0d38dc25f4dfef343a5d54a96aa5aa71323d961bc85c	植物	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	193	object_names	0df4a125d48dc9e312ca946ca6e29fae2e9926593cb91af59d22d6af0b814c83	草	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	194	object_names	0d5b979a5ead4fc5b4b2c74d0dd04169880bc9b7a2ebfa8198a6b37a36aab69c	頭骨	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	195	object_names	0d5b979a5ead4fc5b4b2c74d0dd04169880bc9b7a2ebfa8198a6b37a36aab69c	頭骨	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	196	object_names	67d4c152f909edeb42c8fc7d32c9291810b2343fab1c0b9dac9d1fe65408e584	骨頭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	197	object_names	67d4c152f909edeb42c8fc7d32c9291810b2343fab1c0b9dac9d1fe65408e584	骨頭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	198	object_names	9c28909f30d2b6bbab40e03f38004b4c29499d2cdbec52f8b98e8a3f7d1732e6	骨堆	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	199	object_names	fff9403bc752cf13bf011710c1cd5759b34e3503f4fb17e6ac70a3cd253e349f	藤蔓	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	200	object_names	de19454f66718d70f71e2034f352bf2eb9bd5f96fe09c39436a83eb6ccd8a3a7	斷斧	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	201	object_names	0b3214dd53606c8b592f290dafe227f4c68fd1959f27d4ef0a9f56d332240dc5	斷劍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	202	object_names	44939b93895bdd59e09fe80f4c74715e2e2cf8ac1a51f163c34bd81a50a74d58	斷錘	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	203	object_names	ee88e8836b7cc8b924c1f1b28825a102698d24c896b2bf3ed582553f81907001	破盾	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	204	object_names	cffdf8c70e049e83b8b7b1f7d70f75ad3996c2eef0cd73413d8d37660ff25867	木塊	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	205	object_names	cffdf8c70e049e83b8b7b1f7d70f75ad3996c2eef0cd73413d8d37660ff25867	木塊	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	206	object_names	6274486e9e7540a8877b0d38dc25f4dfef343a5d54a96aa5aa71323d961bc85c	植物	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	207	object_names	6274486e9e7540a8877b0d38dc25f4dfef343a5d54a96aa5aa71323d961bc85c	植物	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	208	object_names	36a9f10bf7f76a721ab2228bb22b61a736666cb7372f1abdb706e8fd2644817e	碎屑堆	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	209	object_names	36a9f10bf7f76a721ab2228bb22b61a736666cb7372f1abdb706e8fd2644817e	碎屑堆	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	210	object_names	36a9f10bf7f76a721ab2228bb22b61a736666cb7372f1abdb706e8fd2644817e	碎屑堆	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	211	object_names	2628b26462e70fe50989418e9c4171e094fc319e87e7e9f73064ef318d95e22b	鐘乳石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	212	object_names	6274486e9e7540a8877b0d38dc25f4dfef343a5d54a96aa5aa71323d961bc85c	植物	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	213	object_names	36a9f10bf7f76a721ab2228bb22b61a736666cb7372f1abdb706e8fd2644817e	碎屑堆	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	214	object_names	36a9f10bf7f76a721ab2228bb22b61a736666cb7372f1abdb706e8fd2644817e	碎屑堆	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	215	object_names	ff18d58df71452f7af139b00920b78b700663fcb53230a65046bed1691d6d88d	鐵砧	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	216	object_names	1c24a3661fb0d3239fcf2aa1f57f8724b652f2e9ea918555cc1ed60d12589a7b	長竹竿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	217	object_names	6d8d4e2132ac99374f814d0f50ba1887c2821c74f53612069fd6103846d8d95f	腐蟲屍體	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	218	object_names	a2f85c0904e36980d10a0e9af2cd3aec80f1f4ce84c63d4c62d7d079ae8d642b	碎石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	219	object_names	dd4bdbe77d06d57b028c69d3669f95c15f67297808613b4cb3af5f2800a708a3	木屑堆	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	220	object_names	9c28909f30d2b6bbab40e03f38004b4c29499d2cdbec52f8b98e8a3f7d1732e6	骨堆	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	221	object_names	b8280aaa76e724a017c96668a1ebbd9e799a87e64e7c003742c886065df6f4b0	血跡	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	222	object_names	b8280aaa76e724a017c96668a1ebbd9e799a87e64e7c003742c886065df6f4b0	血跡	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	223	object_names	b8280aaa76e724a017c96668a1ebbd9e799a87e64e7c003742c886065df6f4b0	血跡	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	224	object_names	8e6bbe8cb4600bd9b9f5132d1e7c808cff01313c19ecfc613d6d794fa6b12bd9	符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	225	object_names	35f3c560579d933450aa05b11c0dff8d139b5e5fc5ace28f652f49d3b2d2eb75	真理之鑰	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	226	object_names	4479d3fb72772f90cff1df3948305f693b948896eb2362c4373f7d71c4355ca2	愛之鑰	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	227	object_names	52e07bb97f20c953b4b3cfd666ed63ac985c67c79dea0678cbc3e526fd8dea59	勇氣之鑰	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	228	object_names	9f9d803d43d012fbaac1be7d0f47dc06a60aa0bf3e7af2ca958d0bbc361693d5	雙部鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	229	object_names	9f9d803d43d012fbaac1be7d0f47dc06a60aa0bf3e7af2ca958d0bbc361693d5	雙部鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	230	object_names	9f9d803d43d012fbaac1be7d0f47dc06a60aa0bf3e7af2ca958d0bbc361693d5	雙部鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	231	object_names	e79abb66da05d4550ebafd2981518f1a8c3b507998cb1929188f2b3787c81379	無限之鑰	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	232	object_names	dcc9176e8e9f70b38b22294dcfa76fb186c2645f4275c74d7b49bff1a610e3de	An 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	233	object_names	5be5eb10d12bc1a62c35f756fb2ede4bcdaa53114dbc83004da9eebddb52df7a	Bet 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	234	object_names	6316ba69bfecdc4ba1ab90c328277e8f5818a42d44015a83a3c5b0c810657b29	Corp 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	235	object_names	6109f5ff822db7727b8f4789ca1040509052d0c1dd6bae387f73e26b16f9f7fe	Des 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	236	object_names	0a4b24f61abd759c5938fa709895cc7db213af2f7f9ec8641220c18a33069b86	Ex 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	237	object_names	cfe174481a373a754ac44fdff31f5bca5fcfe06f404b2ce7ebfab1e3820612b4	Flam 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	238	object_names	c8fa92cdc26abb288ef07ff09e73d051709abeccd3e94671ade380a1689e034e	Grav 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	239	object_names	9945f1a03fe019a601a78c037aa18773ffd248a19a344cc4e39b956183622f21	Hur 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	240	object_names	744584bc792f2e133375d12a6e4a94397da34759c4bb0631dc77124f5ab7d5c8	In 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	241	object_names	f98fbbca9673d300f2ba6eb5271f9884bdb5c83ef8be3282fae0d2df0a81c525	Jux 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	242	object_names	081b570960767ac8e27291625fb48fbb10c7590aa27cdc95fa9b442d50c16cc1	Kal 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	243	object_names	71e421ad8eeb6647b1d2aea6e3b9ac89f3ba3f7e98d2abd1efe40a086901207b	Lor 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	244	object_names	59553df18fd2b37337e12bf7402934bbff82a39802798009453f07a1a3a74118	Mani 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	245	object_names	0821a65e8da3a794f67d4601e2f027b2d2b15730f07b123556a4893f19c6b64e	Nox 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	246	object_names	6ab8e66d53333413e8a129ba8b1828aaca6097e1b2f248d6633c84adbd37ef98	Ort 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	247	object_names	ca50195200a981c5f18baedc9c3794ff8f26757943920fda2752889b7c683e62	Por 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	248	object_names	a725ac9a2f7efaa17108cbbfe3abe061d97055eb9abfd9e849f05e42c56d374f	Quas 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	249	object_names	fb9b99f3bd40496a1215f3f22bf9303ff262550df9ebb3bf86b0370ae81e0dfd	Rel 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	250	object_names	0470c8108382e680ad09a608ecbc4a2b8ab6c6c9a33e7fb43887bbd32d706e8b	Sanct 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	251	object_names	37f63916ab39f8c5e416f9bf907eec9993313be93f4a79612810e8fa85be2c82	Tym 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	252	object_names	6d398aef5baf4a28ebc3d3a8601369cba013026965112138c3b6ff9b676c3258	Uus 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	253	object_names	c5d6329fd7a673ce4507cdab9143923ef81c3cc2925acaae358ae94101f28e9c	Vas 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	254	object_names	3acafefe107025877fa94bb7d7ff3d56be332f95f4f571ed37ca43a28a90e253	Wis 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	255	object_names	baf31f344625095737012e0f52988fc84a6f92675b92b9839af1ea5f2eac86f8	Ylem 符石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	256	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	257	object_names	be048b158eea3c5676e99a378580f8c97fe4c6f85c126c11c5bee81c1cab865d	開鎖器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	258	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	259	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	260	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	261	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	262	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	263	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	264	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	265	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	266	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	267	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	268	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	269	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	270	object_names	b0d1fee5da4831cfad9f30e4876c734e795fe6e5b1d76227fbf6c3829bb1572a	鑰匙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	271	object_names	6945c8ab84df1257ec9e75298d3c1f10bf573298cbbac7b2be5c36fb98b7b48d	鎖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	272	object_names	6b7f450383e96502c7b122bf9928fc1520750300fee50e4709d5ca2353e3a06d	湯姆的畫像	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	273	object_names	f32905c8820414de586403f30e2134a63e512d69dce19e7164b4e6ff2eb83c19	水晶碎片	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	274	object_names	6f93d73f82b5dbfad0769f2f6abcafa18cb0f386d6d863d2365721f0d40f27d3	寶珠礦石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	275	object_names	18d4b82b639a542f168caf14a36b9fa08a25c1b41264dc9885abb4a691c6ea24	庫爾尼斯的寶石切割器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	276	object_names	cd8e4b5bd3a03199b2630fba1f819ec78cf46bf8a920eb98ddc3bdf152e48311	書籍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	277	object_names	bafea64fc6d02c51226f35f239505ccc8ba5ca2b52326ebf7829d0e4eefe84bb	燃燒的薰香	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	278	object_names	275a9ad06ca82bd5677715e9802dc34d6148fb2be7127358d0b732323b38d7f4	薰香	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	279	object_names	4c13ac79c2318521d4b1e54b92974897531c26d86979d870edd47195985a433a	寶珠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	280	object_names	2eb4e2ae8605ee8e3bdd2c648d8e0665c07b7e47f24c7b1ee4b134ccb69f6040	斷裂的劍身	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	281	object_names	7e8d0259eb51af57fb443d31a8c5286b4fba422071fab83279f8237e901f84d5	斷裂的劍柄	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	282	object_names	f98fc47ef4bf3881b57da361d81a2d917020d5a38cfd889d9bd3bf0a6488ea1b	小雕像	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	283	object_names	ef355e84584d7f1f9eaf0a8aa48f29d3f14d6690d0bdb2f813bd1da0464604a8	腐蟲燉湯	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	284	object_names	1c5f9b09e670a1abe890308006d3f6cc3611d116feb097477295a36f3584e7b6	堅韌絲線	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	285	object_names	19a73e71736c3129360c14cc0d3dd34c762e404c789977e75b9c3975b3578daf	龍鱗	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	286	object_names	549fb19c37344f21ff580be539a50a69438e28bf8716a5b5a5ad7d7cf7fb0562	強韌球體	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	287	object_names	5eddcd0a715dd683480888270a4c35337fa0d912218ac6a8b734aa404ed72206	旗幟	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	288	object_names	0ee2a71015fc749be53f5d5269626e22cb2bb19de8ce28f3dba9b0767ed85d57	法術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	289	object_names	8fcf9d0b1e094d9bc82d91a16fa5973230d4cc697457249ea51079357f2d846e	鋪蓋	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	290	object_names	ec663932fe18d83c530c4f50b145d8a8df707edb5917e59527dfb828fab270b9	銀色種子	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	291	object_names	48670ad7ea7ae4b9e95944638a5321c7859fafb0253da576e5ff4ddf6c2cc99f	曼陀林	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	292	object_names	b2f9d16c52bad63d96daa8104a90a122319d8f226b46faaa68755a989b528bcc	長笛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	293	object_names	26034a2347027595e7c1ad9fe8d591669f4ab42ee3c6dcf0d955423e81bef898	水蛭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	294	object_names	3e965dc8e87e49559514234c5495cd05b697e116d414dede541cf7fac222b4b9	月之石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	295	object_names	5364f3eef3adba10d62f9186ea1121ccd89f76a43e68823ef72e7537fb9c4e3a	鐵釘	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	296	object_names	ac1bb3c8d072d4f67aafed0d9f40630b4addb1359d9cba2755ddb9044bdcde64	岩鎚	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	297	object_names	050b1e502661515d67f7863985882819b9cc140fc01da5fa90ee9ecd88ffdf4a	發光石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	298	object_names	077b6306eb9edb0a46631170539db6a47106a03f4f622395be739e2458ccefa5	營火	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	299	object_names	6f9295adc2a57cb907677cac5fdf05c447f96ed62c10a6e8b8f0c06520b71a19	釣竿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	300	object_names	162cf0ea8953b2c4ba24ac7333e99cf6311a4452e692473f8f15c37170621f8f	徽章	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	301	object_names	31886e6929587fc61c57865bc00512cc76fa3f4a6d6efd45ac3906d500384bcd	油瓶	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	302	object_names	73e3e477ae05a449760ddab79f3ee4c49bd3cf218da87600c2ae7432ef916fbc	泉水	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	303	object_names	efe36f5c57fcabe2154d44f840616505a8e80f5ca197be02600ec7817d1199e6	大鍋	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	304	object_names	cd8e4b5bd3a03199b2630fba1f819ec78cf46bf8a920eb98ddc3bdf152e48311	書籍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	305	object_names	cd8e4b5bd3a03199b2630fba1f819ec78cf46bf8a920eb98ddc3bdf152e48311	書籍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	306	object_names	cd8e4b5bd3a03199b2630fba1f819ec78cf46bf8a920eb98ddc3bdf152e48311	書籍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	307	object_names	cd8e4b5bd3a03199b2630fba1f819ec78cf46bf8a920eb98ddc3bdf152e48311	書籍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	308	object_names	cd8e4b5bd3a03199b2630fba1f819ec78cf46bf8a920eb98ddc3bdf152e48311	書籍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	309	object_names	cd8e4b5bd3a03199b2630fba1f819ec78cf46bf8a920eb98ddc3bdf152e48311	書籍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	310	object_names	cd8e4b5bd3a03199b2630fba1f819ec78cf46bf8a920eb98ddc3bdf152e48311	書籍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	311	object_names	cd8e4b5bd3a03199b2630fba1f819ec78cf46bf8a920eb98ddc3bdf152e48311	書籍	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	312	object_names	1aaa4dd98f2a159d64bddbf9fdb1fa6fb5be45e01f0115d2dddf55eee3acb10c	卷軸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	313	object_names	1aaa4dd98f2a159d64bddbf9fdb1fa6fb5be45e01f0115d2dddf55eee3acb10c	卷軸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	314	object_names	1aaa4dd98f2a159d64bddbf9fdb1fa6fb5be45e01f0115d2dddf55eee3acb10c	卷軸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	315	object_names	753dadf517dc6db0703e1ffb4273f2288e14817395c9cf5b974ceee5dadb1d0d	地圖	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	316	object_names	1aaa4dd98f2a159d64bddbf9fdb1fa6fb5be45e01f0115d2dddf55eee3acb10c	卷軸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	317	object_names	1aaa4dd98f2a159d64bddbf9fdb1fa6fb5be45e01f0115d2dddf55eee3acb10c	卷軸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	318	object_names	1aaa4dd98f2a159d64bddbf9fdb1fa6fb5be45e01f0115d2dddf55eee3acb10c	卷軸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	319	object_names	1aaa4dd98f2a159d64bddbf9fdb1fa6fb5be45e01f0115d2dddf55eee3acb10c	卷軸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	320	object_names	a7de93451e1fc60b5384cde71d20d4babe3ab7abe881a56f016e44b72812ed85	門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	321	object_names	a7de93451e1fc60b5384cde71d20d4babe3ab7abe881a56f016e44b72812ed85	門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	322	object_names	a7de93451e1fc60b5384cde71d20d4babe3ab7abe881a56f016e44b72812ed85	門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	323	object_names	a7de93451e1fc60b5384cde71d20d4babe3ab7abe881a56f016e44b72812ed85	門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	324	object_names	a7de93451e1fc60b5384cde71d20d4babe3ab7abe881a56f016e44b72812ed85	門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	325	object_names	a7de93451e1fc60b5384cde71d20d4babe3ab7abe881a56f016e44b72812ed85	門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	326	object_names	f0ea6e9e007719fa0d22e9ee5bde9818537ec50ca102a7953daab4ea339e15fc	鐵柵門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	327	object_names	5be2d908da5f75eade8723748aaf1c32e0f9067ebcfe688bc90d98a2a294686c	暗門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	328	object_names	d9516c3b005293feb89ad6939e1706d8553e4e1a9d90d89476113622605e1767	打開的門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	329	object_names	d9516c3b005293feb89ad6939e1706d8553e4e1a9d90d89476113622605e1767	打開的門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	330	object_names	d9516c3b005293feb89ad6939e1706d8553e4e1a9d90d89476113622605e1767	打開的門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	331	object_names	d9516c3b005293feb89ad6939e1706d8553e4e1a9d90d89476113622605e1767	打開的門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	332	object_names	d9516c3b005293feb89ad6939e1706d8553e4e1a9d90d89476113622605e1767	打開的門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	333	object_names	d9516c3b005293feb89ad6939e1706d8553e4e1a9d90d89476113622605e1767	打開的門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	334	object_names	89ddc2b0959b36b25069c92f91e16d9e41c5eddfa951c71ebc4c9a8dd92b3ed9	升起的鐵柵門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	335	object_names	5be2d908da5f75eade8723748aaf1c32e0f9067ebcfe688bc90d98a2a294686c	暗門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	336	object_names	68e443ef80bb258be7b9fd399495c34079743515680720254ab94d216fef865b	長凳	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	337	object_names	a4d5ab948ffa39c6bb603cfb53f40987e7173af93e408d8e8269c3cde08a45ce	箭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	338	object_names	65131802cb9dfc3e3bd57602524d949719e90a3baf689823b0502cc5b905e5c6	弩箭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	339	object_names	edccd0905aaf0d54419e3ffebfcc92aa4e4f44c80baa4cd6e5e7614d23b45798	大巨石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	340	object_names	edccd0905aaf0d54419e3ffebfcc92aa4e4f44c80baa4cd6e5e7614d23b45798	大巨石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	341	object_names	e4c089f0b2a82a48438b56effe47d2e75bb89a953fcf7388489f6a2803e45e5c	巨石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	342	object_names	317fde05db0b36b734ec6c15ba4fef8b2db434ea44ac4ded0dec891e42a72228	小巨石	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	343	object_names	96cbf81ec4ae3eb70c1de34aaf268bd2474e0a00b61b8574a9affd4d25dc8efb	神殿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	344	object_names	1d1ed2bb3e02a3f14f8829c29cf1730acf94667ceed28da4607395425b0e241e	桌子	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	345	object_names	d7aa54c5c58bbfe4803a927823a1e05feec7714bc7b48e6594894e3219dd041a	橫樑	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	346	object_names	0e95a0da1de71f7f2f476f4bb1d474d1a23757fa6ee16badece80b9800272e7d	月門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	347	object_names	9f1af75fab8f7fde827c14a62dd9ff0d864bda3f4171b40681d874c55aa3ed56	木桶	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	348	object_names	83c971b8cff4f25a92d710cadcae537b9478267669203b9ee1afefcd50068122	椅子	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	349	object_names	514ea225004219fcb97ba667eb232b5d4dfc9a602d728023692d3f467a698bfb	箱子	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	350	object_names	b31166d75f042ade79656a0e361305b54b72ea97f1ac06d6d04f7440047df53b	床頭櫃	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	351	object_names	5490124562ef15be4ed80d5d93548d47a6db016c67392df23e028781b726ca80	蓮花 Turbo Esprit 跑車	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	352	object_names	42efa5e719a7e164bb7c2b7967d13032062ddbe066be518737c97fd15a195ee6	石柱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	353	object_names	08639c53b1594ca16703b20eb35df50ba6d283bb798f652952dfac5ae8357298	拉桿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	354	object_names	16136cb39e328acbac48501d9c199a17930a42fcf65d0e5b88bb57c176523dff	開關	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	356	object_names	8e3b2bddfa649f99e1a4afe957f704fdf99a91d0d746367a5d3d41cf2ae9d7a3	橋	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	357	object_names	ae9bba8026b0f2865beeb407bbb4f5b0321d1d6a3ca8860156bc1c389e9615b7	墓碑	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	358	object_names	722bf5beed77e0a57fad6dae8dd978208e338a8212971b625ee9d06322e4564f	文字	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	365	object_names	a604004ca0ccde269f64c618cbfea3141bc723590b5ca7fdb853eb1ad7512aa1	力場	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	366	object_names	108a4581f511c2fd5f1f1ee2fe951421ba397724fd5ed66fcc0380a4a4a95b51	特殊貼圖物件	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	367	object_names	108a4581f511c2fd5f1f1ee2fe951421ba397724fd5ed66fcc0380a4a4a95b51	特殊貼圖物件	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	368	object_names	5a297883ed8e4b1621163038c869cb34814106d6230f326db1a11e5eb2674300	按鈕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	369	object_names	5a297883ed8e4b1621163038c869cb34814106d6230f326db1a11e5eb2674300	按鈕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	370	object_names	5a297883ed8e4b1621163038c869cb34814106d6230f326db1a11e5eb2674300	按鈕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	371	object_names	2328a0cfd79283d31fd55e24a787dd9304a5efbb1e6e6ca2519b50815ef71638	開關	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	372	object_names	2328a0cfd79283d31fd55e24a787dd9304a5efbb1e6e6ca2519b50815ef71638	開關	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	373	object_names	08639c53b1594ca16703b20eb35df50ba6d283bb798f652952dfac5ae8357298	拉桿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	374	object_names	e7c47e2653c519e76a9230eceaf7559ac8146066a48070c4f85e5c6e1092710b	機關鏈條	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	375	object_names	e7c47e2653c519e76a9230eceaf7559ac8146066a48070c4f85e5c6e1092710b	機關鏈條	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	376	object_names	5a297883ed8e4b1621163038c869cb34814106d6230f326db1a11e5eb2674300	按鈕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	377	object_names	5a297883ed8e4b1621163038c869cb34814106d6230f326db1a11e5eb2674300	按鈕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	378	object_names	5a297883ed8e4b1621163038c869cb34814106d6230f326db1a11e5eb2674300	按鈕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	379	object_names	2328a0cfd79283d31fd55e24a787dd9304a5efbb1e6e6ca2519b50815ef71638	開關	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	380	object_names	2328a0cfd79283d31fd55e24a787dd9304a5efbb1e6e6ca2519b50815ef71638	開關	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	381	object_names	08639c53b1594ca16703b20eb35df50ba6d283bb798f652952dfac5ae8357298	拉桿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	382	object_names	e7c47e2653c519e76a9230eceaf7559ac8146066a48070c4f85e5c6e1092710b	機關鏈條	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	383	object_names	e7c47e2653c519e76a9230eceaf7559ac8146066a48070c4f85e5c6e1092710b	機關鏈條	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	384	object_names	0c0ed9346820a018ea23c6c98b2fe63bdc3c74f4b45b98ba63b4b86313548f50	傷害陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	385	object_names	de6d9e8b24e3e7b792cc02ea87804c9d5fbbe51b2bdda1ffc569798b2235fb9f	傳送陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	386	object_names	7b9f816a163874cd8ec9c893577df86930a67dda5081700f5555dbd95de752d0	箭矢陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	387	object_names	d0abf813c54abf51f894a5ace1c3d12ebbcd7c06b56164a05b623a1ec23497fd	動作陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	388	object_names	6213d731ddc1b287d74f221741f424480a09071ac29c175f8d6eda5a0327c0c1	落穴陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	389	object_names	0b286fcb623597a2674ee24b564f500e4df7cb0cc1bb543b9dd5d30bf0034335	地形變換陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	390	object_names	100f07f907352a1a63b1015320ec53a560013ad58a042f7d9dc75db16dcd81ed	法術陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	391	object_names	c5bd06a447801e4674c17aed91f0ec61bc0398fb7bd1b126cb616570640effeb	物件生成陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	392	object_names	42797cab7be45b9ee2df1a557c36c1b2241103d33d0543312d6c1521efc3dde4	門陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	393	object_names	6614db1971967a2add7c5f125b32764a0b860d9c5031d0a395cf42c2bc6388dc	守衛陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	394	object_names	05132e3a2f4c35e6701cc69f8ca937dccdc158f29d70f02f14a9ae87a75fffce	訊息陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	395	object_names	d009870c58dba5e6447dcbdcfd27fdca6d0a2c2aea5ff84207f9d441fae07f8b	物件刪除陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	396	object_names	3f7b44b4a697a5d9f19bda48ffd8a081a005e230bf5edde50b39d1fa27234748	物品欄陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	397	object_names	042ca0f0e674d1a2997f5874166b1a92e0b605887e497bcc1dc3281d56613131	變數設定陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	398	object_names	4f72fbfc8a4ea2ceef848634d62018c46929fc578c9fd0552ea07e029f4ab0e6	變數檢查陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	399	object_names	974605f3d8b1b9acab336bd923a1d36655b35799703fbb35c67af0f33ecce0d8	組合陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	400	object_names	be1e2f912899cd0ed473f563c12903575e04d947a0e1f03224b2d7c8c30457e2	文字陷阱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	416	object_names	b278537f7fc10339987e5b52267161ea6dce09067f01372c5e03f8074d5366ca	移動觸發器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	417	object_names	1e13cb958eecfdc2fc52749be027861c948b8c25f7d4cf9ae6dce9ab3ea813bb	拾取觸發器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	418	object_names	c01cae38e9d42e7e096ada36f0af0c714d4a452f361c57ec7791efb129667fff	使用觸發器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	419	object_names	d177bded9204e8773cd77072982e7e9bc4f1966c5fcf842cb325241841054387	查看觸發器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	420	object_names	4a9a92a50c2dd0a7eeff533406ba786c064488826c2cd9f8c6e0bdec37a65d82	踩踏觸發器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	421	object_names	dcc89b9d032111a7bd62f4241480ab4696581f8c1cad594659ce18d16c59c1f5	開啟觸發器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	422	object_names	076c756bd202488961eb097f59802cdc0ecb33a8e72147ddc7c7adc6dc6a7780	解鎖觸發器	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	448	object_names	312b33fa5d1aa51f486af2299c12646ab57ff716980d318b055facde1a897cbc	血液	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	449	object_names	c3a6fb168f2435db079a239c2c066c416c11877617df39b103a08f382305d317	霧團	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	450	object_names	6322056f29790f6f8c1e5d752e348bb90d4ff4ccb3de1ae801403caa77faa968	爆炸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	451	object_names	6322056f29790f6f8c1e5d752e348bb90d4ff4ccb3de1ae801403caa77faa968	爆炸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	452	object_names	6322056f29790f6f8c1e5d752e348bb90d4ff4ccb3de1ae801403caa77faa968	爆炸	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	453	object_names	02a84894cb9f7295e9e66819797d6d7b6eba8ca541e5390a2ec02edfeb2df0eb	水花	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	454	object_names	263d71cbb1393d82803ca834930ed7e8d78bde6fb0900899e0e8bf65d9215b35	水花	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	455	object_names	41c4e6c9218d0f7b69237fd2b43f34de93f997f418dd2e0e1b756c5d55e70487	法術效果	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	456	object_names	5933a38932b21feb0c0c64b058fc0da5aff526825751982dbf7bb1d5290b571a	煙霧	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	457	object_names	73e3e477ae05a449760ddab79f3ee4c49bd3cf218da87600c2ae7432ef916fbc	泉水	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	458	object_names	fbc6e24114826c861a889caf23f660d8a813552a46b38d628bc94d56700cc16d	銀樹	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	459	object_names	956c6b330984b9f326b6617b25eace702123807172526dc8cceed1172065567b	傷害	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	461	object_names	35e54e439a14f9e82c7ce9f403c11b508d7347b7db169515f91d5693ea39f09c	音源	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	462	object_names	fb3b7311f875c5e5cc4a5b8e6d5b103e5c683225774e19feaf5ce9fb9c9274ee	變動地形	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	463	object_names	146e090e62656419cec35bf804e1774060df5a849a4b14a6cd6b2093b31216d3	移動中的門	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+5	0	object_look	f526795c95399cea27c055c842c3d6ab018ed0fa4f66f701c28ab22dec28237b	破損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	1	object_look	d7f231a9a19cf2ac6128ec2d70b10188f4ef2306d369edbe1d852dc4babb2615	嚴重受損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	2	object_look	41f0c27c00e8018f7715b5f50f67b5b54c229c1b843a014152785d9005f58fde	受損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	3	object_look	25a5c452fb9585d5c81a63b29d537d5505a91ed9722eb95e8e80f42c005041e8	堅固	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	4	object_look	6c7bbbc199d3b161dca15b7bf7a7c88f340c5373ccbe6fdc554231cbd5902450	厚重	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	5	object_look	6c7bbbc199d3b161dca15b7bf7a7c88f340c5373ccbe6fdc554231cbd5902450	厚重	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	6	object_look	5674dfc7034238971f2094e48880a7542f7138ff48bdacd33fd5a583f73d10cb	毀損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	7	object_look	3e6d7de4d658dc6ca01948ceab4f14bb0edde303d32500c358901adeb7f3a6d4	嚴重磨損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	8	object_look	90b9875b8fd21e3680018b16ea596850aa155acbf6d62f245ee6ff17b6386002	磨損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	9	object_look	38c8cba8abecee9c215d1c60a544afc72badbfa9098cd4eae403a3dd42df68dc	堪用	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	10	object_look	6d785acc7d4ce49fe4e4bbf276dc73f1cf7c20094d3e96fe84ef79fbebcaf88a	精良	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	11	object_look	6d785acc7d4ce49fe4e4bbf276dc73f1cf7c20094d3e96fe84ef79fbebcaf88a	精良	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	12	object_look	f9e1c378fe7768ae0fa5f50fcd89d31a3d8344b4960ddd22c21b91f41f2a980f	碎裂	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	13	object_look	26f40ce316e6bd9a02a9ac8584440e797b03eb8ca58d10bc5a18084ee8432d58	破爛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	14	object_look	0e0df1707c03b95a2523d66b230de3c145e52c84675aef28e4607d688ced18d2	脆弱	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	15	object_look	65e50ce38fad2edf104cc250812669eeef9a1cd69e6afea5076a4ebd11c55a96	粗糙	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	16	object_look	c0f1779c16d26bac92c4e32fe385d4214da39e7bd6f87aa7a4ce2bef8fb669ed	光滑	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	17	object_look	c0f1779c16d26bac92c4e32fe385d4214da39e7bd6f87aa7a4ce2bef8fb669ed	光滑	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	18	object_look	2dbc37cdf6ec8e593a789de23e84bf7a953a372fb16d8e15b4d1f1021801c6bf	生蟲	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	19	object_look	eda565a9067e4049556890611dca70670d0b5a298722ecd6a40bf14b1bb0acf0	腐爛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	20	object_look	fd0bf83bea46c356d692dfbef382b65d5d15d3b8cb0ab93a5a6f834b040fd3ee	發臭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	21	object_look	e7f1b709ef4b73486d6468dde306806538c18f1e769547676ef045a45734dc97	隔日	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	22	object_look	d098ab5e44b9aabb755f76d806598f43573c662b35e4a2eab1e312ec9ad195e2	新鮮	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	23	object_look	d098ab5e44b9aabb755f76d806598f43573c662b35e4a2eab1e312ec9ad195e2	新鮮	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	24	object_look	39aea581b85e9631a95262f828d84023d1322bfc15294ad497864ef6ec976ec9	布滿黴菌	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	25	object_look	32f5405c26b3284ffc5719f57fec55f0dad1cbe599eb8773e2ae6dbe7ee9fe53	發黴	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	26	object_look	a03f2386ae06b21109577020844df367857b72c2fcce384c1896fed98a89c82b	不新鮮	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	27	object_look	e7f1b709ef4b73486d6468dde306806538c18f1e769547676ef045a45734dc97	隔日	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	28	object_look	d098ab5e44b9aabb755f76d806598f43573c662b35e4a2eab1e312ec9ad195e2	新鮮	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	29	object_look	d098ab5e44b9aabb755f76d806598f43573c662b35e4a2eab1e312ec9ad195e2	新鮮	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	30	object_look	f526795c95399cea27c055c842c3d6ab018ed0fa4f66f701c28ab22dec28237b	破損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	31	object_look	49a19109da594b70c97e4ebaae76eee213db6293de33015c9bcabd694e37464d	斑駁破損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	32	object_look	64501bd76aea3d737fee2505637951b1d3cc4c6a5f740c9b5e6f412129db1593	凹損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	33	object_look	520866290c71eb6d0648ce46530a24ffc3da42a9bb4d846e198b13f246bce558	完好	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	34	object_look	11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437	全新	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	35	object_look	11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437	全新	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	36	object_look	5674dfc7034238971f2094e48880a7542f7138ff48bdacd33fd5a583f73d10cb	毀損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	37	object_look	13125567d1956bc18f06468b4da43b4c322c851a03330bd3459138d9849121a8	有瑕疵	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	38	object_look	3e3f9ea7a6bd5d83b7efb9ed439dd8af5b0b946f43454ef20e3e6938d74f32c5	刮傷	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	39	object_look	29488b34c43b813d5d1bf8958e25cac63523e787db92864f9d5e2efe980d271e	無瑕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	40	object_look	ac9071cf9ea41bfb87c5df9320154cf15d4f3105959dc6538314bcfd4e1cad91	完美無瑕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	41	object_look	ac9071cf9ea41bfb87c5df9320154cf15d4f3105959dc6538314bcfd4e1cad91	完美無瑕	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	42	object_look	5674dfc7034238971f2094e48880a7542f7138ff48bdacd33fd5a583f73d10cb	毀損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	43	object_look	13125567d1956bc18f06468b4da43b4c322c851a03330bd3459138d9849121a8	有瑕疵	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	44	object_look	5aa07e51d7a1b7c71c8f13cb07d9d6011d3db468f9149915b945a024c0fbcc63	失去光澤	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	45	object_look	520866290c71eb6d0648ce46530a24ffc3da42a9bb4d846e198b13f246bce558	完好	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	46	object_look	fafe97f7def328bbd4f10779b9625a8aa0bfaa143d7ae64e6f5770e47b51cd1d	完美	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	47	object_look	fafe97f7def328bbd4f10779b9625a8aa0bfaa143d7ae64e6f5770e47b51cd1d	完美	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	48	object_look	8950abfda7b727630760dd35bcf5c3daa7631aff223a90f7728c0d2521dde10c	極小	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	49	object_look	81db8ebbbbc69c6c6ad4a6aa92b76e0c08af547da236b9e2c9dbe1d8285a8130	小型	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	50	object_look	d13bf85280e2d7775ebe50614983bc8398af39d434a3a53e207052d19f8cdadc	中型	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	51	object_look	d35c416a85b807e9b5384915d6ebb4a9f7352713efd89857b45a242f473728a9	大型	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	52	object_look	9578c437e26b2a6d5921fc1be81395b83abb8068b04a24f8ba257bea2b6ad488	特大型	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	53	object_look	5e580eee1a39851ef636172a5b2939d4a51eeeeaa62dd4e01128d5ab0dc008ea	巨大	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	54	object_look	da3c01050b1f352b33853bf17e408ba64e0b14423d4f7137a20906ed2e58e679	無法閱讀	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	55	object_look	26f40ce316e6bd9a02a9ac8584440e797b03eb8ca58d10bc5a18084ee8432d58	破爛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	56	object_look	9b5e9ae697c7b9afb58e6d191df3c53385158ae9eb3f074beb383232368d681e	書角捲折	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	57	object_look	520866290c71eb6d0648ce46530a24ffc3da42a9bb4d846e198b13f246bce558	完好	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	58	object_look	11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437	全新	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	59	object_look	11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437	全新	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	60	object_look	c63741be7bb304d645c742b37d59712b72d7a2c5d110a055cc11550ac5277bed	燃盡	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	61	object_look	a35007e2f560b4a047535676bdb98555ba548973e25974b4b142774809c605e1	將盡	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	62	object_look	b1f9afd7755b4e67379108d8b4b7baabfab22cd8e7f83889cec875122cc8162e	燃燒過半	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	63	object_look	125356bc02ee40d1981bbc09bc27e50e064ee89548e8e06f7489be5548167694	用過一些	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	64	object_look	d489fdfc82c30fde3119c0cdabf545f875d43cd91e9ba48e73ec439bb6085ecb	幾乎未用	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	65	object_look	febe1d741b49e5a9c31526728d8c5134a803adfc4c04c4f052673722ed85597e	未使用	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	66	object_look	2e1cfa82b035c26cbbbdae632cea070514eb8b773f616aaeaf668e2f0be8f10d	空	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	67	object_look	1c6e0d13ed2051f16bb2ab9fd0e426490a65a08be64de633d89f23156ef0bfb2	將空	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	68	object_look	640dd9ba83521048be15d715919c193b7e27f6355ebabe7c16b830423b18a410	半滿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	69	object_look	f90348aaf98593ea5b1a8a3129c111757df027c8bfd2f2444de71e243cc6c734	將滿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	70	object_look	a18b869b2e81c0c529552a3c4fa5c92ed08b98a4e146aed778d71d27517f83ac	全滿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	71	object_look	a18b869b2e81c0c529552a3c4fa5c92ed08b98a4e146aed778d71d27517f83ac	全滿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	72	object_look	f526795c95399cea27c055c842c3d6ab018ed0fa4f66f701c28ab22dec28237b	破損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	73	object_look	615b26545c0f17635b6f0d0d70c0c8d5c9405881c00f972627a26bf129be51bb	龜裂	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	74	object_look	90b9875b8fd21e3680018b16ea596850aa155acbf6d62f245ee6ff17b6386002	磨損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	75	object_look	6963cc3ef7344b118ff5d6bc42faff7483631f547044c2809b94a3b3525f9338	輕微磨損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	76	object_look	11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437	全新	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	77	object_look	11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437	全新	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	78	object_look	5674dfc7034238971f2094e48880a7542f7138ff48bdacd33fd5a583f73d10cb	毀損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	79	object_look	3e6d7de4d658dc6ca01948ceab4f14bb0edde303d32500c358901adeb7f3a6d4	嚴重磨損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	80	object_look	90b9875b8fd21e3680018b16ea596850aa155acbf6d62f245ee6ff17b6386002	磨損	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	81	object_look	38c8cba8abecee9c215d1c60a544afc72badbfa9098cd4eae403a3dd42df68dc	堪用	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	82	object_look	6d785acc7d4ce49fe4e4bbf276dc73f1cf7c20094d3e96fe84ef79fbebcaf88a	精良	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	83	object_look	6d785acc7d4ce49fe4e4bbf276dc73f1cf7c20094d3e96fe84ef79fbebcaf88a	精良	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	96	object_look	8f383ccddc6f17eb57a96c711523e4a8072d8e791b4a773ea0153e0d993d03e1	敵對	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	97	object_look	8b2f406339328a5dd4c6586a2da0d35978b7a9a13bf1bb0c38274e6ba245964a	不悅	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	98	object_look	832defad5e400860125df3678f2c59c9f2c8d727ad5a142553c6a22dec5164f4	平和	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	99	object_look	4c448a406dcdf064f72628200461936808f1d5c6956078106bfef933c2ae0967	友善	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+5	101	object_look	030a0e4e7bc8841de6de264db54707359c3f821345e5d8983a3d044c1ad070ef	這把鑰匙的握柄因為經常使用而失去了光澤。\n	draft		p11-2a draft	
+5	102	object_look	981c30e05fa075fc1fd3dbbc64e6a66ce61963ccfacf8b96838efda5b4c7d2bb	這把鑰匙似乎是石頭做的，摸起來冰冰涼涼。\n	draft		p11-2a draft	
+5	105	object_look	d019290a7184806579766c61b27f94659c753f82348534b4ed715424e0dbfa48	鑲在這把鑰匙上的寶石缺了好大一角。\n	draft		p11-2a draft	
+5	106	object_look	2d0acb9676d47a97c64dd465ddfa58ef55b14eae6ff1b24d8de8f4161c11cf5f	這把鑰匙的握柄上鑲著三顆黃色寶石。\n	draft		p11-2a draft	
+5	108	object_look	86ee544bda9c584478a15945b0f76df9af9ff30de5a095e5a211d945c1414e11	這把鑰匙上掛著一個小鑰匙圈，圈上有塊小圓片，印著字母「E」和「W」。\n	draft		p11-2a draft	
+5	109	object_look	d0838a8f9a45e52c39ad64940c7994297f2c4e09020162937a54c823f12d3158	鑰匙上的小寶石刻著一隻蜥蜴的圖案。\n	draft		p11-2a draft	
+5	110	object_look	0a2f5fd4f618834864b792dfa29aaabcbebc11576b051f33242f440932013e51	這把鑰匙上用極小的字刻著一句話：「勇氣之鑰」。\n	draft		p11-2a draft	
+5	111	object_look	0a91a50634e3b0886b60130b42488dae72b58e1c3f6c0aabab5241ce860692f1	鑲在這把鑰匙上的寶石裝飾著一隻蜥蜴的圖畫。\n	draft		p11-2a draft	
+5	113	object_look	fce11df69cfa99c7b73362ddc95d5a85ade82cd8462cf6d0617dd114ded258eb	這把鑰匙的握柄鑲著一塊光滑的黑曜石。\n	draft		p11-2a draft; authority-ok:stone（a smooth stone of obsidian 譯「光滑的黑曜石」）	
+5	115	object_look	cc773b7c421fb9ce6149b41bb1669172660ad544448ed2f71fe78ddca22fcc17	這把鑰匙摸起來黏黏濕濕的，很奇怪。\n	draft		p11-2a draft	
+5	123	object_look	184772aee05ca0aed8721e9d022131cbbf3d81b1d75b56bb5d62b25feb60211e	這把鑰匙上潦草地刻著粗糙的符文。\n	draft		p11-2a draft	
+5	124	object_look	14214cd9d184b854d4af3191cf6f8c7df70abcf765e5f286dce5081db097fcf2	這把鑰匙的握柄鑲著一顆大牙齒。\n	draft		p11-2a draft	
+5	125	object_look	f2d1b0d1b50d541b35ed9717950bafed1e04f868c2b3b660e0bcecb6065c147a	這把鑰匙似乎是用骨頭雕成的。\n	draft		p11-2a draft	
+5	126	object_look	82c1f1e142a12412f93a2991ffceba0b778f1b14898fd349f790f47745876721	這把鑰匙摸起來很溫暖，簡直像是活的。\n	draft		p11-2a draft	
+5	127	object_look	ef9f291046588d02b490f8959a637ed5653a5b04d7e36bc34718deae202cb5cf	這把鑰匙的握柄是一顆完整的小惡魔頭骨。\n	draft		p11-2a draft	
+6	0	spells	9ab31dcb2ffd3b365769d0ac3aaa2ad6ff610028546a1c9b96c43bb35ae84cce	黑暗術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	1	spells	5e42b8fb7ee0c2875f1672d9aff765c15a6631ccfcd7df5008ba35464875e4fc	火柴微光	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	2	spells	8350ec38b441fc78796cd4b4a98b775d54083a0b14f011493021da9eeeadb037	燭光術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	3	spells	dbcd5e7bb7a0f538810de44c3efbd813037ee3fa358747bb71fa58e157af45f7	神光術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	4	spells	c1c30029af9a75d2790a6506848b4cb9a487ff903e5275f03916a62f858de770	魔法提燈	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	5	spells	4cbe4ae9154d2b8ce3ad05bc9fd107420e66d7a62d465ccd5096ccd87cd7284d	夜視術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	6	spells	30dfa1dd5d120984b43fa7d79997665d9bc6dc7a0c94dc6c87b106a804127aab	日光術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	7	spells	9761b559f8d66a38f0018e5d365c46aad10594991f872b85e557551c151191b6	陽光術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	17	spells	0ef7c11a8b4117a452f626c5a294310e534a5d010b54906f21374e91a7d7f4fb	跳躍術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	18	spells	71a0d6109cf22a67b32a6f719e928066405ed0bc965b9f0528bdc5a1a7dbec6c	緩落術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	19	spells	03a0beaa38ee0bf08b0d777424f080ea40892cfd774048fd838e63916c252a0a	飄浮術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	20	spells	c471c8f83cfb98238594a4e67a2acf3143cdcbccf8f093be1d5c291ebabc6328	水上行走	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	21	spells	31bbe05d43158cd2f6cec70821ac4571c76d77eda3cfe8889f81cd785150b1c0	飛行術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	34	spells	5ac4d0695cd710362a6db4660eeb1eea0914625d45365dd624d94c366cba947e	耐擊術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	35	spells	a57da6677cdb9bb5c4f32e447d6790bcb2f29902c9ab1e7b72fb59eaa2b8735c	厚皮術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	37	spells	980d4a4cdaa6c3c40391157efbdaa40fd7299d242f0d151eb0bf47bc92609e1f	鋼鐵之軀	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	49	spells	88b3d8eed54f6ff0f810aacca7226460fdb72ab34c99e5c4d002192a463a2e72	詛咒術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	50	spells	526a40a447ddd7aa52d34bb62dbf1da04dc4aba8403769d239ade80893ffef7a	潛行術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	51	spells	32f782a89cf8691b16dbff4ebae8f84863ea9cd1899b8e6bc1c983e01efe0240	隱蔽術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	52	spells	d29ec5faf185ac991aa17783dea6181ffb62587bb91de7b6f0f6a6a1ccad4c83	隱形術	draft		p11-2a draft	
+6	53	spells	cfe81db361cf58a602c7241c62a8d351e44f3c1a3ab312e62233aa1a9dc68f4b	反長程武器保護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	54	spells	0c81bb99659a126f9f6be1f706a5150632fd08932ef1272e6c5af4f1236a3582	耐火術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	55	spells	dc88186e188f6d7547313bb3a5a272a3298468858e89136baf5200567ba8edfc	毒素抵抗	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	56	spells	9688327686a1e2eb0152eddea1ac4163f25af31738c49ae4ff19edb9f5d8e1d6	魔法防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	57	spells	50adc77d11d5a83595484519af82dfb28b7347cba109b4221e983be3bfc16378	高等魔法防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	64	spells	429ab956fca2bfbf73953c40c7250b7612ed8314306a0432e3fb417381e4f44b	小醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	65	spells	429ab956fca2bfbf73953c40c7250b7612ed8314306a0432e3fb417381e4f44b	小醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	66	spells	429ab956fca2bfbf73953c40c7250b7612ed8314306a0432e3fb417381e4f44b	小醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	67	spells	429ab956fca2bfbf73953c40c7250b7612ed8314306a0432e3fb417381e4f44b	小醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	68	spells	421acf13c1cb044e40e0fe1c1e88656e604113be888d92b2ecbb136252023b17	醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	69	spells	421acf13c1cb044e40e0fe1c1e88656e604113be888d92b2ecbb136252023b17	醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	70	spells	421acf13c1cb044e40e0fe1c1e88656e604113be888d92b2ecbb136252023b17	醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	71	spells	421acf13c1cb044e40e0fe1c1e88656e604113be888d92b2ecbb136252023b17	醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	72	spells	308147631ee38ddfaad84fe2cd5a9275e9729e2f3e302aa6908a5a122c3847c7	強化治療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	73	spells	308147631ee38ddfaad84fe2cd5a9275e9729e2f3e302aa6908a5a122c3847c7	強化治療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	74	spells	308147631ee38ddfaad84fe2cd5a9275e9729e2f3e302aa6908a5a122c3847c7	強化治療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	75	spells	308147631ee38ddfaad84fe2cd5a9275e9729e2f3e302aa6908a5a122c3847c7	強化治療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	76	spells	d2199452c63785083c827d40c642e9d46bcaff365a7caf4b041d8224ef08a005	大醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	77	spells	d2199452c63785083c827d40c642e9d46bcaff365a7caf4b041d8224ef08a005	大醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	78	spells	d2199452c63785083c827d40c642e9d46bcaff365a7caf4b041d8224ef08a005	大醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	79	spells	d2199452c63785083c827d40c642e9d46bcaff365a7caf4b041d8224ef08a005	大醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	81	spells	3e1b84a78ccc1a5430d72f32bf83b2f73a4e4db3e65d5715c900613665a48a3e	魔法之箭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	82	spells	008da498d50e685d3f97a5c2eadedfc7c08906260dc44915a736b46e9f13bb52	雷擊術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	83	spells	cc173df6702cba90cfae123f149085dc44e3f6c660816c528f063c75083e5a9e	火球術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	97	spells	36b830bdb447f8c758a9b58f190eed468c4bd53e9c7662ee19bca9c53d3a3e3d	顯現術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	98	spells	df0c69948cdc93c97231c923e01a00c10b932faae289479be1d9c166ad5108a2	片狀閃電	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	99	spells	9507ad17d71faf99e32052d9836ebbd3b543d32d8bac15db41db81e60df8c4e3	混亂術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	100	spells	4aa193e445d1fbba075ab6c072bcaca5552e7b6055a862f167eed8fcf2568997	火焰之風	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	113	spells	2bd0c750cee85017c052d0967e194695a64a3f119220e4fd24eaa034e4d643e7	恐懼術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	114	spells	a225c184ec78ec6238165c90855c67e2224fcfbb8ed75d03b22a5b29947e6af7	破除不死	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	115	spells	4685f71881ded1a886a786a51d725b6f583af8f17e73bcbd194867cac0810cbc	同伴術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	116	spells	d5a78b996fe640a3f9181d71da872b9dfb63bbad0d282edff0a12e4e32074b6e	毒擊術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	117	spells	1d5e7e989b88522a8bbe801c5be3fb99a0ba6afca28eb3e5ab8713e1769ba693	麻痺術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	129	spells	143309176ac4ed9d0b3d2c69a9bac5e282fb7bb3fb76224da328e9801709ed81	造食物術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	130	spells	c65882e4677185a0c3d238cf37cbfe4ea19ce0fb3b38f5868ce02116bd559e57	設置守衛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	131	spells	3b983aacf2e0626bc28ab3cbf1ba223970ad900e8467125ed405372fd90b5647	守護之符	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	132	spells	15c8e2009b19e77e6b8b70aecc193de7bbce4a870f8bcefdd65979dc83c8f2ee	召喚怪物	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	144	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	145	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	146	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	147	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	148	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	149	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	150	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	151	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	152	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	153	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	154	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	155	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	156	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	157	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	158	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	159	spells	05816dcff51e5d1f1b0c5a179f2ea902ae468aeea4efd9ba4f75bb9039c72f8c	受詛咒	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	160	spells	f80807ca1c8acab348f31079bbf34b5c38e33c675c29008d5bd11d61bffa42b4	增加法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	161	spells	f80807ca1c8acab348f31079bbf34b5c38e33c675c29008d5bd11d61bffa42b4	增加法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	162	spells	f80807ca1c8acab348f31079bbf34b5c38e33c675c29008d5bd11d61bffa42b4	增加法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	163	spells	f80807ca1c8acab348f31079bbf34b5c38e33c675c29008d5bd11d61bffa42b4	增加法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	164	spells	55b99c0da74493fe9b3311ae658b2070345936ea04133743f4ebdf162bcd3c4f	法力增幅	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	165	spells	55b99c0da74493fe9b3311ae658b2070345936ea04133743f4ebdf162bcd3c4f	法力增幅	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	166	spells	55b99c0da74493fe9b3311ae658b2070345936ea04133743f4ebdf162bcd3c4f	法力增幅	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	167	spells	55b99c0da74493fe9b3311ae658b2070345936ea04133743f4ebdf162bcd3c4f	法力增幅	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	168	spells	d7e9f2c149d783691a7ea55976bef604ecba8fcabd1c105f95dd139542e5c59f	回復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	169	spells	d7e9f2c149d783691a7ea55976bef604ecba8fcabd1c105f95dd139542e5c59f	回復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	170	spells	d7e9f2c149d783691a7ea55976bef604ecba8fcabd1c105f95dd139542e5c59f	回復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	171	spells	d7e9f2c149d783691a7ea55976bef604ecba8fcabd1c105f95dd139542e5c59f	回復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	172	spells	faca2b5a2278afeb1ead77344b8c78a1b89666aa1b7f8e45a719622102fdf943	恢復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	173	spells	faca2b5a2278afeb1ead77344b8c78a1b89666aa1b7f8e45a719622102fdf943	恢復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	174	spells	faca2b5a2278afeb1ead77344b8c78a1b89666aa1b7f8e45a719622102fdf943	恢復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	175	spells	faca2b5a2278afeb1ead77344b8c78a1b89666aa1b7f8e45a719622102fdf943	恢復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	176	spells	c372fee9b4566b85a592ae6e98e571f3929c8e262cf2feff7acba63a65a50f14	降速術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	177	spells	f0b359bf9ddc5349cd169dfac2f9d3e14a61c11e3be66eb329f4c916fbe75984	偵測怪物術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	178	spells	f04e364fef1ef240cb1a97bd396ea9e8d6e75a29349bffaee4b34e28a4ca5b8f	封門術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	179	spells	a1c427c03e96febb7cc6d4d65a6bea561534038c7486224724ffcaba733acf4a	除去陷阱術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	180	spells	4e8619f8e9d1654be5d78296c3332a42923c8124f1d0e4e8c5a11a84d584948d	鑑定法術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	181	spells	ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942	開門術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	182	spells	77d163d0cc72792867f2ab81963e555b2b6e0f5c51de30c43b2194287d940485	解毒術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	183	spells	1a60b5af063e6822d3e099505e8407270035b00bcebe9c640aebebabc16be604	徘徊之視	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	184	spells	f410d53a7a4787a7ed6c4b9df3f67eb1d79789df4d108a670b2c99b598c8a593	念動術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	185	spells	12b9e407bcba8980b6146c295ae39a3718b8b618ed7445ba1ccab22071c1cd04	地震術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	186	spells	078bf86ec6507068bacd7920f9ee37aac33602d11e8c14e27f05d8bf5c376b7c	月門召喚術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	187	spells	1c869adbc2fdcc63b64b5da1def0d23196e10eb4b1a6d96acef5f403e2c43e4b	停時術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	188	spells	f6664caad2155fb8144f476a895cbbc260b33933db0ed56070b1d537242f688c	末日浩劫	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	190	spells	35de2da495048b4f43abec7981955ec21ffae67cedbac28944e5f00278ab06b2	生命再生	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	191	spells	a715158d766ee59e2c34f045a2a23ecc97009915e9833fcd3ba7f22a94807288	法力再生	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	211	spells	1f3e210a2c15573d591c589ef3c7ad942691c803cff87dec88fda7f1ccc9f7ae	青蛙效果	draft		p11-2a draft	
+6	212	spells	10891282944dde12a6e8743124ec2b584b12e34781b1681313e5c20f6b26227a	迷宮導航	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	213	spells	08cbd764e551fe9d33c8868ce7edae2ddad683fa405222f643580b0fd2a25e5a	幻覺術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	256	spells	dbcd5e7bb7a0f538810de44c3efbd813037ee3fa358747bb71fa58e157af45f7	神光術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	257	spells	5ac4d0695cd710362a6db4660eeb1eea0914625d45365dd624d94c366cba947e	耐擊術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	258	spells	3e1b84a78ccc1a5430d72f32bf83b2f73a4e4db3e65d5715c900613665a48a3e	魔法之箭	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	259	spells	143309176ac4ed9d0b3d2c69a9bac5e282fb7bb3fb76224da328e9801709ed81	造食物術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	260	spells	526a40a447ddd7aa52d34bb62dbf1da04dc4aba8403769d239ade80893ffef7a	潛行術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	261	spells	0ef7c11a8b4117a452f626c5a294310e534a5d010b54906f21374e91a7d7f4fb	跳躍術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	262	spells	88b3d8eed54f6ff0f810aacca7226460fdb72ab34c99e5c4d002192a463a2e72	詛咒術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	263	spells	71a0d6109cf22a67b32a6f719e928066405ed0bc965b9f0528bdc5a1a7dbec6c	緩落術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	264	spells	429ab956fca2bfbf73953c40c7250b7612ed8314306a0432e3fb417381e4f44b	小醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	265	spells	f0b359bf9ddc5349cd169dfac2f9d3e14a61c11e3be66eb329f4c916fbe75984	偵測怪物術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	266	spells	2bd0c750cee85017c052d0967e194695a64a3f119220e4fd24eaa034e4d643e7	恐懼術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	267	spells	3b983aacf2e0626bc28ab3cbf1ba223970ad900e8467125ed405372fd90b5647	守護之符	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	268	spells	c372fee9b4566b85a592ae6e98e571f3929c8e262cf2feff7acba63a65a50f14	降速術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	269	spells	32f782a89cf8691b16dbff4ebae8f84863ea9cd1899b8e6bc1c983e01efe0240	隱蔽術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	270	spells	4cbe4ae9154d2b8ce3ad05bc9fd107420e66d7a62d465ccd5096ccd87cd7284d	夜視術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	271	spells	008da498d50e685d3f97a5c2eadedfc7c08906260dc44915a736b46e9f13bb52	雷擊術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	272	spells	f04e364fef1ef240cb1a97bd396ea9e8d6e75a29349bffaee4b34e28a4ca5b8f	封門術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	273	spells	a57da6677cdb9bb5c4f32e447d6790bcb2f29902c9ab1e7b72fb59eaa2b8735c	厚皮術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	274	spells	c471c8f83cfb98238594a4e67a2acf3143cdcbccf8f093be1d5c291ebabc6328	水上行走	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	275	spells	421acf13c1cb044e40e0fe1c1e88656e604113be888d92b2ecbb136252023b17	醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	276	spells	03a0beaa38ee0bf08b0d777424f080ea40892cfd774048fd838e63916c252a0a	飄浮術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	277	spells	d5a78b996fe640a3f9181d71da872b9dfb63bbad0d282edff0a12e4e32074b6e	毒擊術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	278	spells	0c81bb99659a126f9f6be1f706a5150632fd08932ef1272e6c5af4f1236a3582	耐火術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	279	spells	a1c427c03e96febb7cc6d4d65a6bea561534038c7486224724ffcaba733acf4a	除去陷阱術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	280	spells	cc173df6702cba90cfae123f149085dc44e3f6c660816c528f063c75083e5a9e	火球術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	281	spells	a225c184ec78ec6238165c90855c67e2224fcfbb8ed75d03b22a5b29947e6af7	破除不死	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	282	spells	4e8619f8e9d1654be5d78296c3332a42923c8124f1d0e4e8c5a11a84d584948d	鑑定法術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	283	spells	cfe81db361cf58a602c7241c62a8d351e44f3c1a3ab312e62233aa1a9dc68f4b	反長程武器保護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	284	spells	ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942	開門術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	285	spells	77d163d0cc72792867f2ab81963e555b2b6e0f5c51de30c43b2194287d940485	解毒術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	286	spells	d2199452c63785083c827d40c642e9d46bcaff365a7caf4b041d8224ef08a005	大醫療術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	287	spells	df0c69948cdc93c97231c923e01a00c10b932faae289479be1d9c166ad5108a2	片狀閃電	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	288	spells	078bf86ec6507068bacd7920f9ee37aac33602d11e8c14e27f05d8bf5c376b7c	月門召喚術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	289	spells	1d5e7e989b88522a8bbe801c5be3fb99a0ba6afca28eb3e5ab8713e1769ba693	麻痺術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	290	spells	30dfa1dd5d120984b43fa7d79997665d9bc6dc7a0c94dc6c87b106a804127aab	日光術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	291	spells	f410d53a7a4787a7ed6c4b9df3f67eb1d79789df4d108a670b2c99b598c8a593	念動術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	292	spells	31bbe05d43158cd2f6cec70821ac4571c76d77eda3cfe8889f81cd785150b1c0	飛行術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	293	spells	4685f71881ded1a886a786a51d725b6f583af8f17e73bcbd194867cac0810cbc	同伴術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	294	spells	15c8e2009b19e77e6b8b70aecc193de7bbce4a870f8bcefdd65979dc83c8f2ee	召喚怪物	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	295	spells	d53895c6eb7816fb44ec7f46db45019172de4793a42ccaf893ed71ec8ed00743	隱形術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	296	spells	9507ad17d71faf99e32052d9836ebbd3b543d32d8bac15db41db81e60df8c4e3	混亂術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	297	spells	36b830bdb447f8c758a9b58f190eed468c4bd53e9c7662ee19bca9c53d3a3e3d	顯現術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	298	spells	980d4a4cdaa6c3c40391157efbdaa40fd7299d242f0d151eb0bf47bc92609e1f	鋼鐵之軀	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	299	spells	12b9e407bcba8980b6146c295ae39a3718b8b618ed7445ba1ccab22071c1cd04	地震術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	300	spells	1a60b5af063e6822d3e099505e8407270035b00bcebe9c640aebebabc16be604	徘徊之視	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	301	spells	4aa193e445d1fbba075ab6c072bcaca5552e7b6055a862f167eed8fcf2568997	火焰之風	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	302	spells	1c869adbc2fdcc63b64b5da1def0d23196e10eb4b1a6d96acef5f403e2c43e4b	停時術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	303	spells	f6664caad2155fb8144f476a895cbbc260b33933db0ed56070b1d537242f688c	末日浩劫	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	304	spells	bb454d02cb93bebd2ca9b720fdd91af397970de54243df288c38d9894cdafb41	群體麻痺	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	305	spells	c4fdf6b89bdcabbcb692f511afd5ffa4d10fdc19d3374e5b84b8cb5ac75306d8	酸液術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	306	spells	ff7c9e08351bc6e83c6fd9c355ce59121458dc027ce3ccd3798b88a12e8d002b	短距傳送	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	307	spells	55b99c0da74493fe9b3311ae658b2070345936ea04133743f4ebdf162bcd3c4f	法力增幅	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	308	spells	faca2b5a2278afeb1ead77344b8c78a1b89666aa1b7f8e45a719622102fdf943	恢復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	384	spells	0ef7c11a8b4117a452f626c5a294310e534a5d010b54906f21374e91a7d7f4fb	跳躍術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	385	spells	71a0d6109cf22a67b32a6f719e928066405ed0bc965b9f0528bdc5a1a7dbec6c	緩落術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	386	spells	03a0beaa38ee0bf08b0d777424f080ea40892cfd774048fd838e63916c252a0a	飄浮術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	387	spells	c471c8f83cfb98238594a4e67a2acf3143cdcbccf8f093be1d5c291ebabc6328	水上行走	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	388	spells	31bbe05d43158cd2f6cec70821ac4571c76d77eda3cfe8889f81cd785150b1c0	飛行術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	389	spells	88b3d8eed54f6ff0f810aacca7226460fdb72ab34c99e5c4d002192a463a2e72	詛咒術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	390	spells	526a40a447ddd7aa52d34bb62dbf1da04dc4aba8403769d239ade80893ffef7a	潛行術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	391	spells	32f782a89cf8691b16dbff4ebae8f84863ea9cd1899b8e6bc1c983e01efe0240	隱蔽術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	392	spells	d53895c6eb7816fb44ec7f46db45019172de4793a42ccaf893ed71ec8ed00743	隱形術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	393	spells	cfe81db361cf58a602c7241c62a8d351e44f3c1a3ab312e62233aa1a9dc68f4b	反長程武器保護	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	394	spells	0c81bb99659a126f9f6be1f706a5150632fd08932ef1272e6c5af4f1236a3582	耐火術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	395	spells	1c869adbc2fdcc63b64b5da1def0d23196e10eb4b1a6d96acef5f403e2c43e4b	停時術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	396	spells	1a60b5af063e6822d3e099505e8407270035b00bcebe9c640aebebabc16be604	徘徊之視	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	397	spells	de3b46da4da8a98c381a34e6ef1326411f01962e4bb094b007055b41e1d37ce4	迅捷術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	398	spells	f410d53a7a4787a7ed6c4b9df3f67eb1d79789df4d108a670b2c99b598c8a593	念動術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	399	spells	5ac4d0695cd710362a6db4660eeb1eea0914625d45365dd624d94c366cba947e	耐擊術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	400	spells	a57da6677cdb9bb5c4f32e447d6790bcb2f29902c9ab1e7b72fb59eaa2b8735c	厚皮術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	401	spells	dbcd5e7bb7a0f538810de44c3efbd813037ee3fa358747bb71fa58e157af45f7	神光術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	402	spells	980d4a4cdaa6c3c40391157efbdaa40fd7299d242f0d151eb0bf47bc92609e1f	鋼鐵之軀	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	403	spells	4cbe4ae9154d2b8ce3ad05bc9fd107420e66d7a62d465ccd5096ccd87cd7284d	夜視術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	404	spells	30dfa1dd5d120984b43fa7d79997665d9bc6dc7a0c94dc6c87b106a804127aab	日光術	draft	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).; p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	grammar-sensitive
+6	448	spells	859342636bea0afcce168621743f7a053de726701b7b7c5277f5b0910bfb141b	微效命中	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	449	spells	ac991dd3c2d928da95b77afb954db61a3246be27b683f30d1232dcee625ae376	命中	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	450	spells	03ff252dced2f3d4d46a5623e457f309efa7fc79010931c3fe1a49b9d21a5e27	強化命中	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	451	spells	8a2bcf197395eec905225a169db49e035a2ee8107be8bf2cce710a5ff1165e1f	高等命中	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	452	spells	c96c0e8486f1b354ec765e23eede3a579b3dddc882088278d0eb326799f3cc05	強效命中	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	453	spells	3182e5bced87ed20f42ae25286a63aa776f2e126f807e3463dd28577136de0a8	特強命中	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	454	spells	1890def1da957f9f241ed1e540db21c7d35581fe1fb24481d289b874bb694593	極效命中	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	455	spells	b57a22d70e0ebed6c5321822559445a10a489d267d383cd31a699c75beb1f091	無雙命中	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	456	spells	c0b05e7d1a180ad8f2cc59b8feb87fba3a53e95ca6dc4d9ee0549d5a1db9fac7	微效傷害	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	457	spells	0c874f581a4534f15f1ed12c4a9c84723b647e51a0385aa92ea270691cb76b29	傷害	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	458	spells	a2299795743c5eb673529e6541920293c7577238386078f1dd379dfbe2204998	強化傷害	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	459	spells	0391682c16ad346f1dc936be8a81c5397ae77cacc9ab735db6f4279bc78be1d3	高等傷害	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	460	spells	3ad4c3df3147828a9427a63ba1c63082c662792bc84540066fa1a9a6a7459c87	強效傷害	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	461	spells	ee915025d5d46954edc8203fd7a273efe7919caaca69d0e35e658f2cbe6c15ba	特強傷害	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	462	spells	7a7c29ddbac04b1c591f9e27558cf90f80ee7c0625158caeaa69be571b86ff8f	極效傷害	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	463	spells	74cccd65d6e1e7ca1579f76706e3c7d4e156c9c1066966f9ff127581c8f580cd	無雙傷害	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	464	spells	831df4b80d45574dafa81e8f399b0ab1d5fbd6de3c3d82d2f4ea9b6455afa43a	微效防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	465	spells	0e97ad021672d434a066dc50b8681813907da9f1f706aa1fa4402b9c4ba4c006	防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	466	spells	b9902c39b541d08ca14cc0317eb546f31d50ccc5ca52be0a8381092fa5bfebac	強化防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	467	spells	c5146f2aac803ad77ec921397e397036ef8bc02f4d95bd6da22aa546a94d52b2	高等防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	468	spells	a278803b4ee4c065437f26324b5ceb53885f90544755c820e1d59b970e3e3c60	強效防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	469	spells	44996255e669312ae2c159db2071197624b6fa5d49a94b689e6c70c59bf29d64	特強防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	470	spells	c596597c87f75a92aa5b8797ebe6e25635f249e534e928491ca0da67e7153346	極效防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	471	spells	648ff3b3a1b81b6eb28d294c84f3aa9e3f7c18338b720a1ec92879f171c50145	無雙防護	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	472	spells	d8913b85f4682c4c8f99ed226e589a85de148a52aedbb843249b6f7b656aac7d	微效耐久	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	473	spells	19cd2c1eecf145e78797bbd8c1dcccdbfdf6d563a1d4c51a4ecf667ac81eba5b	耐久	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	474	spells	f8ec73331d0619140b38dc88805aa16b76a0331ae57cf2b8943dcabf8edfd415	強化耐久	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	475	spells	525ccbb959b30b0934784ed2a2eca313c4485d7172551409f4983643a8d6c56e	高等耐久	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	476	spells	1d50740b2b2292a29f88509d7fee52db379b8a88ba8d5fdb6b5f0342b05e26bb	強效耐久	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	477	spells	ab7888da5447bb73391a6022959f1821d0874369e740a7d26bca3a3d4eee0c9c	特強耐久	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	478	spells	2bdd09cc400544b368cb4390d25fd94e6a9fd5a5c1077d138a0c607d0bc42afb	極效耐久	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	479	spells	c0efe39a5d48d7136d747d04510aa287b164aa4ed1fd647c454dd88fb05017b5	無雙耐久	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
 7	0	conversation_common	f71e90d787d4406d805af3d4fe4a87144cc4410d8981825902c66fcdd95622a6	你無法與那個對話！\n	reviewed	P10A-B1 conversation system: talk target refused (CONVERSE.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	1	conversation_common	d0a21149b0b2ef0822a85bbc671dd6803c35b38e25762f0f956c65fd25593f19	沒有任何回應。\n	reviewed	P10A-B1 conversation system: no response (CONVERSE.C, BABL.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	2	conversation_common	3ddc95c559cd83921b3582bcd83957a50176152011155549f831e491d1999384	我這是	draft		p11-1 draft	
@@ -436,6 +1135,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 7	15	conversation_common	e1774b1b9e4105170ed82918644d23ba9ec2923de5253bfa9b074202a09d3653	一筆划算的交易……	draft		p11-1 draft	
 7	16	conversation_common	2660693b90e6a97e0cc5912bdb662a5869bc9b8b85e1b8c89d5ff6f7bb42aab7	一筆絕佳的交易……	draft		p11-1 draft	
 7	83	conversation_common	6e2438a46d02f906a83dfef80fd9d898f2faf4ddfbd7904b7b292cfa27aad77b	布拉吉特	reviewed	PoC role: npc_name	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+7	256	conversation_common	08e06af999370481017fe242bce1e58bb2697f292914e0659ec4ee965801a2c5	閃電	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+7	257	conversation_common	0b319fd335b68593bfec74913d2fa1863e2451cd00ad81720397c0a229293c24	眼球	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+7	258	conversation_common	c80e4986929196f0dd998634bcc767ecf355d834063cef11a7ebdd5c50037f05	猙獰蝙蝠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+7	259	conversation_common	edf3919d4b00bda4a17949785733baa08a03c8c3450385e076eb61506c507d5d	怪魚	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+7	260	conversation_common	7b3b093365f1bdda7929f1d39a69036b8fcdd6c761f0c4ba8af6edcc906e441f	螺旋體	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+7	261	conversation_common	290a4b0c39e4c6977ebdec84010c39991a6d67264af8cc5f5115c6a0e555d4be	地獄犬	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+7	262	conversation_common	0d5b979a5ead4fc5b4b2c74d0dd04169880bc9b7a2ebfa8198a6b37a36aab69c	頭骨	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+7	263	conversation_common	58a65101e7d0ae4a2347c515658edce62d6abc5007b1454ef14b3db50e35df37	巨口	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+7	264	conversation_common	7233f0f735c20f1de047aef1430c720967b7a1e2e9ecae106adda4e787133b8e	破帷者	draft		p11-2a draft	object-name
 8	0	writings	a135540ebb60551f6e9d0067854f5a7c194985c3204d8934ccb242f254c04b1c	某種難以辨認的東西	draft		p10c-1 draft	
 8	33	writings	5567a9a6f465a6f03c2a6010c8450dd176389aaf9008c0079fd9921188092b6d	加拉蒙的空墳	draft		p10c-1 draft	
 8	34	writings	376ad138666ba6b5ef2cfab1508e26986c98b1939b8a70c977e6c1427c9b5b32	加拉蒙之墓	draft		p10c-1 draft	
@@ -548,6 +1256,270 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 9	385	trap_text	384fc5749f9fd0f48ab295d99da0d001a903635ed95ca3150fd9b76700f91f86	你聽到從你留下那個巫師的地方傳來一聲淒厲的尖叫！\n	draft		p10c-1 draft	
 9	386	trap_text	53a2f60d2365e6d2c225fbce8666e7619b1fd0882bdae312957e8eb283aca7c3	你聽到身後有岩石落下！\n	draft		p10c-1 draft	
 9	387	trap_text	8e48e89ef524368d637d8be7b187d722b2a98e504851eef6905c19b2ae7557c5	岩石分開時，傳來一陣尖銳的哀鳴聲。\n	draft		p10c-1 draft	
+10	0	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	1	textures	7c4eaa6b9f5b3fa60cd153953bfca56fcbef193c6912329496421840510986ea	長了青苔的石牆	draft		p11-2a draft	
+10	2	textures	d7830eba368b35b8b4a1e0381a9fdd397d5461651a3794ab93a43e0aaf688f57	龜裂的石牆	draft		p11-2a draft	
+10	3	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	4	textures	69ca45e08a59e6f7dd8167b2fef5a45e3a7669721fb5a305c62bb037901908f1	爬滿藤蔓的石牆	draft		p11-2a draft	
+10	5	textures	ccf9375715f9e8129664b26358af232a342724a00d0b603908782c4917968952	掛毯	draft		p11-2a draft	
+10	6	textures	6cf25b6f155e2d68b04508d82d3c7372223c339c2d4a06d7fef5a6dac501361b	凱布勒斯的旗幟	draft		p11-2a draft	
+10	7	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	8	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	9	textures	2ce3d6e7bfa4d7a41ed178e3b3092eb033bd4e0eef31661067b9da935d1173d1	山岳族之旗	draft		p11-2a draft	
+10	10	textures	688b9fd31f583144c89df263b2e145d5dc084209bd21ac5b94769a12640d7273	騎士團之旗	draft		p11-2a draft	
+10	11	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	12	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	13	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	14	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	15	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	16	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	17	textures	8b156e81b3be39a920ab9998c067dc0a65629173aa6781d35c2eca5166f5639c	長了青苔的不規則石牆	draft		p11-2a draft	
+10	18	textures	d646fc96764ab3ad4ab13378e88c9c5134a3d8b0adc46a7e1f617f4adfd615cb	銀蛇之旗	draft		p11-2a draft	
+10	19	textures	c243ea333d5f6e2aa5078234d558a5e81bdc749af2f8dddc8747609ede053a56	龜裂的不規則石牆	draft		p11-2a draft	
+10	20	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	21	textures	2c370cc1fad71181a6866688f1b80d949a16c6a927b5128576da4867c9e81bea	爬滿藤蔓的不規則石牆	draft		p11-2a draft	
+10	22	textures	ccf9375715f9e8129664b26358af232a342724a00d0b603908782c4917968952	掛毯	draft		p11-2a draft	
+10	23	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	24	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	25	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	26	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	27	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	28	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	29	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	30	textures	8383a44461424bb6db452b27e338086326394711fa40b990b87db6541cd9cd3a	天然石壁	draft		p11-2a draft	
+10	31	textures	8383a44461424bb6db452b27e338086326394711fa40b990b87db6541cd9cd3a	天然石壁	draft		p11-2a draft	
+10	32	textures	1aa325c13ca0df550a78fe04a4d701ee268d76bb94aa4b072dbb733e5195be8f	長了青苔的天然石壁	draft		p11-2a draft	
+10	33	textures	1aa325c13ca0df550a78fe04a4d701ee268d76bb94aa4b072dbb733e5195be8f	長了青苔的天然石壁	draft		p11-2a draft	
+10	34	textures	98c40f53f1848fe15b79a214ffa278fdb0d7b8728d55f1e6ca4e1153af409ba0	瀑布	draft		p11-2a draft	
+10	35	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	36	textures	8383a44461424bb6db452b27e338086326394711fa40b990b87db6541cd9cd3a	天然石壁	draft		p11-2a draft	
+10	37	textures	8383a44461424bb6db452b27e338086326394711fa40b990b87db6541cd9cd3a	天然石壁	draft		p11-2a draft	
+10	38	textures	646814449529eb03f09ff495c6cb171f0808a1d6971bcf9070c8a034e88e34da	深淵上鎖的大門	draft		p11-2a draft	
+10	39	textures	646814449529eb03f09ff495c6cb171f0808a1d6971bcf9070c8a034e88e34da	深淵上鎖的大門	draft		p11-2a draft	
+10	40	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	41	textures	ccf9375715f9e8129664b26358af232a342724a00d0b603908782c4917968952	掛毯	draft		p11-2a draft	
+10	42	textures	22b6bd587b165d032fa7a3a3248c85ec250d2af1702ddd6d8c9ee953aa3e57d9	爬滿藤蔓的天然石壁	draft		p11-2a draft	
+10	43	textures	0f0ffb830f1d123611a2ca6ebba43006eb73c6afd16d783d57a02c2a0280b9c6	巨大的石門	draft		p11-2a draft	
+10	44	textures	0f0ffb830f1d123611a2ca6ebba43006eb73c6afd16d783d57a02c2a0280b9c6	巨大的石門	draft		p11-2a draft	
+10	45	textures	0f0ffb830f1d123611a2ca6ebba43006eb73c6afd16d783d57a02c2a0280b9c6	巨大的石門	draft		p11-2a draft	
+10	46	textures	0f0ffb830f1d123611a2ca6ebba43006eb73c6afd16d783d57a02c2a0280b9c6	巨大的石門	draft		p11-2a draft	
+10	47	textures	523ad72a6e7861c36f3f2ed1f7ca40d42ed321d943442e31636f7be1cbad9f53	有三叉凹痕的石板	draft		p11-2a draft	
+10	48	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	49	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	50	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	51	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	52	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	53	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	54	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	55	textures	c243ea333d5f6e2aa5078234d558a5e81bdc749af2f8dddc8747609ede053a56	龜裂的不規則石牆	draft		p11-2a draft	
+10	56	textures	2c370cc1fad71181a6866688f1b80d949a16c6a927b5128576da4867c9e81bea	爬滿藤蔓的不規則石牆	draft		p11-2a draft	
+10	57	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	58	textures	8c5958bf6fab671fcc1e518c7d43637350dafa26c984b5dae6a70b56001bb335	長滿青苔的不規則石牆	draft		p11-2a draft	
+10	59	textures	6cf25b6f155e2d68b04508d82d3c7372223c339c2d4a06d7fef5a6dac501361b	凱布勒斯的旗幟	draft		p11-2a draft	
+10	60	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	61	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	62	textures	77389e2cf4688e28063cea58b92c2fea280d464fdcec4126b543c77b462c3173	銀樹苗之旗	draft		p11-2a draft	
+10	63	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	64	textures	1785cfc3bc6ac7738e8b38cdccd1af12563c2b9070e07af336a1bf8c0f772b6a	空無一物	draft		p11-2a draft	
+10	65	textures	0f0ffb830f1d123611a2ca6ebba43006eb73c6afd16d783d57a02c2a0280b9c6	巨大的石門	draft		p11-2a draft	
+10	66	textures	8383a44461424bb6db452b27e338086326394711fa40b990b87db6541cd9cd3a	天然石壁	draft		p11-2a draft	
+10	67	textures	8383a44461424bb6db452b27e338086326394711fa40b990b87db6541cd9cd3a	天然石壁	draft		p11-2a draft	
+10	68	textures	b999be2aa558b6f607486944e5ff99f71d072a94f87982192ff7d78369204496	長滿青苔的天然石壁	draft		p11-2a draft	
+10	69	textures	b999be2aa558b6f607486944e5ff99f71d072a94f87982192ff7d78369204496	長滿青苔的天然石壁	draft		p11-2a draft	
+10	70	textures	a5eb51d2fcac0bd500effb86a7cb862c8390d87043601fe6b07f4acecd222a6c	管子	draft		p11-2a draft	
+10	71	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	72	textures	8383a44461424bb6db452b27e338086326394711fa40b990b87db6541cd9cd3a	天然石壁	draft		p11-2a draft	
+10	73	textures	8383a44461424bb6db452b27e338086326394711fa40b990b87db6541cd9cd3a	天然石壁	draft		p11-2a draft	
+10	74	textures	1785cfc3bc6ac7738e8b38cdccd1af12563c2b9070e07af336a1bf8c0f772b6a	空無一物	draft		p11-2a draft	
+10	75	textures	1785cfc3bc6ac7738e8b38cdccd1af12563c2b9070e07af336a1bf8c0f772b6a	空無一物	draft		p11-2a draft	
+10	76	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	77	textures	ccf9375715f9e8129664b26358af232a342724a00d0b603908782c4917968952	掛毯	draft		p11-2a draft	
+10	78	textures	5a7437991b076e4635078201f6c479ffe6f6152644f114db2fd68d5d77a30b51	灰泥牆	draft		p11-2a draft	
+10	79	textures	5a7437991b076e4635078201f6c479ffe6f6152644f114db2fd68d5d77a30b51	灰泥牆	draft		p11-2a draft	
+10	80	textures	a7283eb5312948ca35a0b65ce8d70509d4b0ea40928d27b32aa6106fb047803d	灰泥剝落的牆	draft		p11-2a draft	
+10	81	textures	ccf9375715f9e8129664b26358af232a342724a00d0b603908782c4917968952	掛毯	draft		p11-2a draft	
+10	82	textures	a7283eb5312948ca35a0b65ce8d70509d4b0ea40928d27b32aa6106fb047803d	灰泥剝落的牆	draft		p11-2a draft	
+10	83	textures	b63c5633ff397a6a98444bc90e3076c28f7142ee5d78bc3cb36edfae99fc75f3	生鏽的小管子	draft		p11-2a draft	
+10	84	textures	6e03c74281a2baf6870296b2c5c25aade902cccf1bcda8e94b766faefd765e32	磚牆	draft		p11-2a draft	
+10	85	textures	6e03c74281a2baf6870296b2c5c25aade902cccf1bcda8e94b766faefd765e32	磚牆	draft		p11-2a draft	
+10	86	textures	5a7437991b076e4635078201f6c479ffe6f6152644f114db2fd68d5d77a30b51	灰泥牆	draft		p11-2a draft	
+10	87	textures	5a7437991b076e4635078201f6c479ffe6f6152644f114db2fd68d5d77a30b51	灰泥牆	draft		p11-2a draft	
+10	88	textures	5a7437991b076e4635078201f6c479ffe6f6152644f114db2fd68d5d77a30b51	灰泥牆	draft		p11-2a draft	
+10	89	textures	6e03c74281a2baf6870296b2c5c25aade902cccf1bcda8e94b766faefd765e32	磚牆	draft		p11-2a draft	
+10	90	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	91	textures	a52a9419ccb17dbfab648f9d22cbe5f4aec38ed798157dea79c966dfdf9cf5b1	銀蛇之旗	draft		p11-2a draft	
+10	92	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	93	textures	a7283eb5312948ca35a0b65ce8d70509d4b0ea40928d27b32aa6106fb047803d	灰泥剝落的牆	draft		p11-2a draft	
+10	94	textures	5a7437991b076e4635078201f6c479ffe6f6152644f114db2fd68d5d77a30b51	灰泥牆	draft		p11-2a draft	
+10	95	textures	1785cfc3bc6ac7738e8b38cdccd1af12563c2b9070e07af336a1bf8c0f772b6a	空無一物	draft		p11-2a draft	
+10	96	textures	6e03c74281a2baf6870296b2c5c25aade902cccf1bcda8e94b766faefd765e32	磚牆	draft		p11-2a draft	
+10	97	textures	6e03c74281a2baf6870296b2c5c25aade902cccf1bcda8e94b766faefd765e32	磚牆	draft		p11-2a draft	
+10	98	textures	6e03c74281a2baf6870296b2c5c25aade902cccf1bcda8e94b766faefd765e32	磚牆	draft		p11-2a draft	
+10	99	textures	6e03c74281a2baf6870296b2c5c25aade902cccf1bcda8e94b766faefd765e32	磚牆	draft		p11-2a draft	
+10	100	textures	1785cfc3bc6ac7738e8b38cdccd1af12563c2b9070e07af336a1bf8c0f772b6a	空無一物	draft		p11-2a draft	
+10	101	textures	1785cfc3bc6ac7738e8b38cdccd1af12563c2b9070e07af336a1bf8c0f772b6a	空無一物	draft		p11-2a draft	
+10	102	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	103	textures	ccf9375715f9e8129664b26358af232a342724a00d0b603908782c4917968952	掛毯	draft		p11-2a draft	
+10	104	textures	a5eb51d2fcac0bd500effb86a7cb862c8390d87043601fe6b07f4acecd222a6c	管子	draft		p11-2a draft	
+10	105	textures	65e6d6583c7c75b407fa3a34156775cfcf88bc51f1707bfd1a5cd5b7c0db6939	長了青苔的磚牆	draft		p11-2a draft	
+10	106	textures	4b616d409cfb4cd3f4286b1234d609bbcf7197e5e386b5a3c2ae107d879433f2	龜裂的磚牆	draft		p11-2a draft	
+10	107	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	108	textures	e124ae57bbcc3d5485c60bae95ab8381d1c2a9e6ba540074643214a4b024c065	打磨過的橡木牆	draft		p11-2a draft	
+10	109	textures	e124ae57bbcc3d5485c60bae95ab8381d1c2a9e6ba540074643214a4b024c065	打磨過的橡木牆	draft		p11-2a draft	
+10	110	textures	e124ae57bbcc3d5485c60bae95ab8381d1c2a9e6ba540074643214a4b024c065	打磨過的橡木牆	draft		p11-2a draft	
+10	111	textures	e124ae57bbcc3d5485c60bae95ab8381d1c2a9e6ba540074643214a4b024c065	打磨過的橡木牆	draft		p11-2a draft	
+10	112	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	113	textures	a5eb51d2fcac0bd500effb86a7cb862c8390d87043601fe6b07f4acecd222a6c	管子	draft		p11-2a draft	
+10	114	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	115	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	116	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	117	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	118	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	119	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	120	textures	ccf9375715f9e8129664b26358af232a342724a00d0b603908782c4917968952	掛毯	draft		p11-2a draft	
+10	121	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	122	textures	a5eb51d2fcac0bd500effb86a7cb862c8390d87043601fe6b07f4acecd222a6c	管子	draft		p11-2a draft	
+10	123	textures	d646fc96764ab3ad4ab13378e88c9c5134a3d8b0adc46a7e1f617f4adfd615cb	銀蛇之旗	draft		p11-2a draft	
+10	124	textures	0e5a510b07341a7f044756ca51dce03738e18616b828f9096ea8aa570a397adc	預言者之旗	draft		p11-2a draft	
+10	125	textures	0e5a510b07341a7f044756ca51dce03738e18616b828f9096ea8aa570a397adc	預言者之旗	draft		p11-2a draft	
+10	126	textures	69673415d619c44ae954c6f145dc4b63ce64ffd1119e269b9bf6d9f05f16985e	粗鑿岩壁	draft		p11-2a draft	
+10	127	textures	7ad2c3db89cdb606e85c4c67b2973074d1ca26bd8236322ac7b3611b9752e077	窗戶	draft		p11-2a draft	
+10	128	textures	0f8077d02eb1d52ef876cb75ce100672e15e4f6b954df6205b352305926a84e1	帶金礦脈的粗鑿岩壁	draft		p11-2a draft	
+10	129	textures	69673415d619c44ae954c6f145dc4b63ce64ffd1119e269b9bf6d9f05f16985e	粗鑿岩壁	draft		p11-2a draft	
+10	130	textures	69673415d619c44ae954c6f145dc4b63ce64ffd1119e269b9bf6d9f05f16985e	粗鑿岩壁	draft		p11-2a draft	
+10	131	textures	af84130bf3a562fc5f6cb2825e2210e4c61faa08d6ee799b3d221e562c80efe8	長了青苔的粗鑿岩壁	draft		p11-2a draft	
+10	132	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	133	textures	ccf9375715f9e8129664b26358af232a342724a00d0b603908782c4917968952	掛毯	draft		p11-2a draft	
+10	134	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	135	textures	6e03c74281a2baf6870296b2c5c25aade902cccf1bcda8e94b766faefd765e32	磚牆	draft		p11-2a draft	
+10	136	textures	6e03c74281a2baf6870296b2c5c25aade902cccf1bcda8e94b766faefd765e32	磚牆	draft		p11-2a draft	
+10	137	textures	3a0e52e7ad13c178e2a2ea27b7d300cd908a877b19f8d67e85d3cdac132ce992	往下的樓梯	draft		p11-2a draft	
+10	138	textures	af71e8975862653fd89dae7bd7ffcb6925eb1d4d15cb930d16231ec5b92c303e	長滿青苔的牆	draft		p11-2a draft	
+10	139	textures	5f1509a94a488314582ff872cdf88a8459225c864dae964f1f6de058aa31a60e	往上的樓梯	draft		p11-2a draft	
+10	140	textures	5f1509a94a488314582ff872cdf88a8459225c864dae964f1f6de058aa31a60e	往上的樓梯	draft		p11-2a draft	
+10	141	textures	3a0e52e7ad13c178e2a2ea27b7d300cd908a877b19f8d67e85d3cdac132ce992	往下的樓梯	draft		p11-2a draft	
+10	142	textures	7ad2c3db89cdb606e85c4c67b2973074d1ca26bd8236322ac7b3611b9752e077	窗戶	draft		p11-2a draft	
+10	143	textures	3839ac039e1a862df89cbf06569397f710588ca56f6a0150cae19767c4f954a2	被鍊在磚牆上的公主	draft		p11-2a draft	
+10	144	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	145	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	146	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	147	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	148	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	149	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	150	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	151	textures	c243ea333d5f6e2aa5078234d558a5e81bdc749af2f8dddc8747609ede053a56	龜裂的不規則石牆	draft		p11-2a draft	
+10	152	textures	2c370cc1fad71181a6866688f1b80d949a16c6a927b5128576da4867c9e81bea	爬滿藤蔓的不規則石牆	draft		p11-2a draft	
+10	153	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	154	textures	8b156e81b3be39a920ab9998c067dc0a65629173aa6781d35c2eca5166f5639c	長了青苔的不規則石牆	draft		p11-2a draft	
+10	155	textures	6cf25b6f155e2d68b04508d82d3c7372223c339c2d4a06d7fef5a6dac501361b	凱布勒斯的旗幟	draft		p11-2a draft	
+10	156	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	157	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	158	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	159	textures	688b9fd31f583144c89df263b2e145d5dc084209bd21ac5b94769a12640d7273	騎士團之旗	draft		p11-2a draft	
+10	160	textures	22b9b034fdbfe23e9cbc9bd7eb8d06520bb3db5de676c2b8a21d31c2fba40dd5	坍塌的樓梯	draft		p11-2a draft	
+10	161	textures	f49c0ed1976fadfaab4cf775729c2d8a552c612012c9f5712c8a930c230aa3e4	坍塌的通道	draft		p11-2a draft	
+10	162	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	163	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	164	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	165	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	166	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	167	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	168	textures	7c4eaa6b9f5b3fa60cd153953bfca56fcbef193c6912329496421840510986ea	長了青苔的石牆	draft		p11-2a draft	
+10	169	textures	c243ea333d5f6e2aa5078234d558a5e81bdc749af2f8dddc8747609ede053a56	龜裂的不規則石牆	draft		p11-2a draft	
+10	170	textures	bc57a1d51a74a64470f3b2900d79804cfb21ed4aa5751ce843875d3dfdedf4f6	排水口	draft		p11-2a draft	
+10	171	textures	2c370cc1fad71181a6866688f1b80d949a16c6a927b5128576da4867c9e81bea	爬滿藤蔓的不規則石牆	draft		p11-2a draft	
+10	172	textures	ccf9375715f9e8129664b26358af232a342724a00d0b603908782c4917968952	掛毯	draft		p11-2a draft	
+10	173	textures	eaddf12477ce90824335f5411c4a453bcee22f8bd63cc8a75c7550bee91e42be	鐵柵	draft		p11-2a draft	
+10	174	textures	8c5958bf6fab671fcc1e518c7d43637350dafa26c984b5dae6a70b56001bb335	長滿青苔的不規則石牆	draft		p11-2a draft	
+10	175	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	176	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	177	textures	2512a75b5373c14e1232ab9494ae008fc88d65a992dc226e56275e15c50e772c	不規則石牆	draft		p11-2a draft	
+10	178	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	179	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	180	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	181	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	182	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	183	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	184	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	185	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	186	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	187	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	188	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	189	textures	e81e08907ceb0d195cff802ecebe52353954ebf5635b16fef1e1bc5b6a14ee6d	聖符	draft		p11-2a draft	
+10	190	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	191	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	192	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	193	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	194	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	195	textures	6cfd27f68e96ad8f3e9f27a441aeca9be9c166f8cd11652dad9aa1375ace2c69	石牆	draft		p11-2a draft	
+10	196	textures	0f0ffb830f1d123611a2ca6ebba43006eb73c6afd16d783d57a02c2a0280b9c6	巨大的石門	draft		p11-2a draft	
+10	197	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	198	textures	98c40f53f1848fe15b79a214ffa278fdb0d7b8728d55f1e6ca4e1153af409ba0	瀑布	draft		p11-2a draft	
+10	199	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	200	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	201	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	202	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	203	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	204	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	205	textures	7a69a2cd1c6ef6353935470e0509f9852b925f1adc8eda6f0006325747e48c4e	大理石牆	draft		p11-2a draft	
+10	206	textures	f17aa29ef2012ef3fa610602493ff9b6f0935a948286c27984f7d745529dee6c	熔岩瀑布	draft		p11-2a draft	
+10	207	textures	69673415d619c44ae954c6f145dc4b63ce64ffd1119e269b9bf6d9f05f16985e	粗鑿岩壁	draft		p11-2a draft	
+10	208	textures	69673415d619c44ae954c6f145dc4b63ce64ffd1119e269b9bf6d9f05f16985e	粗鑿岩壁	draft		p11-2a draft	
+10	209	textures	a5eb51d2fcac0bd500effb86a7cb862c8390d87043601fe6b07f4acecd222a6c	管子	draft		p11-2a draft	
+10	300	textures	aacc66146c4f9028e710f71830bf04555d2e2168b99b82469dafe8dbaf8d2a3f	透過玫瑰色眼鏡看出去的六〇年代迷幻萬花筒	draft		p11-2a draft	
+10	459	textures	d8d50a718eff09b06aa7d567f434c709f153e2103115ced273e0ae82934e46e0	發著藍光的小徑	draft		p11-2a draft	
+10	460	textures	d8d50a718eff09b06aa7d567f434c709f153e2103115ced273e0ae82934e46e0	發著藍光的小徑	draft		p11-2a draft	
+10	461	textures	d8d50a718eff09b06aa7d567f434c709f153e2103115ced273e0ae82934e46e0	發著藍光的小徑	draft		p11-2a draft	
+10	462	textures	c683bdec52bc59cc7f9d7a08f1f2ca0f15260577acd08aa06ee99a8ce1c3c4f8	發著紅光的小徑	draft		p11-2a draft	
+10	463	textures	c683bdec52bc59cc7f9d7a08f1f2ca0f15260577acd08aa06ee99a8ce1c3c4f8	發著紅光的小徑	draft		p11-2a draft	
+10	464	textures	c683bdec52bc59cc7f9d7a08f1f2ca0f15260577acd08aa06ee99a8ce1c3c4f8	發著紅光的小徑	draft		p11-2a draft	
+10	465	textures	c35fa382eefd065ca1e48802b8af9544c5b959be5a88f2f4ee7ea011981d0d54	發著綠光的小徑	draft		p11-2a draft	
+10	466	textures	c35fa382eefd065ca1e48802b8af9544c5b959be5a88f2f4ee7ea011981d0d54	發著綠光的小徑	draft		p11-2a draft	
+10	467	textures	c35fa382eefd065ca1e48802b8af9544c5b959be5a88f2f4ee7ea011981d0d54	發著綠光的小徑	draft		p11-2a draft	
+10	468	textures	0ba2007b1ff9f1ae582471dcf137e899ae2fe8d8385a9256c766ad8a238412ab	稻草床	draft		p11-2a draft	
+10	469	textures	2c87f06e22ee79dc4defc0941e153db51865acb0375cf834b4dbfbede12301f0	熔岩細流	draft		p11-2a draft	
+10	470	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	471	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	472	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	473	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	474	textures	72043d27c918e7669eef24df448b44f25988c407f6048da38ddae592b25fb361	粗糙的地面	draft		p11-2a draft	
+10	475	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	476	textures	0f4168490e38b8447e11ba4bd656aa11b925bd22af30bac464bc153fdb608501	水	draft		p11-2a draft	
+10	477	textures	0f4168490e38b8447e11ba4bd656aa11b925bd22af30bac464bc153fdb608501	水	draft		p11-2a draft	
+10	478	textures	0f4168490e38b8447e11ba4bd656aa11b925bd22af30bac464bc153fdb608501	水	draft		p11-2a draft	
+10	479	textures	72043d27c918e7669eef24df448b44f25988c407f6048da38ddae592b25fb361	粗糙的地面	draft		p11-2a draft	
+10	480	textures	72043d27c918e7669eef24df448b44f25988c407f6048da38ddae592b25fb361	粗糙的地面	draft		p11-2a draft	
+10	481	textures	72043d27c918e7669eef24df448b44f25988c407f6048da38ddae592b25fb361	粗糙的地面	draft		p11-2a draft	
+10	482	textures	72043d27c918e7669eef24df448b44f25988c407f6048da38ddae592b25fb361	粗糙的地面	draft		p11-2a draft	
+10	483	textures	72043d27c918e7669eef24df448b44f25988c407f6048da38ddae592b25fb361	粗糙的地面	draft		p11-2a draft	
+10	484	textures	1785cfc3bc6ac7738e8b38cdccd1af12563c2b9070e07af336a1bf8c0f772b6a	空無一物	draft		p11-2a draft	
+10	485	textures	5ed45566f29d2f055b2732b8bbae8d8dc7a4dce16cc6abb5d12aa1a6f82fc3a4	熔岩	draft		p11-2a draft	
+10	486	textures	5ed45566f29d2f055b2732b8bbae8d8dc7a4dce16cc6abb5d12aa1a6f82fc3a4	熔岩	draft		p11-2a draft	
+10	487	textures	2c87f06e22ee79dc4defc0941e153db51865acb0375cf834b4dbfbede12301f0	熔岩細流	draft		p11-2a draft	
+10	488	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	489	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	490	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	491	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	492	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	493	textures	0f4168490e38b8447e11ba4bd656aa11b925bd22af30bac464bc153fdb608501	水	draft		p11-2a draft	
+10	494	textures	0f4168490e38b8447e11ba4bd656aa11b925bd22af30bac464bc153fdb608501	水	draft		p11-2a draft	
+10	495	textures	6f7b645173ddb85d5f93f09efe45dae244759e609e4c1313649f2e288c1cc11a	大理石地板	draft		p11-2a draft	
+10	496	textures	6f7b645173ddb85d5f93f09efe45dae244759e609e4c1313649f2e288c1cc11a	大理石地板	draft		p11-2a draft	
+10	497	textures	6f7b645173ddb85d5f93f09efe45dae244759e609e4c1313649f2e288c1cc11a	大理石地板	draft		p11-2a draft	
+10	498	textures	6f7b645173ddb85d5f93f09efe45dae244759e609e4c1313649f2e288c1cc11a	大理石地板	draft		p11-2a draft	
+10	499	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	500	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	501	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	502	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	503	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	504	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	505	textures	6a51be8a6d647c9228275ef25d3199e48f8267134dfa32de6dd9f299b1326e44	泥土地面	draft		p11-2a draft	
+10	506	textures	c63bcf7f96531114b68281ca5ff0385635282f92c1f326fd879705f1afe013db	石頭地板	draft		p11-2a draft	
+10	507	textures	3309e677f9b51f251f16f8f2115038f65ddf87b21e535990b4dfefd7d0c65ac0	水窪	draft		p11-2a draft	
+10	508	textures	3309e677f9b51f251f16f8f2115038f65ddf87b21e535990b4dfefd7d0c65ac0	水窪	draft		p11-2a draft	
+10	509	textures	c63bcf7f96531114b68281ca5ff0385635282f92c1f326fd879705f1afe013db	石頭地板	draft		p11-2a draft	
+10	510	textures	c63bcf7f96531114b68281ca5ff0385635282f92c1f326fd879705f1afe013db	石頭地板	draft		p11-2a draft	
+10	511	textures	05e042701ec09df8e586927ebe2d553cb904533bab568fbbc96c4f2695819384	天花板	draft		p11-2a draft	
 3072	0	cutscene	37b01098027ce85fc79b5ab8be54cb4ab997ae880831051cccc30ad99dbdc839	你終於睡著了。	draft		p11-sub draft	
 3072	1	cutscene	f5b26a431b18468eb6cb88fbad716638e8e3b05f6aeaab757f62d926c0c1869d	這三個晚上，你每次試著入睡，都會從床上驚醒，卻完全不記得是什麼把你嚇成這樣。	draft		p11-sub draft	
 3072	2	cutscene	0a94f8494234acde748807d2e4e331e8b2ed45b24c9d6d8a5ae2130bd67883ad	帶著一股似曾相識的不適感，你開始做夢。	draft		p11-sub draft	
