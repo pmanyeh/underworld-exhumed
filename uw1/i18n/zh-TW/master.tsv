@@ -1916,6 +1916,104 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3608	95	conversation	7a3b4c8498198f37d7db5be04ea8b4184f2544f639cbcaa591a1f46df9e9651b	走吧，別再偷東西了！	draft		p10b-5 draft	
 3608	96	conversation	7ea66a9c3993e60098fcaa5a2f4bd14151c46ecc017d5ebaddfdef7134001dd2	再會，好好享受你的自由吧！	draft		p10b-5 draft	
 3608	97	conversation	e45e51238b16fc95eca329544a4627bf518f6dd76685b6f0380637b7ae1a8100	你看著他沿著走廊一溜煙跑掉，高興得又蹦又跳。	draft		p10b-5 draft	
+3609	1	conversation	22b3f5031299906cedc482cfe5a6a44fce592b6bc8f0c6cc537e01c45edad00e	哼！又一個年輕的傻瓜不加思索地開門。開，關，開，關，大家就只有空做這種事。我跟你保證，我在你這個年紀的時候可不是這樣！怎樣？你有什麼話要替自己辯解嗎？	draft		p10b-20 draft; authority-ok:Open（Open, close 是開門關門，不是法術）	
+3609	2	conversation	13f0f331ef5f53fa98f990d248902b9b35d2d7aaac594e0fd206b30fc7acb92d	抱歉打擾你。我這就走。	draft		p10b-20 draft	
+3609	3	conversation	4a61bff50d324cc850e016e395aa9efcd6ae3260bdb66b30257166017dca1cf9	不好意思……你真的是一扇門嗎？	draft		p10b-20 draft	
+3609	4	conversation	00bd7f9a8d4f66a21829703b86d73634c266e1f985468df9abc41a9a3f7e4ac3	我是要打開你，不是要跟你說話！	draft		p10b-20 draft	
+3609	5	conversation	c8fa461e06b7af3390c7bb38cefecff5f624d962736cfdb1b9bab9288f6815fb	你要是有禮貌一點，也許能打開更多扇門！	draft		p10b-20 draft	
+3609	6	conversation	e2f17037dff5665c3fbdac5ef607e9d0a20c12463ed0841133ebb0982325f747	又是你！這次你又想要什麼！	draft		p10b-20 draft	
+3609	7	conversation	f4fed2586f54af849040bde45aea5165fb20f0ae7669231f9f964a04cd639539	哼！也許下次你會對長輩更有禮貌一點！	draft		p10b-20 draft	
+3609	8	conversation	8e47c74e44f1a60d5659649b29284e3d20b3fdb54bdec4bac756fe7b4f15990f	呸！這麼沒禮貌！我想開的時候才會開！	draft		p10b-20 draft	
+3609	9	conversation	28c662bf5ed2e55efa98143f1946c051bb4de53fb5fadbd429886726f23f9e4a	你當我是什麼，吊橋嗎？	draft		p10b-20 draft	
+3609	10	conversation	de6ae7d3b97b05178a4459266223d1d21da25d23c93bc63cd95950ab6889445c	事實上，你跟吊橋長得還真像。	draft		p10b-20 draft	
+3609	11	conversation	d4619874526f03a3fe212b1f69d83033832bb185030ad140fbfef3122bd4c737	我懂你的意思了。你是怎麼變成一扇門的？	draft		p10b-20 draft	
+3609	12	conversation	96fac333fe2492bb0df2e57ea680df0d57fc760d37884d9341ea8d90f60855a6	我曾經跟你一樣是個年輕的人類。可是我厭倦了一般人和他們的愚蠢至極。我是個才華洋溢的魔法師，老是被一堆蠢問題煩，像是「片狀閃電要怎麼施展？」\n 被人這樣糾纏得煩了，我就把自己變成一扇門，好終於能享受一點安寧。顯然，這招沒用。	draft		p10b-20 draft	
+3609	13	conversation	61ab57bd4e0793c3ade1e379f8717474dceb8372f9c90a1facb13c53f8f09128	既然你提到了，片狀閃電要怎麼施展？	draft		p10b-20 draft	
+3609	14	conversation	e69a5b1d9ccd5849f3e49603e6ccbe941329f098087c6dcb73af4674c858b467	你不能把自己變回人類嗎？	draft		p10b-20 draft	
+3609	15	conversation	e19f25c07dfa9f090b1e19b52b249ff353be2b04e159ed39c3c80559fb6e9880	啊啊！真不敢相信你偏偏問這個！我早該知道不該提那個該死的法術。\n 你非要知道的話，施法要用 Vas（巨大）、Ort（魔法）和 Grav（能量）符石。好了。希望你用它把自己炸飛。	draft		p10b-20 draft	
+3609	16	conversation	af670265a5a201bd8c50cab83e7cce0b480ab16814dbf5042f2b42d9cebb943f	非常感謝你，睿智的門。	draft		p10b-20 draft	
+3609	17	conversation	465c3f7bf1de0a22517e5ac4be03939cca96dd194995fcdd4ba24420409ac489	終於！現在我的力量又更強了！	draft		p10b-20 draft	
+3609	18	conversation	8790f91d0419c164adb038a18afe31b0ed1aff45a687994ab4ecb39083c555df	你是在暗示我的力量不夠大，不能把自己變成想變的東西嗎？我要是想，就能把自己變成胡桃鉗，把你變成核桃！你想試試嗎？	draft		p10b-20 draft	
+3609	19	conversation	bd55ea49a710c44841e1065954a79aca6478ca0c9ded443a5dc9b5edbd398bfe	當然不想。	draft		p10b-20 draft	
+3609	20	conversation	5d4cd3140ba51749c302025fc4411013b46d11bb6b0440c40bb6c980eb876ac9	我倒想看你試試！	draft		p10b-20 draft	
+3609	21	conversation	5d1325d027405f43c4c0dbc0fe4b92da28558656a57a76ebe29ddfcaf1ae3279	那麼，你想打開我是有原因的，還是只因為我的門把亮晶晶的？	draft		p10b-20 draft	
+3609	22	conversation	fd2fceabf07115d5e66c30e3f43f8443ceae5b467bdc8d5ec8efd4d1532cb47a	你剛才提到一個片狀閃電的法術……	draft		p10b-20 draft	
+3609	23	conversation	b202409cec43872715958817961d23317237bb53a86e463851899146bf1e6152	我想穿過你到另一邊去。	draft		p10b-20 draft	
+3609	24	conversation	b02abb5c840e4108d475119e402cf020ac2e3de98248d67aef75bfad9b221283	沒有，抱歉打擾你了。	draft		p10b-20 draft	
+3609	25	conversation	0aeff6cdee9d61a2d52fca5f53cf822b007ca7dcf16b4021fd0b0f8c1793eaca	好吧，只要這表示你不會再來煩我。	draft		p10b-20 draft	
+3609	26	conversation	39006cd932bc663e900f2cf9aad394377736a012dfa315f0436addc74f3830b4	可惜，我的鉸鏈好像有點生鏽了。	draft		p10b-20 draft	
+3609	27	conversation	da60720a8f9711fb66190e0024f1586ab94c28bdf3b7431cf5d73202c7570470	可以請你打開嗎？	draft		p10b-20 draft	
+3609	28	conversation	efd7fbea782793d02b943bb49c36e8626e437394722757d2a7911065d2c435bc	我忘了片狀閃電要怎麼施展了。	draft		p10b-20 draft	
+3609	29	conversation	eabd25b4a3c42e96a7eaa38e80be9860ae561b987ed62d625cc6ed61688577a8	抱歉，我不是有意打擾你。	draft		p10b-20 draft	
+3609	30	conversation	792e0f68443b9f02b1d149de55223370ec396c97f279f92a61a46c952ab75407	你能跟我說說你的過去嗎？	draft		p10b-20 draft	
+3609	31	conversation	da60720a8f9711fb66190e0024f1586ab94c28bdf3b7431cf5d73202c7570470	可以請你打開嗎？	draft		p10b-20 draft	
+3609	32	conversation	eabd25b4a3c42e96a7eaa38e80be9860ae561b987ed62d625cc6ed61688577a8	抱歉，我不是有意打擾你。	draft		p10b-20 draft	
+3609	33	conversation	3e662e0b4000a6740a25bb66c088e4a49306a003fde68bbbfc1fbdd0ac994bbb	你能教我你剛才說的片狀閃電法術嗎？	draft		p10b-20 draft	
+3609	34	conversation	da60720a8f9711fb66190e0024f1586ab94c28bdf3b7431cf5d73202c7570470	可以請你打開嗎？	draft		p10b-20 draft	
+3609	35	conversation	eabd25b4a3c42e96a7eaa38e80be9860ae561b987ed62d625cc6ed61688577a8	抱歉，我不是有意打擾你。	draft		p10b-20 draft	
+3609	36	conversation	caf0e9218fc38c55048433ec269176c913f218fe01633fffa4e3331a6e3efaef	這件事我拒絕再幫你了！	draft		p10b-20 draft	
+3609	37	conversation	f443047135d69b046d6a40221430992c37bb24946823ce84fdd21cb0e7dc9c2d	又來了！？最後一次告訴你，這個法術要用 Vas（巨大）、Ort（魔法）和 Grav（能量）符石施展。我不知道我幹嘛費事告訴你。你顯然沒有施展它所需的智慧。	draft		p10b-20 draft; authority-ok:Intelligence（the intelligence 是腦袋，譯「智慧」即同）	
+3609	38	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	39	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	40	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	41	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	42	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	43	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	44	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	45	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	46	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	47	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	48	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	49	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	50	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	51	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3609	52	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	1	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03		untranslated		grammar-sensitive: 稱呼片段（man），代入同對話的 @SS1 模板，P11 處理	grammar-sensitive
+3610	2	conversation	49547872a664dd8e63283cdd747e9682229880a9111aaaa9a397c0458bbb0ae6		untranslated		grammar-sensitive: 稱呼片段（lady），代入同對話的 @SS1 模板，P11 處理	grammar-sensitive
+3610	4	conversation	09f17599389ecb5f5b8434fd56926402bbffd8fb231e558a54691bc31a1a84fd	那是什麼樣的魔杖？	draft		p10b-20 draft	
+3610	5	conversation	58f6d6e856e70f9d57e30fe50cbef8e1cc81ee719d357dcefd2dd0e93d3cd279	有，我想我身上就有。	draft		p10b-20 draft	
+3610	6	conversation	235a5e7e7bba2d322b8654fa77e59bb2ac7d8a020d55b3f91e1526d64768eacd	我沒見過什麼魔杖。	draft		p10b-20 draft	
+3610	7	conversation	a7e3f040c4627d77ff3dbed0189565f20142068b336a768597f1829f4f25cf17	它能施放火球。算是我比較好的作品之一。我特別喜歡那些火球的樣子。肯在這種小細節上講究的魔法師不多。後來我把它借給我的一個\n 朋友，我想她一定是用它把自己炸飛了。很可惜，你懂的，不過事情就是這樣。也許我該先確定她知道要握哪一頭。總之，它從那以後就不見了。你見過它嗎？	draft		p10b-20 draft	
+3610	8	conversation	4fb75f83985e55c0bb314b417dce33fcd4f68b4d52823d9d2ac6581277f4903f	有，我想就是這個。	draft		p10b-20 draft	
+3610	9	conversation	4efd50b82d45645fd69ecb21f6aa02630eb9598416cb36d17ffb08ab0e93c49c	我沒見過這樣的魔杖。	draft		p10b-20 draft	
+3610	10	conversation	5df8d2ba44809e367e4197d02a5f6ccd4f15aaaa48ef0f271492653cedac1fd6	真可惜。我還以為像你這樣的探險家可能碰到過它。你知道，落到壞人手裡可能很危險。你確定你沒見過嗎？	draft		p10b-20 draft	
+3610	11	conversation	df3a8e26414834e84a19327eed443e557ae7c09e2d129c4e1c8469dd691acdfc	嗯，這麼說來，我這裡確實有一根魔杖。會不會是你的？	draft		p10b-20 draft	
+3610	12	conversation	19248891d1d6f63dc0fdfb0975f5545fb4f035158d9056550ce06471ed601b92	非常確定。這種東西我會記得的。	draft		p10b-20 draft	
+3610	13	conversation	48b676e2b107da679512b793d5fd4cc4329f0c7c17a97cf6e0e3d1005b600b03		untranslated		grammar-sensitive: 稱呼片段（man），代入同對話的 @SS1 模板，P11 處理	grammar-sensitive
+3610	14	conversation	49547872a664dd8e63283cdd747e9682229880a9111aaaa9a397c0458bbb0ae6		untranslated		grammar-sensitive: 稱呼片段（lady），代入同對話的 @SS1 模板，P11 處理	grammar-sensitive
+3610	16	conversation	404cba15a4acdcfea85caa97d009b1042d20f0967c26f9a1abf59aecbeddf9bd	當然。	draft		p10b-20 draft	
+3610	17	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	再看看吧。	draft		p10b-20 draft	
+3610	18	conversation	7e925fa61f5057c58523663efa348efad3cd43a544cf749bef259d624d08aa50	啊，終於！可以讓我看看嗎？	draft		p10b-20 draft	
+3610	19	conversation	1082cad0ae797aa132eb37c716efb95b99ad37e1e2af459c3e76a6dad19f0625	當然，給你。	draft		p10b-20 draft	
+3610	20	conversation	ecd5d9d24cbe1458637aa2c008b3a23b8ee190855d87d550810a8bee3d6f0ca7	到底是不是你的？	draft		p10b-20 draft	
+3610	21	conversation	d9309d3727daba0a2c0c40ae983fecf73302632ab25b78f5dc423fb3b500c58c	啊。這個真不錯。真的非常不錯。不過，這不是我的。除非我弄錯了，這是柯瑞・康芬多的作品，一位非常優秀的魔法師。你能有這樣的工具，該覺得自己很幸運。願它好好為你效力。	draft		p10b-20 draft	
+3610	22	conversation	add7162277ef3f2b0d6cd0f955628899912cf5aa460f46538531e4cbf2339b54	你不願意收下它，代替你弄丟的那根嗎？	draft		p10b-20 draft	
+3610	23	conversation	e3551e44f90ac75c93234809b94733f34a7b83b433efd519135db81b03246586	非常感謝你。希望你找到你的魔杖。	draft		p10b-20 draft	
+3610	24	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
+3610	25	conversation	270eea7752c7f12c7c588983370a26100b489e29ba2d055a74a22d53a5f0fada	啊，我們又見面了。有我魔杖的消息嗎？	draft		p10b-20 draft	
+3610	26	conversation	d5d2004f064da36035fac149e20784b020d43e291725b1de152c958c548cd03b	那根魔杖是什麼樣子來著？	draft		p10b-20 draft	
+3610	27	conversation	c8c6c6b520e9b76c1ed70a92275464ceb8f9d8302e65d5588fee50ef18c6fd68	是這根嗎？	draft		p10b-20 draft	
+3610	28	conversation	259dc9c6704ffc17e39ee39d06707c0cf59ae32b6c244178a33de10fcd2ee754	我沒見過。	draft		p10b-20 draft	
+3610	29	conversation	c54cb11b46babd7e76a3720e1c2ec714d06ab5be4dcb290d1bd5f3d0f4e62f6b	哎，你不用這麼兇嘛！舉高一點，對，就這樣。不，恐怕我的那根好看多了。這根我看可能會把你的手炸掉。好了，失陪了，我得走了。	draft		p10b-20 draft	
+3610	30	conversation	e08637c1a1ac88f8bfaf65b9dbe0570eb70766d36973c470a74a22026ef61304	保重。希望你找到你的魔杖。	draft		p10b-20 draft	
+3610	31	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
+3610	32	conversation	c35bc1f0fc17c5b82aee96feb6d2c9df8ee22a69d3e5eb701dd18b310a9e705c	不，你太慷慨了。我感興趣的不是隨便哪根魔杖，而是我親手做的那根。不過，這麼慷慨該得到回報。你可能不知道，你這根魔杖還有另一個設定……好了。我想你會發現它更好用了。祝你有美好的一天。	draft		p10b-20 draft	
+3610	33	conversation	e3551e44f90ac75c93234809b94733f34a7b83b433efd519135db81b03246586	非常感謝你。希望你找到你的魔杖。	draft		p10b-20 draft	
+3610	34	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
+3610	35	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	36	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	37	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	38	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	39	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	40	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	41	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	42	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	43	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	44	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	45	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	46	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	47	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3610	48	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
 3612	1	conversation	f6a8e7d227e8738408e5cac5d5316c46a7f9680944d2a5350651ac7a91e5f5de	冒險者	draft		p10b-6 draft	
 3612	2	conversation	553c7d8088fbcae96a98d8c384975048c4f1d43cfc8d872dccb4f1430a208330	你好。我叫札克。你叫什麼？	draft		p10b-6 draft	
 3612	4	conversation	c41b50d068ed1fa47f0b7284b2e87d038fe62ab9448fcb04a3bd4826e6f0266f	不關你的事。	draft		p10b-6 draft	
@@ -4436,3 +4534,135 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3816	49	conversation	be793c24f51ab65d82be4cd571570a9ade5da8431767c40aa7e1dbb9fdfc18f4	你能告訴我通往惡魔的那扇門的鑰匙在哪裡嗎？	draft		p10b-19 draft	
 3816	50	conversation	4fdb332b6eb3323e1103054bb099ccf99039f01a6c2e54197f8243a82a7e68ce	我有些食物要給你。	draft		p10b-19 draft	
 3816	51	conversation	eda163da4601edb62b9a7097931ea312e61af4e36c8ebdf2e09dad34bf3480e0	很高興再見到你，不過暫時再會了。	draft		p10b-19 draft	
+3861	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	2	conversation	ab041c218cb0a6d3a5e38217849c0262eed6da2b1c34ae8f2421beab5b7f5d43	也向你 Bica。	draft		p10b-20 draft	
+3861	3	conversation	fc3e13cccee30f1f06ee92bd0ea637796978cfba24630720dbec459c3e98a4b1	你好，蜥蜴人。	draft		p10b-20 draft	
+3861	4	conversation	a4949e2c96de26681c9519749e57bfb362bbac2a8f40c89b24c35d1de111336d	什麼？	draft		p10b-20 draft	
+3861	5	conversation	4455feed7832de381a20aace07d050fae0e2c1e12a3e36db76260f19eb846da0	Tosa yeshor'click Thepa?	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3861	6	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3861	7	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3861	8	conversation	a4949e2c96de26681c9519749e57bfb362bbac2a8f40c89b24c35d1de111336d	什麼？	draft		p10b-20 draft	
+3861	9	conversation	4e83672faa38867cdcdad4fda57e81d44f0d5296bea3536638bf668108c933ac	Tosa 'click yeshor'click.  Tosa sorr?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	10	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3861	11	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3861	12	conversation	6646f562f04c399e10fe13b1e33db516e4e80f7159035a18753a7826faa5abe3	也許。	draft		p10b-20 draft	
+3861	13	conversation	55c3e5daec20a64dcc70fbed694d58b7b529e567f03b0c43f0d6ac23630f7c4e	啥？	draft		p10b-20 draft	
+3861	14	conversation	124ca802280399ea9296854a834b89a23bc5ad92f29051c277215c00dd15efed	Tosa yeshor'click 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	15	conversation	8156126566fd28e889421018ecd605d618dc1d7be3c66fd9c305224954afc3e1	我想是吧。	draft		p10b-20 draft	
+3861	16	conversation	cbcd746266165c6cf841b1d213219203535426bf8dd880ce7245dadfb3fca708	不，我不是。	draft		p10b-20 draft	
+3861	17	conversation	593320ee19156652a5903a4e59a84c855b8e9f77b4dbe82150092816e6e1c6b1	那是誰？	draft		p10b-20 draft	
+3861	18	conversation	bacd58feaae2dff7f7d455b9a786dfe7cfb023b5c39431b0453d36f6a9ea86dd	Isili yeshor'click 斯希薩里!	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3861	19	conversation	5a5ef3948b01f05016712a647f960153c67682f269851e2bef9cf6a1270da852	很好！你想以物易物嗎？	draft		p10b-20 draft	
+3861	20	conversation	aa481817a8501d247614663c507e28bbab0618a53afce212e89633bfb1f1ded7	那很好。請容我告退。	draft		p10b-20 draft	
+3861	21	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
+3861	22	conversation	fb5ee6e2261d9144e8005cfad1f1573742741cb0bb82e17ec0dbf7937fa7dd87	Tosa sorr 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	23	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3861	24	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3861	25	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
+3861	26	conversation	4cb2bddd0853b6f348a83aae396277ba9eba6db61b2fdc7c07a65d0dd1ad005a	Sorr Thepa!  Isili yethe tosa!	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3861	27	conversation	1213b300fc4f3e603395e70e086285ea4e33a7d95d3ac0e6afba9d479ccbee9f	蜥蜴人兇狠地低吼。	draft		p10b-20 draft	
+3861	28	conversation	f330716ccbace4c964a9550e30f05c6a015ee27abc38eafe891f5351e73619c9	我不是故意惹你不快。我這就走。	draft		p10b-20 draft	
+3861	29	conversation	f4ccbcdcbfaf4e58b29f62694622793025070efe5bbe40bb7f6531b50ef18eb1	你要是想打架，我很樂意奉陪！	draft		p10b-20 draft	
+3861	30	conversation	9680aa05cda41d24df9e2c12bc8d31721a96385b5209560b9c51a2ad51358947	Tosa thit eppa Urgo.  Thit eppa 斯希薩里.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3861	31	conversation	745aaea450d0ef8dafaa8be2639e86496dc402f0c83886e77678592b9bdc60f0	我聽不懂。再見。	draft		p10b-20 draft	
+3861	32	conversation	e1886930ef4335fb2a3a8a6a0cec13b34f8b83c7b7bdd706ac46d07ab3343251	Tosa yethe 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	33	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3861	34	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3861	35	conversation	810d7c3ca6aa6411102588f8636833035138a35f32f5e7b2df96d2ab2dc4d660	我不知道。	draft		p10b-20 draft	
+3861	36	conversation	49aa7e460a8a20e5be9746e2a885dbdd4e1b5fbb64c57484298f3414e6f37a27	Tosa sstresh 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	37	conversation	0adff56da4c96d106adeacd15750e179fadfd961d36779f75603fa0eed5aee24	我幫了。	draft		p10b-20 draft	
+3861	38	conversation	b23f6ac2c722aefe1c321ce473c90b82dad0931b87c9b4377eba063090894ba8	抱歉。我沒有。	draft		p10b-20 draft	
+3861	39	conversation	84e0e54fe03196f962aacc718f91a192a8dddfe1344ddc64db6cf12ee84801e9	請容我告退。再見。	draft		p10b-20 draft	
+3861	40	conversation	85b0e725bf76670c08025d68907ade4d4533a49b889aab75e3a2b7ac0a1d4557	Tosa 'click sstresh 斯希薩里?  Tosa 'click yeshor'click.  Bica.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	41	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica。	draft		p10b-20 draft	
+3861	42	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
+3861	43	conversation	48e3b360d20aa338e3708b051d669bce1517ea2ced777fbd1b8ba0625fefb468	Bica, yeshor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	44	conversation	85e8c528c93a6876e9219e3ffb1e4b5965e709f244f6ae44e60b905ce781728a	Bica，朋友。	draft		p10b-20 draft	
+3861	45	conversation	d3dc3b8f8ac89e7dd2bb2377de335b072988d0e7f7de987ce47729a1dc30fdfe	Bica。我得走了。	draft		p10b-20 draft	
+3861	46	conversation	35d68467aa3286331adba761b02341213341aee89896ffc6ce778716769a4ab6	Tosa thit sstresh?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	47	conversation	0648a1cf40426482603af9aaaf6c3a195145567da95963e835db6d32349268c4	是。你想交易嗎？	draft		p10b-20 draft	
+3861	48	conversation	6ac8a8e99a8a924ab34750d1299305f51ac954339ff41c0f46fc953fdc3baabf	不。Bica，我的朋友。	draft		p10b-20 draft	
+3861	49	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3861	50	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3861	51	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3861	52	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3861	53	conversation	5475b2b30073765fe31df2e60b665c3549aa779cf83d32ddf08817b93d5fcf4e	我要你把這些東西交給我。	draft		p10b-20 draft	
+3861	54	conversation	1ed33b3a7d1da6b4d57aa5751e098b9407fd8d9ed65b6e141569221c4b477ee1	我得考慮一下這個出價。	draft		p10b-20 draft	
+3861	55	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3861	56	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3861	57	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3861	58	conversation	ac324dcd5dde7dfae18a74b36ce4ba5f980bc678c6e90ba2147c2c44c5c47c47	'Click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	59	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	60	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	61	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	62	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	63	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3861	64	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3861	65	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3861	66	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	2	conversation	ab041c218cb0a6d3a5e38217849c0262eed6da2b1c34ae8f2421beab5b7f5d43	也向你 Bica。	draft		p10b-20 draft	
+3864	3	conversation	fc3e13cccee30f1f06ee92bd0ea637796978cfba24630720dbec459c3e98a4b1	你好，蜥蜴人。	draft		p10b-20 draft	
+3864	4	conversation	a4949e2c96de26681c9519749e57bfb362bbac2a8f40c89b24c35d1de111336d	什麼？	draft		p10b-20 draft	
+3864	5	conversation	4455feed7832de381a20aace07d050fae0e2c1e12a3e36db76260f19eb846da0	Tosa yeshor'click Thepa?	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3864	6	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3864	7	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3864	8	conversation	a4949e2c96de26681c9519749e57bfb362bbac2a8f40c89b24c35d1de111336d	什麼？	draft		p10b-20 draft	
+3864	9	conversation	4e83672faa38867cdcdad4fda57e81d44f0d5296bea3536638bf668108c933ac	Tosa 'click yeshor'click.  Tosa sorr?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	10	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3864	11	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3864	12	conversation	6646f562f04c399e10fe13b1e33db516e4e80f7159035a18753a7826faa5abe3	也許。	draft		p10b-20 draft	
+3864	13	conversation	55c3e5daec20a64dcc70fbed694d58b7b529e567f03b0c43f0d6ac23630f7c4e	啥？	draft		p10b-20 draft	
+3864	14	conversation	124ca802280399ea9296854a834b89a23bc5ad92f29051c277215c00dd15efed	Tosa yeshor'click 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	15	conversation	8156126566fd28e889421018ecd605d618dc1d7be3c66fd9c305224954afc3e1	我想是吧。	draft		p10b-20 draft	
+3864	16	conversation	cbcd746266165c6cf841b1d213219203535426bf8dd880ce7245dadfb3fca708	不，我不是。	draft		p10b-20 draft	
+3864	17	conversation	593320ee19156652a5903a4e59a84c855b8e9f77b4dbe82150092816e6e1c6b1	那是誰？	draft		p10b-20 draft	
+3864	18	conversation	bacd58feaae2dff7f7d455b9a786dfe7cfb023b5c39431b0453d36f6a9ea86dd	Isili yeshor'click 斯希薩里!	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3864	19	conversation	5a5ef3948b01f05016712a647f960153c67682f269851e2bef9cf6a1270da852	很好！你想以物易物嗎？	draft		p10b-20 draft	
+3864	20	conversation	aa481817a8501d247614663c507e28bbab0618a53afce212e89633bfb1f1ded7	那很好。請容我告退。	draft		p10b-20 draft	
+3864	21	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
+3864	22	conversation	fb5ee6e2261d9144e8005cfad1f1573742741cb0bb82e17ec0dbf7937fa7dd87	Tosa sorr 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	23	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3864	24	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3864	25	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
+3864	26	conversation	4cb2bddd0853b6f348a83aae396277ba9eba6db61b2fdc7c07a65d0dd1ad005a	Sorr Thepa!  Isili yethe tosa!	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3864	27	conversation	1213b300fc4f3e603395e70e086285ea4e33a7d95d3ac0e6afba9d479ccbee9f	蜥蜴人兇狠地低吼。	draft		p10b-20 draft	
+3864	28	conversation	f330716ccbace4c964a9550e30f05c6a015ee27abc38eafe891f5351e73619c9	我不是故意惹你不快。我這就走。	draft		p10b-20 draft	
+3864	29	conversation	f4ccbcdcbfaf4e58b29f62694622793025070efe5bbe40bb7f6531b50ef18eb1	你要是想打架，我很樂意奉陪！	draft		p10b-20 draft	
+3864	30	conversation	9680aa05cda41d24df9e2c12bc8d31721a96385b5209560b9c51a2ad51358947	Tosa thit eppa Urgo.  Thit eppa 斯希薩里.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3864	31	conversation	745aaea450d0ef8dafaa8be2639e86496dc402f0c83886e77678592b9bdc60f0	我聽不懂。再見。	draft		p10b-20 draft	
+3864	32	conversation	e1886930ef4335fb2a3a8a6a0cec13b34f8b83c7b7bdd706ac46d07ab3343251	Tosa yethe 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	33	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3864	34	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3864	35	conversation	810d7c3ca6aa6411102588f8636833035138a35f32f5e7b2df96d2ab2dc4d660	我不知道。	draft		p10b-20 draft	
+3864	36	conversation	49aa7e460a8a20e5be9746e2a885dbdd4e1b5fbb64c57484298f3414e6f37a27	Tosa sstresh 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	37	conversation	0adff56da4c96d106adeacd15750e179fadfd961d36779f75603fa0eed5aee24	我幫了。	draft		p10b-20 draft	
+3864	38	conversation	b23f6ac2c722aefe1c321ce473c90b82dad0931b87c9b4377eba063090894ba8	抱歉。我沒有。	draft		p10b-20 draft	
+3864	39	conversation	84e0e54fe03196f962aacc718f91a192a8dddfe1344ddc64db6cf12ee84801e9	請容我告退。再見。	draft		p10b-20 draft	
+3864	40	conversation	85b0e725bf76670c08025d68907ade4d4533a49b889aab75e3a2b7ac0a1d4557	Tosa 'click sstresh 斯希薩里?  Tosa 'click yeshor'click.  Bica.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	41	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica。	draft		p10b-20 draft	
+3864	42	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
+3864	43	conversation	48e3b360d20aa338e3708b051d669bce1517ea2ced777fbd1b8ba0625fefb468	Bica, yeshor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	44	conversation	85e8c528c93a6876e9219e3ffb1e4b5965e709f244f6ae44e60b905ce781728a	Bica，朋友。	draft		p10b-20 draft	
+3864	45	conversation	d3dc3b8f8ac89e7dd2bb2377de335b072988d0e7f7de987ce47729a1dc30fdfe	Bica。我得走了。	draft		p10b-20 draft	
+3864	46	conversation	35d68467aa3286331adba761b02341213341aee89896ffc6ce778716769a4ab6	Tosa thit sstresh?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	47	conversation	0648a1cf40426482603af9aaaf6c3a195145567da95963e835db6d32349268c4	是。你想交易嗎？	draft		p10b-20 draft	
+3864	48	conversation	6ac8a8e99a8a924ab34750d1299305f51ac954339ff41c0f46fc953fdc3baabf	不。Bica，我的朋友。	draft		p10b-20 draft	
+3864	49	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3864	50	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3864	51	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3864	52	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3864	53	conversation	5475b2b30073765fe31df2e60b665c3549aa779cf83d32ddf08817b93d5fcf4e	我要你把這些東西交給我。	draft		p10b-20 draft	
+3864	54	conversation	1ed33b3a7d1da6b4d57aa5751e098b9407fd8d9ed65b6e141569221c4b477ee1	我得考慮一下這個出價。	draft		p10b-20 draft	
+3864	55	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3864	56	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
+3864	57	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3864	58	conversation	ac324dcd5dde7dfae18a74b36ce4ba5f980bc678c6e90ba2147c2c44c5c47c47	'Click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	59	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	60	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	61	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	62	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	63	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
+3864	64	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
+3864	65	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3864	66	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-20 draft; 蜥蜴人語，保留原文	
