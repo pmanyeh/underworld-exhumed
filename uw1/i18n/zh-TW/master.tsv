@@ -1,9 +1,13 @@
 block	index	category	source_hash	target_zh_TW	status	context	notes	flags
+1	0	game	7aef6b5daf11cd5b77ffe9adfd3adbb513d7ec2444128cb3d3627029a3d71929	嘿，這裡是全部的遊戲字串	draft		p10c-1 draft	
+1	1	game	f5e7d231ead38cb3efb3c2c8dc168faa03c9305f210e5a89f527b6387842d5cd	哎喲	draft		p10c-1 draft	
 1	2	game	31d190a0704d9efed5116d57a04a58851200e61f0f37b9989eac7f8318288711	這把鑰匙對不上這個鎖。\n	reviewed	PoC role: scroll	PoC draft P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 1	3	game	307d72083a9c9dd4d04a6ce5328a1078233264e8268eedb54a791d1eed1776e3	那上面沒有鎖。\n	reviewed	P10A-B1 core system: key use (USEITEMS.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	4	game	0419f5cdc9840c9f6c6b8a006cc50c045af1a50556165c5288ff12cad5999f77	鑰匙把鎖鎖上了。\n	reviewed	P10A-B1 core system: key use (USEITEMS.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	5	game	c1423871b6aafb4c9ec8cd95c2ee839520b952396990ebeb4c5e841e46ff0c79	鑰匙打開了鎖。\n	reviewed	PoC role: scroll	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	6	game	bcd126126e11aae75f292c11d51f2544f9e8d844741854fbf58451fa4a711bcd	那已經是開著的。\n	reviewed	P10A-B1 core system: key use (USEITEMS.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	7	game	cfa49458ae37fef2f83451b6a906b3dbe5eaab173a3281afdbab4764cb16f501	把鑰匙用在……\n	draft		p10c-1 draft	
+1	8	game	24cc7fa172050163d413fd154a24801d01b8ad190a1128d0b974fd8dac07e0c0	你想試著撬開哪個鎖？\n	draft		p10c-1 draft	
 1	9	game	a0305c72d9ed747ebf245ed70541d6b51317353f9a76a05f7016e4fe838208fb	當你伸手觸碰那棵樹，它便枯萎消散，露出一顆銀色種子。\n	reviewed	P10A-B1 core system: silver tree	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	10	game	f7c16ea4ba55e218b2511efb25ffe8f331a837c5bbf22dbaa279f53ed91854fb	種子似乎找不到扎根的空間，毫無動靜。\n	reviewed	P10A-B1 core system: silver seed	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	11	game	f527b6fb1c4a146525cdfddbec56a4d4289d39fa4512973c345b933dd0690c30	種子消失了。\n	reviewed	P10A-B1 core system: silver seed	reviewed: 使用者確認（Claude 預審）2026-10-23	
@@ -71,6 +75,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	95	game	16ef222772ca9b7b722664588813f9aef66e82049416f4d0be097ffad4654454	那太重了，你拿不起來。\n	reviewed	P10A-B1 core system: pick up	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	96	game	87757b6ed2d7f23f3958d86afc731c16e3badccd131d00a7ba3e34d953b06de7	你無法拿起那個。\n	reviewed	P10A-B1 core system: pick up	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	97	game	bbe6f18fef13f79f4cccdfc422b9e29819007248b0dfe40e93e4b2865ef7ffe1	你沒有偵測到任何陷阱。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	98	game	9f61d122187f923bbc12e7d24b351f0cb0906f5f13d5b45f1f4af20489c702f6	你發現了一個陷阱！要試著解除它嗎？\n	draft		p10c-1 draft	
 1	99	game	50f474713805ae44853d126377ef74291dae38cdf82dd28b012df1f1878577ad	你釣到了一條漂亮的魚。\n	reviewed	P10A-B1 core system: fishing	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	100	game	a56730c7e9f18c520b04d28844964d64f38ed17ba91ea0fea4ac1a218c477c94	這次運氣不好。\n	reviewed	P10A-B1 core system: fishing	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	101	game	ee20629fb6c42e948cab1b743b9b3b2594e1e171356977901d2032658bf3d365	你不能在那裡釣魚。也許換個地方吧。\n	reviewed	P10A-B1 core system: fishing	reviewed: 使用者確認（Claude 預審）2026-10-23	
@@ -101,6 +106,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	127	game	c51f950b897bc329422b85776d25e4a6370438690ba23542bfe662bd622d1f07	你打不開這瓶葡萄酒。\n	reviewed	P10A-B1 core system: wine	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	128	game	d1bf9a3e35bfb24cb6c15111b041996890e455db5419e7e4ec3f509e0fc2e33c	鐵釘只能用來釘住關著的門。\n	reviewed	P10A-B1 core system: spike	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	129	game	32232cd82bb0713ce737242d9fa1c4e1781b4dced7e52c52f30ee850666999df	門已經被鐵釘釘死了。\n	reviewed	P10A-B1 core system: spike	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	130	game	40f3bd0691e0ce4819bef644bbea3ac62d5266ce0b9b522e8b2111485f3584bd	請選擇要釘死的門……\n	draft		p10c-1 draft	
 1	131	game	7878a714bee3bc12f0af3a7d2c530f54f12ed3c9a14fe9810a6cf759453981ce	這扇門被鐵釘釘死了。\n	reviewed	P10A-B1 core system: look at door	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	132	game	9c909d9d941db602f462ad873103919e78e3cb690563f6073f1a306cccb03624	似乎沒有任何效果。\n	reviewed	P10A-B1 core system: use	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	133	game	2ee3ddcbcd20c0bcab7c7f7b30ad1ff0883edccb73d832a8e8fe3908496d16f6	寶珠被摧毀了！\n	reviewed	P10A-B1 core system: Tyball's orb	reviewed: 使用者確認（Claude 預審）2026-10-23	
@@ -219,6 +225,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	278	game	33717247b699aac6fb0d0faa5068440d7eda95614bdef5d70c0631ba5a00f59a	一陣撕裂般的聲響充斥四周。\n	reviewed	P10A-B1 core system: endgame	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	279	game	77e0326733c6e5ee4f20b24eaabbd1578662ea6d0d5570a60bb9ee01e22fe090	破帷者被拖離了這個世界。\n	reviewed	P10A-B1 core system: endgame	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	280	game	f3e150833d9cf8136d3853581ec4d43b8d1693bc2c8b4310af94f26564544842	你被吸進了月門……\n	reviewed	P10A-B1 core system: moongate	reviewed: 使用者確認（Claude 預審）2026-10-23	
+1	281	game	76ff9dfaacb096b1e40d70fb11794a28ed06d5c3fc54535faa9cd684a57214b7	試玩版無法儲存或讀取遊戲。\n	draft		p10c-1 draft	
 1	411	game	a7937b64b8caa58f03721bb6bacf5c78cb235febe0e70b1b84cd99541461a08e		untranslated	P10A-B1 audit: composed sentence, not direct	P11: ordinal, INTERACT.C level/day status lines (1:65+n+1:66, 1:67+n+1:68); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	412	game	16367aacb67a4a017c8da8ab95682ccb390863780f7114dda0a0e0c55644c7c4		untranslated	P10A-B1 audit: composed sentence, not direct	P11: ordinal, INTERACT.C level/day status lines (1:65+n+1:66, 1:67+n+1:68); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	413	game	b1e99324505bd32da0e1f85dcf5e19a09db0481e8a15f62c41eb320304a8e927		untranslated	P10A-B1 audit: composed sentence, not direct	P11: ordinal, INTERACT.C level/day status lines (1:65+n+1:66, 1:67+n+1:68); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
@@ -320,6 +327,76 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	509	game	15a8265fe16f7121f11b864a0032aa550885bd2c5a3442203d2fe59b21ec216a		untranslated	P10A-B1 audit: composed sentence, not direct	P11: ordinal, INTERACT.C level/day status lines (1:65+n+1:66, 1:67+n+1:68); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	510	game	9930dcd24a976979098da5cb4e41c31653827d430ddf59c9409652db3c48b993		untranslated	P10A-B1 audit: composed sentence, not direct	P11: ordinal, INTERACT.C level/day status lines (1:65+n+1:66, 1:67+n+1:68); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
 1	511	game	ff67070ca54b498c7a051f8721b05575ad56d60a271eff29b78cf1a29eb02646		untranslated	P10A-B1 audit: composed sentence, not direct	P11: ordinal, INTERACT.C level/day status lines (1:65+n+1:66, 1:67+n+1:68); the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.	grammar-sensitive
+3	0	books	92498841397273b396687a0e6238b7b398566583355188f6b258ba134ee5abe8	書頁是空白的。	draft		p10c-1 draft	
+3	2	books	72490e8d2f08b186b688157f1cba32111eb38344aba77d9728c2c38364edfc6f	我最親愛的阿弗瑞德：\n帶著我不會忘記你的這份心意進入深淵吧。男爵的公正看似殘酷，總好過絞刑台的繩索。無論多少年過去，我都會等你回來。永遠屬於你的，\n                 珊卓拉	draft		p10c-1 draft	
+3	3	books	987325d5f90016e26241d5c1523bb77fa46e5fac669f4a1ac4c6d4bcfaac36a0	那些笨惡鬼族給了我需要的工具；今晚我就要逃出這間骯髒的牢房——布拉吉特	draft		p10c-1 draft	
+3	4	books	e57d42b7d360759569d064db23105e93252cfe142053f7928e68d949dca11814	Uus Por 可以跳得很遠	draft		p10c-1 draft; 符文保留原文	
+3	32	books	b93539da60bb5f9b08060350c4c94b23205b1bf8b0994e73aec25f850b074960	這些藍圖根本看不懂。	draft		p10c-1 draft	
+3	33	books	5f02dbf1fc92dcd0a6d37a3473c584ef62ac6c563d9e97ebc94c548fd4f5856e	念誦祈禱語 RA，能讓你的攻擊打得更有效。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	34	books	351352ccaeed1e8282de4253740cae93a74d243306bdf0faf8301b60cfa9a48d	想要眼力更好，就用祈禱語 LU。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	35	books	969d85b4133bcd647bb6c6c9d5331098bed0ecbd6e513fa815c42b09cfbda405	據說念誦 UN 能讓人談成更好的交易。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	36	books	d7fc340d0512064d3a86c4b5f2c6ee78886e497352d7dd1502aa73ec8f1194cb	想更準確地估量一筆交易的品質，就念 HUNN。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	37	books	b9de1d9751de34c4b9379c31ec2a5fd7505bea3a2bc899269534d1821fbbeb0f	從耐擊術中去掉 Bet，能得到更好的防護。	draft		p10c-1 draft; 符文保留原文	
+3	64	books	b680f32f2559b2bb4d3cc8319f7a94c10f62acd91e1f86d6daadfdf3d2210e3f	到儲藏室後面找盜賊的藏身處\n	draft		p10c-1 draft	
+3	65	books	f8dc90f84baa4a9e78d94510e4da46727d1f8a2f55be72e0587eb0f6d7a0c0b5	試過這根拉桿了！很多 R……\n	draft		p10c-1 draft	
+3	66	books	8c3c7986c08bece710cd70a0595a6a6800869c94c696adc8c8402fef814c40ad	可怕的那些斷劍柄有。往東南找劍刃。牆後面，秘密有。\n	draft		p10c-1 draft	
+3	67	books	69caf4bfa0cb596609b3562bfbc6ffbd509a23fd4c88f6968e9b177277e86734	歐西卡：\n  維繫蜥蜴人族聯盟的重擔，落在你的肩上。請別讓我失望。\n    凱布勒斯爵士	draft		p10c-1 draft	
+3	68	books	23f1ab6ddafccdb40cad8377c9c99223c0ba3ec5e42a79487f58b3c4d6ddeb8e	念 SAHF 可以增進追蹤能力。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	69	books	ca0adfa04ac185b5d6e9c4774c5e8ccac7582a2e039e46eea71c97cd3c7adc5f	流浪者\n   感謝你很多，我能說蜥蜴人的符文法術。要走在水上，做 Ylem Por。	draft		p10c-1 draft; 符文保留原文	
+3	70	books	83f3aee7278eda81769891ebda94f5883f9cf85b39827c28334b695653c98d45	念 FAL 能增進敏捷和翻滾。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	71	books	57136de1b83078901ce19023815daa23fd92f5c1091d22753dfeee527c4065f3	想游得更好，就念 ONO 祈禱語。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	97	books	d77ef23596e3c59372830c02fe8248f12bf640979f7cee9d86c22bace7a36869	一本幫父母嚇唬小孩的書，書名是《蒙丹的反擊》	draft		p10c-1 draft	
+3	99	books	aae69df8c9683a996a34495ab8d2d23ea882ec415e32a8f416631075e7685bab	一篇論釣魚技巧的短文，包括拋竿技巧與魚餌的選擇	draft		p10c-1 draft	
+3	100	books	1c132acb377323573509ac93052880f4abc05b74044cebda6644d18c40f7d078	一位預言者踏上觀察洞穴巨人之旅的日記	draft		p10c-1 draft	
+3	101	books	2f47ed4e360dc489bdca79b201d6ffbf7f876efc2813b7f0d52addcf355e5cf7	洛恩的文書如下。在我們開創的日子裡，我們必須團結一致，不讓小小的嫌隙妨礙彼此的尊重。	draft		p10c-1 draft	
+3	102	books	d823fd580fe618b8ec217f3081f4154dab5e8e807bcd486d8458cfa37b0e5490	迷宮藏著許多房間。據說其中一間通往騎士們曾經使用的廳室。	draft		p10c-1 draft	
+3	103	books	24662a59fd60eaa9853780f479386353781e966f5313cb1f411d5f501eef4148	洛恩前往洞穴巨人的故鄉，希望在那裡建造一座神殿。	draft		p10c-1 draft	
+3	104	books	7635e672078d903a546beadab1015af08bb6c241204ae660766a1b9ad693009a	迷宮被一把現在被認為已經遺失的鑰匙鎖住了。	draft		p10c-1 draft	
+3	105	books	cc2f655f5ec09b3ef824b6c7c0e3b7153d9cf97081685a18408fd64da5f24b0f	我，阿姆瑞克男爵，在此判你放逐深淵。明天早晨，你將被帶到洞口釋放。若你有朝一日歸來，將被視為無罪。在那之前，在這片土地上，你都是有罪之身。	draft		p10c-1 draft	
+3	106	books	4495c0800c86de0a83fb0d08d4fef86194652f1cf5f2cee22fe8d8981643e4d7	拉克希——\n 寫這封信，是想跟你商量，能否請你幫我一點小忙，這最終會對我們以及整個深淵都有好處。要是你能讓你的幾個手下替我辦些小事，我會欠你好一陣子的人情。\n 附註：你的答覆直接告訴我的信差就好——他可以信任。	draft		p10c-1 draft	
+3	107	books	517b65d2bb876a43627a353a1d2e729db1dd6f2d1e29e4f4288eae5dd53b196c	公喜，塞薩爾，你保户我們，真是夠力。多些	draft		p10c-1 draft	
+3	108	books	5b041fe314860ce285c015f245853386fe003de1bcbe5cd69488ee57edb90b58	一首流行的洞穴巨人戰歌的曲譜與歌詞。	draft		p10c-1 draft	
+3	109	books	3637f35e41211d09307879c52dee9e0bdbd507317aeed099b45c25aba32c77bc	一篇悼念英格瓦爵士、令人動容的悼詞	draft		p10c-1 draft	
+3	110	books	1758d5bc381387313ec075337c528da2718f628113281948408a34550b828511	榮譽證書，頒給崔許・溫德，表揚其贏得蛇堡四日神射手大賽	draft		p10c-1 draft	
+3	111	books	904d0d116bd55fe483a6f810128c0770b5f95d9e433c8edc03efc7ab9df64c14	終於，我能施展詛咒術了！現在，得想辦法離開這個坑……	draft		p10c-1 draft	
+3	112	books	810449d09b0a2258c2ec531f73393cb3df280944ace3533dbeb5979373e4f826	牛蛙之謎有個簡單的解法，不過那個地方可不只表面上看起來那麼簡單。	draft		p10c-1 draft	
+3	113	books	32317bc5c5ac6bb1914af51360a65a67cd642a5ccacd3285d45a7bc36391fc6e	北方的高處，有一個隱藏的對應之處。	draft		p10c-1 draft	
+3	114	books	f68eaf9058d81170594d6e7aa6035a208b59e015823d4f6421f7d18d6380ecc4	要進入看不見的地方，就穿過看得見的。	draft		p10c-1 draft	
+3	115	books	45d4b831395d73414130211babb3f0dc89f66f1e53f86cd80d5c79c03cf5840a	做事寧可一絲不苟，也別粗枝大葉。	draft		p10c-1 draft	
+3	128	books	6e92ee0630fcdbdbb381e4f929b61431e10f9dc024d2d73cc118b2b917a7d719	盜賊指南 第一冊\n開鎖——大聲念 AAM 不會告訴你的事	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	129	books	11eb14f93b7538b373eecc34746fa8f7f8a52d8fb936131d7ab84fe752cac6ce	盜賊指南 第二冊\n潛行——念完 MUL 之後該做什麼	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	130	books	7e8b90d6e6570046e5f2af65edc6ad316aa0b3d7d13b39a8f596e7a1920fb424	盜賊指南 第三冊\n攀牆——是藝術還是科學？	draft		p10c-1 draft	
+3	131	books	dbf419840eb0f2558e6bb448e889e3cbf6461d32760f0ed4fb8984b7373c3629	盜賊指南 第四冊\n陷阱——超越 ROMM 的實際門道	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	132	books	4b9e0cd796cc22745211b59727f598cb724d4f6394cd531f64f87e2b99c1865c	An Corp Mani 能對不死生物造成重創。	draft		p10c-1 draft; 符文保留原文	
+3	133	books	cab15b4c0fa0fb94023fe673b9e944561c6f025ed99affdcbc45aa5f35cfff8b	念誦 LAHN 有助於鑑定自己的物品。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	160	books	a222bffc1e6fdc98b54cb0e225c8fba1d3a5360499857fc7d24112ac4a258006	論符石的特性	draft		p10c-1 draft	
+3	161	books	ec539cd6af410d05ea983b9ef7addfd39c1d614e2c3548ea532d24d9832dce59	月門的起源：其他世界是否存在？	draft		p10c-1 draft	
+3	162	books	4a58e89938ab4bcba4385e9d0b12df474a9e9b89d2e7eeb07dfdaff1cd4ae2cf	曼德拉草根的危險：不為人知的真相	draft		p10c-1 draft	
+3	163	books	86227eb59e0aef7e9aad4dbea956bf86460dbb65e8fc1b54d1e737a8d0e8a2b7	見習魔法師的惡作劇大全	draft		p10c-1 draft	
+3	164	books	47fbe436ef26210dec5582fcc22148e40882c7f3787ff728638d2420e6d27bd6	不列顛尼亞史	draft		p10c-1 draft	
+3	165	books	3f70cc8b806a31b4ca55e33e6c4f9972ce5654079931b63f8d4d542a37755726	人類語與石像鬼語辭典	draft		p10c-1 draft	
+3	166	books	74b7ea337fc5b44d85aad36bb145ea6b9bcd57a840cf35277b618ef458772863	意想不到的組合：探索新施法材料	draft		p10c-1 draft	
+3	167	books	f30142eaad1d4a35b1b61dcaf5571a397fe96a62d1084ec2dd31bf79f95fff6c	不只星星尖帽：巫師必知的時尚	draft		p10c-1 draft	
+3	168	books	c77cced8890af742b1106150616389b10e7b0cfd0ff05f805d3b005bf974f08a	施法材料加熱製備研究	draft		p10c-1 draft	
+3	169	books	965aeca1eaea5a1eed599dbf3d674d191d3b71dbf73cd1b3aff86749e75adc8a	火山：通往其他世界之門？	draft		p10c-1 draft	
+3	170	books	6c11fc9abb076f388843ac32a75d4afbce03fcf3dd88d93f33946785565b3d1f	要怎麼召喚？Kal……Kal 什麼？沒有 Xen 符石……也許是 Mani？必須在受控的環境下實驗……	draft		p10c-1 draft; 符文保留原文	
+3	171	books	c07b6f5e3019d601a4ac956a873c1809440763e3b390b571fc636f406903c5c6	一本以外國文字寫成的書，書名是「Folanae Fanlo」	draft		p10c-1 draft; Folanae 是暗語（伊洛莫 3771），保留原文	
+3	172	books	3e3990bd1ae11b564d3574992f3d0af5709e1b224daaea564822577cbf45e254	真實之書，月光城的雷赫斯特著	draft		p10c-1 draft	
+3	173	books	e99865e274c1b8dfae677b4c6c38b6f3cac9b0848552d3f964872defc9b2ee3c	一本書頁被撕掉的大書，書名是《欺詐之書》	draft		p10c-1 draft	
+3	174	books	6ca03cb4ddbc88c3c0cc3f3c6f4a128ca829d3d896ee39fbb7467dceeab74e44	許多魔法師發現，IMU 祈禱語增加了他們的魔法耐力。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	175	books	79dac7272ea2d174904373329835b90a18ed1d24c8d7fedf5a26f2189da80e54	SOL 祈禱語：增強法力的捷徑	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+3	192	books	d8841812da196cbc536b8e3604fb16df540ef5b3341740d413180f59d40ff039	決定去探索礦坑。一定有辦法繞過迷宮。要是有辦法越過熔岩坑就好了。不過我的地圖顯示，這一帶一定有一扇暗門。我現在進去了……	draft		p10c-1 draft	
+3	193	books	8a58b43604dcdb584501aa344e5e5dfd809b46d559dc9f67fa631b4f8e4f8cc2	我現在被困住了。我不敢從來的路回去，也不敢闖那些洞窟。那麼多可恨的死物。要是我早知道這把鑰匙能打開熔岩坑另一邊的門，就不會落到這個地步了。我想我就休息等著吧。也許我的同伴會找到我……	draft		p10c-1 draft	
+3	194	books	7c9616c406c0986def739e3460f08470c8d037dff7893c3e46de1414faa91e63	難以辨認的符文，盯著看久了會讓你頭痛	draft		p10c-1 draft	
+3	195	books	89445b1a95a5b4bc1e5d6efebcff64b3a8592ba1b98bd4da31eb8228c366fbae	記得在第 5 週期到相位室與 naweohkx'o 會面。	draft		p10c-1 draft	
+3	196	books	d90c5fd54b4db4e72b390d073fc50b25e318cc1a9de97080a0e1efa33ca10273	In Lor，Bet In Sanct，Ort Jux，\n In Mani Ylem，Sanct Hur，Uus Por，\n Syn Flas？Tor Mes？	draft		p10c-1 draft; 符文保留原文（Syn、Flas、Tor、Mes 不是真的符文，照原文）	
+3	197	books	8d173f3557a997df38c0d2ec09bf43e96108480df7f1bd25c1d610821db7bb0e	加拉蒙，原諒我！等事情結束，我會讓你復活。	draft		p10c-1 draft	
+3	198	books	ec37be0a9d6824f322b4f36c29d492aebb092a03a9045cdf17f3c41750dd3fce	惡魔召喚與控制：理論與實務	draft		p10c-1 draft	
+3	199	books	9367fc7df392b36a63f845ad3d008112feed2b57914207014bd5104a7bf2ff18	論復活的過程	draft		p10c-1 draft	
+3	200	books	a86514525836085d72d3ec460219ae15bddf8612c44c5459608c077c26389c1a	地下城設計與建造\n 杜加利・斯寇著	draft		p10c-1 draft	
+3	201	books	7ca0d354b2aacb0f27e2a34302e06b35568b41394272ef94e628dfa9097388cb	勒布朗：霍雷修已經探索過熔岩坑了。他現在在西北邊繪製那一帶的地圖。他回來後會把兩份都寄給你。	draft		p10c-1 draft	
+3	202	books	d9a237d4e05e28151e33297ad22ca2aa65e458f793916acaf80a28fe99c19951	深淵之謎	draft		p10c-1 draft	
+3	257	books	5043529a46cacbec277b6910e82e9036f9a459abac6380b146eb8c6a0f7d475d	這份燉蟲肉的食譜需要波特酒、一朵綠蘑菇、一隻腐蟲屍體，以及一個用來攪拌的碗。\n	draft		p10c-1 draft	
 6	384	spells	0ef7c11a8b4117a452f626c5a294310e534a5d010b54906f21374e91a7d7f4fb		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
 6	385	spells	71a0d6109cf22a67b32a6f719e928066405ed0bc965b9f0528bdc5a1a7dbec6c		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
 6	386	spells	03a0beaa38ee0bf08b0d777424f080ea40892cfd774048fd838e63916c252a0a		untranslated	P10A-B1 audit: composed sentence, not direct	P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).	grammar-sensitive
@@ -344,6 +421,118 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 7	0	conversation_common	f71e90d787d4406d805af3d4fe4a87144cc4410d8981825902c66fcdd95622a6	你無法與那個對話！\n	reviewed	P10A-B1 conversation system: talk target refused (CONVERSE.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	1	conversation_common	d0a21149b0b2ef0822a85bbc671dd6803c35b38e25762f0f956c65fd25593f19	沒有任何回應。\n	reviewed	P10A-B1 conversation system: no response (CONVERSE.C, BABL.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	83	conversation_common	6e2438a46d02f906a83dfef80fd9d898f2faf4ddfbd7904b7b292cfa27aad77b	布拉吉特	reviewed	PoC role: npc_name	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+8	0	writings	a135540ebb60551f6e9d0067854f5a7c194985c3204d8934ccb242f254c04b1c	某種難以辨認的東西	draft		p10c-1 draft	
+8	33	writings	5567a9a6f465a6f03c2a6010c8450dd176389aaf9008c0079fd9921188092b6d	加拉蒙的空墳	draft		p10c-1 draft	
+8	34	writings	376ad138666ba6b5ef2cfab1508e26986c98b1939b8a70c977e6c1427c9b5b32	加拉蒙之墓	draft		p10c-1 draft	
+8	64	writings	4b0c59f0b424db19937bb2a30f93babc75a07ff532e48db37ac17285a911958d	我們用盡各種工具攻擊這個入口，它卻連一根頭髮的縫都沒有。它根本無法攻破。因此我們只好認命，死在這個地獄般的坑裡。——艾爾斯莫爾	draft		p10c-1 draft	
+8	65	writings	cf0c831bc80155cb4613c20e1b031412b6eba2e2309cd8af6efb4918e5272efb	喔，疲憊的旅人，飲下這些水吧，感受新生命流過你的血脈。	draft		p10c-1 draft	
+8	66	writings	a10c499789262d238fc6bd1d96da74a6503cd4bd89329070aac9bfec5a4e1afd	此處長眠著建築大師柯里亞努斯。他長年辛勞，要把深淵改造成迎接凱布勒斯殖民者的家園。工程尚未完成，悲劇便降臨——一塊石頭落在他頭上。	draft		p10c-1 draft	
+8	67	writings	053d1d13cd4d1bca9ac6f9fd02a9a997bfdcc72d2bfd1c56727a478a56b2c486	此為大階梯，貫通深淵所有深處。——柯里亞努斯	draft		p10c-1 draft	
+8	68	writings	c0d6b9435235b453aeaba97ab0198cde0261be020e775d37518c22d932451118	種下銀樹苗的種子，就會長出一棵新的樹苗。作為這份生命之禮的回報，當你此生終結時，你將獲得新的生命。	draft		p10c-1 draft	
+8	69	writings	d208c033daaf9ac531010914e7a83a0144027eb6286323d98f51408591573145	禁止進入	draft		p10c-1 draft	
+8	70	writings	7dc76b0fd08c28348686f57aeea41e7de8b2eff961e830374d001ec773951f7b	追求戰鬥中的榮譽與勇氣者，念出 Summ Ra，勇氣的祈禱語。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+8	71	writings	a483658088cb1f4eeca23ef6399f08bfdc18be77b3bc1dd50e1d3a2c02d16400	追求神秘技藝者，念出 Mu Ahm，真理的祈禱語。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+8	72	writings	cff31805588076a3bc6e79d9b3005205db0e535de9ce947e38ec76914a3faed3	追求精通實用技能者，念出 Om Cah，愛的祈禱語。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+8	100	writings	d277c1d14825ece17803bec30314667e32ccf05a4822080ed8c1b8a9716bc1a1	蒙多爾的住處	draft		p10c-1 draft	
+8	101	writings	1ed1462603944fdf7a8abf89e7ac7ab50a6e825d71625985b35388679a03aefe	柯比的住處	draft		p10c-1 draft	
+8	102	writings	c9e62fabaf9b25c6fd9b1e1cb4eac27d607c694bc30a35878a3041cc16436a94	建議戴頭盔	draft		p10c-1 draft	
+8	103	writings	c3f3bc2a7da49a3bb3aecbc03263be83d454bbee1397a3f7509fb94a1a4999a3	礦坑入口	draft		p10c-1 draft	
+8	104	writings	ea267848e4dfeeb392d596deb6e93f2365cfde42e979b2b1d83ac425ad28dd4a	南支線（往夏克）	draft		p10c-1 draft	
+8	105	writings	d335adfe69c8cbf5ef16063e3f9fea64a28570d9a55390cf9dfa02be46ebe485	北支線。小心怪物！	draft		p10c-1 draft	
+8	106	writings	278932b1ebb3bcb0e90dbc194971d9bbaaf1fa1b0391250590a4657c20369728	前方礦坑不穩	draft		p10c-1 draft	
+8	107	writings	87da61794633067a548cf3e4d4a22f8bc514aa8011e1c370d5c63965ce419bc9	警告——危險暗流	draft		p10c-1 draft	
+8	108	writings	73f86690b3eb71dfc9c93c4d72ee7e45a00ca9486683213c18b884d12d5c3c02	補給室。請自由取用。	draft		p10c-1 draft	
+8	136	writings	1cbe7aa76d140e5007dc514a9bc7dc6b40db9c0b85356fcea981a3637cd3a37f	左 右 中	draft		p10c-1 draft	
+8	137	writings	553c0407e54b355a15cae2393ea0fd24a16afcb6bd9c0707ff6cdc393d740f3b	儲藏室：東	draft		p10c-1 draft	
+8	138	writings	a100fea38bc55da298a39213fa22720450d58201e374585994ed952fa3bc1ce1	儲藏室：西	draft		p10c-1 draft	
+8	139	writings	b24822f4400355bf85b16d2d2ea161d59df399df01d6a9e9707ac80c26ee5115	ORA，徒手戰鬥的祈禱語，能幫助手無寸鐵的人。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+8	140	writings	fcff9e123c8045c0d16d9fdd9681bccc2fb4687e78247267908b2ec6e412404e	要保護自己，就用 ANRA 頌詞。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
+8	141	writings	898d4ff5aa1f61e29ff1cd4bacf0daa3107941cb26f38260b96b07a41a620207	去問尚克利克那個瘋巫師的事。	draft		p10c-1 draft	
+8	142	writings	31df3d96f5a78fb8a81228e821700c1ded908610dcb2afc89140b0e7c6731feb	魔法水晶能揭露隱藏的古墓與怪物。	draft		p10c-1 draft	
+8	143	writings	93e07dd21eda7a0c2f3f9d0d11466f8d36a089078deb6fad636d1c580e13fc0c	山岳族夏克：武器大師	draft		p10c-1 draft	
+8	144	writings	519f42888e33e936b84c1acc0291a7fc4b416bf4b2339b60008092c31cd3a492	使用泉水來治療自己。	draft		p10c-1 draft; authority-ok:Heal（Heal thyself 是治療自己，不是法術「醫療術」）	
+8	145	writings	5a78272d3e4f8afff5bbefd3d32f897935e38962417ce7c908c701d6a6b30578	湯姆愛茱蒂	draft		p10c-1 draft	
+8	146	writings	4a94acc7354d253aef86e2967c4f5db4ff3ce78af5dc555c10e8dd6dc457b113	前往深淵的最底層，再一路殺回上面，就能找到你堅毅的鑰匙。	draft		p10c-1 draft	
+8	173	writings	40300e29dd8cd84937a0a24ea0e0869fb2ba214e857088f5fbb49dd70d58d9e8	歡迎洞穴巨人	draft		p10c-1 draft	
+8	174	writings	24c852e406b46375fc97ad7574a26f0fc05f4df4d3e5045329a3f9f8cae99abb	由此離開大廳，進入洞穴巨人的領域	draft		p10c-1 draft	
+8	175	writings	311700437a371211cf3aa31b08419b73c83de4c4a59d5bd06b8144e4b23844d0	由此離開大廳，進入騎士們的領域	draft		p10c-1 draft	
+8	176	writings	ef128f649a0b9b9c7edf58070e20d23ca6bfa4feee70a44805c6ef5a372bef27	大階梯	draft		p10c-1 draft	
+8	180	writings	d273ed250d748c2826499c5e8e73aedf073145781bcc543fbf3f8eeda1838437	右：總辦公室。左：檢查站。	draft		p10c-1 draft	
+8	181	writings	413f2918aad6010d3a251bccfb151005455918be24bd964b69771c03f6ba90a9	洞穴巨人觀察辦公室	draft		p10c-1 draft	
+8	182	writings	90f3a773feb40af401799ef804de8ec0fa49d8e5cc4ca0d010b81dd682cadf39	財務官	draft		p10c-1 draft	
+8	183	writings	54aa9f7df3de3a4763ac3888327f720bc3b497d84aac4ff9947864b9d9ea5234	副官	draft		p10c-1 draft	
+8	184	writings	635c4618f0a4975b2338a7b27b48d0f5242fc5d7de1a08a1d5d4487e983c719a	軍械官	draft		p10c-1 draft	
+8	185	writings	948e5af905857944a40fe331cc922d2cc069ce81754bee31519bbbdaca4175da	衛兵	draft		p10c-1 draft	
+8	186	writings	bae7c95ffe6be483566ce992c4d37dc3e1617666c980dde4aa0c29c994eb03d6	多納・鐵拳的住處，安卡十字騎士團團長	draft		p10c-1 draft	
+8	187	writings	7a1ee270f0473c4f02a6dc993a4cfdd9641f5dce5dd6eb1cf2d7bda9e84dc268	前方為警戒哨所。請做好準備。	draft		p10c-1 draft	
+8	188	writings	e4ce72ce6df34b2de6176dca200d9bb3b491f934ef10b8d917bd2eefcfe68dec	儲藏室	draft		p10c-1 draft	
+8	189	writings	de4428ab4bfadeee8bf47bd0c7dafc167344d5fe6c8a73fe186dbaae1e5b87df	武器庫	draft		p10c-1 draft	
+8	192	writings	75c1009ba04b9aab486df5f4e9ca0aaf39dbc321d1624e23c6b85ad821d0f047	此處長眠著英格瓦爵士，安卡十字騎士團的騎士。	draft		p10c-1 draft	
+8	208	writings	046bf383c4b44c911a305b41a39af14c66a4ac6ad86563b93ad8c136dd1581d4	大冥河深淵墓園	draft		p10c-1 draft	
+8	209	writings	e8b7b52ac8314492c2c5ee66272f67d0d7c5a3159d82ba82813871db071c1145	凱布勒斯爵士長眠於此	draft		p10c-1 draft	
+8	210	writings	02da09544b5c105f5d0dbea4b9c8f4b1ffba67219b550b66ee1277cfdf2d8eab	泰瑞爾之兄加拉蒙長眠於此	draft		p10c-1 draft	
+8	211	writings	871889406b6791d4e2e18608d1b3979790766ec325d86cf30d8c53e2417a49b2	上議廳	draft		p10c-1 draft	
+8	212	writings	5733186e4d5cee53b59a5509c36ea148eb8c37a6f0cc600d89329343d10f8eb9	僅限衛兵人員	draft		p10c-1 draft	
+8	213	writings	1e8a0fc877dd52eb0e02935c972ecdc22ec32ffcdcc2f66a724b0d07b9c00f09	美德神殿	draft		p10c-1 draft	
+8	214	writings	936302bfde2e87ba465aec94ad882f3393f4b0649ec191dc3f6cce44e7ce156b	此處長眠著諾蘭特，曾為爵士，已被褫奪頭銜。他偏離美德之路，冷血謀殺了年輕的恩迪科特。	draft		p10c-1 draft	
+8	215	writings	e049cddc5b84bac58b36d927b3a176f11ad1a6255ef2fe301424268db6b5490b	此處長眠著諾蘭特，因恥辱而與他的騎士團分葬。	draft		p10c-1 draft	
+8	216	writings	64a0490d11096ca9293895773242880d400b84d0e210cdfd1367276f7f43e661	礦坑調度室。僅限調度操作員在場時進入。	draft		p10c-1 draft	
+8	217	writings	e97abde6db25f623c24884c45684ba453081444a69f5ebd23c21372d21055b2c	傳送門鎖。僅限礦坑調度操作員。	draft		p10c-1 draft	
+8	218	writings	3d3b584684152a4fdc2c5d43a3a008e2afa53fc1b91bda3e7dd3678800d07ae3	傳送門控制	draft		p10c-1 draft	
+8	219	writings	d97cfaa5852c3597d8c09dc627d5d714349d6e761e308cf1464eb16f69c6eecf	出口走廊	draft		p10c-1 draft	
+8	220	writings	a0540d6c89ee33cb26929ce2b6a0180ddb0284baedd62f3bf4e9e49ed77cd05c	此處長眠著凱布勒斯爵士，他的努力在無和平之處創造了和平與和諧。願他安息	draft		p10c-1 draft	
+8	237	writings	8953f29cc3535be6c570925482b8e8368c05345df9c18b0d7adbe075a0899188	此處長眠著一位已不在人世的人。除非你想與他作伴，否則不要進入。	draft		p10c-1 draft	
+8	238	writings	b297f70f4f548401a22dd7a059bdf89a75e26bb6cedeb9a6f9e64a9abfead740	雖然深淵再也不會有石像鬼族居住，我們仍感謝他們所做的犧牲。	draft		p10c-1 draft	
+8	239	writings	34e572c9c7d0347e6481f148c4a661a43e95b405fdcd6c31e4021c0fda6d2a25	此處長眠著深淵殖民聚落建立不久後，死於大瘟疫的石像鬼族。他們為改善深淵所付出的努力，將永不被遺忘。	draft		p10c-1 draft	
+8	244	writings	7440a1c8c85568390cfb45a3bf1a133919cd53f38473dc7ce4f5e5e0ad92130d	深淵學院	draft		p10c-1 draft	
+8	245	writings	5dacdd79855284d50500af2661c1925440fce838c27f5525a0308fca7f8919bc	往大階梯	draft		p10c-1 draft	
+8	246	writings	6696d0e6e61053c5845333b724fcfb5e1a249c8a4cb187c77d3ec410b99d6c09	私人產業	draft		p10c-1 draft	
+8	247	writings	db0ec37b380c203bc9b4adf0840b555723945e99ca1ec3d9d05dcd51d4add658	往神殿	draft		p10c-1 draft	
+8	248	writings	ff66e412b966b81f979843c9b608e36fedfd17aa2c9c114daf097834a2540497	警告：危險區域	draft		p10c-1 draft	
+8	249	writings	203d06ade6df2936257c51f360f03ca29f0801e2e1731b62c4a7bdc76d9e3853	維路斯的領地。訪客「不」受歡迎。	draft		p10c-1 draft	
+8	250	writings	048141c8c49a7c1b0c1d79696d55045c2da1f47e3257db4b3e21c90130c67749	多米努斯的住處	draft		p10c-1 draft	
+8	251	writings	c2bd87ba008653fccfef41e3a5d1234e41c533da8e1d2a684d96cb6ce75d6ca9	弗朗的住處	draft		p10c-1 draft	
+8	252	writings	24e6d90762d93f60f4617a5c86fdaa88380d60c46a3a24bdec98c5001080a7a2	奈吉的住處	draft		p10c-1 draft	
+8	253	writings	fbd71d7474d540db001a6ceb1a63b4971d5f465bcf45957f5c593231a2918bde	學院圖書館。借書請準時歸還！	draft		p10c-1 draft	
+8	280	writings	a1a60d45ba50ea611840d8f19804e965eae9dc7e5b59cd2a5be98cec4221449e	當心……前有邪惡死者	draft		p10c-1 draft	
+8	281	writings	24d0548a267e82500e81f853ac03828201d666c4a9582d8373f11d4592a7a0ca	這是我的死亡詛咒\n 刻在石頭上，詛咒讀到它的你\n 我如今已死	draft		p10c-1 draft	
+8	282	writings	c3586e6bc9238cf13597cd5d328fee04b4b0f2c94225d796cc8fba07ce07fd31	葛拉克是隻屍蟲	draft		p10c-1 draft	
+8	283	writings	3c3c6e25235d60121d06487bdfbd14c4278a7bcaabd565d75d79dee3a31a474b	反魔法 + 反魔法 = 0！	draft		p10c-1 draft	
+8	285	writings	546be82bb35945bcae44ea448394a31bc0c211de7248c2cd1d714557bb16dea8	海姆達恩\n遠道而來之人	draft		p10c-1 draft	
+8	286	writings	ba4fac060122c94835a1de6d19e8f42113f3435f51ffaf62894d0c59080076f7	鬥 士索斯特	draft		p10c-1 draft	
+8	289	writings	f2a5bea898508dab084c5cac080ad70ead201faca0733119664618fb25567c3e	瘋子索爾蘇姆\n第三紀元的倖存者	draft		p10c-1 draft	
+8	293	writings	46c97b192388787b0f303fffca1a50d77388260550867efdd2df4d32b3d78246	終於！現在只剩征服迷宮了……	draft		p10c-1 draft	
+8	316	writings	8f7cd07c6d86edfb43ffab50201365faeecf7bf7e2153582a3faee42398b314b	你打不倒德拉克里！	draft		p10c-1 draft	
+8	384	writings	b495f6379a280b7940874b2cb9c5c1b3d26a59fed5eee06bacbd80343ce22b0b		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	385	writings	a7de93451e1fc60b5384cde71d20d4babe3ab7abe881a56f016e44b72812ed85		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	386	writings	fd812b10370448a48702895b11593528d9ee682129b57df0e81033a5da27fe1c		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	387	writings	0791801a27755a51bb95a61a871ba4c437004e1cade58ba38bf8102b5ae55fda		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	388	writings	1668133911a37d9254ab858cf1bf4c68ebb7a153042dfdc4e57e54758e78ecbd		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	389	writings	9e53be73a8e15d1b28b8666220d8b7f6fc6905a75d2d1b6aa43204cf49fcd5a6		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	390	writings	7bad223e2343bf96c32890fcd3c9dfcc6ddd13aed9d7f0332fc2731122e166f3		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	391	writings	738daff1eefe4bea848ecdf755fe11c7695dab5025bcef3bd506734ab1a378b5		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	392	writings	6502203feaaaf9a63dbab2bc7d0ee03e818710608c6ed5293c930902114e9982		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	393	writings	82ee6ffd4cc13e7d6e163a6c4bdd056a90b25fb208633b4bdd4aaa6967c12316		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	394	writings	15c72b293a0eec69f24e0e40a99b93560b905755e78eb5d22e52a1194b83ad38		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	395	writings	57c818a64b8a835f339b6f97c434b605113d7b3c2f93510feae50d2ee0d7b0f9		untranslated		grammar-sensitive: look 描述（a_／an_ 冠詞標記），屬物件命名，P11 處理	grammar-sensitive
+8	508	writings	ae7111eb2434427b2622a7397318ce6e7116134122a56211180ddf9bdbda4bf1	你看見了一只杯子的幻象。\n	draft		p10c-1 draft	
+8	509	writings	ae7111eb2434427b2622a7397318ce6e7116134122a56211180ddf9bdbda4bf1	你看見了一只杯子的幻象。\n	draft		p10c-1 draft	
+8	510	writings	ae7111eb2434427b2622a7397318ce6e7116134122a56211180ddf9bdbda4bf1	你看見了一只杯子的幻象。\n	draft		p10c-1 draft	
+8	511	writings	52e10ef2a296d084ef017ca673348ced85cfacf6d9b5770bc2ce43b39d8ebb93	這次你沒有看見幻象。\n	draft		p10c-1 draft	
+9	1	trap_text	35f427b71e7c2d5ae93c1e6c47efb35b4085b25d7ccd002aafeca5ead4878388	你凝視水晶球，一個奇異世界的景象浮現。怪異的生物飄浮在太空中。一條綠色的道路兩側是漆黑的虛空，一路延伸到遠方。不知為何，你知道這條路通往不列顛尼亞。\n	draft		p10c-1 draft	
+9	2	trap_text	43d085ccb64038fa6466c979c10510a3c0cb54cff362d0d748e068da969bc402	歡迎來到地下世界……\n	draft		p10c-1 draft	
+9	3	trap_text	52a385e5653100f55d5dc87407b2c423bbd5cbbb2e3fb940d81defa513110274	這些門鎖得很牢。\n	draft		p10c-1 draft	
+9	64	trap_text	ef0ebace8f1cdec2055baada5d137a200d80ae2e74936ce6f5e926cc53d346fa	你被吸進了管子裡……\n	draft		p10c-1 draft	
+9	65	trap_text	ce50bbb89335e9696f1a17e9ecad5f3b1cd77c3ff0cf4ce1f70333a97da60557	你聽到西邊傳來一陣隆隆聲！\n	draft		p10c-1 draft	
+9	128	trap_text	b41ba161a3dba387a1123074a34c8c026fa4aeace0761582f60823d3b412baff	這片地底沼澤潮濕的惡臭鑽進你作嘔的鼻孔。你被一波腐臭的氣味薰得直往後退。\n	draft		p10c-1 draft	
+9	129	trap_text	cc3ef483767e430285d4fed9712944c19bc7838605615693b8237a0d10acbe9a	你感到細小的毒針刺進你手腳裸露的部位。\n	draft		p10c-1 draft	
+9	130	trap_text	6ff21123127f655c65aca7d6d6db4d65f53d560b268ad24113c66ed6bcc1ddfd	你撥開藤蔓……\n	draft		p10c-1 draft	
+9	131	trap_text	82f732a3391b8a97c5994b318680bcf659a3d8aa36a8de99c10e562905040dde	你聽到西邊傳來大量水流傾瀉而下的轟鳴聲。\n	draft		p10c-1 draft	
+9	320	trap_text	50a0cc11c7663f9e295649adf069dc9e59cde8bc311345bc99c5ba751179b219	你掀起地磚……\n	draft		p10c-1 draft	
+9	384	trap_text	0ec61e62c0572bc383cfc4bae1e1fc3a26e3712c2471809ea7f0e864511e38ee	你聽到鐵柵門在身後砰地關上！\n	draft		p10c-1 draft	
+9	385	trap_text	384fc5749f9fd0f48ab295d99da0d001a903635ed95ca3150fd9b76700f91f86	你聽到從你留下那個巫師的地方傳來一聲淒厲的尖叫！\n	draft		p10c-1 draft	
+9	386	trap_text	53a2f60d2365e6d2c225fbce8666e7619b1fd0882bdae312957e8eb283aca7c3	你聽到身後有岩石落下！\n	draft		p10c-1 draft	
+9	387	trap_text	8e48e89ef524368d637d8be7b187d722b2a98e504851eef6905c19b2ae7557c5	岩石分開時，傳來一陣尖銳的哀鳴聲。\n	draft		p10c-1 draft	
 3585	1	conversation	9e0368c0f7ec3ce7226669d29e2b01ee4bee087c7a2a887402df65f0b1b5cef7	你是來讓我更痛苦的嗎？	draft		p10b-4 draft	
 3585	2	conversation	0a5487879dc73ec8777574d564fe64fbe876449a992a530a3489455a6a4733d5	你說的是什麼痛苦？	draft		p10b-4 draft	
 3585	3	conversation	61625256af81ca3c10764a6378fdb296b60ccbc4aab678c9cfbfc5f4639dc150	當然不是。如果可以，我願意減輕你的痛苦。	draft		p10b-4 draft	
