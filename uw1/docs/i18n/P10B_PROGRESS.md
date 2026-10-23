@@ -92,6 +92,9 @@ P10B 完成：95 段對話中，所有可直接翻譯的句子都已譯為 `draf
 其餘對話字串依 P10.10 的分類留待後續：模板句（`@GS`／`@SS` 等）與組句片段（`grammar-sensitive`）在 P11；
 玩家輸入比對字串（`input-token`）不翻。可直接翻譯而尚未翻的只剩書本 70、文字 98、陷阱訊息 14、遊戲訊息 7 句。
 
+最終 catalog（4,924 筆，SHA `904ef368…0f87`）跑 `verify_localized_replay.py`：PASS，16 個 session，
+35 個不同的翻譯命中與 master 相同，狀態與存檔與 DOS golden 相同。
+
 ## 待決
 
 1. **輸入改善（發行前必做）：** 有 12 段對話要玩家打英文字（加拉蒙的 talisman／volcano 是主線）。建議在移植版加入
