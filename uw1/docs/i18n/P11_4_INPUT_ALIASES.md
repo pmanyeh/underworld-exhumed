@@ -45,5 +45,10 @@
 - 2026-10-23 組了本機測試版（`D:\git\Ultima Underworld\UW1-zhTW-playtest`，不在 repo）：本次 build 的 `uw1port.exe`、
   所需 DLL、jf open 粉圓、`text-settings.ini`、`input-aliases.tsv` 與 P10C 的 catalog；啟動參數
   `--locale zh-TW --i18n-file … --hd-scroll`。在只有系統路徑的環境啟動成功，HD 文字與對照表都有載入。
-- **發現（待修）：** 測試版放在含中文的路徑時，截圖與 home（存檔）資料夾都寫不出來——移植版在 Windows 上用
-  窄字元路徑開檔，非 ASCII 路徑會失敗。中文玩家很可能把遊戲放在中文資料夾，發行前要改用寬字元（UTF-8 → UTF-16）開檔。
+- **發現（已更正）：** 原本記錄「測試版放在含中文的路徑時，截圖與 home 都寫不出來」。複查（2026-10-23）發現那次測試
+  的參數裡，含空白的路徑（`Ultima Underworld`）沒加引號，才是失敗原因；舊版程式加上引號後，在繁體中文 Windows
+  （系統字碼頁 CP950）上也能寫入中文路徑。
+- **仍然修正的部分：** 移植版經由 SDL 取得的路徑（資料夾選擇器、拖放）是 UTF-8，C 執行階段卻以系統字碼頁讀檔名，
+  路徑超出該字碼頁、或系統字碼頁不是繁中時會開不了。exhume `6758723` 在 Windows 程式加入 `activeCodePage=UTF-8`
+  的資訊清單（Windows 10 1903 起），檔名、命令列、環境變數一律 UTF-8。實測：中文資料夾下的 home（含 SAVE0、設定檔）
+  與中文檔名的截圖都正常；16 個公開 session 的存檔與 DOS golden 相同，`verify_localized_replay.py` PASS。
