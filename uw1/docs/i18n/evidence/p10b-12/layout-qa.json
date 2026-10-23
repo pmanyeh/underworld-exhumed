@@ -1,0 +1,77 @@
+{
+  "font": "jf-openhuninn-2.1.ttf",
+  "rows": 249,
+  "errors": [],
+  "by_box": {
+    "message": {
+      "rows": 142,
+      "multi_page": 0
+    },
+    "talk": {
+      "rows": 107,
+      "multi_page": 0
+    }
+  },
+  "longest": [
+    {
+      "key": "3607:32",
+      "lines": 8,
+      "more": 0,
+      "box": "talk"
+    },
+    {
+      "key": "3589:44",
+      "lines": 4,
+      "more": 0,
+      "box": "talk"
+    },
+    {
+      "key": "3589:21",
+      "lines": 3,
+      "more": 0,
+      "box": "talk"
+    },
+    {
+      "key": "3589:27",
+      "lines": 3,
+      "more": 0,
+      "box": "talk"
+    },
+    {
+      "key": "3589:41",
+      "lines": 3,
+      "more": 0,
+      "box": "talk"
+    },
+    {
+      "key": "3589:56",
+      "lines": 3,
+      "more": 0,
+      "box": "talk"
+    },
+    {
+      "key": "3607:1",
+      "lines": 3,
+      "more": 0,
+      "box": "message"
+    },
+    {
+      "key": "3607:12",
+      "lines": 3,
+      "more": 0,
+      "box": "talk"
+    },
+    {
+      "key": "3607:35",
+      "lines": 3,
+      "more": 0,
+      "box": "talk"
+    },
+    {
+      "key": "3607:52",
+      "lines": 3,
+      "more": 0,
+      "box": "talk"
+    }
+  ]
+}
