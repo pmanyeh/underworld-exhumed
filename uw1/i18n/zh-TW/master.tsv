@@ -344,6 +344,249 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 7	0	conversation_common	f71e90d787d4406d805af3d4fe4a87144cc4410d8981825902c66fcdd95622a6	你無法與那個對話！\n	reviewed	P10A-B1 conversation system: talk target refused (CONVERSE.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	1	conversation_common	d0a21149b0b2ef0822a85bbc671dd6803c35b38e25762f0f956c65fd25593f19	沒有任何回應。\n	reviewed	P10A-B1 conversation system: no response (CONVERSE.C, BABL.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	83	conversation_common	6e2438a46d02f906a83dfef80fd9d898f2faf4ddfbd7904b7b292cfa27aad77b	布拉吉特	reviewed	PoC role: npc_name	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3586	1	conversation	e4f0bdc94bfdecbb86243e7a8d1e280160475c264977451ca24648e27062443e	你好啊。我是山岳族的夏克。有什麼能為你效勞的？	draft		p10b-3 draft	
+3586	2	conversation	bf06be1649239f9dbc76fb46951a0571f6a299cf66b37d1568687ed531b984bf	我需要打聽一些消息。	draft		p10b-3 draft	
+3586	3	conversation	98123f171dfde240d5ebc254453ac65654cc77c6b5eca339ef9889f89b5e7630	我需要你的手藝。	draft		p10b-3 draft	
+3586	4	conversation	998c5b505ffec3d4d8b6fdb0a427619a358462d263f27e2299fefd4eeb84cedf	你想知道些啥？	draft		p10b-3 draft	
+3586	5	conversation	6f7596a091f387d86a673cab0363313bd740809c7b2dd414de7201ba10931606	你知道凱布勒斯爵士的聖物嗎？	draft		p10b-3 draft	
+3586	6	conversation	90d7e7282d3c6fd2015fdbacfd84b60ddc8ce031549b717416678a359a7ac052	哪裡能找到好的武器匠？	draft		p10b-3 draft	
+3586	7	conversation	2b9fb377f9e8f1046010dddd73a9537a6ba227e7fe790f4626981af182f22940	你能教我自己修理物品嗎？	draft		p10b-3 draft	
+3586	8	conversation	652ab059ec0d49a9c8114f07651bfa80f8d17a79c082c2d50d3930d929d9a39f	這個嘛，熟能生巧，沒別的法子。不過我聽說，祈禱語 LON 能讓你修東西修得更好。好啦，還有什麼能幫你的？	draft		p10b-3 draft	
+3586	9	conversation	a68aa2e4916443d56cc486897f8f37513f5faf7fc65e6f3233a7b692e3d48ba2	這需要修理。你能修嗎？	draft		p10b-3 draft	
+3586	10	conversation	e7e997ad0cd0d96105fc23aa7b74fae84bbc51d254d58e03758ab4784e0284bd	你能告訴我這是什麼嗎？	draft		p10b-3 draft	
+3586	11	conversation	78ec80ba59a155e4fb602501551ce5912cdbc3f8fa337828a8d0dd086bf8d04a	你知道凱布勒斯的聖物嗎？	draft		p10b-3 draft	
+3586	12	conversation	f233a746a6804ec2c4c602301baa3f388ebba2552a0711d6e4bfe6464f276158	要打鐵的活兒，你可找對人了。不過我的手藝可不便宜。你付得起嗎？	draft		p10b-3 draft	
+3586	13	conversation	e34f4bc9ed699098120919a1cb2ff745b49d2627a7436b9d34196a38b7f0fa15	不，我付不起。	draft		p10b-3 draft	
+3586	14	conversation	0d11b5fa471093f78b170c1aa7783c0a27a5ab2fb9e6a97dfb2862dde1bcd4b3	付得起，價錢公道我就付。	draft		p10b-3 draft	
+3586	15	conversation	c43899d19196eced9c759db1d703736f8b7b963cf722a6f16bcb4d60a5bdaba8	唉，你在浪費我的時間。	draft		p10b-3 draft	
+3586	16	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d		untranslated		grammar-sensitive: 組句片段（lad），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	17	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c		untranslated		grammar-sensitive: 組句片段（lass），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	19	conversation	238d038cd569f634ecde3d33940fac17f540816ac3e223d93fae6f441b673cdf	還不行，我得先去辦點別的事。	draft		p10b-3 draft	
+3586	20	conversation	31f8cdcbb8d77190cdd2eee46e214deb6cfe843ffc38ca5c99c332c0fb93ac53	好吧。東西在這裡。	draft		p10b-3 draft	
+3586	21	conversation	c33597d6dc35899bd611bac2a023769ac38bd233e29176edbcc8875dc5ba3e32	唉，你在浪費我的時間	draft		p10b-3 draft	
+3586	23	conversation	59764b3b637dabd3f1b953769183f540f238bbe77307e9c757e1931b3d580a93	唉，這東西已經打完它最後一仗了。根本不值得修。	draft		p10b-3 draft	
+3586	24	conversation	bfa5e3761ddee9b2158b02bb942e1d9f9d5c644b0c7025cb0811df163d7852b7	啊，看來這是凱利班之劍的一半。不過少了另一半，我也沒轍！	draft		p10b-3 draft	
+3586	25	conversation	3216960ee009946d64d2b589d4b4161559e893f397218eb598aeaddfbd75ebd5	唉，你當我是什麼？這裡是鐵匠鋪，不是小飾品店。武器跟防具，那才是我的活兒！	draft		p10b-3 draft	
+3586	26	conversation	993d43146dcc6f70511c3444fd913876e600d4740dd6f6e64cd7e3a2f614c181	啊，你不會拿這種破爛來給我修吧？不值得我花時間。你瞧瞧！一文不值！八成是惡鬼族做的。不，你該買把新的才對，我敢說。	draft		p10b-3 draft	
+3586	28	conversation	3e71ab7281acd910cc0b62a52946914e3d7a0eecc4e761e0ee5680979ac8a35a	那你要修什麼？	draft		p10b-3 draft	
+3586	29	conversation	b953cac89f7cf36ca0a11b39bb1488d938c8c96d0b9bbdd9a6f50f3c3abf21fb	喔，在這裡。	draft		p10b-3 draft	
+3586	30	conversation	bef3bbe8cdbd4764ce7b38c71061a9e6843ce97ff8c63fa5b0e85cb6b9b7105c	喔，算了……	draft		p10b-3 draft	
+3586	31	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d		untranslated		grammar-sensitive: 組句片段（lad），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	32	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c		untranslated		grammar-sensitive: 組句片段（lass），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	34	conversation	2a525692a9425397caf9e273beea428014b73a5362219ba1927eb3ac0e822915	我是可以，但那樣不對！	draft		p10b-3 draft	
+3586	35	conversation	01862984efddcd8506c7c83fc831746a5a65b3d437dde2cee394b0b2c90f1b02	好吧。我會再回來。	draft		p10b-3 draft	
+3586	36	conversation	6de2915b8c2f311e95f8670536c4362e51a12d7468002edf16868dd55d081aec	唉，好吧。讓我瞧瞧。	draft		p10b-3 draft	
+3586	37	conversation	e7e997ad0cd0d96105fc23aa7b74fae84bbc51d254d58e03758ab4784e0284bd	你能告訴我這是什麼嗎？	draft		p10b-3 draft	
+3586	38	conversation	a68aa2e4916443d56cc486897f8f37513f5faf7fc65e6f3233a7b692e3d48ba2	這需要修理。你能修嗎？	draft		p10b-3 draft	
+3586	39	conversation	442c621dafad2a69126dfd65d498ed9579f821696023e2c70ce9fc944d6ae47f		untranslated		grammar-sensitive: 組句片段（himself），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	40	conversation	ced636336aacc18b987f37718c1c09712b54863ee2abe7042e382bf3abe4a9df		untranslated		grammar-sensitive: 組句片段（herself），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	41	conversation	28cdd20eaf134a05f18369414cb2df5e36c6a4e4f551b8c9cff8548029c41d6c		untranslated		grammar-sensitive: 組句片段（minute），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	42	conversation	90e63d85fa1ab2c8ed65222f3ebd794b1e524b4b7cf84bec451542d0451b2985		untranslated		grammar-sensitive: 組句片段（minutes），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	45	conversation	a68aa2e4916443d56cc486897f8f37513f5faf7fc65e6f3233a7b692e3d48ba2	這需要修理。你能修嗎？	draft		p10b-3 draft	
+3586	46	conversation	e7e997ad0cd0d96105fc23aa7b74fae84bbc51d254d58e03758ab4784e0284bd	你能告訴我這是什麼嗎？	draft		p10b-3 draft	
+3586	47	conversation	78ec80ba59a155e4fb602501551ce5912cdbc3f8fa337828a8d0dd086bf8d04a	你知道凱布勒斯的聖物嗎？	draft		p10b-3 draft	
+3586	48	conversation	21189b0e7345257929f291bf4b78abd7c78ab864f747c581b8311cb16f5bc96f	你能幫我修理壞掉的物品嗎？	draft		p10b-3 draft	
+3586	49	conversation	0bba7114c0c5929222c831950d961f517684f3718e040625cc4b70396db6faf5	大部分我都不太清楚，不過我很清楚其中兩件是鐵匠的作品。一把劍和一面盾，兩件都是上好的手藝。	draft		p10b-3 draft	
+3586	50	conversation	d152dca02faf6e9bef95ef61d236f67991a9cf197a8cfdd38e23e88071317159	跟我說說這把劍。	draft		p10b-3 draft	
+3586	51	conversation	383e9510352c31a2946b6beacd9db2e2b401a5a9e4940387b023b2e49b17487f	跟我說說這面盾。	draft		p10b-3 draft	
+3586	52	conversation	6237e6d161e391873015000a621f774bbc3c4f15c335d16f81777c8e9a5bd302	它叫勇氣之盾。我從沒見過比它更好的盾。據我聽說，它曾經是黑棘的。不過那東西放下容易、再拿起來難，他離開去當全世界的良心時，就把它留下了。唉，那可真是一團糟。還有什麼我能幫你的嗎？	draft		p10b-3 draft	
+3586	53	conversation	4749daf3be9619db41af29c0de0c40b7bd65be65bed741a51f611f5d730ba856	你知道那面盾現在在哪裡嗎？	draft		p10b-3 draft	
+3586	54	conversation	b33bf21c13168165e8c55219b2f1dcf5bd7330fca05608dca148db7008b15708	跟我說說那把劍。	draft		p10b-3 draft	
+3586	55	conversation	428c7f109e54dac67c84d19233434edbe5b98ab1167db8aa1fd3bd51310cb1fa	不用了，謝謝。	draft		p10b-3 draft	
+3586	56	conversation	10a3d2656448a6a455e2d68d63155c2612f4e71c42410d5176458e3d822add1e	對，那可是把好兵器！聽說它很有脾氣，但威力遠勝凡間的刀劍。凱利班講究公道。人家叫它公正之劍，可不是沒來由的。它是偉大的焰鬚親手鍛造的。還有別的事嗎？	draft		p10b-3 draft	
+3586	57	conversation	4fac16494ce57e2705aeaf126ea72982f31057035928e98c4b96ba6a925f7ece	你知道那把劍在哪裡嗎？	draft		p10b-3 draft	
+3586	58	conversation	49e679f9f13b2550060fc714bf87cf0a313818ba483084f301c81c4d3311d7c8	不，我不知道。我聽說它斷成了兩截，可是在哪裡，我就說不上來了。	draft		p10b-3 draft	
+3586	59	conversation	428c7f109e54dac67c84d19233434edbe5b98ab1167db8aa1fd3bd51310cb1fa	不用了，謝謝。	draft		p10b-3 draft	
+3586	60	conversation	273c8b03c68a3e7324f10dd7585122ff64021522c5ef6d012d7ad1239015e596	嗯，我替你修好了，你自己瞧吧。好一把劍，不是嗎？只要你小心，用在正義的事上，它會好好替你效力。還有什麼我能幫你的嗎？	draft		p10b-3 draft	
+3586	61	conversation	a68aa2e4916443d56cc486897f8f37513f5faf7fc65e6f3233a7b692e3d48ba2	這需要修理。你能修嗎？	draft		p10b-3 draft	
+3586	62	conversation	e7e997ad0cd0d96105fc23aa7b74fae84bbc51d254d58e03758ab4784e0284bd	你能告訴我這是什麼嗎？	draft		p10b-3 draft	
+3586	63	conversation	d6fd34657a5304fd0ecaf5373317ae97bccc22c8fb96e53fe2265184b02dd8f3	不用了，不過謝謝你的幫忙。	draft		p10b-3 draft	
+3586	64	conversation	2653802412ac13cf2bcf49613d1e0a4a6bc03b77eb20b787dd45ce21b0ec0b21	啊，那我完全不知道。你要是看到了，跟我說一聲！	draft		p10b-3 draft	
+3586	65	conversation	1eb3e243a7bbd5032a6f5a79034667713a31216da2efa5031c4ef90a7ae935f5	我一定會。	draft		p10b-3 draft	
+3586	66	conversation	c8c6c6b520e9b76c1ed70a92275464ceb8f9d8302e65d5588fee50ef18c6fd68	是這個嗎？	draft		p10b-3 draft	
+3586	67	conversation	54ad02ec9ab7ec60df04b350afb798daeeb2b31fa6cb997e258dd1658808c2ab	就是它沒錯，正是勇氣之盾。你運氣真好，找到了它。據我所知，世上從沒打造出比它更好的盾。還有什麼能幫你的嗎？	draft		p10b-3 draft	
+3586	68	conversation	d9fb3f59e0714164b29a34d69be0bb2d953a471487d31839df5334ee2ca3d516	我看這可不是勇氣之盾！	draft		p10b-3 draft	
+3586	69	conversation	028633e60eb82680893742de76f10514d9de768ac0d8652f807d5579f2500267	啊，是這個嗎？	draft		p10b-3 draft	
+3586	70	conversation	bcf77ffd439180e55d750692be1cc7aa3e8e63443cf6a6525270882c33ada179	那我還沒找到。	draft		p10b-3 draft	
+3586	71	conversation	fa5239d675d419c8f8d9ecac50f1fe67706751548b9ce7b1c46d175ae4cb16e9	嗯，別放棄希望。只要它被打造出來過，就一定找得到。好啦，還有別的事嗎？	draft		p10b-3 draft	
+3586	72	conversation	14fe6ee47bde7a09769f32817f028258adc60483be027b9a71fc4028a0f11758	這需要修理。你能修嗎？	draft		p10b-3 draft	
+3586	73	conversation	e7e997ad0cd0d96105fc23aa7b74fae84bbc51d254d58e03758ab4784e0284bd	你能告訴我這是什麼嗎？	draft		p10b-3 draft	
+3586	74	conversation	d6fd34657a5304fd0ecaf5373317ae97bccc22c8fb96e53fe2265184b02dd8f3	不用了，不過謝謝你的幫忙。	draft		p10b-3 draft	
+3586	75	conversation	e95c5c98542890c7a897e0c2e39cb87c95750713be31f03e9600baa635098ecc	對，我想你說得沒錯。也許你能在哪裡撿到些值錢的東西。	draft		p10b-3 draft	
+3586	76	conversation	8b55794ddedd8ce043f43605376479484464af6d09411f926db12b7fed8e9c73	好吧。我會試試看。	draft		p10b-3 draft	
+3586	77	conversation	49fee463ac9bdabfa3f072332247cd4b5cb9cd061bf540c2925799ffc04dab61	謝了，不過我去別處找找。	draft		p10b-3 draft	
+3586	78	conversation	a002536f64467abe0a20333a3e43d3b8d1f0bf3b12ed58dd424bbcab62e96d4d	你到底要不要修這把劍？	draft		p10b-3 draft	
+3586	79	conversation	452e60bd16afdf08e4be967c17b87ed5d1501e1f4dcf3a4d685c59e4b744b1e3	要，抱歉，在這裡。	draft		p10b-3 draft	
+3586	80	conversation	859f70d56eb3460e65fde4cc20d6659a50ced8aa4f46dd5496c009db3ea8a976	唉！你白白浪費我的時間。	draft		p10b-3 draft	
+3586	81	conversation	cf19e441727d50220ebe957979561675a3e854bdcff46f899aaad1bdb16fd6ac	不，我改變主意了。	draft		p10b-3 draft	
+3586	82	conversation	c9f5d144888f27c52321c5ebaef7b4d83b3fc8e6393962a77c6590a7212b9106	對，這凱利班真是個美人兒。我很快就會把她弄好。一個鐘頭後回來，別忘了那 20 枚金幣。	draft		p10b-3 draft	
+3586	83	conversation	bc78acd2389fa78233c959ace39817b65cde08e8c7f02818a418482ddd1c09ed	太好了。到時候見。	draft		p10b-3 draft	
+3586	84	conversation	d56379b708bbf709fad7b6bcbff833bbf8ed4cad8aac97228c99f4b7ad38314a	好，不過要快。時間比你以為的還少。	draft		p10b-3 draft	
+3586	85	conversation	34235a2c502e3919d3f00af5dabb87cb58aef4566b10631f2a5db94950ebffbd		untranslated		grammar-sensitive: 組句片段（piece），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	86	conversation	b6aa423de4f79355751cdf73a26b069d5da4c248288cb8bdafc8f552f0adfc44		untranslated		grammar-sensitive: 組句片段（pieces），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	88	conversation	d59e3c4920492e310a0aefdb6f4ab1d3e079590884b1a091da8f5bfa91283a13	好，請修吧。	draft		p10b-3 draft	
+3586	89	conversation	cf19e441727d50220ebe957979561675a3e854bdcff46f899aaad1bdb16fd6ac	不，我改變主意了。	draft		p10b-3 draft	
+3586	90	conversation	3854a1dd885418bf735fb9f7f05c289d864b5fbb387b5b91e3c90cae33bcd488	你到底要不要修？	draft		p10b-3 draft	
+3586	91	conversation	452e60bd16afdf08e4be967c17b87ed5d1501e1f4dcf3a4d685c59e4b744b1e3	要，抱歉，在這裡。	draft		p10b-3 draft	
+3586	92	conversation	859f70d56eb3460e65fde4cc20d6659a50ced8aa4f46dd5496c009db3ea8a976	唉！你白白浪費我的時間。	draft		p10b-3 draft	
+3586	93	conversation	cf19e441727d50220ebe957979561675a3e854bdcff46f899aaad1bdb16fd6ac	不，我改變主意了。	draft		p10b-3 draft	
+3586	95	conversation	bc78acd2389fa78233c959ace39817b65cde08e8c7f02818a418482ddd1c09ed	太好了。到時候見。	draft		p10b-3 draft	
+3586	96	conversation	b2a6a998d6a0f20fa37c2795d80cc876174c8d95dae2566d9dbce2f2a4f068a3	好，不過要快。時間不多了。	draft		p10b-3 draft	
+3586	97	conversation	49081cae13e5e0fb05d5ddecb064f3ea0d28be1ea80136bbf8636d739b9ec185	修好啦。現在跟新的一樣好。	draft		p10b-3 draft	
+3586	98	conversation	907849660a84ea41ce727d23c5c706ea58002924eb07ca67ae2cb55220112f6a	來，我就把它放在地上給你。	draft		p10b-3 draft	
+3586	100	conversation	9af6b2c38e6a14812331105565a912018a0b4a759381c3738df28de93ef25e3c	哼，也該修好了吧！	draft		p10b-3 draft	
+3586	101	conversation	5b21df05eb7df287ab374e84028a4132c3b1f7f5380f980940bea3339ee2a3f5	那麼，等你付得起錢再來吧。這可是上等的手藝，你知道的！	draft		p10b-3 draft	
+3586	102	conversation	fd055c62559cedf93ac1e79d652e81f38298fab0d61ab442b0095a15feeefcfa	唉，你在浪費我的時間！	draft		p10b-3 draft	
+3586	103	conversation	90cda83e9b12971639541d84147a81ed7f98a0a36aaef6275fe2db5b516fabfa	好，你要我看什麼？	draft		p10b-3 draft	
+3586	104	conversation	b953cac89f7cf36ca0a11b39bb1488d938c8c96d0b9bbdd9a6f50f3c3abf21fb	喔，在這裡。	draft		p10b-3 draft	
+3586	105	conversation	496a53cd3c1145280562619705379051b462101493cbd8b0f11320cfc3d57fc3	抱歉，我改變主意了。	draft		p10b-3 draft	
+3586	106	conversation	f66082f39a5ab81aa78bc683e8336d1017cd488c4f47f839f7fb351ef7d6e6a1	啊，拜託，一次一件，可以嗎？	draft		p10b-3 draft	
+3586	107	conversation	4cc8e2cf9a55c1d74e6c4be02df52c7746f5b041fbaad513c87d3d35a7e7b7b8	喔，那就這件。	draft		p10b-3 draft	
+3586	108	conversation	10e6f3f173619914e8de8d70b80281d8964ded38e402305ac489806b8acfd50d	抱歉，算了。	draft		p10b-3 draft	
+3586	109	conversation	5214479071cd44989c58880bcd6855d381c25a88391bd5c443c7cfbaed282977		untranslated		grammar-sensitive: 組句片段（gold piece），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	110	conversation	cd022c7876efbc0e70008d24da67526255b683f916e115f8f21cc25d4ef0a7e7		untranslated		grammar-sensitive: 組句片段（gold pieces），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	111	conversation	92940fae45f0e559caac1b0c0793d7f128e88f7e413e5598c9cf5d97a61bad72	哎呀，看來你找到凱利班之劍的一部分了。要是能合成一把，那可是把好劍！好啦，還有別的事嗎？	draft		p10b-3 draft	
+3586	114	conversation	284819bc6d354faa304dd76a8b24871a066d4ff03785f7e963ee9c1435df9ad5	我有東西需要修理。	draft		p10b-3 draft	
+3586	115	conversation	bb28db1ff26ab486a228fd77be05123e211c03ce4617a15644b41e504bdcf7da	我還有別的東西要請你鑑定。	draft		p10b-3 draft	
+3586	116	conversation	3d266ed2804a39ee9ef529295ac20456c09c3312cd93e4552ab8f320d64c4ed3	能跟我說說凱布勒斯的聖物嗎？	draft		p10b-3 draft	
+3586	117	conversation	844d145c138833f043ddc105b03e8e5f77c1383bd13d5d173a58bdcf71fe0ba3	不用了，不過謝謝你。	draft		p10b-3 draft	
+3586	118	conversation	f40ca41065e41a420a63c8e5d4c5dd2406cfc531660be7eba520536ba49336eb	哼，我可不做白工，你知道的！那還有別的事嗎？	draft		p10b-3 draft	
+3586	119	conversation	284819bc6d354faa304dd76a8b24871a066d4ff03785f7e963ee9c1435df9ad5	我有東西需要修理。	draft		p10b-3 draft	
+3586	120	conversation	bb28db1ff26ab486a228fd77be05123e211c03ce4617a15644b41e504bdcf7da	我還有別的東西要請你鑑定。	draft		p10b-3 draft	
+3586	121	conversation	3d266ed2804a39ee9ef529295ac20456c09c3312cd93e4552ab8f320d64c4ed3	能跟我說說凱布勒斯的聖物嗎？	draft		p10b-3 draft	
+3586	122	conversation	844d145c138833f043ddc105b03e8e5f77c1383bd13d5d173a58bdcf71fe0ba3	不用了，不過謝謝你。	draft		p10b-3 draft	
+3586	123	conversation	7ecf5e6413a93c8a875a3c4d794f0acafb8abbab0ff44a3201be55cc4ab505f8	修好啦，全都修好了！真是個美人兒，跟新的一樣好。	draft		p10b-3 draft	
+3586	124	conversation	907849660a84ea41ce727d23c5c706ea58002924eb07ca67ae2cb55220112f6a	來，我就把它放在地上給你。	draft		p10b-3 draft	
+3586	125	conversation	5e245500c6d93e886122b34a02d6ae4a4a41e0e12cee178a6823f1822d493e44	謝謝你。你做的比你知道的還要多。	draft		p10b-3 draft	
+3586	126	conversation	e36a9ebbfdd9fbbb33f9e05d8abeda981dd544756cec65ebc7f3ca97b2784839	哼，也該修好了吧！	draft		p10b-3 draft	
+3586	127	conversation	5b21df05eb7df287ab374e84028a4132c3b1f7f5380f980940bea3339ee2a3f5	那麼，等你付得起錢再來吧。這可是上等的手藝，你知道的！	draft		p10b-3 draft	
+3586	128	conversation	adf0b297bbb61016e76f0ea803beeb6ffc3d6d94351e0ce75149ac89b284bbb0	還需要什麼別的嗎？	draft		p10b-3 draft	
+3586	129	conversation	3d266ed2804a39ee9ef529295ac20456c09c3312cd93e4552ab8f320d64c4ed3	能跟我說說凱布勒斯的聖物嗎？	draft		p10b-3 draft	
+3586	130	conversation	80ba56e39b6ddded7b04b09ae8d07dc4c1480718fe1b88d0ab5d6a3008317bbd	你能告訴我這是什麼嗎？	draft		p10b-3 draft	
+3586	131	conversation	0157b090bb4b481831f8d30785aecc8183fe1e60030734d1826e3d0d405e0fdb	這也需要修理。你能幫忙嗎？	draft		p10b-3 draft	
+3586	132	conversation	844d145c138833f043ddc105b03e8e5f77c1383bd13d5d173a58bdcf71fe0ba3	不用了，不過謝謝你。	draft		p10b-3 draft	
+3586	133	conversation	5214479071cd44989c58880bcd6855d381c25a88391bd5c443c7cfbaed282977		untranslated		grammar-sensitive: 組句片段（gold piece），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	134	conversation	cd022c7876efbc0e70008d24da67526255b683f916e115f8f21cc25d4ef0a7e7		untranslated		grammar-sensitive: 組句片段（gold pieces），代入同對話的模板句，P11 處理	grammar-sensitive
+3586	137	conversation	3f50fa1fdd7959742c24752c99063b72a1b0b609ccad4381e51be170dfb4d6df	有，拿去吧。	draft		p10b-3 draft	
+3586	138	conversation	012cf4148d4ca301e53da79f2e370d254c80a3b5eabacc21b46115ac87d2cafa	不，我現在沒有。	draft		p10b-3 draft	
+3586	139	conversation	b52fcce064c300d7e0751f84052c9a0e798cc3d35d57025127e7652ee0252ea3	抱歉，這是你的錢。	draft		p10b-3 draft	
+3586	140	conversation	1873ab7cbf85313f884af7b6b638d35c098229eacd993b2d7ee902398b38b91c	抱歉，我付不出來。	draft		p10b-3 draft	
+3586	141	conversation	0ae019511d28574a4571f09e02963ebd6d8c56326411b7f87d9966a2f83abf61	喂，你到底付不付錢？	draft		p10b-3 draft	
+3586	142	conversation	9f6d7f552a16aced9fa28a15771af970a1c65d290f9dac9ede656972155f51a8	啊！謝謝你的小費。看得出你識貨，懂得欣賞好手藝！歡迎再來！	draft		p10b-3 draft	
+3586	143	conversation	d4b9fa1a2d316780d504357deaddf7c3f50867ab43fe6404a8fa324d9e154a41	你又不是在付訂金，你知道的！	draft		p10b-3 draft	
+3586	144	conversation	d237da4fc5e6a486767d4987039c24a5af5541cede5eb495e59b5d9a7eb2a1a6	我只收金子，我可不是當鋪！	draft		p10b-3 draft	
+3586	145	conversation	4ffa1a65a88ce7e3444ea3dd92adad288bcc9794009bee683fe9bf3086b1d910	那就再會了。	draft		p10b-3 draft	
+3586	146	conversation	e957ba075c78ec5a4b39cf6373e3c23e0115677a1f5b2db4cef886394bcc7ca7	你想交換物品嗎？	draft		p10b-3 draft	
+3586	147	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	想。	draft		p10b-3 draft	
+3586	148	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不想。	draft		p10b-3 draft	
+3586	149	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-3 draft; 交易用語沿用 3672:16-30	
+3586	150	conversation	5475b2b30073765fe31df2e60b665c3549aa779cf83d32ddf08817b93d5fcf4e	我要你把這些東西交給我。	draft		p10b-3 draft	
+3586	151	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-3 draft; 交易用語沿用 3672:16-30	
+3586	152	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-3 draft; 交易用語沿用 3672:16-30	
+3586	153	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-3 draft; 交易用語沿用 3672:16-30	
+3586	154	conversation	7d57f5dc898294359ad4ad02a1abed0611398c201221d3c83bbe65e955502440	我接受你的出價。	draft		p10b-3 draft	
+3586	155	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-3 draft	
+3586	156	conversation	aac6c49f6aadeb951039206b2021577728bff4fb97ec97edf5626e28b32ae1fc	你當我是傻瓜嗎？	draft		p10b-3 draft	
+3586	157	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-3 draft	
+3586	158	conversation	c040cb4d091ed6e58d6e75a34d97605cd2592aca97075783b88e82af85fdd0ed	你在跟我開玩笑嗎？	draft		p10b-3 draft	
+3586	159	conversation	457399ab75bcf193107d681f994117fbab33da7df2a2e499ccc0e755a9f454ea	你是打算搶劫我嗎？	draft		p10b-3 draft	
+3586	160	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-3 draft; 交易用語沿用 3672:16-30	
+3586	161	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-3 draft; 交易用語沿用 3672:16-30	
+3586	162	conversation	c2b82f4132914c1cc57cac6604351e5a2dd445db9eb2f6b41e375e356424a22f	既然你堅持，就拿去吧。	draft		p10b-3 draft	
+3586	163	conversation	9add31c433beebb81a3945bb87f0fca9f05d88df58f35125e05e534066761063	不！你休想拿走！	draft		p10b-3 draft	
+3587	1	conversation	f8a7eb2723182a503f700243ecde5baf98067b02044664dbd6e2dc8c580ce968	你好，旅人。我是貪金王，山岳族的首領。歡迎來到我們的大廳。	draft		p10b-3 draft	
+3587	2	conversation	c12883bcd6f7b12e93b9aac781f455cece57f09f263072480cfb7e32657b6de1	幸會，貪金王大人。	draft		p10b-3 draft; authority-ok:Lord（對國王的敬稱，譯「大人」）	
+3587	3	conversation	dd333e884bdefe4f8d25ff7c66fca12314e8f8bc1924b8674b53c6fb539ace47	謝謝你，矮人王。	draft		p10b-3 draft	
+3587	4	conversation	ead9724126e7d8283be10ebe2ba6d5ffcf65943789b8acb37bafb848b12190c9	向您致意，陛下。	draft		p10b-3 draft	
+3587	5	conversation	14168e715a1ff373e420acf95d3af2bb7b57c8d406935540dbfba3362f13d278	陛下，是嗎？嗯，就算你別的不行，奉承倒是挺在行的！	draft		p10b-3 draft	
+3587	6	conversation	ad0a962057e85555e0f15d64c368749882234c8b6f14af0f69a23c29595c50ce	面對像您這樣高貴的人，要奉承也難啊，陛下。	draft		p10b-3 draft	
+3587	7	conversation	9c57b175de613437892afd813e2f1e44e5c87183b09eeca18282a348c90fec34	請您見諒。我無意用奉承來侮辱您的智慧。	draft		p10b-3 draft	
+3587	8	conversation	e9279cf6fa0132b278e3fe3d635852aafcc110042a68718bc61498a7993cca18	你口才不錯，也懂禮數。你還有其他美德嗎？	draft		p10b-3 draft	
+3587	9	conversation	703179c7c45eb1f8afd9ffd16813bc3115027c01e0ab1ef91f5234c00f7d7325	我是完人，每一項美德都具備，大人。	draft		p10b-3 draft; authority-ok:Lord（my Lord 是敬稱，譯「大人」）	
+3587	10	conversation	3b19fe022123865933583b121d99143a34800b1d6e47a60104901b184d0c0c00	沒什麼值得一提的，大人。	draft		p10b-3 draft	
+3587	11	conversation	9c95784c10a96bf30ee635a8c15e367778c1b633420c878eca6312175e0d694f	你再那樣叫我一次，你的舌頭就得離開你的腦袋去搖了！	draft		p10b-3 draft	
+3587	12	conversation	d2f05c1540fd276b7e190ae3153b4142aee974cfa1f16f764ef6b076b3e393d2	夠了。你來這裡有什麼理由嗎？	draft		p10b-3 draft	
+3587	13	conversation	740b1d5669d2c0d2e522fedefedb73d74978177b445c050c99038ab02c9016cd	我想看看你的寶藏。	draft		p10b-3 draft	
+3587	14	conversation	1bd730216c98a4b11fceeedbe36d1c15b356113db2c9f23fd4e7022f47049dc1	我在尋找冒險。	draft		p10b-3 draft	
+3587	15	conversation	86bd5e9c8f54700c8853b533dc220d131f353fc2a89d32de5930c9ba3e696893	我帶了這份禮物給你。	draft		p10b-3 draft	
+3587	16	conversation	282e7a927bfefbd7c90e7d7f369fa348ed6911c3a635a06c039852d741831878	你可以親眼看看！回到你進來的那一頭大廳，對門口的守衛說「Deco Morono」。	draft		p10b-3 draft; 「Deco Morono」是要對鋼趾說的通關語（3605 比對字串），保留英文	
+3587	17	conversation	e6ccb7cbe58f7eb5ddb89c96f9472bf8221fe9c966e5dcec5c1d8f7014206417	謝謝你。	draft		p10b-3 draft	
+3587	18	conversation	2227fa2cff65cfe31cf45d1aa0a5c3c9fc44abb8c929be88afe0d097a0595a8b	你真是位高貴的矮人。	draft		p10b-3 draft	
+3587	19	conversation	2dc1c3aa1d9917796955f6526d174d8c5f27c54024ad5c4c97a329079db7004f	哼！你知道蒙獲接見時，按慣例要獻上禮物吧？	draft		p10b-3 draft	
+3587	20	conversation	a3e0efaf1b5b616c241157f989fc2690e544976739d548c7d310ef992b88dfe0	不，我不知道，大人。我身上沒有配得上的東西。	draft		p10b-3 draft	
+3587	21	conversation	93403b3f9937748b944d47a885c9cad47a47adc203b68cbeae140e5f24e2ca20	當然。這是給您的禮物。	draft		p10b-3 draft	
+3587	22	conversation	3535940298693316950a40c576fd999b2e128a6be2e542751a19040ad54b4163	啊，可是我已經把我的陪伴當作恩賜給您了！	draft		p10b-3 draft	
+3587	23	conversation	63ed8313924e6a83aa12c8bcb7a604f80a6d387c298501a6b3599ab634f31b05	抱歉。我家鄉的習俗不一樣。	draft		p10b-3 draft	
+3587	24	conversation	9231411b3273c61e446ffb749cb7145a5b06cb7d35c5e06214050e67b23ad182	沒關係，沒關係。不用什麼了不起的東西，一點心意就好。一點點……金子就行了。	draft		p10b-3 draft	
+3587	25	conversation	28f5b7b7cc1118ecbe4e90166be6f4b643ae56f768a54d981708b885dc9805ef	這是給您的禮物。	draft		p10b-3 draft	
+3587	26	conversation	272fcfa35b605f7b23993ef7e60a11e0e2d448cb12ef8b3107df581a0c042a75	不，我說的是實話。我沒有東西可以送。	draft		p10b-3 draft	
+3587	27	conversation	525000861a18fb47714bc6442eced06aec91865562aaeb3aff6a1011c2be23c8	不，這件事我幫不上忙。	draft		p10b-3 draft	
+3587	28	conversation	01c69522a26f93d89969ff952bfa9d00303f072e2fe5bb8df0bc343ea7f551d4	有沒有別的方式能幫上您？	draft		p10b-3 draft	
+3587	29	conversation	932d4a18dcdbb0b27515351ff1ac076fb6fafdddf4707a62fe023dfa8926eae9	你休想耍我！	draft		p10b-3 draft	
+3587	30	conversation	779e3bc93e2a48b8ceb55eb4ec8d4f6e213d673ee38c101f1ef455cb1a4ff5a0	可是你兩手空空啊！你真的要送我禮物嗎？	draft		p10b-3 draft	
+3587	31	conversation	6ba0144399e1d6f505524df599d6a154f938e7ab8bf8caac88519b805da5ffa3	是的，抱歉，在這裡……	draft		p10b-3 draft	
+3587	32	conversation	4954463bb9cacd9241e21a3a88ef4b32966995d403debddd614e3a8e02887752	不，我沒有配得上您的禮物。	draft		p10b-3 draft	
+3587	33	conversation	51c57e446234294cf455044e043e554bc5010093fe1b9ed14831e4b8fa75ffb8	這份禮物真不錯，我衷心感謝你。想不想去看看它要收進去的寶庫？	draft		p10b-3 draft	
+3587	34	conversation	075333b401c6976e24d24a1b2923e125a62e39f80bba8a1231502661360c12aa	喔，想，非常想！	draft		p10b-3 draft	
+3587	35	conversation	f944f3023d09466331bb1b9e26f235e3b1002f5cf22fb3449133d81ca386b803	不用了，不過謝謝你。	draft		p10b-3 draft	
+3587	36	conversation	2e0a5e7a47d27d9c5e0ab90d4959de4d94af0babc42cbf547b0eec2e4d108b55	除非大人您堅持。	draft		p10b-3 draft	
+3587	37	conversation	dcefacecfa89617e428dd9510f0438fb073852ebcf36871d97b6db45c6fdf4c0	我想，就這樣吧。你可以走了。	draft		p10b-3 draft	
+3587	38	conversation	8f4b9805959a5f512771127e6c27c662b155901440810889ea97cddb54f53ca1	忘恩負義的傢伙！願你和你的貪婪一起遭殃！	draft		p10b-3 draft	
+3587	39	conversation	8c8edf55343160f11294ac099193634d9650c83a836d1b968f64f03535b35df8	您的恩典真教人受寵若驚。告辭了。	draft		p10b-3 draft	
+3587	40	conversation	579cbb1e8ad07368cf1cd2df052b138b9026cfb0575ca9bfe60e0f232c01b5a7	可不是嘛，我想你當然想看。想看我寶藏的人可多了……摸摸它、撫弄它，說不定還想偷走它！你就是想這樣，對吧？趁我傻到請你進來，把我洗劫一空！\n 衛兵！衛兵！把這個小偷抓起來！	draft		p10b-3 draft	
+3587	41	conversation	262021adc3baf7b110f5f83290d422cef70a48b5bd1e9a37db25e3cb0a61be27	我無意惹您不快。叫您的衛兵退下吧。我這就走。	draft		p10b-3 draft	
+3587	43	conversation	fba695bb2c62a833ac0e70a3b345fcfd5143b63741afc79e5891f513ccb39719	那麼，你來訪的理由是什麼？	draft		p10b-3 draft	
+3587	44	conversation	86bd5e9c8f54700c8853b533dc220d131f353fc2a89d32de5930c9ba3e696893	我帶了這份禮物給您。	draft		p10b-3 draft	
+3587	45	conversation	fba690bbfff90d5bab29225b2d026eef5fceae2ae2ec34cf8bf521a8d7426114	我在尋找冒險。	draft		p10b-3 draft	
+3587	46	conversation	cd816c3fe4fdac9f7aa28e76f7f38c19f9c1a04d227335f49730d3afc2b2f651	只是想來見見您。	draft		p10b-3 draft	
+3587	47	conversation	9764cc86808f64dcbcb34afd4f06eddc770b40e7ac7896a492dff798a5915af0	或許我們能互相幫忙……我正需要你這樣的冒險者。我們的礦坑被一隻可怕的怪物入侵了！	draft		p10b-3 draft	
+3587	48	conversation	b5ffcf05adf6a29388f03407d52f620dce2100bd54782dce40cb9f742de91fe6	真的嗎？也許我能幫忙！	draft		p10b-3 draft	
+3587	49	conversation	adc5f3aad83a0f0f3038a24c6957635bc3fde7fb17bd84eb20c0dd997920080c	真遺憾。祝您有美好的一天。	draft		p10b-3 draft	
+3587	50	conversation	7d8b040a03fde79e1b2d54db6a5ea51cf0e1cf2f7e4ecd39a6b6636cc2934a96	我想那頭怪物我已經殺掉了。	draft		p10b-3 draft	
+3587	51	conversation	c920cd7b3a0ea2abf068237cbc5b18423f57bfaf09cb579ca0612e5c4340c4ba	那很好。我現在正需要一位完人。你知道我族人的礦坑被一隻怪物入侵了嗎？	draft		p10b-3 draft	
+3587	52	conversation	b5ffcf05adf6a29388f03407d52f620dce2100bd54782dce40cb9f742de91fe6	真的嗎？也許我能幫忙！	draft		p10b-3 draft	
+3587	53	conversation	9b0a1e4c064c7cfc97960258c9ab9039f849b48fff93c2a6ccb4323afd2f62f9	真遺憾。祝您有美好的一天。	draft		p10b-3 draft	
+3587	54	conversation	7d8b040a03fde79e1b2d54db6a5ea51cf0e1cf2f7e4ecd39a6b6636cc2934a96	我想那頭怪物我已經殺掉了。	draft		p10b-3 draft	
+3587	55	conversation	1da4b189babbe838706723e98331a1aff720c4d9b8587fd63395184feb8651fc	太好了！總算來了個英雄。我的族人——至少是那些還不算太寶貴、死了也無妨的——全都怕得不敢面對那頭怪物！那是頭可怕的怪物，渾身觸手，還長了好多隻眼睛。要是你夠勇敢，殺了那東西，我必定重重賞你！	draft		p10b-3 draft	
+3587	56	conversation	d35f8737b1c710d80e67a015a47f3196c97d134984a54e85e96a516f4511edb6	一定辦到！	draft		p10b-3 draft	
+3587	57	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	走著瞧吧。	draft		p10b-3 draft	
+3587	58	conversation	6b2c37aaf5085d0f2e35051c38cac54ec0338045b3fb82f863f824dc34af5864	我就知道你是英雄！很難對付嗎？	draft		p10b-3 draft	
+3587	59	conversation	17c96d85804535c2a169655b830affdca390f936baf178be7adf39b56b0456d3	難得不得了。除了我，沒人辦得到。	draft		p10b-3 draft	
+3587	60	conversation	cb2d69f2add7c2084a4bf4e7c3cc557e6f2d7eb244f9b10f45418a42728f88f9	是的。我很幸運能殺了它。	draft		p10b-3 draft	
+3587	61	conversation	0a3e7d2912ea1b84180008ae1a643860ecbd749f81c0de6055eba4812862619c	那我們真幸運，接下這件差事的是你。我們感謝你。還有別的事嗎？	draft		p10b-3 draft	
+3587	62	conversation	86d9e17c0a8de5e4e5558d6b476686bcaa0bbdcfbeaf26f98f63b5fe33c38edd	請您收下這份薄禮。	draft		p10b-3 draft	
+3587	63	conversation	ff5b60ba41cbc77f7603957434b8af61994c7df69db6c2cd2fd8907e9d90bba0	不客氣。再會。	draft		p10b-3 draft	
+3587	64	conversation	b02ee2bb4ec3e8554759600a185124f2d5ccba5cdf4af817e2fbf6aa6e9c526b	還這麼謙虛！你真配得上這份大獎賞！拿去！	draft		p10b-3 draft	
+3587	65	conversation	086ad2571f387322786b3ea441aacec735fd197b91a84555fd3ff2c94b1b2d1e	一位身材矮小、彎腰駝背的山岳族人快步上前，獻給你一枚做成石匠鑿子形狀的小護身符。\\m	draft		p10b-3 draft	control-code
+3587	66	conversation	77e30df5638551ef37895a50680d16ee2540b0ae9f937869f28558661c2587f6	這是偉大的庫爾尼斯最愛用的工具，他是我們部族有史以來最好的寶石匠。按照傳統，它會獻給英雄和技藝出眾的人。你是第一個帶著它的外族人。願它為你帶來好運。再次感謝你。	draft		p10b-3 draft	
+3587	67	conversation	44b41f29217f7801ff9d2b52e265f581ea5ad1209b6e5a3997492a49bcc393f6	\\m我就把它放在這裡給你。	draft		p10b-3 draft	control-code
+3587	68	conversation	d6bad9f6a7cea8d3297bc44a1275cac1144a39aff0bae143412f4e10a402283e	不客氣。也請您收下這份回禮。	draft		p10b-3 draft	
+3587	69	conversation	ae075cbbe13169de8699d5e89f5ef96fa528dfdcc580e090fb3a0776d78de9a1	謝謝您。再會。	draft		p10b-3 draft	
+3587	71	conversation	38e4b39e87d52e80da813a69d8a63fcc49ac0bc733681d911ac9d97aabb5209e	是的，事情已經辦好了。	draft		p10b-3 draft	
+3587	72	conversation	cf48660f560830f1dd0b9bffd625fae39d4f74d5e11efd94ec22feb449d3411b	不，它還是躲過了我。	draft		p10b-3 draft	
+3587	73	conversation	f8c334aa1d7cdfbf7995129aaf0a5be7c6f6a6631da79b979c4f7a42f349dfcd	我一直在忙別的任務。	draft		p10b-3 draft	
+3587	75	conversation	b1676d833104d8340ab96728bdcb48db94ca6f2a9bb02c5781cfc4d601ce6684	這是理所當然的。	draft		p10b-3 draft	
+3587	76	conversation	1d2dcfa681a14ae5c8653103a6d401d770eeead239a3f86eb25316015992babe	我擔當不起這樣的稱讚。	draft		p10b-3 draft	
+3587	77	conversation	f75a5780ce0d494107ea07c798b5d9ceceeab612188dafacad8b3495619dcd30	謝謝您。這是給您的禮物。	draft		p10b-3 draft	
+3587	78	conversation	fd7a85cdaedcfb1cfd45d9b93ae199d23ce6c18310fbc23eac714266cfb4fa94	好，我們很高興你來拜訪。你到附近的時候，記得再來打聲招呼。我們隨時歡迎你。	draft		p10b-3 draft	
+3587	79	conversation	688d057d8d953b4532ca4a04b8f1b57d60f24b6c3ded50b608369f9451b669f1	喔，得了吧。你帶著庫爾尼斯的護身符，那是你英勇事蹟的證明。只要這個部族還在，我們就會記得你。	draft		p10b-3 draft	
+3587	80	conversation	b6f6e289636e754b056c9be4239aca1e175efe6f37cc289c272bf017ac1bd94b	你既勇敢又謙虛！你一定配得上一份獎賞。	draft		p10b-3 draft	
+3587	81	conversation	593e21fb59857d6977b17d9cf8093d7852164d595c36bed4ed07efee20d3ea2e	哼。也許你不是我一開始以為的那種偉大戰士。	draft		p10b-3 draft	
+3587	82	conversation	3a389f4fefdb8f2eb7bf754017626875b9e660d1f9cba1f1eb67dce291069943	您也許說得對。	draft		p10b-3 draft	
+3587	83	conversation	a230e5e09e17c4de90ce470715603e780089684595c75204cfa37e559c7c1ebf	我會盡全力打倒那頭怪物。	draft		p10b-3 draft	
+3587	84	conversation	d150b215b4e4fd48fd8053607a8472e1c8881b7346e822edef56ca25809d5f72	喔，又是你。你來有什麼理由嗎？	draft		p10b-3 draft	
+3587	86	conversation	a91d5393d024896852b975d3ef03cfd263d7ce63f315bc218ab604693abfa3c6	我有份禮物要獻給大人您。希望您會喜歡。	draft		p10b-3 draft	
+3587	87	conversation	0786dfeaa3580e2548b5ac7efbc207fe38c5c524f8570eae728e783eb2224baf	我還有一份禮物要獻給大人您。	draft		p10b-3 draft	
+3587	88	conversation	1bd730216c98a4b11fceeedbe36d1c15b356113db2c9f23fd4e7022f47049dc1	我在尋找冒險。	draft		p10b-3 draft	
+3587	89	conversation	63e3bbab1e9c20509a16e005b24358454c8ea4f4e4219acd68d0ec3d30dbdfe3	我只是想來向大人您致意。我該走了。	draft		p10b-3 draft	
+3587	90	conversation	932d4a18dcdbb0b27515351ff1ac076fb6fafdddf4707a62fe023dfa8926eae9	你休想耍我！	draft		p10b-3 draft	
+3587	91	conversation	779e3bc93e2a48b8ceb55eb4ec8d4f6e213d673ee38c101f1ef455cb1a4ff5a0	可是你兩手空空啊！你真的要送我禮物嗎？	draft		p10b-3 draft	
+3587	92	conversation	6ba0144399e1d6f505524df599d6a154f938e7ab8bf8caac88519b805da5ffa3	是的，抱歉，在這裡……	draft		p10b-3 draft	
+3587	93	conversation	4954463bb9cacd9241e21a3a88ef4b32966995d403debddd614e3a8e02887752	不，我沒有配得上您的禮物。	draft		p10b-3 draft	
+3587	94	conversation	9f8362ceda0e25abcb5545239803d27da66712e01a42f57e6356907a65bc8c59	這是份好禮物。我衷心感謝你。	draft		p10b-3 draft	
+3587	95	conversation	a8050c51fb1b757dd194964fa9473151509d4af92491343023a32ccf4bc57a3a	不客氣。再會。	draft		p10b-3 draft	
+3587	96	conversation	c685b68c0d68ed6e801ea7f5310a3241cf2985b22abcfa295bbf7353a480a750	很高興您喜歡。	draft		p10b-3 draft	
+3587	97	conversation	f3259074fa43d566424f6377e51db45cdf57059669bebfd33def3e9520a88b8c	天哪！我從沒見過這麼大塊的金子！你一定配得上這把斧頭，這是從我祖先那時代代相傳的光榮兵器。好好用它，比它好的兵器可沒幾把。	draft		p10b-3 draft	
 3591	1	conversation	a5f9b2a07dcba6f58b0b50b9550bcccbaba4f8c81a30bc043b813cf28cd4e938	你是誰？來這裡做什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	3	conversation	de04d3d096ab06f2c6af01ea9168324047fdd1686bd01ce6e1f65d030068d831	我正在執行一項任務。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	4	conversation	6f9c5fe1b7df6d40c71569575863c4a22e4fd04129409f3ba89e74571d584de2	你又是誰？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
