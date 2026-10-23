@@ -72,4 +72,5 @@
 ## 驗證
 
 在 `uw1/` 執行 `python tools/i18n/validate_authority.py`，會檢查詞條身份、來源、分類檢視、輸入碼及指南的法術組合／環級。
+這是已納入版本控管之 Authority dataset 的正式驗證工具；從儲存庫根目錄執行 `python3 uw1/tools/i18n/validate_authority.py`（Windows 可用 `python`）不需遊戲資料、手冊圖檔、私人檔案或指南原檔。Linux、macOS、Windows 的 CI 均執行此無參數驗證；待核項目非零或選詞只有空白時，驗證失敗。
 可加 `--guide <Translation_Guide.md>` 比對指南雜湊及行號；`--workbook <本機匯出工作表>` 額外核對遊戲鍵值。工具不改寫資料或載入手冊圖檔。

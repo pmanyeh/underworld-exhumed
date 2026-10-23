@@ -59,6 +59,7 @@ jobs:
       - name: Localization dataset, pipeline and catalog lookup (no game assets)
         run: |
           python3 uw1/tools/i18n/l10n.py validate
+          python3 uw1/tools/i18n/validate_authority.py
           python3 uw1/tools/i18n/test_l10n.py
           python3 -m unittest discover -s uw1/tools/i18n -p test_i18n.py
           python3 uw1/tools/i18n/test_runtime.py
@@ -126,6 +127,7 @@ jobs:
       - name: Localization dataset, pipeline and catalog lookup (no game assets)
         run: |
           python3 uw1/tools/i18n/l10n.py validate
+          python3 uw1/tools/i18n/validate_authority.py
           python3 uw1/tools/i18n/test_l10n.py
           python3 -m unittest discover -s uw1/tools/i18n -p test_i18n.py
           python3 uw1/tools/i18n/test_runtime.py
@@ -170,6 +172,7 @@ jobs:
       - name: Localization dataset, pipeline and catalog lookup (no game assets)
         run: |
           python uw1/tools/i18n/l10n.py validate
+          python uw1/tools/i18n/validate_authority.py
           python uw1/tools/i18n/test_l10n.py
           python -m unittest discover -s uw1/tools/i18n -p test_i18n.py
           python uw1/tools/i18n/test_runtime.py

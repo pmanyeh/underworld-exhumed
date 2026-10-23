@@ -49,7 +49,7 @@ def validate(root, guide=None, workbook=None):
         ident = row["category"] + "\0" + re.sub(r"\s+", " ", row["source_en"].strip()).casefold()
         expected = "UW1-" + hashlib.sha256(ident.encode()).hexdigest()[:12].upper()
         require(row["term_id"] == expected, "Unstable term ID")
-        require(bool(row["canonical_zh_tw"]), "Empty selected translation")
+        require(bool(row["canonical_zh_tw"].strip()), "Empty selected translation")
         require(row["status"] in {"project-selected", "review-needed", "approved"}, "Invalid status")
         require(row["source_scope"] in {"game-text", "guide-only"}, "Invalid source scope")
         game_keys = set(filter(None, row["game_keys"].split(";")))
@@ -181,6 +181,7 @@ def validate(root, guide=None, workbook=None):
             "Stale review queue")
     require(all(row["canonical_zh_tw"] == by_id[row["term_id"]]["canonical_zh_tw"] for row in pending),
             "Stale review choice")
+    require(statuses["review-needed"] == 0, "Authority has unresolved review-needed terms")
     return {"status": "PASS", "terms": len(rows), "categories": len(counts),
             "guide_spell_sequences_verified": checked_spells, "runes": len(runes),
             "mantras": len(mantras), "skills": 20, "virtues": 8,
