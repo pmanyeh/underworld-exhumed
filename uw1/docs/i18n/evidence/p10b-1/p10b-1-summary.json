@@ -1,0 +1,58 @@
+{
+  "batch": "P10B-1",
+  "blocks": {
+    "3604": "Gulik (20)",
+    "3603": "Hagbard (19)",
+    "3591": "Ketchaval (7)",
+    "3593": "Vernix (9)"
+  },
+  "drafted": 254,
+  "grammar_sensitive": [
+    "3603:1",
+    "3603:2"
+  ],
+  "templates_left_for_P11": 7,
+  "authority_batch": {
+    "error": 0,
+    "warning": 0,
+    "info": 31
+  },
+  "catalog": {
+    "entries": 485,
+    "sha256": "3e57452ca30ec5350245de48143d9902d1757e5e5f9d0ec2d01f29486cc3fba2",
+    "builds_identical": true
+  },
+  "localized_replay": "PASS (16 sessions; no public session reaches these NPCs)",
+  "coverage": {
+    "before": {
+      "production": {
+        "translatable": 6983,
+        "translated_draft_or_better": 231,
+        "reviewed_or_better": 225,
+        "completion_percent": 3.31
+      },
+      "conversation": {
+        "direct": 4847,
+        "special": 243,
+        "untranslated": 5011,
+        "draft": 4,
+        "reviewed": 75
+      }
+    },
+    "after": {
+      "production": {
+        "translatable": 6983,
+        "translated_draft_or_better": 485,
+        "reviewed_or_better": 225,
+        "completion_percent": 6.95
+      },
+      "conversation": {
+        "direct": 4845,
+        "special": 245,
+        "untranslated": 4757,
+        "draft": 258,
+        "reviewed": 75
+      }
+    }
+  }
+}

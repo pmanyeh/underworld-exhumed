@@ -17,6 +17,8 @@ python3 tools/i18n/l10n.py import $D build/i18n/p9/workbook.tsv               # 
 python3 tools/i18n/l10n.py validate $D            # UTF-8／key／source drift／控制碼／模板
 python3 tools/i18n/l10n.py authority $D --block 1 # 譯文對照 authority/GLOSSARY.tsv（--block 限定批次）
 python3 tools/i18n/l10n.py build $D               # deterministic build/i18n/zh-TW.uwloc
+python3 tools/i18n/babl_audit.py $D --input-keys i18n/input-keys.tsv   # 對話字串的程式讀取稽核（比對字串不翻）
+python3 tools/i18n/layout_qa.py $D --block 3604 --report build/i18n/layout-qa.json   # 譯文在遊戲文字框的排版 QA
 build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" --locale zh-TW \
   --i18n-file build/i18n/zh-TW.uwloc --hd-scroll --i18n-trace build/i18n/p9/play.jsonl
 python3 tools/i18n/l10n.py coverage $D --trace build/i18n/p9/play.jsonl   # coverage.json／coverage.md
