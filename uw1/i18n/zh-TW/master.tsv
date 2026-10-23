@@ -1,5 +1,5 @@
 block	index	category	source_hash	target_zh_TW	status	context	notes	flags
-1	2	game	31d190a0704d9efed5116d57a04a58851200e61f0f37b9989eac7f8318288711	這把鑰匙對不上這個鎖。\n	draft	PoC role: scroll	PoC draft P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	
+1	2	game	31d190a0704d9efed5116d57a04a58851200e61f0f37b9989eac7f8318288711	這把鑰匙對不上這個鎖。\n	reviewed	PoC role: scroll	PoC draft P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 1	3	game	307d72083a9c9dd4d04a6ce5328a1078233264e8268eedb54a791d1eed1776e3	那上面沒有鎖。\n	reviewed	P10A-B1 core system: key use (USEITEMS.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	4	game	0419f5cdc9840c9f6c6b8a006cc50c045af1a50556165c5288ff12cad5999f77	鑰匙把鎖鎖上了。\n	reviewed	P10A-B1 core system: key use (USEITEMS.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	5	game	c1423871b6aafb4c9ec8cd95c2ee839520b952396990ebeb4c5e841e46ff0c79	鑰匙打開了鎖。\n	reviewed	PoC role: scroll	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	
@@ -159,7 +159,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	207	game	4ac9d4987276bc51a556a0ad6330fdeeb1d80811e4650f390c445d5525c796dc	你推動了拉桿。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	208	game	3748a5c4c64efdd513d008fd1f744a1989a41284e6e15935119398cf2af3fa5f	你把鏈條放回了原位。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	209	game	3748a5c4c64efdd513d008fd1f744a1989a41284e6e15935119398cf2af3fa5f	你把鏈條放回了原位。\n	reviewed	P10A-B1 core system: no Native C reader found (consumer audit); translated in case level data names it	reviewed: 使用者確認（Claude 預審）2026-10-23	
-1	210	game	5ca027d17ee260e03c015923ca6a6f6b457ecbc4e9fbb5e909e602f6649d62ab	你的經驗還不夠，無法施展這個環級的法術。\n	draft	P10A-B1 core system: casting	P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	
+1	210	game	5ca027d17ee260e03c015923ca6a6f6b457ecbc4e9fbb5e909e602f6649d62ab	你的經驗還不夠，無法施展這個環級的法術。\n	reviewed	P10A-B1 core system: casting	P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 1	211	game	7a238f9ccfee25503b3723f1bcbaaebc6eb4c928e725e6899a5f3dc3cd0cb365	你的法力不足，無法施展這個法術。\n	reviewed	P10A-B1 core system: casting	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	212	game	28d6df452620a887f0d7dcc8a7b40524abdd423cadcc7d104119d0e17542a217	咒文詠唱失敗了。\n	reviewed	P10A-B1 core system: casting	reviewed: 使用者確認（Claude 預審）2026-10-23	
 1	213	game	a4f22310f2742cc5a5d21564b11e6ea9cf23cb337364a62e9d8eb3d0f737a55a	施法沒有成功。\n	reviewed	P10A-B1 core system: casting	reviewed: 使用者確認（Claude 預審）2026-10-23	
@@ -344,262 +344,262 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 7	0	conversation_common	f71e90d787d4406d805af3d4fe4a87144cc4410d8981825902c66fcdd95622a6	你無法與那個對話！\n	reviewed	P10A-B1 conversation system: talk target refused (CONVERSE.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	1	conversation_common	d0a21149b0b2ef0822a85bbc671dd6803c35b38e25762f0f956c65fd25593f19	沒有任何回應。\n	reviewed	P10A-B1 conversation system: no response (CONVERSE.C, BABL.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	83	conversation_common	6e2438a46d02f906a83dfef80fd9d898f2faf4ddfbd7904b7b292cfa27aad77b	布拉吉特	reviewed	PoC role: npc_name	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
-3591	1	conversation	a5f9b2a07dcba6f58b0b50b9550bcccbaba4f8c81a30bc043b813cf28cd4e938	你是誰？來這裡做什麼？	draft		P10B-1 draft	
-3591	3	conversation	de04d3d096ab06f2c6af01ea9168324047fdd1686bd01ce6e1f65d030068d831	我正在執行一項任務。	draft		P10B-1 draft	
-3591	4	conversation	6f9c5fe1b7df6d40c71569575863c4a22e4fd04129409f3ba89e74571d584de2	你又是誰？	draft		P10B-1 draft	
-3591	7	conversation	795569b6f83c9560710b31f22874463e5c525a469927aa079b216b657d53fa0b	從沒聽過你。你是維尼克斯的朋友嗎？	draft		P10B-1 draft	
-3591	8	conversation	718ba640b973e4b08a9eeeb7c7675ca5228cd45b4ffb1a273038e238f79ca098	哪個維尼克斯？	draft		P10B-1 draft	
-3591	9	conversation	cc07850c5e9229139005fd230419a5d512fb253e67cf4cfd4d58100b9d016a20	對，我是。	draft		P10B-1 draft	
-3591	10	conversation	4ad57088f6db41de3d7583f4df4cf8d38c81edb4dad38a433e0cc0aedd5de4f3	不，我不是。	draft		P10B-1 draft	
-3591	11	conversation	5369475430d537c12a805e53e02ae2bf96e61b15d608edddadbbbe776e276aff	維尼克斯，那個所謂綠色惡鬼族的所謂國王！	draft		P10B-1 draft	
-3591	12	conversation	058ffc8bb6ec6bb45f8db49f34fc59ff2633832ac745aa9c79c04f1191ec0d67	不，我不是他的朋友。	draft		P10B-1 draft	
-3591	13	conversation	303ee6080efc1db9ce17002d2c80a7f2950fc8f8a02521929b823f63546cf05e	對，我把他當朋友。	draft		P10B-1 draft	
-3591	14	conversation	c4a41eb4955f5e31193762f5c8d46da8734204536e2437dee6df7acc558976ab	那你就跟他一樣，是我的死敵！離我遠點，不然我就叫守衛了！	draft		P10B-1 draft	
-3591	15	conversation	41ada07e529fcf64dd4b5464a4dec08f13d58a74a338acc9394610a9ab363024	如你所願。走了正好！	draft		P10B-1 draft	
-3591	16	conversation	fd9be9c3e4790de2e1452d7ba2726158c51580963e57df75d26e695205b68eab	嗯。好吧。你跟他說過話了？	draft		P10B-1 draft	
-3591	17	conversation	399210252493a4d4ed1bfd693f8d5672c46c20cfd94f373e238cd609b52e6f0f	對，說過了。	draft		P10B-1 draft	
-3591	18	conversation	6770e8e9a0137b7f1b0c841a61880f7a70e53ce6900b6f5a36cbe974c4a5ec10	沒有。我該去嗎？	draft		P10B-1 draft	
-3591	19	conversation	25f03de773eb4da55d41a22d497780cbbbf8b2a1c350ec66495957d2b9faab30	娘娘腔，對吧？根本不像個像樣的惡鬼！	draft		P10B-1 draft	
-3591	20	conversation	8f19e361a5427943260b47e3d3c720910d30b8444f2a36f51cc7049092c1ed55	我當然同意。那你呢？	draft		P10B-1 draft	
-3591	21	conversation	9f2cee075d1e3231937f564e75fd4e21f0c43422f8d2b61521a72ae7f942bbb2	我不清楚。你現在能幫我嗎？	draft		P10B-1 draft	
-3591	22	conversation	3dede566facc0fdcd5cbeee287a221f013ef0e7b5841f4c40e0fccb0d92f2189	別費事了！他完全是浪費時間。你運氣好，先來找了我。	draft		P10B-1 draft	
-3591	23	conversation	e70c1d38380520b0517c17006b278545afa0b594578a2e43c651b70fb78e2d92	確實如此。你能告訴我這座深淵的事嗎？	draft		P10B-1 draft	
-3591	24	conversation	954962d905acaabd1064b62acb10387429be3aa430162a377b24ae1d4e72c85b	我真幸運。你知道有個女孩被洞穴巨人綁走了嗎？	draft		P10B-1 draft	
-3591	25	conversation	53f026ef1ea80fdc8d27da45baf793310188f7229777c7b4a48f6f51d8bb3719	我啥女孩也不知道！我自己的麻煩都夠多了。	draft		P10B-1 draft	
-3591	26	conversation	46097dabdd4cbbef38d4dbe3f415757560a8ecb382bc5e621a28ecd3e8ed2e08	比如說？	draft		P10B-1 draft	
-3591	27	conversation	ac57eb6d5cfe33abc56f94ff32b9704071054913ed4c1c5e5fa6e49f41fc9c62	我相信你一定有。我該走了。	draft		P10B-1 draft	
-3591	28	conversation	28232ff69901f037f851ff38820efcbf727a137f240a879653a0450a4bb5460d	那麼，你能告訴我一些深淵的事嗎？	draft		P10B-1 draft	
-3591	29	conversation	a872e5c9fd77ce72575d32b71cf4c3ea2f8638563f4ab1037b69a706dee803c0	我的敵人多得數不清。連這裡的害蟲都很麻煩。一隻叫「夜眼」納弗瑞的巨大母蜘蛛，一直威脅著我的族人。她還不是我唯一的麻煩，不過光她就夠受的了。你知道嗎，她的蛛網像鐵一樣堅韌，還燒不掉。惡鬼一旦被黏上，就只能待在那裡爛掉！	draft		P10B-1 draft	
-3591	30	conversation	251c33ce5d0b0cc970c3af2e08f1abda13910a556806e8295150a5725fcc2ab6	太可怕了！	draft		P10B-1 draft	
-3591	31	conversation	bff4bdb491551328597003ccd3bea6f9720d2442901bfe4d761545af1efcb343	也許我能幫上忙。	draft		P10B-1 draft	
-3591	32	conversation	372024df501ce96f31276c21c60554ea3642f90ecd03d654f4ef109c51f02e70	別傻了！沒人殺得了可怕的納弗瑞！好了，你來這裡是有事吧。	draft		P10B-1 draft	
-3591	33	conversation	c1125f0317417f46b0ad1a4ec4e843068dd418a9721233598da9dfc8336e4275	我是凱查瓦爾，高貴惡鬼族最後據點的偉大首領，灰色一族的王。\n 多年前，我們被那個花言巧語的蠢蛋凱布勒斯騙來這裡，我們高貴的灰色一族帶著僕人，也就是卑賤無知的綠色惡鬼族，來新家照顧我們。\\m	draft		P10B-1 draft	control-code
-3591	34	conversation	f0aa4da057000acd983744c816be1e60d655f54cbcf0d9a0c81d0b75f2340b5e	後來我們給了他們自由，還讓他們享有平等的公民權，雖然大家都知道，這給他們的榮耀遠超過他們配得的。可看看他們怎麼回報我們！凱布勒斯的「文明」一垮，他們就分了出去，從此一直跟我們作對。\n 全靠我的領導，我們才能在這種對抗下團結在一起。	draft		P10B-1 draft	
-3591	35	conversation	fe577951db80f30e5a4f82dc0500ee52b187c3adcbd94098f231ec2bf1a7c672	這種差事一定很操心吧。	draft		P10B-1 draft	
-3591	36	conversation	35cb6a60b694d50dfed5600d538a2b81f1d47111510f5670b090fe590bb4af81	綠色那一族就沒有半點可取之處嗎？	draft		P10B-1 draft	
-3591	37	conversation	3158185adf0192c1bebd9b39b97dd0d454265e344417842a20116c35c259b823	真替你高興。再會。	draft		P10B-1 draft	
-3591	38	conversation	f764b5583e48b962ee5dd30037802bb5c99be1720c981116f01ba39a15503f4e	一點也沒有！他們多疑、記仇又工於心計。別提他們了！	draft		P10B-1 draft	
-3591	39	conversation	7e00e01b70d394c5bbfa86c24643a063d3327274ca6f172e32f425591accd756	你想幹嘛？	draft		P10B-1 draft	
-3591	40	conversation	19e261f760bb654a9acc317b37c19f9c7e521746807266e65badc545ff0f3f77	我得找到一個女孩。	draft		P10B-1 draft	
-3591	41	conversation	a0f9c00dd15ce9273746f268797957f53697e234ee6bfc35b1c3bd51eba9b433	我想了解凱布勒斯的事。	draft		P10B-1 draft	
-3591	42	conversation	b4227bdb8c2bcd951221fa9215bebdb93a5646fbd4c3c134a923abb121703c1e	你已經幫過我了。謝謝你。我得走了。	draft		P10B-1 draft	
-3591	43	conversation	8de3d314db8bc0129367b877ba3cc39525cfce8718407bd990090c394a309575	一個叫凱布勒斯的人類蠢蛋，說服了我們很多族人來這個該死的地方建立殖民聚落。等他的夢想被證明只是一場愚行，他就自我了斷了——喝毒藥死的——把我們丟給命運擺布。	draft		P10B-1 draft	
-3591	44	conversation	b139852168b2f1110dc2b7a505c5a37542f35f11769b4291db0ad857451db23a	真是悲劇！	draft		P10B-1 draft	
-3591	45	conversation	f421e170a888cef79513c00575d97e88588aaf5d891177c9cd3ee0e34e426c7b	啊，好吧，我現在得走了。再見！	draft		P10B-1 draft	
-3591	46	conversation	95cb4fbed897b1301863db048c752faf5c427956e7681aa31a612ba6415b6a8d	可不是嘛，這真不公平！不過我們還是得撐下去。還有別的事嗎？	draft		P10B-1 draft	
-3591	47	conversation	ec003da59b8ab965bc8a26f96805964b73a58c1cb43b3229b35b369b08a944f8	沒有了。謝謝你。再會。	draft		P10B-1 draft	
-3591	48	conversation	19e261f760bb654a9acc317b37c19f9c7e521746807266e65badc545ff0f3f77	我得找到一個女孩。	draft		P10B-1 draft	
-3591	49	conversation	a0f9c00dd15ce9273746f268797957f53697e234ee6bfc35b1c3bd51eba9b433	我想了解凱布勒斯的事。	draft		P10B-1 draft	
-3591	50	conversation	2f3e5ad1d3bcd5f5c72623ece76029824d5e5fd464fff4183fa40f55655ed5bf	我的時間可不能讓你這樣浪費！你就沒別人可以去煩了嗎？	draft		P10B-1 draft	
-3591	51	conversation	b7db6d32486c0bf8c7c4179580135235ce76e8ab5f7045abbcb47947bedcae58	又是你！趁我叫守衛之前快滾！	draft		P10B-1 draft	
-3591	52	conversation	2f838d2c0da50cfa5183bc3d9e43ad3f3050bd0299a752e8e9e1f3c0b69e9a5e	你又來煩我？這次又是什麼事？	draft		P10B-1 draft	
-3591	54	conversation	f4e47ded0e80699e0b0f74c152122b274b121052ee15bb5d6559f779b5887b69	抱歉，我得走了。	draft		P10B-1 draft	
-3591	55	conversation	33ff368d250d992f2f9bfb2b531bcc590889e60ac0fdc36b0089f4961e51da94	我想問你一個問題。	draft		P10B-1 draft	
-3591	56	conversation	a264d6aea84ef7dabd78d8a120e0f97a3cb5340f20e387c4cdb8b1b30bc2ccb4	我需要你的幫助。	draft		P10B-1 draft	
-3591	57	conversation	6199793db432b366af9099d72605895329fe0bbfb4a9a41d87a4a64b4d45b19e	粗野的笨蛋！沒經過我妻子的同意，你來這裡做什麼？	draft		P10B-1 draft	
-3591	58	conversation	86555cb5459266e1c745a8eaf3765795b1e8766d4060d022ab12d60e23830cad	我不知道要先得到你妻子的許可。	draft		P10B-1 draft	
-3591	59	conversation	99b2bfb40050c4292b86ff78089c0fa12099c96420e2e496b4131000b980a508	哼，現在你知道了！再見！	draft		P10B-1 draft	
-3591	60	conversation	4ef3f499dde85b5e91bc84ce1933ad36ffb3ac1153f94fcfcd666cb4ad5396d2	看來我們兩個之中，說話得先經過你妻子允許的，另有其人。再會。	draft		P10B-1 draft	
-3593	1	conversation	b8b7cfdf4758ef90476310dd4bffc7be69cdefdf57c1b98935a2fdc474fab753	嗯？	draft		P10B-1 draft	
-3593	2	conversation	20b7fb8723f1435cb4f465275f2b00491b1657ce2ceda9a57719db29462a179f	你好，惡鬼之王。	draft		P10B-1 draft	
-3593	3	conversation	58dc18a7b9136576ae7a0a819452716a82a4828d4641764d2b7e80935aaf4d22	向偉大高貴的綠色惡鬼族最強大、最威武的統治者致敬！	draft		P10B-1 draft	
-3593	4	conversation	2e6ff025a7a5e9886f4895a55c3cdb420f81c0b97d1379cc1efd3f94db27ca12	日安，殿下。	draft		P10B-1 draft	
-3593	5	conversation	b8a409e5f35df1899bc02e666e4b0186c41607eff07225a154d08ca863bad754	顯然你是個粗人，配不上這裡的高雅同伴。給我出去，等你學會模仿比你高明的人的禮儀再來吧。	draft		P10B-1 draft	
-3593	6	conversation	7225f8de71d3faac62ae37948e42a1569b09b4e1df70d4ec2e103bef0ea35b16	那你可有得等了！再見！	draft		P10B-1 draft	
-3593	7	conversation	110454b671a3599bd0dd05603c0583f947af061f1a2f19cafec8df82f1468bf3	請原諒我，陛下，我沒料到會在這裡遇見如此高貴的人物。	draft		P10B-1 draft	
-3593	8	conversation	d6e8ac1c73a6ca86a91c8d3e0869b687f1035fecd9f672e76068c639221f07da	向你致上誠摯的問候。你為什麼闖進我們的宮廷？	draft		P10B-1 draft	
-3593	9	conversation	16e0e0039d01dde3478085fa03481cde57227741b09e4a1be687403d100c1eda	我是來打聽消息的。	draft		P10B-1 draft	
-3593	10	conversation	7e826efd0b7dbbedf28020a03f214efde852eb202a5ee25096b34c3ae4a2c276	我長途跋涉，只為暢飲您那智慧之泉，噢，王中之珍珠。	draft		P10B-1 draft	
-3593	11	conversation	973066774dbd723c987d2bdb5e9e08edd363c16ac57d2ffb5a0bbf1d27c89ab7	說得對！仔細想想，我確實相當睿智呢。你想知道什麼？	draft		P10B-1 draft	
-3593	12	conversation	04a4a0d156d7a2806d1a0277f37e76845fd7551055d02dc125fa2519c573fe1d	凱布勒斯爵士是誰？	draft		P10B-1 draft	
-3593	13	conversation	f8accb6851726e38db8b0b7008d7b5c5009563a126f17863b64c3b7389462af1	我聽說的這些聖物是什麼？	draft		P10B-1 draft	
-3593	14	conversation	73313c688fda646ca98f8da7aad06dd9dd12803f2e0e6c3fd015a8be3a8cdd7c	跟我說說深淵裡的各個種族。	draft		P10B-1 draft	
-3593	15	conversation	92c5e7999099fc5ffe1359391cac9507d4e9b9ccc68e8e0c3d9b3747f17ffddb	您那件華麗的斗篷是從哪裡來的？	draft		P10B-1 draft	
-3593	16	conversation	56898f9e1dc875abbfbcb2683b609e921150e69472e419f160922376e3ad8a0b	嗯……也許你可以被原諒。這地方確實滿是粗魯得嚇人的傢伙。你可以留下。你需要什麼？	draft		P10B-1 draft	
-3593	17	conversation	fbe412c25039d46914496776212d7a156699129aa1182ca910bed6059a9d4f93	只想稍稍分享您淵博知識的一小部分。	draft		P10B-1 draft	
-3593	18	conversation	aaffc2298ab0d77b41c2140f7b3f3c284453eb9165228ab46defca9d4c5bd2f9	沒事。我要走了。	draft		P10B-1 draft	
-3593	19	conversation	2d9299607d4ee8c97792f0425940621a6e104d405aeb9c24d5c7c433f0c5e539	我需要一些消息。	draft		P10B-1 draft	
-3593	20	conversation	dce6cd923d23cead52856e1ef3c2420615d820932adf493601368a2b725368dc	我改變主意了！你果然是個粗野的傢伙！給我滾！	draft		P10B-1 draft	
-3593	21	conversation	70bcf532db4f04bd8beb8bb269dd89f71bbf2da7ad65bc44de90e3e403484f72	你的禮貌簡直跟強酸蛞蝓沒兩樣！給我出去！	draft		P10B-1 draft	
-3593	22	conversation	0ab28eacdb80bcd329bce0b5882aa8f53638a82ac8a5e9ce3b1175141046b9c2	你也太大方了，竟然肯花這麼多時間！	draft		P10B-1 draft	
-3593	23	conversation	50907206eac621dfc9da061682302e56cfac4a93be8e42a3214fbf925c645787	你能不能站得再遠一點，到下風處去？	draft		P10B-1 draft	
-3593	24	conversation	198fd400976bc8c18493333cb97141f59fcf14bd14d436a1441fd2c842625179	我萬分謙卑地懇求您的原諒。	draft		P10B-1 draft	
-3593	25	conversation	a8cc17692feea4d7f3af86d5c8747d6abc8d8ac65090caa6faf52bafd51d028d	你這個花俏的蠢蛋！	draft		P10B-1 draft	
-3593	26	conversation	0af42df44d6958a3d6a88b8a5215b3c79a122e5a6794357982e975ed72d56616	很適合我，對吧？這是專門為我訂做的。在地底下，可找不到這種手藝。\n 嗯，山岳族也許會做一些不錯的東西，不過他們偏好金屬，不太做衣服。\n 當然還有那些預言者——他們自稱「古老光明月之石預言者」——他們的手藝也不錯。不過比起裁縫，他們通常更擅長文字的藝術。	draft		P10B-1 draft	
-3593	27	conversation	04a4a0d156d7a2806d1a0277f37e76845fd7551055d02dc125fa2519c573fe1d	凱布勒斯爵士是誰？	draft		P10B-1 draft	
-3593	28	conversation	f8accb6851726e38db8b0b7008d7b5c5009563a126f17863b64c3b7389462af1	我聽說的這些聖物是什麼？	draft		P10B-1 draft	
-3593	29	conversation	357aa57553a7dc164a95d63996993a15b64fbbd913c53b695020c2521e7488ff	深淵裡有哪些勢力？	draft		P10B-1 draft	
-3593	30	conversation	6be718f48476291ada6da11bcf2d16b387ea157328afce9b806873c16012f800	那這座大廳呢？真是美極了。	draft		P10B-1 draft	
-3593	31	conversation	133f44b6b83ee6fa492386c498d42a4c2194049ad90a282f9e453ab2467268d2	哎，人總是盡力而為嘛。當然，那些討厭的灰色惡鬼族趁夜溜走的時候，把真正好的東西全帶走了——那正是凱布勒斯爵士死後不久，一切都在分崩離析的時候，你知道的——從那以後我們只好將就著過。\n 總有一天，我要把毒藥下到凱查瓦爾或他那個醜老婆身上（其實都一樣——你知道嗎，他可怕老婆了），到時候就知道誰厲害了。灰色惡鬼族的國王，哼，真敢說。\\m	draft		P10B-1 draft	control-code
-3593	32	conversation	3ac3fbfad324e2198d529f108d3aafe65ccd825d2107999e623e8f777dcce117	哎呀，他根本是個暴發戶！他父親是個偷馬賊！不過別說這些了……你想知道什麼？我能怎麼幫你？	draft		P10B-1 draft	
-3593	33	conversation	f8accb6851726e38db8b0b7008d7b5c5009563a126f17863b64c3b7389462af1	我聽說的這些聖物是什麼？	draft		P10B-1 draft	
-3593	34	conversation	169e0d1e40979c3e0c37fc16c6303f82fef173a4d951c2c0735f82012365e8cc	我想了解凱布勒斯爵士的事。	draft		P10B-1 draft	
-3593	35	conversation	10ab4aedf7d9337cdf89dd7731616a30bb02cf4595aecad310a7f4e6e8f1255a	能再多告訴我一些深淵裡的勢力嗎？	draft		P10B-1 draft	
-3593	36	conversation	c6df04e1a71545a1d0d85b09037d843dcc1418a77332a988987d4c547c095e32	陛下願意撥冗幫助我，真是太仁慈了。	draft		P10B-1 draft	
-3593	37	conversation	c0e5e42b032192fa0bbe599dc877d847a6159aaa63b937c00101fdb87513c6cc	哎呀，別客氣！我難得有機會跟真正聰明的人說話呢！\n 我是說，我們的盟友蜥蜴人人是不錯，可憐的傢伙們連一句通用語都說不出來。他們聽得懂，可是那張嘴就是說不了。而且他們的語言好難！我知道「Sseth」和「'click」的意思是「是」和「不是」，可是我搞不清楚哪個是哪個！\\m	draft		P10B-1 draft; authority-ok:Sseth（此處是蜥蜴人語的「是／否」，保留原文）; authority-ok:mouth（嘴巴，非生物「巨口」）	control-code
-3593	38	conversation	449ec1285a8fb4e17247140fd93b145a782bdaa8e9db2edc4345ea624f499500	再來就是安塔南十字騎士團——他們倒是能說會道，可是開口閉口都是殺了多少個洞穴巨人。無聊得要命，就算這樣確實能幫忙減少害蟲——兩種害蟲都是，騎士和洞穴巨人，你知道的。	draft		P10B-1 draft; authority-ok:Crux Ansata（組織名依 Authority 的「安塔南十字騎士團」；與 Crux Ansata「安卡十字」不一致，待 Authority 決定）	
-3593	39	conversation	462febc4bf144a6593c063508b12b8c5d3881283f49322f7bd901080ec1e6f49	就算對您這樣高貴的人來說，這一定也是種考驗。	draft		P10B-1 draft	
-3593	40	conversation	80940f43bc734f65f1fd1ff07c57f54ae37709ed8eb7c957a7ee1d32d05d73a2	那這些聖物呢？	draft		P10B-1 draft	
-3593	41	conversation	169e0d1e40979c3e0c37fc16c6303f82fef173a4d951c2c0735f82012365e8cc	我想了解凱布勒斯爵士的事。	draft		P10B-1 draft	
-3593	42	conversation	51d15e55c787a514a0252192a9c818b2e7a3cb15223d188000d2453c087f96d7	深淵裡還有其他勢力嗎？	draft		P10B-1 draft	
-3593	43	conversation	f042aea1d999ea35157a34c00170bbd6730a43d29fbdde8f291911c615638ca4	噢，可不是嘛！有時候我都不知道自己是怎麼撐過來的。你知道嗎，從前可不是這樣的。\n 凱布勒斯爵士在世的時候，一切都好得多了。他讓大家合作得那麼好。那個人真是天生的領袖。\n 他建立這個殖民聚落的時候，你在不列顛尼亞隨便哪裡都能跟人打賭說它成不了，可是他就是辦到了。\n 我到現在還是覺得，一定是哪個灰色雜種害死了他。還有一些物品……\\m	draft		P10B-1 draft	control-code
-3593	44	conversation	c34ed91746367a006675d16d8cb424eace5a03f36c103a9a744d51bcc69d6000	嗯，我想告訴你也無妨。凱布勒斯爵士收集了八件偉大的聖物，每一件都象徵一種美德——我們的凱布勒斯可是非常看重美德的——大家都知道，他打算把聖物交給深淵裡各個勢力的首領。可是，我們從來沒見過。就算它們還在，也一定是遺失了。\n 不過，我一定讓你覺得無聊了吧。	draft		P10B-1 draft	
-3593	45	conversation	7cbf390b32eed4d8d23bd33d1b2039807314a513319c0bb99b54493cc4bf3da8	嗯，老實說，是的。	draft		P10B-1 draft	
-3593	46	conversation	64b0fa005a31aec2449580317f83a400cf9675378c99241b77f8b67baf4ba033	不，一點也不。	draft		P10B-1 draft	
-3593	47	conversation	a5196b82896c4574b34d70f90a8347192f2493fe7cca766604df3017a4132761	陛下，我可以永遠聽下去，不過我已經占用您太多時間了。	draft		P10B-1 draft	
-3593	48	conversation	826d113c93e89e710ecde9600d52d9cbc12da5ca16ee68c901917017c3b99270	哎呀，願神保佑你，你真是個迷人的談話對象。請務必再來坐坐喔。	draft		P10B-1 draft	
-3593	49	conversation	105aa02d795fbcfef7a86317a8c30ded1818421f6a725ce2d5b514139d6785a9	哎呀！真是的！	draft		P10B-1 draft	
-3593	50	conversation	171659cfb805c3b4881945cacabccc6338356d69564790f765b4e5585b3f8fee	那現在你見識到了！	draft		P10B-1 draft	
-3593	51	conversation	092d68ab4e1ee177d82a2ccd74927d001f502c2303a0a7424cd0cfa3db0d69ec	請原諒，不過我現在得走了。	draft		P10B-1 draft	
-3593	52	conversation	4499764e13e4ceb164bb06c27d546e6517e12fc8693cf772a42b357fe2d4c5d8	噢，你只是嘴上說說吧。我相信你一定有更多事要做，不必聽我在這裡嘮叨。\n 還有，如果你碰巧遇到灰色惡鬼族的「國王」凱查瓦爾或「女王」瑞緹查爾，就當幫我個忙，捅他們一刀，好嗎？	draft		P10B-1 draft	
-3593	53	conversation	ec8637db894f01de9a0f6e0ac58e76b36f1418e5c7d542f1a4202566456316a6	再會了，陛下。	draft		P10B-1 draft	
-3593	54	conversation	588e2a029f58c3527f7c72aea165f23e68c74bbdbbad2ed35334751941cb3e8f	再見，大人。	draft		P10B-1 draft	
+3591	1	conversation	a5f9b2a07dcba6f58b0b50b9550bcccbaba4f8c81a30bc043b813cf28cd4e938	你是誰？來這裡做什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	3	conversation	de04d3d096ab06f2c6af01ea9168324047fdd1686bd01ce6e1f65d030068d831	我正在執行一項任務。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	4	conversation	6f9c5fe1b7df6d40c71569575863c4a22e4fd04129409f3ba89e74571d584de2	你又是誰？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	7	conversation	795569b6f83c9560710b31f22874463e5c525a469927aa079b216b657d53fa0b	從沒聽過你。你是維尼克斯的朋友嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	8	conversation	718ba640b973e4b08a9eeeb7c7675ca5228cd45b4ffb1a273038e238f79ca098	哪個維尼克斯？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	9	conversation	cc07850c5e9229139005fd230419a5d512fb253e67cf4cfd4d58100b9d016a20	對，我是。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	10	conversation	4ad57088f6db41de3d7583f4df4cf8d38c81edb4dad38a433e0cc0aedd5de4f3	不，我不是。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	11	conversation	5369475430d537c12a805e53e02ae2bf96e61b15d608edddadbbbe776e276aff	維尼克斯，那個所謂綠色惡鬼族的所謂國王！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	12	conversation	058ffc8bb6ec6bb45f8db49f34fc59ff2633832ac745aa9c79c04f1191ec0d67	不，我不是他的朋友。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	13	conversation	303ee6080efc1db9ce17002d2c80a7f2950fc8f8a02521929b823f63546cf05e	對，我把他當朋友。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	14	conversation	c4a41eb4955f5e31193762f5c8d46da8734204536e2437dee6df7acc558976ab	那你就跟他一樣，是我的死敵！離我遠點，不然我就叫守衛了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	15	conversation	41ada07e529fcf64dd4b5464a4dec08f13d58a74a338acc9394610a9ab363024	如你所願。走了正好！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	16	conversation	fd9be9c3e4790de2e1452d7ba2726158c51580963e57df75d26e695205b68eab	嗯。好吧。你跟他說過話了？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	17	conversation	399210252493a4d4ed1bfd693f8d5672c46c20cfd94f373e238cd609b52e6f0f	對，說過了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	18	conversation	6770e8e9a0137b7f1b0c841a61880f7a70e53ce6900b6f5a36cbe974c4a5ec10	沒有。我該去嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	19	conversation	25f03de773eb4da55d41a22d497780cbbbf8b2a1c350ec66495957d2b9faab30	娘娘腔，對吧？根本不像個像樣的惡鬼！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	20	conversation	8f19e361a5427943260b47e3d3c720910d30b8444f2a36f51cc7049092c1ed55	我當然同意。那你呢？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	21	conversation	9f2cee075d1e3231937f564e75fd4e21f0c43422f8d2b61521a72ae7f942bbb2	我不清楚。你現在能幫我嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	22	conversation	3dede566facc0fdcd5cbeee287a221f013ef0e7b5841f4c40e0fccb0d92f2189	別費事了！他完全是浪費時間。你運氣好，先來找了我。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	23	conversation	e70c1d38380520b0517c17006b278545afa0b594578a2e43c651b70fb78e2d92	確實如此。你能告訴我這座深淵的事嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	24	conversation	954962d905acaabd1064b62acb10387429be3aa430162a377b24ae1d4e72c85b	我真幸運。你知道有個女孩被洞穴巨人綁走了嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	25	conversation	53f026ef1ea80fdc8d27da45baf793310188f7229777c7b4a48f6f51d8bb3719	我啥女孩也不知道！我自己的麻煩都夠多了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	26	conversation	46097dabdd4cbbef38d4dbe3f415757560a8ecb382bc5e621a28ecd3e8ed2e08	比如說？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	27	conversation	ac57eb6d5cfe33abc56f94ff32b9704071054913ed4c1c5e5fa6e49f41fc9c62	我相信你一定有。我該走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	28	conversation	28232ff69901f037f851ff38820efcbf727a137f240a879653a0450a4bb5460d	那麼，你能告訴我一些深淵的事嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	29	conversation	a872e5c9fd77ce72575d32b71cf4c3ea2f8638563f4ab1037b69a706dee803c0	我的敵人多得數不清。連這裡的害蟲都很麻煩。一隻叫「夜眼」納弗瑞的巨大母蜘蛛，一直威脅著我的族人。她還不是我唯一的麻煩，不過光她就夠受的了。你知道嗎，她的蛛網像鐵一樣堅韌，還燒不掉。惡鬼一旦被黏上，就只能待在那裡爛掉！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	30	conversation	251c33ce5d0b0cc970c3af2e08f1abda13910a556806e8295150a5725fcc2ab6	太可怕了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	31	conversation	bff4bdb491551328597003ccd3bea6f9720d2442901bfe4d761545af1efcb343	也許我能幫上忙。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	32	conversation	372024df501ce96f31276c21c60554ea3642f90ecd03d654f4ef109c51f02e70	別傻了！沒人殺得了可怕的納弗瑞！好了，你來這裡是有事吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	33	conversation	c1125f0317417f46b0ad1a4ec4e843068dd418a9721233598da9dfc8336e4275	我是凱查瓦爾，高貴惡鬼族最後據點的偉大首領，灰色一族的王。\n 多年前，我們被那個花言巧語的蠢蛋凱布勒斯騙來這裡，我們高貴的灰色一族帶著僕人，也就是卑賤無知的綠色惡鬼族，來新家照顧我們。\\m	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	control-code
+3591	34	conversation	f0aa4da057000acd983744c816be1e60d655f54cbcf0d9a0c81d0b75f2340b5e	後來我們給了他們自由，還讓他們享有平等的公民權，雖然大家都知道，這給他們的榮耀遠超過他們配得的。可看看他們怎麼回報我們！凱布勒斯的「文明」一垮，他們就分了出去，從此一直跟我們作對。\n 全靠我的領導，我們才能在這種對抗下團結在一起。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	35	conversation	fe577951db80f30e5a4f82dc0500ee52b187c3adcbd94098f231ec2bf1a7c672	這種差事一定很操心吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	36	conversation	35cb6a60b694d50dfed5600d538a2b81f1d47111510f5670b090fe590bb4af81	綠色那一族就沒有半點可取之處嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	37	conversation	3158185adf0192c1bebd9b39b97dd0d454265e344417842a20116c35c259b823	真替你高興。再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	38	conversation	f764b5583e48b962ee5dd30037802bb5c99be1720c981116f01ba39a15503f4e	一點也沒有！他們多疑、記仇又工於心計。別提他們了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	39	conversation	7e00e01b70d394c5bbfa86c24643a063d3327274ca6f172e32f425591accd756	你想幹嘛？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	40	conversation	19e261f760bb654a9acc317b37c19f9c7e521746807266e65badc545ff0f3f77	我得找到一個女孩。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	41	conversation	a0f9c00dd15ce9273746f268797957f53697e234ee6bfc35b1c3bd51eba9b433	我想了解凱布勒斯的事。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	42	conversation	b4227bdb8c2bcd951221fa9215bebdb93a5646fbd4c3c134a923abb121703c1e	你已經幫過我了。謝謝你。我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	43	conversation	8de3d314db8bc0129367b877ba3cc39525cfce8718407bd990090c394a309575	一個叫凱布勒斯的人類蠢蛋，說服了我們很多族人來這個該死的地方建立殖民聚落。等他的夢想被證明只是一場愚行，他就自我了斷了——喝毒藥死的——把我們丟給命運擺布。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	44	conversation	b139852168b2f1110dc2b7a505c5a37542f35f11769b4291db0ad857451db23a	真是悲劇！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	45	conversation	f421e170a888cef79513c00575d97e88588aaf5d891177c9cd3ee0e34e426c7b	啊，好吧，我現在得走了。再見！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	46	conversation	95cb4fbed897b1301863db048c752faf5c427956e7681aa31a612ba6415b6a8d	可不是嘛，這真不公平！不過我們還是得撐下去。還有別的事嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	47	conversation	ec003da59b8ab965bc8a26f96805964b73a58c1cb43b3229b35b369b08a944f8	沒有了。謝謝你。再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	48	conversation	19e261f760bb654a9acc317b37c19f9c7e521746807266e65badc545ff0f3f77	我得找到一個女孩。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	49	conversation	a0f9c00dd15ce9273746f268797957f53697e234ee6bfc35b1c3bd51eba9b433	我想了解凱布勒斯的事。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	50	conversation	2f3e5ad1d3bcd5f5c72623ece76029824d5e5fd464fff4183fa40f55655ed5bf	我的時間可不能讓你這樣浪費！你就沒別人可以去煩了嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	51	conversation	b7db6d32486c0bf8c7c4179580135235ce76e8ab5f7045abbcb47947bedcae58	又是你！趁我叫守衛之前快滾！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	52	conversation	2f838d2c0da50cfa5183bc3d9e43ad3f3050bd0299a752e8e9e1f3c0b69e9a5e	你又來煩我？這次又是什麼事？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	54	conversation	f4e47ded0e80699e0b0f74c152122b274b121052ee15bb5d6559f779b5887b69	抱歉，我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	55	conversation	33ff368d250d992f2f9bfb2b531bcc590889e60ac0fdc36b0089f4961e51da94	我想問你一個問題。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	56	conversation	a264d6aea84ef7dabd78d8a120e0f97a3cb5340f20e387c4cdb8b1b30bc2ccb4	我需要你的幫助。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	57	conversation	6199793db432b366af9099d72605895329fe0bbfb4a9a41d87a4a64b4d45b19e	粗野的笨蛋！沒經過我妻子的同意，你來這裡做什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	58	conversation	86555cb5459266e1c745a8eaf3765795b1e8766d4060d022ab12d60e23830cad	我不知道要先得到你妻子的許可。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	59	conversation	99b2bfb40050c4292b86ff78089c0fa12099c96420e2e496b4131000b980a508	哼，現在你知道了！再見！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	60	conversation	4ef3f499dde85b5e91bc84ce1933ad36ffb3ac1153f94fcfcd666cb4ad5396d2	看來我們兩個之中，說話得先經過你妻子允許的，另有其人。再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	1	conversation	b8b7cfdf4758ef90476310dd4bffc7be69cdefdf57c1b98935a2fdc474fab753	嗯？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	2	conversation	20b7fb8723f1435cb4f465275f2b00491b1657ce2ceda9a57719db29462a179f	你好，惡鬼之王。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	3	conversation	58dc18a7b9136576ae7a0a819452716a82a4828d4641764d2b7e80935aaf4d22	向偉大高貴的綠色惡鬼族最強大、最威武的統治者致敬！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	4	conversation	2e6ff025a7a5e9886f4895a55c3cdb420f81c0b97d1379cc1efd3f94db27ca12	日安，殿下。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	5	conversation	b8a409e5f35df1899bc02e666e4b0186c41607eff07225a154d08ca863bad754	顯然你是個粗人，配不上這裡的高雅同伴。給我出去，等你學會模仿比你高明的人的禮儀再來吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	6	conversation	7225f8de71d3faac62ae37948e42a1569b09b4e1df70d4ec2e103bef0ea35b16	那你可有得等了！再見！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	7	conversation	110454b671a3599bd0dd05603c0583f947af061f1a2f19cafec8df82f1468bf3	請原諒我，陛下，我沒料到會在這裡遇見如此高貴的人物。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	8	conversation	d6e8ac1c73a6ca86a91c8d3e0869b687f1035fecd9f672e76068c639221f07da	向你致上誠摯的問候。你為什麼闖進我們的宮廷？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	9	conversation	16e0e0039d01dde3478085fa03481cde57227741b09e4a1be687403d100c1eda	我是來打聽消息的。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	10	conversation	7e826efd0b7dbbedf28020a03f214efde852eb202a5ee25096b34c3ae4a2c276	我長途跋涉，只為暢飲您那智慧之泉，噢，王中之珍珠。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	11	conversation	973066774dbd723c987d2bdb5e9e08edd363c16ac57d2ffb5a0bbf1d27c89ab7	說得對！仔細想想，我確實相當睿智呢。你想知道什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	12	conversation	04a4a0d156d7a2806d1a0277f37e76845fd7551055d02dc125fa2519c573fe1d	凱布勒斯爵士是誰？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	13	conversation	f8accb6851726e38db8b0b7008d7b5c5009563a126f17863b64c3b7389462af1	我聽說的這些聖物是什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	14	conversation	73313c688fda646ca98f8da7aad06dd9dd12803f2e0e6c3fd015a8be3a8cdd7c	跟我說說深淵裡的各個種族。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	15	conversation	92c5e7999099fc5ffe1359391cac9507d4e9b9ccc68e8e0c3d9b3747f17ffddb	您那件華麗的斗篷是從哪裡來的？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	16	conversation	56898f9e1dc875abbfbcb2683b609e921150e69472e419f160922376e3ad8a0b	嗯……也許你可以被原諒。這地方確實滿是粗魯得嚇人的傢伙。你可以留下。你需要什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	17	conversation	fbe412c25039d46914496776212d7a156699129aa1182ca910bed6059a9d4f93	只想稍稍分享您淵博知識的一小部分。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	18	conversation	aaffc2298ab0d77b41c2140f7b3f3c284453eb9165228ab46defca9d4c5bd2f9	沒事。我要走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	19	conversation	2d9299607d4ee8c97792f0425940621a6e104d405aeb9c24d5c7c433f0c5e539	我需要一些消息。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	20	conversation	dce6cd923d23cead52856e1ef3c2420615d820932adf493601368a2b725368dc	我改變主意了！你果然是個粗野的傢伙！給我滾！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	21	conversation	70bcf532db4f04bd8beb8bb269dd89f71bbf2da7ad65bc44de90e3e403484f72	你的禮貌簡直跟強酸蛞蝓沒兩樣！給我出去！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	22	conversation	0ab28eacdb80bcd329bce0b5882aa8f53638a82ac8a5e9ce3b1175141046b9c2	你也太大方了，竟然肯花這麼多時間！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	23	conversation	50907206eac621dfc9da061682302e56cfac4a93be8e42a3214fbf925c645787	你能不能站得再遠一點，到下風處去？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	24	conversation	198fd400976bc8c18493333cb97141f59fcf14bd14d436a1441fd2c842625179	我萬分謙卑地懇求您的原諒。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	25	conversation	a8cc17692feea4d7f3af86d5c8747d6abc8d8ac65090caa6faf52bafd51d028d	你這個花俏的蠢蛋！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	26	conversation	0af42df44d6958a3d6a88b8a5215b3c79a122e5a6794357982e975ed72d56616	很適合我，對吧？這是專門為我訂做的。在地底下，可找不到這種手藝。\n 嗯，山岳族也許會做一些不錯的東西，不過他們偏好金屬，不太做衣服。\n 當然還有那些預言者——他們自稱「古老光明月之石預言者」——他們的手藝也不錯。不過比起裁縫，他們通常更擅長文字的藝術。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	27	conversation	04a4a0d156d7a2806d1a0277f37e76845fd7551055d02dc125fa2519c573fe1d	凱布勒斯爵士是誰？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	28	conversation	f8accb6851726e38db8b0b7008d7b5c5009563a126f17863b64c3b7389462af1	我聽說的這些聖物是什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	29	conversation	357aa57553a7dc164a95d63996993a15b64fbbd913c53b695020c2521e7488ff	深淵裡有哪些勢力？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	30	conversation	6be718f48476291ada6da11bcf2d16b387ea157328afce9b806873c16012f800	那這座大廳呢？真是美極了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	31	conversation	133f44b6b83ee6fa492386c498d42a4c2194049ad90a282f9e453ab2467268d2	哎，人總是盡力而為嘛。當然，那些討厭的灰色惡鬼族趁夜溜走的時候，把真正好的東西全帶走了——那正是凱布勒斯爵士死後不久，一切都在分崩離析的時候，你知道的——從那以後我們只好將就著過。\n 總有一天，我要把毒藥下到凱查瓦爾或他那個醜老婆身上（其實都一樣——你知道嗎，他可怕老婆了），到時候就知道誰厲害了。灰色惡鬼族的國王，哼，真敢說。\\m	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	control-code
+3593	32	conversation	3ac3fbfad324e2198d529f108d3aafe65ccd825d2107999e623e8f777dcce117	哎呀，他根本是個暴發戶！他父親是個偷馬賊！不過別說這些了……你想知道什麼？我能怎麼幫你？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	33	conversation	f8accb6851726e38db8b0b7008d7b5c5009563a126f17863b64c3b7389462af1	我聽說的這些聖物是什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	34	conversation	169e0d1e40979c3e0c37fc16c6303f82fef173a4d951c2c0735f82012365e8cc	我想了解凱布勒斯爵士的事。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	35	conversation	10ab4aedf7d9337cdf89dd7731616a30bb02cf4595aecad310a7f4e6e8f1255a	能再多告訴我一些深淵裡的勢力嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	36	conversation	c6df04e1a71545a1d0d85b09037d843dcc1418a77332a988987d4c547c095e32	陛下願意撥冗幫助我，真是太仁慈了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	37	conversation	c0e5e42b032192fa0bbe599dc877d847a6159aaa63b937c00101fdb87513c6cc	哎呀，別客氣！我難得有機會跟真正聰明的人說話呢！\n 我是說，我們的盟友蜥蜴人人是不錯，可憐的傢伙們連一句通用語都說不出來。他們聽得懂，可是那張嘴就是說不了。而且他們的語言好難！我知道「Sseth」和「'click」的意思是「是」和「不是」，可是我搞不清楚哪個是哪個！\\m	reviewed		P10B-1 draft; authority-ok:Sseth（此處是蜥蜴人語的「是／否」，保留原文）; authority-ok:mouth（嘴巴，非生物「巨口」）; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	control-code
+3593	38	conversation	449ec1285a8fb4e17247140fd93b145a782bdaa8e9db2edc4345ea624f499500	再來就是安塔南十字騎士團——他們倒是能說會道，可是開口閉口都是殺了多少個洞穴巨人。無聊得要命，就算這樣確實能幫忙減少害蟲——兩種害蟲都是，騎士和洞穴巨人，你知道的。	reviewed		P10B-1 draft; authority-ok:Crux Ansata（組織名依 Authority 的「安塔南十字騎士團」；與 Crux Ansata「安卡十字」不一致，待 Authority 決定）; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	39	conversation	462febc4bf144a6593c063508b12b8c5d3881283f49322f7bd901080ec1e6f49	就算對您這樣高貴的人來說，這一定也是種考驗。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	40	conversation	80940f43bc734f65f1fd1ff07c57f54ae37709ed8eb7c957a7ee1d32d05d73a2	那這些聖物呢？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	41	conversation	169e0d1e40979c3e0c37fc16c6303f82fef173a4d951c2c0735f82012365e8cc	我想了解凱布勒斯爵士的事。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	42	conversation	51d15e55c787a514a0252192a9c818b2e7a3cb15223d188000d2453c087f96d7	深淵裡還有其他勢力嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	43	conversation	f042aea1d999ea35157a34c00170bbd6730a43d29fbdde8f291911c615638ca4	噢，可不是嘛！有時候我都不知道自己是怎麼撐過來的。你知道嗎，從前可不是這樣的。\n 凱布勒斯爵士在世的時候，一切都好得多了。他讓大家合作得那麼好。那個人真是天生的領袖。\n 他建立這個殖民聚落的時候，你在不列顛尼亞隨便哪裡都能跟人打賭說它成不了，可是他就是辦到了。\n 我到現在還是覺得，一定是哪個灰色雜種害死了他。還有一些物品……\\m	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	control-code
+3593	44	conversation	c34ed91746367a006675d16d8cb424eace5a03f36c103a9a744d51bcc69d6000	嗯，我想告訴你也無妨。凱布勒斯爵士收集了八件偉大的聖物，每一件都象徵一種美德——我們的凱布勒斯可是非常看重美德的——大家都知道，他打算把聖物交給深淵裡各個勢力的首領。可是，我們從來沒見過。就算它們還在，也一定是遺失了。\n 不過，我一定讓你覺得無聊了吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	45	conversation	7cbf390b32eed4d8d23bd33d1b2039807314a513319c0bb99b54493cc4bf3da8	嗯，老實說，是的。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	46	conversation	64b0fa005a31aec2449580317f83a400cf9675378c99241b77f8b67baf4ba033	不，一點也不。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	47	conversation	a5196b82896c4574b34d70f90a8347192f2493fe7cca766604df3017a4132761	陛下，我可以永遠聽下去，不過我已經占用您太多時間了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	48	conversation	826d113c93e89e710ecde9600d52d9cbc12da5ca16ee68c901917017c3b99270	哎呀，願神保佑你，你真是個迷人的談話對象。請務必再來坐坐喔。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	49	conversation	105aa02d795fbcfef7a86317a8c30ded1818421f6a725ce2d5b514139d6785a9	哎呀！真是的！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	50	conversation	171659cfb805c3b4881945cacabccc6338356d69564790f765b4e5585b3f8fee	那現在你見識到了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	51	conversation	092d68ab4e1ee177d82a2ccd74927d001f502c2303a0a7424cd0cfa3db0d69ec	請原諒，不過我現在得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	52	conversation	4499764e13e4ceb164bb06c27d546e6517e12fc8693cf772a42b357fe2d4c5d8	噢，你只是嘴上說說吧。我相信你一定有更多事要做，不必聽我在這裡嘮叨。\n 還有，如果你碰巧遇到灰色惡鬼族的「國王」凱查瓦爾或「女王」瑞緹查爾，就當幫我個忙，捅他們一刀，好嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	53	conversation	ec8637db894f01de9a0f6e0ac58e76b36f1418e5c7d542f1a4202566456316a6	再會了，陛下。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	54	conversation	588e2a029f58c3527f7c72aea165f23e68c74bbdbbad2ed35334751941cb3e8f	再見，大人。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	1	conversation	98aa6675482552881925fe70d82559692d811b3bcd33f53b9a702c24d5322696		untranslated		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理	grammar-sensitive
 3603	2	conversation	4ed28f82ca96c3342a5c591668270f78c26dae22fd953772a6c14e52f46e1b22		untranslated		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理	grammar-sensitive
-3603	4	conversation	7ff1536c1df56b604ba927f4aba0980ba11df6fa309480460d35a6368be1f734	我是無辜的！我被冤枉了！	draft		P10B-1 draft	
-3603	5	conversation	72d4dee1c6e02ffbe595e529f366c01f0adf90fef8a9bcd7f0a75ebb5c9cd600	他們說我綁架了一個女孩。	draft		P10B-1 draft	
-3603	6	conversation	6404881a85ada8be7496d55b4e3dce302590d1f27e2e963832c6b6b8eee590b7	我唯一的罪，就是運氣不好。	draft		P10B-1 draft	
-3603	7	conversation	f99dca955151ac39b3fd763e3e35ec36c034ea82ff67a03e97b09b3e5330d845	你這是什麼意思？	draft		P10B-1 draft	
-3603	8	conversation	e0911ea4196881774a4aeadd8cad5d41ce6952607bbf1b76009fb5db9e193f19	無辜，是嗎？哼，我們全都一樣無辜，個個都是被冤枉的！	draft		P10B-1 draft	
-3603	9	conversation	40a7206d44b576225a111c80b5819bcb76641e04a3c486446814ad750037385d	聽到這些我很難過。難道一點辦法也沒有嗎？	draft		P10B-1 draft	
-3603	10	conversation	ed6cf567b5f9e9596d89b86f58fd5bdd6a47efe7c7c1d2c4c1d7f92a51ed2801	好了，我該告辭了。再會。	draft		P10B-1 draft	
-3603	11	conversation	48867f42fbae66699a85c6a61b45b3d42d2a60560be06aa572df0196e53ec0a3	說到無辜，你有沒有見過一位落難的少女？	draft		P10B-1 draft	
-3603	12	conversation	4876637e70117f0f5cdbe9998b4abe33dc42314ea5cadbecb2796c41e9a90783	滾開，騙子！你是個江湖術士，甚至更糟！	draft		P10B-1 draft	
-3603	13	conversation	7bfcdd8516cab60b0b88eeb8b3cbaad7ae89521093ba935d8f0b9799333dc9c2	是個年輕女孩嗎？美麗又純真的那種？	draft		P10B-1 draft	
-3603	14	conversation	7590d5176fd85393a4d4414119dfd2dbed9191b135937d7592dfdaea4a2dc7e0	對，就是她。	draft		P10B-1 draft	
-3603	15	conversation	bf679cb7b448c4509fd72c452b15f2b02042177a1942f5c78705be35eb1769b8	我從沒見過她。那項罪名與我無關。	draft		P10B-1 draft	
-3603	16	conversation	4e5961d5914491032fa6ef7402fefc2eea984b70fbb953e038f73f61134b9f1c	我想是吧。	draft		P10B-1 draft	
-3603	17	conversation	4aa5c30bf155ab10ffc33098b595bf4e0c9ba4ef82e56d6d52d0ed3e14f50c8e	我們幾個鐘頭前才見過她，被一個洞穴巨人扛著，後面還追著一群傻瓜！他們準是撞上了惡鬼仔。	draft		P10B-1 draft	
-3603	18	conversation	9986084942ceb41bffd0e062f6423b1068ff0f55374c941052a6908a8fc5f0ab	啊，她早就不見了。一個洞穴巨人把她扛到下面去了。阿姆瑞克的手下在後面追趕，可是根本不是惡鬼仔的對手。	draft		P10B-1 draft	
-3603	19	conversation	df69455d7f057b369cd417ec5c4b56dd3f430773e14e980a8edec122623a910f	「惡鬼仔」？	draft		P10B-1 draft	
-3603	20	conversation	8421d261307558547d59c82f1ef44dfa34e62c3781dc407519dae39268067cac	謝謝你。我得找到他們，證明我的清白！	draft		P10B-1 draft	
-3603	21	conversation	04b9b95706fcd6876a0e6b733ba604b797126c7332bbfdb0f1d693efe97363b9	她現在在哪裡？	draft		P10B-1 draft	
-3603	22	conversation	0a40449616922a862416513357c075a1e3212cd272884d0ff3e47ef1d63ca266	不過，我還是得把她救回來，洗清我的罪名。再見。	draft		P10B-1 draft	
-3603	23	conversation	e6ca845ef159d45abe7b1f9b3944e9f21fe37e0f929049d68510c7df7e37f61d	對，就是惡鬼族。分成綠色和灰色兩族，彼此是死對頭。他們的世仇讓我們的日子更加難過。	draft		P10B-1 draft	
-3603	24	conversation	4e3f32549ed5e5c46b7a33c02b08573d3f7f441d69f3a7549304f3bed00f93e5	他們為什麼結仇？	draft		P10B-1 draft	
-3603	25	conversation	535d471bb01d9ca55a86025e0b0f4f584eaf609397ac8f6d71264c9cafa6d13c	哪一方才有理？	draft		P10B-1 draft	
-3603	26	conversation	2a215158f68ac3a33e49a10ab37eb11b23294e3315887c7e18e5542b7c41279d	除了你們以外，這裡就只有他們住著嗎？	draft		P10B-1 draft	
-3603	27	conversation	bf1507060be9e83a66153a30f10bc9c3835728d44b8fa3e6fdaccdab2ddc8377	沒人說得準。他們的衝突似乎是從大崩潰時開始的，也就是地底文明崩落的時候。我們只知道，兩族的首領都發誓絕不在任何事上取得共識。	draft		P10B-1 draft	
-3603	28	conversation	9922d04c1f700236556a039d15a72273f3be481c80fdb6a97e8ea7fe4dd9d1e6	你就沒有別的能告訴我了嗎？	draft		P10B-1 draft	
-3603	29	conversation	2b7364f24f75be90c7720146afc87257582a775ce4c80df768d004fcda11aead	謝謝你。你幫了我很大的忙。	draft		P10B-1 draft	
-3603	30	conversation	47f2eb5c309fab0470376e92d65da8e8bd97dd14dadcdf641314d3a45bf8ef90	那在這些惡鬼族的地盤之外，還有什麼嗎？	draft		P10B-1 draft	
-3603	31	conversation	99a308c5a665acbae91455ed098c50a8181e87ada120d656e73162c52b7d9030	又是你？還沒受夠比你高明的人嗎？	draft		P10B-1 draft	
-3603	32	conversation	e8487b1c1ca8fcfb1e78d1e39acfba4c7eea7350c72cf69fb1a47f8ac13f9c1f	如果我的存在冒犯了你，我這就走。	draft		P10B-1 draft	
-3603	33	conversation	5e46505b8b4f64ee3f30e7f37a310e2328de0998cb05de68ba0631fea242b968	我當然受夠了，你這個蠢蛋！	draft		P10B-1 draft	
-3603	34	conversation	c24e5f255bbfdfa903a487febcf2a0b5731b6991c5a1af6e8e149420ca128a5f	抱歉，我以為你是別人。	draft		P10B-1 draft	
-3603	35	conversation	8fc7d101770c451e24f5ed39f1ce0e0fd18ab7f9ea9c4f9c9a19397c890c450f	再次祝你日安——如果外頭現在是白天的話！	draft		P10B-1 draft	
-3603	36	conversation	8000f5a1f448c78ff0723da4b5554945bdf8b5516e5548319d6558f4baf8fc20	你有我要找的那個女孩的消息嗎？	draft		P10B-1 draft	
-3603	37	conversation	c9be682cf00fe1ee008cc2ec57cd7fb5393a6d1ba2de74b57268f71ccaf11162	也祝你日安。我得繼續找下去了。	draft		P10B-1 draft	
-3603	38	conversation	db17f63c23dfa48efa33c5ccc2e504d2f4840e4e00606cf5687646cc5d2d4b0b	既然你這麼好心，我就接受你慷慨的提議，請你離開吧。再見！	draft		P10B-1 draft	
-3603	39	conversation	cbc259f35bdef261917cffdb083aa013c67267377b962243047c96706726baf3	沒有，她早就不見了。你要是想追上她，最好快一點。	draft		P10B-1 draft	
-3603	40	conversation	a4e9d24f5e8b865835266d64aa43dd1bf9f02a05aea250d9946540ce1476156a	你一定也是被那個假虔誠的蠢貨阿姆瑞克男爵判刑的人吧。我們放逐者，就是他那套嚴苛審判下的倖存者，也是躲避惡鬼仔獵食的逃亡者。	draft		P10B-1 draft	
-3603	41	conversation	f70812525ce4ce1bce4e686154fb423537ea8756e2d4748694c34ed3cb080ebd	啊，那你或許能告訴我他女兒的事。	draft		P10B-1 draft	
-3603	42	conversation	e93da7aa6e152f98d3267daeae10d1f2096f809785c79deabe839ea46ad7ff9f	你說的這些「惡鬼仔」是什麼？	draft		P10B-1 draft	
-3603	43	conversation	facf654e9e0b103e5ce75a7f77f2369cf51837a2520f69d1645b4bf8d2b752a2	我該上路了。	draft		P10B-1 draft	
-3603	44	conversation	11a63b0fadde9de755acbd3301f2f1ba32e654bc73c7c07b734d9213f29124c4	啊……越過惡鬼仔地盤的人，從來沒有一個回來過。不過傳聞說，下面還有更可怕的危險。	draft		P10B-1 draft	
-3603	45	conversation	1f380ca1fb0036af5d76fd05cbd33638afedfc66896ed350b22631fab0495bcc	好吧，還是謝謝你。再會。	draft		P10B-1 draft	
-3603	46	conversation	2d848d4481f0886ce5373aa3747b02ec312f594798805470bbfd4cb8ddf61730	也許我能替你解開這個謎。	draft		P10B-1 draft	
-3603	47	conversation	61984de85860a0188fefeb161b4bfd9fedf56e48facb00e3791ca7e13f1d655b	你們這些懦夫！難道就沒有一個人有勇氣自己下去看看嗎？	draft		P10B-1 draft	
-3603	48	conversation	7a23034328e13cfadd8e69bd5a81fa769751eaadac36a415acb56d6067ce9b34	有些惡鬼族不再聽從首領的命令，在走道裡四處遊蕩，尋找獵物。他們偷走我們存的糧食，也很危險。真希望能擺脫他們。	draft		P10B-1 draft	
-3603	49	conversation	feaa3475c37e7e90b3cb57ca88618a80925f8608206f844cadba52798629176b	我會提防他們的。再會。	draft		P10B-1 draft	
-3603	50	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	51	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	52	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	53	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	54	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	55	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	56	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	57	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	58	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	59	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	60	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	61	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	62	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	63	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3603	64	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	1	conversation	eb5669fb7c2ea74d3a996520918ff3d2790a402ba0ee9e11f65812e1001ff811	你是誰？	draft		P10B-1 draft	
-3604	2	conversation	8b47604a2033cd6e940db5ac72655a73e4b7b104c1ce9b6ee9c9410ee855b9e1	陌生人，你叫什麼名字？	draft		P10B-1 draft	
-3604	4	conversation	7762e9abeffa68f18f439d3efc963fd1f82fb56500ccde7be9b0b787ba45dcd0	不關你的事！	draft		P10B-1 draft	
-3604	5	conversation	ead3a403f0061355f3f35f2865e1668fa617694bd829bd5e489b2208dad76882	我倒想問你同樣的問題。	draft		P10B-1 draft	
-3604	6	conversation	fff00e768524e9291ec690261d2ca3737e95a2dc18eb0ff78c49dcfea0ee7a53	我是古利克，人稱「有福的」。	draft		P10B-1 draft	
-3604	7	conversation	9dd2a97e67e893ac5badfd32ecf94b7b552bc5738b5b2405df5cef77bbc6aa5c	為什麼這樣叫你？	draft		P10B-1 draft	
-3604	8	conversation	8acd5a5998f275c8ce4d100ed041a3a98d6847ea825d1fedeeaa44e1efd0e10b	你是這裡的首領嗎？	draft		P10B-1 draft	
-3604	9	conversation	4f4ea439797e3337205395d215bbbb4bba99d9367d8a4591a53f4963b70b45f3	這是什麼地方？	draft		P10B-1 draft	
-3604	10	conversation	4eb28ff9742950d40341efe589e0843c9da5a567edfe48cdbb0d51f3a586b1f7	我們的首領是哈格巴德。你跟他談過了嗎？	draft		P10B-1 draft	
-3604	11	conversation	6770e8e9a0137b7f1b0c841a61880f7a70e53ce6900b6f5a36cbe974c4a5ec10	沒有。我該去嗎？	draft		P10B-1 draft	
-3604	12	conversation	5d8a995a6fa7cf7c577cc9d49ca9e00d4aee4d0bcd5e2ad5caff27e2a8097276	為什麼？	draft		P10B-1 draft	
-3604	13	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	談過了。	draft		P10B-1 draft	
-3604	14	conversation	162a4304b24ae719e8760af74894537b150cbf421c3d41ec835b3a90d1988bf2	我可沒聽見你跟哈格巴德說過話！你為什麼說謊？你是凱查瓦爾派來的奸細嗎？	draft		P10B-1 draft	
-3604	15	conversation	89c64f4916f1a76c301c7087a2862097e7f1eb6d38c5386ad279e096eb39af0f	凱查瓦爾是誰？	draft		P10B-1 draft	
-3604	16	conversation	c530afe12eb7e5b916e484fe6421944ef4774798b6eae0206172e8328429304a	不！我才不是奸細。	draft		P10B-1 draft	
-3604	17	conversation	0b035e092892c27af77d0142715da5a08331536ca229b279452dc210e4efcc06	沒錯，我正是！	draft		P10B-1 draft	
-3604	18	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	draft		P10B-1 draft	
-3604	19	conversation	4e57f795e672b612308e11d3cbc3460d14af4156833422acedf0464cd3a48be5	就算是灰色惡鬼族的奸細，也不會裝得這麼無知！凱查瓦爾是灰色惡鬼族的國王。所以你要是奸細，一定是綠色惡鬼族維尼克斯派來的！	draft		P10B-1 draft	
-3604	20	conversation	8b9d4d446b1679c6e0382a408ce8ef45c07ca9167f4e23ac9cddea7107e0f83e	我不是奸細！	draft		P10B-1 draft	
-3604	21	conversation	b78ee11f60878edc12099bd0fc73da6525baacbdfdd088c87eadd6c520fa7263	沒錯！全都是真的！	draft		P10B-1 draft	
-3604	22	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	draft		P10B-1 draft	
-3604	23	conversation	6af3a17bde565c2de9f669ff3abfa9fcdb12b48aab379c24ad41fdc2deabc660	你身在大冥河深淵，不論是你還是別人，都別想再離開這裡。這裡比任何監獄都糟，因為沒有假釋、沒有赦免，也沒有像絞刑那樣乾淨俐落的死法。	draft		P10B-1 draft	
-3604	24	conversation	d16623c73730982f137621554326daedbcf91eff6537f2ee581e63d438d8cab0	再多告訴我一些這座深淵的事。	draft		P10B-1 draft	
-3604	25	conversation	e1269d7604bd1f00aea8809f9637705414743996c8672b34ff08e31dcc14bf05	你是怎麼來到這裡的？	draft		P10B-1 draft	
-3604	26	conversation	002a32ded619d7cb70fc52804cd5c2eff4fd2444f63ef825041c66f39931bbb6	從來沒有人逃出去過嗎？	draft		P10B-1 draft	
-3604	28	conversation	1db56404a5ea6b35798952c2a00393896f5e8a614f8395c57e27f779ce209343	又見面了，陌生人。你跟我們的首領談過了嗎？	draft		P10B-1 draft	
-3604	29	conversation	c2974a9e21206584ea27515daea4b9376dd03db45ff236b531b1f3ceb589ec06	他是誰來著？	draft		P10B-1 draft	
-3604	30	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	談過了。	draft		P10B-1 draft	
-3604	31	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	還沒有。	draft		P10B-1 draft	
-3604	32	conversation	a2339a6ed595089529a29e733581714d6b667f41b1fb777498eaec113269865a	那就去吧！	draft		P10B-1 draft	
-3604	33	conversation	18e6540bae93850c7026f3463bcaeab71e27cc91c6031b87aa3717dbe6cab4b8	我從坐牢的時候起就被叫作「有福的」。那時大家都說我運氣好，因為我愛吃蟑螂。你瞧，我從來沒餓過肚子。	draft		P10B-1 draft	
-3604	34	conversation	f127b671ca75b808b6771fa0a0c33e63bc1eec1d593b0da9d89dd85e246b214e	那可真是太好了……我得走了。	draft		P10B-1 draft	
-3604	35	conversation	657cbcc0bf7670aefb315074f2ea7c4a6d37172b0cd248cf6c651ec5e88828af	那這裡比監獄好嗎？	draft		P10B-1 draft	
-3604	36	conversation	dd5219e99bff6f2528c9acf488b05d8811c3999d3ad2c86f8c96fdbbc81baee7	真噁心！	draft		P10B-1 draft	
-3604	37	conversation	f6f83cf4ec2e6c3aefe42ca26473149d6c3503e8d0fb877de01d545d22beba01	那你該去找哈格巴德談談。他是我們的首領。	draft		P10B-1 draft	
-3604	38	conversation	144d9e7c77251327328e95b6186e01564bbcf8905bb29b1cd6332a61343a8c54	也許我會去。	draft		P10B-1 draft	
-3604	39	conversation	a3d67e05202eaf99325bddde7ce98493e3c8dab18d1c35f788d00d025af64755	我會去找他。	draft		P10B-1 draft	
-3604	40	conversation	ce37316e67530256240f219fd209776f5100cc19242073cb417f213c25c574c1	我有更重要的事要做。	draft		P10B-1 draft	
-3604	41	conversation	10e1c9d2f93535f5e7ee246247ef0184c128793f04bb20ec1658dcad3a0abffe	你好！有什麼我能為你效勞的？	draft		P10B-1 draft	
-3604	42	conversation	bc0b82fbf796845bdce004b52eb0735765ff90970c267a91d825b4d63c31fdbe	謝謝你，不過我得走了。	draft		P10B-1 draft	
-3604	43	conversation	9abfb9853a7278a036696af05afcdf2a05c5717806c60d92be7d17221731e402	你剛才說你叫什麼名字？	draft		P10B-1 draft	
-3604	44	conversation	1c512104eb5ef3f6ac5f6ddb3e2935a5fbdd8f10f8799e17dbe47a775e353062	你知道下面有什麼嗎？	draft		P10B-1 draft	
-3604	45	conversation	fb7d2994fc438f9d9bd225338fa8eea3c01ecbbd660e280793042ade0a42242f	要怎麼才能找到有用的東西？	draft		P10B-1 draft	
-3604	46	conversation	5df5c8904191380e1e10a07c86f890e8e764a239b11e14d56184ec9e42a40e30	啊，我想起來了。他剛才還在跟你說話呢！那麼，有什麼我能幫你的嗎？	draft		P10B-1 draft	
-3604	47	conversation	bc0b82fbf796845bdce004b52eb0735765ff90970c267a91d825b4d63c31fdbe	謝謝你，不過我得走了。	draft		P10B-1 draft	
-3604	48	conversation	9abfb9853a7278a036696af05afcdf2a05c5717806c60d92be7d17221731e402	你剛才說你叫什麼名字？	draft		P10B-1 draft	
-3604	49	conversation	1c512104eb5ef3f6ac5f6ddb3e2935a5fbdd8f10f8799e17dbe47a775e353062	你知道下面有什麼嗎？	draft		P10B-1 draft	
-3604	50	conversation	fb7d2994fc438f9d9bd225338fa8eea3c01ecbbd660e280793042ade0a42242f	要怎麼才能找到有用的東西？	draft		P10B-1 draft	
-3604	51	conversation	e1c85c0131f2c6dd0c40068579f9d33d5cabddc736627d4a7f663e674b62409f	你非得去找哈格巴德談談不可。我們這些人裡，只有他在這瘋狂的地方還保有理智。	draft		P10B-1 draft	
-3604	52	conversation	7fe8a3e3ff69fb5cdf1260e0cad1430c04fed8c59f3c8fc737fe3d3d5abcc869	好吧。我會去找他。	draft		P10B-1 draft	
-3604	53	conversation	0368bb23ab1be70df40a63fce0f618abdfeea042834d73ecd020230d617a05e1	去之前，先告訴我這裡到底是什麼地方？	draft		P10B-1 draft	
-3604	54	conversation	b2aad81292d37d03c5817016e7c381bd4c823dc7bc4631741783f421fe8b57c3	這裡不是一直都這樣的。從前有個叫凱布勒斯爵士的首領（願他的名字受詛咒！），居然異想天開，以為能在這裡建立殖民聚落。\n 等他的愚行自食惡果，地底的「文明」就此崩潰，我們如今只能在廢墟裡掙扎求生。 \n 他死了，倒是逃過了他該受的懲罰。這些空想家！我們早晚都會被他們害死！	draft		P10B-1 draft	
-3604	55	conversation	73a9ee83b2f19b0ee02ff16417ca5a29a0fee880dd76d90c4570f3e021829cca	那你呢？你是怎麼來到這裡的？	draft		P10B-1 draft	
-3604	56	conversation	f2931e9017a9cbada1f1cdf33d38b4d5b3369ac71aa70f18c4fac979593d5af5	也許他只是個理想主義者。	draft		P10B-1 draft	
-3604	57	conversation	4032869e30248d6967aed5b8318c1490b1e4e8eced0be4465eef1bba7c6f35f4	我殺了一個該死的人。我的罪，就是被逮到了。	draft		P10B-1 draft	
-3604	58	conversation	afa8f68eaf0bac33358e446825a36d84a3ce0cd72d6c783032e91b4412e6f1b5	如果你懺悔，也許就能找到內心的平靜。	draft		P10B-1 draft	
-3604	59	conversation	37c6eb23e16053db6988a5b26809e1534fd50dfe493b4d68543720e2f389522a	好了，我得走了。保重。	draft		P10B-1 draft	
-3604	60	conversation	43e969d74372b29dedc45a84b07b611f8c59440d313925847a33521a230d176e	逃出去！哈！這裡根本逃不出去，除非是用死亡這最後一條路。殖民聚落崩潰的時候，有人在大門上施了強大的法術。如今那道門只能從外面打開。	draft		P10B-1 draft	
-3604	61	conversation	41cab39590dbfb37d9205d75ed07da25caf74b4e96a358fb2d15e915592db31c	也許我知道辦法。	draft		P10B-1 draft	
-3604	62	conversation	669fceb75f7e0f413588b365ef888fe8c38fe2a2a1ce7935b0bba31ddc8e14f7	這真是極大的不幸。我很同情你。	draft		P10B-1 draft	
-3604	63	conversation	15f33ea68055fc8809d5ae55b62a00b91f1fc1ed51e33140e70bd240f846ada8	那也許你是個傻瓜！祝你有美好的一天！	draft		P10B-1 draft	
-3604	64	conversation	04bce96fef1c73405c08b2eace31e860859e4322397cbc28d1051e01c9f2c230	祝你有美好的一天。	draft		P10B-1 draft	
-3604	65	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	走著瞧吧。	draft		P10B-1 draft	
-3604	66	conversation	ea97a05a271e86b41f4fcbfce80cb401f58f070fda506486ab154783f8d4474a	我們底下？哼，我猜是火山燃燒的心臟吧。再往下，就是不列顛尼亞的五臟六腑了。想想看，朋友，總有一天你也會成為那裡的一部分，而不再是在這些我們稱為家的洞穴裡掙扎的又一具軀體。	draft		P10B-1 draft	
-3604	67	conversation	dbbd1f9a831e2023aeb76c82bee4d6b447e3734c7a75de99ebcca33a51542297	我明白了。再見！	draft		P10B-1 draft	
-3604	68	conversation	67a534f2a19067998dc965c73735f53de2bbbd703a9d12141550246900e62de3	啊，你要知道，用交易換到有用的東西，往往比自己四處搜刮容易。找個願意交易的人，把你用不著的東西給他，換些更有用的回來。\\m	draft		P10B-1 draft	control-code
-3604	69	conversation	e7a7a61e09049ad8a8fc7b00971305db013a2df614284566235c545629d94a32	記得留意你在跟誰打交道。比方說，我聽說山岳族很喜歡黃金，惡鬼族倒不見得那麼在乎。	draft		P10B-1 draft	
-3604	70	conversation	d2e2d866157c08bc4c590991b9083fc607009104a915cccc1f866d08f29c7426	謝謝你的幫忙，再會。	draft		P10B-1 draft	
-3604	71	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	72	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	73	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	74	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	75	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	76	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	77	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	78	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	79	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	80	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	81	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	82	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	83	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	84	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
-3604	85	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		P10B-1 draft; 交易用語沿用 3672:16-30	
+3603	4	conversation	7ff1536c1df56b604ba927f4aba0980ba11df6fa309480460d35a6368be1f734	我是無辜的！我被冤枉了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	5	conversation	72d4dee1c6e02ffbe595e529f366c01f0adf90fef8a9bcd7f0a75ebb5c9cd600	他們說我綁架了一個女孩。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	6	conversation	6404881a85ada8be7496d55b4e3dce302590d1f27e2e963832c6b6b8eee590b7	我唯一的罪，就是運氣不好。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	7	conversation	f99dca955151ac39b3fd763e3e35ec36c034ea82ff67a03e97b09b3e5330d845	你這是什麼意思？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	8	conversation	e0911ea4196881774a4aeadd8cad5d41ce6952607bbf1b76009fb5db9e193f19	無辜，是嗎？哼，我們全都一樣無辜，個個都是被冤枉的！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	9	conversation	40a7206d44b576225a111c80b5819bcb76641e04a3c486446814ad750037385d	聽到這些我很難過。難道一點辦法也沒有嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	10	conversation	ed6cf567b5f9e9596d89b86f58fd5bdd6a47efe7c7c1d2c4c1d7f92a51ed2801	好了，我該告辭了。再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	11	conversation	48867f42fbae66699a85c6a61b45b3d42d2a60560be06aa572df0196e53ec0a3	說到無辜，你有沒有見過一位落難的少女？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	12	conversation	4876637e70117f0f5cdbe9998b4abe33dc42314ea5cadbecb2796c41e9a90783	滾開，騙子！你是個江湖術士，甚至更糟！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	13	conversation	7bfcdd8516cab60b0b88eeb8b3cbaad7ae89521093ba935d8f0b9799333dc9c2	是個年輕女孩嗎？美麗又純真的那種？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	14	conversation	7590d5176fd85393a4d4414119dfd2dbed9191b135937d7592dfdaea4a2dc7e0	對，就是她。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	15	conversation	bf679cb7b448c4509fd72c452b15f2b02042177a1942f5c78705be35eb1769b8	我從沒見過她。那項罪名與我無關。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	16	conversation	4e5961d5914491032fa6ef7402fefc2eea984b70fbb953e038f73f61134b9f1c	我想是吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	17	conversation	4aa5c30bf155ab10ffc33098b595bf4e0c9ba4ef82e56d6d52d0ed3e14f50c8e	我們幾個鐘頭前才見過她，被一個洞穴巨人扛著，後面還追著一群傻瓜！他們準是撞上了惡鬼仔。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	18	conversation	9986084942ceb41bffd0e062f6423b1068ff0f55374c941052a6908a8fc5f0ab	啊，她早就不見了。一個洞穴巨人把她扛到下面去了。阿姆瑞克的手下在後面追趕，可是根本不是惡鬼仔的對手。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	19	conversation	df69455d7f057b369cd417ec5c4b56dd3f430773e14e980a8edec122623a910f	「惡鬼仔」？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	20	conversation	8421d261307558547d59c82f1ef44dfa34e62c3781dc407519dae39268067cac	謝謝你。我得找到他們，證明我的清白！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	21	conversation	04b9b95706fcd6876a0e6b733ba604b797126c7332bbfdb0f1d693efe97363b9	她現在在哪裡？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	22	conversation	0a40449616922a862416513357c075a1e3212cd272884d0ff3e47ef1d63ca266	不過，我還是得把她救回來，洗清我的罪名。再見。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	23	conversation	e6ca845ef159d45abe7b1f9b3944e9f21fe37e0f929049d68510c7df7e37f61d	對，就是惡鬼族。分成綠色和灰色兩族，彼此是死對頭。他們的世仇讓我們的日子更加難過。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	24	conversation	4e3f32549ed5e5c46b7a33c02b08573d3f7f441d69f3a7549304f3bed00f93e5	他們為什麼結仇？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	25	conversation	535d471bb01d9ca55a86025e0b0f4f584eaf609397ac8f6d71264c9cafa6d13c	哪一方才有理？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	26	conversation	2a215158f68ac3a33e49a10ab37eb11b23294e3315887c7e18e5542b7c41279d	除了你們以外，這裡就只有他們住著嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	27	conversation	bf1507060be9e83a66153a30f10bc9c3835728d44b8fa3e6fdaccdab2ddc8377	沒人說得準。他們的衝突似乎是從大崩潰時開始的，也就是地底文明崩落的時候。我們只知道，兩族的首領都發誓絕不在任何事上取得共識。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	28	conversation	9922d04c1f700236556a039d15a72273f3be481c80fdb6a97e8ea7fe4dd9d1e6	你就沒有別的能告訴我了嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	29	conversation	2b7364f24f75be90c7720146afc87257582a775ce4c80df768d004fcda11aead	謝謝你。你幫了我很大的忙。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	30	conversation	47f2eb5c309fab0470376e92d65da8e8bd97dd14dadcdf641314d3a45bf8ef90	那在這些惡鬼族的地盤之外，還有什麼嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	31	conversation	99a308c5a665acbae91455ed098c50a8181e87ada120d656e73162c52b7d9030	又是你？還沒受夠比你高明的人嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	32	conversation	e8487b1c1ca8fcfb1e78d1e39acfba4c7eea7350c72cf69fb1a47f8ac13f9c1f	如果我的存在冒犯了你，我這就走。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	33	conversation	5e46505b8b4f64ee3f30e7f37a310e2328de0998cb05de68ba0631fea242b968	我當然受夠了，你這個蠢蛋！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	34	conversation	c24e5f255bbfdfa903a487febcf2a0b5731b6991c5a1af6e8e149420ca128a5f	抱歉，我以為你是別人。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	35	conversation	8fc7d101770c451e24f5ed39f1ce0e0fd18ab7f9ea9c4f9c9a19397c890c450f	再次祝你日安——如果外頭現在是白天的話！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	36	conversation	8000f5a1f448c78ff0723da4b5554945bdf8b5516e5548319d6558f4baf8fc20	你有我要找的那個女孩的消息嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	37	conversation	c9be682cf00fe1ee008cc2ec57cd7fb5393a6d1ba2de74b57268f71ccaf11162	也祝你日安。我得繼續找下去了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	38	conversation	db17f63c23dfa48efa33c5ccc2e504d2f4840e4e00606cf5687646cc5d2d4b0b	既然你這麼好心，我就接受你慷慨的提議，請你離開吧。再見！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	39	conversation	cbc259f35bdef261917cffdb083aa013c67267377b962243047c96706726baf3	沒有，她早就不見了。你要是想追上她，最好快一點。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	40	conversation	a4e9d24f5e8b865835266d64aa43dd1bf9f02a05aea250d9946540ce1476156a	你一定也是被那個假虔誠的蠢貨阿姆瑞克男爵判刑的人吧。我們放逐者，就是他那套嚴苛審判下的倖存者，也是躲避惡鬼仔獵食的逃亡者。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	41	conversation	f70812525ce4ce1bce4e686154fb423537ea8756e2d4748694c34ed3cb080ebd	啊，那你或許能告訴我他女兒的事。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	42	conversation	e93da7aa6e152f98d3267daeae10d1f2096f809785c79deabe839ea46ad7ff9f	你說的這些「惡鬼仔」是什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	43	conversation	facf654e9e0b103e5ce75a7f77f2369cf51837a2520f69d1645b4bf8d2b752a2	我該上路了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	44	conversation	11a63b0fadde9de755acbd3301f2f1ba32e654bc73c7c07b734d9213f29124c4	啊……越過惡鬼仔地盤的人，從來沒有一個回來過。不過傳聞說，下面還有更可怕的危險。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	45	conversation	1f380ca1fb0036af5d76fd05cbd33638afedfc66896ed350b22631fab0495bcc	好吧，還是謝謝你。再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	46	conversation	2d848d4481f0886ce5373aa3747b02ec312f594798805470bbfd4cb8ddf61730	也許我能替你解開這個謎。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	47	conversation	61984de85860a0188fefeb161b4bfd9fedf56e48facb00e3791ca7e13f1d655b	你們這些懦夫！難道就沒有一個人有勇氣自己下去看看嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	48	conversation	7a23034328e13cfadd8e69bd5a81fa769751eaadac36a415acb56d6067ce9b34	有些惡鬼族不再聽從首領的命令，在走道裡四處遊蕩，尋找獵物。他們偷走我們存的糧食，也很危險。真希望能擺脫他們。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	49	conversation	feaa3475c37e7e90b3cb57ca88618a80925f8608206f844cadba52798629176b	我會提防他們的。再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	50	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	51	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	52	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	53	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	54	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	55	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	56	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	57	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	58	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	59	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	60	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	61	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	62	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	63	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	64	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	1	conversation	eb5669fb7c2ea74d3a996520918ff3d2790a402ba0ee9e11f65812e1001ff811	你是誰？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	2	conversation	8b47604a2033cd6e940db5ac72655a73e4b7b104c1ce9b6ee9c9410ee855b9e1	陌生人，你叫什麼名字？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	4	conversation	7762e9abeffa68f18f439d3efc963fd1f82fb56500ccde7be9b0b787ba45dcd0	不關你的事！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	5	conversation	ead3a403f0061355f3f35f2865e1668fa617694bd829bd5e489b2208dad76882	我倒想問你同樣的問題。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	6	conversation	fff00e768524e9291ec690261d2ca3737e95a2dc18eb0ff78c49dcfea0ee7a53	我是古利克，人稱「有福的」。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	7	conversation	9dd2a97e67e893ac5badfd32ecf94b7b552bc5738b5b2405df5cef77bbc6aa5c	為什麼這樣叫你？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	8	conversation	8acd5a5998f275c8ce4d100ed041a3a98d6847ea825d1fedeeaa44e1efd0e10b	你是這裡的首領嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	9	conversation	4f4ea439797e3337205395d215bbbb4bba99d9367d8a4591a53f4963b70b45f3	這是什麼地方？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	10	conversation	4eb28ff9742950d40341efe589e0843c9da5a567edfe48cdbb0d51f3a586b1f7	我們的首領是哈格巴德。你跟他談過了嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	11	conversation	6770e8e9a0137b7f1b0c841a61880f7a70e53ce6900b6f5a36cbe974c4a5ec10	沒有。我該去嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	12	conversation	5d8a995a6fa7cf7c577cc9d49ca9e00d4aee4d0bcd5e2ad5caff27e2a8097276	為什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	13	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	談過了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	14	conversation	162a4304b24ae719e8760af74894537b150cbf421c3d41ec835b3a90d1988bf2	我可沒聽見你跟哈格巴德說過話！你為什麼說謊？你是凱查瓦爾派來的奸細嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	15	conversation	89c64f4916f1a76c301c7087a2862097e7f1eb6d38c5386ad279e096eb39af0f	凱查瓦爾是誰？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	16	conversation	c530afe12eb7e5b916e484fe6421944ef4774798b6eae0206172e8328429304a	不！我才不是奸細。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	17	conversation	0b035e092892c27af77d0142715da5a08331536ca229b279452dc210e4efcc06	沒錯，我正是！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	18	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	19	conversation	4e57f795e672b612308e11d3cbc3460d14af4156833422acedf0464cd3a48be5	就算是灰色惡鬼族的奸細，也不會裝得這麼無知！凱查瓦爾是灰色惡鬼族的國王。所以你要是奸細，一定是綠色惡鬼族維尼克斯派來的！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	20	conversation	8b9d4d446b1679c6e0382a408ce8ef45c07ca9167f4e23ac9cddea7107e0f83e	我不是奸細！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	21	conversation	b78ee11f60878edc12099bd0fc73da6525baacbdfdd088c87eadd6c520fa7263	沒錯！全都是真的！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	22	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	23	conversation	6af3a17bde565c2de9f669ff3abfa9fcdb12b48aab379c24ad41fdc2deabc660	你身在大冥河深淵，不論是你還是別人，都別想再離開這裡。這裡比任何監獄都糟，因為沒有假釋、沒有赦免，也沒有像絞刑那樣乾淨俐落的死法。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	24	conversation	d16623c73730982f137621554326daedbcf91eff6537f2ee581e63d438d8cab0	再多告訴我一些這座深淵的事。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	25	conversation	e1269d7604bd1f00aea8809f9637705414743996c8672b34ff08e31dcc14bf05	你是怎麼來到這裡的？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	26	conversation	002a32ded619d7cb70fc52804cd5c2eff4fd2444f63ef825041c66f39931bbb6	從來沒有人逃出去過嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	28	conversation	1db56404a5ea6b35798952c2a00393896f5e8a614f8395c57e27f779ce209343	又見面了，陌生人。你跟我們的首領談過了嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	29	conversation	c2974a9e21206584ea27515daea4b9376dd03db45ff236b531b1f3ceb589ec06	他是誰來著？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	30	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	談過了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	31	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	還沒有。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	32	conversation	a2339a6ed595089529a29e733581714d6b667f41b1fb777498eaec113269865a	那就去吧！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	33	conversation	18e6540bae93850c7026f3463bcaeab71e27cc91c6031b87aa3717dbe6cab4b8	我從坐牢的時候起就被叫作「有福的」。那時大家都說我運氣好，因為我愛吃蟑螂。你瞧，我從來沒餓過肚子。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	34	conversation	f127b671ca75b808b6771fa0a0c33e63bc1eec1d593b0da9d89dd85e246b214e	那可真是太好了……我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	35	conversation	657cbcc0bf7670aefb315074f2ea7c4a6d37172b0cd248cf6c651ec5e88828af	那這裡比監獄好嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	36	conversation	dd5219e99bff6f2528c9acf488b05d8811c3999d3ad2c86f8c96fdbbc81baee7	真噁心！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	37	conversation	f6f83cf4ec2e6c3aefe42ca26473149d6c3503e8d0fb877de01d545d22beba01	那你該去找哈格巴德談談。他是我們的首領。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	38	conversation	144d9e7c77251327328e95b6186e01564bbcf8905bb29b1cd6332a61343a8c54	也許我會去。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	39	conversation	a3d67e05202eaf99325bddde7ce98493e3c8dab18d1c35f788d00d025af64755	我會去找他。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	40	conversation	ce37316e67530256240f219fd209776f5100cc19242073cb417f213c25c574c1	我有更重要的事要做。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	41	conversation	10e1c9d2f93535f5e7ee246247ef0184c128793f04bb20ec1658dcad3a0abffe	你好！有什麼我能為你效勞的？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	42	conversation	bc0b82fbf796845bdce004b52eb0735765ff90970c267a91d825b4d63c31fdbe	謝謝你，不過我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	43	conversation	9abfb9853a7278a036696af05afcdf2a05c5717806c60d92be7d17221731e402	你剛才說你叫什麼名字？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	44	conversation	1c512104eb5ef3f6ac5f6ddb3e2935a5fbdd8f10f8799e17dbe47a775e353062	你知道下面有什麼嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	45	conversation	fb7d2994fc438f9d9bd225338fa8eea3c01ecbbd660e280793042ade0a42242f	要怎麼才能找到有用的東西？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	46	conversation	5df5c8904191380e1e10a07c86f890e8e764a239b11e14d56184ec9e42a40e30	啊，我想起來了。他剛才還在跟你說話呢！那麼，有什麼我能幫你的嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	47	conversation	bc0b82fbf796845bdce004b52eb0735765ff90970c267a91d825b4d63c31fdbe	謝謝你，不過我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	48	conversation	9abfb9853a7278a036696af05afcdf2a05c5717806c60d92be7d17221731e402	你剛才說你叫什麼名字？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	49	conversation	1c512104eb5ef3f6ac5f6ddb3e2935a5fbdd8f10f8799e17dbe47a775e353062	你知道下面有什麼嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	50	conversation	fb7d2994fc438f9d9bd225338fa8eea3c01ecbbd660e280793042ade0a42242f	要怎麼才能找到有用的東西？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	51	conversation	e1c85c0131f2c6dd0c40068579f9d33d5cabddc736627d4a7f663e674b62409f	你非得去找哈格巴德談談不可。我們這些人裡，只有他在這瘋狂的地方還保有理智。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	52	conversation	7fe8a3e3ff69fb5cdf1260e0cad1430c04fed8c59f3c8fc737fe3d3d5abcc869	好吧。我會去找他。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	53	conversation	0368bb23ab1be70df40a63fce0f618abdfeea042834d73ecd020230d617a05e1	去之前，先告訴我這裡到底是什麼地方？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	54	conversation	b2aad81292d37d03c5817016e7c381bd4c823dc7bc4631741783f421fe8b57c3	這裡不是一直都這樣的。從前有個叫凱布勒斯爵士的首領（願他的名字受詛咒！），居然異想天開，以為能在這裡建立殖民聚落。\n 等他的愚行自食惡果，地底的「文明」就此崩潰，我們如今只能在廢墟裡掙扎求生。 \n 他死了，倒是逃過了他該受的懲罰。這些空想家！我們早晚都會被他們害死！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	55	conversation	73a9ee83b2f19b0ee02ff16417ca5a29a0fee880dd76d90c4570f3e021829cca	那你呢？你是怎麼來到這裡的？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	56	conversation	f2931e9017a9cbada1f1cdf33d38b4d5b3369ac71aa70f18c4fac979593d5af5	也許他只是個理想主義者。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	57	conversation	4032869e30248d6967aed5b8318c1490b1e4e8eced0be4465eef1bba7c6f35f4	我殺了一個該死的人。我的罪，就是被逮到了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	58	conversation	afa8f68eaf0bac33358e446825a36d84a3ce0cd72d6c783032e91b4412e6f1b5	如果你懺悔，也許就能找到內心的平靜。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	59	conversation	37c6eb23e16053db6988a5b26809e1534fd50dfe493b4d68543720e2f389522a	好了，我得走了。保重。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	60	conversation	43e969d74372b29dedc45a84b07b611f8c59440d313925847a33521a230d176e	逃出去！哈！這裡根本逃不出去，除非是用死亡這最後一條路。殖民聚落崩潰的時候，有人在大門上施了強大的法術。如今那道門只能從外面打開。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	61	conversation	41cab39590dbfb37d9205d75ed07da25caf74b4e96a358fb2d15e915592db31c	也許我知道辦法。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	62	conversation	669fceb75f7e0f413588b365ef888fe8c38fe2a2a1ce7935b0bba31ddc8e14f7	這真是極大的不幸。我很同情你。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	63	conversation	15f33ea68055fc8809d5ae55b62a00b91f1fc1ed51e33140e70bd240f846ada8	那也許你是個傻瓜！祝你有美好的一天！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	64	conversation	04bce96fef1c73405c08b2eace31e860859e4322397cbc28d1051e01c9f2c230	祝你有美好的一天。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	65	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	走著瞧吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	66	conversation	ea97a05a271e86b41f4fcbfce80cb401f58f070fda506486ab154783f8d4474a	我們底下？哼，我猜是火山燃燒的心臟吧。再往下，就是不列顛尼亞的五臟六腑了。想想看，朋友，總有一天你也會成為那裡的一部分，而不再是在這些我們稱為家的洞穴裡掙扎的又一具軀體。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	67	conversation	dbbd1f9a831e2023aeb76c82bee4d6b447e3734c7a75de99ebcca33a51542297	我明白了。再見！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	68	conversation	67a534f2a19067998dc965c73735f53de2bbbd703a9d12141550246900e62de3	啊，你要知道，用交易換到有用的東西，往往比自己四處搜刮容易。找個願意交易的人，把你用不著的東西給他，換些更有用的回來。\\m	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	control-code
+3604	69	conversation	e7a7a61e09049ad8a8fc7b00971305db013a2df614284566235c545629d94a32	記得留意你在跟誰打交道。比方說，我聽說山岳族很喜歡黃金，惡鬼族倒不見得那麼在乎。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	70	conversation	d2e2d866157c08bc4c590991b9083fc607009104a915cccc1f866d08f29c7426	謝謝你的幫忙，再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	71	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	72	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	73	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	74	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	75	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	76	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	77	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	78	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	79	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	80	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	81	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	82	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	83	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	84	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	85	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3651	1	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d	小伙子	reviewed	PoC role: template_fragment	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	grammar-sensitive,showcase
 3651	2	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c	姑娘	reviewed	PoC role: template_fragment	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	grammar-sensitive,showcase
 3651	3	conversation	d432ede95023399e87ade8c791956bc66bad5b0da3bbbbf1bd237a6b70e7d464	你好，陌生人！你來這裡有何貴幹？我以前沒在這地方見過你。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
@@ -615,7 +615,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3651	13	conversation	f91b1089d14969662ad795fd43c10e159af7a5f1b088e49e7e71524ac8d36ca0	也許吧。我聽過許多人說出和你一樣的話，其中倒也有幾個至今還活著。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	14	conversation	eae088b57f10a9bc1b437b495a300a75b7d75cfe5bada8aba25d27e7f96d1b24	那麼，你有什麼實用的消息？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	15	conversation	f294f1ce8c1f695441c8203ae6d4269dc07c676c102297d0b686df0ae3530324	那麼，告辭了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
-3651	16	conversation	48bfdac64e2528a401ef1709916577d75bc263b9625f89e24202d6efd16b8633	首先，我勸你把找到的有用東西都撿起來。這裡的物資十分稀少，能拿多少就拿多少。\n 你儘管搜集散落的東西，但最好別偷竊。深淵裡多數居民都會嚴加看守自己僅有的那點財物。\n 戰場是搜集物資的最佳地點。我就是為此而來。不久前，惡鬼族和地面上的人在這裡打了一仗。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 authority-ok:guard（此處為動詞「看守」，非守衛頭銜） P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	showcase
+3651	16	conversation	48bfdac64e2528a401ef1709916577d75bc263b9625f89e24202d6efd16b8633	首先，我勸你把找到的有用東西都撿起來。這裡的物資十分稀少，能拿多少就拿多少。\n 你儘管搜集散落的東西，但最好別偷竊。深淵裡多數居民都會嚴加看守自己僅有的那點財物。\n 戰場是搜集物資的最佳地點。我就是為此而來。不久前，惡鬼族和地面上的人在這裡打了一仗。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 authority-ok:guard（此處為動詞「看守」，非守衛頭銜） P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	showcase
 3651	17	conversation	f30e65846e68f1566d1a5c5500895fefd440f00bd7bfdd0ac217d27ff363b400	這裡住著哪些人？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	18	conversation	c6f6e2e6af93327e70e7fde5287ef3dbbc1129fc756ba2d2f966e1e297b9dc56	那場戰役是怎麼引起的？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	19	conversation	3ad873af13e29a0a4c85be2c1895e3d7e9f300b8a3c5745fe7c2a3a44ec052b4	我不知道。男爵很少派人進入深淵，想必是有要事。不過，看樣子惡鬼族輕易就打敗了他們。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	control-code,showcase
@@ -629,7 +629,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3651	27	conversation	74d26abc289ff28f4f2e5433bfa4574debbcf33ca37c0a3184eb1c839470477d	這個人類聚落在哪裡？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	28	conversation	3771dda2a82d04b6fa30e01d5ef57b6665e751c861cb54b21402812048c536ba	除了人類以外，其他種族都懷有敵意嗎？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	29	conversation	f82c0a7c19e021e6a2ed0dd70674b87b3ece4532e58fcef56a74c4da16955165	這是個險惡的地方，這點你大可相信。上層洞穴裡沒有惡鬼族佔據的地方，也有巨蜘蛛和蠕蟲。我們這一小群人，是少數崇尚和平的居民之一。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	control-code,showcase
-3651	30	conversation	65489bc43446662b97e0d80366453c6a52650148beddae803aebd9054f6ba2f2	從深淵入口往西走，再往北，就能找到我的同伴。途中有一道小深谷要跳過，不過你看起來是個身手靈活的@SS1。過了深谷，就會看到深淵各處代表文明的標誌：凱布勒斯的旗幟，上面繪著聖者的符號——聖符。\n 在沒有旗幟標示的地方，你可得格外小心。多數不尊重凱布勒斯遺志的生物，都不怎麼友善。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	dynamic-template,showcase
+3651	30	conversation	65489bc43446662b97e0d80366453c6a52650148beddae803aebd9054f6ba2f2	從深淵入口往西走，再往北，就能找到我的同伴。途中有一道小深谷要跳過，不過你看起來是個身手靈活的@SS1。過了深谷，就會看到深淵各處代表文明的標誌：凱布勒斯的旗幟，上面繪著聖者的符號——聖符。\n 在沒有旗幟標示的地方，你可得格外小心。多數不尊重凱布勒斯遺志的生物，都不怎麼友善。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	dynamic-template,showcase
 3651	31	conversation	0c8abcb83b369001671ca04c40d733ebeb46d4a97fa03efbaa2042ea7fe97890	也許我會去找找這地方。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	32	conversation	f577e1ed0244a18d2516bc49148c045350cc29411a8a8e4ac6fbe3e327b89d73	謝謝你的幫助。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	33	conversation	a5c93821aa4eb3b61599193f9d6d5c9260a1d8a256899a6a771d1312054cb125	祝你旅途順利。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
@@ -641,7 +641,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3651	39	conversation	b6fef13821e9ddfc272a063c64bcba2e8c7ec1b2def4e106fda65f4cc22c950a	我一直找不到。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	40	conversation	a7700a56086f054423bba189f2a6d5cd1855f7fd86d05e93b10002e5a55cf991	是的，我去過了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	41	conversation	0a9f4dfcd023a98af0c09b61b670bf76fade8a210ef8df017f9389ad8209573d	好吧，這由你決定。我相信他們會歡迎你的。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
-3651	42	conversation	4d5de8d196831edd37bbab7051024999b97c1534d2b6b2efcecb9c9b196887ad	從入口的大廳往西走，穿過一道門，再往北跳過深谷。記住，凱布勒斯的旗幟——上面繪有聖符——就是深淵裡文明的標誌。	draft	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	showcase
+3651	42	conversation	4d5de8d196831edd37bbab7051024999b97c1534d2b6b2efcecb9c9b196887ad	從入口的大廳往西走，穿過一道門，再往北跳過深谷。記住，凱布勒斯的旗幟——上面繪有聖符——就是深淵裡文明的標誌。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	showcase
 3651	43	conversation	f3971dc44134d64ab7ec2a5a12da5df91ee524a0a109cbe8fda79c7cf227ba23	很高興聽你這麼說。你若厭倦了四處奔波，隨時歡迎來和我們一起住。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	44	conversation	df5aeddb9ebe333eeaa6065ad9c492a00c6fc524b8b418f2e29d213cca8e7906	非常感謝。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	45	conversation	b0fcdbe1599b1ed35b61274aff17cf68f8bd38acf537efaeda74203027f7ab5e	謝謝你，不過我的命運另有安排。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
@@ -649,7 +649,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3651	47	conversation	ae72c2dd0a88d8bebaa04c77a0d42dc69b09e22e0cc2808bd600d7d179eaaeff	我想還是不了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	48	conversation	22623848eed4ddc4f036497b7fb851e0e0a565b595fd9ea409bd0f74fc28c750	不，我還有許多事要做。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	49	conversation	6c39070a4a850159ffb2f38d4d8781eb3cd56aa9dc56ea4929cb603f87320ff1	也許我會暫時住上一陣子。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
-3672	1	conversation	5b99068b548f936e82e0fd5b55b0a38c14c23e740d3c832c01c684317fe7e6fb	我們山岳族已經很久沒見過像你這樣的人了。你是從地面上來的放逐者，還是外地人？	draft	P10A-B1 Brawnclan (slot 88): greeting (NPC)	the Folk 指山岳族（Mountainfolk）。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認	
+3672	1	conversation	5b99068b548f936e82e0fd5b55b0a38c14c23e740d3c832c01c684317fe7e6fb	我們山岳族已經很久沒見過像你這樣的人了。你是從地面上來的放逐者，還是外地人？	reviewed	P10A-B1 Brawnclan (slot 88): greeting (NPC)	the Folk 指山岳族（Mountainfolk）。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3672	2	conversation	d96892b66c4cdb729d075520a68d0dc5c0683bd97aecca449b599d70bb381a79	我最近才被冤枉關了進來。	reviewed	P10A-B1 Brawnclan (slot 88): reply option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 3672	3	conversation	4948a1c0f984fd456ed20658293c410793bbbdceeca779eebce1aca7379d4fdc	我正試著救出一名被綁架的女孩。	reviewed	P10A-B1 Brawnclan (slot 88): reply option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 3672	4	conversation	a53d934540d8af3c3cee00dead864ff983464cfda07ca62ec1f5770f3cd69140	我是個追尋財富的冒險者。	reviewed	P10A-B1 Brawnclan (slot 88): reply option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
