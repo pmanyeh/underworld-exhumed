@@ -33,6 +33,7 @@ block 8 的 384–395（a_wall、a_door、a_princess chained to a wall 等）是
 | `l10n.py validate` | PASS，0 problems，0 drift |
 | `l10n.py authority`（這 4 個 block／整份 master） | 0 errors、0 warnings |
 | `l10n.py build` ×2 | 5,101 筆，SHA 相同 |
+| `verify_localized_replay.py` | PASS，16 個 session，35 個翻譯命中與 master 相同，狀態與存檔與 DOS golden 相同 |
 | 排版 QA | 326 筆 0 失敗，全部在訊息捲軸（三行）。3:2（珊卓拉的信）與 3:106（給拉克希的信）四行，會翻一頁；書本在訊息捲軸顯示，英文原文同樣會翻頁 |
 
 **工具：** [layout_qa.py](../../tools/i18n/layout_qa.py) 原本只區分對話框與選項；現在對話以外的字串（block 0xE00 以下）
