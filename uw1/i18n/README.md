@@ -44,7 +44,8 @@ Phase 8 已完成實際 Bragit 多輪繁中流程、存讀檔與跨平台建置�
 Phase 9 建立 localization production pipeline，停在 P9 等待人工審閱，尚未開始 P10 大量翻譯。
 P10 以小批次進行；第一批見 [P10A Batch 1 report](../docs/i18n/P10A_BATCH1_REPORT.md)。
 
-`authority` 以英文原文的整字、大小寫相符找出術語：`approved` 的專名或輸入碼（符文需在符文串中、
+`authority` 以英文原文的整字找出術語，人名、地名、法術、輸入碼等須大小寫相符（Light 法術不是 light，人名 Door 不是 door）；
+一般名詞類（世界觀、生物、種族、物品、裝備）不分大小寫，詞表的 Ankh 也找得到句中的 an ankh。`approved` 的專名或輸入碼（符文需在符文串中、
 祈禱語）缺漏為 error；其他 `approved` 與專名類（人名、地名、種族、法術、生物等）的 canonical 缺漏為
 warning；一般名詞只列 info，因句中常見字常不是詞表的詞義。`aliases_zh_tw` 視為允許的異名（info）。
 審閱者確認某個字不是詞表詞義時（例如動詞 guard），在該列 notes 寫 `authority-ok:<英文詞>`，該項降為 info 並標示 waived。

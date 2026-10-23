@@ -464,6 +464,19 @@ class AuthorityLintTests(unittest.TestCase):
         # "light" is not the Light spell; the English word "In" is not a rune.
         self.assertEqual(self.lint({(1, 1): "那個光源已經用盡。", (1, 7): "在洞穴裡。"}), {})
 
+    def test_common_nouns_ignore_case_proper_nouns_and_tokens_do_not(self):
+        # A capitalized lore entry finds "an ankh" (P10A's 3651:30 missed it); the Door, a
+        # person, is not "a door"; the answer token NO is not the word "no".
+        terms = [term("Ankh", "聖符", "world-lore"), term("Door", "說話之門", "person"),
+                 term("NO", "NO", "gameplay", "approved", "input-token", policy="preserve-input-token")]
+        inv = inventory({(1, 0): "Marked with an ankh.", (1, 1): "Open a door.", (1, 2): "No, not that."})
+        master = [{"block": "1", "index": str(i), "target_zh_TW": t, "status": "draft"}
+                  for i, t in enumerate(("繪有生命十字。", "打開一扇門。", "不，不是那個。"))]
+        found = {f["key"]: f["level"] for f in l10n.authority_lint(master, inv, terms)}
+        self.assertEqual(found, {"1:0": "warning"})
+        master[0]["target_zh_TW"] = "繪有聖符。"
+        self.assertEqual(l10n.authority_lint(master, inv, terms), [])
+
     def test_untranslated_blocked_and_other_blocks_are_skipped(self):
         inv = inventory(self.SOURCES)
         master = [{"block": "1", "index": "0", "target_zh_TW": "", "status": "untranslated"},

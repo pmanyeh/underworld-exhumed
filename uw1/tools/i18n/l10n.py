@@ -778,14 +778,18 @@ def literal_scan():
 
 # The terminology authority is authority/GLOSSARY.tsv beside the locale's master.
 # Approved terms are locked; project-selected terms are the working canonical.
-# Terms are found in the English source as case-sensitive whole words, so the
-# Light spell is not "that light". A common word in a sentence is often not the
-# glossary sense, so only proper-noun categories are enforced; other terms are
-# listed for review. A rune syllable is an input token only inside a run of
+# Terms are found in the English source as whole words, case-sensitively, so the
+# Light spell is not "that light" and the Door (a person) is not "a door". Common
+# nouns (lore, creatures, races, objects, gear) ignore case, so a capitalized
+# glossary entry still finds its word in a sentence ("Ankh", "an ankh"); an
+# input token never does ("NO", not "no"). A common word in a sentence is
+# often not the glossary sense, so only proper-noun categories are enforced;
+# other terms are listed for review. A rune syllable is an input token only inside a run of
 # runes ("In Mani Ylem"), not as the English word "In".
 AUTHORITY_ENFORCED = {"person", "place", "race", "organization", "faction", "religion", "title", "virtue",
                       "world-lore", "book-title", "quest-object", "spell", "rune", "creature"}
 AUTHORITY_STATUSES = ("approved", "project-selected")
+AUTHORITY_ANY_CASE = {"world-lore", "creature", "race", "object", "quest-object", "equipment", "weapon", "armor"}
 
 
 def authority_path(master):
@@ -797,9 +801,9 @@ def load_authority(path):
         return [t for t in csv.DictReader(f, delimiter="\t") if t["status"] in AUTHORITY_STATUSES]
 
 
-def whole_words(words):
+def whole_words(words, flags=0):
     alternatives = "|".join(re.escape(w) for w in sorted(set(words), key=len, reverse=True))
-    return re.compile(r"(?<![\w-])(?:%s)(?![\w-])" % alternatives)
+    return re.compile(r"(?<![\w-])(?:%s)(?![\w-])" % alternatives, flags)
 
 
 def split_aliases(text):
@@ -815,7 +819,9 @@ def authority_lint(master, inventory, terms, blocks=None):
     attribute and the skill) are satisfied by any of them. A reviewer who finds the
     word is not the glossary sense (guard the verb, not the title) writes
     `authority-ok:<source_en>` in the row's notes; the finding stays, as 'info'."""
-    patterns = [(t, whole_words([t["source_en"]] + split_aliases(t["aliases_en"]))) for t in terms]
+    patterns = [(t, whole_words([t["source_en"]] + split_aliases(t["aliases_en"]),
+                                re.IGNORECASE if t["category"] in AUTHORITY_ANY_CASE and
+                                t["translation_policy"] != "preserve-input-token" else 0)) for t in terms]
     runes = [t["source_en"] for t in terms if t["term_kind"] == "rune-token"]
     rune_run = re.compile(r"%s(?:\s+%s)+" % ((whole_words(runes).pattern,) * 2)) if runes else None
     findings = []
