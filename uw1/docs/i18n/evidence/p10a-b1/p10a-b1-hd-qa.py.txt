@@ -1,0 +1,35 @@
+"""P10A Batch 1 targeted Native QA: public replays in zh-TW with the HD scroll.
+
+Same pattern as tools/i18n/verify_localized_replay.py (upstream verifier, separate
+work directory, goldens unchanged), plus --hd-scroll, the font, a scroll log and
+one window shot per session (--screenshot-after SHOT_MS of wall time).
+Usage: p10a-b1-hd-qa.py SHOT_MS SESSION...
+"""
+import os
+from pathlib import Path
+import sys
+
+workspace = Path('D:/git/uw1-native-poc')
+root = workspace / 'underworld-exhumed/uw1'
+sys.path.insert(0, str(workspace / 'underworld-exhumed/exhume/tools'))
+os.environ['EXHUME_CONFIG'] = str(root / 'build/poc/native-v22.toml')
+import replay as R
+import golden as G
+
+shot_ms, sessions = sys.argv[1], sys.argv[2:]
+G.VWORK = os.path.join(R.OUT, f'verify-p10a-b1-hd-{shot_ms}')
+original = R.run_port
+
+
+def run_port(rec, out, extra=(), **kwargs):
+    options = list(extra) + ['--locale', 'zh-TW', '--i18n-file', str(root / 'build/i18n/zh-TW.uwloc'),
+                             '--hd-scroll', '--font', str(root / 'tools/fonts/NotoSansCJKtc-Regular.otf'),
+                             '--scroll-log', os.path.join(out, 'scroll.jsonl'),
+                             '--i18n-trace', os.path.join(out, 'i18n-trace.jsonl'),
+                             '--screenshot-after', shot_ms, '--window-shot', os.path.join(out, 'window.png')]
+    return original(rec, out, options, **kwargs)
+
+
+R.run_port = run_port
+R.build = lambda *a, **k: print('Native-only: no DOS reference rebuild', flush=True)
+raise SystemExit(G.cmd_verify(sessions, jobs=None))

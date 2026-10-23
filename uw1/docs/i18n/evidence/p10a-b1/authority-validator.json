@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "terms": 980,
+  "categories": 26,
+  "guide_spell_sequences_verified": 40,
+  "runes": 24,
+  "mantras": 26,
+  "skills": 20,
+  "virtues": 8,
+  "guide_only_terms": 70,
+  "project_selected": 969,
+  "review_needed": 0,
+  "human_approved": 11,
+  "human_decisions": "PASS",
+  "derived_views": "PASS"
+}

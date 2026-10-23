@@ -79,7 +79,9 @@ def main():
               "categories": sorted(set(r["category"] for r in pak.rows()))}
     if args.catalog:
         hits = [json.loads(line) for line in trace.read_text(encoding="utf-8").splitlines()]
-        if {(r["block"], r["index"]) for r in hits} != {(3651, 3), (1, 2), (1, 5)}:
+        # The probe reads 1:3 to turn the string ring; once translated it is a hit too.
+        if not {(3651, 3), (1, 2), (1, 5)} <= {(r["block"], r["index"]) for r in hits} <= \
+                {(3651, 3), (1, 2), (1, 3), (1, 5)}:
             raise AssertionError(f"unexpected hook trace keys: {hits}")
         report["runtime_hook"] = {"status": "PASS", "trace": hits,
                                   "checks": ["resolved Bragit block", "untranslated cutscene fallback",

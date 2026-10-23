@@ -395,5 +395,56 @@ class BaselineTests(unittest.TestCase):
                           result["blocks_removed"]), ("DRIFT", [1], [3], [2]))
 
 
+def term(source_en, canonical, category, status="project-selected", kind="term", aliases_en="", aliases_zh="",
+         policy="use-selected-draft-consistently"):
+    return {"term_id": source_en, "source_en": source_en, "canonical_zh_tw": canonical, "category": category,
+            "status": status, "term_kind": kind, "aliases_en": aliases_en, "aliases_zh_tw": aliases_zh,
+            "translation_policy": policy}
+
+
+class AuthorityLintTests(unittest.TestCase):
+    TERMS = [term("Abyss", "深淵", "place"), term("Light", "神光術", "spell"), term("mantra", "祈禱語", "gameplay",
+             "approved"), term("Goldthirst", "貪金王", "person", "approved"),
+             term("Mountain-folk", "山岳族", "race", aliases_en="Mountainfolk"),
+             term("goblin", "惡鬼族", "race", aliases_zh="哥布林"), term("lock", "鎖", "object"),
+             term("Mana", "法力", "attribute"), term("Mana", "魔力", "skill"),
+             term("In", "In", "rune", "approved", "rune-token", policy="preserve-input-token"),
+             term("Mani", "Mani", "rune", "approved", "rune-token", policy="preserve-input-token")]
+    SOURCES = {(1, 0): "Into the Abyss.", (1, 1): "That light is used up.", (1, 2): "That is not a mantra.",
+               (1, 3): "Goldthirst, our king.", (1, 4): "Behave with the Mountainfolk.",
+               (1, 5): "A goblin and a lock.", (1, 6): "Mana", (1, 7): "In the caves.", (1, 8): "Say In Mani."}
+
+    def lint(self, targets, blocks=None):
+        inv = inventory(self.SOURCES)
+        master = [{"block": str(b), "index": str(i), "target_zh_TW": t, "status": "draft"}
+                  for (b, i), t in targets.items()]
+        return {f["key"]: f["level"] for f in l10n.authority_lint(master, inv, self.TERMS, blocks)}
+
+    def test_canonical_used_is_clean(self):
+        self.assertEqual(self.lint({(1, 0): "進入深淵。", (1, 2): "那不是祈禱語。", (1, 3): "我們的國王貪金王。",
+                                    (1, 4): "對山岳族守規矩。", (1, 6): "魔力", (1, 8): "唸出 In Mani。"}), {})
+
+    def test_levels(self):
+        found = self.lint({(1, 0): "進入地底。", (1, 2): "那不是咒語。", (1, 3): "我們的國王。",
+                           (1, 4): "對矮人守規矩。", (1, 5): "一隻哥布林和一把門閂。", (1, 8): "唸出咒文。"})
+        self.assertEqual(found, {"1:0": "warning", "1:2": "warning", "1:3": "error", "1:4": "warning",
+                                 "1:5": "info", "1:8": "error"})
+
+    def test_case_and_rune_runs_avoid_false_positives(self):
+        # "light" is not the Light spell; the English word "In" is not a rune.
+        self.assertEqual(self.lint({(1, 1): "那個光源已經用盡。", (1, 7): "在洞穴裡。"}), {})
+
+    def test_untranslated_blocked_and_other_blocks_are_skipped(self):
+        inv = inventory(self.SOURCES)
+        master = [{"block": "1", "index": "0", "target_zh_TW": "", "status": "untranslated"},
+                  {"block": "1", "index": "3", "target_zh_TW": "國王", "status": "blocked"}]
+        self.assertEqual(l10n.authority_lint(master, inv, self.TERMS), [])
+        self.assertEqual(self.lint({(1, 3): "國王"}, blocks={2}), {})
+
+    def test_committed_authority_loads(self):
+        terms = l10n.load_authority(l10n.authority_path(l10n.MASTER))
+        self.assertTrue(terms and all(t["status"] in l10n.AUTHORITY_STATUSES for t in terms))
+
+
 if __name__ == "__main__":
     unittest.main()

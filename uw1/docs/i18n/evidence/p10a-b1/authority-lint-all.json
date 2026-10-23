@@ -1,0 +1,468 @@
+{
+  "status": "FAIL",
+  "blocks": null,
+  "authority": "D:\\git\\Ultima Underworld\\underworld-exhumed\\uw1\\i18n\\zh-TW\\authority\\GLOSSARY.tsv",
+  "authority_sha256": "326ae9b2c9c59ef090a9b526217d5d742dcc9fc7109a43bf75e9aebfd442117a",
+  "counts": {
+    "error": 0,
+    "warning": 5,
+    "info": 30
+  },
+  "findings": [
+    {
+      "key": "1:12",
+      "level": "info",
+      "found": "plant",
+      "terms": [
+        {
+          "term_id": "UW1-4D90B58A5E99",
+          "category": "object",
+          "status": "project-selected",
+          "canonical": "植物"
+        }
+      ]
+    },
+    {
+      "key": "1:12",
+      "level": "info",
+      "found": "small",
+      "terms": [
+        {
+          "term_id": "UW1-E474953AC154",
+          "category": "status",
+          "status": "project-selected",
+          "canonical": "小型"
+        }
+      ]
+    },
+    {
+      "key": "1:19",
+      "level": "info",
+      "found": "sleep",
+      "terms": [
+        {
+          "term_id": "UW1-1E9070C5E225",
+          "category": "gameplay",
+          "status": "project-selected",
+          "canonical": "睡覺"
+        }
+      ]
+    },
+    {
+      "key": "1:21",
+      "level": "info",
+      "found": "sleep",
+      "terms": [
+        {
+          "term_id": "UW1-1E9070C5E225",
+          "category": "gameplay",
+          "status": "project-selected",
+          "canonical": "睡覺"
+        }
+      ]
+    },
+    {
+      "key": "1:100",
+      "level": "info",
+      "found": "No",
+      "terms": [
+        {
+          "term_id": "UW1-84B7A853C229",
+          "category": "UI",
+          "status": "project-selected",
+          "canonical": "否"
+        }
+      ]
+    },
+    {
+      "key": "1:126",
+      "level": "info",
+      "found": "full",
+      "terms": [
+        {
+          "term_id": "UW1-CD46EB9278A4",
+          "category": "status",
+          "status": "project-selected",
+          "canonical": "全滿"
+        }
+      ]
+    },
+    {
+      "key": "1:154",
+      "level": "info",
+      "found": "nothing",
+      "terms": [
+        {
+          "term_id": "UW1-6FE1FBCB936A",
+          "category": "dungeon-term",
+          "status": "project-selected",
+          "canonical": "空無一物"
+        }
+      ]
+    },
+    {
+      "key": "1:161",
+      "level": "info",
+      "found": "No",
+      "terms": [
+        {
+          "term_id": "UW1-84B7A853C229",
+          "category": "UI",
+          "status": "project-selected",
+          "canonical": "否"
+        }
+      ]
+    },
+    {
+      "key": "1:180",
+      "level": "info",
+      "found": "full",
+      "terms": [
+        {
+          "term_id": "UW1-CD46EB9278A4",
+          "category": "status",
+          "status": "project-selected",
+          "canonical": "全滿"
+        }
+      ]
+    },
+    {
+      "key": "1:241",
+      "level": "info",
+      "found": "sleep",
+      "terms": [
+        {
+          "term_id": "UW1-1E9070C5E225",
+          "category": "gameplay",
+          "status": "project-selected",
+          "canonical": "睡覺"
+        }
+      ]
+    },
+    {
+      "key": "1:246",
+      "level": "info",
+      "found": "full",
+      "terms": [
+        {
+          "term_id": "UW1-CD46EB9278A4",
+          "category": "status",
+          "status": "project-selected",
+          "canonical": "全滿"
+        }
+      ]
+    },
+    {
+      "key": "1:259",
+      "level": "info",
+      "found": "rest",
+      "terms": [
+        {
+          "term_id": "UW1-C0F2771E5E55",
+          "category": "gameplay",
+          "status": "project-selected",
+          "canonical": "休息"
+        }
+      ]
+    },
+    {
+      "key": "3651:16",
+      "level": "info",
+      "found": "Goblins",
+      "terms": [
+        {
+          "term_id": "UW1-5F403F394D7B",
+          "category": "race",
+          "status": "project-selected",
+          "canonical": "惡鬼族"
+        }
+      ]
+    },
+    {
+      "key": "3651:16",
+      "level": "warning",
+      "found": "guard",
+      "terms": [
+        {
+          "term_id": "UW1-0471B0BA9E7C",
+          "category": "title",
+          "status": "project-selected",
+          "canonical": "守衛"
+        }
+      ]
+    },
+    {
+      "key": "3651:19",
+      "level": "info",
+      "found": "Goblins",
+      "terms": [
+        {
+          "term_id": "UW1-5F403F394D7B",
+          "category": "race",
+          "status": "project-selected",
+          "canonical": "惡鬼族"
+        }
+      ]
+    },
+    {
+      "key": "3651:20",
+      "level": "warning",
+      "found": "Gray Goblins",
+      "terms": [
+        {
+          "term_id": "UW1-3967A0384576",
+          "category": "faction",
+          "status": "project-selected",
+          "canonical": "灰色惡鬼族"
+        }
+      ]
+    },
+    {
+      "key": "3651:20",
+      "level": "info",
+      "found": "Goblins",
+      "terms": [
+        {
+          "term_id": "UW1-5F403F394D7B",
+          "category": "race",
+          "status": "project-selected",
+          "canonical": "惡鬼族"
+        }
+      ]
+    },
+    {
+      "key": "3651:23",
+      "level": "info",
+      "found": "pole",
+      "terms": [
+        {
+          "term_id": "UW1-6CD2FD5A0683",
+          "category": "object",
+          "status": "project-selected",
+          "canonical": "長竹竿"
+        }
+      ]
+    },
+    {
+      "key": "3651:26",
+      "level": "warning",
+      "found": "Mountainmen",
+      "terms": [
+        {
+          "term_id": "UW1-0E96A51D860C",
+          "category": "race",
+          "status": "project-selected",
+          "canonical": "山岳族"
+        }
+      ]
+    },
+    {
+      "key": "3651:26",
+      "level": "info",
+      "found": "small",
+      "terms": [
+        {
+          "term_id": "UW1-E474953AC154",
+          "category": "status",
+          "status": "project-selected",
+          "canonical": "小型"
+        }
+      ]
+    },
+    {
+      "key": "3651:28",
+      "level": "info",
+      "found": "hostile",
+      "terms": [
+        {
+          "term_id": "UW1-E489BE5E3792",
+          "category": "status",
+          "status": "project-selected",
+          "canonical": "敵對"
+        }
+      ]
+    },
+    {
+      "key": "3651:29",
+      "level": "info",
+      "found": "Goblins",
+      "terms": [
+        {
+          "term_id": "UW1-5F403F394D7B",
+          "category": "race",
+          "status": "project-selected",
+          "canonical": "惡鬼族"
+        }
+      ]
+    },
+    {
+      "key": "3651:29",
+      "level": "info",
+      "found": "small",
+      "terms": [
+        {
+          "term_id": "UW1-E474953AC154",
+          "category": "status",
+          "status": "project-selected",
+          "canonical": "小型"
+        }
+      ]
+    },
+    {
+      "key": "3651:30",
+      "level": "info",
+      "found": "Banner of Cabirus",
+      "terms": [
+        {
+          "term_id": "UW1-2ACB886D19BB",
+          "category": "dungeon-term",
+          "status": "project-selected",
+          "canonical": "凱布勒斯的旗幟"
+        }
+      ]
+    },
+    {
+      "key": "3651:30",
+      "level": "info",
+      "found": "chasm",
+      "terms": [
+        {
+          "term_id": "UW1-DBF72F646BDC",
+          "category": "dungeon-term",
+          "status": "project-selected",
+          "canonical": "深谷"
+        }
+      ]
+    },
+    {
+      "key": "3651:30",
+      "level": "warning",
+      "found": "Cabirus",
+      "terms": [
+        {
+          "term_id": "UW1-82BA153882FE",
+          "category": "person",
+          "status": "project-selected",
+          "canonical": "凱布勒斯"
+        }
+      ]
+    },
+    {
+      "key": "3651:30",
+      "level": "info",
+      "found": "small",
+      "terms": [
+        {
+          "term_id": "UW1-E474953AC154",
+          "category": "status",
+          "status": "project-selected",
+          "canonical": "小型"
+        }
+      ]
+    },
+    {
+      "key": "3651:42",
+      "level": "info",
+      "found": "Banner of Cabirus",
+      "terms": [
+        {
+          "term_id": "UW1-2ACB886D19BB",
+          "category": "dungeon-term",
+          "status": "project-selected",
+          "canonical": "凱布勒斯的旗幟"
+        }
+      ]
+    },
+    {
+      "key": "3651:42",
+      "level": "info",
+      "found": "chasm",
+      "terms": [
+        {
+          "term_id": "UW1-DBF72F646BDC",
+          "category": "dungeon-term",
+          "status": "project-selected",
+          "canonical": "深谷"
+        }
+      ]
+    },
+    {
+      "key": "3651:42",
+      "level": "warning",
+      "found": "Cabirus",
+      "terms": [
+        {
+          "term_id": "UW1-82BA153882FE",
+          "category": "person",
+          "status": "project-selected",
+          "canonical": "凱布勒斯"
+        }
+      ]
+    },
+    {
+      "key": "3651:48",
+      "level": "info",
+      "found": "No",
+      "terms": [
+        {
+          "term_id": "UW1-84B7A853C229",
+          "category": "UI",
+          "status": "project-selected",
+          "canonical": "否"
+        }
+      ]
+    },
+    {
+      "key": "3672:12",
+      "level": "info",
+      "found": "rest",
+      "terms": [
+        {
+          "term_id": "UW1-C0F2771E5E55",
+          "category": "gameplay",
+          "status": "project-selected",
+          "canonical": "休息"
+        }
+      ]
+    },
+    {
+      "key": "3672:22",
+      "level": "info",
+      "found": "No",
+      "terms": [
+        {
+          "term_id": "UW1-84B7A853C229",
+          "category": "UI",
+          "status": "project-selected",
+          "canonical": "否"
+        }
+      ]
+    },
+    {
+      "key": "3672:28",
+      "level": "info",
+      "found": "No",
+      "terms": [
+        {
+          "term_id": "UW1-84B7A853C229",
+          "category": "UI",
+          "status": "project-selected",
+          "canonical": "否"
+        }
+      ]
+    },
+    {
+      "key": "3672:30",
+      "level": "info",
+      "found": "No",
+      "terms": [
+        {
+          "term_id": "UW1-84B7A853C229",
+          "category": "UI",
+          "status": "project-selected",
+          "canonical": "否"
+        }
+      ]
+    }
+  ]
+}

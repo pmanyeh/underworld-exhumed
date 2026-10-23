@@ -1,0 +1,121 @@
+{
+ "overpay": {
+  "batch_keys_hit": [
+   "3672:1",
+   "3672:10",
+   "3672:11",
+   "3672:13",
+   "3672:16",
+   "3672:17",
+   "3672:18",
+   "3672:19",
+   "3672:2",
+   "3672:20",
+   "3672:22",
+   "3672:3",
+   "3672:4",
+   "3672:7",
+   "3672:8",
+   "3672:9"
+  ],
+  "batch_hit_events": 24,
+  "batch_target_displayed": true,
+  "not_displayed": [],
+  "batch_keys_fallback": [],
+  "text_events": 35,
+  "more_events": 0
+ },
+ "talk": {
+  "batch_keys_hit": [
+   "1:156",
+   "1:253"
+  ],
+  "batch_hit_events": 21,
+  "batch_target_displayed": true,
+  "not_displayed": [],
+  "batch_keys_fallback": [],
+  "text_events": 27,
+  "more_events": 0
+ },
+ "savecursor": {
+  "batch_keys_hit": [
+   "1:160",
+   "1:162",
+   "1:165",
+   "1:168",
+   "1:253"
+  ],
+  "batch_hit_events": 6,
+  "batch_target_displayed": true,
+  "not_displayed": [],
+  "batch_keys_fallback": [],
+  "text_events": 45,
+  "more_events": 0
+ },
+ "tooheavy": {
+  "batch_keys_hit": [
+   "1:162",
+   "1:165",
+   "1:168",
+   "1:95"
+  ],
+  "batch_hit_events": 4,
+  "batch_target_displayed": true,
+  "not_displayed": [],
+  "batch_keys_fallback": [],
+  "text_events": 48,
+  "more_events": 0
+ },
+ "items": {
+  "batch_keys_hit": [
+   "1:162",
+   "1:165",
+   "1:168",
+   "1:253"
+  ],
+  "batch_hit_events": 4,
+  "batch_target_displayed": true,
+  "not_displayed": [],
+  "batch_keys_fallback": [],
+  "text_events": 44,
+  "more_events": 0
+ },
+ "visual-dialogue": {
+  "batch_keys_hit": [
+   "1:156",
+   "1:165",
+   "1:168"
+  ],
+  "batch_hit_events": 3,
+  "batch_target_displayed": true,
+  "not_displayed": [],
+  "batch_keys_fallback": [],
+  "text_events": 101,
+  "more_events": 0
+ },
+ "distinct_batch_keys_hit": [
+  "1:156",
+  "1:160",
+  "1:162",
+  "1:165",
+  "1:168",
+  "1:253",
+  "1:95",
+  "3672:1",
+  "3672:10",
+  "3672:11",
+  "3672:13",
+  "3672:16",
+  "3672:17",
+  "3672:18",
+  "3672:19",
+  "3672:2",
+  "3672:20",
+  "3672:22",
+  "3672:3",
+  "3672:4",
+  "3672:7",
+  "3672:8",
+  "3672:9"
+ ]
+}

@@ -1,0 +1,27 @@
+import json, sys
+sys.path.insert(0, 'tools/i18n'); sys.path.insert(0, 'build/i18n/p10a-b1')
+import l10n
+from translations import T, NOTES
+P = 'build/i18n/p10a-b1/'
+rows = {r['key']: r for r in l10n.read_tsv(P + 'workbook-export.tsv', l10n.EXPORT_FIELDS)}
+part = json.load(open(P + 'b1-partition.json'))
+reason = part['composed_reason']
+out = []
+for key, (target, context) in T.items():
+    r = dict(rows[key]); assert r['handling'] == 'direct' and not r['target_zh_TW'], key
+    r.update(target_zh_TW=target, status='draft', context=context, notes=NOTES.get(key, ''))
+    out.append(r)
+finding = 'P10A-B1 audit: composed sentence, not direct'
+for i in part['partition']['composed']:
+    r = dict(rows[f'1:{i}']); assert r['handling'] == 'direct' and not r['target_zh_TW']
+    r.update(flags=l10n.join_flags(set(l10n.split_flags(r['flags'])) | {'grammar-sensitive'}), context=finding,
+             notes='P11: ' + reason[str(i)] + '; the HD scroll translates each scroll_print piece separately, so a partial translation would mix languages.')
+    out.append(r)
+for i in range(0x180, 0x195):
+    r = dict(rows[f'6:{i}']); assert r['handling'] == 'direct' and not r['target_zh_TW']
+    r.update(flags=l10n.join_flags(set(l10n.split_flags(r['flags'])) | {'grammar-sensitive'}), context=finding,
+             notes='P11: active spell name, RUNES.C try_clear prints it and then game string 1:137-139 (grammar).')
+    out.append(r)
+out.sort(key=lambda r: (int(r['block']), int(r['index'])))
+open(P + 'workbook-batch1.tsv', 'wb').write(l10n.render_tsv(out, l10n.EXPORT_FIELDS))
+print(len(out), 'rows;', len(T), 'translated;', len(out) - len(T), 'flagged')

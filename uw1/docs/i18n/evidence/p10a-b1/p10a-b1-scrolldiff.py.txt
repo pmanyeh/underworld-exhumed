@@ -1,0 +1,12 @@
+"""Replay one P8 recording in HD mode with a given catalog and write its scroll log."""
+import os, sys
+from pathlib import Path
+rec, catalog, out, stage = sys.argv[1], sys.argv[2], sys.argv[3], (sys.argv[4] if len(sys.argv) > 4 else None)
+root = Path('D:/git/uw1-native-poc/underworld-exhumed/uw1')
+sys.path.insert(0, str(root.parent / 'exhume/tools'))
+import replay as R
+os.makedirs(out)
+extra = ['--sound', '0,0', '--locale', 'zh-TW', '--hd-scroll', '--i18n-file', catalog,
+         '--font', str(root / 'tools/fonts/NotoSansCJKtc-Regular.otf'),
+         '--scroll-log', os.path.join(out, 'scroll.jsonl'), '--i18n-trace', os.path.join(out, 'trace.jsonl')]
+print(R.run_port(rec, out, extra, stage=stage, quiet=True, env={'EXHUME_TEST_CHEATS': None}))

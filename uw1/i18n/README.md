@@ -15,6 +15,7 @@ python3 tools/i18n/l10n.py inventory $D           # 重新盤點並與 committed
 python3 tools/i18n/l10n.py export $D --untranslated --category conversation   # 譯者工作表（含英文，僅留本機）
 python3 tools/i18n/l10n.py import $D build/i18n/p9/workbook.tsv               # 合併回 master.tsv
 python3 tools/i18n/l10n.py validate $D            # UTF-8／key／source drift／控制碼／模板
+python3 tools/i18n/l10n.py authority $D --block 1 # 譯文對照 authority/GLOSSARY.tsv（--block 限定批次）
 python3 tools/i18n/l10n.py build $D               # deterministic build/i18n/zh-TW.uwloc
 build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" --locale zh-TW \
   --i18n-file build/i18n/zh-TW.uwloc --hd-scroll --font tools/fonts/NotoSansCJKtc-Regular.otf \
@@ -42,6 +43,12 @@ Phase 7 將 UTF-8 換行、控制碼、分頁與對話選項接入實際遊戲�
 Phase 8 已完成實際 Bragit 多輪繁中流程、存讀檔與跨平台建置，技術驗收 **PoC = GO**；
 完整結果與限制見 [PoC report](../docs/i18n/POC-REPORT.md)。
 Phase 9 建立 localization production pipeline，停在 P9 等待人工審閱，尚未開始 P10 大量翻譯。
+P10 以小批次進行；第一批見 [P10A Batch 1 report](../docs/i18n/P10A_BATCH1_REPORT.md)。
+
+`authority` 以英文原文的整字、大小寫相符找出術語：`approved` 的專名或輸入碼（符文需在符文串中、
+祈禱語）缺漏為 error；其他 `approved` 與專名類（人名、地名、種族、法術、生物等）的 canonical 缺漏為
+warning；一般名詞只列 info，因句中常見字常不是詞表的詞義。`aliases_zh_tw` 視為允許的異名（info）。
+error 或 warning 使指令失敗。
 驗收見 [Phase 1](../docs/i18n/TEXT-INVENTORY.md)、[Phase 2](../docs/i18n/RUNTIME-LOOKUP.md)
 與 [Phase 3](../docs/i18n/LAYOUT-CORE.md)、[Phase 4](../docs/i18n/OVERLAY-FOUNDATION.md)。
 

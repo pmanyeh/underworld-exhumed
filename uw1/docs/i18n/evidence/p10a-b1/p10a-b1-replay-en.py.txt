@@ -1,0 +1,15 @@
+from pathlib import Path
+import sys
+workspace = Path('D:/git/uw1-native-poc')
+sys.path.insert(0, str(workspace / 'underworld-exhumed/exhume/tools'))
+import replay as R
+import golden as G
+G.VWORK = str(Path(R.OUT) / 'verify-en-p10a-b1')
+
+
+def native_only(*args, **kwargs):
+    print('Native-only English baseline: no DOS reference rebuild', flush=True)
+
+
+R.build = native_only
+raise SystemExit(G.cmd_verify(G.SESSIONS, jobs=None))

@@ -1,0 +1,1007 @@
+{
+  "summary": {
+    "pak_sha256": "e8c9848a14c49620095ae180bdccbe9c6bf2942e3ad8def4a38a8a7d23004b0d",
+    "cnv_sha256": "495b9023a27e83827040af553d7a03067270a986b2cb67d4cad1f91eddafc09e",
+    "encoding": "cp437",
+    "block_count": 122,
+    "entry_count": 10984,
+    "category_count": 13,
+    "categories": {
+      "books": 512,
+      "chargen": 521,
+      "conversation": 5189,
+      "conversation_common": 512,
+      "cutscene": 122,
+      "dungeon_report": 512,
+      "game": 512,
+      "object_look": 544,
+      "object_names": 512,
+      "spells": 512,
+      "textures": 512,
+      "trap_text": 512,
+      "writings": 512
+    },
+    "handling": {
+      "books": {
+        "direct": 70,
+        "empty": 442
+      },
+      "chargen": {
+        "bitmap-ui": 49,
+        "empty": 437,
+        "input-token": 26,
+        "unaddressable": 9
+      },
+      "conversation": {
+        "direct": 4913,
+        "empty": 99,
+        "grammar": 23,
+        "template": 154
+      },
+      "conversation_common": {
+        "bitmap-ui": 83,
+        "direct": 2,
+        "empty": 403,
+        "grammar": 15,
+        "object-name": 9
+      },
+      "cutscene": {
+        "bitmap-ui": 122
+      },
+      "dungeon_report": {
+        "debug-report": 101,
+        "empty": 411
+      },
+      "game": {
+        "bitmap-ui": 7,
+        "direct": 328,
+        "empty": 102,
+        "grammar": 75
+      },
+      "object_look": {
+        "empty": 409,
+        "grammar": 103,
+        "unaddressable": 32
+      },
+      "object_names": {
+        "empty": 108,
+        "object-name": 404
+      },
+      "spells": {
+        "direct": 21,
+        "empty": 299,
+        "grammar": 192
+      },
+      "textures": {
+        "empty": 248,
+        "grammar": 264
+      },
+      "trap_text": {
+        "direct": 14,
+        "empty": 498
+      },
+      "writings": {
+        "direct": 98,
+        "empty": 396,
+        "grammar": 18
+      }
+    },
+    "scopes": {
+      "debug": 101,
+      "empty": 3852,
+      "production": 6990,
+      "unaddressable": 41
+    },
+    "empty_entries": 3893,
+    "unaddressable_entries": [
+      [
+        2,
+        512
+      ],
+      [
+        2,
+        513
+      ],
+      [
+        2,
+        514
+      ],
+      [
+        2,
+        515
+      ],
+      [
+        2,
+        516
+      ],
+      [
+        2,
+        517
+      ],
+      [
+        2,
+        518
+      ],
+      [
+        2,
+        519
+      ],
+      [
+        2,
+        520
+      ],
+      [
+        5,
+        512
+      ],
+      [
+        5,
+        513
+      ],
+      [
+        5,
+        514
+      ],
+      [
+        5,
+        515
+      ],
+      [
+        5,
+        516
+      ],
+      [
+        5,
+        517
+      ],
+      [
+        5,
+        518
+      ],
+      [
+        5,
+        519
+      ],
+      [
+        5,
+        520
+      ],
+      [
+        5,
+        521
+      ],
+      [
+        5,
+        522
+      ],
+      [
+        5,
+        523
+      ],
+      [
+        5,
+        524
+      ],
+      [
+        5,
+        525
+      ],
+      [
+        5,
+        526
+      ],
+      [
+        5,
+        527
+      ],
+      [
+        5,
+        528
+      ],
+      [
+        5,
+        529
+      ],
+      [
+        5,
+        530
+      ],
+      [
+        5,
+        531
+      ],
+      [
+        5,
+        532
+      ],
+      [
+        5,
+        533
+      ],
+      [
+        5,
+        534
+      ],
+      [
+        5,
+        535
+      ],
+      [
+        5,
+        536
+      ],
+      [
+        5,
+        537
+      ],
+      [
+        5,
+        538
+      ],
+      [
+        5,
+        539
+      ],
+      [
+        5,
+        540
+      ],
+      [
+        5,
+        541
+      ],
+      [
+        5,
+        542
+      ],
+      [
+        5,
+        543
+      ]
+    ],
+    "unaddressable_nonempty": [],
+    "dynamic_blocks_on_disk": [],
+    "block_zero_on_disk": false,
+    "block_zero_rule": "raw block 0 resolves to CutsceneOrConversationStringBlock (CNV header or 0xC00+n)",
+    "cutscene_blocks": [
+      3072,
+      3073,
+      3074,
+      3075,
+      3096,
+      3097,
+      3098,
+      3099,
+      3100,
+      3101,
+      3102,
+      3103,
+      3104,
+      3105
+    ],
+    "conversation_headers": 97,
+    "conversation_blocks": 97,
+    "conversation_blocks_referenced": 97,
+    "conversation_blocks_unreferenced": [],
+    "conversation_headers_without_block": [],
+    "conversation_slots": {
+      "1": 3585,
+      "2": 3586,
+      "3": 3587,
+      "4": 3588,
+      "5": 3589,
+      "6": 3590,
+      "7": 3591,
+      "8": 3592,
+      "9": 3593,
+      "10": 3594,
+      "11": 3595,
+      "12": 3596,
+      "13": 3597,
+      "14": 3598,
+      "15": 3599,
+      "16": 3600,
+      "17": 3601,
+      "18": 3602,
+      "19": 3603,
+      "20": 3604,
+      "21": 3605,
+      "22": 3606,
+      "23": 3607,
+      "24": 3608,
+      "25": 3609,
+      "26": 3610,
+      "27": 3611,
+      "28": 3612,
+      "64": 3648,
+      "65": 3649,
+      "66": 3650,
+      "67": 3651,
+      "88": 3672,
+      "89": 3673,
+      "90": 3674,
+      "112": 3696,
+      "113": 3697,
+      "114": 3698,
+      "115": 3699,
+      "136": 3720,
+      "137": 3721,
+      "138": 3722,
+      "139": 3723,
+      "140": 3724,
+      "141": 3725,
+      "142": 3726,
+      "143": 3727,
+      "144": 3728,
+      "146": 3730,
+      "147": 3731,
+      "148": 3732,
+      "149": 3733,
+      "161": 3745,
+      "162": 3746,
+      "184": 3768,
+      "185": 3769,
+      "186": 3770,
+      "187": 3771,
+      "188": 3772,
+      "189": 3773,
+      "190": 3774,
+      "191": 3775,
+      "192": 3776,
+      "193": 3777,
+      "194": 3778,
+      "208": 3792,
+      "209": 3793,
+      "210": 3794,
+      "211": 3795,
+      "212": 3796,
+      "213": 3797,
+      "214": 3798,
+      "215": 3799,
+      "216": 3800,
+      "217": 3801,
+      "218": 3802,
+      "219": 3803,
+      "220": 3804,
+      "221": 3805,
+      "222": 3806,
+      "231": 3815,
+      "232": 3816,
+      "262": 3846,
+      "263": 3847,
+      "268": 3852,
+      "272": 3856,
+      "276": 3860,
+      "277": 3861,
+      "278": 3862,
+      "280": 3864,
+      "281": 3865,
+      "282": 3866,
+      "288": 3872,
+      "291": 3875,
+      "295": 3879,
+      "297": 3881,
+      "314": 3898
+    },
+    "blocks": {
+      "1": {
+        "entries": 512,
+        "category": "game",
+        "sha256": "1bc689cccfdeafee66cc625f4bb51f78b63bec3cf3e1e2931d1775be571ebd05"
+      },
+      "2": {
+        "entries": 521,
+        "category": "chargen",
+        "sha256": "9f485759a76668b875382fef23ede0669d41638901a36d3a11ed80de71ca1f47"
+      },
+      "3": {
+        "entries": 512,
+        "category": "books",
+        "sha256": "56a10a59a8e5f1128a8dd7a841e6794e217cc581522f6c9df21a0af76c2d1146"
+      },
+      "4": {
+        "entries": 512,
+        "category": "object_names",
+        "sha256": "d89860f626f9feab63c41be99afeed2cfac80b6bcbde2926167b45970c8c07b6"
+      },
+      "5": {
+        "entries": 544,
+        "category": "object_look",
+        "sha256": "03d890f1d0196455f0e173d3353d5809e053e9bd27aeb65bf8263638b1604e27"
+      },
+      "6": {
+        "entries": 512,
+        "category": "spells",
+        "sha256": "9112a75de533065f9146e8bf9bf8a660ece42fc5b6c7aa0533ed6e3dec6e51f1"
+      },
+      "7": {
+        "entries": 512,
+        "category": "conversation_common",
+        "sha256": "3639d38a9db7c4c1eee5d6d5c0f68187c7475038dd694cbc754d021c18931285"
+      },
+      "8": {
+        "entries": 512,
+        "category": "writings",
+        "sha256": "e4f5da8b90a389b022cf21ecea6bbccdde2438752efa79ee91533774037297e5"
+      },
+      "9": {
+        "entries": 512,
+        "category": "trap_text",
+        "sha256": "7e8854cd13e6f36ca24552712ce716281d93ceed82a60be3b779f55f5219f420"
+      },
+      "10": {
+        "entries": 512,
+        "category": "textures",
+        "sha256": "aeb552bac82cbf9313118048030edbaaa545e0189cbd8216b45366bc3fe38769"
+      },
+      "24": {
+        "entries": 512,
+        "category": "dungeon_report",
+        "sha256": "ff410bce59ac450e78e4edd934e62979c2204178f5e3e8752663e5f7cf38f8aa"
+      },
+      "3072": {
+        "entries": 42,
+        "category": "cutscene",
+        "sha256": "fc2c0ba17ed4706f3862f7593103020efabf36bf0d02b9d2f6d6a388530c56ee"
+      },
+      "3073": {
+        "entries": 20,
+        "category": "cutscene",
+        "sha256": "42955897856ce91f031b896ea4f8fd5ad7d5a03b8a284739c027667c726a4068"
+      },
+      "3074": {
+        "entries": 15,
+        "category": "cutscene",
+        "sha256": "79d397241e0c866284d33e34224b5bb9508201956b134e789e6676588fa4a477"
+      },
+      "3075": {
+        "entries": 4,
+        "category": "cutscene",
+        "sha256": "65d8f5ddd79b8e6df606ec833d7ee05bb412d60bed9ed58d927af48f62bfe0f8"
+      },
+      "3096": {
+        "entries": 3,
+        "category": "cutscene",
+        "sha256": "3c8e8a4985fa5e92e6490df90971010c2950898538c1f417632d260268a9f038"
+      },
+      "3097": {
+        "entries": 5,
+        "category": "cutscene",
+        "sha256": "143176a84299328660414ce67293c2b9eeac383e187df9dacb0928c66e4b0737"
+      },
+      "3098": {
+        "entries": 9,
+        "category": "cutscene",
+        "sha256": "6ab0355307c06532b82d6f36b2ecaa750e76d8862cae5706ceffc170c4dfb0ba"
+      },
+      "3099": {
+        "entries": 5,
+        "category": "cutscene",
+        "sha256": "1f991af0ca22c56938fb5516d612243309cc0b45ff23e260f3c979b662d20af3"
+      },
+      "3100": {
+        "entries": 3,
+        "category": "cutscene",
+        "sha256": "4337ef3124af8ba53817d994eb97e4aaa614e7b53057d2f4b90c65a5906bd3dd"
+      },
+      "3101": {
+        "entries": 5,
+        "category": "cutscene",
+        "sha256": "23614187f8ae71a3bdbcb1a043c7c71b951938482f584c4168224adbf2965084"
+      },
+      "3102": {
+        "entries": 2,
+        "category": "cutscene",
+        "sha256": "659e361f8e7a12e4886e1e1e500fcd92fc77819407680f434135c956ed4e5da6"
+      },
+      "3103": {
+        "entries": 3,
+        "category": "cutscene",
+        "sha256": "0a20bfd6d9f18e948f0f50e73e973ba4b88a0a1d6218b80a2965be137dda2c00"
+      },
+      "3104": {
+        "entries": 3,
+        "category": "cutscene",
+        "sha256": "395606e67af06a4f2c7cb6ce06aaf2a84cad160789217a45a5df9f883074b53f"
+      },
+      "3105": {
+        "entries": 3,
+        "category": "cutscene",
+        "sha256": "ea932f727d5404d88cb7f42cad04a360186492d0a9b99440a4a482793fa90f11"
+      },
+      "3585": {
+        "entries": 47,
+        "category": "conversation",
+        "sha256": "e8ef68d51e6d4c0190db2e3686337f263deb8ba4eb507d992c66ce067bedc34c"
+      },
+      "3586": {
+        "entries": 164,
+        "category": "conversation",
+        "sha256": "48029a6de240819078ddac631bc77163164df414a5de8db5f1ed9dd916fcdab4"
+      },
+      "3587": {
+        "entries": 98,
+        "category": "conversation",
+        "sha256": "2004764189f39120e9415cae19d35766fb56d59dcbafb08d0004362bbb57f44f"
+      },
+      "3588": {
+        "entries": 137,
+        "category": "conversation",
+        "sha256": "528ab3dd94897649b82e7d498e04ed44a6db24d1f048cff5ff9f1c1270aac52c"
+      },
+      "3589": {
+        "entries": 66,
+        "category": "conversation",
+        "sha256": "0f719e6ab1901660f5dbb09d3b90c9a82c4d911b9780868376cff552029956a3"
+      },
+      "3590": {
+        "entries": 80,
+        "category": "conversation",
+        "sha256": "c77f455e3b30efec0eb8f739ae15ba0774c1e4a872b922251b4375b7a6251c3a"
+      },
+      "3591": {
+        "entries": 61,
+        "category": "conversation",
+        "sha256": "c12fe8166daf5ac4db7540f586fd4e6aed04016a7beb061b483104f6eb3d2321"
+      },
+      "3592": {
+        "entries": 16,
+        "category": "conversation",
+        "sha256": "68d1a74eaed5e3d7b11d8173d90549fbc0e7df24fea9f5f6074e0119a612e33c"
+      },
+      "3593": {
+        "entries": 55,
+        "category": "conversation",
+        "sha256": "d7e133bbf91aade93319172055348f742029fb9099b98ea76b8ebda5ccf9338e"
+      },
+      "3594": {
+        "entries": 54,
+        "category": "conversation",
+        "sha256": "c00f3e2d43fe1d8685f1ac5b0b44e952c85cac9efb092e525b2ad1aa94aa6b4e"
+      },
+      "3595": {
+        "entries": 31,
+        "category": "conversation",
+        "sha256": "3286f017d62769b4d5f7137a4d58181f7fc6e6a01e33abc800d8fea29208a9a4"
+      },
+      "3596": {
+        "entries": 140,
+        "category": "conversation",
+        "sha256": "f6bb080203bd918d4a76b15e8c54ee9149da4d24436c964ce1a39d17ff782a9e"
+      },
+      "3597": {
+        "entries": 100,
+        "category": "conversation",
+        "sha256": "bd9fbc87fcfc3e57676f643c6386804229f6058aa3a6a3d5da5045c6b0a38426"
+      },
+      "3598": {
+        "entries": 75,
+        "category": "conversation",
+        "sha256": "60b26f2699da75cf7c6293fc93fad5fe3c0a88f0a86d20b6a9557c64226e32d0"
+      },
+      "3599": {
+        "entries": 99,
+        "category": "conversation",
+        "sha256": "c5a002f87fc7279084fc913cc176afb70f57e9afcb0ebfbe99b8def34ef701e2"
+      },
+      "3600": {
+        "entries": 68,
+        "category": "conversation",
+        "sha256": "ca4e6caa592da728fa735a7eef9ad8e5eb2aa783281c747d9562dac03e9674ee"
+      },
+      "3601": {
+        "entries": 36,
+        "category": "conversation",
+        "sha256": "0d1ed86850b49f41e0eef581bd9524044e4c96c7930c80aee6e9bfde23f07e51"
+      },
+      "3602": {
+        "entries": 41,
+        "category": "conversation",
+        "sha256": "88c57c08618cce1837b73dfcd8cc7397ab55e5ba5a3282ae53b14908baeb8607"
+      },
+      "3603": {
+        "entries": 65,
+        "category": "conversation",
+        "sha256": "a6a6cc3c4140270b557143d128b566287e0cc6ca4735392f307c30607a76ebae"
+      },
+      "3604": {
+        "entries": 86,
+        "category": "conversation",
+        "sha256": "6a9eaf71fe88254931870aabcf6d373634d6dd83e526b8742d3326d1603ddc8f"
+      },
+      "3605": {
+        "entries": 22,
+        "category": "conversation",
+        "sha256": "6551f7a8ce757e5148d8c87fce9f99a30cba7b65d0e1960c21bef0f401d445c9"
+      },
+      "3606": {
+        "entries": 22,
+        "category": "conversation",
+        "sha256": "d94def029b5ff7cdcd1ee719267e8a4f4d19322e5d61d974230a5b8c5ce63292"
+      },
+      "3607": {
+        "entries": 70,
+        "category": "conversation",
+        "sha256": "a2727acb3101f8fecbe543f5f8fabd76aeec24c699025af2bb01be2646d17bdf"
+      },
+      "3608": {
+        "entries": 98,
+        "category": "conversation",
+        "sha256": "60029d05a0432d220f52bfd4eb18b99ae3d3752baae7570a6432e5b68a3decfb"
+      },
+      "3609": {
+        "entries": 53,
+        "category": "conversation",
+        "sha256": "67c85640cce82904117dfc4ad9c1559f0bb143dd3e2b59f78b929810707002db"
+      },
+      "3610": {
+        "entries": 49,
+        "category": "conversation",
+        "sha256": "b48a563316a438b880efeb681e89503e8c57cc247d7a0485f3be712338c502b7"
+      },
+      "3611": {
+        "entries": 52,
+        "category": "conversation",
+        "sha256": "b0bd4ea6063830ee4cb47aae83264e60ac0ea9331ad26e6c6ae0ab264b025293"
+      },
+      "3612": {
+        "entries": 70,
+        "category": "conversation",
+        "sha256": "17fa24971f0653593a738f71b67b58633564d900e58353bcb463d3a7fb862c1f"
+      },
+      "3648": {
+        "entries": 27,
+        "category": "conversation",
+        "sha256": "972a6e384fb0a7e39a421a365c665b66f49ed83c8915602519ef1b6adc1e2dda"
+      },
+      "3649": {
+        "entries": 37,
+        "category": "conversation",
+        "sha256": "8f829aa016bf399060249746c48fd58b6ee2d717c67c1ab6d6ed038a1499bc00"
+      },
+      "3650": {
+        "entries": 12,
+        "category": "conversation",
+        "sha256": "764411a8acdbdd550883533d19bab9b3c905b4a677ba6840b05ae4e1f4ced544"
+      },
+      "3651": {
+        "entries": 50,
+        "category": "conversation",
+        "sha256": "40cc0bb848d4c9b40ba4b05d143eb4a143c5445c97e011c4dafc7dfae3ec5ae3"
+      },
+      "3672": {
+        "entries": 31,
+        "category": "conversation",
+        "sha256": "a79ef5ab420592177587e2d7f5b6a72e666b61c0ff512a82293c95b94cce89b3"
+      },
+      "3673": {
+        "entries": 44,
+        "category": "conversation",
+        "sha256": "7e10f1f4b42aa5e5fff63208a088816264d65aeea606cb759c7b8dff73c74ce9"
+      },
+      "3674": {
+        "entries": 42,
+        "category": "conversation",
+        "sha256": "cec8680ca0986b2264401ebed341b6caf3853b0fe24fd6a6873ff3db5864a5cf"
+      },
+      "3696": {
+        "entries": 50,
+        "category": "conversation",
+        "sha256": "ea7c655346aaed5ddc911eaae14a182b4d36f1f6eade67fe8109d186b50f83a9"
+      },
+      "3697": {
+        "entries": 68,
+        "category": "conversation",
+        "sha256": "0c050676d4e860a7bcdfdc8f3bd907a21ba95bcae9ffbdb30fb4a41b85285b53"
+      },
+      "3698": {
+        "entries": 31,
+        "category": "conversation",
+        "sha256": "8e2d1ecebb0517bbe8ae03c6300bc9ce45b8068be98f66862cf70e289f4dfdaf"
+      },
+      "3699": {
+        "entries": 19,
+        "category": "conversation",
+        "sha256": "f718baff695846625d2b870985b25f846a10a3bfd38db3999f2860196c9d01a7"
+      },
+      "3720": {
+        "entries": 85,
+        "category": "conversation",
+        "sha256": "72fa038d24103011e4234faac08176f3535c60eb8bea022648400934e29c6e69"
+      },
+      "3721": {
+        "entries": 55,
+        "category": "conversation",
+        "sha256": "e7eeb496eaf92cbb5afab9a585e61759d870ae207313c2439d3f6da994877bfc"
+      },
+      "3722": {
+        "entries": 34,
+        "category": "conversation",
+        "sha256": "52f3cb734305bd6dc50ef95dc9baf84a008e6a88486ba152b3c86dabca3c86cf"
+      },
+      "3723": {
+        "entries": 82,
+        "category": "conversation",
+        "sha256": "1fb8408a57b788b21e819d49b60ff40e929cf51edc6e8a4242a439ebf213804d"
+      },
+      "3724": {
+        "entries": 38,
+        "category": "conversation",
+        "sha256": "f16e17d692f57d48165f025970a0177c3351c22bbbc33721634c6c74bc5faa0b"
+      },
+      "3725": {
+        "entries": 60,
+        "category": "conversation",
+        "sha256": "cb3c1807ce0220f3de2ca0a1b5bbe196a0c16d76fe28fb28b1502df1d2e1d392"
+      },
+      "3726": {
+        "entries": 12,
+        "category": "conversation",
+        "sha256": "37ac0766fb0af6436804bd0bbf09997ad836c03d3e61c02fed368e97a279e6c7"
+      },
+      "3727": {
+        "entries": 76,
+        "category": "conversation",
+        "sha256": "bc578707dcf9ce7615b53d3179f843b6ce16330413e33118e6909f145cbd933f"
+      },
+      "3728": {
+        "entries": 56,
+        "category": "conversation",
+        "sha256": "7e78e7009365bc014be9fcae618e5cef85a214158beabc19c6527f9424c9b936"
+      },
+      "3730": {
+        "entries": 85,
+        "category": "conversation",
+        "sha256": "59c3a5f01fac87481403a23d738de9cf555f3e77af1017350fa02b1bf929d1f4"
+      },
+      "3731": {
+        "entries": 85,
+        "category": "conversation",
+        "sha256": "59c3a5f01fac87481403a23d738de9cf555f3e77af1017350fa02b1bf929d1f4"
+      },
+      "3732": {
+        "entries": 85,
+        "category": "conversation",
+        "sha256": "59c3a5f01fac87481403a23d738de9cf555f3e77af1017350fa02b1bf929d1f4"
+      },
+      "3733": {
+        "entries": 85,
+        "category": "conversation",
+        "sha256": "59c3a5f01fac87481403a23d738de9cf555f3e77af1017350fa02b1bf929d1f4"
+      },
+      "3745": {
+        "entries": 91,
+        "category": "conversation",
+        "sha256": "402896bbf4a0ad2d518e812d9ea07a2150b7c83381c721dc3fd92807558715df"
+      },
+      "3746": {
+        "entries": 54,
+        "category": "conversation",
+        "sha256": "d7ba67b576a711f772daf195c07d6c97d37c09b682fdc56b14cd43b1a4e44195"
+      },
+      "3768": {
+        "entries": 30,
+        "category": "conversation",
+        "sha256": "04ef1247657485b39abd543ad9303bb29d00f7590fc9ddd67232aa231d7f524d"
+      },
+      "3769": {
+        "entries": 39,
+        "category": "conversation",
+        "sha256": "aabc8e5325eb939e0f70bb0e913fab8fbad262fd4dc86f999c812ee8a6c19fb5"
+      },
+      "3770": {
+        "entries": 41,
+        "category": "conversation",
+        "sha256": "3c2a0bf68fdde86f4b3ed1730de8169d05d3b0973ca3b77f8a55d30c035175a6"
+      },
+      "3771": {
+        "entries": 75,
+        "category": "conversation",
+        "sha256": "9782065cbbe0f7746b5285493afdb30fe08bf55f28dae46c709f9dd930806f86"
+      },
+      "3772": {
+        "entries": 41,
+        "category": "conversation",
+        "sha256": "d430e1ebeff0022241f69c64c0415ccf704a6ee43c42e89aeeee443b24b3d669"
+      },
+      "3773": {
+        "entries": 49,
+        "category": "conversation",
+        "sha256": "e255672757ef7caa791ad4eb3def90c985d5e559be54e0e41599a23a4b785d80"
+      },
+      "3774": {
+        "entries": 42,
+        "category": "conversation",
+        "sha256": "f582505eac856573440aaf0fb630a912e17fb8b9f4625c20b41c43026f1f798d"
+      },
+      "3775": {
+        "entries": 62,
+        "category": "conversation",
+        "sha256": "0dcfd691a61e3bb345cf2a60f751534cd848b1bf2f1e3afc13ab5bf82ce9a46a"
+      },
+      "3776": {
+        "entries": 18,
+        "category": "conversation",
+        "sha256": "158e667b3e7ca6b713bd87598ec88148cedc00f890c5b17bae5e1bb01abbd15f"
+      },
+      "3777": {
+        "entries": 27,
+        "category": "conversation",
+        "sha256": "4a2197acadbf65fcbebe2980c3eca9058168b52aa7aa3355d9ff88fd3380f598"
+      },
+      "3778": {
+        "entries": 58,
+        "category": "conversation",
+        "sha256": "7e6e145ce770521242f80421cd67c4cbf87498d11cdfead370c0ad2e92f0824a"
+      },
+      "3792": {
+        "entries": 45,
+        "category": "conversation",
+        "sha256": "a8f9b48367cd878edb0ed6bfb739db5283f450d8219325a2d4f33cfc3e2475d7"
+      },
+      "3793": {
+        "entries": 43,
+        "category": "conversation",
+        "sha256": "4b224f2401cd82389b8b0b17ea9f0a97cbd1beabffa36a7f1ca75021c4c92633"
+      },
+      "3794": {
+        "entries": 42,
+        "category": "conversation",
+        "sha256": "6509a19da787e433e64ab8e5bdf3b8053aaee6403aec72424a8cf81a0bc0b83a"
+      },
+      "3795": {
+        "entries": 65,
+        "category": "conversation",
+        "sha256": "deec3f07422000148fb92dbffe78b0d0440dd0c6f3567ec861a0fad890745429"
+      },
+      "3796": {
+        "entries": 80,
+        "category": "conversation",
+        "sha256": "0012fb93234cc731a7c344df0d5d3dc46231c7ed1a66a3042f835b70251341fb"
+      },
+      "3797": {
+        "entries": 24,
+        "category": "conversation",
+        "sha256": "9bedae70b5357aedd90ce0aec821a80d532c173a609dc1e8909fb1a270be4c58"
+      },
+      "3798": {
+        "entries": 47,
+        "category": "conversation",
+        "sha256": "a4d559cd31139ec89219e32ed456d13226aba1875c8efa10417f447bcf144a5d"
+      },
+      "3799": {
+        "entries": 46,
+        "category": "conversation",
+        "sha256": "d0556e832bddb1c81f975c650a02d0deb0728e6338197e74f170ecc9b8fbf4f5"
+      },
+      "3800": {
+        "entries": 46,
+        "category": "conversation",
+        "sha256": "6136668f2835a4494d6cd6b32ea1301ea8d283092f2e5b30d59523d12974eb44"
+      },
+      "3801": {
+        "entries": 39,
+        "category": "conversation",
+        "sha256": "da6c687ba276532ca6bb707f0f753a4b5a094d70b6f501d4a9a2389a7fbcd8f9"
+      },
+      "3802": {
+        "entries": 53,
+        "category": "conversation",
+        "sha256": "2f1256e6f3f2ed41cd4e9aea8f036736f3012cecf8a73b202a3562652f11fbc1"
+      },
+      "3803": {
+        "entries": 44,
+        "category": "conversation",
+        "sha256": "17d5ce68b23dbaf42f8960a09fd1ed6d002249541e3908ab1a125e427c67db25"
+      },
+      "3804": {
+        "entries": 43,
+        "category": "conversation",
+        "sha256": "55e2d3e7111feb5be104c60dd7f65d5a04f3923705e0e261f6f16f1054b6fca8"
+      },
+      "3805": {
+        "entries": 82,
+        "category": "conversation",
+        "sha256": "314796b285fa69609f31dcb7657e3c2494251b41c52e2009dfa69a3fb8d994af"
+      },
+      "3806": {
+        "entries": 41,
+        "category": "conversation",
+        "sha256": "86fd800ce80d7400eb9684b10a7eed5f6a056284f78986079be0d74ebe40bb61"
+      },
+      "3815": {
+        "entries": 13,
+        "category": "conversation",
+        "sha256": "a1d204f09aa2717c279bc7c13df9144175b64a2c0f89d559fe4c4fd4adcc1b51"
+      },
+      "3816": {
+        "entries": 52,
+        "category": "conversation",
+        "sha256": "7317ee250c42e5faa33667866165e489cede398e18d941164680a7af26d1cf33"
+      },
+      "3846": {
+        "entries": 33,
+        "category": "conversation",
+        "sha256": "95def26374cf8b506f39aaa5ac80d0ccff1de8da2fc65d29058570a144bc8f99"
+      },
+      "3847": {
+        "entries": 33,
+        "category": "conversation",
+        "sha256": "95def26374cf8b506f39aaa5ac80d0ccff1de8da2fc65d29058570a144bc8f99"
+      },
+      "3852": {
+        "entries": 35,
+        "category": "conversation",
+        "sha256": "65cdaed868e09242cc3570fceae40cf3e2545982bf44e9604aaf29e6e4cee597"
+      },
+      "3856": {
+        "entries": 35,
+        "category": "conversation",
+        "sha256": "65cdaed868e09242cc3570fceae40cf3e2545982bf44e9604aaf29e6e4cee597"
+      },
+      "3860": {
+        "entries": 47,
+        "category": "conversation",
+        "sha256": "049462d5e418fcc26376d897df2bd2745823be8cb82507407b39c49113d4ced8"
+      },
+      "3861": {
+        "entries": 67,
+        "category": "conversation",
+        "sha256": "4142de82f921b3454539d5725e13ffdac183bb653ff9845e633528a3ddb43c76"
+      },
+      "3862": {
+        "entries": 47,
+        "category": "conversation",
+        "sha256": "049462d5e418fcc26376d897df2bd2745823be8cb82507407b39c49113d4ced8"
+      },
+      "3864": {
+        "entries": 67,
+        "category": "conversation",
+        "sha256": "4142de82f921b3454539d5725e13ffdac183bb653ff9845e633528a3ddb43c76"
+      },
+      "3865": {
+        "entries": 50,
+        "category": "conversation",
+        "sha256": "16f48cb4cfe5c5a2b4ee9a9dec60bf247f281b83077e8dda5b8a7728a4f32740"
+      },
+      "3866": {
+        "entries": 42,
+        "category": "conversation",
+        "sha256": "f1c19e186d7a0ea729dc27be592f5e2db7172be3b22ff133167fcc159c30474e"
+      },
+      "3872": {
+        "entries": 36,
+        "category": "conversation",
+        "sha256": "e03e8ed6c81e149eb350867ed1db002f6fa91c55b095e6571d7925e6c8754648"
+      },
+      "3875": {
+        "entries": 8,
+        "category": "conversation",
+        "sha256": "8aa5728e2ef2b1cd25c2659d872bca9a83f98bd467d7da205d741d3df275b5a3"
+      },
+      "3879": {
+        "entries": 25,
+        "category": "conversation",
+        "sha256": "c25fdeda2f52a123b64307b08886c94f2e459ceb12126bd3e3bda06ff01a8874"
+      },
+      "3881": {
+        "entries": 8,
+        "category": "conversation",
+        "sha256": "35da932bcd3025c3c9416b59c026e84fba68b0bfaa23e2b515361e923c247a09"
+      },
+      "3898": {
+        "entries": 20,
+        "category": "conversation",
+        "sha256": "bcd4d3b3c1f427b7a871fbb6c6d5278b01313d321ff994516ab6f9bb6f031191"
+      }
+    }
+  },
+  "baseline": {
+    "pak_sha256_changed": false,
+    "cnv_sha256_changed": false,
+    "blocks_added": [],
+    "blocks_removed": [],
+    "blocks_changed": [],
+    "status": "SAME"
+  }
+}

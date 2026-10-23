@@ -1,0 +1,28 @@
+{
+ "before": {
+  "production": 6990,
+  "direct_total": 5444,
+  "direct_translated": 46,
+  "direct_untranslated": 5398,
+  "draft": 46,
+  "reviewed": 0,
+  "approved": 0,
+  "blocked": 0,
+  "needs_context": 0,
+  "grammar_handling": 692,
+  "production_translated": 52
+ },
+ "after": {
+  "production": 6990,
+  "direct_total": 5251,
+  "direct_translated": 203,
+  "direct_untranslated": 5048,
+  "draft": 203,
+  "reviewed": 0,
+  "approved": 0,
+  "blocked": 0,
+  "needs_context": 0,
+  "grammar_handling": 885,
+  "production_translated": 209
+ }
+}

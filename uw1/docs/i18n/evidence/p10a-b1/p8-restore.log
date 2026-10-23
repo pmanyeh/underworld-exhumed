@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "D:\git\uw1-native-poc\underworld-exhumed\uw1\tools\i18n\verify_native_recording.py", line 93, in <module>
+    main()
+  File "D:\git\uw1-native-poc\underworld-exhumed\uw1\tools\i18n\verify_native_recording.py", line 73, in main
+    assert G.canon(actual) == G.canon(expected), (label, i, 'canonical sections')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('replay1', 17, 'canonical sections')

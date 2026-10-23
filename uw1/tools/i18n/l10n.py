@@ -13,6 +13,7 @@ outputs (inventory, translator workbook). Standard library only.
   coverage   coverage matrix, optionally with runtime QA traces
   export     translator/QA workbook (key, source, target, context, hits)
   import     merge an edited workbook back into the master dataset
+  authority  lint translated rows against the locale's terminology authority
 """
 import argparse
 from collections import Counter, defaultdict
@@ -752,6 +753,82 @@ def literal_scan():
     return scan()
 
 
+# The terminology authority is authority/GLOSSARY.tsv beside the locale's master.
+# Approved terms are locked; project-selected terms are the working canonical.
+# Terms are found in the English source as case-sensitive whole words, so the
+# Light spell is not "that light". A common word in a sentence is often not the
+# glossary sense, so only proper-noun categories are enforced; other terms are
+# listed for review. A rune syllable is an input token only inside a run of
+# runes ("In Mani Ylem"), not as the English word "In".
+AUTHORITY_ENFORCED = {"person", "place", "race", "organization", "faction", "religion", "title", "virtue",
+                      "world-lore", "book-title", "quest-object", "spell", "rune", "creature"}
+AUTHORITY_STATUSES = ("approved", "project-selected")
+
+
+def authority_path(master):
+    return Path(master).parent / "authority/GLOSSARY.tsv"
+
+
+def load_authority(path):
+    with open(path, encoding="utf-8", newline="") as f:
+        return [t for t in csv.DictReader(f, delimiter="\t") if t["status"] in AUTHORITY_STATUSES]
+
+
+def whole_words(words):
+    alternatives = "|".join(re.escape(w) for w in sorted(set(words), key=len, reverse=True))
+    return re.compile(r"(?<![\w-])(?:%s)(?![\w-])" % alternatives)
+
+
+def split_aliases(text):
+    return [w.strip() for w in text.split(";") if w.strip()]
+
+
+def authority_lint(master, inventory, terms, blocks=None):
+    """Findings for each translated row against the terms its English source names.
+    'error': a preserved input token, or an approved proper noun's canonical, is
+    missing; 'warning': another approved or enforced (proper-noun) canonical is
+    missing; 'info': any other term whose canonical the target lacks, or a term
+    given as one of its listed aliases. Terms that share an English form (Mana the
+    attribute and the skill) are satisfied by any of them."""
+    patterns = [(t, whole_words([t["source_en"]] + split_aliases(t["aliases_en"]))) for t in terms]
+    runes = [t["source_en"] for t in terms if t["term_kind"] == "rune-token"]
+    rune_run = re.compile(r"%s(?:\s+%s)+" % ((whole_words(runes).pattern,) * 2)) if runes else None
+    findings = []
+    for r in master:
+        target = r["target_zh_TW"]
+        block, index = int(r["block"]), int(r["index"])
+        if not target or r["status"] == "blocked" or (blocks and block not in blocks):
+            continue
+        source = inventory.source(block, index)
+        in_runes = " ".join(m.group(0) for m in rune_run.finditer(source)) if rune_run else ""
+        groups = defaultdict(list)
+        for t, pattern in patterns:
+            match = pattern.search(in_runes if t["term_kind"] == "rune-token" else source)
+            if match:
+                groups[t["source_en"]].append((t, pattern, match.group(0)))
+        for group in groups.values():
+            terms_found = [t for t, _, _ in group]
+            tokens = [p for t, p, _ in group if t["translation_policy"] == "preserve-input-token"]
+            if tokens:
+                if all(p.search(target) for p in tokens):
+                    continue
+                level = "error"
+            elif any(t["canonical_zh_tw"] and t["canonical_zh_tw"] in target for t in terms_found):
+                continue
+            elif any(a in target for t in terms_found for a in split_aliases(t["aliases_zh_tw"])):
+                level = "info"
+            elif any(t["status"] == "approved" and t["category"] in AUTHORITY_ENFORCED for t in terms_found):
+                level = "error"
+            elif any(t["status"] == "approved" or t["category"] in AUTHORITY_ENFORCED for t in terms_found):
+                level = "warning"
+            else:
+                level = "info"
+            findings.append({"key": f"{block}:{index}", "level": level, "found": group[0][2],
+                             "terms": [{"term_id": t["term_id"], "category": t["category"], "status": t["status"],
+                                        "canonical": t["canonical_zh_tw"]} for t in terms_found]})
+    return findings
+
+
 def validate_all(args, inventory):
     problems = []
     try:
@@ -899,6 +976,24 @@ def cmd_import(args):
     return 0
 
 
+def cmd_authority(args):
+    inventory = Inventory.load(args.pak, args.cnv)
+    path = args.authority or authority_path(args.master)
+    findings = authority_lint(load_master(args.master), inventory, load_authority(path), set(args.block or ()))
+    levels = Counter(f["level"] for f in findings)
+    report = {"status": "FAIL" if levels["error"] or levels["warning"] else "PASS", "blocks": args.block,
+              "authority": str(path), "authority_sha256": hashlib.sha256(Path(path).read_bytes()).hexdigest(),
+              "counts": {level: levels[level] for level in ("error", "warning", "info")}, "findings": findings}
+    if args.report:
+        write_json(args.report, report)
+    for f in findings:
+        if f["level"] != "info":
+            print(f"{f['key']}: {f['level']}: '{f['found']}' -> {' / '.join(t['canonical'] for t in f['terms'])}",
+                  file=sys.stderr)
+    print(f"{report['status']}: {levels['error']} errors, {levels['warning']} warnings, {levels['info']} info")
+    return 1 if report["status"] == "FAIL" else 0
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -956,6 +1051,14 @@ def main(argv=None):
     add_dataset(p)
     p.add_argument("workbook", type=Path)
     p.set_defaults(run=cmd_import)
+
+    p = sub.add_parser("authority", help="lint translated rows against the terminology authority")
+    add_data(p)
+    add_dataset(p)
+    p.add_argument("--authority", type=Path, help="GLOSSARY.tsv (default: authority/ beside the master)")
+    p.add_argument("--block", type=int, action="append", help="only rows of these blocks (repeatable)")
+    p.add_argument("--report", type=Path)
+    p.set_defaults(run=cmd_authority)
 
     args = parser.parse_args(argv)
     try:
