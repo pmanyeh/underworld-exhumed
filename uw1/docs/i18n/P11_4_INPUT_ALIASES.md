@@ -39,3 +39,11 @@
 ## 尚未涵蓋
 
 - 神殿念祈禱語（`SKILLS.C` 的 `wdialog`）、存檔名稱、物品數量仍是原版輸入框；祈禱語保留英文，畫面上也是英文。
+
+## 測試版與發現
+
+- 2026-10-23 組了本機測試版（`D:\git\Ultima Underworld\UW1-zhTW-playtest`，不在 repo）：本次 build 的 `uw1port.exe`、
+  所需 DLL、jf open 粉圓、`text-settings.ini`、`input-aliases.tsv` 與 P10C 的 catalog；啟動參數
+  `--locale zh-TW --i18n-file … --hd-scroll`。在只有系統路徑的環境啟動成功，HD 文字與對照表都有載入。
+- **發現（待修）：** 測試版放在含中文的路徑時，截圖與 home（存檔）資料夾都寫不出來——移植版在 Windows 上用
+  窄字元路徑開檔，非 ASCII 路徑會失敗。中文玩家很可能把遊戲放在中文資料夾，發行前要改用寬字元（UTF-8 → UTF-16）開檔。
