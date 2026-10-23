@@ -400,6 +400,21 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3591	58	conversation	86555cb5459266e1c745a8eaf3765795b1e8766d4060d022ab12d60e23830cad	我不知道要先得到你妻子的許可。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	59	conversation	99b2bfb40050c4292b86ff78089c0fa12099c96420e2e496b4131000b980a508	哼，現在你知道了！再見！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	60	conversation	4ef3f499dde85b5e91bc84ce1933ad36ffb3ac1153f94fcfcd666cb4ad5396d2	看來我們兩個之中，說話得先經過你妻子允許的，另有其人。再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3592	1	conversation	f976649bc6454bc563470d06c42e7bb32501e3e94a38bafe94b99d8065591f62	我已經准許你跟我丈夫談話，你浪費我的時間也夠了。別再跟我說話！	draft		p10b-2 draft	
+3592	2	conversation	1db99246e495b68f377e4d13a1dd42bfb3f4cf512c9e992704bf7cd50b03fc17	又是你。我想，這次你有更好的理由跟我丈夫談話了吧？	draft		p10b-2 draft	
+3592	3	conversation	ac32f7ab0f13c318f3322594fb97300bba0d8731cc26c40590c338d731670bc7	什麼事？你想要什麼，人類？	draft		p10b-2 draft	
+3592	4	conversation	aca363da8b1d744095c7935566e41efeb87052f723465aadf5aa36e97cea00c8	我想跟你丈夫談話。	draft		p10b-2 draft	
+3592	5	conversation	db4906ec2672bfc03f9f1ca87c6d9a10960ab9d00699b806099737c3513c0c17	沒事，我這就走。	draft		p10b-2 draft	
+3592	6	conversation	b4576ecbc37c81492c7137e100a4c2fdb8853c052b48f1d2093b2b332cabe89e	你有什麼理由要跟他談話？	draft		p10b-2 draft	
+3592	7	conversation	479ab8548acecffb3c274b133497a935efdb917c60fd1fdd34593cef34cf2a14	我想恭喜他娶到這麼好的新娘。	draft		p10b-2 draft	
+3592	8	conversation	c2f99c16841cc63a077a01e99ef628d45594a6426b804e4a2d5787fdfd6433ee	我帶來綠色惡鬼族的重要口信。	draft		p10b-2 draft	
+3592	9	conversation	2f580994cfab4e1d76f1fc28dc590742c808445be589fdd63476dd929db380d7	我只是想跟他聊聊。	draft		p10b-2 draft	
+3592	10	conversation	51894e2bd8f176ef456f5b5aafbd47ae91f59c76ca3747b36c439728078db431	我有重要的情報要告訴他。	draft		p10b-2 draft	
+3592	11	conversation	b8e6f5bcd435fa84cebadbebecc51b92dfc904bfea1d8ec5ab1e160003f198d8	很好，你可以跟他談。別待太久，惹人嫌。他是個大忙人。	draft		p10b-2 draft	
+3592	12	conversation	df5aeddb9ebe333eeaa6065ad9c492a00c6fc524b8b418f2e29d213cca8e7906	多謝你了。	draft		p10b-2 draft	
+3592	13	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-2 draft	
+3592	14	conversation	c9c7e953c6ea29b3e2e34ec3917f53d0a0476aaaf72a0cd63cdf6b8f6bb35bab	我們不想聽他們的任何消息！你要是綠色惡鬼族的朋友，就給我滾！	draft		p10b-2 draft	
+3592	15	conversation	e919d6e9c95fcdb4a34c9de064028e47d89f0571bcc79641902ec42ff7dd5269	難道你不知道國王的時間比那寶貴多了嗎？凱查瓦爾沒空理這種瑣事。	draft		p10b-2 draft	
 3593	1	conversation	b8b7cfdf4758ef90476310dd4bffc7be69cdefdf57c1b98935a2fdc474fab753	嗯？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	2	conversation	20b7fb8723f1435cb4f465275f2b00491b1657ce2ceda9a57719db29462a179f	你好，惡鬼之王。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	3	conversation	58dc18a7b9136576ae7a0a819452716a82a4828d4641764d2b7e80935aaf4d22	向偉大高貴的綠色惡鬼族最強大、最威武的統治者致敬！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -454,6 +469,58 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3593	52	conversation	4499764e13e4ceb164bb06c27d546e6517e12fc8693cf772a42b357fe2d4c5d8	噢，你只是嘴上說說吧。我相信你一定有更多事要做，不必聽我在這裡嘮叨。\n 還有，如果你碰巧遇到灰色惡鬼族的「國王」凱查瓦爾或「女王」瑞緹查爾，就當幫我個忙，捅他們一刀，好嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	53	conversation	ec8637db894f01de9a0f6e0ac58e76b36f1418e5c7d542f1a4202566456316a6	再會了，陛下。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	54	conversation	588e2a029f58c3527f7c72aea165f23e68c74bbdbbad2ed35334751941cb3e8f	再見，大人。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3594	1	conversation	80926ba81f85f3695f25c6e903674be558c493caa64f8f8ecc5a7a670bf2d4cd	你沒去煩老大吧，嗯？	draft		p10b-2 draft	
+3594	2	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	沒有。	draft		p10b-2 draft	
+3594	3	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	有。	draft		p10b-2 draft	
+3594	4	conversation	656da2189e8e04b66ea45ce5e3f76aa4f43e34b2d79337364e81ea0c129a267a	你怎麼不自己去問他？	draft		p10b-2 draft	
+3594	5	conversation	86a6f8f7aad0a67403bfc42fa3a038847a926c2bf739ab132962b284a395b8c2	很好。去煩老大那種人，對身體不好。	draft		p10b-2 draft	
+3594	6	conversation	87117495bd548ef085e65e09f92fcfae4ac04fb307eb6333bc20960fbea7a8b0	那麼，我先告辭了。	draft		p10b-2 draft	
+3594	7	conversation	9e0a481c7bc1ae85fccdf3d516ca08f45c7bd2c7fce6a4e57dfadffe9c7a2d3b	那就沒事啦。嘿，我得去顧我的燉菜了。想吃的話再回來。	draft		p10b-2 draft	
+3594	8	conversation	d019612237d92bd23c10fba9190578c11a9be820ba0e30940759f8a4c329a86f	或許你能問問你們老大，他願不願意見我？	draft		p10b-2 draft	
+3594	9	conversation	372f7e2fd2d01ce2a1d71dc072acbba4c6fd25a1087cd7f153f4ec0ce37e1ede		untranslated		grammar-sensitive: 稱呼片段（he），代入 3594:13 的 @SS1 模板，P11 處理	grammar-sensitive
+3594	10	conversation	2cda85e504e155f30a40f1f1cc4e83f3f8ec178033f6b6170cc9381f5e4f9d3d		untranslated		grammar-sensitive: 稱呼片段（she），代入 3594:13 的 @SS1 模板，P11 處理	grammar-sensitive
+3594	11	conversation	442c621dafad2a69126dfd65d498ed9579f821696023e2c70ce9fc944d6ae47f		untranslated		grammar-sensitive: 稱呼片段（himself），代入 3594:13 的 @SS2 模板，P11 處理	grammar-sensitive
+3594	12	conversation	ced636336aacc18b987f37718c1c09712b54863ee2abe7042e382bf3abe4a9df		untranslated		grammar-sensitive: 稱呼片段（herself），代入 3594:13 的 @SS2 模板，P11 處理	grammar-sensitive
+3594	14	conversation	aa60073b7c2622c382e748c02b85d4887d4efed6774d371be2eb3e09c961be02	是啦，我是可以幫你問。可是老大不喜歡被那種，呃，雜事煩。他心裡想的都是，呃，比較高尚的事。	draft		p10b-2 draft	
+3594	15	conversation	c136700dab4ba2a76dca49b2deab09d5cc4a936475b664d024b7ff5c20b33ccd	你的忠告我記下了。	draft		p10b-2 draft	
+3594	16	conversation	7065915b74f93e571b59d87abe9559586875cb02020e04dc9723fea4159d1ad4	或許我可以送你一點小禮物，表示我的謝意。	draft		p10b-2 draft	
+3594	17	conversation	f330222d04a466f9aabf6be4408a756571e02ef272810ca5ce81b99e16288215	謝啦！以一個人類來說，你還挺上道的。跟你說——你去找老大講話的時候，要很，那個，很會恭維。他喜歡那套。	draft		p10b-2 draft	
+3594	18	conversation	38ef51a29370d50b714f58ae72e76a8398eefa192933fa1f44358d509ec37c35	我會考慮考慮。	draft		p10b-2 draft	
+3594	19	conversation	df5aeddb9ebe333eeaa6065ad9c492a00c6fc524b8b418f2e29d213cca8e7906	多謝你了。	draft		p10b-2 draft	
+3594	20	conversation	177f622cea0b3b03c73032b89fb27c63ea9cbb6b3e89607a5a85bbb830e9ebe0	我沒看到什麼禮物啊！	draft		p10b-2 draft	
+3594	21	conversation	53a479a8fb3c50e437817c5344c795eb3311722cc3bef002277a9007dfe0cf3c	你身上沒有金子還是啥的嗎？	draft		p10b-2 draft	
+3594	22	conversation	1382003a958288ae7da0a57c55e9131506bd58dd64ad132747a4c97c396cc987	啊，這是給你的禮物。	draft		p10b-2 draft	
+3594	23	conversation	45169480ff92946c7dc7a4225e71e9ed79e194dc73737b33526e4d2607c5acac	恐怕你誤會我的意思了。	draft		p10b-2 draft	
+3594	24	conversation	20c3f030c6568cae29fd78c10076821294a3575ff503cd0f7ae9cc8439cb1318	我說啊，你對宮廷禮節還有得學呢。我是無所謂啦——我還得顧我的燉菜。	draft		p10b-2 draft	
+3594	25	conversation	1d83e3854b3094bf97213f43be33d88c5ecad3ee5325ecb36c2e702d8cad3a5b	沒問題。嘿，我得走了。該開始弄晚餐了。你要留下來嗎？今晚是燉蟲肉喔。我的拿手菜。	draft		p10b-2 draft	
+3594	26	conversation	a37b12f37b275780306deade8fe5816d60f27441465d1476f862b545d6659d1a	燉蟲肉？	draft		p10b-2 draft	
+3594	27	conversation	87bc92d2b8eb5b24deff565aa3c7090826485d9fac813bc680d14a5bf9a22562	呃……不了，真是太感謝你的好意了。	draft		p10b-2 draft	
+3594	28	conversation	b180c5a709caabb5edd17b2733b15219d9ebb3a95c3c985b61b7db0beb663d72	喔，又是這傢伙。這次又怎樣？	draft		p10b-2 draft	
+3594	29	conversation	9b05144ac4fe9f2cd1f9021388747e4df5f9e2b0c05736d6709a0a7612c1ae24	回來吃我的燉菜啦？被香味引過來的？不怪你，這燉菜可好吃了。	draft		p10b-2 draft	
+3594	30	conversation	facb3f06e3b919bb231b6c4b8037a5a71c8f2627e7a08dab3e05077aa2ec8f5f	是什麼燉菜？	draft		p10b-2 draft	
+3594	31	conversation	ac301c4cf421b90c76a90549fd49ee8afaa9b14921e3361ef0f635a40e624c24	啊，不用了，謝謝。	draft		p10b-2 draft	
+3594	32	conversation	bc7ee43e1d93b35c25d76084940e30e03724b66cc8e644ffdfcc0a3bb6ae8cdc	我比較希望你幫我安排晉見你們的君主。	draft		p10b-2 draft	
+3594	33	conversation	659a477a837c86916edcc7d3edb89857f0446ae68b7a521453ad3686d4582e0d	對啊，我老媽以前常做。你抓一隻腐蟲，剁得細細的，跟蘑菇一起泡在波特酒裡醃。	draft		p10b-2 draft	
+3594	34	conversation	bd57410d85016d5da2a240a462bfebc557e70728d5caed04122cb0a7691c28a2	我把這份食譜放在地上給你。	draft		p10b-2 draft	
+3594	35	conversation	e8a2c3a70b8d7829f2103e6af42a0c132b73340a93a170a8574779af6ebc08fd	拿去。全都寫在這上面了。	draft		p10b-2 draft; authority-ok:Writ of Lorne（writ down＝寫下，不是道具「洛恩的文書」）	
+3594	36	conversation	83a58a7094f0dccd101f87743dd019102bce122863313a82aaf7c06d99e30a8b	你知道的嘛，就跟我給你的那份食譜一樣。	draft		p10b-2 draft	
+3594	37	conversation	df5aeddb9ebe333eeaa6065ad9c492a00c6fc524b8b418f2e29d213cca8e7906	多謝你了。	draft		p10b-2 draft	
+3594	38	conversation	928cd6000b63b411da24b23bafba796f351755bbc7e594b7e6c2247261fbb664	我得走了。	draft		p10b-2 draft	
+3594	39	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	40	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	41	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	42	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	43	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	44	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	45	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	46	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	47	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	48	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	49	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-2 draft	
+3594	50	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	51	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	52	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3594	53	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
 3603	1	conversation	98aa6675482552881925fe70d82559692d811b3bcd33f53b9a702c24d5322696		untranslated		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理	grammar-sensitive
 3603	2	conversation	4ed28f82ca96c3342a5c591668270f78c26dae22fd953772a6c14e52f46e1b22		untranslated		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理	grammar-sensitive
 3603	4	conversation	7ff1536c1df56b604ba927f4aba0980ba11df6fa309480460d35a6368be1f734	我是無辜的！我被冤枉了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -600,6 +667,75 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3604	83	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	84	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	85	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3648	1	conversation	c58c5d02248ea7b2f35ca7885e0b9d6e712556bcd30f4d481f8ba46fce513a6c	嘿！這誰？你在幹嘛？	draft		p10b-2 draft	
+3648	2	conversation	61257e0ebbe9f81fc008f1ba63dbd2496c3e6fe45330ea5ae648e99e04f75ee7	我是所有惡鬼族的朋友。	draft		p10b-2 draft	
+3648	3	conversation	461085a8a24031ee44d3fb6111b7b1d087282cd67efbf481def9f4b1f379d3a1	我是來欣賞你們族人聚落的宏偉建築的。	draft		p10b-2 draft	
+3648	4	conversation	3065574262aee0580a8d13c542b40f7941338395563906e4a8c07173f575d308	我只是在探險。	draft		p10b-2 draft	
+3648	5	conversation	492a6e43d794e564341b73b1a17df90616a194f61ee4bcaec95fb822540a534c	哈！希望不是綠色惡鬼族的朋友！	draft		p10b-2 draft	
+3648	6	conversation	a965639b42cb4382d94a4c8c30edcbf662130373d82432e58e5de67d957b57f4	當然不是。我不是指他們。	draft		p10b-2 draft	
+3648	7	conversation	e6816a68651306c76765050925146cc8aa41b99536e099b510e3a1b7c2ad7686	當然是。他們跟大家一樣值得我交朋友。	draft		p10b-2 draft	
+3648	8	conversation	3d2159b2f99adf4852cd7d67bc53a383a4450734042fea007446c65da5c8fc5b	那好！你還是跟他們去吧！	draft		p10b-2 draft	
+3648	9	conversation	624cb1410271fd539261051171045fde652ab6bfddc47b7410c5edc087707c79	對對，他們是很下流的種族。我打賭，他們是故意跳進自己的茅坑，哈哈！	draft		p10b-2 draft	
+3648	10	conversation	a6da7109def07b8c9ee7469b0fdd39f939e6411a5fdc63a16f89f80cf596ccad	是啊，我想也是。	draft		p10b-2 draft	
+3648	11	conversation	17bcd9ada7ec23516467b091fd06ca9c990c76807ce733e380228ed8a35dbb2c	怎麼會有人那樣做？	draft		p10b-2 draft	
+3648	12	conversation	6beb477f51ba52d6279899c21ac44ee2d63b85ab7eca1d76885c88fc1112c84f	你說什麼？你喜歡探險，到處走？探險別太小心，可能會跑到你不想去的地方。我看過那種事，嘻嘻！	draft		p10b-2 draft	
+3648	13	conversation	a14f0d0569ce784f4a6383d3473b47887814f5b8bab7926f1f08d870ef74a58d	那這一帶很危險嗎？	draft		p10b-2 draft	
+3648	14	conversation	f99dca955151ac39b3fd763e3e35ec36c034ea82ff67a03e97b09b3e5330d845	你是什麼意思？	draft		p10b-2 draft	
+3648	15	conversation	281673f3fcdf73d696128277b0716f8b76f6599c23137522c317b094434c3f79	我們灰色的，從來不故意——哈哈——可是晚上，我有時候聽到尖叫然後噗通，有時候噗通然後尖叫。然後早上我們少一個。那邊的茅坑很危險。我是你，我會小心。嘻嘻。	draft		p10b-2 draft	
+3648	16	conversation	378f86a9de390962a83971999d1ab6696884b1aa2a6071bcd4332f30cdd478e1	好，我會小心的。	draft		p10b-2 draft	
+3648	17	conversation	8a83e04583ae4388b06b40c14408e02a6b2b22543e29f998d402e7b1977c79bb	然後就再也沒有消息了？	draft		p10b-2 draft	
+3648	18	conversation	7ba56ad3d8a0b967665fffb835aa8d122db96ace473fdeffb4f275ab05e9ae3c	對，那是好主意。沒看好，就噗通！啊啊啊——！沒了沒了沒了。嘻嘻。對，你要小心。要是有誰掉下去還活著，我打賭他們不會太高興。你要提高警覺。	draft		p10b-2 draft	
+3648	19	conversation	87191341999b7964fbb7088dc1a64ace88751e058a7cf73dc66f9de3bc38ebae	謝謝，我會的。	draft		p10b-2 draft	
+3648	20	conversation	e077abe9bec3e2220daec1593ee1d13fce0004fab5189d043867c9807053c01d	別擔心我。	draft		p10b-2 draft	
+3648	21	conversation	d2beeea4b03f65412c7e41e418cb123011e3ddca361978eab431d9689ce99b49	沒錯。嘻嘻。噗通！啊啊啊——！沒了沒了沒了。嘻嘻。你要小心，你。要是有誰掉下去還活著，我打賭他們不會太高興。你要提高警覺。	draft		p10b-2 draft	
+3648	22	conversation	87191341999b7964fbb7088dc1a64ace88751e058a7cf73dc66f9de3bc38ebae	謝謝，我會的。	draft		p10b-2 draft	
+3648	23	conversation	e077abe9bec3e2220daec1593ee1d13fce0004fab5189d043867c9807053c01d	別擔心我。	draft		p10b-2 draft	
+3648	24	conversation	f640b8cf6f271480fb3a1f2fa6e16530da3f7b4b3f4a32d9f137bb8bcee59900	嘿，你還在！有小心，對吧？沒噗通？	draft		p10b-2 draft	
+3648	25	conversation	f87df0d8dea0e1487388e16c2e4faa9ce7ea03188a2e291aa2cf1d0747626b7d	對，我照你的忠告做。	draft		p10b-2 draft	
+3648	26	conversation	0bde4cd71109c6d5919ae1471ec63a0d516ac82715b6e214baada72cf71125b0	對，我走路很會看路。	draft		p10b-2 draft	
+3649	1	conversation	d656eca7ba24124a537b62fe2559e0167691dbf699e0ca9c16623b80aa6bd8f3	喂！誰在那裡？	draft		p10b-2 draft	
+3649	2	conversation	31e24322c7d6292084c048386103b4fa1261f00b14779529c7380e76c0601242	我替綠色惡鬼族辦緊急的事。	draft		p10b-2 draft	
+3649	3	conversation	5af8c28f636afc747798b294b0d7dc8bebf2da4f402c9a18d15080aee6b2050d	我必須跟你們的首領談談。	draft		p10b-2 draft	
+3649	5	conversation	2d65918363e66685eceff75ccb2ac2c97d368847d1fe0c2d5f9fc9c142bb7dc8	哈！我就知道！給我滾出這裡！	draft		p10b-2 draft	
+3649	6	conversation	429e413d2909ea3243d81cf09a843572c4db8c6a75cda462c945a83012c4435b	要跟凱查瓦爾國王講話，嗯？	draft		p10b-2 draft	
+3649	7	conversation	c9296a18d7b6f73f4272fedefd70886e8ba8caaecd544df18aba274d942f4352	那你誰，要跟凱查瓦爾國王講話？	draft		p10b-2 draft	
+3649	9	conversation	cc4d69c6eb22eb4103b28b65d3fe8638f25835aa5fa2a9e5ff7664f06677d568	這不關你的事。	draft		p10b-2 draft	
+3649	10	conversation	ddb142cdd98695c2bc68d57cd533a02e92590992a43f1dcd651ebd269f4a8ad2	那好！你也不關我們的事！	draft		p10b-2 draft	
+3649	12	conversation	2acdec1ae89bed97e536c3acee75c3de87128fb072da652154f1a823c5892151	不過你要小心，要守規矩。不是我們每個都喜歡你這種怪人。你要乖乖的。	draft		p10b-2 draft	
+3649	13	conversation	3302563c3a929cbd43d73ab2612cf29d1788c2d5cb6f913c3c4240811633b2ac	謝謝你，我會的。	draft		p10b-2 draft	
+3649	14	conversation	ccac86890bd7f1438238fca6552bc637c4a35a528bb79ee665cadc9659a67aaa	我會盡力。	draft		p10b-2 draft	
+3649	15	conversation	22997f9350930575a3c371f6048055e3c20d197c098322f52a0b63778a1a8c05	跟凱查瓦爾國王講話，好主意。他很聰明又很強。不過你最好先跟瑞緹查爾女王講話。去吧，快去。	draft		p10b-2 draft	
+3649	16	conversation	c422f224d450215c1ac590f0a6145bf0d537d46349dc67db953526f15f4d59fe	謝謝你的忠告。	draft		p10b-2 draft	
+3649	17	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-2 draft	
+3649	19	conversation	49aac3217ee55a0bf9bd5e4b1ea0c2275ac126513edd749fb8ce9661ccea31cf	嘿，又是你！你要幹嘛？	draft		p10b-2 draft	
+3649	20	conversation	eb3689ce1d44b4a2ccdfe66096e12b09f5ae362de9e41c6fdff91f6567d1416b	我只是隨便走走。	draft		p10b-2 draft	
+3649	21	conversation	c8a4498391fc79014be0897992ddeb793dafa25aa26d79e05af576d495cd9b10	那你要小心。不是每個地方都可以隨便走。	draft		p10b-2 draft	
+3649	22	conversation	7dd09998536e8518914de245e1bcd2706b3ac211b39b4f0f451d949dda3deb67	我要繼續我的旅程。	draft		p10b-2 draft	
+3649	23	conversation	5378442433bf5d7742a5c22baa4deaea86256dc951df17289b766c8232e1ff74	那祝你旅途愉快。	draft		p10b-2 draft	
+3649	24	conversation	5970c0b656def034651a917734e339efd8bee3b399ffac8664529fc8ac960ef4	我在找你們的首領。	draft		p10b-2 draft	
+3649	25	conversation	ba3c09f39b786732b85be1052f4e5bf45f5c953af649d4d0e5cacf1188079dae	你能打開這道鐵柵門嗎？	draft		p10b-2 draft	
+3649	26	conversation	e2269fa366878f8e66ac3b61f5c56b81d51071f3f824dcffec8ea9b6a2fccb38	啊哈！綠色惡鬼族的朋友！你還喜歡他們？	draft		p10b-2 draft	
+3649	27	conversation	bf6aad87658fff390e64cd415d471cabd67ade71a6e9e88450fc342b2d7f3a49	不，我已經受夠他們了。	draft		p10b-2 draft	
+3649	28	conversation	4c3077d3146475e8b7bccc8b9ae1d70bc346a8fe6a3bd8a36d8ee8b15c95a751	老實說，我從來就不喜歡。	draft		p10b-2 draft	
+3649	29	conversation	bb9f72f2af1674e28257be703998eea5e3abe32c9c09d7e2d4b87cf8ec695d04	對，我很喜歡跟他們相處。	draft		p10b-2 draft	
+3649	30	conversation	ff69e3ce7b533fb0d504d63a32333186b3fa96014af305e28408b4852bf533b9	哈，我就猜到！那這裡不歡迎你！	draft		p10b-2 draft	
+3649	31	conversation	d03c67788a0691adcb3822a838394a2c9e752ef6015d250089d971bac219d98c	是喔？那你來這裡要幹嘛？	draft		p10b-2 draft	
+3649	32	conversation	053316be9f915c392f000f09bc7dfcade7dbc2258c6871c047e329fbac2466bb	我想跟你們的首領談談。	draft		p10b-2 draft	
+3649	33	conversation	bc1da6434d3cd8fe7c78a28ce5037f4cbc30487041693f6b134f2dfe4d63e19c	我跟你沒什麼好談的。	draft		p10b-2 draft	
+3649	34	conversation	8088f1f68585903e39f4117a7121b2e4a80ee798a3f0ad8f974fd42dff35af65	好吧，你要小心，守規矩。去吧。	draft		p10b-2 draft	
+3649	35	conversation	c422f224d450215c1ac590f0a6145bf0d537d46349dc67db953526f15f4d59fe	謝謝你的忠告。	draft		p10b-2 draft	
+3649	36	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-2 draft	
+3650	1	conversation	8927cedccdcf290c49f15070fabcc09edc1552615e74e2c0eacb4d7d92bdcbf0	什麼事？你來這裡幹嘛？	draft		p10b-2 draft	
+3650	2	conversation	f0c751a20d6c340dac95369ff42d7c28315ab1363673a69efe9cbd342c5b0c15	抱歉，我不是有意闖進來的。	draft		p10b-2 draft	
+3650	3	conversation	ec0d1b0518d320f28cba66e32d9cb8e8c7f3ed85017825c8fb0f694b61d6d18a	我在探索這些洞穴。	draft		p10b-2 draft	
+3650	4	conversation	650ab4d1f65a2e9b8e5f5eb83f1769594afff6d76d140974a27b8cca2c301118	我想欣賞你們聚落的壯觀景色。	draft		p10b-2 draft	
+3650	5	conversation	ef726aee36c9798ce7778b2008aebbc94a3e25269e586bd4887eda0547923f4c	哼，你就是闖進來了！出去！	draft		p10b-2 draft	
+3650	6	conversation	43cfef9300a2431f39a2f0820f8979bd1c18595fa5abb1a7a97e14af86696feb	這裡是最好看的地方，在你看過深淵以後。維尼克斯國王，他是整個地下世界最勇敢的。你去見他，要是他肯見你。	draft		p10b-2 draft	
+3650	7	conversation	d94e315017862d5fdd6bc030fe04923dd32039fb89fd1c25f01938abfdc870c6	我不知道他肯不肯見你這種被揍得這麼慘的。	draft		p10b-2 draft	
+3650	8	conversation	8e94d4e037386eec1c37710bb44f8b596a96b2a7513d6ab352796b59eac56a21	又是你！你這次要幹嘛？	draft		p10b-2 draft	
+3650	9	conversation	e87d9ed37a06abf2d5daf3a5611cfd36af6a3ec7b63a9953a67a0f1119d09a66	沒事，謝謝你。再會。	draft		p10b-2 draft	
+3650	10	conversation	4f0dc507963b7353b8a22beb85702319f729c612b5145057f154f6d01aabe9fb	我想通過這道鐵柵門。	draft		p10b-2 draft	
+3650	11	conversation	9661899cb2fd1a3aff48def994a89b0289fa16460ba279d149d7564fdd8e2fbd	好吧。不過你要小心，綠色惡鬼族不好惹。	draft		p10b-2 draft	
 3651	1	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d	小伙子	reviewed	PoC role: template_fragment	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	grammar-sensitive,showcase
 3651	2	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c	姑娘	reviewed	PoC role: template_fragment	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	grammar-sensitive,showcase
 3651	3	conversation	d432ede95023399e87ade8c791956bc66bad5b0da3bbbbf1bd237a6b70e7d464	你好，陌生人！你來這裡有何貴幹？我以前沒在這地方見過你。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
