@@ -344,6 +344,52 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 7	0	conversation_common	f71e90d787d4406d805af3d4fe4a87144cc4410d8981825902c66fcdd95622a6	你無法與那個對話！\n	reviewed	P10A-B1 conversation system: talk target refused (CONVERSE.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	1	conversation_common	d0a21149b0b2ef0822a85bbc671dd6803c35b38e25762f0f956c65fd25593f19	沒有任何回應。\n	reviewed	P10A-B1 conversation system: no response (CONVERSE.C, BABL.C)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 7	83	conversation_common	6e2438a46d02f906a83dfef80fd9d898f2faf4ddfbd7904b7b292cfa27aad77b	布拉吉特	reviewed	PoC role: npc_name	PoC draft reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3585	1	conversation	9e0368c0f7ec3ce7226669d29e2b01ee4bee087c7a2a887402df65f0b1b5cef7	你是來讓我更痛苦的嗎？	draft		p10b-4 draft	
+3585	2	conversation	0a5487879dc73ec8777574d564fe64fbe876449a992a530a3489455a6a4733d5	你說的是什麼痛苦？	draft		p10b-4 draft	
+3585	3	conversation	61625256af81ca3c10764a6378fdb296b60ccbc4aab678c9cfbfc5f4639dc150	當然不是。如果可以，我願意減輕你的痛苦。	draft		p10b-4 draft	
+3585	4	conversation	e8487b1c1ca8fcfb1e78d1e39acfba4c7eea7350c72cf69fb1a47f8ac13f9c1f	如果我在這裡冒犯了你，我這就走。	draft		p10b-4 draft	
+3585	5	conversation	bfda738cd5fd01aca298f15e776a051d5603244e7a3c46c02ae6a40f3e471325	沒錯，你這個哭哭啼啼的小鬼！	draft		p10b-4 draft	
+3585	6	conversation	504c98857462f4bcfd70773f659176ae0b96eb4c66f9da40677b746f3f2bf3c8	唉，是希望落空的痛苦……是幻滅的痛苦。	draft		p10b-4 draft	
+3585	7	conversation	b8a737607ad5764fc6f453c2f3c7e6d9aecedaadb0ce1ced25ea6d84acec96bb	再多說一些。	draft		p10b-4 draft	
+3585	8	conversation	136193fca6e6e93f36206b4754a7dca8ac3b8d5c0c155cac31e0b55dcfa0ce88	喔，就這樣？	draft		p10b-4 draft	
+3585	9	conversation	cd9a4e0d6e716ff01132e776e2fcaa63139e45f5a12f50a9afebe408a82f7f88	我能幫忙嗎？	draft		p10b-4 draft	
+3585	10	conversation	ad1da382ad8e5c6ca0786a1c09a99cf20b68434923c0f342886dce110fb2d5ee	如果你希望如此，我就不打擾你傷心了。	draft		p10b-4 draft	
+3585	11	conversation	29425892c4c7ffd1af616ff635cfd28357f6be0901badaa033b4e1365d877cb0	我曾和凱布勒斯爵士懷抱同一個偉大的夢想：讓所有種族都能追隨聖者之道。我們想把所有有智慧的種族聚集在深淵裡，教他們和睦相處。唉，終究沒能實現。\n 無休止的爭吵讓仁慈的凱布勒斯爵士承受不住，他在睡夢中過世了。有人說他是被毒死的，但我知道他是心碎而死。\n 他一生的心血都在這裡，眼看著它分崩離析，他的心也跟著碎了。	draft		p10b-4 draft	
+3585	12	conversation	3d86b51f1654e817ecd1783c7288e48384dc9c40f6d07fdadf2c37db07302a9a	聽到這件事我很難過。他的夢想還留下什麼嗎？	draft		p10b-4 draft	
+3585	13	conversation	228aeff38831b05c7b93f1753f0790b6039da30b2c4e0d6d44b88514d3a12724	真是可惜。難道沒有留下任何好的東西嗎？	draft		p10b-4 draft	
+3585	14	conversation	3cc1d17d8f3a7e2bb0d16ee3be2c50e0c324750167d9fc7ef0aaeaf4da441cdd	他是個傻瓜！	draft		p10b-4 draft	
+3585	15	conversation	faeccfa0f95f054ba7cb3e68ea7321e6b4057abea851f052e9093bc3f7c6aa9f	嗯，有的，凱布勒斯爵士確實收集了一些具有奇特力量的寶物。他認為這些寶物能幫助殖民聚落的居民追隨聖者之道。可惜，他想幫助的那些人卻濫用了它們。	draft		p10b-4 draft	
+3585	16	conversation	03e1d33ec4a7f6e822ed17d6bc287c7ece9f34429cd86cb3a709de1adac07048	怎麼說？	draft		p10b-4 draft	
+3585	17	conversation	ea9f8543f34238a6d40efb8bb632d592768f267d8d5962c02682b1eb5727f06d	聽到這件事我很難過	draft		p10b-4 draft	
+3585	18	conversation	d0b16458d3ee991c60f786632387a27cdf61b7710a2e3e9ce44ea4b67e3c2091	你寧願一個人靜一靜嗎？	draft		p10b-4 draft	
+3585	19	conversation	7f05c292d31845717138215a7623a6290b9dde4873ff3d214f17277338875cb7	凱布勒斯爵士收集的八件寶物，每一件都象徵一項美德。可是現在擁有它們的人，只看重它們本身的價值，而不是它們更崇高的意義。	draft		p10b-4 draft	
+3585	20	conversation	d948e161aef029bf584841d7d53dca837986b68d3df17e6e95f9b434902307cb	這個凱布勒斯真是個傻瓜！	draft		p10b-4 draft	
+3585	21	conversation	759a3698edaca18dcad87a4aab8d4074fe093504f3d7cf5410902d9b2682196a	真可惜，但現在也無能為力了。	draft		p10b-4 draft	
+3585	22	conversation	83912a43558200d38e28644d6fad4ebd86962f0c2b315e42b046687d65c75c70	那我會找到這些寶物，讓它們用在正途上。	draft		p10b-4 draft	
+3585	23	conversation	62bc62d9491bf40c0f524c8f49b630b728a500c071a79b14a59c83722f291f71	你竟敢褻瀆他的名聲！給我滾！	draft		p10b-4 draft	
+3585	24	conversation	058c3680ac4644d6c714ace496a91247cd1a534a84e2e247487f543cc56ce886	你又回來讓我更痛苦了嗎？	draft		p10b-4 draft	
+3585	25	conversation	e8487b1c1ca8fcfb1e78d1e39acfba4c7eea7350c72cf69fb1a47f8ac13f9c1f	如果我在這裡冒犯了你，我這就走。	draft		p10b-4 draft	
+3585	26	conversation	bfda738cd5fd01aca298f15e776a051d5603244e7a3c46c02ae6a40f3e471325	沒錯，你這個哭哭啼啼的小鬼！	draft		p10b-4 draft	
+3585	27	conversation	62115ee318d9b99d86880dc45be8677ab6f3328d4741353d188b216824e88f22	從我眼前消失！	draft		p10b-4 draft	
+3585	28	conversation	a6877f3594e3a6346410fe47d48236ad9389ba97891340b89dbaa914b51f59b5	不。現在我能幫你了。	draft		p10b-4 draft	
+3585	29	conversation	1567699b9eab232771d00b7a05d7724226d4d855c7ac2f109908626e77d7f134	你真的找到能幫忙的辦法了嗎？	draft		p10b-4 draft	
+3585	30	conversation	80fb2d93cfabdc670ceb91e882e9fe3a9ca66b54349b0d8c666edeecac2c7d7e	是的。但你必須告訴我凱布勒斯爵士的事。	draft		p10b-4 draft	
+3585	31	conversation	62115ee318d9b99d86880dc45be8677ab6f3328d4741353d188b216824e88f22	從我眼前消失！	draft		p10b-4 draft	
+3585	32	conversation	a11850546e8f9e87161f99883b8bb76e03783af911e65851ba6e2ae7bb67fd45	不。我幫不了你。	draft		p10b-4 draft	
+3585	33	conversation	080328132b0964fcd78f088e7daabec35f3ae0c77cd685a8b82c54664dc3a958	你要說的就只有這樣？給我滾出去！	draft		p10b-4 draft	
+3585	34	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-4 draft	
+3585	35	conversation	55623cb7891b884bf7e96cf5fcbf7c5a2e260afe27ed10c924390d06d7f10a4c	你自己滾吧！	draft		p10b-4 draft	
+3585	36	conversation	172e7eb19251a7206f88eb39b4e7e40a8045f66ddf448c7c86a30becf67720d6	不，等等。我能幫忙！	draft		p10b-4 draft	
+3585	37	conversation	92562665868cae37ccc0920b422db15b0f8711982f2e46f7e40e3d90ad30a3f4	等等！我的理想已經破滅了，但也許我還能幫上你。	draft		p10b-4 draft	
+3585	38	conversation	0a56efbc97658aa34c7b0e47cc2a89e4eb53a28367d43a1678930ba4039883ad	能跟我說說凱布勒斯爵士的事嗎？	draft		p10b-4 draft	
+3585	39	conversation	eed7cc044874c76740095c6dcb7f87d1c87a2de3dffb92e8e0b19601e57cf951	謝謝，不過你幫得夠多了。	draft		p10b-4 draft	
+3585	40	conversation	37568135ff73d768c84cf74b35c48f6b8c3fdd7d5eab72edaba8a7aa0b8c992b	哼，我已經沒救了！	draft		p10b-4 draft	
+3585	41	conversation	be1ef964ed9d30965165a95dc93d91f3997d66b3e9f8ff573373f6de05efa00a	喔？那麼，保重了。	draft		p10b-4 draft	
+3585	42	conversation	66dee3e10676fa17b325c150e82b7da91ed51ed00be647ed72f000fc0a62852a	確實是。	draft		p10b-4 draft	
+3585	43	conversation	ebf15f33b291987f452e48bfa844f72d72eb6481056756323adb76d70553040b	不。沒有人是真的無可救藥。	draft		p10b-4 draft	
+3585	44	conversation	eddbe2fa1ca388b26a275fdcfe5da490ece82ae0592aa2e62d3662c57f86d2cd	你確定還想再聽一次我的傷心往事嗎？	draft		p10b-4 draft	
+3585	45	conversation	abc1b5f0774bd993de33d75ede93f8ee6320d5b5674db24bb166871fcdfc6907	啊，不了，我在想什麼啊？	draft		p10b-4 draft	
+3585	46	conversation	eb928f510593fd17b6de725087b64ab1c48e2a0423bc07e5cbc096a922dadbba	當然。這值得再說一次！	draft		p10b-4 draft	
 3586	1	conversation	e4f0bdc94bfdecbb86243e7a8d1e280160475c264977451ca24648e27062443e	你好啊。我是山岳族的夏克。有什麼能為你效勞的？	draft		p10b-3 draft	
 3586	2	conversation	bf06be1649239f9dbc76fb46951a0571f6a299cf66b37d1568687ed531b984bf	我需要打聽一些消息。	draft		p10b-3 draft	
 3586	3	conversation	98123f171dfde240d5ebc254453ac65654cc77c6b5eca339ef9889f89b5e7630	我需要你的手藝。	draft		p10b-3 draft	
@@ -910,6 +956,23 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3604	83	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	84	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	85	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3605	1	conversation	7eb33762519b366f8ec6b20266f8c248bbd22bf1c8b516bbe3c12f3e9764bb82	站住！什麼人？	draft		p10b-4 draft	
+3605	3	conversation	c4d554cc72b1c604c67ed481074bdeb90bb6963a74d21044ee9b2cf15dff18e0	誰想知道？	draft		p10b-4 draft	
+3605	4	conversation	a121e807494308314e3dc2173987fc32a21008e5e90492208e7e6229f2466520	你來這裡有什麼事？	draft		p10b-4 draft	
+3605	5	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-4 draft; 「其他……」讓玩家自行輸入通關語（Deco Morono，3605:6／16 不翻）	
+3605	7	conversation	5b9280c0f34d5ab59042eedce71948a5bf5a8ebd53ec4eeb2e5567d841fb88a5	那是什麼？說大聲點！	draft		p10b-4 draft	
+3605	8	conversation	3b2984f353347de6a0d3e05139b72f0494f28509ab1d26ed8a616d9b613709bf	我也想問你同樣的問題。	draft		p10b-4 draft	
+3605	9	conversation	7b7312b1a9f73fca4928f61ca4482b7687326988c211ca8c0644b54258440b25	我是替貪金王辦事的。	draft		p10b-4 draft	
+3605	10	conversation	04c7618fe589c2fe703b7612a33fa912864501ff5aef2addf4b508b3496c1b4d	我只是在探險。	draft		p10b-4 draft	
+3605	11	conversation	71f7e1833493f6019695067f0f6b378b362860b0fd47fa085604da82b8813d94	這裡由我發問！	draft		p10b-4 draft	
+3605	12	conversation	4719e4ff20e6a8a738d745e04499661919e711c18b8371efc87ebcf764c03df1	你連通關語都不知道，我看你來這裡的目的不正當！	draft		p10b-4 draft	
+3605	13	conversation	910e45366905f1912f282a7b88c4afa19d61a6791d0e404c839fb5a08bb0910e	你說得對。我這就走。	draft		p10b-4 draft	
+3605	14	conversation	a4949e2c96de26681c9519749e57bfb362bbac2a8f40c89b24c35d1de111336d	什麼？	draft		p10b-4 draft	
+3605	15	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-4 draft; 「其他……」讓玩家自行輸入通關語（Deco Morono，3605:6／16 不翻）	
+3605	17	conversation	646a8ecd23923f85ace209652e315b985f2abf31dcefcd68115b3a693e849765	不對！滾！	draft		p10b-4 draft	
+3605	18	conversation	ee2708c40b58e7ca49f5c3030a8b02cd6e8966c88e76aaf46749d708ae39c6cd	這裡不准探險！好了，走開！	draft		p10b-4 draft	
+3605	19	conversation	30390115b066968fc0628684c0e97b2805049e3e5d7c9ffed69c551632a492e7		untranslated		grammar-sensitive: 稱呼片段（sir），代入 3605:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3605	20	conversation	765cc52b3dbc1bb8ec279ef9c8ec3d0f251c0c92a6ecdc1870be8f7dc7538b21		untranslated		grammar-sensitive: 稱呼片段（madam），代入 3605:21 的 @SS1 模板，P11 處理	grammar-sensitive
 3648	1	conversation	c58c5d02248ea7b2f35ca7885e0b9d6e712556bcd30f4d481f8ba46fce513a6c	嘿！這誰？你在幹嘛？	draft		p10b-2 draft	
 3648	2	conversation	61257e0ebbe9f81fc008f1ba63dbd2496c3e6fe45330ea5ae648e99e04f75ee7	我是所有惡鬼族的朋友。	draft		p10b-2 draft	
 3648	3	conversation	461085a8a24031ee44d3fb6111b7b1d087282cd67efbf481def9f4b1f379d3a1	我是來欣賞你們族人聚落的宏偉建築的。	draft		p10b-2 draft	
@@ -1058,3 +1121,81 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3672	28	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	reviewed	P10A-B1 Brawnclan (slot 88): demand option (player)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 3672	29	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	reviewed	P10A-B1 Brawnclan (slot 88): demand reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
 3672	30	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	reviewed	P10A-B1 Brawnclan (slot 88): demand reply (NPC)	reviewed: 使用者確認（Claude 預審）2026-10-23	
+3673	2	conversation	09e4ed513d79b07e5a34b9a13c85ed47afb54c67866236cd8f20f96cad06c608	唉，你看起來不像礦工。你是誰？	draft		p10b-4 draft	
+3673	4	conversation	d6cd837cdef32da0229622eb01299101c91a0a3fe8247941277a24e1211b52f8	那是我的事，不關你的事。	draft		p10b-4 draft	
+3673	5	conversation	ecb5f40fe1de40b19d9ed6f65350690c3c40bbfbf8449a747d93cf0223fe2eed	那好，滾吧！	draft		p10b-4 draft	
+3673	7	conversation	9221063689a73e5a86a5cfe263af893d32b6dda00a92cbd31f84923fc4b1531a	我想學習當礦工的門道。	draft		p10b-4 draft	
+3673	8	conversation	899e3aab241ebd09ce24e11937ed55f16ca64d5a594ae88656ad458e50fadda8	我在找寶藏。	draft		p10b-4 draft	
+3673	9	conversation	002ea2e3e9426a2888c0effcb2e7d82f0f6fe2e89fb529f9b00917acacb509ec	我在找一隻怪物來消滅。	draft		p10b-4 draft	
+3673	10	conversation	8be2f4fe9c424547469151222425fbec5981092cbe11e21de7cab31b2ee60e3b	是喔，你想當礦工，嗯？這可是件苦差事，你要知道。沒力氣就別幹。這活兒可辛苦了，掄起岩鎚把大石頭敲碎，一遍又一遍地刮岩壁，一次只挖一寸。	draft		p10b-4 draft	
+3673	11	conversation	961551ea8f0fb849828bd5bb4482b2fe51f6ace13dbdc86e233fdb8b496ba0ea	聽起來很糟。	draft		p10b-4 draft	
+3673	12	conversation	83bf358a85c2cccab721a2d114a1d5a1e8429406c858171e931f150d89b38f37	當礦工一定也有好處吧。	draft		p10b-4 draft	
+3673	13	conversation	fa512a85607af32da3028361827b7a42ae478709b5cb8f43499972518dc1f776	嗯，這活兒是累得要命，可是報酬很豐厚。肯苦幹的人就有金子，我可不知道還有什麼比金子更好的東西。啊，鎚子重重敲在實心岩石上，突然挖到一條新礦脈的那種興奮！\n 你去這片礦坑的北邊，親眼看看金礦有多美。不過要小心——那一帶有人看到一隻可怕的怪物，就算是你這樣的冒險者，也未必應付得了。\\m	draft		p10b-4 draft	control-code
+3673	14	conversation	fd1d3b350654b62bf0f44fe4917267c2b14f788f058a072e8f8908f871e42be8	還有什麼我能幫你的嗎？	draft		p10b-4 draft	
+3673	15	conversation	76bee9cfcd07e168906ff3338868cc9da009cda4bb0cca79767a511828bd147d	唉，你可找對地方了。沒有什麼寶藏比金子更好，而這片礦坑裡金子多得是。特別是在礦坑的北邊，你會看到很美的景象。不過要小心那一帶出沒的怪物。\n 好啦，你還想知道什麼？	draft		p10b-4 draft	
+3673	16	conversation	cdb4f64da8a0f2d79ce143d2fb1408b5930db509f89f62af5ab7bc5120078dc8	礦坑裡的怪物？你要是能打敗它，那可是大功一件，可是我不知道辦不辦得到。那東西可怕得很。我曾經眼角瞄到過它一次，可不想再看到了。它就躲在礦坑的北邊。你要是真想消滅它，可得小心。\n 我們弄了一場坍方，把它那一帶跟我們這邊隔開，所以你得自己打通過去。在你去找它之前，還有什麼我能幫你的嗎？	draft		p10b-4 draft	
+3673	17	conversation	7d8344a02275243e36b34b8f06eadcc3a8a20aadee6f40a32e93ffac34ed8f3a	當礦工是什麼樣子？	draft		p10b-4 draft	
+3673	18	conversation	793dc90aafeb6de3e5ae97c690aa1b79b9b57af851cf58b848213b8c535f261e	這片礦坑裡有很多寶藏嗎？	draft		p10b-4 draft	
+3673	19	conversation	d586ba3a4ebf99c43b0a61d5d2fd75321df425b1bec98c91503e02873a878cef	住在這裡的那隻怪物是怎麼回事？	draft		p10b-4 draft	
+3673	20	conversation	4443d99086170988f5f44ccd1e56eb43cc2ca85c3435da1123d8d3a983b3386f	我想跟你交易。	draft		p10b-4 draft	
+3673	21	conversation	378ffe59000634737ad9a9d2c72778a8cacdd111093a23aea92d21c8461457c8	謝謝你，我要上路了。	draft		p10b-4 draft	
+3673	22	conversation	16a95c75a04efcc0ef78dc3c250ca2da1174ca53f2c08a30b0995cb210241483	決定友善一點了，嗯？	draft		p10b-4 draft	
+3673	24	conversation	cf1d71dec9dcbae35275e41cd076ca9972220245a99bdb2387da6e0e615e0fc3	你怎麼會這麼覺得？再見。	draft		p10b-4 draft	
+3673	25	conversation	59e186383fd668b752ad27062f9c6fbfe457bf9d5658272d2db8e383d4d6f788	走了正好！	draft		p10b-4 draft	
+3673	26	conversation	61aa35720851b73d45e0d34fa58d5617baac3589aeb5018b322d2f6204dca697	這樣好多了。我是修石。你在這一帶做什麼？	draft		p10b-4 draft	
+3673	27	conversation	425ae8541eef37502a3dc6ce9c850bcdd757f4fa150e2ee67398399ac46e0a3d	樂意之至。	draft		p10b-4 draft	
+3673	28	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-4 draft	
+3673	29	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	30	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-4 draft	
+3673	31	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	32	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	33	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	34	conversation	e16918603aaea5de2d9fb87136c3bf6778b4643724fa3479bae8483a38ba7d96	我接受你的出價。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	35	conversation	72fe0670a3767f16f0111c7ebb9b4be6cbbe0af388b65001cefc16eb807d395b	不，我不喜歡這筆交易。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	36	conversation	0d020c3b04ef8ec5311a618d840ace2172298070d10bb68afed90e71837e9d96	你當我是傻瓜嗎？	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	37	conversation	fc58ba96b9adfb8e6b93283e3280a19a22fe35d436fa9503170fe5ab311b4d67	這樣討價還價，我已經煩了。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	38	conversation	3c2874ea9a1cd294a1f2ee469195693b6208ca3044f4ef513db5e7c42ea75197	你一定是在開玩笑吧。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	39	conversation	87c54bbaf1a223351ec7fa35958b3fd6541a0f84a1c997c9113f8f90d6d48a84	你是打算搶劫我嗎？	draft		p10b-4 draft	
+3673	40	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	41	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	42	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3673	43	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-4 draft; 交易用語沿用 3672:16-30	
+3674	1	conversation	fe5045581435bae1ef74c312642fba8b1b4d6e06b37bd753d1328b4aae1aca01	唉，我的藍圖，過了這麼多年終於回到我身邊了！……\\p 不對，那不是我的藍圖，是個人類！這是怎麼回事？你拿了我的藍圖嗎？唉，我的藍圖，到底跑哪兒去了？	draft		p10b-4 draft	control-code
+3674	2	conversation	225fcdee552707f060988cad490218c7712f83a73640260bc30c6671cd3a2665	你的藍圖就在我這裡。	draft		p10b-4 draft	
+3674	3	conversation	63b0ee431df9cc706e594bf77396edd370fd363a70e64fedae5d5cd9863b57d6	你在說什麼？	draft		p10b-4 draft	
+3674	4	conversation	63f8970b7ccd114293d45b3a785f69a878b16011f30edc494384e858e622a245	如果你弄丟了東西，或許我可以幫你找回來。	draft		p10b-4 draft	
+3674	5	conversation	918f345b8150cf1dbc6a15eea2621ae75c55509be767004ebc518484d5b45f18	那你肯定不是我的藍圖了！它們可從沒開口說過一句話，你倒是挺會說話的。它們又啞又不吭聲，就像我靠它們幫忙鑿的石頭一樣，可我還是好想念它們。也許你能幫我找到它們？	draft		p10b-4 draft	
+3674	6	conversation	78d31b415e7003b2388005af0092cfa43a2ca1925b11a35848838c5966b25449	我可以試試。	draft		p10b-4 draft	
+3674	7	conversation	54e96a9313c956ece029bbd91f70eb6f653c738adbfa652628e5cff381b2b471	我為什麼要幫你找？	draft		p10b-4 draft	
+3674	8	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d		untranslated		grammar-sensitive: 稱呼片段（lad），代入 3674:10、3674:13 的 @SS18 模板，P11 處理	grammar-sensitive
+3674	9	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c		untranslated		grammar-sensitive: 稱呼片段（lass），代入 3674:10、3674:13 的 @SS18 模板，P11 處理	grammar-sensitive
+3674	11	conversation	a5efb6d649b5a6792ae327cb0e2d5c5e2950fafb63ab86d221f00d8dfc5d006e	我很樂意。	draft		p10b-4 draft	
+3674	12	conversation	a627919d78ec4cce6252b297f0ffb7f02eeadb3fdd6767d973b2e0b936c5efd0	也許吧。	draft		p10b-4 draft	
+3674	14	conversation	d1b221d5d686ae62ae3b68f1d80db4d134d778a153b917814d81ae3635136886	可是是我在幫你啊。	draft		p10b-4 draft	
+3674	15	conversation	60dda3ab7925b3a418692e6cc8e3741d320817f71364366dfb78189545e12c4f	非常感謝你的幫忙。	draft		p10b-4 draft	
+3674	16	conversation	a45731388830eecdf3f4d93f083545fc5d22433b6bc87f50bbb4f1d57942942a	唉，說到幫忙，要是你能找到我的藍圖，那可就幫了我這個老頭子一個大忙。對了，螺旋室的門鑰匙在哪兒來著？我想是在黃金迷宮室吧。唉，對，你得沿著黃金路徑走，不然可能會中毒……不對，那是螺旋室裡的毒藥。還是說那是飛行藥劑？也許兩種藥劑都有——唉，就是這樣！	draft		p10b-4 draft; authority-ok:spiral（spiral room 是房間名「螺旋室」，不是生物「螺旋體」）	
+3674	17	conversation	1ff3e690cd240dfb764e1d135f84c51d4cd8013980142264acbc1467f6508b7c	可是哪一瓶是哪一種？	draft		p10b-4 draft	
+3674	18	conversation	57ca079d3b0d06eeefefa18c307b7b1b9ca1adff3c5d79afbb66a5f9c3ca571d	那裡有不只一瓶藥劑？	draft		p10b-4 draft	
+3674	19	conversation	e81e04bc40a5488778119d70a6df0596900b7eab0c1f7b5c217c119d79aac5cb	等等，別催我……一瓶是綠的，另一瓶是紅的。還是一瓶紅的另一瓶綠的？對，就是這樣。一瓶紅的一瓶綠的，絕對沒錯。兩瓶裡有一瓶是飛行藥劑，一瓶是毒藥……還是反過來？唉，我又忘了。喔，對了——綠的是好的。還是說紅的是壞的？\\m	draft		p10b-4 draft	control-code
+3674	20	conversation	5f27f5b173577e22f0ea895ae691e49fe0a0fe391821b0eadeca403995ce28a3	好吧，你盡力吧，好嗎？還有，你在那一帶的時候，要是碰巧看到我的藍圖，就帶回來給我。我想我可能把它們放在儲藏室了。不過你找到的其他東西，儘管拿去用。	draft		p10b-4 draft	
+3674	21	conversation	be80961e5957c155fb68e30331b8c4135b984127925af5430a651b2b4cbe2ed5	我會盡力。	draft		p10b-4 draft	
+3674	22	conversation	8f8b9d95820f58382b8b0cbdb0bc8ac232247cd3eecd21d708eef5ac93cc1bb0	再看看吧。	draft		p10b-4 draft	
+3674	23	conversation	c0ee4f8278542c6770f46cf5495ab995de3765c87c8f5e9ddb3d3f069f8d1c43	我會盡量照你說的走。	draft		p10b-4 draft	
+3674	24	conversation	b71a64cc662b60070f9ac6851a05df1782d3399960975717e3d8648298104a67	唉，我認得你！你是我的藍圖！不對……也許你是我的工具？我的藥劑？我知道我在哪兒見過你！	draft		p10b-4 draft	
+3674	25	conversation	43178c20ed4925033432ea539b1d38a0f56661158691e1f92aba6fc669f52cfc	我找回你的藍圖了。	draft		p10b-4 draft	
+3674	26	conversation	af7e79b8f4c38458c1b29e936661bde350389e50453607686899e77744b2c5f0	我找不到你的藍圖。	draft		p10b-4 draft	
+3674	27	conversation	2aa5527e2c92370987c59c3e985aaa80eb24fbaa763de6294f9f2fd9d4ab07e3	這也許是你的藍圖，可不是我的！	draft		p10b-4 draft	
+3674	28	conversation	4135499ec68b72ba6cb10850ac8f15e26900b113a42139f753a0c4ff4ad456e2	這是你的藍圖。	draft		p10b-4 draft	
+3674	29	conversation	c7ce3c66766f2efb0b3b324315bdf95d5e233b0ef281ea2afda17f324b4377e5	我沒有你的藍圖。	draft		p10b-4 draft	
+3674	30	conversation	31f69e9865eeb00dd7fe09e2211f208c5f5074262a9bb9a5d350e2886bfad2ba	你真殘忍，這樣捉弄一個老頭子！	draft		p10b-4 draft	
+3674	31	conversation	c7937a03ae93ca2874037450045e661a2a9af59e9bddf3330316ee4e05ac3f36	我要去哪裡找你的藍圖？	draft		p10b-4 draft	
+3674	32	conversation	664b2ed25b3c369fc98a0e2849d8bda9fec200313a371de2dc7be7daaae558e4	我的藍圖！我們終於重逢了！	draft		p10b-4 draft	
+3674	33	conversation	f36325aeb9d62b9452712c89d5b1b6a6c897e42abb19a1ac001ec33805ba5a16	來，再拿一瓶飛行藥劑，聊表我的謝意。或者這是綠色藥劑……別在意，我敢說它總會有點用處。我打賭你從沒見過飛行藥劑，所以用的時候小心點。	draft		p10b-4 draft	
+3674	34	conversation	4e77fa0be3ae300ac8ef7d56b0828d2de83ac0ec215a228796a2a01ad0d14e52	\\m什麼，你沒手拿嗎？那我放在這裡給你。	draft		p10b-4 draft	control-code
+3674	35	conversation	892d8d4d0a04a19f52ff2b167c3d88caaa8a88abd98fa1963ce996605796742b	謝謝你。	draft		p10b-4 draft	
+3674	36	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-4 draft	
+3674	37	conversation	649d94e416bab3b78a35fab7a6aa131472298041053cb81e2bf923083ac4147d	唉，又是我的藍圖！真高興再見到你。唉，可是我沒空閒聊。我恐怕把頭盔放錯地方了，得去找一找。我跟你說，當年凱布勒斯那小夥子統治深淵的時候，可沒發生過這種事。他可是個有頭腦的人。可惜他已經不在了。我的頭盔到底放哪兒去了？	draft		p10b-4 draft	
+3674	38	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-4 draft	
+3674	39	conversation	f04d1577a822f61dcfd28e62b5503cdb4b194903c30181ff16b7ff61f32bd1bc	跟你聊天很愉快。	draft		p10b-4 draft	
+3674	40	conversation	3ce5fd0f2b5842c3cc009793674df0f5a15585482f29a221c2b1f3eb1d218215	你的頭盔就戴在你頭上。	draft		p10b-4 draft	
+3674	41	conversation	70bb14b49899259dd1bad2d335520dab341cbadd9f63b65551ae9e2fb788893e	唉，還真是，還真是！你真是一套很能幫忙的藍圖。多謝你啦，孩子。	draft		p10b-4 draft	
