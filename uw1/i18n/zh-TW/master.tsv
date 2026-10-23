@@ -810,6 +810,136 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3594	51	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
 3594	52	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
 3594	53	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3596	1	conversation	1d10506c146d6480d937fe77b0337bc9b4ff97668681910ef3f406fa8a973fb7	\n你好！我是多納・鐵拳，安卡十字騎士團的團長。\\m	draft		p10b-7 draft	control-code
+3596	2	conversation	eb5669fb7c2ea74d3a996520918ff3d2790a402ba0ee9e11f65812e1001ff811	你是誰？	draft		p10b-7 draft	
+3596	4	conversation	7dc3df309b9a3e13c429d98440a5791b5278b52dfef960d0d90efbf9e56db0b0	我是追尋知識的普通旅人。	draft		p10b-7 draft	
+3596	5	conversation	bf794120026611630f3037291be640ab5a4fe8878fdde21d8e255cd3f738e5fc	我希望加入你們的騎士團。	draft		p10b-7 draft	
+3596	7	conversation	dd13d45a5383f8680f69ed6922972456b80779a35da067944646ce5085654ba8	你為何來此？	draft		p10b-7 draft	
+3596	8	conversation	5cbf83f8b03e88663e7731ad568486873c7e87de40b843552b9ab6b428739380	我想加入你們的騎士團。	draft		p10b-7 draft	
+3596	9	conversation	9b68de50384e4016ee5aba60d262a027cd85b8256d9280d70110dbedeffced70	我在尋找凱布勒斯的聖物。	draft		p10b-7 draft	
+3596	10	conversation	271f4a5f0f729ea11a4c285a4dbc61c208092c216c769e11bec382320005997d	我只是想跟你談談。	draft		p10b-7 draft	
+3596	11	conversation	91eea1f5dbef73000a99ad35a5b83be763c358a57a5dd49373dba53dc79a238b	我想了解你們的騎士團。	draft		p10b-7 draft	
+3596	12	conversation	be6e45ea41515f2fd437108f4fbfaab898732c3028e99a10d3c50a0e0b78ed93	雖然我是騎士團的團長，挑選入團人選卻不是我的職責。你若想成為團員，必須由現任團員邀請。\n 去吧，去跟他們談談，時機成熟時再回來找我。	draft		p10b-7 draft	
+3596	13	conversation	517aebe6451533bb4e8f851ffc9b6bf8c5a47acb5ed8586772996abe61461110	我會的，謝謝你。	draft		p10b-7 draft	
+3596	14	conversation	420c703b11610f7b7a8e910dc406505b7bda360bb628955d4625a5a8d7c3005c	我明白了。	draft		p10b-7 draft	
+3596	15	conversation	98aa6675482552881925fe70d82559692d811b3bcd33f53b9a702c24d5322696		untranslated		grammar-sensitive: 組句片段（son），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	16	conversation	4ed28f82ca96c3342a5c591668270f78c26dae22fd953772a6c14e52f46e1b22		untranslated		grammar-sensitive: 組句片段（daughter），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	17	conversation	af9d58c55cb8f22e586e7e5568dde6db0ce23bb5e3959e742e9b0791339b82ae	你想再次嘗試加入安卡十字騎士團？我們來看看你是否從過去的錯誤中學到了教訓。	draft		p10b-7 draft	
+3596	18	conversation	9d7eb3e133492ff7d939268f05fe385e09a08cc226921b83fa058cad41d3f074	你想加入安卡十字騎士團？很好，你必須盡你所能回答我的問題，由我來判斷你是否配得上入團。	draft		p10b-7 draft	
+3596	19	conversation	c4bf76bca698d01679c9c1fd9d59fd3a520c82abe6da9063b9a4172ced504c97	報上你的身分，讓我知道我在詢問的是誰。	draft		p10b-7 draft	
+3596	20	conversation	64a8aa4141842a5b9a9c7f4b40e315664ddc6957ca219309854efc402dd36906	一名英勇的戰士，精通戰鬥與魔法。	draft		p10b-7 draft	
+3596	21	conversation	0dbc1b09e88d33548ccd8deda60d7ff8f1f1820a87c425dd19c7e46b8d3a82e8	若你在謙遜這項美德上也同樣精通，或許會更適合我們的騎士團。	draft		p10b-7 draft	
+3596	22	conversation	adeb948a4129b79d0c8ef1f7e047396a5d857280769d6fe4e987f09098712f46	一名不列顛尼亞的貴族，配得上騎士身分。	draft		p10b-7 draft	
+3596	23	conversation	7b3f63bdb97bca76ab7cac10728b7e08822cace597878679f6e53b1645d9d02a	令人欽佩。不過，我不確定我們目前是否有空缺……\n\\p 不，我們沒有。或許改天吧。	draft		p10b-7 draft	control-code
+3596	25	conversation	e822b185d62c1c4cf31bed0b2730602ff4d9673801133f47f800275e266f996c	說得樸實！你願意為了加入我們的騎士團而犧牲性命嗎？	draft		p10b-7 draft	
+3596	26	conversation	cc07850c5e9229139005fd230419a5d512fb253e67cf4cfd4d58100b9d016a20	是的，我願意。	draft		p10b-7 draft	
+3596	27	conversation	4dcb71f5bfeb57f690a9df36a6b7872e5d60674acecb042d4719bc602bf9d210	不！	draft		p10b-7 draft	
+3596	28	conversation	1d7b08b7ea85f13add20d0ee4cd8d2811a2830a58f94070a372dd22d8ca9ab99	等等！我可以解釋！	draft		p10b-7 draft	
+3596	29	conversation	8f726d54ea94231578eb3861d45ed27d3539e2c799d91ab4f812db83d96bfa76	那你願意服從我們的公正裁決嗎？	draft		p10b-7 draft	
+3596	30	conversation	31d97edd207ed75daeb22b92d945f07301d8237449e7b1cccc7673816dbc3c5f	是的，我願意。	draft		p10b-7 draft	
+3596	31	conversation	facc7513d3eed76e4e1f9f3ec1c8dec3725940ef36ed535b5d81be067d5a7925	不，我不願意。	draft		p10b-7 draft	
+3596	32	conversation	c818ee92412b5da7dd175e70a1d18752851bda2594260883c03da7ab23b4298a	或許我們該好好談談這件事。	draft		p10b-7 draft	
+3596	33	conversation	60c30a91d621ae6784c2460868e69940cd6e4e1d6e93b31ec5a972a2843bcf09	很好。你來到這裡，就已經該死，你將得到應得的報償。這是一只杯子，裡面盛著見效迅速又致命的毒液。拿去喝下。	draft		p10b-7 draft	
+3596	34	conversation	eeb30bc5aecdf0ad89ca3621aad2cf20ad8d582d2043be9fb405330d99952ca3	好吧。	draft		p10b-7 draft	
+3596	35	conversation	56d460c38b59e3936694334e59bc0921d84d3b6613793d4ad44d26883fbb1dec	如果我拒絕呢？	draft		p10b-7 draft	
+3596	36	conversation	3d3749d110ac0f1125f9b283f24f2adb5b7c125f39fff8d0b23c9bd6845020b4	那你就不是配得上我們騎士團的人選！離開這裡，等你配得上了再回來。	draft		p10b-7 draft	
+3596	37	conversation	55f6aa6afbe9ba9d9defaf6b1f88f96e2acf14b443d747e68a11eb4915a60804	啊，善良的凱布勒斯爵士！我們騎士團有許多人在尋找他的聖物，據說無論是追尋它們還是找到它們，都能讓人增長美德。不過，我們對這些東西的了解，不能告訴尚未入團的人。	draft		p10b-7 draft	
+3596	38	conversation	b66b621c21efd58036a2e2a595afbc90bb9671ad9dc4695311b148c12edb89b7	我可以加入你們的騎士團嗎？	draft		p10b-7 draft	
+3596	39	conversation	7b746ba4e49ca8cd511f005c3bfbc9c88afab4a5597fe4d50a145060f3483bb7	好吧。我明白。祝你有美好的一天。	draft		p10b-7 draft	
+3596	41	conversation	e959a9cd4c3007e7a52d353d24921b54f764d91384ebe234bd51642ed81028f3	把它摔到地上。	draft		p10b-7 draft	
+3596	42	conversation	b59bcfc58f5d94c25898c3a9af48f81d8ead5740188f265c1c5e47eed30f6452	一口氣喝下去。	draft		p10b-7 draft	
+3596	43	conversation	30efdfb52ff67f80dab7cb89dcfe0eec8412966cfe58324993674b4616d6bd11		untranslated		grammar-sensitive: 組句片段（He），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	44	conversation	d602e91d93c835ee2aa640ccffe314c61328ea2c1dbc45bec4277a9e94f91206		untranslated		grammar-sensitive: 組句片段（She），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	45	conversation	73c9c98668a34c54d131ff609d0bf129068d1b5ed3efd7cdfe753f909596456c		untranslated		grammar-sensitive: 組句片段（his），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	46	conversation	354cbfc814262a7a81d343f7d6ebc4adfb4266e5081a78f6a19ff16802dce8b2		untranslated		grammar-sensitive: 組句片段（her），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	49	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-7 draft	
+3596	50	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不。	draft		p10b-7 draft	
+3596	51	conversation	6c8b913a8ed33ebf3770b9c8ea83886e17786295ee30d26fba706e72ef37960d	很好！懂得恐懼，是認識勇氣的第一步。你現在是本騎士團的扈從了。\\m	draft		p10b-7 draft	control-code
+3596	52	conversation	44711e40a59ce7ebb6e61deb213ff7288245a9be4cefb96d05ddeec58f4e1a95	你的任務是找回洛恩的文書，那是最早把騎士團帶進深淵的騎士之一所寫的文件。\n  這份文件寫於殖民聚落建立之初的那幾年，記載了許多當時的知識。可是它現在不見了，不過很多人懷疑它在洞穴巨人的老家。\n 去找它，等你帶著它回來，你就能成為本騎士團的騎士。	draft		p10b-7 draft	
+3596	53	conversation	5d9074a054d33372ae3e6f472aa62e9402696bf241b20970596f783796536582	謝謝你。願我能證明自己配得上這份榮譽。保重了。	draft		p10b-7 draft	
+3596	54	conversation	0ff04febba54c2331c3f24d4d1525b93c6ea31f97ac23635f0d9dd8bf77baeb3	謝謝你。你能告訴我任何有關凱布勒斯聖物的事嗎？那也是我的任務。	draft		p10b-7 draft	
+3596	55	conversation	88489947456611b014e1492f0d2b73c5aaefd66f3f77d99308d071f4cd4397a7		untranslated		grammar-sensitive: 組句片段（Brother），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	56	conversation	345e9a5c3016810228f9f56c0e4e2ca4d00f3a6973c99498561ab72c4bcb3db5		untranslated		grammar-sensitive: 組句片段（Sister），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	57	conversation	63102e14973cc6035ebb7ce406dec2d68eed07af2075ff25b08a1e3826b1d81d	少之又少。聖物一共八件，凱布勒斯原本打算把它們分別交給定居深淵的八個族群的首領。唉，他過世了，八件聖物也全都失落了。\n 據說它們是一本書、一瓶葡萄酒、一面盾、一把劍、一支細蠟燭、一面旗幟、一只杯子和一枚戒指。每一件都蘊含一項美德的強大力量，據說無論是追尋它們還是找到它們，都能讓人增長美德。\\m	draft		p10b-7 draft	control-code
+3596	58	conversation	b56c93bda72b62633704346af58914bc5fefd2fdb4d426fbede01297e449caeb	旗幟的事你已經知道了，因為你打敗了混沌騎士羅德里克，贏得了它。可惜，細蠟燭被偷走了。你看得出來，自從凱布勒斯死後，美德受到了多大的損害。	draft		p10b-7 draft	
+3596	59	conversation	1b2d1916d96665794810f77ff9647e7c58270a88ace26bd0efacabdf2d245b47	我只知道細蠟燭和旗幟的事。犧牲之燭最近才從我們這裡被偷走，我們不知道它現在在哪裡。至於榮譽之旆，據說它在等待一位做出足夠榮譽之舉的人。	draft		p10b-7 draft	
+3596	60	conversation	08b12f03ec18500c06d7448e93207996baf04888d9a85d85eeb1a6abbe921bfc	再會了，兄弟，謝謝你！	draft		p10b-7 draft	
+3596	61	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-7 draft	
+3596	62	conversation	9772bfee6166d8342ead9c364d7b950f948926a420f51ce107c12cbc536760fb	很好。學習就是提升自己。我們能如何增進你的知識？	draft		p10b-7 draft	
+3596	63	conversation	e5be826cd693d93a80e9950f3c14845e007d9c31e85bda9a5d4d924ff039509f	跟我說說凱布勒斯爵士的聖物。	draft		p10b-7 draft	
+3596	64	conversation	b501260bcbc690407af1e94cad071ef7950ee0519f587f780e89f159b06aa09c	你對洞穴巨人知道多少？	draft		p10b-7 draft	
+3596	65	conversation	3b97b20c9eb6bee679269f7543234223495a7b49c0b457c8644a1ef00843ad92	跟我說說你們的騎士團。	draft		p10b-7 draft	
+3596	66	conversation	97d34aef53f8f2507d5bb61e555ff83e6f176dc82993c5e39867cb15103756b2	洞穴巨人？他們是我們的宿敵。幸運的是，他們之中有很多人以自己的方式講究榮譽。當然，有些不是。我們稱那些為野蠻洞穴巨人。要提防他們。洞穴巨人都是致命的敵人，但至少文明的那些會光明正大地戰鬥。	draft		p10b-7 draft	
+3596	67	conversation	c422f224d450215c1ac590f0a6145bf0d537d46349dc67db953526f15f4d59fe	謝謝你的忠告。	draft		p10b-7 draft	
+3596	68	conversation	9950286651fae61127204cd59432aaf8bc8a3629872fc360ca331f0591081787	你們的準則很吸引我。我要如何加入你們的騎士團？	draft		p10b-7 draft	
+3596	70	conversation	8b8a7cc700afaf860793bd584e04049b8bca5ac522aa01fa8be9023bf217ee2c	我成功了！這是洛恩的文書。	draft		p10b-7 draft	
+3596	71	conversation	d23f86737e5e37a6fd3a80657e277a3eea2ba9a8fa626caefad704d5fa2aaf28	我還沒完成任務。	draft		p10b-7 draft	
+3596	72	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b		untranslated		grammar-sensitive: 組句片段（Sir），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	73	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5		untranslated		grammar-sensitive: 組句片段（Lady），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	75	conversation	954420250ca1fb6ceb4c6dcadc60276b0c7bb11b136fe648e209934c7a0e0341	我成功了！這是金盤。	draft		p10b-7 draft	
+3596	76	conversation	d23f86737e5e37a6fd3a80657e277a3eea2ba9a8fa626caefad704d5fa2aaf28	我還沒完成任務。	draft		p10b-7 draft	
+3596	77	conversation	31bc41c1dbb7212df18845ac71f9669bbbc89695f061553fc164fee66912cd4b		untranslated		grammar-sensitive: 組句片段（Sir），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	78	conversation	1c0e629300c4dff0a86aea1780be8a609e39eac122e170171bb1308d6df020a5		untranslated		grammar-sensitive: 組句片段（Lady），代入同對話的模板句，P11 處理	grammar-sensitive
+3596	80	conversation	d92086f30e8c831c7ab480c59604b22d916b1ae414854a8bdc585589ea5c7990	來，我就把它放在地上給你。	draft		p10b-7 draft	
+3596	81	conversation	fd0ef5d7ae2e624b12d3750d2d2b9b5dccee90a395369629a1a291dca939196d	還有其他失落的寶物需要找回來嗎？	draft		p10b-7 draft	
+3596	82	conversation	bc37fd84ab12b304db5575271680d94828149d0ea396b1f5798803ea78ce95e3	我還能如何為騎士團效力？	draft		p10b-7 draft	
+3596	83	conversation	f43c28435339de4b57b0edaa4fffb0863e2ff403f88c0dcd921e25ace44a69d9	你做得很好，你的任務完成了。幹得好！\\m	draft		p10b-7 draft	control-code
+3596	84	conversation	096e3585ad29e5cd223712a98a81e9fac151236b3375cec111d63d63668e0236	不，恐怕那不是洛恩的文書。	draft		p10b-7 draft	
+3596	85	conversation	60416edc730cca425f76ae02614278d58877e2b1a8b0eeac9a0aa228c0cb08f2	也許是這個。	draft		p10b-7 draft	
+3596	86	conversation	d8b7575e7149bca82964021b5a1b7f4e01dfe17d3018524eb8f2d2b6c4aac3ae	等我找到了再回來。	draft		p10b-7 draft	
+3596	87	conversation	00e932b272ff32deb82a1b2649fe989cb8909cd3442702c265f141e2e97d2d6c	祝你接下來的任務順利。	draft		p10b-7 draft	
+3596	88	conversation	9bcb9ea1e950e5d28ad6cef32441efe2d41f19de90abc1d94e31bdd8654cb2d1	沒有什麼好談的。你可以走，也可以留下，然後承擔你決定的後果。	draft		p10b-7 draft	
+3596	89	conversation	d52ab198d1776a6a9783d418ac2c34f04018db70091d90a3ccf1ea66b7f397f3	我留下。	draft		p10b-7 draft	
+3596	90	conversation	eeb30bc5aecdf0ad89ca3621aad2cf20ad8d582d2043be9fb405330d99952ca3	很好。	draft		p10b-7 draft	
+3596	91	conversation	f3051e67f024fc8ccec4b2f5f488262f95ba683c63cc12183a7b1866040263b9	我要走了。	draft		p10b-7 draft	
+3596	92	conversation	8f5b70affb1ebcab7437582c6933bf5faa497adb8e57d153c3b91f72f5e218d4	等你真的準備好成為我們騎士團的新人，再回來吧。	draft		p10b-7 draft	
+3596	93	conversation	fb7e8f2ebdcbf2dcaf4097646c635f55982285bcfb9d8048ec8e0b3d232f4ee8	你的任務完成了。幹得好！\n 騎士團的一切現在也都屬於你。我已經打開武器庫的門，你可以去那裡，依你完成任務和目標的需要拿取物品。	draft		p10b-7 draft	
+3596	94	conversation	996a1bb89ed7a4d5ecc49582c13e4df19e53a1c479ff4609f73995474d73b1d7	現在你要我做什麼？	draft		p10b-7 draft	
+3596	95	conversation	06924a2cc6ce1e35cc24b7867337164f1e4f3022119858a0239ec8ae773eadda	謝謝你。我現在得走了。	draft		p10b-7 draft	
+3596	96	conversation	ffbdc5372c19f0fb6b247b0b07a6c55f496e8ad93f5e5323671e1e7532a9ce98	不是那個。再試試看。	draft		p10b-7 draft	
+3596	97	conversation	28cdfb408d0c47aa25ccc0ee0f18ed8961bf643880942545db375a0a4f45a7c9	我能告訴你的都已經說了。在我們這個曾經高貴的殖民聚落所剩下的一切之中，自己去追尋美德吧。祝你在任務中好運，並保有榮譽。	draft		p10b-7 draft	
+3596	98	conversation	7b7b93396e29f031710ef10b3dca122a9a636ff20887a9bbfac09c8615e11ae4	你殺了那個把我們家園北邊據為己有的混帳騎士。謝謝你為我們騎士團帶回榮譽，把那個惡棍從我們的家園清除。\n 你的行動證明了你非常值得信賴。為了獎賞你的功績，我要把凱布勒斯打造的聖物之一，榮譽之旆，交給你。	draft		p10b-7 draft; authority-ok:standard（Standard of Honor 已譯「榮譽之旆」）	
+3596	99	conversation	11272c29a2dc6fa7037fc74e5ee07adec0348e7e7ebc2e2cca4901210859b9cc	謝謝你。能持有它，我真是無上光榮。	draft		p10b-7 draft	
+3596	100	conversation	2378352350ae3cd3a347e8b6a382740a3e40f1ba1e6ccd6a16fdeb859309a3b1	不用了，謝謝你。我不知道該拿它怎麼辦。	draft		p10b-7 draft	
+3596	101	conversation	5851c9fc446f84a7f9ad01681ea18cb1ed999ec584582d42c246b20b5f26acf3	你重新考慮過我的提議了嗎？	draft		p10b-7 draft	
+3596	102	conversation	ef0984dd832159928e142f16334d58a4f2ae78ba5b8ce78eea196334548f742c	是的，我想要榮譽之旆。	draft		p10b-7 draft; authority-ok:standard（standard of honor 已譯「榮譽之旆」）	
+3596	103	conversation	9863d2e5e401d48e5f64cd5c5ea1156d0ee57df93524937490f9e7c8f70cf726	不用了，謝謝你，我得走了。	draft		p10b-7 draft	
+3596	104	conversation	f88251f84e99615a2b67c5dd422e0987226b63dc5b9523ea7c9b210102deae8c	不，不過我想跟你談談。	draft		p10b-7 draft	
+3596	105	conversation	2295e03e0229798367f445433a08688300619f96237dddc60f23140f48ca2970	我會跟你談，不過我強烈建議你收下這面旗幟。	draft		p10b-7 draft	
+3596	106	conversation	2c2ff7f0fccf71da010fe99cedcfa8ad0a2450ed58884034af61e5d2e62bfd06	多納轉身在一個大鐵箱裡翻找，很快就拿著一面金色的旗幟回來，舉到你面前。	draft		p10b-7 draft	
+3596	107	conversation	720ea7e91ca8c6356754ba733a19879ecf1f7a3a3b5ab3e296a23877d5c635fd	就是它。帶著榮譽持有它，記住在你之前持有它的人。用你的作為來榮耀他們的記憶，因為你已經做到的事，讓你在我們的記憶中也獲得了榮耀。	draft		p10b-7 draft	
+3596	108	conversation	1198cf5dfd0a575a1f704aae39ac28a9ac1ec582041e9989aeab74911aab8522	來，我就把它放在地上給你。	draft		p10b-7 draft	
+3596	109	conversation	0283dc49b1401a917740f44b727bef85569bbb6a04824939a51f14d1785e0c9f	謝謝你，我會把你的話銘記在心。	draft		p10b-7 draft	
+3596	110	conversation	446077ccc7bc8773d03d5d2ba50f4e8a10215a9e4a4091bc24093ce5af05270c	你要是哪天想要它，就回來找我要。	draft		p10b-7 draft	
+3596	111	conversation	c6bd640efa03832b86dce1a3692876fd8be71a40ac1cb0e457ff77f080763938	我會的，很快就會。	draft		p10b-7 draft	
+3596	112	conversation	b82ed27367cbb6416bf61f25fc330121cbd3d171ba03182e45490e7ab0dbce3c	它和我都會等著你。	draft		p10b-7 draft	
+3596	113	conversation	a5654ac244156b6b791b3d0c03bed1b0241eec579b7ac2512e48057f415989c7	我想，你得等上好一陣子我才會回來。	draft		p10b-7 draft	
+3596	114	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	我們走著瞧。	draft		p10b-7 draft	
+3596	115	conversation	024ea3b3d7312bc5ebcd888116b639a1f87d911d4dc76a0be0b8e17e44462149	騎士團曾經擁有一面金盤。多年前，它被一個小偷偷走了，那個小偷我連描述都懶得描述，他不值得浪費那個時間。他逃進了迷宮，從此再也沒人見過他。\n 從那以後，好幾次傳聞說有人找到了它。最近一次的傳聞說它在英格瓦爵士的墳墓。找到它，你就能在騎士之路上更上一層樓。	draft		p10b-7 draft	
+3596	116	conversation	0cedb0f89d2e9cb1bbf8165995dc1a70ad7bb5d7319db6757286a10c33aa719a	謝謝你。後會有期……	draft		p10b-7 draft	
+3596	117	conversation	fb3e94d50b1fdb8abdc89db334b4034a44c9d43a1bbb12b021577e5b009e001b	又一個任務！難道沒完沒了嗎？	draft		p10b-7 draft	
+3596	118	conversation	87f43edaf9cc63bcef4a9112c3911aa0445e218df142cc368da7e0bd959b0ee7	你看清了真理！追尋啟蒙的旅程永無止境。不過，只要你在這個小任務上堅持下去，或許會找到有助於你更偉大追尋的獎賞。	draft		p10b-7 draft	
+3596	119	conversation	03ff573a42a683bc3b655b18005195f6bf034ba88e49f187681bcd547fd97d39	好吧。後會有期……	draft		p10b-7 draft	
+3596	120	conversation	bee5d4213160883d597922b7ba19f858f016a205673709f9fd2f14c66d86e0a7	聽到這個我很遺憾。這一帶的人你都談過了嗎？一定有人能幫你吧？	draft		p10b-7 draft	
+3596	121	conversation	7f7b614d93ca535bc65b4192d145af3c2f0c593655914fbaff47446fedfb8d7a	如果非這樣不可的話……再會。	draft		p10b-7 draft	
+3596	122	conversation	444dc1cc9287e04d83f06c367f090c76fbc8b7001f95810fac1f1aca5b764b26	我會試試看。後會有期……	draft		p10b-7 draft	
+3596	123	conversation	e4db63ec5840fdc8eb1ccba130b77d6e76907f16171b08ddcfc38c636578a218	你現在是我們的一員了。這裡永遠歡迎你。	draft		p10b-7 draft	
+3596	124	conversation	be3296a6142e960faf8248a4397d9147eba8dc64e875797a84134cfc6c96f4e1	謝謝你，聽到這句話我很高興。	draft		p10b-7 draft	
+3596	125	conversation	9ee8270ac5317c685014c31e804c1ba99d105ecf95d2427d36222d3bd4684513	可以請你再打開武器庫嗎？	draft		p10b-7 draft	
+3596	126	conversation	f6f32fef177468b7530ecf6434d4d032108d9cdbee4b4b9daaa8db50326098b1	當然。我馬上讓人去辦。	draft		p10b-7 draft	
+3596	127	conversation	86c676c0e6e7c3fbbedfaffaef43bbbe79b246fc47ae6ffb0f33cb1c2e6c4f10	你能告訴我凱布勒斯爵士的聖物的什麼事？	draft		p10b-7 draft	
+3596	128	conversation	759b38347cf65a0833bb9b989aa9f5553a5d550775142107841e6f1a3328be5b	嗯，我很高興你想跟我作伴。不過我非常忙，現在沒時間聊天。騎士團裡有很多騎士願意緬懷往事、跟人聊天。你應該去找他們。	draft		p10b-7 draft	
+3596	129	conversation	052accc4ee94e325dab708abaeaab49f91077296b99041e7de66a725a88f7134	謝謝你，再會。	draft		p10b-7 draft	
+3596	130	conversation	eb2dc14341790091b1caa50a123948dd697ca7aa02fa7ced3d2b42f4fef69216	你能不能就簡單說說你們騎士團的性質？	draft		p10b-7 draft	
+3596	131	conversation	d00ad4d044a7c005bc3ea72596581abb3cf840de892db43fb7da51da2526bc1f	我們的目標與聖者相同——增進對美德的認識，以提升自己。每當有任務能加深我們對美德的理解，我們都樂於承擔。或許我們的任務也能讓不列顛尼亞變得更好。\\m	draft		p10b-7 draft	control-code
+3596	132	conversation	14ca320f53cc38278b11c5a31434dd30c34d9f557bee15de62429edb3498f7e7	可惜，我們騎士團的一員羅德里克最近背棄了他的原則，佔據了北邊的宴會廳，自稱「混沌騎士」，恐嚇那一帶的居民。我們派了一位騎士拜登去打敗他，但他一直沒有回來。我擔心發生了最壞的事。	draft		p10b-7 draft	
+3596	133	conversation	052accc4ee94e325dab708abaeaab49f91077296b99041e7de66a725a88f7134	謝謝你，再會。	draft		p10b-7 draft	
+3596	134	conversation	7a602b00bec967d7bff1fa6c54bf99dd4f12523460284079f837edb634b5d084	我可以加入你們的騎士團嗎？	draft		p10b-7 draft	
+3596	135	conversation	72811626f79471d732c4e690cab8f27b830bc49eea33e9c6e4bca30b0e2c1e61	也許我能打敗他。	draft		p10b-7 draft	
+3596	136	conversation	02852e66161e9597201e4d9a91eeba81d5fb65e35a7ea8ae894b97e049936195	如果你真能打敗他，恢復我們聚落的和平，那是非常榮譽的事。但我必須警告你，他是個既不光明正大、又非常危險的對手，要是他打贏了你，多半不會饒你一命。	draft		p10b-7 draft	
+3596	137	conversation	29aa28519a780c3cf239972b94823605b39e34f80887c68909b66801996642b6	那我會小心應付他。	draft		p10b-7 draft	
+3596	138	conversation	7a602b00bec967d7bff1fa6c54bf99dd4f12523460284079f837edb634b5d084	我可以加入你們的騎士團嗎？	draft		p10b-7 draft	
+3596	139	conversation	71b8e1072ae520133caad417e655bb50bf6bd6831d80d9a40465297a6f510b27	謝謝你的忠告，再會。	draft		p10b-7 draft	
 3599	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
 3599	2	conversation	cd89962085b98100536660b9f3242798bc34fff2430ea9346a66c4b154a618f5	你自己才 Bica 咧。	draft		p10b-5 draft	
 3599	3	conversation	d1e5cb33afbb66cf80c56823fc70f5ea6e6a74eb8acd58ca1d4b410e4466a20c	呃……你好。	draft		p10b-5 draft	
@@ -1619,3 +1749,87 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3698	28	conversation	e517e8a6e0b48e05d59fb18dfbff90db2379974ca7fc09be01f67d038218e8eb	Bica。你也是我的朋友。	draft		p10b-6 draft	
 3698	29	conversation	c6779d13f6fb45e8634b394c218b5c7286ae5b9c8a39fff962efbb4055a5e646	'Click thit sstresh. Bica.	draft		p10b-6 draft; 蜥蜴人語，保留原文	
 3698	30	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-6 draft	
+3720	1	conversation	4931df48f8ae3b5b959ae914c644a3531e59be0cc6d6e6843d9761816d2e3052	你好，陌生人。是什麼不幸的意外把你帶進深淵的？	draft		p10b-7 draft	
+3720	2	conversation	16a26a4b88717028c7f506ca625691bd5cb016efa37fc4ef030c7c195da9f4ef	我被誣陷犯了綁架案。	draft		p10b-7 draft	
+3720	3	conversation	f99a9de5561b51f4f525471edc497a63173a5cf552a7eb1952c84dd3ee17a180	我想救出一個女孩。	draft		p10b-7 draft	
+3720	4	conversation	1b3a4e91272086def03cf8dd859f60491bed3e85e46a561cacdb2dc1239e3805	我寧可不談這件事。	draft		p10b-7 draft	
+3720	5	conversation	82168573c5b0c9b2822434673ec4bcff0bc6ec4caf4298de9ca0ecacb291776b	在深淵裡，光是活下去就是個遠大的目標了。你要是還想追求更多，那你真是個勇敢的人。	draft		p10b-7 draft	
+3720	6	conversation	87bf2ccc0c3b3736570513bee94f0d5d82767fb1577a799f175d6ab5d3b50619	說真的，我已經餓得越來越虛弱了。	draft		p10b-7 draft	
+3720	7	conversation	ec69fefc9e1d8f535b4fa64722fd0ff4231064424755efa8889c7a06a7d7636d	我的榮譽要求我不顧一切阻礙完成任務。	draft		p10b-7 draft	
+3720	8	conversation	6a5398c8a4a8f16fb48427f32719745986e8d96729f9267a425bb3a46c901fe5	沒錯，不過也許你能幫我完成任務。	draft		p10b-7 draft	
+3720	9	conversation	edee00f8df8205fdb7574398d68a8f9c51d87fee92ec0b5ca2c67d2d62847f90	我可能很快就要餓倒了。	draft		p10b-7 draft	
+3720	10	conversation	d9260e397dae7ac917ff49994771b430a8c94974e7e77214df152d47f7313496	多告訴我一些前方的危險。	draft		p10b-7 draft	
+3720	11	conversation	3bcd50d109f9fafb81b6a633407868600ec7b40befed82b89a9fb5886c94a304	我必須不惜一切證明我的清白。	draft		p10b-7 draft	
+3720	12	conversation	d93989e94e9139b5ea6d094b953cbc18085db2a9ba74d1bf87d53f4b105500ef	不過，有你的幫助，我的機會也許會大一些。	draft		p10b-7 draft	
+3720	13	conversation	7c430d916da13fd5ad9d2d026a6b0230482b5bc1e1c7b75b54e6beb379d88df3	在這麼危險的地方，你是怎麼活下來的？	draft		p10b-7 draft	
+3720	14	conversation	af1e9da34ea586dfe0f75f6066f4aa231a4e28579a2cb0f18b0da800a2a75696	你能告訴我前方有什麼嗎？	draft		p10b-7 draft	
+3720	15	conversation	e166c6f253db220ad6992826e92dbb4ff69b0170990d1e762ec4ee3ef02ee990	我的任務不容任何阻撓。	draft		p10b-7 draft	
+3720	16	conversation	0bc9daa19c15afa7f8f8534ea4bcb327e7edd810345d7b3951815183fc37d3a8	你能幫我完成任務嗎？	draft		p10b-7 draft	
+3720	17	conversation	0508f243bc691b0e054c9ea85c11f4ac020be95f790eff0d239470a0b2f1c108	我以天上那些閃閃發亮的星辰起誓——我已經好多年沒見過它們了——我真希望有食物能給你。可惜我沒有。\n 不過，我能告訴你一件事，就像古諺說的，能讓你一輩子不愁吃。你要注意，很多人被偽君子阿姆瑞克用空洞的承諾扔進深淵，死得可比餓死悽慘多了。\\m	draft		p10b-7 draft	control-code
+3720	18	conversation	70b95b90a7fc3490b11a385ac45527ec1379256a2797c65ca727c92c8984285c	不過，我說這些就跟在颶風裡逆風大喊一樣沒用。說重點吧，往北走一點點，你會找到一個池塘，那裡的魚會從水裡跳上你的釣竿，比豺狼丟下的腐屍上的禿鷹還多。	draft		p10b-7 draft; authority-ok:pole（這裡的 pole 是釣竿）	
+3720	19	conversation	4ca60751f2c745e0db920c3df18c78b054f0f499d7d8eb708cf4410b62ca2dcf	只要你用我給你的釣竿，想要多少魚就有多少魚。	draft		p10b-7 draft; authority-ok:pole（這裡的 pole 是釣竿）	
+3720	20	conversation	5ce42c6e698bf33b54f2922708b75d2e229aeff1cfcc7e4685ffa84bb456bb1d	我有一根多的釣竿，你要的話可以給你。	draft		p10b-7 draft; authority-ok:pole（這裡的 pole 是釣竿）	
+3720	21	conversation	43ed0181ea3b91671dda913a5ee1745b23cf7751d8400ca95f6f5cb24372a590	衷心感謝你的慷慨。	draft		p10b-7 draft	
+3720	22	conversation	06ee299b009baf26eb5befae83accabc87c17a7491e4f9af4650bcb6478630c5	你真好心，不過我不需要。	draft		p10b-7 draft	
+3720	23	conversation	76dfe09b7105c53a31f8076949604189e012697634fcc6a31bb3ee38dfb9cd99	祝你好運。我自己也曾經相信崇高的理想。現在我發現，光是活下去就已經是夠崇高的奮鬥了。要活著逃出深淵，比用篩子喝水還難。你要是自找麻煩，麻煩很快就會找上你。	draft		p10b-7 draft	
+3720	24	conversation	9f73ea44c39fbed1fca6c4400bad635cf1f0c5da0b99613f4880311954894884	再會，願好運眷顧你。	draft		p10b-7 draft	
+3720	25	conversation	d5562e19bb57a5e12028637363dca76deea31966770133a4461a9ffb0ca08e41	我不能逃避責任的召喚。	draft		p10b-7 draft	
+3720	26	conversation	a4c1cddf7cf76e39408be9fe4554b4a2a879d5a31582e61654a67a95ee1df21a	我可沒什麼興趣自找麻煩。我在深淵裡比很多人活得久，靠的就是懂得遠離危險。你最好也這麼做。	draft		p10b-7 draft	
+3720	27	conversation	d4124546c45af746bca556a8c3f2eb04126cd0790e43de1ba876e9d35f0d8c4a	你能告訴我任何有助於我完成任務的事嗎？	draft		p10b-7 draft	
+3720	28	conversation	951f243d1054ba8999b93408b7bf504bc8a80d195457c2d02c756055ab586bbc	我會去請教活得更有榮譽的人。告辭。	draft		p10b-7 draft	
+3720	29	conversation	51e3660a34be883ed861c09e66441f6fb5c566dfe4d5d05a56bbae010c8f86ee	俗話說，對抗飢餓，連神明也無能為力。不過，羅馬不是一天造成的——喔，不列顛尼亞也不是。至少我能告訴你這麼多：往北走一小段路有個池塘，魚多得數也數不完。	draft		p10b-7 draft	
+3720	30	conversation	217223b428d79c797b88ab08a4cd1d1d98ddf37499c422c5d106d09709f5ccf3	只要你好好使用我給你的釣竿，就會有吃不完的魚。	draft		p10b-7 draft; authority-ok:pole（這裡的 pole 是釣竿）	
+3720	31	conversation	8f02b4d3064bb8a2fd3775a8a9335a5bb367d8daffd1cf9e26cf603b8cec919a	天哪，這真是金玉良言，朋友。我馬上就去。	draft		p10b-7 draft	
+3720	32	conversation	3b14254285604e134a4f69c6f161a8026bc6ebff353df3cca363a4203ca3ea75	恐怕魚不合我的胃口。再見。	draft		p10b-7 draft	
+3720	33	conversation	6fdc8271efa3faee4e840e751d0be28813ebacfefd082dc48c549844d630ea47	我有一根多的釣竿。你要嗎？	draft		p10b-7 draft; authority-ok:pole（這裡的 pole 是釣竿）	
+3720	34	conversation	d9cbf61c0964aa988395ff5d1eadafb9d8ff95c6d48ab87b1dd0d97a80fae513	謝謝你。我很樂意收下你的釣竿。	draft		p10b-7 draft; authority-ok:pole（這裡的 pole 是釣竿）	
+3720	35	conversation	cc7d1f4f1738a22467d8094b9ac3d1320c7b169faa41d7d9033e0f117e881610	你真好心，不過我不需要。	draft		p10b-7 draft	
+3720	36	conversation	a5741e4478ad39c9a6ffe6c5620ec8bc9b98f5a76edbd570124b34f6f9a57d18	前方有什麼，恐怕我說不了多少。我發現，在深淵深處自找麻煩的人，麻煩總是迫不及待要跟他們打交道。	draft		p10b-7 draft	
+3720	37	conversation	82b4c1111be209c92ad3fabcc392a769133efcca026b09c841881380f78a49e3	你連自己的影子都怕，那你在這裡是怎麼活下來的？	draft		p10b-7 draft	
+3720	38	conversation	3efa092593ec4294d7f909804886306fd9a673146a846d85156471d07d9da712	你總該知道你周圍的情況吧？	draft		p10b-7 draft	
+3720	39	conversation	e7a895bfdefc701d80a450799d6d8ab9b095105e1faedfbddc6f3053ccfbdb95	你有沒有看到一個帶著少女的邪惡巫師？	draft		p10b-7 draft	
+3720	40	conversation	0ef0379f43205546e00b690502ce25927157a43a64fe3e1bea971176167f3399	我小心遠離麻煩，靠釣魚過活。	draft		p10b-7 draft	
+3720	41	conversation	53a3304ff38442445b9d5ffe0679bfae5e0b45662a2340c6b9ca90721e2e518a	你在這種地方去哪裡釣魚？	draft		p10b-7 draft	
+3720	42	conversation	56b2f4bb83b5a06ca2fa832e497b59dd6e2eff28080a047a6ccdb946e772219b	我有更要緊的事要辦。	draft		p10b-7 draft	
+3720	43	conversation	e7a895bfdefc701d80a450799d6d8ab9b095105e1faedfbddc6f3053ccfbdb95	你有沒有看到一個帶著少女的邪惡巫師？	draft		p10b-7 draft	
+3720	44	conversation	b6946d8a4240f09793be3404af3518a2eb2eb040fa02b06a34c03f97ff10b477	只要你往北走，很快就會碰到一個池塘，魚多到你踩著魚走過去都不會弄濕靴子。	draft		p10b-7 draft	
+3720	45	conversation	0a8604a28fe6ae3a8282f1357439fa81397db35b593bcdf424bc68964db138a7	在那裡用釣竿，你很快就會有吃不完的食物。	draft		p10b-7 draft; authority-ok:pole（這裡的 pole 是釣竿）	
+3720	46	conversation	7d50f08cff9d448cd97fd1935a6f521aa9267200b995b13074333535e14e5833	我會的。謝謝你。	draft		p10b-7 draft	
+3720	47	conversation	ece8bc0efb6dc28e7446acfc6777446d3d441a7186dde6aa0bf342437f921ddc	也許晚一點吧。	draft		p10b-7 draft	
+3720	48	conversation	d4a14a8d787323d2b26bddf1e79670d1216234e5f4ea6f580884b55882aa9a82	你要是需要，我可以把我備用的釣竿給你。	draft		p10b-7 draft; authority-ok:pole（這裡的 pole 是釣竿）	
+3720	49	conversation	da63cbdcb63bfb79edca9a2ae2b7ccb08bdd7bf9633daea069572a079564b235	我確實需要一根。多謝你了。	draft		p10b-7 draft	
+3720	50	conversation	06ee299b009baf26eb5befae83accabc87c17a7491e4f9af4650bcb6478630c5	你真好心，不過我不需要。	draft		p10b-7 draft	
+3720	51	conversation	89f75a6cd88791ed1460984d1ece90d51b2b93f3c99666861f838cf2467af98b	不，我沒看到。我想我該走了。	draft		p10b-7 draft	
+3720	52	conversation	4ceae5798352e441a536c92e10867dd2d02d6ef4c74e262f90627436e201e085	再見。	draft		p10b-7 draft	
+3720	53	conversation	584ef783a9c908e892fdbb887302216b603ad532696b5d7feccc03f09e0cca3b	你該多學學什麼叫勇氣。	draft		p10b-7 draft	
+3720	54	conversation	e898b7ad102ee0e75d0a500db91c2112dfc5679e8e8639e6b2ca8bdf67162d8b	你看，他就在那裡，在你背後！	draft		p10b-7 draft	
+3720	55	conversation	acc6deb685fda2338a5b7611a05498052cbf581e2e7460448535d67e93130578	願你每次下竿都滿載而歸。	draft		p10b-7 draft	
+3720	56	conversation	38839a9ada42bbf15eb6672f4718122fc79ab8986d1cfb903c9a975e1880ae70	謝謝你，也祝你一樣。	draft		p10b-7 draft	
+3720	57	conversation	abbb74d379fc6224e3a69361fb484f683970e33f655cb6c4136b234e256a91b1	你比上次見面時更想聊天了嗎？	draft		p10b-7 draft	
+3720	58	conversation	226695df2e0908e831abc2b7665db565b3117aa5860df9e5728c277e0d2df864	沒有。我沒時間理你這種人。	draft		p10b-7 draft	
+3720	59	conversation	d8716375bce8e5ec5d5b526fecf8f4c2b49e2a1d663ba23abc7f3fdabe224cb0	是啊。你是誰？	draft		p10b-7 draft	
+3720	60	conversation	91887a899e55de83b210c381959cf17e5ee1023799a06544ea400373e9c272c6	你好，朋友！你釣到魚了嗎？	draft		p10b-7 draft	
+3720	61	conversation	bc66d1cbf58b001b86ff6cd018974cf9cc6fe89709bdd82c3ccfbe59c272f7a2	是啊，比沙漠裡的沙子還多。	draft		p10b-7 draft	
+3720	62	conversation	1e5b9c4d7c7853fae9d842e99ecbbac4aabe8f620e6c26de706fa569efe7fa07	太好了！	draft		p10b-7 draft	
+3720	63	conversation	40ebf45dc6c75f6ee4c3dcace3a6d11f64ce46d2e149c56cc607983d51293a94	我還沒試過。	draft		p10b-7 draft	
+3720	64	conversation	24e52931e3bf17902d0987e1e6b25f8fab623f9b325defd2af6f17429fca9bf1	那不重要。你知道附近有個邪惡巫師嗎？	draft		p10b-7 draft	
+3720	65	conversation	984f2fbe055e62c7158a6567cb81389f9b2e3fcc971ec4181344025620ca1c61	歡迎回來！說真的，朋友，你能活這麼久真是幸運。深淵是個危機四伏的地方。	draft		p10b-7 draft	
+3720	66	conversation	578e3f58bfff4080db36c2efee287fbacc5c6994e7c75cc13d60d3107ee6edf3	我是個放逐者，在深淵的重重危險中掙扎求生。你脾氣這麼差，居然還能活這麼久，真讓我驚訝。	draft		p10b-7 draft	
+3720	67	conversation	309d548ce3ba5d9c87b78e5decde9b8f8f916ee471fb02edbcea80931568b7db	你有興趣交易嗎？	draft		p10b-7 draft	
+3720	68	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	有。	draft		p10b-7 draft	
+3720	69	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	沒有。	draft		p10b-7 draft	
+3720	70	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-7 draft; 交易用語沿用 3672:16-30	
+3720	71	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-7 draft	
+3720	72	conversation	2c08262c480886ee27974c816b08b821ce36ecbc61b6a9ff885bc9eed3de664a	請見諒，我得考慮一下這筆交易。	draft		p10b-7 draft	
+3720	73	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-7 draft; 交易用語沿用 3672:16-30	
+3720	74	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-7 draft; 交易用語沿用 3672:16-30	
+3720	75	conversation	5dfc1076f969b6cc7e1337f299ed5c23127dd744ee54299617bc0d7658a7637a	成交！	draft		p10b-7 draft	
+3720	76	conversation	63daee96b682067efc4015fa78e0304131d8414dbe18a0b0798f287fd6a8b668	你的出價我沒興趣	draft		p10b-7 draft	
+3720	77	conversation	b478189b0e2b241088c7751a16c0cf2eb5789e58f490af1eafa4c6fb75c4500d	你當我是哪種傻瓜？	draft		p10b-7 draft	
+3720	78	conversation	d8026f003e10d151a41a0901a0bda97ca7dc508bee9dbc678ff727b3faef9f5e	這種斤斤計較的討價還價，我已經煩了。	draft		p10b-7 draft	
+3720	79	conversation	3a81bdf5059f879ccec438265d9bcebadae24fa0845e53c3fd363d266296d1fa	這根本不算交易！	draft		p10b-7 draft	
+3720	80	conversation	4143ca0e118ea6e7bc63e54f40e1de5f78032e45a350dbba0e34bd8cdc291e0e	你是想恐嚇我，逼我交出我的東西嗎？	draft		p10b-7 draft	
+3720	81	conversation	013b9f71fe843f8a362f841e9fac2b920f798ddd569e3986cc9763d37769823a	沒錯，你要是不照辦，我就讓你受重傷。	draft		p10b-7 draft	
+3720	82	conversation	f882d0abdd6dc243dbb1cd2153576b8713cdc39d709a8f81a99fe549fd0242e2	不，你完全誤會我的意思了。	draft		p10b-7 draft	
+3720	83	conversation	77386079b8ea8f84b56d49246bb0058ac4b22bd66586f488f3420971197653e1	你要是窮到得用偷的，我不會阻止你。	draft		p10b-7 draft	
+3720	84	conversation	532cd34cce57676c22d98548c1aadc3ebd740195f0c4e76767671921117e02cb	惡棍！我要給你一點教訓！	draft		p10b-7 draft	
