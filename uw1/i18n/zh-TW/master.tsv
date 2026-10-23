@@ -810,6 +810,168 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3594	51	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
 3594	52	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
 3594	53	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-2 draft; 交易用語沿用 3672:16-30	
+3599	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	2	conversation	cd89962085b98100536660b9f3242798bc34fff2430ea9346a66c4b154a618f5	你自己才 Bica 咧。	draft		p10b-5 draft	
+3599	3	conversation	d1e5cb33afbb66cf80c56823fc70f5ea6e6a74eb8acd58ca1d4b410e4466a20c	呃……你好。	draft		p10b-5 draft	
+3599	4	conversation	4060b3fd138b5e2ab3e2f8b821c2c9d5439718c1d9c424ac7aced4e76bd7e405	抱歉，你剛才說什麼？	draft		p10b-5 draft	
+3599	5	conversation	1634870c58e05098f63240575bb2c9b492f7d66775a3f155dcf1a5d00f8080e7	Tosa yeshor'click?  Tosa sorr?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	6	conversation	7a68156c32e207aa04270655c01ebf497e78c6756c01af5cea9265d25b61c411	抱歉，我聽不懂你的話。	draft		p10b-5 draft	
+3599	7	conversation	359e7581cc36f3db23533597ab965872afc67250bc4dfb8b4b4fd5e223696f38	你會說我的語言嗎？	draft		p10b-5 draft	
+3599	8	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	9	conversation	dec881db76fd80d6322aba7a7d690c3405b37c8dcd24b6ad9a2ef1a912064210	Yeshor'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	10	conversation	637f35969af59a3816865187e15c3c085cd301b426f80dc8b86e5362d8807225	'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	11	conversation	d34c6000ceedf798656647b74e9cfeced43371c1cbf80e5a271ed1c90fe2f09f	「'click」是「是」的意思嗎？	draft		p10b-5 draft	
+3599	13	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	draft		p10b-5 draft	
+3599	14	conversation	637f35969af59a3816865187e15c3c085cd301b426f80dc8b86e5362d8807225	'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	15	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3599	16	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	17	conversation	d3b3afe0bbbd84af67ab89da9422f7cd8dbe36c9a9d08bbac161c29bffca366f	喔，又來了！	draft		p10b-5 draft	
+3599	18	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	19	conversation	a22e05b777c5e20f33ec4f762e6aaf61ffac818578af8fe2236e9aac7fcb12f0	算了！我要走了。	draft		p10b-5 draft	
+3599	20	conversation	8ced2b7b0fbb82d0898edca482c2bce7085b30b509981c164bff30286ac5ae7e	Tosa thit sstresh.  Tosa eppa Urgo.\n	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3599	21	conversation	de9d0351cb6fcbea27861ed9e22de01ade2030dd68173e697675d49c44e83c9b	他指著柵欄後面走動的人影。	draft		p10b-5 draft	
+3599	22	conversation	eba2c612c6c45a22c8ac8f20599532b354ee15e9a7b9a829b6bc3fa42d118d12	你說是就是吧。	draft		p10b-5 draft	
+3599	23	conversation	852c821ec49ab5d3359552a708064a3c3cb804b085c03e1c445d1df31d6fcf7c	抱歉，我聽不懂你的話。再會。	draft		p10b-5 draft	
+3599	24	conversation	2f0974bd4c9b0404408a09813e1e1f76a38b4f8065e26c1d75363cbf6ec538e1	你想要什麼？	draft		p10b-5 draft	
+3599	25	conversation	289eb43a9a6d1a2fe90ae78e39eaac45e5ef1e9367f359d8f8f9bcbf6db95208	Tosa eppa Urgo?  Urgo sstresh tosa?  Urgo sorr.  Tosa sorr?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3599	26	conversation	cbcd746266165c6cf841b1d213219203535426bf8dd880ce7245dadfb3fca708	不，我不是。	draft		p10b-5 draft	
+3599	27	conversation	eba2c612c6c45a22c8ac8f20599532b354ee15e9a7b9a829b6bc3fa42d118d12	你說是就是吧。	draft		p10b-5 draft	
+3599	28	conversation	5d8a995a6fa7cf7c577cc9d49ca9e00d4aee4d0bcd5e2ad5caff27e2a8097276	為什麼？	draft		p10b-5 draft	
+3599	29	conversation	fae1cd1b4494d53a73eb68ecbd81562ca5bbd1f77c3652bb3e1ae1a037cc86e3	為什麼不？	draft		p10b-5 draft	
+3599	30	conversation	c2b74adfaf07a01014a23567d172a04feefbeb9608125e3419e1a2cdff291761	Tosa yeshor'click!  Isili 斯希薩里.  斯希薩里 yeshor'click.  Isili sstresh tosa, sseth?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	31	conversation	8aff5108a050bcfab25817bf86c37c2660c09db0c5cbea06cb49565c6644e7d2	是！	draft		p10b-5 draft	
+3599	32	conversation	4dcb71f5bfeb57f690a9df36a6b7872e5d60674acecb042d4719bc602bf9d210	不！	draft		p10b-5 draft	
+3599	33	conversation	f696560d0173d5bd9f45b6efa2ba6c1f43a90a1582bb9940518b37aa65c62572	我很高興。暫時再會了。	draft		p10b-5 draft	
+3599	34	conversation	62629b34025269b43f992e1d394bf56de7b78e9d507a8ebf55c9e658e7a5ff5b	Bica，斯希薩里朋友。	draft		p10b-5 draft	
+3599	35	conversation	6271325a981297b36b01bbff4c255ef72b985ba2ca2b6e5f1a908029ee1ba6cb	Tosa sorr!  Tosa 'click eppa! Tosa eppa, isili yethe tosa!	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	36	conversation	f696560d0173d5bd9f45b6efa2ba6c1f43a90a1582bb9940518b37aa65c62572	我很高興。暫時再會了。	draft		p10b-5 draft	
+3599	37	conversation	23802710b0ecadb39466fccb11aeed3fbcdb269e13699b29cde67dd59978efb6	抱歉，我聽不懂你的話。再見。	draft		p10b-5 draft	
+3599	38	conversation	de5e6979eeea581eb7ea33c0dd0e3e2ceb41b533c2d73e5d15a5d1635e2d4632	Urgo sorr. Urgo sorra zekka, thes'click Thepa.  Thepa yethe Urgo.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3599	39	conversation	c2b208d374dd9a7a0b7f6211595389fd37c2eaa6d6882e902f46ed1b6722a1ff	不，請不要！	draft		p10b-5 draft	
+3599	40	conversation	9349a40a3b4ff33e9bed2b755718fc3088cb5e61b66be052f037ccbae45c1cca	是，你一定要！	draft		p10b-5 draft	
+3599	41	conversation	995e0822a229f6f536e9c34031375965285b9512a132f541a4a726a72e899880	太複雜了。再見。	draft		p10b-5 draft	
+3599	42	conversation	bc2fecff4a76d8ebd59af5a68219156bb8a1f5dd949d0626b22c949670d29a77	Tosa sel'a zekka isili - isili sel'a Urgo tosa.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	43	conversation	ee0cb7d2da68c4f55855a55e7a19097e5a1e0422a2a0b91b5ceea277016912af	好，我會的。	draft		p10b-5 draft	
+3599	44	conversation	1cc92b9015a8e4c4beb5c805daafcfb474535f41cdabfe88a2016b822bc5371c	不，我不要。	draft		p10b-5 draft	
+3599	45	conversation	f84af1dea7b994a8990a13be360ff6661e55da673447cf4c330cefe706b507fa	我這裡就有一些。	draft		p10b-5 draft	
+3599	46	conversation	2174e4464f83451000eb602d1b7be532ef00fe88c765f0848d857b9bd606795f	Isili thesh tosa.  Tosa thesh yethe Urgo?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	47	conversation	c10c037156053bfe962132f8eb70e273899bcbf44d3db5e8d88a465a07e84d9e	當然。	draft		p10b-5 draft	
+3599	48	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不。	draft		p10b-5 draft	
+3599	49	conversation	03d427067bbc5facbaa2d5dc0d5d569367da7c1b3456d838e76f8d83798a43ac	Tosa yethe sorr Urgo, tosa eppa Isili.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	50	conversation	84d929baef18914ccf51a247426149e4b5e60cde180187f6775d2788eea4bf1e	喔。再見。	draft		p10b-5 draft	
+3599	51	conversation	892d8d4d0a04a19f52ff2b167c3d88caaa8a88abd98fa1963ce996605796742b	謝謝你。	draft		p10b-5 draft	
+3599	52	conversation	f59e2f52e3a02f6ee478fa16369ced83e4e07f876f82436257ef447b3791b553	走廊下去的隔壁那間？	draft		p10b-5 draft	
+3599	53	conversation	28392c2b50be79353d51c8b596c92ac40ca0e11421612130eeb2c41d3584998d	我不行。我實在做不到。	draft		p10b-5 draft	
+3599	54	conversation	9ba79c3c97a577b8cc61725e69404d59985e2d647da2d9c89833e2e2cf955340	Tosa yeshor'click.  Tosa eppa isili, sel'a isili zekka, isili sstresh Urgo.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	55	conversation	039e8635d722399faf25eb4f1dc12080554593c387432a60e248e7c519e05dab	好吧。一定辦到。	draft		p10b-5 draft	
+3599	56	conversation	647d12376b5556cd6f0700638a3dedbde339b18c3de4890eddec2e423b6320c4	再看看吧。	draft		p10b-5 draft	
+3599	57	conversation	213725f2c73ade58c9c4258fe00c92f1a575030c20a43c7f2aa7b81198c68a60	Tosa sel'a zekka?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	58	conversation	cb0284c1c09fbca2d6fc422a2096b0fa38c3213423729aeef262279f000d6f37	在這裡。	draft		p10b-5 draft	
+3599	59	conversation	69170292dea628cdaef6333a2460adf0723bd6e6ef076a3ade779ab470e65074	我一點也找不到。	draft		p10b-5 draft	
+3599	60	conversation	7e7402d91b9921714ac6b4ac55c6258785474b35c8e6318d620d42ac645311f9	抱歉。我會再回來。	draft		p10b-5 draft	
+3599	61	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-5 draft	
+3599	62	conversation	00ee45ec4ce41154f03f9c9785a94e11a2578d4a25edcd47d34032297ed825f5	Tosa yethe Urgo?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3599	63	conversation	3a5e00fb42636adbdf5878442d89374f0c36a80186776fe5664afb39db51b91c	不，我不能。這違背我的誓言。	draft		p10b-5 draft	
+3599	64	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	好。	draft		p10b-5 draft	
+3599	65	conversation	356cf8f59318285411d8428348914486c4edc982cc27dc2eec9f8c5aae8d75f8	Isili thesh tosa! Tosa yeshor'click! Tosa eppa isili!	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	66	conversation	2f5335aae77b9c7e466cd02b3f78d918d57787267e1853dd669c1a7aa67ce98c	謝謝你。再見。	draft		p10b-5 draft	
+3599	67	conversation	99cf5e05c294a0cdf702c8ffdff258f671d7f062bd8bb0246ba860fb88194b06	Tosa 'click sel'a ossli. Isili 'click sstresh Urgo.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	68	conversation	6c672eafc62815f174e73859c42d0edeceeac25dd2d9456184913a8ec769e081	喔……再見。	draft		p10b-5 draft	
+3599	69	conversation	1fb88d7517f8df0ddcbcd77decfbb5299cb8c9a4442ba2c418ccfaaeee3af42d	抱歉。這裡還有。	draft		p10b-5 draft	
+3599	70	conversation	af50aa9220f47cf5a6b2134c660fb540ec19b179c757ef92a894d422f7c0d309	Tosa yeshor'click! Tosa thes'click sorr! Tosa eppa isili!	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	71	conversation	60f7d0c7996213f7b587e3adc2ae0d3d767166f0803ede343c7d2c44825ecaf8	Tosa sorr.  Isili 'click sstresh tosa.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	72	conversation	82d66a7decf53fd28e447a4e10e003fdb3b6e8e7e6f60987186338fbbcf9d322	Tosa yeshor'click.  Eppa 伊許塔斯 sstresh.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	73	conversation	47779075d03ec0a826a03fc9d64dcc7fce397ef3a26b5b73203cd7d4036bf153	謝謝你。再見。	draft		p10b-5 draft	
+3599	74	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-5 draft; 「其他……」讓玩家自行輸入（isht、murgo 不翻）	
+3599	76	conversation	9d85ad1ad43328a9f0cdeb81ac220598234423dadc65f022301d3309ae9eb219	Sel'a tosa sstresh.  Yisa Toosa.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	77	conversation	efffad34cc474e81c3b1180edc2297257c66e9a43fd3f4222f79d85a49cbfa9a	他朝南方比了比。	draft		p10b-5 draft	
+3599	79	conversation	4477dfbcf6c933d51c39590a3c01fa59a12ea70c0ec92bb0f6c0b36ca654ea96	Tosa sstresh Urgo.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3599	80	conversation	09222e78e5192c1524b54dfcca97693883c5aadbdd9a0cb42f87bc38eddb897a	Isili 'click sstresh.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	81	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	82	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-5 draft	
+3599	83	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不。	draft		p10b-5 draft	
+3599	84	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-5 draft; 交易用語沿用 3672:16-30	
+3599	85	conversation	5475b2b30073765fe31df2e60b665c3549aa779cf83d32ddf08817b93d5fcf4e	我要你把這些東西交給我。	draft		p10b-5 draft	
+3599	86	conversation	1ed33b3a7d1da6b4d57aa5751e098b9407fd8d9ed65b6e141569221c4b477ee1	我得考慮一下這個出價。	draft		p10b-5 draft	
+3599	87	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-5 draft; 交易用語沿用 3672:16-30	
+3599	88	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-5 draft; 交易用語沿用 3672:16-30	
+3599	89	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3599	90	conversation	ac324dcd5dde7dfae18a74b36ce4ba5f980bc678c6e90ba2147c2c44c5c47c47	'Click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	91	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	92	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	93	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	94	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	95	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-5 draft	
+3599	96	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不。	draft		p10b-5 draft	
+3599	97	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3599	98	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3600	1	conversation	a30886e0118b1dc824a687c9c81eb06edc41ec12bb7472b440aa725a698fbca4	問候給你我獻上。伊許塔斯，我被這麼稱呼。什麼東西你想要？	draft		p10b-5 draft	
+3600	2	conversation	8be2ee62f76e02ea2063b5fa8d9ec87cc4f544807e80f4bec5eba59d4ad8e2fe	真了不起。你會說我的語言！	draft		p10b-5 draft	
+3600	3	conversation	48e6eaf3c334a1a63d52d8386804f011b3b4166bbe76bf62e6096a06a3d9557a	沒什麼，不過謝謝你。失陪了。	draft		p10b-5 draft	
+3600	4	conversation	780160f21c5b75b64b603ff1429eeff7c2287b02d65c4024f13f7de0230138ff	雖然被其他瑟帕，靜默族我的族人被稱作，這諷刺一件是。只有我們，在瑟帕之中，你的語言能說。	draft		p10b-5 draft	
+3600	5	conversation	8e9e7e5315916de867955430a219880a72cecc599824a6ef6d9161b06b756b32	而且說得非常好。	draft		p10b-5 draft	
+3600	6	conversation	8b5ad2d41331410075bb624c44e9a7430cb103883006442cfc35840f3f0940aa	瑟帕是誰？	draft		p10b-5 draft	
+3600	7	conversation	a061bde9e4eb17b1f8e40cc2c5cbf3d1e638afa3b1cca1e2f27894457f0f1c76	拜託，我得走了。	draft		p10b-5 draft	
+3600	8	conversation	1abff16d4f3a1c9e46316a19bc1d4249b6efcb0eab1368c3d833df98a7ed34a6	不容易是，可是我們試著。現在，你有什麼需要嗎？	draft		p10b-5 draft	
+3600	9	conversation	8b5ad2d41331410075bb624c44e9a7430cb103883006442cfc35840f3f0940aa	瑟帕是誰？	draft		p10b-5 draft	
+3600	10	conversation	0fadc30f09387f870a1c15436475eccd3b07bb5740191027b80c5781097bcbcd	你有什麼故事可以告訴我嗎？	draft		p10b-5 draft	
+3600	11	conversation	c0e49b7b52023443bc9e54a1677ade0b0598f65bd91cef9356ec814671852c69	不了，謝謝你。我得走了。	draft		p10b-5 draft	
+3600	12	conversation	d78083af35556ac76236b9cf99f8ce4d75afe1dc899e3451bf8ac052bb4b4698	瑟帕是我的族人。被你們蜥蜴人他們被稱為。	draft		p10b-5 draft	
+3600	13	conversation	19b5780452c46e203e77a4d7507f534097265b14f903f4fec31ac8a5c7c33db0	啊。你能幫我翻譯他們的話嗎？	draft		p10b-5 draft	
+3600	14	conversation	6eb01e8a80f68f99c4a30bd29dd395f3b7aa6861690f42be0ba452c05f3ebb10	真有意思。能跟我說說歷史嗎？	draft		p10b-5 draft	
+3600	15	conversation	811a3285b3f4673ef10d439d20cd6ff5aa3135733728b9113f1b2691ba02a888	不，違背我們的誓言這樣做。我們一個謙卑的修會是，發誓要守住秘密。也許你們族人之中，有人懂得真言。	draft		p10b-5 draft	
+3600	16	conversation	b8715609d298c5e40c4ec99ab369ce22240292ace94d75be600ea88056a2d7b3	也許吧。還是謝謝你。	draft		p10b-5 draft	
+3600	17	conversation	0ad8fa384fdd3769e2e2dea68d3a36cb18569ff955d0a7315cffdc2971cf5d63	真是謝謝你喔，什麼忙也沒幫！	draft		p10b-5 draft	
+3600	18	conversation	a4b1915333dc43fcde283a73db614aad00a0e7cbf2b245e55a3b0e7eab03b2fa	你能跟我聊聊嗎？	draft		p10b-5 draft	
+3600	19	conversation	9638246d9c52018d96a722b3783a2c5798563f9658d1dd8987b7ac42d66644fa	不。一個陌生人你是。我們幫不了你。	draft		p10b-5 draft	
+3600	20	conversation	2deee681e4e55781a661d92ffb7b202a63db306d94b9735d34b063a9dd816bcf	還是謝謝你。	draft		p10b-5 draft	
+3600	21	conversation	f1c7637d6f9029cc817070d8854f6f7f96d5d6b7e8c466d1bdf7fd46a0eb2c3e	好吧。我會尊重你的誓言。	draft		p10b-5 draft	
+3600	22	conversation	57a0a5f7db97c4af2321175cbf55093e702ad017df5874fafe30eda3d486ad6c	瘋巫師的事想知道嗎？	draft		p10b-5 draft	
+3600	23	conversation	28b522d343a444be623f348ad4c0c96f736ec267a4d0e1aea3fe0f0876d62fd8	瘋巫師的故事再聽一次想嗎？	draft		p10b-5 draft	
+3600	24	conversation	335e1ad9cc1c7aafe36afadc996c724518e2672d0f61ad135236f9c78e074b8f	請再多告訴我一些。	draft		p10b-5 draft	
+3600	25	conversation	0dffd8447474565eca4756675a50e2062459b36427a7f88f60b7fa13721d586d	我聽膩了。再見。	draft		p10b-5 draft	
+3600	26	conversation	7afe90fe1905607ab7a1f2324ed64492bcd9dbfc7a11c958ae17a9e729bf561a	凱布勒斯爵士死後，喃喃自語的巫師在上游開始做事。之後他跟我說話，因為你們奇怪的語言我們懂。他說了，那個名字始終沒人知道的人，說了一把偉大之劍，被他折斷了。	draft		p10b-5 draft	
+3600	27	conversation	ee9701212c9057f969b38de72f7c9351da98a915826be48ab71bf10a65336bfd	再多告訴我一些！	draft		p10b-5 draft	
+3600	28	conversation	7651824bcb8082312e480b3c5148c2d7a319370a0807a3855f6000e796d6bd74	請別再說了。我得走了。	draft		p10b-5 draft	
+3600	29	conversation	cef73dc38054e2c8235f5243cf225b21b1f8045c85a787f713268d4ee774c24a	更多我不能說。為了一個人情，我會去打聽更多消息。	draft		p10b-5 draft	
+3600	30	conversation	ca82380f2aa3e2fdaff4b19a93abd9cb6e8a1ac88341f1a609005eb99a87f06e	請告訴我你要我幫什麼忙。	draft		p10b-5 draft	
+3600	31	conversation	61fdb866619ed89fb87ea7183fbb40b35719d525c3850ceaa5cd6049428834cb	我沒時間管這種麻煩事。再見。	draft		p10b-5 draft	
+3600	32	conversation	496f7e3a2f8379b24b8cff48bb23a0a2e52867580fd69924d4f98669bb9d91e9	謝謝你的故事。再見，好心的先生。	draft		p10b-5 draft	
+3600	33	conversation	d0cac08b599ba629dfddfa4f6f653e40bcca99f356c87e2e5833b4f48a915147	歐西卡，我們的首領，往上游去了，去殺一頭瑟帕叫做 kri'kla 的、有很多條手臂的巨大水中野獸。他再也沒回來。你願意去找他嗎？	draft		p10b-5 draft	
+3600	34	conversation	2d176b5a93da52e86d7d69c08a723b410825cb31aea9f00423b2c4d5297fdc83	我現在不行。也許晚一點吧。	draft		p10b-5 draft	
+3600	35	conversation	9c94c328ea6cdbf17cba458fae1b76d4731b7f9449d59ab382aa51d8299458a5	我會去找你們的首領！	draft		p10b-5 draft	
+3600	36	conversation	c34bb7bb9a85f42881757db2e2c790ecc34893bb375bbed36a8470ed94505fd0	往上游歐西卡去了，再也沒回來。瘋巫師的書他帶著，也許說得更多。帶消息回來，靜默族的人會重重地賞你。	draft		p10b-5 draft	
+3600	37	conversation	03f1e7b05265b02e06ad94439fa33573f9560ea912cfeb3eee06bd4e7145fd95	我會去找歐西卡。	draft		p10b-5 draft	
+3600	38	conversation	c85d1e3b987c9a3d432ea3805b3c80f4bad8f889afc9f97332932e158e885303	這裡不歡迎你！	draft		p10b-5 draft	
+3600	39	conversation	f0cbf65cad7b4d618152105b0e0a3ce22b51f5d5d02bcd55703bbe6dd5c5c592	什麼事帶你來這裡？	draft		p10b-5 draft	
+3600	40	conversation	ba162ae532440acbb7390dab03fa44cc9cfd482166e2015f4d91fbd78a34f2a7	再一次，問候給你我獻上。	draft		p10b-5 draft	
+3600	41	conversation	887813382a506fee508a15963f5c5ab14f75f656d90ad0678da6dc9b8fe7eb3d	抱歉，我得走了。	draft		p10b-5 draft	
+3600	42	conversation	d7e7e81679eeba6eff192e70e51fbcd81f203957bbc9963700f67a77fd25c5da	等等！請幫幫我！	draft		p10b-5 draft	
+3600	43	conversation	c43f42159a92a3441675342c0df28b9d732ce9178d97f69064d4401b4e19f24d	我有歐西卡的消息了！	draft		p10b-5 draft	
+3600	44	conversation	9ad800c938ee7c7eaab2505804cef2deaa5378ff8cfe6f577d39fc5f5c6ead47	你有什麼外面世界的消息嗎？	draft		p10b-5 draft	
+3600	45	conversation	51255c2f438321982929b2c4d2b176af06e97c2efbfe9ebeeed61b7395e55a2c	關於那把劍，我還有些問題。	draft		p10b-5 draft	
+3600	46	conversation	d78a7b45b0b18bcf5629bda4c950de8da76afcfe4c9423d6063308a4ca01140a	我擔心你。也許我不該幫忙。	draft		p10b-5 draft	
+3600	47	conversation	31b55f94a48ff7dd0b2423c8d200b7a0bcea7041d1ad679985b77be9eab34740	好吧。那我告辭了。	draft		p10b-5 draft	
+3600	48	conversation	4216b74dc6f1fc7491f5b7d043e5308bda5eae8cd42b8f666d452be445664314	喔，拜託，好心的伊許塔斯。你就不能幫幫我嗎？	draft		p10b-5 draft	
+3600	49	conversation	42994a8d390177d171afbfd36361f415b9f41564f1c34ce98c4c7ed64e96b69b	伊許塔斯好心是好事。深淵裡仍有許多文明的族群，必須以很多的善意對待。知道這點很重要。	draft		p10b-5 draft	
+3600	50	conversation	fbbb679f20c375998162fa4b130bb962cd29db045798ea84b32c47aaa35ce517	拜託，冒險者，歐西卡的什麼消息你有？	draft		p10b-5 draft	
+3600	51	conversation	a5397d2df3e1779c14b131fe02b61dca0fcfcb996a87b264b8f60a926710d9cf	我找到了這個。	draft		p10b-5 draft	
+3600	52	conversation	f4fa9be865fc73903cff920efa5735bd33cf7b030ce2fdb3ede604eb0d63a2f8	還沒有消息。抱歉。	draft		p10b-5 draft	
+3600	53	conversation	5738a3620f7f2ca862794a325d5109628e10bbb45dcd3b8f2a5ff49fdd38c9e2	這個什麼也沒告訴我。請找到歐西卡的東西好嗎？	draft		p10b-5 draft	
+3600	54	conversation	8de6f6df17cba8de0fc7c182f98914747ef25b1cb9d653bf5b692b2751f9c187	我會繼續找。	draft		p10b-5 draft	
+3600	55	conversation	03aa48f41341c06b284f8f1048ee7f2771772a170f0c55eb2f0d45bca40e1226	喔。那這個呢？	draft		p10b-5 draft	
+3600	56	conversation	b9de6e5f933db593433c656a79f2a20c7314815d2a724ebe19db01250eb8512e	啊，對，這個歐西卡確實有。喔，這是什麼意思？	draft		p10b-5 draft	
+3600	57	conversation	fab15aed6f1bc687d7613eb74b76c655bcc1dcf734bfde4da5173536afdde3e7	我在上游的一個房間裡找到了他的骨骸。	draft		p10b-5 draft	
+3600	58	conversation	930ed4c77ed92dab67f9fedf2a7e23501ed4de640fd20f05f4022ae645559f00	真是悲傷的一天。不過，還是謝謝你。來，一份禮物給你。	draft		p10b-5 draft	
+3600	59	conversation	a51302aceacf479c4ffebb56c61e279796ef71b2696dce2417a628ce02648a0c	在地上，我把它留給你。	draft		p10b-5 draft	
+3600	60	conversation	9e41164cb68b90cf8133a32422dceef505ce83d054281d47edff7b018531e88c	非常感謝你。	draft		p10b-5 draft	
+3600	61	conversation	bfd22b9b52bc1c73f83dffe7faf02d1dbc04fc2afa551757aa5a8528415baf16	現在你能告訴我那把劍的事了嗎？	draft		p10b-5 draft	
+3600	62	conversation	61222037cca7bfd58899f1d36854f1b4bf8fa57871d626822713e965b7e5dd55	你想知道什麼？	draft		p10b-5 draft	
+3600	63	conversation	02fbe71e7ae4627b324ca6f05a0d45b7fa517e6f6ba1e43f0ec0dd9ac96f5209	你告訴我的已經夠多了。謝謝你。	draft		p10b-5 draft	
+3600	64	conversation	b82db2ded22f38386f936b5a17321c9f0f95bb996197c13ef4f0e37f98431500	我要去哪裡找那把劍？	draft		p10b-5 draft	
+3600	65	conversation	0d507163137359398c27d1d9855e7f70a444334c5ac3e8bdc9c8148fcc09fc26	劍斷成兩截了。巫師把劍柄帶到下面去了。歐西卡找到劍刃的線索，他說。劍刃在我們領域的某處，我想。比這更多的，我就不知道了。	draft		p10b-5 draft	
+3600	66	conversation	a5b98d0c736b7fa8ebf438d4a8f0dca53a065231c6fe648f9b288601132848d6	謝謝你的幫忙。	draft		p10b-5 draft	
+3600	67	conversation	8de6f6df17cba8de0fc7c182f98914747ef25b1cb9d653bf5b692b2751f9c187	我會繼續找。	draft		p10b-5 draft	
 3603	1	conversation	98aa6675482552881925fe70d82559692d811b3bcd33f53b9a702c24d5322696		untranslated		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理	grammar-sensitive
 3603	2	conversation	4ed28f82ca96c3342a5c591668270f78c26dae22fd953772a6c14e52f46e1b22		untranslated		P10B-1 稽核：sex() 選出的稱呼，代入 3603:3 的 @SS1 模板；P11 與模板一起處理	grammar-sensitive
 3603	4	conversation	7ff1536c1df56b604ba927f4aba0980ba11df6fa309480460d35a6368be1f734	我是無辜的！我被冤枉了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -973,6 +1135,80 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3605	18	conversation	ee2708c40b58e7ca49f5c3030a8b02cd6e8966c88e76aaf46749d708ae39c6cd	這裡不准探險！好了，走開！	draft		p10b-4 draft	
 3605	19	conversation	30390115b066968fc0628684c0e97b2805049e3e5d7c9ffed69c551632a492e7		untranslated		grammar-sensitive: 稱呼片段（sir），代入 3605:21 的 @SS1 模板，P11 處理	grammar-sensitive
 3605	20	conversation	765cc52b3dbc1bb8ec279ef9c8ec3d0f251c0c92a6ecdc1870be8f7dc7538b21		untranslated		grammar-sensitive: 稱呼片段（madam），代入 3605:21 的 @SS1 模板，P11 處理	grammar-sensitive
+3608	1	conversation	29812a64e6f7a1daa5284d8b3be84d34f6dc843099a4debfec8cf7fe93e936b1	他指指自己的嘴，搖了搖頭。	draft		p10b-5 draft; authority-ok:mouth（嘴巴，不是生物「巨口」）	
+3608	2	conversation	3e31cecebf6e2287088f9f8cf16a5c646a7c2a1a5bf602473df7da883dfa73fb	你餓了嗎？	draft		p10b-5 draft	
+3608	3	conversation	65c3c65b37d77bc30179cfa624dd44a0349bb9c3bd1b5032a5ebb0da51541ad5	你是啞巴嗎？	draft		p10b-5 draft	
+3608	4	conversation	c84945b9b0e463fcb7cde631209eb22a9814126c2fc215e84baa776d027c6242	他點點頭，但看起來很焦躁。他把手放在嘴邊比出說話的動作，然後搖頭表示不是。	draft		p10b-5 draft; authority-ok:mouth（嘴巴，不是生物「巨口」）	
+3608	5	conversation	519595e92e1f532806809cc0b9354d54f14d55397b7f1b07c46e95aa94a1e39a	喔。你又啞又餓！	draft		p10b-5 draft	
+3608	6	conversation	1c7ddc7e029053ea94add4f542881d36e45e961e9dc07a8103ca21e48f773b3c	我想我猜得出你的名字。	draft		p10b-5 draft	
+3608	7	conversation	960def182c7271a6e218e4bf3c2aa83c93bd23500620d9654804749c5a0a4331	他不太高興地點點頭。	draft		p10b-5 draft	
+3608	8	conversation	c629a576dcde16e2bc37b2e1e6bc6ffc55690ab2524a220ca8bd047086c3604a	你能告訴我你的名字嗎？	draft		p10b-5 draft	
+3608	9	conversation	0aea4a8e89c6392657051a2bb7e6f6a83ffe007ae4ab89e3ea66683e4a37b0e9	這裡有東西給你吃。	draft		p10b-5 draft	
+3608	10	conversation	2f3310f39bf7de431098332ec4ed2c79f373550fa60afee35e9ad007795d2b57	他的眼睛一亮，費了好大的勁，咕噥出一個聽起來像「Uurghoo」的聲音。	draft		p10b-5 draft	
+3608	12	conversation	114d1a08440f10c86d3ef4de17762a11c23fdd3781dd7cef3d74a8398ea483e8	抱歉，我聽不懂你的意思。	draft		p10b-5 draft	
+3608	13	conversation	387fd993016e45b57944f8cfe2991da288ddb93393a5d642cfab289912136947	他露出一副悲傷到近乎滑稽的表情，然後誇張地聳聳肩。	draft		p10b-5 draft	
+3608	14	conversation	1de44ad550aae77cbe283064ecabd3e04849cb87e718e6c3ad14d732a88d20e5	你不能離開嗎？你是囚犯嗎？	draft		p10b-5 draft	
+3608	15	conversation	2bff29eb3fea7d317217f338638c5e11638d4869e16d42033c0be9c7f3b0f938	這裡有些食物。	draft		p10b-5 draft	
+3608	16	conversation	644d8d9b3850a1b80da3e4002143acbfcbd004b03399e8fb1b71d09bd0fca323	他狼吞虎嚥，好像好幾個星期沒吃過東西。	draft		p10b-5 draft	
+3608	17	conversation	e9078be4f7e731a03dcf590c41b71d0b0ff9852523e0812634e45ceba9a8a253	你是這裡的囚犯嗎？	draft		p10b-5 draft	
+3608	18	conversation	f82bb9b9e7b93830e38a3639cf3a7e5d7cabe6c32ec497b5762ab88efc151021	你叫什麼名字？	draft		p10b-5 draft	
+3608	19	conversation	79e9d84c3bca0c8ed46aefa63d6838edb43d8cd37bc5d9148f24594b27042f3f	他失望地看著你。	draft		p10b-5 draft	
+3608	20	conversation	fc13d32db92e9576fc0a60fc75eb5f01656b41e0f3a91595be382972b49ce14c	喔，這是你的食物。	draft		p10b-5 draft	
+3608	21	conversation	8382011b624b97a7492f8ade18c6f8dfefb3b1b7dba6d26cda32f974fc81c635	抱歉，我沒有食物。你是這裡的囚犯嗎？	draft		p10b-5 draft	
+3608	23	conversation	a8e0ae37305c0c266c9befd3cb9e2164678af5e9720d98e51a9ceb72e632b552	他難過地搖搖頭，似乎放棄讓你猜名字了。他比出被關在籠子裡的樣子。	draft		p10b-5 draft	
+3608	24	conversation	e9078be4f7e731a03dcf590c41b71d0b0ff9852523e0812634e45ceba9a8a253	你是這裡的囚犯嗎？	draft		p10b-5 draft	
+3608	25	conversation	e8afb15267e82b103eb1beb84b92ecbc26e038eb63c8eb1449b1ce7ce8d8f09a	我看不懂你的意思！	draft		p10b-5 draft	
+3608	26	conversation	dc483e3f1cc98ea43737310dada335935a6a913a6be70a39869286c5acecfd08	他看到你似乎很開心，高興得蹦蹦跳跳。然後他滿懷期待地等著。	draft		p10b-5 draft	
+3608	27	conversation	0c74303999b9fa18dfc372fb6d259e09a081d60bc928163a68bc5b993275d0c7	他興奮地點頭，醜臉上堆滿了笑容。	draft		p10b-5 draft	
+3608	28	conversation	8abf3802358da8da724828387d565447bec1823736ff679211569caa24b95e3a	他把貓頭鷹博士模仿得維妙維肖，你敢說那個尖酸的老頭一定不會欣賞，然後他滿懷期待地看著你。	draft		p10b-5 draft	
+3608	29	conversation	30b6a62b6d0ca50d8034b8c9fbfe41b35328e26c479265c1962f7a89cadcc143	他模仿了一個看起來像是瘋瘋癲癲的老巫師。	draft		p10b-5 draft	
+3608	30	conversation	dcdff8648a6dd1e1f70614345f0e14dc427c400e5e92b879680f722dac6840c5	是的，我跟貓頭鷹博士談過了。他在找你。	draft		p10b-5 draft	
+3608	31	conversation	05bdece9dd07a5a767830449b9f3fcdac110472d3c7ea7991a4b82e04d9ae755	我能為你做什麼？	draft		p10b-5 draft	
+3608	32	conversation	7cb91cf58a536b8de1e1198824206b80f161841aca5b28a7f416bd2fe3f462f9	抱歉，我沒時間玩遊戲。	draft		p10b-5 draft	
+3608	33	conversation	134cd4aac572459eee21f2659ddded4d2fb726167733b6a6a3f2b2b23b3f9750	他看起來很沮喪，然後比出囚犯的樣子。	draft		p10b-5 draft	
+3608	34	conversation	fe954728fa3c32686a836d03df4901fd7728229af72507325d692f80d78e9405	你是蜥蜴人的囚犯？為什麼？	draft		p10b-5 draft	
+3608	35	conversation	a8d885c001c33735f6e59803ba5585514d82704e2f1c187371ed1b288a581c78	你活該！	draft		p10b-5 draft	
+3608	36	conversation	fb55f8f99ad9765f808d14e84274d84b7a812c994627c0d3186c8e86a04fe79a	他難過地點點頭，然後比了一連串複雜的手勢，似乎在表示他是無辜的。\n 他比出兇惡的蜥蜴人抓住一個瞪大眼睛的受害者，一邊大笑一邊把他扔進這間牢房。\n 他用手勢懇求你去跟蜥蜴人談，讓他們放了他。	draft		p10b-5 draft	
+3608	37	conversation	25563b32241ec3e9389a63039c5846d3412da048f8701d0141e0b0ffd0370531	抱歉，可是我聽不懂他們的語言。	draft		p10b-5 draft	
+3608	38	conversation	b1560f8b6057b3d59774b234d921d5a83d66626405c7a429e8ec78f0f1a1b721	不，我不想捲進這種事。	draft		p10b-5 draft	
+3608	39	conversation	98d07c42d4b34b2244cd36a3e0b61e9a9cbd2f5cf815d8827753828e1c78db42	他比比自己，表示「他」懂蜥蜴人的語言。他還比手勢，似乎在說蜥蜴人聽得懂「你」的話，只是他們自己發不出人類的語音。	draft		p10b-5 draft	
+3608	40	conversation	8c08b27214dbc64cb9592ea50bbce74841c27ee5cababf3ec20b068cd4028753	好吧。如果你想教我蜥蜴人的語言，我會試試看。	draft		p10b-5 draft	
+3608	41	conversation	5d1a040a9f10eb017080dfa37ed30a1a66c32210ee2cb7cee759178bf1251618	不，抱歉。我做不到。	draft		p10b-5 draft	
+3608	42	conversation	1b5ca879ebed6a71e1aec46582d0f7e9be9ecf3168f3e9863ad590114b34ad34	他表示你得說出一個詞，他會替你翻譯。	draft		p10b-5 draft	
+3608	43	conversation	3c57510101100f4b363e2dcea7bf44c52fee01d3843e5607f978c6c3f24cbbaa	好吧，我晚點再來。	draft		p10b-5 draft	
+3608	44	conversation	b78713a98e56a8268507681b712564cfc16aa35725223656c38239da3d081670	「sseth」是什麼意思？	draft		p10b-5 draft	
+3608	45	conversation	24be5935ba04a3c5b4ab8ae194a5e4297571d455c740131732e820b5fb6a5142	sseth	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3608	46	conversation	d4b579a5e8789c754b9e3a28bec05e11d491f0b9a5f588a7b2b2034f2bd7c0e8	那「'click」呢？	draft		p10b-5 draft	
+3608	47	conversation	0ae898017a7a5a81384710b52c296fadc3486943bb32e17527d4f7569d85657e	'click	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3608	48	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-5 draft; 「其他……」讓玩家自行輸入蜥蜴人語的單字（3608:50–90 不翻）	
+3608	49	conversation	e34af6705b4ca6894facb3167cb0dc61de851ac6e829169786144f6743780b0a	他示意你再試一次。	draft		p10b-5 draft	
+3608	51	conversation	fffeadf289b1d7c17a1d0e09a9bcaf1a36a7f24251219dea705459ed1b1b07e3	他點頭表示「是」。	draft		p10b-5 draft	
+3608	53	conversation	2cd09ca2f600328c574ce47d1fb87fd7563d02fb9a153d03f7cad96aec9022ea	他搖頭表示「不是」。	draft		p10b-5 draft	
+3608	55	conversation	6befca4e7398387757153ae8b612511b7cdab00e4977632e419c20568ee88727	他懷疑地打量著你。	draft		p10b-5 draft	
+3608	57	conversation	f4f9691a83fb9a44e956a37ac05a9462cd7b113e29943a461ef117937d21439c	他比出提供幫助的樣子。	draft		p10b-5 draft	
+3608	59	conversation	a302f5d1a58e73a8797fb27cf997b99bd34c7b8d4101808119da7a17bb96ff03	他皺起眉頭，對你擺出兇狠的樣子。	draft		p10b-5 draft	
+3608	61	conversation	6e0e2e881b965bcf54786b5b76848e7c4d224d550f173e226238db003d2f1f55	他露出微笑，對你表現得很友善。	draft		p10b-5 draft	
+3608	63	conversation	a53dd340a4e9d748674155807a16ad98850e8f9c7d80eb6b05a6e6da97458811	他指指自己的嘴，嚼了嚼，又揉揉肚子。	draft		p10b-5 draft; authority-ok:mouth（嘴巴，不是生物「巨口」）	
+3608	65	conversation	6e0e2e881b965bcf54786b5b76848e7c4d224d550f173e226238db003d2f1f55	他露出微笑，對你表現得很友善。	draft		p10b-5 draft	
+3608	67	conversation	c4c4b9759c8dced0b2dbc1948ae78c49991a5116e45e28eba63c33966df93abb	他挺起胸膛，假裝在帶領一群人，然後比出脫下帽子、流下一滴眼淚的樣子。	draft		p10b-5 draft	
+3608	69	conversation	bad23d4df36e0d49c0eaeb691a986fac834868bc100ff831a5a9397fa74bba2d	他比出打人的樣子。	draft		p10b-5 draft	
+3608	71	conversation	f30c3b6028949fad79fb62ec3d6e2655022d9ad2eeb58851e738f1e45c0f6d79	他比出扒你口袋的樣子。	draft		p10b-5 draft	
+3608	73	conversation	98e2ab46958fb4d8c2ecc2ff9bdfae169238e61c94a3d15077d9ba59135dd3f2	他比出把人活活勒死的樣子。	draft		p10b-5 draft	
+3608	75	conversation	57345a9c72e02a3ab229c9ed01356066c2fa0ed1126e32880e9cc68688046e78	他指指自己，然後拉起你的手，要你指著你自己。	draft		p10b-5 draft	
+3608	77	conversation	489bbb0d2b2e988efea77ca1ed846d128e8dd5e7d270d7b65ae3e02f815cb779	他指指你，然後拉起你的手，要你指著他。	draft		p10b-5 draft	
+3608	79	conversation	efb639522789cb0497f7daa4c882672937358419ecc661310ce09419254462ad	他指指自己。	draft		p10b-5 draft	
+3608	81	conversation	2d22a57710e3227d4114ac20ff64002d62e704767c7871f442b5991e63499c0b	他模仿蜥蜴人。	draft		p10b-5 draft	
+3608	83	conversation	3da11ad06b67afc053ea8fc30d58f8c58f76bc3288d65be8942b93e3f408a074	他比出打招呼的樣子。	draft		p10b-5 draft	
+3608	85	conversation	30aaaae10a3bffcfa45c1f6b0fdb1a375e86a632e56f9d62c14527b11b75d039	他張開雙臂，用懇求的眼神看著你。	draft		p10b-5 draft	
+3608	87	conversation	693465501a92d038baa67837599275eeb4749e8a036eca3f27f2392671feb03c	他比出有人從袋子裡拿出許多東西交給另一個人，然後搖了搖頭。	draft		p10b-5 draft	
+3608	89	conversation	7330b116328ac126df85fa7b7f3d2a07dcab82726a12737048b3fee456720832	他比出離開又回來的樣子。	draft		p10b-5 draft	
+3608	91	conversation	d94c720e52687b2c241d7686d8483cd18dda09d8eadee433803e5e835a76cf5a	他假裝送你一份禮物。	draft		p10b-5 draft	
+3608	92	conversation	4f694a56d616f76ba59701c019aa0f4a57bd53b11ce0a21e4262eb08cab878ac	他聳聳肩，表示他不認得這個詞。	draft		p10b-5 draft	
+3608	93	conversation	bf857cc4271730a2dcec1492d707b5813a1e083c5c9b4b562501f644095d7c78	他眼中閃著狂喜，跳起一支瘋狂的歡樂之舞。然後他轉向你，比手勢向你道謝。	draft		p10b-5 draft	
+3608	94	conversation	db8b2b2ce71d7a811bcf02b65a815f0bac195cd8ad58a83f1cbda5e1e04a16ef	現在去找貓頭鷹博士吧，別再偷食物了！	draft		p10b-5 draft	
+3608	95	conversation	7a3b4c8498198f37d7db5be04ea8b4184f2544f639cbcaa591a1f46df9e9651b	走吧，別再偷東西了！	draft		p10b-5 draft	
+3608	96	conversation	7ea66a9c3993e60098fcaa5a2f4bd14151c46ecc017d5ebaddfdef7134001dd2	再會，好好享受你的自由吧！	draft		p10b-5 draft	
+3608	97	conversation	e45e51238b16fc95eca329544a4627bf518f6dd76685b6f0380637b7ae1a8100	你看著他沿著走廊一溜煙跑掉，高興得又蹦又跳。	draft		p10b-5 draft	
 3648	1	conversation	c58c5d02248ea7b2f35ca7885e0b9d6e712556bcd30f4d481f8ba46fce513a6c	嘿！這誰？你在幹嘛？	draft		p10b-2 draft	
 3648	2	conversation	61257e0ebbe9f81fc008f1ba63dbd2496c3e6fe45330ea5ae648e99e04f75ee7	我是所有惡鬼族的朋友。	draft		p10b-2 draft	
 3648	3	conversation	461085a8a24031ee44d3fb6111b7b1d087282cd67efbf481def9f4b1f379d3a1	我是來欣賞你們族人聚落的宏偉建築的。	draft		p10b-2 draft	
