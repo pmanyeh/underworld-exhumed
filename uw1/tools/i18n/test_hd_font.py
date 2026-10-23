@@ -11,7 +11,7 @@ import subprocess
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     uw1 = Path(__file__).resolve().parents[2]
-    parser.add_argument("--font", type=Path, default=uw1 / "tools/fonts/NotoSansCJKtc-Regular.otf")
+    parser.add_argument("--font", type=Path, default=uw1 / "tools/fonts/jf-openhuninn-2.1.ttf")
     parser.add_argument("--sanitize", action="store_true")
     parser.add_argument("--window", action="store_true", help="also run actual SDL resize/fullscreen checks")
     parser.add_argument("--no-freetype", action="store_true", help="compile/link/run the optional dependency stub")

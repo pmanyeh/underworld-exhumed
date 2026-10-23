@@ -33,10 +33,12 @@ typedef struct Glyph {
 struct HdFont {
     FT_Library library;
     FT_Face face;
+    FT_Face fallback;                   /* for a character the face lacks, or NULL */
     Glyph glyphs[CACHE_SLOTS];
     HdFontStats stats;
     uint64_t clock;
     int error;
+    int mono;                           /* antialiasing off: every mask pixel all or nothing */
 };
 
 int hd_font_init(HdFont **out, const char *path)
@@ -57,6 +59,7 @@ void hd_font_shutdown(HdFont *f)
     unsigned i;
     if (!f) return;
     for (i = 0; i < CACHE_SLOTS; i++) free(f->glyphs[i].mask);
+    if (f->fallback) FT_Done_Face(f->fallback);
     if (f->face) FT_Done_Face(f->face);
     if (f->library) FT_Done_FreeType(f->library);
     free(f);
@@ -83,10 +86,11 @@ static Glyph *glyph(HdFont *f, unsigned size, uint32_t scalar)
 {
     unsigned i;
     FT_UInt index;
+    FT_Face face;
     FT_GlyphSlot s;
     size_t bytes;
     Glyph *g = NULL;
-    const unsigned mode = FT_RENDER_MODE_NORMAL;
+    const unsigned mode = f->mono ? 1u : 0u;
     for (i = 0; i < CACHE_SLOTS; i++) {
         Glyph *p = &f->glyphs[i];
         if (p->size == size && p->scalar == scalar && p->mode == mode) {
@@ -95,17 +99,20 @@ static Glyph *glyph(HdFont *f, unsigned size, uint32_t scalar)
         if (!p->size) g = p;
     }
     f->stats.misses++;
-    index = FT_Get_Char_Index(f->face, scalar);
+    face = f->face;
+    index = FT_Get_Char_Index(face, scalar);
+    if (!index && f->fallback && (index = FT_Get_Char_Index(f->fallback, scalar)) != 0)
+        face = f->fallback;             /* the same for measuring and drawing: one cache entry */
     if (!index) {
         f->stats.missing_glyphs++;
-        index = FT_Get_Char_Index(f->face, 0xfffd); /* else .notdef */
+        index = FT_Get_Char_Index(face, 0xfffd); /* else .notdef */
     }
-    if (FT_Set_Pixel_Sizes(f->face, 0, size) ||
-        FT_Load_Glyph(f->face, index, FT_LOAD_DEFAULT | FT_LOAD_NO_BITMAP) ||
-        FT_Render_Glyph(f->face->glyph, (FT_Render_Mode)mode)) {
+    if (FT_Set_Pixel_Sizes(face, 0, size) ||
+        FT_Load_Glyph(face, index, FT_LOAD_DEFAULT | FT_LOAD_NO_BITMAP) ||
+        FT_Render_Glyph(face->glyph, FT_RENDER_MODE_NORMAL)) {
         f->error = HD_GLYPH; return NULL;
     }
-    s = f->face->glyph;
+    s = face->glyph;
     if (s->bitmap.pixel_mode != FT_PIXEL_MODE_GRAY || s->bitmap.num_grays != 256 ||
         s->bitmap.width > 2048 || s->bitmap.rows > 2048 ||
         s->advance.x < 0 || s->advance.x > INT_MAX) { f->error = HD_GLYPH; return NULL; }
@@ -125,6 +132,8 @@ static Glyph *glyph(HdFont *f, unsigned size, uint32_t scalar)
             const uint8_t *src = s->bitmap.buffer + (ptrdiff_t)row * s->bitmap.pitch;
             memcpy(g->mask + (size_t)row * s->bitmap.width, src, s->bitmap.width);
         }
+        if (f->mono)
+            for (i = 0; i < bytes; i++) g->mask[i] = g->mask[i] >= 128 ? 255 : 0;
     }
     g->scalar = scalar; g->size = size; g->mode = mode;
     g->width = (int)s->bitmap.width; g->height = (int)s->bitmap.rows;
@@ -270,14 +279,40 @@ int hd_scroll_advance(HdFont *f,uint32_t scalar,int em_64)
     g=glyph(f,64,scalar=='\t'?' ':scalar);
     return g?(int)((int64_t)g->advance*em_64*5*(scalar=='\t'?4:1)/(64*64*4)):-1;
 }
+int hd_font_set_fallback(HdFont *f, const char *path)
+{
+    FT_Face face;
+    unsigned i;
+    if (!f || !path || !*path) return HD_ARGUMENT;
+    if (FT_New_Face(f->library, path, 0, &face)) return HD_FONT;
+    if (!FT_IS_SCALABLE(face) || FT_Select_Charmap(face, FT_ENCODING_UNICODE)) { FT_Done_Face(face); return HD_FONT; }
+    if (f->fallback) FT_Done_Face(f->fallback);
+    f->fallback = face;
+    for (i = 0; i < CACHE_SLOTS; i++)
+        if (f->glyphs[i].size) evict(f, &f->glyphs[i]);
+    return HD_OK;
+}
+void hd_font_set_antialiasing(HdFont *f, int on)
+{
+    unsigned i;
+    if (!f || f->mono == !on) return;
+    f->mono = !on;
+    for (i = 0; i < CACHE_SLOTS; i++)
+        if (f->glyphs[i].size) evict(f, &f->glyphs[i]);
+}
 int hd_scroll_glyph(HdFont *f,const PlatOverlay *p,uint32_t scalar,
                     float x,float y,float em,const float clip[4],HdColor color)
 {
-    unsigned size;float sx,sy;double a,b,c,d;int x0,y0,x1,y1;Glyph *g;
+    return hd_scroll_glyph_border(f,p,scalar,x,y,em,clip,color,0);
+}
+int hd_scroll_glyph_border(HdFont *f,const PlatOverlay *p,uint32_t scalar,
+                           float x,float y,float em,const float clip[4],HdColor color,float border)
+{
+    unsigned size;float sx,sy;double a,b,c,d,gx,gy;int x0,y0,x1,y1;Glyph *g;
     if(!f || !clip || geometry(p,em,0,&size,&sx,&sy) || !p->rgba || p->width<=0 ||
         p->width>INT_MAX/4 || p->height<=0 || p->pitch<p->width*4 ||
         (size_t)p->height>SIZE_MAX/(size_t)p->pitch || !isfinite(x) || !isfinite(y) ||
-        fabsf(x)>1000000 || fabsf(y)>1000000)return HD_ARGUMENT;
+        fabsf(x)>1000000 || fabsf(y)>1000000 || !isfinite(border) || border<0 || border>8)return HD_ARGUMENT;
     if(!isfinite(clip[0]) || !isfinite(clip[1]) || !isfinite(clip[2]) || !isfinite(clip[3]) ||
         clip[0]<0 || clip[1]<0 || clip[2]>p->logical_width || clip[3]>p->logical_height ||
         clip[2]<=clip[0] || clip[3]<=clip[1])return HD_ARGUMENT;
@@ -288,9 +323,17 @@ int hd_scroll_glyph(HdFont *f,const PlatOverlay *p,uint32_t scalar,
     x1=c>=p->width?p->width:(int)c;y1=d>=p->height?p->height:(int)d;
     if(FT_Set_Pixel_Sizes(f->face,0,size))return HD_GLYPH;
     g=glyph(f,size,scalar);if(!g)return HD_GLYPH;
-    paint(p,g,p->viewport_x+x*(double)sx,
-          p->viewport_y+y*(double)sy+f->face->size->metrics.ascender/64.0,
-          color,x0,y0,x1,y1);
+    gx=p->viewport_x+x*(double)sx;gy=p->viewport_y+y*(double)sy+f->face->size->metrics.ascender/64.0;
+    if(border>0) {
+        /* the outline: the mask in black at every whole offset within the border's radius,
+           in output pixels (at least one) */
+        HdColor ink={0,0,0,color.a};
+        int r=(int)(border*sy+.5),ox,oy;
+        if(r<1)r=1;
+        for(oy=-r;oy<=r;oy++)for(ox=-r;ox<=r;ox++)
+            if((ox || oy) && ox*ox+oy*oy<=r*r+r)paint(p,g,gx+ox,gy+oy,ink,x0,y0,x1,y1);
+    }
+    paint(p,g,gx,gy,color,x0,y0,x1,y1);
     return HD_OK;
 }
 #else
@@ -307,4 +350,8 @@ int hd_text_draw(HdFont *f, const PlatOverlay *p, const char *t, size_t n, float
 int hd_scroll_advance(HdFont *f,uint32_t c,int e) { (void)f;(void)c;(void)e;return -1; }
 int hd_scroll_glyph(HdFont *f,const PlatOverlay *p,uint32_t c,float x,float y,float e,const float clip[4],HdColor color)
 { (void)f;(void)p;(void)c;(void)x;(void)y;(void)e;(void)clip;(void)color;return HD_UNAVAILABLE; }
+int hd_scroll_glyph_border(HdFont *f,const PlatOverlay *p,uint32_t c,float x,float y,float e,const float clip[4],HdColor color,float b)
+{ (void)f;(void)p;(void)c;(void)x;(void)y;(void)e;(void)clip;(void)color;(void)b;return HD_UNAVAILABLE; }
+void hd_font_set_antialiasing(HdFont *f, int on) { (void)f; (void)on; }
+int hd_font_set_fallback(HdFont *f, const char *path) { (void)f; (void)path; return HD_UNAVAILABLE; }
 #endif

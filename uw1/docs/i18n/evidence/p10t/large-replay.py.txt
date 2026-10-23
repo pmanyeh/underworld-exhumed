@@ -1,0 +1,21 @@
+"""P10T: the public replays in HD at the plan's large parameters (size 7, line spacing 3):
+whether the extra pages change what the recorded inputs do."""
+import os, shutil, sys
+from pathlib import Path
+root = Path('D:/git/uw1-native-poc/underworld-exhumed/uw1'); os.chdir(root)
+sys.path.insert(0, str(root.parent / 'exhume/tools'))
+import replay as R, golden as G
+out = root / 'build/i18n/p10t/large-replay'
+hd = ['--sound', '0,0', '--locale', 'zh-TW', '--i18n-file', str(root / 'build/i18n/zh-TW.uwloc'), '--hd-scroll', '--hd-cursor']
+ref = root / 'build/i18n/p10-11/zh-TW-hd'
+for name in ('items', 'fallrestore', 'savecursor', 'tooheavy', 'overpay'):
+    d = out / name; shutil.rmtree(d, ignore_errors=True); d.mkdir(parents=True)
+    stage = out / (name + '-stage'); shutil.rmtree(stage, ignore_errors=True); stage.mkdir()
+    if name in G.STAGE_FROM:
+        src = ref / G.STAGE_FROM[name]
+        for x in G.stage_dirs(str(src)): shutil.copytree(src / x, stage / x)
+    (stage / 'uw1port.cfg').write_text('font_cjk_hd_size=7\nfont_cjk_hd_line_spacing=3\n', encoding='utf-8')
+    R.run_port(G.rec_of(name), str(d), hd + ['--scroll-log', str((d / 'scroll.jsonl').resolve())], stage=str(stage), quiet=True)
+    more = sum('"event":"more"' in l for l in open(d / 'scroll.jsonl', encoding='utf-8'))
+    same = G.save_hashes(str(d)) == G.save_hashes(str(ref / name))
+    print(f'{name:12} more={more} saves_same_as_default_hd={same}', flush=True)

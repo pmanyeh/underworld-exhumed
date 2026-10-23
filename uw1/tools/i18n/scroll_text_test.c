@@ -38,6 +38,40 @@ static void bounds(void)
         CHECK(c->scalar<0x110000 && !(c->scalar>=0xd800 && c->scalar<=0xdfff));
     }
 }
+/* P10T: a box's style. Measure: 4 for ASCII, 8 otherwise, in whole logical pixels. */
+static void styles(void)
+{
+    ScrollBox *b;int i;
+    /* defaults: a 5 em, the game's own line height */
+    reset(96,40);CHECK(scroll_text_write(0,"一",1,0)==0);scroll_text_read(&snapshot);b=&snapshot.boxes[0];
+    CHECK(b->em64==5*64 && b->line64==8*64);
+    /* line spacing 2.5: a 10.5 pitch, 3 rows of 40, y64 exact, y the whole part */
+    scroll_text_start(measure,NULL,wait_input,NULL);scroll_text_style(0,6*64,0,0,160);scroll_text_screen(4);
+    scroll_text_box(0,10,20,106,60,8,0x2e);
+    CHECK(scroll_text_write(0,"一\n二\n三",1,0)==0);scroll_text_read(&snapshot);b=&snapshot.boxes[0];
+    CHECK(b->em64==6*64 && b->line64==8*64+160 && b->count==3);
+    for(i=0;i<3;i++)CHECK(b->cells[i].y64==20*64+i*(8*64+160) && b->cells[i].y==b->cells[i].y64/64);
+    CHECK(scroll_text_y(0)==(20*64+2*(8*64+160))/64);
+    /* a fourth line rolls: the box holds three of 10.5 in 40 */
+    CHECK(scroll_text_write(0,"\n四",1,0)==0);scroll_text_read(&snapshot);b=&snapshot.boxes[0];
+    CHECK(b->count==3 && b->cells[0].scalar==0x4e8c && b->cells[2].y64==20*64+2*(8*64+160));
+    /* choices hit by the spaced pitch */
+    scroll_text_clear(0);CHECK(scroll_text_write(0,"甲\n",1,1)==0 && scroll_text_write(0,"乙\n",1,2)==0);
+    CHECK(scroll_text_hit(12,20)==1 && scroll_text_hit(12,30)==1 && scroll_text_hit(12,31)==2 && scroll_text_hit(12,41)==-1);
+    /* letter spacing after each glyph, Latin/Chinese spacing at the boundary, across two writes too */
+    scroll_text_start(measure,NULL,wait_input,NULL);scroll_text_style(0,5*64,64,3*64,0);scroll_text_screen(4);
+    scroll_text_box(0,10,20,200,44,8,0x2e);
+    CHECK(scroll_text_write(0,"中文A",1,0)==0);scroll_text_read(&snapshot);b=&snapshot.boxes[0];
+    CHECK(b->cells[0].x==10*64 && b->cells[1].x==10*64+9*64 && b->cells[2].x==10*64+18*64+3*64);
+    CHECK(scroll_text_write(0,"字",1,0)==0);scroll_text_read(&snapshot);b=&snapshot.boxes[0];
+    CHECK(b->cells[3].x==b->cells[2].x+5*64+3*64);
+    CHECK(scroll_text_write(0," 字",1,0)==0);scroll_text_read(&snapshot);b=&snapshot.boxes[0];
+    CHECK(b->cells[5].x==b->cells[4].x+4*64); /* after a space: no boundary */
+    /* the other box keeps its own style */
+    scroll_text_box(1,10,100,200,140,8,0x2e);CHECK(scroll_text_write(1,"一",1,0)==0);scroll_text_read(&snapshot);
+    CHECK(snapshot.boxes[1].em64==5*64 && snapshot.boxes[1].line64==8*64);
+    scroll_text_style(0,5*64,0,0,0);
+}
 static atomic_int done;
 static int producer(void *unused)
 {
@@ -95,6 +129,7 @@ int main(int argc,char **argv)
     port_i18n_observe(3651,4,templ);CHECK(port_i18n_display(templ)==templ); /* templates retain expanded English */
     CHECK(port_scroll_write(0,"\x82",0)==0);bounds();CHECK(snapshot.boxes[0].cells[snapshot.boxes[0].count-1].scalar==0xe9);
     port_i18n_shutdown();CHECK(port_i18n_display(original)==original);port_scroll_choices_reset();
+    styles();
     reset(80,24);generation=0;thread=SDL_CreateThread(producer,"scroll-producer",NULL);CHECK(thread);
     do {
         scroll_text_read(&snapshot);CHECK(snapshot.generation>=generation);generation=snapshot.generation;
@@ -104,6 +139,6 @@ int main(int argc,char **argv)
         }
     }while(!atomic_load(&done));
     SDL_WaitThread(thread,NULL);CHECK(seen>0);
-    printf("PASS %d assertions: UTF-8, CJK/English wrap, punctuation, append, pages/MORE, controls, choices, fallback, 5000 concurrent snapshots\n",checks);
+    printf("PASS %d assertions: UTF-8, CJK/English wrap, punctuation, append, pages/MORE, controls, choices, fallback, styles, 5000 concurrent snapshots\n",checks);
     return 0;
 }

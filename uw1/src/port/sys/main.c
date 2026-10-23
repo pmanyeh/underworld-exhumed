@@ -3,6 +3,7 @@
    (the data root, sys/gamedir.c) and maps it and the port's home directory, loads and checks
    the far data from the user's UW.EXE, starts the PIT, and runs the game on its own thread
    under the platform layer. `uw1port --help` lists the options (help_text, below). */
+#include <math.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,6 +28,7 @@
 #include "presentation/presentation.h"
 #include "presentation/hd_cursor.h"
 #include "presentation/scroll_text.h"
+#include "presentation/text_style.h"
 
 extern const struct enhance_flag enhance_table[];   /* src/port/sys/enhtab.c */
 extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a test's cheats */
@@ -123,15 +125,27 @@ static char **game_argv;
 static const char *locale = "en", *i18n_file, *i18n_log, *i18n_trace;
 static const char *cursor_log;
 static int modern_scroll;
-static const char *scroll_font_path, *scroll_log;
+static const char *scroll_log;
+/* The HD text styles (P10T): box 0 the message scroll, box 1 the conversation's, each with the
+   font file it resolved to (the game thread opens its own copies to measure with). */
+static HdTextStyle scroll_style[2];
+static char scroll_font_file[2][1024], scroll_fallback_file[2][1024];
+/* Box 1 can use box 0's fonts: the same files (and, to draw, the same antialiasing). */
+static int same_font(void)
+{
+    return !strcmp(scroll_font_file[1], scroll_font_file[0]) && !strcmp(scroll_fallback_file[1], scroll_fallback_file[0]);
+}
+typedef struct ScrollMetrics { HdFont *font; int em64; } ScrollMetrics;
 void scroll_wait(int ticks, char mouse);
-static int scroll_measure(uint32_t cp, void *font) { return hd_scroll_advance(font,cp,5*64); }
+static int scroll_measure(uint32_t cp, void *m) { return hd_scroll_advance(((ScrollMetrics *)m)->font,cp,((ScrollMetrics *)m)->em64); }
+static int to64(double v) { return (int)lround(v * 64); }
 static void scroll_pause(int ticks, void *unused) { (void)unused;scroll_wait(ticks,1); }
 
 static int game(void *arg)
 {
-    int status;
-    HdFont *measure_font = NULL;
+    int status, box;
+    HdFont *measure_font[2] = { NULL, NULL };
+    ScrollMetrics metrics[2];
     (void)arg;
     /* All localization writes are on this thread, before/after game calls.
        plat_run can return while this thread is still running: main must not
@@ -144,14 +158,27 @@ static int game(void *arg)
         fputs("uw1port: i18n: cannot open QA trace\n", stderr);
     if (hd_cursor_trace_open(cursor_log) < 0) fputs("uw1port: cannot open cursor log\n", stderr);
     if (modern_scroll) {
-        if (hd_font_init(&measure_font,scroll_font_path)) port_fatal("HD scroll: cannot initialize logical metrics font");
-        scroll_text_start(scroll_measure,measure_font,scroll_pause,NULL);
+        for (box = 0; box < 2; box++) {
+            if (box && same_font()) measure_font[1] = measure_font[0];
+            else if (hd_font_init(&measure_font[box], scroll_font_file[box]) ||
+                     (scroll_fallback_file[box][0] && hd_font_set_fallback(measure_font[box], scroll_fallback_file[box])))
+                port_fatal("HD scroll: cannot initialize logical metrics font");
+            metrics[box].font = measure_font[box];
+            metrics[box].em64 = to64(scroll_style[box].size);
+        }
+        scroll_text_start(scroll_measure,&metrics[0],scroll_pause,NULL);
+        for (box = 0; box < 2; box++) {
+            scroll_text_measure_context(box, &metrics[box]);
+            scroll_text_style(box, metrics[box].em64, to64(scroll_style[box].letter_spacing),
+                              to64(scroll_style[box].latin_spacing), to64(scroll_style[box].line_spacing));
+        }
         if (scroll_text_trace_open(scroll_log)<0) port_fatal("HD scroll: cannot open log");
     }
     status = uw1_main(game_argc, game_argv);
     hd_cursor_trace_close();
     scroll_text_trace_close();
-    hd_font_shutdown(measure_font);
+    if (measure_font[1] != measure_font[0]) hd_font_shutdown(measure_font[1]);
+    hd_font_shutdown(measure_font[0]);
     port_i18n_shutdown();
     return status;
 }
@@ -383,7 +410,7 @@ int main(int argc, char *argv[])
     int n_on = 0, n_off = 0, enh_list = 0;
     int settings_list = 0, test_overlay = 0;
     int test_hd_text = 0;
-    const char *font_path = "tools/fonts/NotoSansCJKtc-Regular.otf";
+    const char *font_path = NULL;       /* --font: the base font file, over the settings file's */
     HdDemo hd_demo = {0};
     PortPresentation presentation = {0};
     int hd_cursor = 0;
@@ -620,27 +647,72 @@ int main(int argc, char *argv[])
         return 1;
     }
     if (test_hd_text || modern_scroll) {
-        int result = hd_font_init(&hd_demo.font, font_path);
-        if (result) {
-            fprintf(stderr, "uw1port: HD text: %s: %s\n", hd_font_error(result), font_path);
-            return 1;
+        /* P10T: the defaults, the locale's settings file, the player's, --font; in each file
+           font_cjk_hd_* for both boxes, then each box's own (message, talk) */
+        char files[2][1200];
+        int result, box, f;
+        snprintf(files[1], sizeof files[1], "%s/" PORT_CONFIG_FILE, home);
+        text_style_locale_file(home, locale, files[0], sizeof files[0]);
+        for (box = 0; box < 2; box++) {
+            text_style_defaults(&scroll_style[box]);
+            for (f = 0; f < 2; f++) {
+                text_style_load(files[f], -1, &scroll_style[box]);
+                text_style_load(files[f], box ? TEXT_STYLE_TALK : TEXT_STYLE_MESSAGE, &scroll_style[box]);
+            }
+            if (font_path) snprintf(scroll_style[box].file, sizeof scroll_style[box].file, "%s", font_path);
+            if (text_style_font_path(home, scroll_style[box].file, scroll_font_file[box], sizeof scroll_font_file[box])) {
+                fprintf(stderr, "uw1port: HD text: font not found: %s (looked in fonts/ of the home folder, fonts/ and tools/fonts/)\n",
+                        scroll_style[box].file);
+                return 1;
+            }
+            scroll_fallback_file[box][0] = 0;
+            if (scroll_style[box].fallback_file[0] &&
+                text_style_font_path(home, scroll_style[box].fallback_file, scroll_fallback_file[box], sizeof scroll_fallback_file[box])) {
+                fprintf(stderr, "uw1port: HD text: fallback font not found: %s; using none\n", scroll_style[box].fallback_file);
+                scroll_fallback_file[box][0] = 0;
+            }
         }
+        for (box = 0; box < 2; box++) {
+            if (box && same_font() && scroll_style[1].antialiasing == scroll_style[0].antialiasing) {
+                presentation.scroll_fonts[1] = presentation.scroll_fonts[0];
+                continue;
+            }
+            result = hd_font_init(&presentation.scroll_fonts[box], scroll_font_file[box]);
+            if (!result && scroll_fallback_file[box][0])
+                result = hd_font_set_fallback(presentation.scroll_fonts[box], scroll_fallback_file[box]);
+            if (result) {
+                fprintf(stderr, "uw1port: HD text: %s: %s\n", hd_font_error(result), scroll_font_file[box]);
+                return 1;
+            }
+            hd_font_set_antialiasing(presentation.scroll_fonts[box], scroll_style[box].antialiasing);
+        }
+        for (box = 0; box < 2; box++) {
+            const HdTextStyle *t = &scroll_style[box];
+            presentation.scroll_style[box].border = (float)t->border;
+            presentation.scroll_style[box].baseline = (float)t->baseline;
+            fprintf(stderr, "uw1port: HD text: %s: %s%s%s, size %g, spacing %g/%g/%g, baseline %g, border %g, %s\n",
+                    box ? "talk" : "message", scroll_font_file[box], scroll_fallback_file[box][0] ? " + " : "",
+                    scroll_fallback_file[box], t->size, t->letter_spacing, t->latin_spacing, t->line_spacing,
+                    t->baseline, t->border, t->antialiasing ? "antialiased" : "not antialiased");
+        }
+        if (files[0][0]) fprintf(stderr, "uw1port: HD text: locale settings %s\n", files[0]);
+        hd_demo.font = presentation.scroll_fonts[0];
         hd_demo.geometry = test_overlay;
     }
     if (modern_scroll) hd_cursor = 1;
     if (hd_cursor && ENHANCED(ENH_MOUSE_LOOK)) {
         fputs("uw1port: HD cursor: mouse-look is not supported; use compatibility cursor or disable mouse-look\n", stderr);
-        hd_font_shutdown(hd_demo.font);
+        if (presentation.scroll_fonts[1] != presentation.scroll_fonts[0]) hd_font_shutdown(presentation.scroll_fonts[1]);
+        hd_font_shutdown(presentation.scroll_fonts[0]);
         return 1;
     }
     hd_cursor_enable(hd_cursor);
     scroll_text_enable(modern_scroll);
-    scroll_font_path = font_path;
     presentation.demo = hd_demo;
     if (!test_hd_text) presentation.demo.font = NULL;
     presentation.demo.geometry = test_overlay;
     presentation.cursor = hd_cursor;
-    presentation.scroll_font = modern_scroll ? hd_demo.font : NULL;
+    if (!modern_scroll) presentation.scroll_fonts[0] = presentation.scroll_fonts[1] = NULL;
     pit_start();
     memset(&hooks, 0, sizeof hooks);
     hooks.scanout = vga_scanout;

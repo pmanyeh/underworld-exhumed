@@ -97,9 +97,17 @@ versions may differ. Portions of this software are copyright (c) The FreeType Pr
 Library source and binaries are not committed. Any future package containing this
 library must include its license and the required attribution.
 
+jf open huninn (jf open 粉圓) 2.1 (https://github.com/justfont/open-huninn-font), justfont.
+SIL Open Font License 1.1; derived from Kosugi Maru (Copyright (c) 2010 MOTOYA CO.,LTD.) and
+Varela Round (Copyright (c) 2011-2016 The Varela Round Project Authors). The HD Chinese text's
+default font (P10T). Unmodified; tools/i18n/fetch_font.py fetches the v2.1 release and the
+license at the commit the tag names, verifying SHA-256, into ignored tools/fonts/. No font
+binary is committed. The full license is docs/i18n/licenses/jf-openhuninn-OFL.txt; a package
+that includes the font must include that license beside it.
+
 Noto Sans CJK TC Regular, Version 2.004 (https://github.com/notofonts/noto-cjk).
 Copyright (c) 2014-2021 Adobe (http://www.adobe.com/). SIL Open Font License 1.1.
-Unmodified font used for HD text tests and the opt-in demo. tools/i18n/fetch_font.py
+Unmodified font used for the earlier phases' HD text tests and as an optional font. tools/i18n/fetch_font.py
 fetches a pinned revision and verifies SHA-256, with LICENSE.txt beside the font in
 ignored tools/fonts/. No font binary is committed or packaged by this PoC. The full
 license is docs/i18n/licenses/Noto-OFL.txt; redistribution must preserve copyright and

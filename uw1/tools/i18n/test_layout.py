@@ -30,7 +30,17 @@ class Layout(C.Structure):
                 ("lines", C.POINTER(Line)), ("line_count", C.c_size_t)]
 
 
+_LIBRARY = []
+
+
 def library():
+    """Built and loaded once: a loaded DLL cannot be rebuilt in place on Windows."""
+    if not _LIBRARY:
+        _LIBRARY.append(build_library())
+    return _LIBRARY[0]
+
+
+def build_library():
     OUT.mkdir(parents=True, exist_ok=True)
     target = OUT / ("layout-tests.dll" if os.name == "nt" else "layout-tests.so")
     compiler = os.environ.get("CC") or shutil.which("clang")
@@ -52,6 +62,9 @@ def library():
     lib.layout_text.argtypes = [C.c_char_p, C.c_size_t, C.c_int, MEASURE, C.c_void_p,
                                C.POINTER(Layout), C.POINTER(C.c_size_t)]
     lib.layout_free.argtypes = [C.POINTER(Layout)]
+    lib.layout_text_spaced.argtypes = [C.c_char_p, C.c_size_t, C.c_int, MEASURE, C.c_void_p, C.c_int,
+                                       C.c_int, C.c_int, C.POINTER(Layout), C.POINTER(C.c_size_t)]
+    lib.layout_latin_boundary.argtypes = [C.c_uint32, C.c_uint32]
     return lib
 
 
@@ -347,6 +360,68 @@ class CoreTests(unittest.TestCase):
         for _ in range(100):
             text = "甲" + "".join(rng.choice(alphabet) for _ in range(80)) + "乙"
             self.render(text, rng.randrange(1, 31))
+
+
+class SpacingTests(unittest.TestCase):
+    """P10T: letter spacing after each glyph, and Latin/Chinese spacing at the boundary."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.lib = library()
+        cls.measure = MEASURE(lambda c, _: 4 if c < 128 else 8)
+
+    def spaced(self, text, width=1000, letter=0, latin=0, controls=1):
+        data = text.encode()
+        out = Layout()
+        self.assertEqual(self.lib.layout_text_spaced(data, len(data), width, self.measure, None, controls,
+                                                     letter, latin, C.byref(out), None), 0)
+        units = [(out.units[i].scalar, out.units[i].advance, out.units[i].kind) for i in range(out.unit_count)]
+        lines = [(out.lines[i].unit_start, out.lines[i].unit_count, out.lines[i].width) for i in range(out.line_count)]
+        self.lib.layout_free(C.byref(out))
+        return units, lines
+
+    def advances(self, text, **kw):
+        return [a for _, a, kind in self.spaced(text, **kw)[0] if kind == 0]
+
+    def test_letter_spacing_after_each_glyph_but_space(self):
+        self.assertEqual(self.advances("中文", letter=2), [10, 10])
+        self.assertEqual(self.advances("A b", letter=2), [6, 4, 6])
+
+    def test_latin_spacing_both_ways_at_the_boundary_only(self):
+        self.assertEqual(self.advances("A中", latin=3), [7, 8])
+        self.assertEqual(self.advances("中A", latin=3), [11, 4])
+        self.assertEqual(self.advances("中9文", latin=3), [11, 7, 8])
+        self.assertEqual(self.advances("AB", latin=3), [4, 4])
+        self.assertEqual(self.advances("中文", latin=3), [8, 8])
+        self.assertEqual(self.advances("中 A", latin=3), [8, 4, 4])     # a space between: no boundary
+        self.assertEqual(self.advances("中，A", latin=3), [8, 11, 4])   # full-width punctuation is Chinese
+
+    def test_boundary_skips_controls_and_stops_at_newline(self):
+        self.assertEqual(self.advances("中\\1A", latin=3), [11, 4])
+        self.assertEqual(self.advances("中\nA", latin=3), [8, 4])
+
+    def test_spacing_moves_the_wrap(self):
+        self.assertEqual(len(self.spaced("中中中中", width=40, letter=2)[1]), 1)
+        self.assertEqual(len(self.spaced("中中中中", width=39, letter=2)[1]), 2)
+
+    def test_zero_spacing_is_the_plain_layout(self):
+        for text in ("Hello，世界！", "中文 English 123", "A\\m中"):
+            data = text.encode()
+            plain = Layout()
+            self.assertEqual(self.lib.layout_text(data, len(data), 30, self.measure, None, C.byref(plain), None), 0)
+            want = [(plain.units[i].scalar, plain.units[i].advance, plain.units[i].kind) for i in range(plain.unit_count)]
+            lines = [(plain.lines[i].unit_start, plain.lines[i].unit_count, plain.lines[i].width) for i in range(plain.line_count)]
+            self.lib.layout_free(C.byref(plain))
+            self.assertEqual(self.spaced(text, width=30), (want, lines))
+
+    def test_negative_spacing_never_below_zero(self):
+        self.assertEqual(self.advances("A中", letter=-10), [0, 0])
+        self.assertEqual(self.advances("中A", letter=-2, latin=-1), [5, 2])
+
+    def test_latin_boundary(self):
+        f = self.lib.layout_latin_boundary
+        self.assertEqual([f(ord(a), ord(b)) for a, b in ("A中", "中A", "中9", "é中", "AB", "中文", " 中", "中.")],
+                         [1, 1, 1, 1, 0, 0, 0, 0])
 
 
 if __name__ == "__main__":

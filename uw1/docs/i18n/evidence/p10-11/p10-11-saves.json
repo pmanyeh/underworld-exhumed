@@ -1,5 +1,18 @@
 {
-  "catalog_sha256": "48e68d6ebb1c4e8ec2d9bef4a6629bc288be78ae2f5766df1fe3c96c2d37219f",
+  "catalog_sha256": "582390b574407f3b1e73797987174b304694bef872e16a7383fb6367144d7f00",
+  "params": [
+    "font_cjk_hd_size=5.5",
+    "font_cjk_hd_letter_spacing=0.3",
+    "font_cjk_hd_latin_spacing=1",
+    "font_cjk_hd_line_spacing=0.5",
+    "font_cjk_message_size=6",
+    "font_cjk_message_line_spacing=1.5",
+    "font_cjk_message_border=0.5",
+    "font_cjk_message_antialiasing=false",
+    "font_cjk_talk_file=NotoSansCJKtc-Regular.otf",
+    "font_cjk_talk_size=4.5",
+    "font_cjk_talk_letter_spacing=-0.2"
+  ],
   "sessions": {
     "fallrestore": {
       "golden_saves": {
@@ -38,6 +51,17 @@
         "lookup_lines": 5,
         "scroll_lines": 90
       },
+      "zh-TW-hd-params": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "a1cb100f57e971cacf269e7c26e4630a25a8e9d4bdd35e32df1a80b66b896254",
+          "SAVE1/LEV.ARK": "eb04e79e1658ec03b0ddf9927ed30a6f89bae0d86d0e45680a87427a869db9a8",
+          "SAVE1/PLAYER.DAT": "7fac01efd51b40a7eaf0cfcdc05e2d07b67c6ada3d9ccb096e962a9dbb6e3da2"
+        },
+        "lookup_lines": 5,
+        "scroll_lines": 90
+      },
       "saves_identical_across_modes": true,
       "en_matches_golden": true,
       "diff_files": []
@@ -59,6 +83,12 @@
         "lookup_lines": 0,
         "scroll_lines": 0
       },
+      "zh-TW-hd-params": {
+        "rc": 0,
+        "saves": {},
+        "lookup_lines": 0,
+        "scroll_lines": 0
+      },
       "saves_identical_across_modes": true,
       "diff_files": []
     },
@@ -74,6 +104,12 @@
         "lookup_lines": 0
       },
       "zh-TW-hd": {
+        "rc": 0,
+        "saves": {},
+        "lookup_lines": 0,
+        "scroll_lines": 0
+      },
+      "zh-TW-hd-params": {
         "rc": 0,
         "saves": {},
         "lookup_lines": 0,
@@ -119,6 +155,17 @@
         "lookup_lines": 4,
         "scroll_lines": 88
       },
+      "zh-TW-hd-params": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "a7937b64b8caa58f03721bb6bacf5c78cb235febe0e70b1b84cd99541461a08e",
+          "SAVE1/LEV.ARK": "0ba209dd08039844e0ae4a5b3b651798619b7c4cc4e1c7c93d5e984f13639777",
+          "SAVE1/PLAYER.DAT": "a2ea4d908b03969975d9d0fbab834b2d42e76d25c5694e459dafd1641fc5123e"
+        },
+        "lookup_lines": 4,
+        "scroll_lines": 88
+      },
       "saves_identical_across_modes": true,
       "en_matches_golden": true,
       "diff_files": []
@@ -135,6 +182,12 @@
         "lookup_lines": 0
       },
       "zh-TW-hd": {
+        "rc": 0,
+        "saves": {},
+        "lookup_lines": 0,
+        "scroll_lines": 0
+      },
+      "zh-TW-hd-params": {
         "rc": 0,
         "saves": {},
         "lookup_lines": 0,
@@ -180,6 +233,17 @@
         "lookup_lines": 5,
         "scroll_lines": 90
       },
+      "zh-TW-hd-params": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "c20dea4d876b5b8fb0a1814b43017030cea6d4ac30b2d9ae71b404d2faba49b5",
+          "SAVE1/LEV.ARK": "458ed9199336b793442e033a07abe470d786b9eeb75115ef275bd06b47366d04",
+          "SAVE1/PLAYER.DAT": "3b4d73cb2fbbb00014c2b3ae85b40497d27decf942b6494726456e2e20cfb094"
+        },
+        "lookup_lines": 5,
+        "scroll_lines": 90
+      },
       "saves_identical_across_modes": true,
       "en_matches_golden": true,
       "diff_files": []
@@ -201,6 +265,12 @@
         "lookup_lines": 8,
         "scroll_lines": 55
       },
+      "zh-TW-hd-params": {
+        "rc": 0,
+        "saves": {},
+        "lookup_lines": 8,
+        "scroll_lines": 55
+      },
       "saves_identical_across_modes": true,
       "diff_files": []
     },
@@ -216,6 +286,12 @@
         "lookup_lines": 0
       },
       "zh-TW-hd": {
+        "rc": 0,
+        "saves": {},
+        "lookup_lines": 0,
+        "scroll_lines": 0
+      },
+      "zh-TW-hd-params": {
         "rc": 0,
         "saves": {},
         "lookup_lines": 0,
@@ -246,6 +322,17 @@
         "lookup_lines": 2
       },
       "zh-TW-hd": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "2bda9b4dfbabfdb17cd74d827768da5198ae2b8155002a494524bbeaf6f5cdba",
+          "SAVE1/LEV.ARK": "5e3fc131bfef82cdf9d1b7b4d14ea156f204eab618d4bb1bfb87504e57fe3e12",
+          "SAVE1/PLAYER.DAT": "68c06c891792ffd2f6b603eb111d807346700856730b9fcad59bda4c52a31559"
+        },
+        "lookup_lines": 2,
+        "scroll_lines": 44
+      },
+      "zh-TW-hd-params": {
         "rc": 0,
         "saves": {
           "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
@@ -291,6 +378,17 @@
         "lookup_lines": 2,
         "scroll_lines": 44
       },
+      "zh-TW-hd-params": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "22d5925ed64680ab5f3f6de713645a3d72cae7a9506b8a55a0d4fe950737711b",
+          "SAVE1/LEV.ARK": "c1313b0d69f3b39854cc8f6848815d5da45e4336e23dcf8c2314b5a8cf71d295",
+          "SAVE1/PLAYER.DAT": "718e269b882245c8722e6dbae46ce5443f3fdae5d696dd3cc65679c73346a748"
+        },
+        "lookup_lines": 2,
+        "scroll_lines": 44
+      },
       "saves_identical_across_modes": true,
       "diff_files": []
     },
@@ -316,6 +414,17 @@
         "lookup_lines": 2
       },
       "zh-TW-hd": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "276446ba01e3aa387c83b06f54fccc5ac65bdc6099157a2a828716eac9c6fd4d",
+          "SAVE1/LEV.ARK": "2592847fa3f92297ba4348b4d0b9d294c9085254dc2587e49d6311df3a5a53b5",
+          "SAVE1/PLAYER.DAT": "cc07f9d5e67783199ddc5fd0e857da6a4ed577ac67dd2c73d24a0b1b53f57bb3"
+        },
+        "lookup_lines": 2,
+        "scroll_lines": 44
+      },
+      "zh-TW-hd-params": {
         "rc": 0,
         "saves": {
           "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
@@ -356,6 +465,17 @@
         "lookup_lines": 0
       },
       "zh-TW-hd": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "a1cb100f57e971cacf269e7c26e4630a25a8e9d4bdd35e32df1a80b66b896254",
+          "SAVE1/LEV.ARK": "eb04e79e1658ec03b0ddf9927ed30a6f89bae0d86d0e45680a87427a869db9a8",
+          "SAVE1/PLAYER.DAT": "7fac01efd51b40a7eaf0cfcdc05e2d07b67c6ada3d9ccb096e962a9dbb6e3da2"
+        },
+        "lookup_lines": 0,
+        "scroll_lines": 112
+      },
+      "zh-TW-hd-params": {
         "rc": 0,
         "saves": {
           "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
@@ -407,6 +527,17 @@
         "lookup_lines": 0,
         "scroll_lines": 0
       },
+      "zh-TW-hd-params": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "a7937b64b8caa58f03721bb6bacf5c78cb235febe0e70b1b84cd99541461a08e",
+          "SAVE1/LEV.ARK": "0ba209dd08039844e0ae4a5b3b651798619b7c4cc4e1c7c93d5e984f13639777",
+          "SAVE1/PLAYER.DAT": "a2ea4d908b03969975d9d0fbab834b2d42e76d25c5694e459dafd1641fc5123e"
+        },
+        "lookup_lines": 0,
+        "scroll_lines": 0
+      },
       "saves_identical_across_modes": true,
       "en_matches_golden": true,
       "diff_files": []
@@ -438,6 +569,17 @@
         "lookup_lines": 16
       },
       "zh-TW-hd": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "276446ba01e3aa387c83b06f54fccc5ac65bdc6099157a2a828716eac9c6fd4d",
+          "SAVE1/LEV.ARK": "2592847fa3f92297ba4348b4d0b9d294c9085254dc2587e49d6311df3a5a53b5",
+          "SAVE1/PLAYER.DAT": "cc07f9d5e67783199ddc5fd0e857da6a4ed577ac67dd2c73d24a0b1b53f57bb3"
+        },
+        "lookup_lines": 16,
+        "scroll_lines": 79
+      },
+      "zh-TW-hd-params": {
         "rc": 0,
         "saves": {
           "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
@@ -489,6 +631,17 @@
         "lookup_lines": 0,
         "scroll_lines": 0
       },
+      "zh-TW-hd-params": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "2bda9b4dfbabfdb17cd74d827768da5198ae2b8155002a494524bbeaf6f5cdba",
+          "SAVE1/LEV.ARK": "5e3fc131bfef82cdf9d1b7b4d14ea156f204eab618d4bb1bfb87504e57fe3e12",
+          "SAVE1/PLAYER.DAT": "68c06c891792ffd2f6b603eb111d807346700856730b9fcad59bda4c52a31559"
+        },
+        "lookup_lines": 0,
+        "scroll_lines": 0
+      },
       "saves_identical_across_modes": true,
       "en_matches_golden": true,
       "diff_files": []
@@ -520,6 +673,17 @@
         "lookup_lines": 4
       },
       "zh-TW-hd": {
+        "rc": 0,
+        "saves": {
+          "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",
+          "SAVE1/DESC": "5f537b80f1f2b7d1cc179dba8d36aa88463eda6ac11cb8e60a4583e1bd16aa3c",
+          "SAVE1/LEV.ARK": "f0a958e78591a43162f448e8b14822fec13512d31bab4a9e3a0c8084e8daee82",
+          "SAVE1/PLAYER.DAT": "34aa15d1c73fb368f2c593fbd64fba61756606954961e93a375bbd2b68a5ce8d"
+        },
+        "lookup_lines": 4,
+        "scroll_lines": 96
+      },
+      "zh-TW-hd-params": {
         "rc": 0,
         "saves": {
           "SAVE1/BGLOBALS.DAT": "7b209016d2efd843bbc395dd17a2eb6dd39da73aab5c55c1aa3437c1d0f10615",

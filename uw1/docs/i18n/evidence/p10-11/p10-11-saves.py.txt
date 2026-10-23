@@ -1,7 +1,9 @@
-"""P10.11: the locale never reaches a saved game. Every public UW1 session is replayed three
-ways -- English, zh-TW with the P10 catalog (no HD), zh-TW with the catalog, HD scroll and HD
-cursor -- each session that starts from another's saved game taking it from the same mode's run,
-and the saved games are compared across the modes and with the DOS goldens."""
+"""P10.11: the locale and the HD text parameters never reach a saved game. Every public UW1
+session is replayed four ways -- English; zh-TW with the P10 catalog (no HD); zh-TW with HD
+scroll and HD cursor at the default text parameters (jf open huninn, P10T); and the same with
+a settings file whose text parameters are all off their defaults -- each session that starts
+from another's saved game taking it from the same mode's run. The saved games are compared
+across the modes and with the DOS goldens."""
 from pathlib import Path
 import json
 import os
@@ -17,37 +19,57 @@ import golden as G
 
 out = root / 'build/i18n/p10-11'
 catalog = root / 'build/i18n/zh-TW.uwloc'
-font = root / 'tools/fonts/NotoSansCJKtc-Regular.otf'
+zh = ['--sound', '0,0', '--locale', 'zh-TW', '--i18n-file', str(catalog)]
+hd = zh + ['--hd-scroll', '--hd-cursor']
+# off every default: another font for the conversation, sizes, spacings, outline, no antialiasing
+PARAMS = '''font_cjk_hd_size=5.5
+font_cjk_hd_letter_spacing=0.3
+font_cjk_hd_latin_spacing=1
+font_cjk_hd_line_spacing=0.5
+font_cjk_message_size=6
+font_cjk_message_line_spacing=1.5
+font_cjk_message_border=0.5
+font_cjk_message_antialiasing=false
+font_cjk_talk_file=NotoSansCJKtc-Regular.otf
+font_cjk_talk_size=4.5
+font_cjk_talk_letter_spacing=-0.2
+'''
 modes = {
-    'en': ['--sound', '0,0', '--locale', 'en'],
-    'zh-TW': ['--sound', '0,0', '--locale', 'zh-TW', '--i18n-file', str(catalog)],
-    'zh-TW-hd': ['--sound', '0,0', '--locale', 'zh-TW', '--i18n-file', str(catalog), '--hd-scroll',
-                 '--hd-cursor', '--font', str(font)],
+    'en': (['--sound', '0,0', '--locale', 'en'], None),
+    'zh-TW': (zh, None),
+    'zh-TW-hd': (hd, None),
+    'zh-TW-hd-params': (hd, PARAMS),
 }
 names = sorted(p.stem for p in Path(R.RC.sessions).glob('*.rec'))
 names = [n for n in names if not n.startswith('sound')]   # sound sessions save nothing
 names += ['setup/' + p.name for p in sorted((Path(R.RC.sessions) / 'setup').iterdir()) if p.is_dir()]
 order = [n for n in names if n not in G.STAGE_FROM] + [n for n in names if n in G.STAGE_FROM]
+only = sys.argv[1:]
 
-report = {'catalog_sha256': G.sha256(str(catalog)), 'sessions': {}}
+report = {'catalog_sha256': G.sha256(str(catalog)), 'params': PARAMS.splitlines(), 'sessions': {}}
 for name in order:
+    if only and name not in only:
+        continue
     entry = report['sessions'].setdefault(name, {})
     golden = G.load_golden(name) or {}
     entry['golden_saves'] = golden.get('saves') or {}
-    for mode, extra in modes.items():
+    for mode, (extra, cfg) in modes.items():
         d = out / mode / name
         shutil.rmtree(d, ignore_errors=True); d.mkdir(parents=True)
         stage = None
-        if name in G.STAGE_FROM:
-            src = out / mode / G.STAGE_FROM[name]
+        if name in G.STAGE_FROM or cfg:
             stage = out / mode / (name.replace('/', '_') + '-stage')
             shutil.rmtree(stage, ignore_errors=True); stage.mkdir(parents=True)
-            for x in G.stage_dirs(str(src)):
-                shutil.copytree(src / x, stage / x)
+            if name in G.STAGE_FROM:
+                src = out / mode / G.STAGE_FROM[name]
+                for x in G.stage_dirs(str(src)):
+                    shutil.copytree(src / x, stage / x)
+            if cfg:
+                (stage / 'uw1port.cfg').write_text(cfg, encoding='utf-8', newline='\n')
         logs = []
         if mode != 'en':
             logs = ['--i18n-log', str((d / 'lookup.jsonl').resolve())]
-            if mode == 'zh-TW-hd':
+            if 'hd' in mode:
                 logs += ['--scroll-log', str((d / 'scroll.jsonl').resolve())]
         rc = R.run_port(G.rec_of(name), str(d), extra + logs, stage=str(stage) if stage else None, quiet=True)
         entry[mode] = {'rc': rc, 'saves': G.save_hashes(str(d))}
@@ -65,4 +87,4 @@ for name in order:
           {m: {k: v for k, v in entry[m].items() if k.endswith('_lines')} for m in modes if m != 'en'}, flush=True)
 
 out.mkdir(parents=True, exist_ok=True)
-(out / 'p10-11-saves.json').write_text(json.dumps(report, indent=2) + '\n')
+(out / 'p10-11-saves.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')

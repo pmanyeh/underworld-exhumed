@@ -1,0 +1,67 @@
+"""P10T: window shots of the HD Chinese text at the default text parameters and with a
+settings file that changes them, from the same live input script as P10A's visual check
+(Bragit's conversation from the walk-01 saved game). Usage: p10t-visual.py SHOT_MS VARIANT,
+VARIANT default or params."""
+from pathlib import Path
+import json
+import os
+import shutil
+import subprocess
+import sys
+
+workspace = Path(__file__).resolve().parent.parent
+root = workspace / 'underworld-exhumed/uw1'
+shot, variant = sys.argv[1], sys.argv[2]
+home = root / f'build/i18n/p10t/visual/{variant}-{shot}'
+shutil.rmtree(home, ignore_errors=True)
+home.mkdir(parents=True)
+shutil.copytree(root / 'build/vertical-slice/walk-01/SAVE1', home / 'SAVE1')
+cfg = 'settings-at-start=0\n'
+# the plan's three (default, large, narrow lines), and one off every default at once
+if variant == 'large':
+    cfg += 'font_cjk_hd_size=7\nfont_cjk_hd_line_spacing=3\n'
+elif variant == 'narrow':
+    cfg += 'font_cjk_hd_line_spacing=-2\n'
+elif variant == 'params':
+    cfg += '''font_cjk_hd_size=6
+font_cjk_hd_letter_spacing=0.4
+font_cjk_hd_latin_spacing=1
+font_cjk_hd_line_spacing=1
+font_cjk_message_border=0.5
+font_cjk_talk_file=NotoSansCJKtc-Regular.otf
+font_cjk_talk_size=5.5
+font_cjk_talk_line_spacing=2
+'''
+(home / 'uw1port.cfg').write_text(cfg, encoding='utf-8', newline='\n')
+events = [(3000, 'key enter'), (4500, 'key enter'), (8000, 'down shift'), (8060, 'key a'), (8210, 'up shift'), (9000, 'key f2')]
+t = 9500
+for direction in range(2):
+    for y in (35, 55, 75, 95, 115):
+        for x in (60, 82, 105, 127, 150, 172, 195, 215):
+            events += [(t, f'mdown {x} {y} right'), (t + 180, f'mup {x} {y} right')]
+            t += 450
+    if direction == 0:
+        events += [(t, 'down shift'), (t + 60, 'key a'), (t + 210, 'up shift')]
+        t += 1000
+for start, choice in [(50000, 1), (60000, 1), (70000, 2)]:
+    y = 173 + (choice - 1) * 8
+    events += [(start, f'mdown 30 {y} left'), (start + 220, f'mup 30 {y} left')]
+    for ms in range(start + 1500, start + 8000, 750):
+        events.append((ms, 'key space'))
+events.sort(key=lambda e: e[0])
+script = home / 'dialogue.script'
+script.write_text(''.join(f'{ms} {event}\n' for ms, event in events), encoding='utf-8')
+env = dict(os.environ)
+env.pop('EXHUME_TEST_CHEATS', None)
+env['PATH'] = str(root / 'tools/libs/bin') + os.pathsep + str(workspace / '.poc-tools/msys64/clang64/bin') + os.pathsep + env['PATH']
+cmd = [str(root / 'build/port/uw1port.exe'), '--data', str(workspace / '.poc-private/game/UW'), '--home', str(home),
+       '--record', '--no-audio', '--sound', '0,0', '--enhance', 'skip-intro', '--input-script', str(script),
+       '--locale', 'zh-TW', '--i18n-file', str(root / 'build/i18n/zh-TW.uwloc'), '--hd-scroll',
+       '--scroll-log', str(home / 'scroll.jsonl'), '--i18n-log', str(home / 'lookup.jsonl'),
+       '--screenshot-after', shot, '--screenshot', str(home / 'scanout.png'), '--window-shot', str(home / 'window.png'),
+       '--exit-after', str(int(shot) + 3000), '--scale', '3', '--exit-on-halt']
+(home / 'command.json').write_text(json.dumps(cmd, indent=2) + '\n')
+r = subprocess.run(cmd, cwd=root, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=240)
+(home / 'run.log').write_bytes(r.stdout)
+print(r.stdout.decode('utf-8', errors='replace')[-600:], flush=True)
+raise SystemExit(r.returncode)

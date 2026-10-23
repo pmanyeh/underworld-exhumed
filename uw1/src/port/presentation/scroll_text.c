@@ -12,7 +12,8 @@ static ScrollFrame work, published;
 static atomic_flag busy = ATOMIC_FLAG_INIT;
 static ScrollMeasure measure;
 static ScrollWait wait_for_input;
-static void *measure_context, *wait_context;
+static void *measure_context[2], *wait_context;
+static struct { int em64, letter64, latin64, line64; } style[2];
 static FILE *trace;
 static const int colors[] = {0x2e,0x26,0xf1,0x60,0xb4,0xc4,0xd4};
 
@@ -27,9 +28,18 @@ void scroll_text_enable(int on) { enabled=on!=0; }
 int scroll_text_enabled(void) { return enabled && !suspended; }
 void scroll_text_start(ScrollMeasure m,void *context,ScrollWait w,void *wc)
 {
+    int i;
     memset(&work,0,sizeof work);suspended=0;
-    measure=m;measure_context=context;wait_for_input=w;wait_context=wc;publish();
+    measure=m;measure_context[0]=measure_context[1]=context;wait_for_input=w;wait_context=wc;
+    for(i=0;i<2;i++) {style[i].em64=5*64;style[i].letter64=style[i].latin64=style[i].line64=0;}
+    publish();
 }
+void scroll_text_style(int which,int em64,int letter64,int latin64,int line64)
+{
+    if(which<0 || which>1 || em64<=0 || em64>64*32)return;
+    style[which].em64=em64;style[which].letter64=letter64;style[which].latin64=latin64;style[which].line64=line64;
+}
+void scroll_text_measure_context(int which,void *context) { if(which>=0 && which<=1)measure_context[which]=context; }
 int scroll_text_trace_open(const char *path) { trace=path?fopen(path,"wb"):NULL;return path&&!trace?-1:0; }
 void scroll_text_trace_close(void) { if(trace)fclose(trace);trace=NULL; }
 static void event(const char *name,int which,int value)
@@ -50,7 +60,7 @@ void scroll_text_clear(int which)
 {
     ScrollBox *b;
     if(!enabled || which<0 || which>1)return;
-    b=&work.boxes[which];b->count=b->row=b->lines=b->pending=0;b->x=b->left*64;publish();
+    b=&work.boxes[which];b->count=b->row=b->lines=b->pending=0;b->last=0;b->x=b->left*64;publish();
 }
 int scroll_text_suspend(int on)
 {
@@ -70,26 +80,30 @@ void scroll_text_box(int which,int left,int top,int right,int bottom,int height,
         right<=left || bottom<=top || height<1 || height>bottom-top)return;
     b=&work.boxes[which];
     if(b->left!=left || b->top!=top || b->right!=right || b->bottom!=bottom || b->line_height!=height) {
+        int line64=height*64+style[which].line64;
         memset(b,0,sizeof *b);b->left=left;b->top=top;b->right=right;b->bottom=bottom;b->line_height=height;b->x=left*64;
+        /* at least a sixty-fourth, at most the box: one line always fits */
+        b->line64=line64<1?1:line64>(bottom-top)*64?(bottom-top)*64:line64;
     }
-    b->color=color;
+    b->em64=style[which].em64;b->color=color;
 }
-static int rows(const ScrollBox *b) { return (b->bottom-b->top)/b->line_height; }
+static int rows(const ScrollBox *b) { return (b->bottom-b->top)*64/b->line64; }
+static int row_y64(const ScrollBox *b,int row) { return b->top*64+row*b->line64; }
 static void roll(ScrollBox *b)
 {
     int i,n=0;
-    for(i=0;i<b->count;i++)if(b->cells[i].y>=b->top+b->line_height) {
-        b->cells[n]=b->cells[i];b->cells[n++].y-=b->line_height;
+    for(i=0;i<b->count;i++)if(b->cells[i].y64>=row_y64(b,1)) {
+        b->cells[n]=b->cells[i];b->cells[n].y64-=b->line64;b->cells[n].y=b->cells[n].y64/64;n++;
     }
-    b->count=n;b->row=rows(b)-1;b->x=b->left*64;b->pending=0;
+    b->count=n;b->row=rows(b)-1;b->x=b->left*64;b->pending=0;b->last=0;
 }
 static int put(ScrollBox *b,uint32_t cp,int advance,int choice)
 {
     ScrollCell *c;
     if(b->count==SCROLL_CELLS || advance<0 || advance>INT_MAX-b->x)return -1;
     c=&b->cells[b->count++];c->scalar=cp;c->x=b->x;
-    c->y=b->top+b->row*b->line_height;c->color=b->color;c->choice=choice;
-    b->x+=advance;return 0;
+    c->y64=row_y64(b,b->row);c->y=c->y64/64;c->color=b->color;c->choice=choice;
+    b->x+=advance;if(cp!=' ' && cp!='\t')b->last=cp;return 0;
 }
 static void more(int which)
 {
@@ -98,10 +112,10 @@ static void more(int which)
     /* Explicit \m may occur halfway down the NPC paper. Roll one line but
        retain that writing row; automatic bottom overflow already uses the last row. */
     roll(b);b->row=row;n=b->count;b->color=0x60;
-    for(i=0;label[i];i++)(void)put(b,(unsigned char)label[i],measure((unsigned char)label[i],measure_context),0);
+    for(i=0;label[i];i++)(void)put(b,(unsigned char)label[i],measure((unsigned char)label[i],measure_context[which]),0);
     publish();event("more",which,0);
     if(wait_for_input)wait_for_input(0,wait_context);
-    b->count=n;b->color=color;b->x=b->left*64;b->pending=0;publish();
+    b->count=n;b->color=color;b->x=b->left*64;b->pending=0;b->last=0;publish();
 }
 static void newline(int which,int *fresh)
 {
@@ -109,7 +123,7 @@ static void newline(int which,int *fresh)
     if(b->row+1<rows(b))b->row++;
     else if(*fresh>=rows(b)-1) {more(which);*fresh=0;}
     else roll(b);
-    b->lines++;(*fresh)++;b->x=b->left*64;b->pending=0;
+    b->lines++;(*fresh)++;b->x=b->left*64;b->pending=0;b->last=0;
 }
 static void control(int which,uint32_t cp,int *fresh)
 {
@@ -127,7 +141,7 @@ int scroll_text_write(int which,const char *text,int escapes,int choice)
     char *copy;size_t len,pos=0;int fresh=0,status=0;
     if(!scroll_text_enabled() || which<0 || which>1 || !text || !measure)return -1;
     b=&work.boxes[which];
-    if(!b->line_height || !rows(b))return -1;
+    if(!b->line_height || !b->line64 || !rows(b))return -1;
     len=strlen(text);
     if(len>16384 || !utf8_validate(text,len,NULL))return -1;
     copy=malloc(len+1);if(!copy)return -1;memcpy(copy,text,len+1);
@@ -143,13 +157,23 @@ int scroll_text_write(int which,const char *text,int escapes,int choice)
     }
     while(pos<len) {
         struct text_layout layout={0};struct layout_line *line;size_t i,end;
-        int available;
+        int available,lead;
         if(b->pending)newline(which,&fresh);
         available=b->right*64-b->x;
         if(available<1) {newline(which,&fresh);available=(b->right-b->left)*64;}
-        status=layout_text_controls(copy+pos,len-pos,available,measure,measure_context,escapes,&layout,NULL);
+        status=layout_text_spaced(copy+pos,len-pos,available,measure,measure_context[which],escapes,
+                                  style[which].letter64,style[which].latin64,&layout,NULL);
         if(status)break;
         line=&layout.lines[0];
+        /* the space where this text's first glyph meets the line's last across the boundary */
+        lead=0;
+        if(b->last && style[which].latin64)
+            for(i=line->unit_start;i<line->unit_start+line->unit_count;i++) {
+                const struct layout_unit *u=&layout.units[i];
+                if(u->kind==LAYOUT_CONTROL)continue;
+                if(u->kind==LAYOUT_GLYPH && layout_latin_boundary(b->last,u->scalar))lead=style[which].latin64;
+                break;
+            }
         /* A new English word that fits a full line should not be split merely
            because an earlier print call left a partial line. */
         if(b->x>b->left*64) {
@@ -165,7 +189,8 @@ int scroll_text_write(int which,const char *text,int escapes,int choice)
                 layout_free(&layout);newline(which,&fresh);continue;
             }
         }
-        if(line->width>available && b->x>b->left*64) {layout_free(&layout);newline(which,&fresh);continue;}
+        if(line->width+lead>available && b->x>b->left*64) {layout_free(&layout);newline(which,&fresh);continue;}
+        if(lead>0)b->x+=lead;
         end=pos;
         for(i=line->unit_start;i<line->unit_start+line->unit_count;i++) {
             struct layout_unit *u=&layout.units[i];
@@ -186,7 +211,7 @@ int scroll_text_write(int which,const char *text,int escapes,int choice)
     event(status?"error":"write",which,choice);publish();free(copy);return status?-1:0;
 }
 int scroll_text_x(int which) { return work.boxes[which].x/64; }
-int scroll_text_y(int which) { ScrollBox *b=&work.boxes[which];return b->top+b->row*b->line_height; }
+int scroll_text_y(int which) { ScrollBox *b=&work.boxes[which];return b->line64?row_y64(b,b->row)/64:b->top; }
 int scroll_text_lines(int which) { return work.boxes[which].lines; }
 int scroll_text_color(int which) { return work.boxes[which].color; }
 int scroll_text_hit(int x,int y)
@@ -195,7 +220,7 @@ int scroll_text_hit(int x,int y)
     if(!scroll_text_enabled() || work.screen!=4 || x<b->left || x>=b->right || y<b->top || y>=b->bottom)return -1;
     for(i=b->count-1;i>=0;i--) {
         ScrollCell *c=&b->cells[i];
-        if(y>=c->y && y<c->y+b->line_height && c->choice>0)return c->choice;
+        if(y*64>=c->y64 && y*64<c->y64+b->line64 && c->choice>0)return c->choice;
     }
     return -1;
 }

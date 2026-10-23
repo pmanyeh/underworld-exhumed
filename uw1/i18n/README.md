@@ -18,8 +18,7 @@ python3 tools/i18n/l10n.py validate $D            # UTF-8／key／source drift�
 python3 tools/i18n/l10n.py authority $D --block 1 # 譯文對照 authority/GLOSSARY.tsv（--block 限定批次）
 python3 tools/i18n/l10n.py build $D               # deterministic build/i18n/zh-TW.uwloc
 build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" --locale zh-TW \
-  --i18n-file build/i18n/zh-TW.uwloc --hd-scroll --font tools/fonts/NotoSansCJKtc-Regular.otf \
-  --i18n-trace build/i18n/p9/play.jsonl
+  --i18n-file build/i18n/zh-TW.uwloc --hd-scroll --i18n-trace build/i18n/p9/play.jsonl
 python3 tools/i18n/l10n.py coverage $D --trace build/i18n/p9/play.jsonl   # coverage.json／coverage.md
 python3 tools/i18n/l10n.py export $D --trace build/i18n/p9/play.jsonl --runtime --untranslated
 ```
@@ -65,11 +64,13 @@ python3 tools/i18n/l10n.py build --pak "$UW1_DATA/DATA/STRINGS.PAK"
 python3 tools/i18n/fetch_font.py
 make port
 build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" \
-  --locale zh-TW --i18n-file build/i18n/zh-TW.uwloc --hd-scroll \
-  --font tools/fonts/NotoSansCJKtc-Regular.otf
+  --locale zh-TW --i18n-file build/i18n/zh-TW.uwloc --hd-scroll
 ```
 
-Windows 使用 `uw1port.exe`；font／catalog 也可使用絕對路徑。
+Windows 使用 `uw1port.exe`；catalog 也可使用絕對路徑。
+中文字的字型、字級、字距、行距等由設定檔決定（P10T）：繁體中文的預設值在
+[zh-TW/text-settings.ini](zh-TW/text-settings.ini)，玩家自己的設定寫在 home 目錄的 `uw1port.cfg`，
+`--font` 只覆寫字型檔。設定名稱與 Ultima VIII 中文化相同，說明見 [zh-TW/SETTINGS.zh-TW.md](zh-TW/SETTINGS.zh-TW.md)。
 HD scroll 會同時啟用 HD cursor，需要停用 mouse-look；不會自動修改已存的 enhancement 設定。
 `--scroll-log FILE` 可記錄實際顯示文字、pause、MORE 與選項事件。
 缺譯文、dynamic string、含 `@` 的模板，保留英文 fallback；模板先由原 BABL 展開。
@@ -86,16 +87,17 @@ Linux `libfreetype6-dev`、macOS `brew install freetype`、MSYS2 CLANG64
 python3 tools/i18n/fetch_font.py
 make port
 build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" \
-  --test-hd-text --font tools/fonts/NotoSansCJKtc-Regular.otf
+  --test-hd-text
 ```
 
 Windows 使用 `uw1port.exe`，MSYS2 可用 `make PY=python port`。
-font path 相對目前工作目錄；可傳入絕對路徑。預設不啟用 HD text，也不搜尋 OS fonts。
+字型依設定檔（預設 jf open 粉圓）在 home 的 `fonts/`、`fonts/`、`tools/fonts/` 尋找；`--font` 可傳入路徑。
+預設不啟用 HD text，也不搜尋 OS fonts。
 設定畫面關閉後可見三句指定的中文／中英混合文字；F11 Display 可調整大小與 fullscreen。
 `--test-overlay` 可同時啟用 Phase 4 幾何框。
 
-字型為 Noto Sans CJK TC Regular 2.004，原檔不修改、依 SHA-256 驗證；字型與 OFL 1.1
-授權下載到 ignored `tools/fonts/`，不提交 16 MB font binary。沒有 FreeType 的 build 可繼續使用
+預設字型為 jf open 粉圓 2.1（P0–P10A 用 Noto Sans CJK TC Regular 2.004），原檔不修改、依 SHA-256 驗證；
+字型與 OFL 1.1 授權下載到 ignored `tools/fonts/`，不提交 font binary。沒有 FreeType 的 build 可繼續使用
 原英文路徑；明示要求 HD text 時會診斷失敗，不會悄悄拿低解析 bitmap 代替。
 Web 保留 no-FreeType stub；web target 的 pkg-config 只搜尋 web libraries，避免誤連結 host FreeType。
 

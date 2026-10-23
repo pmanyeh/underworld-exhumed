@@ -48,4 +48,11 @@ int hd_scroll_advance(HdFont *font, uint32_t scalar, int em_64);
    Resizing changes masks, never the prepared line breaks or choice hit boxes. */
 int hd_scroll_glyph(HdFont *font, const PlatOverlay *frame, uint32_t scalar,
                     float x, float y, float em, const float clip[4], HdColor color);
+/* The same with a black outline border logical pixels wide (0 none, at most 8). */
+int hd_scroll_glyph_border(HdFont *font, const PlatOverlay *frame, uint32_t scalar,
+                           float x, float y, float em, const float clip[4], HdColor color, float border);
+/* Antialiasing on (the default) or off: off, each pixel of a glyph is all or nothing. */
+void hd_font_set_antialiasing(HdFont *font, int on);
+/* A second font file for the characters the first lacks (measured and drawn from it alike). */
+int hd_font_set_fallback(HdFont *font, const char *path);
 #endif

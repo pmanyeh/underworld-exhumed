@@ -135,9 +135,49 @@ void layout_free(struct text_layout *out)
     memset(out, 0, sizeof *out);
 }
 
+/* A letter or digit of the Latin script, for the extra space where it meets Chinese. */
+static int latin(uint32_t c)
+{
+    return (c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') ||
+           (c >= 0xC0 && c <= 0x24F && c != 0xD7 && c != 0xF7);
+}
+
+int layout_latin_boundary(uint32_t a, uint32_t b)
+{
+    return (latin(a) && (character_flags(b) & LAYOUT_CJK)) || ((character_flags(a) & LAYOUT_CJK) && latin(b));
+}
+
+/* Each glyph but a space gets letter after it, and latin more where it meets the next glyph
+   across the Chinese/Latin boundary (controls between them are skipped, a newline ends it). */
+static int add_spacing(struct text_layout *t, int letter, int latin_extra)
+{
+    size_t i, j;
+    for (i = 0; i < t->unit_count; i++) {
+        struct layout_unit *u = t->units + i;
+        int64_t extra = 0;
+        if (u->kind != LAYOUT_GLYPH || (u->flags & LAYOUT_SPACE)) continue;
+        extra = letter;
+        for (j = i + 1; j < t->unit_count && t->units[j].kind == LAYOUT_CONTROL; j++) {}
+        if (j < t->unit_count && t->units[j].kind == LAYOUT_GLYPH &&
+            layout_latin_boundary(u->scalar, t->units[j].scalar)) extra += latin_extra;
+        extra += u->advance;
+        if (extra < 0) extra = 0;
+        if (extra > INT32_MAX) return -1;
+        u->advance = (int)extra;
+    }
+    return 0;
+}
+
 int layout_text_controls(const char *text, size_t length, int max_width,
                          layout_measure_fn measure, void *context, int controls,
                          struct text_layout *out, size_t *error_offset)
+{
+    return layout_text_spaced(text, length, max_width, measure, context, controls, 0, 0, out, error_offset);
+}
+
+int layout_text_spaced(const char *text, size_t length, int max_width,
+                       layout_measure_fn measure, void *context, int controls,
+                       int letter, int latin_extra, struct text_layout *out, size_t *error_offset)
 {
     struct text_layout result = {0};
     size_t pos = 0, bad = 0, start = 0, i;
@@ -181,6 +221,10 @@ int layout_text_controls(const char *text, size_t length, int max_width,
             }
         }
         u->byte_length = pos - u->byte_offset;
+    }
+    if ((letter || latin_extra) && add_spacing(&result, letter, latin_extra)) {
+        layout_free(&result);
+        return LAYOUT_BAD_WIDTH;
     }
     mark_breaks(&result);
     for (i = 0; i <= result.unit_count; i++) {

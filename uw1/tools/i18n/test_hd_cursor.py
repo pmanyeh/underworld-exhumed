@@ -48,7 +48,7 @@ def main():
     env["PATH"] = str(uw1 / "tools/libs/bin") + os.pathsep + env["PATH"]
     run = [str(target)]
     if args.window:
-        run += [str(uw1/"tools/fonts/NotoSansCJKtc-Regular.otf"), str(out/stem)]
+        run += [str(uw1/"tools/fonts/jf-openhuninn-2.1.ttf"), str(out/stem)]
     result = subprocess.run(run, capture_output=True, text=True, env=env)
     print(result.stdout, end="", flush=True)
     print(result.stderr, end="", flush=True)

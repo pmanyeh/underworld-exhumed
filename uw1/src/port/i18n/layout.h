@@ -54,5 +54,13 @@ void layout_free(struct text_layout *layout);
 int layout_text_controls(const char *text, size_t length, int max_width,
                          layout_measure_fn measure, void *context, int controls,
                          struct text_layout *out, size_t *error_offset);
+/* The same, with letter added after each glyph but a space and latin_extra more where a
+   Latin letter or digit meets a Chinese character (both in the measure's units, may be
+   negative; an advance never goes below zero). */
+int layout_text_spaced(const char *text, size_t length, int max_width,
+                       layout_measure_fn measure, void *context, int controls,
+                       int letter, int latin_extra, struct text_layout *out, size_t *error_offset);
+/* 1 when a and b, in that order, meet across the Chinese/Latin boundary. */
+int layout_latin_boundary(uint32_t a, uint32_t b);
 
 #endif

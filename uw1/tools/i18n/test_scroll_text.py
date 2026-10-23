@@ -51,7 +51,8 @@ def main():
         a,b=source.encode(),target.encode()
         data+=struct.pack('<HHII',3651,index,len(a),len(b))+a+b'\0'+b+b'\0'
     catalog=out/'flow.uwloc';catalog.write_bytes(data)
-    run=[str(exe),str(uw1/'tools/fonts/NotoSansCJKtc-Regular.otf'),str(out/name)] if rendering else [str(exe),str(catalog)]
+    run=[str(exe),str(uw1/'tools/fonts/jf-openhuninn-2.1.ttf'),str(out/name)] if rendering else [str(exe),str(catalog)]
+    if args.render: run.append(str(uw1/'tools/fonts/NotoSansCJKtc-Regular.otf'))  # a fallback for what huninn lacks
     result=subprocess.run(run,capture_output=True,text=True,env=env)
     print(result.stdout,end='',flush=True);print(result.stderr,end='',flush=True)
     result.check_returncode()

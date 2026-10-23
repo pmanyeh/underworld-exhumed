@@ -1,0 +1,142 @@
+{
+  "default_font": {
+    "file": "jf-openhuninn-2.1.ttf",
+    "sha256": "9d5bf4932d31fe94c18cd8cfddc98bc1b14ce10f4e354c682179db290a99c825",
+    "covers_master_and_authority_non_ascii": "1267 of 1267"
+  },
+  "catalog_sha256": "582390b574407f3b1e73797987174b304694bef872e16a7383fb6367144d7f00",
+  "tests": {
+    "test_text_style.py (+ --sanitize)": "PASS 36 assertions",
+    "test_layout.py": "OK 36 tests (7 new: spacing)",
+    "test_scroll_text.py": "PASS (styles added)",
+    "test_scroll_text.py --sanitize": "PASS",
+    "test_scroll_text.py --render": "PASS 73232 assertions (outline/baseline/antialiasing/em, fallback font)",
+    "test_hd_font.py": "PASS",
+    "test_hd_cursor.py": "PASS",
+    "verify_layout_sanitizers.py": "ASan + UBSan PASS",
+    "test_l10n.py": "OK"
+  },
+  "visual_live_runs": {
+    "default-58000": {
+      "settings": [
+        "settings-at-start=0"
+      ],
+      "hd_text": [
+        "uw1port: HD text: message: tools/fonts/jf-openhuninn-2.1.ttf, size 5, spacing 0/0/0, baseline 0, border 0, antialiased",
+        "uw1port: HD text: talk: tools/fonts/jf-openhuninn-2.1.ttf, size 5, spacing 0/0/0, baseline 0, border 0, antialiased",
+        "uw1port: HD text: locale settings i18n/zh-TW/text-settings.ini"
+      ],
+      "text_events": 80,
+      "more_events": 0,
+      "conversation_text_events": 0
+    },
+    "large-58000": {
+      "settings": [
+        "settings-at-start=0",
+        "font_cjk_hd_size=7",
+        "font_cjk_hd_line_spacing=3"
+      ],
+      "hd_text": [
+        "uw1port: HD text: message: tools/fonts/jf-openhuninn-2.1.ttf, size 7, spacing 0/0/3, baseline 0, border 0, antialiased",
+        "uw1port: HD text: talk: tools/fonts/jf-openhuninn-2.1.ttf, size 7, spacing 0/0/3, baseline 0, border 0, antialiased",
+        "uw1port: HD text: locale settings i18n/zh-TW/text-settings.ini"
+      ],
+      "text_events": 30,
+      "more_events": 2,
+      "conversation_text_events": 6
+    },
+    "large-66000": {
+      "settings": [
+        "settings-at-start=0",
+        "font_cjk_hd_size=7",
+        "font_cjk_hd_line_spacing=3"
+      ],
+      "hd_text": [
+        "uw1port: HD text: message: tools/fonts/jf-openhuninn-2.1.ttf, size 7, spacing 0/0/3, baseline 0, border 0, antialiased",
+        "uw1port: HD text: talk: tools/fonts/jf-openhuninn-2.1.ttf, size 7, spacing 0/0/3, baseline 0, border 0, antialiased",
+        "uw1port: HD text: locale settings i18n/zh-TW/text-settings.ini"
+      ],
+      "text_events": 80,
+      "more_events": 0,
+      "conversation_text_events": 0
+    },
+    "large-76000": {
+      "settings": [
+        "settings-at-start=0",
+        "font_cjk_hd_size=7",
+        "font_cjk_hd_line_spacing=3"
+      ],
+      "hd_text": [
+        "uw1port: HD text: message: tools/fonts/jf-openhuninn-2.1.ttf, size 7, spacing 0/0/3, baseline 0, border 0, antialiased",
+        "uw1port: HD text: talk: tools/fonts/jf-openhuninn-2.1.ttf, size 7, spacing 0/0/3, baseline 0, border 0, antialiased",
+        "uw1port: HD text: locale settings i18n/zh-TW/text-settings.ini"
+      ],
+      "text_events": 80,
+      "more_events": 0,
+      "conversation_text_events": 0
+    },
+    "narrow-58000": {
+      "settings": [
+        "settings-at-start=0",
+        "font_cjk_hd_line_spacing=-2"
+      ],
+      "hd_text": [
+        "uw1port: HD text: message: tools/fonts/jf-openhuninn-2.1.ttf, size 5, spacing 0/0/-2, baseline 0, border 0, antialiased",
+        "uw1port: HD text: talk: tools/fonts/jf-openhuninn-2.1.ttf, size 5, spacing 0/0/-2, baseline 0, border 0, antialiased",
+        "uw1port: HD text: locale settings i18n/zh-TW/text-settings.ini"
+      ],
+      "text_events": 42,
+      "more_events": 1,
+      "conversation_text_events": 6
+    },
+    "params-58000": {
+      "settings": [
+        "settings-at-start=0",
+        "font_cjk_hd_size=6",
+        "font_cjk_hd_letter_spacing=0.4",
+        "font_cjk_hd_latin_spacing=1",
+        "font_cjk_hd_line_spacing=1",
+        "font_cjk_message_border=0.5",
+        "font_cjk_talk_file=NotoSansCJKtc-Regular.otf",
+        "font_cjk_talk_size=5.5",
+        "font_cjk_talk_line_spacing=2"
+      ],
+      "hd_text": [
+        "uw1port: HD text: message: tools/fonts/jf-openhuninn-2.1.ttf, size 6, spacing 0.4/1/1, baseline 0, border 0.5, antialiased",
+        "uw1port: HD text: talk: tools/fonts/NotoSansCJKtc-Regular.otf, size 5.5, spacing 0.4/1/2, baseline 0, border 0, antialiased",
+        "uw1port: HD text: locale settings i18n/zh-TW/text-settings.ini"
+      ],
+      "text_events": 80,
+      "more_events": 0,
+      "conversation_text_events": 0
+    }
+  },
+  "large_parameter_replays": {
+    "settings": [
+      "font_cjk_hd_size=7",
+      "font_cjk_hd_line_spacing=3"
+    ],
+    "items": {
+      "more": 0,
+      "saves_same_as_default_hd": true
+    },
+    "fallrestore": {
+      "more": 0,
+      "saves_same_as_default_hd": true
+    },
+    "savecursor": {
+      "more": 0,
+      "saves_same_as_default_hd": true
+    },
+    "tooheavy": {
+      "more": 1,
+      "saves_same_as_default_hd": true
+    },
+    "overpay": {
+      "more": 1,
+      "saves_same_as_default_hd": true
+    }
+  },
+  "localized_replay": "PASS, 16 sessions, 35 distinct translation hits match the master",
+  "english_golden_verify": "all public sessions identical to DOS"
+}

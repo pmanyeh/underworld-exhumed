@@ -49,6 +49,19 @@ FreeType 行為參考官方 [glyph slot/render](https://freetype.org/freetype2/d
 
 ## Font / License
 
+**預設字型（P10T 起）：jf open 粉圓 2.1**，與 Ultima VIII 中文化相同。字型、字級、間距等參數的設定方式見
+[SETTINGS.zh-TW.md](../../i18n/zh-TW/SETTINGS.zh-TW.md)。
+
+- Font：**jf open huninn（jf open 粉圓）2.1**，justfont，TTF。
+- Source：[justfont/open-huninn-font](https://github.com/justfont/open-huninn-font) 的 v2.1 release
+  （`jf-openhuninn-2.1.ttf`）；授權取自 v2.1 tag 指向的 commit `98d53b3dac1730889edf548359c326c53624fa80`。
+- Font SHA-256：`9d5bf4932d31fe94c18cd8cfddc98bc1b14ce10f4e354c682179db290a99c825`（與 Ultima VIII 中文化 1.0.3 使用的檔案相同）。
+- License：SIL Open Font License 1.1，衍生自 Kosugi Maru 與 Varela Round，原文見
+  [jf-openhuninn-OFL.txt](licenses/jf-openhuninn-OFL.txt)。可隨軟體散布，須將授權檔與字型放在一起，不能單獨出售字型。
+- 涵蓋：master 與 Authority 目前用到的 1,267 個非 ASCII 字元全部都有（P10T 檢查）。
+
+**P0–P10A 的測試字型：Noto Sans CJK TC Regular**，仍可用 `font_cjk_hd_file` 或 `--font` 指定。
+
 - Font：**Noto Sans CJK TC Regular**，Version 2.004，OTF/CFF。
 - Copyright metadata：© 2014–2021 Adobe (http://www.adobe.com/)。
 - Source：[notofonts/noto-cjk](https://github.com/notofonts/noto-cjk)，commit `f8d157532fbfaeda587e826d4cd5b21a49186f7c`，
@@ -59,7 +72,7 @@ FreeType 行為參考官方 [glyph slot/render](https://freetype.org/freetype2/d
   可以與軟體一起散布，須保留 copyright / license，不能單獨出售字型；衍生版本須遵守 OFL 命名與授權條件。
   這裡只散布 fetch tool 與 renderer；目前未製作新的 release package。
 
-[fetch_font.py](../../tools/i18n/fetch_font.py) 固定 commit 與兩份檔案 SHA-256，
+[fetch_font.py](../../tools/i18n/fetch_font.py) 固定版本與四份檔案（兩個字型、兩份授權）的 SHA-256，
 同時下載 font 與授權至 ignored `tools/fonts/`。參見官方 [OFL text](https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/LICENSE)。
 
 FreeType 使用 FreeType License（FTL），見 [FTL.txt](licenses/FTL.txt)。本機測試版本 2.14.3，
