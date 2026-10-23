@@ -186,6 +186,7 @@ def validate(root, guide=None, workbook=None):
             "guide_spell_sequences_verified": checked_spells, "runes": len(runes),
             "mantras": len(mantras), "skills": 20, "virtues": 8,
             "guide_only_terms": sum(row["source_scope"] == "guide-only" for row in rows),
+            "project_selected": statuses["project-selected"],
             "review_needed": statuses["review-needed"], "human_approved": statuses["approved"],
             "human_decisions": "PASS", "derived_views": "PASS"}
 
