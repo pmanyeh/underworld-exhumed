@@ -33,6 +33,13 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"scroll.more", "[繼續]"},                     /* literals.tsv's [MORE] */
     {"stats.level", "第%d級"},                     /* "1ST" .. "16TH" */
     {"end.level", "第%d級%s"},                     /* game_stats: level, class */
+    {"qty.prompt", "要移動幾個？"},                /* "Move how many?" as a panel (qty_dialog.c) */
+    {"qty.minus", "－"},
+    {"qty.plus", "＋"},
+    {"qty.half", "一半"},
+    {"qty.all", "全部"},
+    {"qty.ok", "確定"},
+    {"qty.cancel", "取消"},
     {"opt.save", "儲存遊戲"},                      /* the options panel (OPTBTNS.GR) */
     {"opt.restore", "讀取遊戲"},
     {"opt.music", "音樂"},

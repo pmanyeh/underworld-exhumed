@@ -28,6 +28,7 @@
 #include "presentation/caption.h"
 #include "presentation/hd_label.h"
 #include "presentation/settings_text.h"
+#include "presentation/qty_dialog.h"
 #include "presentation/overlay_demo.h"
 #include "presentation/hd_demo.h"
 #include "presentation/presentation.h"
@@ -150,6 +151,12 @@ void scroll_wait(int ticks, char mouse);
 static int scroll_measure(uint32_t cp, void *m) { return hd_scroll_advance(((ScrollMetrics *)m)->font,cp,((ScrollMetrics *)m)->em64); }
 static int to64(double v) { return (int)(v * 64 + (v < 0 ? -0.5 : 0.5)); }   /* rounded; no libm on Linux */
 static void scroll_pause(int ticks, void *unused) { (void)unused;scroll_wait(ticks,1); }
+
+/* P12: the keyboard and the pointer, by way of the "Move how many?" panel (qty_dialog.c) */
+void kbd_byte(uint8_t sc);                  /* keyqueue.c */
+void mouse_event(const PlatPointer *ev);    /* mousedrv.c */
+static void key_hook(uint8_t sc) { if (!qty_dialog_key(sc)) kbd_byte(sc); }
+static void pointer_hook(const PlatPointer *ev) { if (!qty_dialog_pointer(ev)) mouse_event(ev); }
 
 static int game(void *arg)
 {
@@ -760,6 +767,7 @@ int main(int argc, char *argv[])
     scroll_text_enable(modern_scroll);
     caption_enable(modern_scroll);
     hd_label_enable(modern_scroll);
+    qty_dialog_enable(modern_scroll, kbd_byte);
     if (modern_scroll && !strcmp(locale, "zh-TW")) scroll_text_more_label(port_zh_lit("scroll.more"));
     if (modern_scroll) {
         /* P11.4: the locale's words for what a conversation compares, the home folder's first */
@@ -791,8 +799,8 @@ int main(int argc, char *argv[])
     pit_start();
     memset(&hooks, 0, sizeof hooks);
     hooks.scanout = vga_scanout;
-    hooks.key = kbd_byte;
-    hooks.pointer = mouse_event;
+    hooks.key = key_hook;
+    hooks.pointer = pointer_hook;
     hooks.lifecycle = on_lifecycle;
     if (test_overlay) hooks.overlay = overlay_demo_draw;
     if (test_hd_text) { hooks.overlay = hd_demo_draw; hooks.overlay_data = &hd_demo; }

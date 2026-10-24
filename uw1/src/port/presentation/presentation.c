@@ -4,6 +4,7 @@
 #include "scroll_overlay.h"
 #include "caption.h"
 #include "hd_label.h"
+#include "qty_dialog.h"
 #include "ui/settings.h"
 #include <string.h>
 void vga_scanout(uint8_t *, int *, int *, uint8_t[768]);
@@ -51,6 +52,8 @@ int presentation_draw(const PlatOverlay *frame, void *data)
         drawn |= hd_label_draw(p->scroll_fonts[0],frame,&frame_labels,frame_pixels,frame_w,frame_h,frame_palette,
                                p->scroll_style[0].border,p->scroll_style[0].baseline,frame_cursor.visible?cursor:NULL);
     }
+    /* the "Move how many?" panel, over the scroll (P12) */
+    if (p->scroll_fonts[0]) drawn |= qty_dialog_draw(p->scroll_fonts[0],frame);
     /* Game cursor last, above HD text. Settings owns its OS pointer and is
        composited above the game layer, so do not leave a second pointer there. */
     if (p->cursor && !settings_open()) drawn |= hd_cursor_draw(frame,&frame_cursor,frame_palette);
