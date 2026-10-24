@@ -19,9 +19,9 @@ Windows 使用 `uw1port.exe`。游標本身不依賴 FreeType 或外部新素材
 `--cursor-log FILE` 會記錄 JSONL snapshot，供測試診斷；一般遊玩不需開啟。
 `--screenshot` 仍是原低解析 scanout，`--window-shot` 才包含 HD 文字與新游標。
 
-本 PoC 明確禁止 `--hd-cursor` 搭配啟用中的 `mouse-look` enhancement：輸出診斷並 exit 1。
-可用 `--no-enhance mouse-look` 關閉該 enhancement，或移除 `--hd-cursor` 使用原模式。
-這個限制也檢查設定檔／recording 解析後的 enhancement flags，不只檢查命令列字串。
+PoC 階段曾明確禁止 `--hd-cursor` 搭配啟用中的 `mouse-look` enhancement（輸出診斷並 exit 1）。
+P12（2026-10-24）解除：在設定畫面開啟滑鼠視角會讓遊戲無法啟動。滑鼠視角把遊戲的游標固定在 3D 視窗中央當準星，
+走的是 HD 游標接手的同一條繪製路徑，所以準星就是 HD 游標；實測開啟、轉動視角、關閉都正常。
 原相容模式的 mouse-look 沒有修改，並通過既有 enhancements regression。
 
 ## 實作與邊界

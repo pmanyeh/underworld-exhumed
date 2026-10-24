@@ -777,12 +777,10 @@ int main(int argc, char *argv[])
         hd_demo.geometry = test_overlay;
     }
     if (modern_scroll) hd_cursor = 1;
-    if (hd_cursor && ENHANCED(ENH_MOUSE_LOOK)) {
-        /* the HD cursor does not follow mouse-look; an enhancement the settings screen turns on
-           must not keep the game from starting, so the game's own cursor stays (P12) */
-        fputs("uw1port: HD cursor: mouse-look is not supported; using the game's own cursor\n", stderr);
-        hd_cursor = 0;
-    }
+    /* P12: mouse-look with the HD cursor too (the PoC refused the pair): mouse-look keeps the game's
+       cursor at the 3D view's centre as a crosshair, drawn by the same raster path the HD cursor
+       takes over, so the crosshair is the HD cursor's; the HD text must not sit over the game's own
+       cursor in video memory, which is what the game's cursor under it would be */
     hd_cursor_enable(hd_cursor);
     scroll_text_enable(modern_scroll);
     caption_enable(modern_scroll);

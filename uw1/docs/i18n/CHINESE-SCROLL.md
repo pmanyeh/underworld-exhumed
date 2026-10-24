@@ -18,7 +18,7 @@ build/port/uw1port --data "$UW1_DATA" --home "$UW1PORT_HOME" \
 
 Windows 用 `uw1port.exe`。Font／catalog 相對目前目錄，也可用絕對路徑。
 `--hd-scroll` 要求 `--locale zh-TW`、可用的 FreeType 與 scalable Unicode font，並自動選用 P6 HD cursor。
-與啟用中的 mouse-look 同時使用會明確拒絕；可用 `--no-enhance mouse-look` 關閉。
+可與 mouse-look 同時使用（P12 起；PoC 階段曾明確拒絕，見 [HD-CURSOR.md](HD-CURSOR.md)）。
 Font 失敗不會悄悄退回低解析中文；catalog 缺少／失效則延用原有 English lookup fallback。
 `--scroll-log FILE` 記錄 UTF-8 text、pause、MORE 與選項事件。
 
