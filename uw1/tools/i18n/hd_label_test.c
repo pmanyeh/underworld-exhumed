@@ -52,6 +52,18 @@ int main(void)
     /* invalid text and newlines are refused */
     CHECK(hd_label_put("\xFF", 10, 30, 10, 6, 1, 0, 319) == -1);
     CHECK(hd_label_put("一\n二", 10, 30, 10, 6, 1, 0, 319) == -1);
+    /* a patch covers its box with the box's commonest colour and centres its rows */
+    hd_label_clear();
+    for (i = 0; i < 7 * 30; i++) screen[(28 + i / 30) * 320 + 241 + i % 30] = (uint8_t)(i % 5 ? 0x4A : 0x01);
+    CHECK(hd_label_patch("力量", 241, 28, 271, 35, 0xF1, HD_LABEL_LEFT) == 0);
+    hd_label_read(&f);
+    CHECK(f.count == 1 && f.labels[0].fill == 0x4A && f.labels[0].cells[0].x64 == 241 * 64);
+    CHECK(f.labels[0].y64 == (28 + 35) * 32 - 5 * 32 && f.labels[0].right == 271);
+    CHECK(hd_label_patch("力量", 241, 28, 241, 35, 0xF1, HD_LABEL_LEFT) == -1);
+    /* a plain label has no fill */
+    CHECK(hd_label_put("力量", 100, 100, 20, 6, 1, 0, 319) == 0);
+    hd_label_read(&f);
+    CHECK(f.labels[1].fill == -1);
     /* bounded: the oldest goes */
     hd_label_clear();
     for (i = 0; i < HD_LABELS + 5; i++) CHECK(hd_label_put("字", (i % 30) * 10, 190 - (i / 30) * 10, 5, 6, 1, 0, 319) == 0);

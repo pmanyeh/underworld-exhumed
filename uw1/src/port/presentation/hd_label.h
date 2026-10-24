@@ -16,6 +16,7 @@ typedef struct HdLabel {
     int left, top, right, bottom;   /* the signed box, top-down game pixels, right/bottom exclusive */
     uint32_t signature;
     int color, em64, y64, count;    /* y64: the line's top, 26.6 */
+    int fill;                       /* a patch's opaque background (palette index), else -1 */
     HdLabelCell cells[HD_LABEL_CELLS];
 } HdLabel;
 typedef struct HdLabelFrame { uint64_t generation; int count; HdLabel labels[HD_LABELS]; } HdLabelFrame;
@@ -35,6 +36,10 @@ void hd_label_align(int align);
    English). */
 int hd_label_put(const char *text, int x, int y, int english_width, int height, int color,
                  int clip_left, int clip_right);
+/* A patch: text over words the game's art has in the box [left, right) x [top, bottom)
+   (top-down game pixels), which it covers with the box's commonest colour (the art's
+   background), aligned in the box and centred on its rows. 0: published; -1: not. */
+int hd_label_patch(const char *text, int left, int top, int right, int bottom, int color, int align);
 void hd_label_clear(void);
 void hd_label_read(HdLabelFrame *out);
 /* Presentation thread: the signature of a box of a 320-wide indexed scan-out. */

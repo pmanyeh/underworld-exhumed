@@ -45,6 +45,19 @@ const char *port_i18n_display(const char *legacy)
     target = provenance(legacy, 0);
     return target ? target : legacy;
 }
+/* the same string, upper-cased in place since (GAMESTRN.C's seg039_3452_814; P12) */
+const char *port_i18n_display_nocase(const char *legacy)
+{
+    unsigned i;
+    if (!legacy) return NULL;
+    for (i = 0; i < 8; i++)
+        if (display[i].address == legacy && !display[i].is_template) {
+            const char *a = display[i].source, *b = legacy;
+            while (*a && *b && (*a | 0x20) == (*b | 0x20) && ((*a >= 'A' && *a <= 'Z') || (*a >= 'a' && *a <= 'z') || *a == *b)) a++, b++;
+            if (!*a && !*b) return display[i].target;
+        }
+    return NULL;
+}
 const char *port_i18n_template(const char *legacy)
 {
     return legacy ? provenance(legacy, 1) : NULL;

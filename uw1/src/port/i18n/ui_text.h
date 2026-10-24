@@ -5,4 +5,6 @@
    decoded (port_i18n_display), or a piece of the game's code (port_zh_literal); NULL when it
    has none, or has no letters (numbers stay in the bitmap font) */
 const char *port_ui_text(const char *english);
+/* The words in the statistics page's art, as HD patches (STATS.C's RedispStat). */
+void port_stats_labels(void);
 #endif

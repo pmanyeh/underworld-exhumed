@@ -30,6 +30,14 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"inv.destroyed", "壞掉了。\n"},
     {"inv.damaged", "受損了。\n"},
     {"inv.empty", "是空的。\n"},
+    {"scroll.more", "[繼續]"},                     /* literals.tsv's [MORE] */
+    {"stats.level", "第%d級"},                     /* "1ST" .. "16TH" */
+    {"stats.str", "力量"},
+    {"stats.dex", "敏捷"},
+    {"stats.int", "智慧"},
+    {"stats.vit", "生命力"},
+    {"stats.mana", "法力"},
+    {"stats.exp", "經驗值"},
 };
 
 /* whole pieces the game's code prints by themselves; a name between "The " and the rest is

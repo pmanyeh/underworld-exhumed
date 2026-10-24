@@ -31,6 +31,10 @@
 #include "player.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/ui_text.h"
+#include "presentation/hd_label.h"
+#endif
 
 /* UW1: the font loader takes a file name (UW2: grfx_quikfont(int)); UW1's name for
    UW2's seg003_0272_5025 (copy part of a saved screen area back). */
@@ -64,6 +68,9 @@ void far sp_hdr(void)
     itoa(player->level, buf, 10);
     n = player->level < 4 ? player->level - 1 : 3;
     strcat(buf, ordinals[n]);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_RIGHT);
+#endif
     string_to_screen(buf, RIGHT - string_width(buf), 0xB2);
 }
 
@@ -151,6 +158,9 @@ void far RedispStat(void)
     sp_hp();
     sp_mp();
     sp_xp();
+#ifndef __TURBOC__
+    port_stats_labels();
+#endif
     *foreground_color = 0x68;
     *background_color = 0x68;
     for (i = 0; i < 6; i++)

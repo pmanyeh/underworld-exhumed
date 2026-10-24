@@ -24,6 +24,7 @@
 #include "ui/settings.h"
 #include "i18n/localization.h"
 #include "i18n/input_alias.h"
+#include "i18n/phrases.h"
 #include "presentation/caption.h"
 #include "presentation/hd_label.h"
 #include "presentation/overlay_demo.h"
@@ -723,6 +724,7 @@ int main(int argc, char *argv[])
     scroll_text_enable(modern_scroll);
     caption_enable(modern_scroll);
     hd_label_enable(modern_scroll);
+    if (modern_scroll && !strcmp(locale, "zh-TW")) scroll_text_more_label(port_zh_lit("scroll.more"));
     if (modern_scroll) {
         /* P11.4: the locale's words for what a conversation compares, the home folder's first */
         char aliases[1200];

@@ -111,14 +111,19 @@ static int put(ScrollBox *b,uint32_t cp,int advance,int choice)
     c->y64=row_y64(b,b->row);c->y=c->y64/64;c->color=b->color;c->choice=choice;
     b->x+=advance;if(cp!=' ' && cp!='\t')b->last=cp;return 0;
 }
+static char more_label[32]="[MORE]";
+void scroll_text_more_label(const char *utf8)
+{
+    if(utf8 && strlen(utf8)<sizeof more_label && utf8_validate(utf8,strlen(utf8),NULL))strcpy(more_label,utf8);
+}
 static void more(int which)
 {
     ScrollBox *b=&work.boxes[which];
-    const char *label="[MORE]";int i,n,color=b->color,row=b->row;
+    const char *label=more_label;size_t off=0,len=strlen(label);uint32_t cp;int n,color=b->color,row=b->row;
     /* Explicit \m may occur halfway down the NPC paper. Roll one line but
        retain that writing row; automatic bottom overflow already uses the last row. */
     roll(b);b->row=row;n=b->count;b->color=0x60;
-    for(i=0;label[i];i++)(void)put(b,(unsigned char)label[i],measure((unsigned char)label[i],measure_context[which]),0);
+    while(utf8_next(label,len,&off,&cp)>0)(void)put(b,cp,measure(cp,measure_context[which]),0);
     publish();event("more",which,0);
     if(wait_for_input)wait_for_input(0,wait_context);
     b->count=n;b->color=color;b->x=b->left*64;b->pending=0;b->last=0;publish();
