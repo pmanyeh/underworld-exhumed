@@ -55,6 +55,9 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include <stdio.h>
+#endif
 
 /* Declared in each file that uses it, its own way (no header). */
 unsigned char far IsMobElem(struct Object far *obj);
@@ -673,6 +676,13 @@ void far repair_item(struct Object far *obj, int skill, char who)
     register int estimate, result;
     answer = 1;
     get_name(name, obj, 0, 0);
+#ifndef __TURBOC__
+    /* P11.2: the name in the locale's language, taken now: the object may be gone at the end */
+    if (port_zh()) {
+        const char *t = port_zh_name(obj, 0, 0);
+        if (t) snprintf(name, sizeof name, "%s", t);
+    }
+#endif
     if (who) {
         durability = get_rep_diff(obj);
         if (durability >= 0) {

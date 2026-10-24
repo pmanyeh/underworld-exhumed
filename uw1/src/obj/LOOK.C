@@ -40,6 +40,14 @@
 #include "player.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include <stdio.h>
+#include "i18n/phrases.h"
+/* P11.2: what do_mods and do_of found, for LookAt's sentence in the locale's language */
+static int zh_mod;          /* 1 magical, 2 cursed */
+static int zh_spell;        /* the enchantment's string id, -2 none */
+static int zh_charges;      /* the charges do_of printed, -2 none */
+#endif
 
 /* Copy a far string, terminator included, to any address. */
 #define far_strcpy(d, s) FAR_COPY(d, s, str_len(s) + 1)
@@ -76,6 +84,10 @@ void far LookAt(struct Object far *obj, register int lore)
         strcpy(text, "You see ");
         first = 0;
         name[0] = 0;
+#ifndef __TURBOC__
+        zh_mod = 0;
+        zh_spell = zh_charges = -2;
+#endif
         if (do_mods(obj, lore, name))
             first = name[0];
         qual[0] = 0;
@@ -126,6 +138,46 @@ void far LookAt(struct Object far *obj, register int lore)
             str_cat(text, owner);
         }
         strcat(text, ".\n");
+#ifndef __TURBOC__
+        if (port_zh()) {
+            PortZh zh;
+            const char *t;
+            char num[160];
+            port_zh_begin(&zh);
+            port_zh_add(&zh, port_zh_lit("look.you_see"));
+            if (plural) {
+                snprintf(num, sizeof num, port_zh_lit("count"), obj->ol.f.link);
+                port_zh_add(&zh, num);
+            }
+            if (qual[0] != 0) {
+                int q = 0;
+                if (obj->qn.f.quality != 0)
+                    q = com->qualclass != 3 ? (obj->qn.f.quality >> 4) + 1 : 5;
+                t = port_zh_string((com->qualtype * 6 + q) | STR_OBJLOOK);
+                port_zh_add(&zh, t ? t : qual);
+                port_zh_add(&zh, t ? port_zh_lit("of") : " ");
+            }
+            if (zh_mod == 1) port_zh_add(&zh, port_zh_lit("look.magical"));
+            if (zh_mod == 2) port_zh_add(&zh, port_zh_lit("look.cursed"));
+            port_zh_add(&zh, port_zh_name(obj, 0, plural));
+            if (zh_spell >= 0) {
+                t = port_zh_string(zh_spell);
+                snprintf(num, sizeof num, port_zh_lit("look.spell"), t ? t : "UNNAMED");
+                port_zh_add(&zh, num);
+                if (zh_charges > 0) {
+                    snprintf(num, sizeof num, port_zh_lit("look.charges"), zh_charges);
+                    port_zh_add(&zh, num);
+                } else if (zh_charges == 0)
+                    port_zh_add(&zh, port_zh_lit("look.no_charges"));
+            }
+            if (ComObjData[OBJ_ITEM(obj)].can_own && obj->ol.f.owner > 0 && (obj->ol.f.owner & 0x1F) <= 0x1B) {
+                port_zh_add(&zh, port_zh_lit("look.owner"));
+                port_zh_id(&zh, ((obj->ol.f.owner & 0x1F) + 0x172) | STR_GAME);
+            }
+            port_zh_add(&zh, port_zh_lit("period"));
+            scroll_print(zh.text);
+        } else
+#endif
         scroll_print(text);
     } else if (OBJ_CLASS(obj) == CLASS_DECAL)
         RectLook(obj, lore);
@@ -144,9 +196,16 @@ char far do_mods(struct Object far *obj, int lore, char *s)
     if (decode_obj_spell(obj, &major, &effect, &flag)) {
         if (lore == 2) {
             strcat(s, "magical ");
+#ifndef __TURBOC__
+            zh_mod = 1;
+#endif
             return 1;
-        } else if (lore == 3 && !flag && major == 9)
+        } else if (lore == 3 && !flag && major == 9) {
             strcat(s, "cursed ");
+#ifndef __TURBOC__
+            zh_mod = 2;
+#endif
+        }
     }
     return 0;
 }
@@ -182,6 +241,9 @@ char far do_of(struct Object far *obj, int lore, register char *s)
         else
             effect += major << 4;
         name = get_string(effect | STR_SPELLS);
+#ifndef __TURBOC__
+        zh_spell = effect | STR_SPELLS;
+#endif
         if (name == 0 || *name == 0)
             name = "UNNAMED";
         strcat(s, " of ");
@@ -192,6 +254,9 @@ char far do_of(struct Object far *obj, int lore, register char *s)
             spell = Obj_InList(&link, 0, MAJOR_SPEC, 2, 0);
             if (spell != 0 && (spell->id & ID_FLAG11))
                 charges = spell->qn.f.quality;
+#ifndef __TURBOC__
+            zh_charges = charges >= 0 ? charges : -2;
+#endif
             if (charges >= 0) {
                 strcat(s, " with ");
                 if (charges > 0) {
@@ -243,6 +308,17 @@ void far BookLook(struct Object far *obj, int print)
         if (!get_name(text + strlen(text), obj, 0, 0))
             strcat(text, "UNNAMED");
         strcat(text, "...\n");
+#ifndef __TURBOC__
+        if (port_zh()) {
+            PortZh zh;
+            const char *n = port_zh_name(obj, 0, 0);
+            port_zh_begin(&zh);
+            port_zh_add(&zh, port_zh_lit("look.read"));
+            port_zh_add(&zh, n ? n : "UNNAMED");
+            port_zh_add(&zh, port_zh_lit("look.read_end"));
+            scroll_print(zh.text);
+        } else
+#endif
         scroll_print(text);
         str = get_string((obj->ol.f.link & 0x1FF) | STR_BOOKS);
         scroll_print(str);
@@ -307,8 +383,15 @@ void far RectLook(struct Object far *obj, int look)
             scroll_print(str);
         }
         if (grave != 0) {
-            grave = fix_name_string(grave, 1, 0);
-            scroll_print(grave);
+#ifndef __TURBOC__
+            const char *t = port_zh() ? port_zh_string(index | STR_WRITING) : 0;
+            if (t) scroll_print((char *)t);
+            else
+#endif
+            {
+                grave = fix_name_string(grave, 1, 0);
+                scroll_print(grave);
+            }
             scroll_print("\n");
         }
         if (c != 0)
@@ -333,13 +416,28 @@ void far BonesLook(struct Object far *obj, int print)
             id++;
         game_sprint(id);
         if (obj->ol.f.owner == 0x3F)
+#ifndef __TURBOC__
+            scroll_print(port_zh() ? (char *)port_zh_lit("look.bones_adventurer") : "an adventurer.\n");
+#else
             scroll_print("an adventurer.\n");
+#endif
         else {
             SET_ITEM(&tmp, obj->ol.f.owner + FIRST_CREATURE);
             tmp.whoami = 0;
             get_name(text, &tmp, 1, 0);
-            scroll_print(text);
-            scroll_print(".\n");
+#ifndef __TURBOC__
+            if (port_zh()) {
+                PortZh zh;
+                port_zh_begin(&zh);
+                port_zh_add(&zh, port_zh_name(&tmp, 1, 0));
+                port_zh_add(&zh, port_zh_lit("look.bones_end"));
+                scroll_print(zh.text);
+            } else
+#endif
+            {
+                scroll_print(text);
+                scroll_print(".\n");
+            }
         }
     }
 }
@@ -405,6 +503,32 @@ void far CritterLook(struct Object far *obj, char *s)
         str_cat(s, fix_name_string(name, desc == 0, 0));
     }
     str_cat(s, ".\n");
+#ifndef __TURBOC__
+    if (port_zh()) {
+        /* '<attitude> <kind>, named <Name>' in the locale's order, after 'You see' */
+        PortZh zh;
+        const char *t;
+        port_zh_begin(&zh);
+        port_zh_add(&zh, port_zh_lit("look.you_see"));
+        if (desc != 0 && attitude != 0) {
+            t = port_zh_string((OBJ_ATTITUDE(obj) + 0x60) | STR_OBJLOOK);
+            port_zh_add(&zh, t ? t : attitude);
+            port_zh_add(&zh, t ? port_zh_lit("of") : " ");
+        }
+        if (desc != 0 && (name == 0 || isupper(*name))) {
+            t = port_zh_string(OBJ_ITEM(obj) | STR_OBJNAMES);
+            port_zh_add(&zh, t ? t : desc);
+        }
+        if (name != 0) {
+            t = port_zh_string((who + 0x10) | STR_CONV);
+            if (desc != 0 && isupper(*name)) port_zh_add(&zh, port_zh_lit("look.named"));
+            port_zh_add(&zh, t ? t : name);
+        }
+        port_zh_add(&zh, port_zh_lit("period"));
+        scroll_print(zh.text);
+        return;
+    }
+#endif
     scroll_print(s);
 }
 

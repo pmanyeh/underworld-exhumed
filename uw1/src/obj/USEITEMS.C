@@ -52,6 +52,9 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#endif
 #include "conv.h"
 
 /* Declared in each file that uses it, its own way (no header). */
@@ -285,6 +288,17 @@ void far UseThing(struct Object far *obj, void (far *fn)())
     if (!get_name(buf + strlen(buf), obj, 0, 0))
         strcat(buf, "UNNAMED");
     strcat(buf, " on what?\n");
+#ifndef __TURBOC__
+    if (port_zh()) {
+        PortZh zh;
+        const char *t = port_zh_name(obj, 0, 0);
+        port_zh_begin(&zh);
+        port_zh_add(&zh, port_zh_lit("use.use"));
+        port_zh_add(&zh, t ? t : "UNNAMED");
+        port_zh_add(&zh, port_zh_lit("use.on_what"));
+        scroll_print(zh.text);
+    } else
+#endif
     scroll_print(buf);
     force_mouse_cursor(OBJ_ITEM(obj));
     CursorObjPtr = obj;
@@ -674,6 +688,16 @@ int far UseFood(struct Object far *who, struct Object far *food, char how)
             taste = ((int)(rand() * 20L / 0x8000L) + OBJ_QUALITY(food)) >> 4;
             if (taste > 4)
                 taste = 4;
+#ifndef __TURBOC__
+            if (port_zh()) {
+                PortZh zh;
+                const char *t = port_zh_name(food, 0, 0);
+                port_zh_begin(&zh);
+                port_zh_add(&zh, port_zh_lit("food.that"));
+                port_zh_add(&zh, t ? t : "UNNAMED");
+                scroll_print(zh.text);
+            } else
+#endif
             scroll_print(text);
             taste += 0xAC;
         }

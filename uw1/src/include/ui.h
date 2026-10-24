@@ -347,6 +347,16 @@ char far * far seg039_3452_814(char far *s);
 unsigned char far init_strings(void);
 int far replace_string(char far *s, int id);
 int far get_name(char far *dst, struct Object far *obj, char article, char plural);
+#ifndef __TURBOC__
+/* P11.2 (GAMESTRN.C): display sentences in the locale's language, the HD scroll only */
+typedef struct PortZh { char text[512]; } PortZh;
+int port_zh(void);
+void port_zh_begin(PortZh *zh);
+void port_zh_add(PortZh *zh, const char *s);
+void port_zh_id(PortZh *zh, int id);
+const char *port_zh_string(int id);
+const char *port_zh_name(struct Object far *obj, char article, char plural);
+#endif
 int far seg039_3495_537(void);
 void far seg039_3495_5E4(void);
 int far seg039_3495_784(FILE *file);

@@ -21,6 +21,10 @@ const char *port_i18n_display(const char *legacy);
 /* P11.1: a template's translation (with its @-variables), for display-only expansion
    (BABL.C's port_convert_display); NULL when legacy has none. */
 const char *port_i18n_template(const char *legacy);
+/* P11.2: get_name's English output and its name's translation, the last eight, so that the
+   name printed by itself shows translated (port_i18n_named: the translation, else NULL). */
+void port_i18n_note_name(const char *english, const char *translated);
+const char *port_i18n_named(const char *english);
 void port_i18n_forget(const char *legacy);
 int port_i18n_trace_open(const char *path);
 /* Phase 9 QA trace (JSONL, game thread): every resolved lookup as hit, template

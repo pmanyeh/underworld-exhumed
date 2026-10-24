@@ -45,6 +45,9 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#endif
 #include "view3d.h"
 
 /* Signed here (cbw), unsigned char where they are defined: declared in no header. */
@@ -161,6 +164,18 @@ void far flask_info(void)
         str_cat(msg, " out of ");
         str_cat(msg, max);
         str_cat(msg, "\n");
+#ifndef __TURBOC__
+        if (port_zh()) {
+            PortZh zh;
+            port_zh_begin(&zh);
+            port_zh_id(&zh, ((inplist->x > 0x1E) + 0x59) | STR_GAME);
+            port_zh_add(&zh, cur);
+            port_zh_add(&zh, port_zh_lit("stats.out_of"));
+            port_zh_add(&zh, max);
+            port_zh_add(&zh, "\n");
+            scroll_print(zh.text);
+        } else
+#endif
         scroll_print(msg);
         mouse_release(1);
     }
@@ -427,6 +442,17 @@ void far look_nothing(unsigned char how, register int txt)
             t = 0x1FE - floor_IDs[txt - 0x30];
         else
             t = 0x1FF;
+#ifndef __TURBOC__
+        if (port_zh()) {
+            PortZh zh;
+            port_zh_begin(&zh);
+            port_zh_add(&zh, port_zh_lit("look.you_see"));
+            port_zh_id(&zh, t | STR_TEXTURES);
+            port_zh_add(&zh, port_zh_lit("period"));
+            scroll_print(zh.text);
+            return;
+        }
+#endif
         scroll_print("You see ");
         scroll_print(get_string(t | STR_TEXTURES));
         scroll_print(".\n");

@@ -28,7 +28,7 @@ def main():
     env['PKG_CONFIG_PATH'] = str(uw1/'tools/libs/lib/pkgconfig')+os.pathsep+env.get('PKG_CONFIG_PATH','')
     packages = ['sdl3']+(['freetype2'] if rendering else [])
     flags = shlex.split(subprocess.check_output(['pkg-config','--cflags','--libs']+packages,text=True,env=env))
-    sources = ['presentation/scroll_text.c','i18n/layout.c','i18n/utf8.c','i18n/input_alias.c']
+    sources = ['presentation/scroll_text.c','i18n/layout.c','i18n/utf8.c','i18n/input_alias.c','i18n/phrases.c']
     if rendering:
         sources += ['presentation/scroll_overlay.c','presentation/hd_font.c']
     else:

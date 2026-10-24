@@ -48,6 +48,7 @@
 #include "ui.h"
 #ifndef __TURBOC__
 #include "i18n/localization.h"
+#include "presentation/scroll_text.h"
 #endif
 
 HOST_LAYOUT_BEGIN
@@ -192,13 +193,26 @@ int far get_name(char far *dst, struct Object far *obj, char article, char plura
             name = get_string(((unsigned char)who + 0x10) | STR_CONV);
             if (name == 0 || *name == 0) return 0;
             str_copy(dst, name);
+#ifndef __TURBOC__
+            if (port_zh()) port_i18n_note_name(dst, port_i18n_display(name));
+#endif
             return 1;
         }
     }
     name = get_string(item | STR_OBJNAMES);
     if (name == 0 || name[0] == 0) return 0;
+#ifndef __TURBOC__
+    {
+        /* P11.2: the name's translation, before fix_name_string changes the string in place */
+        const char *zh = port_zh() ? port_i18n_display(name) : 0;
+        str_copy(dst, fix_name_string(name, article, plural));
+        if (zh && zh != name) port_i18n_note_name(dst, zh);
+        return 1;
+    }
+#else
     str_copy(dst, fix_name_string(name, article, plural));
     return 1;
+#endif
 }
 
 /* Item names in block 4 have the form "article_singular&plural" (for example
@@ -233,6 +247,18 @@ void far game_sprint(int id)
 void far game_strings_3(int first, int second, int third)
 {
     char text[256];
+#ifndef __TURBOC__
+    if (port_zh()) {
+        /* P11.2: the pieces' translations, worded to join in this order (display only) */
+        PortZh zh;
+        port_zh_begin(&zh);
+        port_zh_id(&zh, first | STR_GAME);
+        if (second >= 0) port_zh_id(&zh, second | STR_GAME);
+        if (third >= 0) port_zh_id(&zh, third | STR_GAME);
+        scroll_print(zh.text);
+        return;
+    }
+#endif
     str_copy(text, get_string(first | STR_GAME));
     if (second >= 0) str_cat(text, get_string(second | STR_GAME));
     if (third >= 0) str_cat(text, get_string(third | STR_GAME));
@@ -383,3 +409,57 @@ char far * far str_cat(char far *dst, char far *src)
     *dst = *src; src++; dst++;
     return start;
 }
+
+#ifndef __TURBOC__
+/* P11.2: sentences composed for display in the locale's language, where the game composes
+   English from names and pieces: only with the HD scroll (UTF-8) and a catalog. Nothing here
+   reaches the game's strings or memory; a piece without a translation stays English. */
+int port_zh(void)
+{
+    return scroll_text_enabled() && port_i18n_enabled();
+}
+
+void port_zh_begin(PortZh *zh)
+{
+    zh->text[0] = 0;
+}
+
+void port_zh_add(PortZh *zh, const char *s)
+{
+    size_t n = strlen(zh->text);
+    if (s) snprintf(zh->text + n, sizeof zh->text - n, "%s", s);
+}
+
+/* id's string (block | index), its translation when it has one */
+void port_zh_id(PortZh *zh, int id)
+{
+    char far *s = get_string(id);
+    if (s) port_zh_add(zh, port_i18n_display(s));
+}
+
+/* id's translation, or 0 when it has none */
+const char *port_zh_string(int id)
+{
+    char far *s = get_string(id);
+    const char *t;
+    if (!s) return 0;
+    t = port_i18n_display(s);
+    return t != s ? t : 0;
+}
+
+/* obj's name as get_name picks it (an NPC's own name, else its item's), translated; else
+   get_name's English (article and plural as asked); 0 when it has no name */
+const char *port_zh_name(struct Object far *obj, char article, char plural)
+{
+    static char english[80];
+    const char *t;
+    unsigned char who;
+    if (OBJ_MAJOR(obj) == MAJOR_CREATURE) {
+        who = obj->whoami;
+        if (who > 0 && who < 0xf0 && (t = port_zh_string((who + 0x10) | STR_CONV)) != 0 && *t) return t;
+    }
+    if (!(OBJ_MAJOR(obj) == MAJOR_CREATURE && obj->whoami > 0 && obj->whoami < 0xf0) &&
+        (t = port_zh_string(OBJ_ITEM(obj) | STR_OBJNAMES)) != 0 && *t) return t;
+    return get_name(english, obj, article, plural) ? english : 0;
+}
+#endif

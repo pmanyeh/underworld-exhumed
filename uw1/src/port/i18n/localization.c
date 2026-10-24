@@ -50,6 +50,25 @@ const char *port_i18n_template(const char *legacy)
     return legacy ? provenance(legacy, 1) : NULL;
 }
 
+static struct { char english[96]; const char *translated; } names[8];
+static unsigned names_next;
+void port_i18n_note_name(const char *english, const char *translated)
+{
+    unsigned slot;
+    if (!english || !translated || strlen(english) >= sizeof names[0].english) return;
+    slot = names_next++ % 8;
+    strcpy(names[slot].english, english);
+    names[slot].translated = translated;
+}
+const char *port_i18n_named(const char *english)
+{
+    unsigned i;
+    if (!english || !*english) return NULL;
+    for (i = 0; i < 8; i++)
+        if (names[i].translated && !strcmp(names[i].english, english)) return names[i].translated;
+    return NULL;
+}
+
 static unsigned word(const unsigned char *p)
 {
     return p[0] | (unsigned)p[1] << 8;

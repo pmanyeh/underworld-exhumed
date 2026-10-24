@@ -220,6 +220,7 @@ int scroll_text_x(int which) { return work.boxes[which].x/64; }
 int scroll_text_y(int which) { ScrollBox *b=&work.boxes[which];return b->line64?row_y64(b,b->row)/64:b->top; }
 int scroll_text_lines(int which) { return work.boxes[which].lines; }
 int scroll_text_color(int which) { return work.boxes[which].color; }
+uint32_t scroll_text_last(int which) { return which>=0 && which<=1 ? work.boxes[which].last : 0; }
 int scroll_text_hit(int x,int y)
 {
     ScrollBox *b=&work.boxes[0];int i;

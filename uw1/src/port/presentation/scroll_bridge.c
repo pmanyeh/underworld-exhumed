@@ -1,6 +1,7 @@
 #include "scroll_bridge.h"
 #include "i18n/utf8.h"
 #include "i18n/input_alias.h"
+#include "i18n/phrases.h"
 #include "plat.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -60,7 +61,21 @@ static const unsigned short cp437[128]={
 int port_scroll_write(int which,const char *legacy,int escapes)
 {
     const char *text=port_i18n_display(legacy);char *converted=NULL;int result;
-    size_t len=strlen(text),i,n=0;
+    size_t len,i,n=0;
+    /* P11.2: the little English the game's code prints by itself between translated pieces
+       (a sentence's '.', a list's ", " and " and ", print_path_to's "very near"), shown after
+       Chinese in Chinese */
+    if(text==legacy) {   /* a name get_name wrote, or a piece the game's code prints by itself */
+        const char *zh=port_i18n_named(legacy);
+        if(!zh)zh=port_zh_literal(legacy);
+        if(zh)text=zh;
+    }
+    if(text==legacy && scroll_text_last(which)>=0x2E80) {
+        static const char *const glue[][2]={{".","\xe3\x80\x82"},{".\n","\xe3\x80\x82\n"},{", ","\xe3\x80\x81"},
+            {" and ","\xe3\x80\x81"},{"very near","\xe5\xb0\xb1\xe5\x9c\xa8\xe9\x99\x84\xe8\xbf\x91"}};
+        for(i=0;i<sizeof glue/sizeof glue[0];i++)if(!strcmp(legacy,glue[i][0])) {text=glue[i][1];break;}
+    }
+    len=strlen(text);
     if(len>16384)port_fatal("HD scroll: input exceeds 16KiB");
     if(!utf8_validate(text,len,NULL)) {
         converted=malloc(len*3+1);if(!converted)port_fatal("HD scroll: allocation failed");

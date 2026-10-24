@@ -457,6 +457,16 @@ char far critter_get_told(int x, int y, struct Object far *target, struct Tile f
             att = 0;
         SET_ATTITUDE(npc, att);
         get_name(text, npc, 1, 0);
+#ifndef __TURBOC__
+        if (port_zh()) {
+            PortZh zh;
+            port_zh_begin(&zh);
+            port_zh_add(&zh, port_zh_name(npc, 1, 0));
+            port_zh_id(&zh, att + 0xE1 | STR_GAME);
+            scroll_print(zh.text);
+            return 1;
+        }
+#endif
         str_cat(text, get_string(att + 0xE1 | STR_GAME));    /* " is angered...", " is annoyed...", " notes your action." */
         scroll_print(text);
         return 1;

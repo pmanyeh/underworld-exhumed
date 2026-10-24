@@ -135,6 +135,18 @@ int main(int argc,char **argv)
     port_i18n_observe(3651,4,templ);CHECK(port_i18n_display(templ)==templ); /* templates retain expanded English */
     CHECK(port_i18n_template(templ) && !strcmp(port_i18n_template(templ),"你好@SS1")); /* P11.1: the template for display */
     CHECK(port_i18n_template(original)==NULL && port_i18n_template(other)==NULL);
+    {   /* P11.2: a name get_name wrote, the game's own pieces, and '.' after Chinese */
+        port_i18n_note_name("longsword","長劍");
+        CHECK(port_i18n_named("longsword") && !strcmp(port_i18n_named("longsword"),"長劍") && !port_i18n_named("sword"));
+        reset(160,40);
+        CHECK(port_scroll_write(0,"The ",0)==0);CHECK(port_scroll_write(0,"longsword",0)==0);
+        CHECK(port_scroll_write(0," is locked.\n",0)==0);bounds();
+        CHECK(snapshot.boxes[0].count==6 && snapshot.boxes[0].cells[0].scalar==0x9577 && snapshot.boxes[0].cells[5].scalar==0x3002);
+        reset(160,40);CHECK(port_scroll_write(0,"longsword",0)==0);CHECK(port_scroll_write(0,".\n",0)==0);bounds();
+        CHECK(snapshot.boxes[0].count==3 && snapshot.boxes[0].cells[2].scalar==0x3002);
+        reset(160,40);CHECK(port_scroll_write(0,"sword",0)==0);CHECK(port_scroll_write(0,".\n",0)==0);bounds();
+        CHECK(snapshot.boxes[0].cells[snapshot.boxes[0].count-1].scalar=='.');   /* after English, English */
+    }
     {   /* P11.4: a typed line drawn again from the mark */
         ScrollBox mark;int count;
         reset(160,40);CHECK(scroll_text_write(0,"前文\n",1,0)==0);bounds();count=snapshot.boxes[0].count;

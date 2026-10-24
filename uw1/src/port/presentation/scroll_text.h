@@ -40,6 +40,7 @@ int scroll_text_x(int which);
 int scroll_text_y(int which);
 int scroll_text_lines(int which);
 int scroll_text_color(int which);
+uint32_t scroll_text_last(int which); /* the last glyph on the current line, 0 at its start */
 int scroll_text_suspend(int on); /* typed ASCII editing keeps the original path */
 /* A box as it stands, and back to it: a line being typed is drawn again after each key. */
 void scroll_text_mark(int which, ScrollBox *out);
