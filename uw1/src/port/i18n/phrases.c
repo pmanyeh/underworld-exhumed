@@ -26,6 +26,9 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"food.that", ""},
     {"use.use", "要把"},
     {"use.on_what", "用在什麼上？\n"},
+    {"inv.your", "你的"},
+    {"inv.destroyed", "壞掉了。\n"},
+    {"inv.damaged", "受損了。\n"},
 };
 
 /* whole pieces the game's code prints by themselves; a name between "The " and the rest is
