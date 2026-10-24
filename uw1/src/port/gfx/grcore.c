@@ -107,9 +107,12 @@ void plot_pixel(int x, int y)
     call_entry(0x5062, w, 2, 0);
 }
 
+static int pen;                         /* P12: the last set_the_color, for rectangle */
+
 void set_the_color(int c)
 {
     uint16_t w[1] = { W(c) };
+    pen = c;
     call_entry(0x5174, w, 1, 0);
 }
 
@@ -134,7 +137,16 @@ void uhline(int x1, int y, int x2)
 void rectangle(int x, int y, int w_, int h)
 {
     uint16_t w[4] = { W(x), W(y), W(w_), W(h) };
+    /* P12: the box, corners (x, y) and (w_, h), y up, by the pen's mode (seg048:0008, VIDMODE's
+       span writers): filled, it takes the labels under it away; a copy from the other page
+       brings that page's labels with it; the cursor's save and save-under (modes 10h, 12h,
+       MOUSE.C) leave them */
+    int left = x < w_ ? x : w_, top = 199 - (y > h ? y : h), right = (x > w_ ? x : w_) + 1, bottom = 199 - (y < h ? y : h) + 1;
+    int mode = pen >= 0 ? *(uint16_t *)(seg048 + 8 + pen * 2) : 0x10;
+    if (hd_label_enabled() && mode != 0x10 && mode != 0x12) hd_label_forget(left, top, right, bottom);
     call_entry(0x54EB, w, 4, 0);
+    if (hd_label_enabled() && mode != 0 && mode != 4 && mode != 0x10 && mode != 0x12)
+        hd_label_copy(left, top, right, bottom, *(uint16_t *)(seg048 + 0x383E));
 }
 
 void urectangle(int a, int b, int c, int d)
@@ -149,14 +161,23 @@ void box(int a, int b, int c, int d)
     call_entry(0x55BB, w, 4, 0);
 }
 
+/* P12: the page the library draws on, named by its bottom row's address (VIDMODE's Ytab) */
+int port_draw_page(void)
+{
+    return Ytab[0];
+}
+
 void show(int x, int y, unsigned char *bm, int a, int b, int c, int d)
 {
     uint16_t w[8];
-    if (hd_label_enabled()) hd_label_forget(x, 199 - y, x + b, 199 - y + a);   /* P12: a and b are the height and width */
+    /* P12 (a and b are the height and width): a picture takes the labels under it away; a
+       sprite (Transparency) leaves them, over what it drew */
+    if (hd_label_enabled() && !Transparency) hd_label_forget(x, 199 - y, x + b, 199 - y + a);
     w[0] = W(x); w[1] = W(y);
     far_arg(bm, w + 2);
     w[4] = W(a); w[5] = W(b); w[6] = W(c); w[7] = W(d);
     call_entry(0x57BB, w, 8, 0);
+    if (hd_label_enabled() && Transparency) hd_label_resign(x, 199 - y, x + b, 199 - y + a);
 }
 
 void seg003_581E(int handle, int x, int y, int w_, int h, int sx, int sy)

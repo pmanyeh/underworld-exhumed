@@ -8,6 +8,8 @@ static int failures, checks;
 static int measure(uint32_t cp, void *context) { (void)context; return cp < 0x80 ? 3 * 64 : 5 * 64; }
 static uint8_t screen[320 * 200];
 static int pixel(int x, int y) { return screen[y * 320 + x]; }
+static int current_page;
+static int page_of(void) { return current_page; }
 
 int main(void)
 {
@@ -16,7 +18,7 @@ int main(void)
     for (i = 0; i < 320 * 200; i++) screen[i] = (uint8_t)(i * 7);
     CHECK(hd_label_put("拉克希", 0x30, 0xC5, 40, 6, 0x65, 0, 319) == -1);   /* not enabled yet */
     hd_label_enable(1);
-    hd_label_start(measure, NULL, 5 * 64, pixel);
+    hd_label_start(measure, NULL, 5 * 64, pixel, NULL);
     CHECK(hd_label_put("拉克希・長牙", 0x30, 0xC5, 64, 6, 0x65, 0, 319) == 0);
     hd_label_read(&f);
     CHECK(f.count == 1 && f.labels[0].count == 6 && f.labels[0].color == 0x65);
@@ -64,6 +66,31 @@ int main(void)
     CHECK(hd_label_put("力量", 100, 100, 20, 6, 1, 0, 319) == 0);
     hd_label_read(&f);
     CHECK(f.labels[1].fill == -1);
+    /* pages: a picture takes away its page's labels only; a sprite re-signs them; a copy from
+       the other page brings that page's labels */
+    hd_label_clear();
+    hd_label_start(measure, NULL, 5 * 64, pixel, page_of);
+    current_page = 1;
+    CHECK(hd_label_put("男性", 230, 100, 20, 6, 1, 0, 319) == 0);
+    current_page = 2;
+    hd_label_forget(0, 0, 320, 200);
+    hd_label_read(&f);
+    CHECK(f.count == 1);                                              /* page 1's stays */
+    current_page = 1;
+    screen[(199 - 100 + 1) * 320 + 231] ^= 0x55;                      /* a highlight drawn in its box */
+    hd_label_resign(220, 90, 260, 110);
+    hd_label_read(&f);
+    CHECK(f.count == 1 && hd_label_signature(screen, 320, 200, &f.labels[0]) == f.labels[0].signature);
+    current_page = 2;
+    hd_label_copy(0, 0, 320, 200, 1);
+    hd_label_read(&f);
+    CHECK(f.count == 2 && f.labels[1].page == 2 && f.labels[1].cells[0].scalar == f.labels[0].cells[0].scalar);
+    current_page = 1;
+    hd_label_forget(220, 90, 260, 110);
+    hd_label_read(&f);
+    CHECK(f.count == 1 && f.labels[0].page == 2);
+    screen[(199 - 100 + 1) * 320 + 231] ^= 0x55;
+    hd_label_start(measure, NULL, 5 * 64, pixel, NULL);
     /* bounded: the oldest goes */
     hd_label_clear();
     for (i = 0; i < HD_LABELS + 5; i++) CHECK(hd_label_put("字", (i % 30) * 10, 190 - (i / 30) * 10, 5, 6, 1, 0, 319) == 0);

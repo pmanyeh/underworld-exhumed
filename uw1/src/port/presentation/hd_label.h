@@ -18,15 +18,17 @@ typedef struct HdLabel {
     int color, em64, y64, count;    /* y64: the line's top, 26.6 */
     int fill;                       /* a patch's opaque background (palette index), else -1 */
     float border;                   /* the outline, game pixels; < 0: the HD text style's */
+    int page;                       /* the drawing page it was put on */
     HdLabelCell cells[HD_LABEL_CELLS];
 } HdLabel;
 typedef struct HdLabelFrame { uint64_t generation; int count; HdLabel labels[HD_LABELS]; } HdLabelFrame;
 typedef int (*HdLabelMeasure)(uint32_t scalar, void *context);   /* logical 26.6 advance at em64 */
 typedef int (*HdLabelPixel)(int x, int y);   /* the drawing page's pixel, top-down game pixels */
+typedef int (*HdLabelPage)(void);            /* which page the game draws on (any number naming it) */
 
 void hd_label_enable(int on);               /* before threads */
 int hd_label_enabled(void);
-void hd_label_start(HdLabelMeasure measure, void *context, int em64, HdLabelPixel pixel);
+void hd_label_start(HdLabelMeasure measure, void *context, int em64, HdLabelPixel pixel, HdLabelPage page);
 /* How the next hd_label_put places its text against the English it replaces: from x (left),
    on the English's centre, or ending where the English ends. Reset by each put. */
 void hd_label_align(int align);
@@ -47,8 +49,15 @@ int hd_label_box(const char *text, int left, int top, int right, int bottom, int
                  int em64, int fill, float border);
 void hd_label_clear(void);
 /* The game draws a picture over [left, right) x [top, bottom) (top-down game pixels): the
-   labels it covers go, even when it draws again what was under them (a background reloaded). */
+   labels it covers on the page it draws on go, even when it draws again what was under them (a
+   background reloaded); those on the other page stay (a screen built on the hidden page). */
 void hd_label_forget(int left, int top, int right, int bottom);
+/* The game has drawn a sprite over [left, right) x [top, bottom) (a highlight, an icon): the
+   labels under it on its page stay, signed with the screen as it is now. */
+void hd_label_resign(int left, int top, int right, int bottom);
+/* The game has copied [left, right) x [top, bottom) from page from onto the page it draws on:
+   the labels wholly inside it on that page are copied too, signed with what is there now. */
+void hd_label_copy(int left, int top, int right, int bottom, int from);
 void hd_label_read(HdLabelFrame *out);
 /* Presentation thread: the signature of a box of a 320-wide indexed scan-out. */
 uint32_t hd_label_signature(const uint8_t *pixels, int width, int height, const HdLabel *label);

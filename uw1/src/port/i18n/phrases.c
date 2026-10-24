@@ -59,6 +59,10 @@ static const struct { const char *english, *zh; } literals[] = {
     {"Not a spell\n", "這不是法術\n"},
     {"Yes", "是"},
     {"No", "否"},
+    {"Str:", "力量"},                            /* CHARGEN.C's show_atts (P12) */
+    {"Dex:", "敏捷"},
+    {"Int:", "智慧"},
+    {"Vit:", "生命力"},
     {"\\6    Save Game Descriptions", "\\6    存檔說明"},
     {"<not used yet>", "<尚未使用>"},
     {"Chant the mantra: ", "誦唸祈禱語："},

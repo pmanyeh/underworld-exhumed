@@ -9,16 +9,20 @@ static atomic_flag busy = ATOMIC_FLAG_INIT;
 static HdLabelMeasure measure;
 static void *measure_context;
 static HdLabelPixel read_pixel;
+static HdLabelPage draw_page;
 static int base_em64;
 
 static void lock(void) { while (atomic_flag_test_and_set_explicit(&busy, memory_order_acquire)) {} }
 static void unlock(void) { atomic_flag_clear_explicit(&busy, memory_order_release); }
 static void publish(void) { work.generation++; lock(); published = work; unlock(); }
+/* FNV-1a over the box's pixels, row by row */
+static uint32_t mix(uint32_t h, int v) { return (h ^ (uint32_t)(v & 255)) * 16777619u; }
 
 void hd_label_enable(int on) { enabled = on != 0; }
 int hd_label_enabled(void) { return enabled && measure && read_pixel; }
-void hd_label_start(HdLabelMeasure m, void *context, int em64, HdLabelPixel pixel)
+void hd_label_start(HdLabelMeasure m, void *context, int em64, HdLabelPixel pixel, HdLabelPage page)
 {
+    draw_page = page;
     memset(&work, 0, sizeof work);
     measure = m; measure_context = context; read_pixel = pixel;
     base_em64 = em64 > 0 ? em64 : 5 * 64;
@@ -32,11 +36,12 @@ void hd_label_clear(void)
 }
 void hd_label_forget(int left, int top, int right, int bottom)
 {
-    int i, gone = 0;
+    int i, gone = 0, page;
     if (!hd_label_enabled()) return;
+    page = draw_page ? draw_page() : 0;
     for (i = 0; i < work.count; ) {
         HdLabel *o = &work.labels[i];
-        if (o->left < right && left < o->right && o->top < bottom && top < o->bottom) {
+        if (o->page == page && o->left < right && left < o->right && o->top < bottom && top < o->bottom) {
             memmove(o, o + 1, sizeof *o * (size_t)(work.count - i - 1));
             work.count--;
             gone = 1;
@@ -44,10 +49,45 @@ void hd_label_forget(int left, int top, int right, int bottom)
     }
     if (gone) publish();
 }
+void hd_label_resign(int left, int top, int right, int bottom)
+{
+    int i, changed = 0, page;
+    if (!hd_label_enabled()) return;
+    page = draw_page ? draw_page() : 0;
+    for (i = 0; i < work.count; i++) {
+        HdLabel *o = &work.labels[i];
+        if (o->page == page && o->left < right && left < o->right && o->top < bottom && top < o->bottom) {
+            uint32_t h = 2166136261u;
+            int px, py;
+            for (py = o->top; py < o->bottom; py++)
+                for (px = o->left; px < o->right; px++) h = mix(h, read_pixel(px, py));
+            o->signature = h;
+            changed = 1;
+        }
+    }
+    if (changed) publish();
+}
+void hd_label_copy(int left, int top, int right, int bottom, int from)
+{
+    int i, n, page, px, py;
+    if (!hd_label_enabled()) return;
+    page = draw_page ? draw_page() : 0;
+    if (page == from) return;
+    for (i = 0, n = work.count; i < n && work.count < HD_LABELS; i++) {
+        HdLabel *o = &work.labels[i], *l;
+        uint32_t h = 2166136261u;
+        if (o->page != from || o->left < left || o->right > right || o->top < top || o->bottom > bottom) continue;
+        l = &work.labels[work.count++];
+        *l = *o;
+        l->page = page;
+        for (py = l->top; py < l->bottom; py++)
+            for (px = l->left; px < l->right; px++) h = mix(h, read_pixel(px, py));
+        l->signature = h;
+    }
+    if (work.count != n) publish();
+}
 void hd_label_read(HdLabelFrame *out) { if (out) { lock(); *out = published; unlock(); } }
 
-/* FNV-1a over the box's pixels, row by row */
-static uint32_t mix(uint32_t h, int v) { return (h ^ (uint32_t)(v & 255)) * 16777619u; }
 
 /* text's scalars and their advances at the base em; the count, or -1 (invalid, a newline,
    longer than a label holds) */
@@ -101,6 +141,7 @@ static void add(const HdLabel *box, const uint32_t *cps, const int *adv, int n, 
     for (py = l->top; py < l->bottom; py++)
         for (px = l->left; px < l->right; px++) h = mix(h, read_pixel(px, py));
     l->signature = h;
+    l->page = draw_page ? draw_page() : 0;
     l->color = color;
     l->em64 = em64;
     l->y64 = y64;

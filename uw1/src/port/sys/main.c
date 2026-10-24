@@ -143,6 +143,7 @@ typedef struct ScrollMetrics { HdFont *font; int em64; } ScrollMetrics;
 static ScrollMetrics caption_metrics, label_metrics;
 unsigned char gr_read_pixel(int x, int y);      /* src/port/gfx/grcore.c: the drawing page, bottom-up */
 static int label_pixel(int x, int y) { return gr_read_pixel(x, 199 - y); }
+int port_draw_page(void);                       /* src/port/gfx/grcore.c */
 void scroll_wait(int ticks, char mouse);
 static int scroll_measure(uint32_t cp, void *m) { return hd_scroll_advance(((ScrollMetrics *)m)->font,cp,((ScrollMetrics *)m)->em64); }
 static int to64(double v) { return (int)(v * 64 + (v < 0 ? -0.5 : 0.5)); }   /* rounded; no libm on Linux */
@@ -180,7 +181,7 @@ static int game(void *arg)
         caption_start(scroll_measure, &caption_metrics, caption_metrics.em64);
         /* P12: the bitmap UI's strings, in the message font at its size */
         label_metrics = metrics[0];
-        hd_label_start(scroll_measure, &label_metrics, label_metrics.em64, label_pixel);
+        hd_label_start(scroll_measure, &label_metrics, label_metrics.em64, label_pixel, port_draw_page);
         for (box = 0; box < 2; box++) {
             scroll_text_measure_context(box, &metrics[box]);
             scroll_text_style(box, metrics[box].em64, to64(scroll_style[box].letter_spacing),
