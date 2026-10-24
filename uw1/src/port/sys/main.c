@@ -27,6 +27,7 @@
 #include "i18n/phrases.h"
 #include "presentation/caption.h"
 #include "presentation/hd_label.h"
+#include "presentation/settings_text.h"
 #include "presentation/overlay_demo.h"
 #include "presentation/hd_demo.h"
 #include "presentation/presentation.h"
@@ -127,6 +128,7 @@ void port_on_flip(void)
 static int game_argc;
 static char **game_argv;
 static const char *locale = "en", *i18n_file, *i18n_log, *i18n_trace;
+static int locale_given;               /* --locale: the settings file's language does not apply */
 static const char *cursor_log;
 static int modern_scroll;
 static const char *scroll_log;
@@ -405,6 +407,7 @@ static int home_dir(const char *p)
 }
 
 extern const struct setting port_settings[];     /* settab.c */
+void port_settings_language(int zh);              /* settab.c */
 extern const int port_settings_count;
 void port_settings_list(FILE *f);
 void port_settings_seed(int fullscreen, int scale, int aspect, int integer_scale, int lock);
@@ -464,6 +467,7 @@ int main(int argc, char *argv[])
         else if (!strcmp(a, "--font") && i + 1 < argc) font_path = argv[++i];
         else if (!strcmp(a, "--locale") && i + 1 < argc) {
             locale = argv[++i];
+            locale_given = 1;
             if (strcmp(locale, "en") && strcmp(locale, "zh-TW")) usage(0);
         }
         else if (!strcmp(a, "--i18n-file") && i + 1 < argc) i18n_file = argv[++i];
@@ -648,6 +652,29 @@ int main(int argc, char *argv[])
     unsetenv("UWHOME");
 #endif
     port_home = home;
+    if (!locale_given) {
+        /* P12: the settings file's language (the Language tab): zh-TW needs the catalog, in the
+           home folder's i18n/zh-TW or the current folder's (a playtest folder's); with no language
+           in the file yet, a folder that has the catalog starts in zh-TW */
+        static char catalog[1200];
+        char lang[16];
+        FILE *probe;
+        int have = port_config_get(home, "language", lang, sizeof lang) == 0, zh = have && !strcmp(lang, "zh-TW");
+        if (i18n_file) snprintf(catalog, sizeof catalog, "%s", i18n_file);
+        else {
+            snprintf(catalog, sizeof catalog, "%s/i18n/zh-TW/catalog.uw1loc", home);
+            if ((probe = fopen(catalog, "rb")) != NULL) fclose(probe);
+            else snprintf(catalog, sizeof catalog, "i18n/zh-TW/catalog.uw1loc");
+        }
+        if ((probe = fopen(catalog, "rb")) != NULL) {
+            fclose(probe);
+            if (!have) {
+                zh = 1;
+                if (interactive) port_config_set(home, "language", "zh-TW");
+            }
+            if (zh) { locale = "zh-TW"; i18n_file = catalog; modern_scroll = 1; }
+        } else if (zh) fprintf(stderr, "uw1port: language zh-TW: no catalog (%s); using English\n", catalog);
+    }
     /* the settings file as the screen reads it is what the run starts with: a value the screen
        would not show (volume=abc, scale=99) is its default there and here; the command line's
        display options win */
@@ -657,6 +684,7 @@ int main(int argc, char *argv[])
                         cl_integer ? NULL : &cfg.integer_scale);
     port_settings_roms(roms);
     port_settings_seed(cfg.fullscreen, cfg.scale, cfg.aspect, cfg.integer_scale, cfg.mouse_lock);
+    port_settings_language(!strcmp(locale, "zh-TW"));
     if (modern_scroll && strcmp(locale,"zh-TW")) {
         fputs("uw1port: HD scroll requires --locale zh-TW\n",stderr);
         return 1;
@@ -675,6 +703,13 @@ int main(int argc, char *argv[])
                 text_style_load(files[f], box ? TEXT_STYLE_TALK : TEXT_STYLE_MESSAGE, &scroll_style[box]);
             }
             if (font_path) snprintf(scroll_style[box].file, sizeof scroll_style[box].file, "%s", font_path);
+            if (text_style_font_path(home, scroll_style[box].file, scroll_font_file[box], sizeof scroll_font_file[box]) && !font_path) {
+                /* a font the Language tab chose that this folder lacks: the default (P12) */
+                HdTextStyle d;
+                text_style_defaults(&d);
+                fprintf(stderr, "uw1port: HD text: font not found: %s; using %s\n", scroll_style[box].file, d.file);
+                snprintf(scroll_style[box].file, sizeof scroll_style[box].file, "%s", d.file);
+            }
             if (text_style_font_path(home, scroll_style[box].file, scroll_font_file[box], sizeof scroll_font_file[box])) {
                 fprintf(stderr, "uw1port: HD text: font not found: %s (looked in fonts/ of the home folder, fonts/ and tools/fonts/)\n",
                         scroll_style[box].file);
@@ -737,6 +772,16 @@ int main(int argc, char *argv[])
             fprintf(stderr, "uw1port: input aliases: %s not loaded; conversations take English words only\n", aliases);
         else
             fprintf(stderr, "uw1port: input aliases: %s\n", aliases);
+    }
+    /* P12: the settings screen in the HD font, in Chinese in zh-TW; in English its own font, but
+       the language's name in Chinese where a font for it is at hand */
+    if (presentation.scroll_fonts[0] && modern_scroll)
+        settings_text_start(presentation.scroll_fonts[0], !strcmp(locale, "zh-TW"), scroll_style[0].antialiasing);
+    else {
+        static HdFont *settings_font;
+        char where[1024];
+        if (!text_style_font_path(home, "jf-openhuninn-2.1.ttf", where, sizeof where) && !hd_font_init(&settings_font, where))
+            settings_text_start(settings_font, 0, 1);
     }
     presentation.demo = hd_demo;
     if (!test_hd_text) presentation.demo.font = NULL;
