@@ -47,6 +47,7 @@
 #include "ui.h"
 #ifndef __TURBOC__
 #include "presentation/hd_label.h"
+#include "i18n/ui_text.h"
 #endif
 #include "view3d.h"
 
@@ -447,6 +448,9 @@ int far pickopt(struct ChrOpt far *opt)
         x = string_width(s) + 0xA8;
         y = 0x6B;
         buf[1] = 0;
+#ifndef __TURBOC__
+        port_name_entry_begin(s);   /* P12: typed in Chinese on an HD panel */
+#endif
         while (((c = mouse_get_input()) != '\r' || empty) && c != 0x1B) {
             if (c >= ' ' && c <= '~' && x < 0x12E && len < 0x1D) {
                 buf[0] = c;
@@ -470,6 +474,9 @@ int far pickopt(struct ChrOpt far *opt)
             }
         }
         opt->name[len] = 0;
+#ifndef __TURBOC__
+        port_name_entry_end(c != 0x1B);
+#endif
         return 0;
     }
     while (!done) {
@@ -649,6 +656,9 @@ char far gen_char(unsigned char far *buf, unsigned char far *dat, struct ChrOpt 
         case 6:
             s = opts[6].name;
             mouse_hide();
+#ifndef __TURBOC__
+            hd_label_align(HD_LABEL_CENTRE);
+#endif
             string_to_screen(s, (0x7E - string_width(s)) / 2 + 0x11, 0xBD);
             mouse_show();
             if (*s)
@@ -677,6 +687,9 @@ restart:
     get_cuts_block(1);
     grSoftPageFlip();
     show(0, 0xC7, chrbuf, 0xC8, 0x140, 0, 0);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_CENTRE);
+#endif
     string_to_screen(name, (0xA0 - string_width(name)) / 2 + 0xA0, cur_font->height + 0x62);
 #ifndef __TURBOC__
     hd_label_align(HD_LABEL_CENTRE);

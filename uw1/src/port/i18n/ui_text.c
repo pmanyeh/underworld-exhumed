@@ -2,6 +2,8 @@
 #include "i18n/localization.h"
 #include "i18n/phrases.h"
 #include "presentation/hd_label.h"
+#include "presentation/text_entry.h"
+#include "i18n/user_text.h"
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
@@ -48,9 +50,51 @@ void port_end_days(const char *english, int days)
     port_ui_next(english, zh);
 }
 
+/* ---- the player's words (user_text.h), by way of the text entry panel (text_entry.h) ---- */
+
+static char typed_desc[160];
+static int typed_desc_set;
+
+/* SaveGame: the description's panel over the message scroll, starting from the slot's
+   description as it is shown */
+void port_save_entry_begin(int slot, const char *desc)
+{
+    const char *zh = port_user_text(desc), *prompt = port_i18n_static(1, 0xA8);
+    typed_desc_set = 0;
+    text_entry_begin(TEXT_ENTRY_LINE, prompt ? prompt : "", zh ? zh : desc, 15, port_user_desc_standin(slot),
+                     14, 166, 292, 31);
+}
+void port_save_entry_end(int ok)
+{
+    const char *zh = text_entry_end();
+    typed_desc[0] = 0;
+    typed_desc_set = ok;
+    if (ok && zh) snprintf(typed_desc, sizeof typed_desc, "%s", zh);
+}
+/* SaveGame, after SAVE0\DESC and before the copy to the slot: the Chinese beside them */
+void port_save_sidecars(void)
+{
+    port_user_desc_save(typed_desc_set && typed_desc[0] ? typed_desc : NULL);
+    port_user_name_save();
+}
+
+/* pickopt's name: a panel over the question's line */
+void port_name_entry_begin(const char *question)
+{
+    const char *zh = port_ui_text(question);
+    port_user_name_set(NULL);
+    text_entry_begin(TEXT_ENTRY_NAME, zh ? zh : question, "", 8, USER_NAME_STANDIN, 0xA4, 199 - 0x6B - 2, 0x91, 14);
+}
+void port_name_entry_end(int ok)
+{
+    const char *zh = text_entry_end();
+    port_user_name_set(ok ? zh : NULL);
+}
+
 const char *port_ui_text(const char *english)
 {
     const char *p, *zh;
+    if (english && (zh = port_user_text(english)) != NULL) return zh;   /* in English too */
     if (!english || !port_i18n_enabled()) return NULL;
     if (next_english[0] && !strcmp(english, next_english)) { next_english[0] = 0; return next_zh; }
     for (p = english; *p; p++)
@@ -138,7 +182,7 @@ static const char *option_key(int pic)
         "opt.sound", "opt.sound", "opt.detail", "opt.detail", "opt.return", "opt.return",
         "opt.quit", "opt.quit", "opt.on", "opt.on", "opt.off", "opt.off",
         "opt.cancel", "opt.cancel", "opt.done", "opt.done", "opt.done", "opt.done",
-        0, 0, 0, 0, 0, 0, 0, 0,                                                           /* I .. IV */
+        "opt.slot1", "opt.slot1", "opt.slot2", "opt.slot2", "opt.slot3", "opt.slot3", "opt.slot4", "opt.slot4",
         "opt.low", "opt.low", "opt.medium", "opt.medium", "opt.high", "opt.high",
         "opt.very_high", "opt.very_high", "opt.restore_title", "opt.music_on",
         "opt.music_off", "opt.sound_on", "opt.sound_off", "opt.turn_music", "opt.turn_sound",
@@ -165,7 +209,7 @@ void port_options_back(int pic)
     case 2: case 3: case 4: case 5: {
         /* each page's rows from 0 up; the rows its other pictures draw over are left */
         static const char *const pages[4][7] = {
-            { 0, "opt.cancel", 0, 0, 0, 0, "opt.save_title" },
+            { 0, "opt.cancel", "opt.slot4", "opt.slot3", "opt.slot2", "opt.slot1", "opt.save_title" },
             { 0, 0, 0, "opt.no", "opt.yes", "opt.sure", "opt.quit_title" },
             { 0, 0, "opt.done", "opt.off", "opt.on", 0, 0 },
             { "opt.done", "opt.very_high", "opt.high", "opt.medium", "opt.low", "opt.set_level", 0 },

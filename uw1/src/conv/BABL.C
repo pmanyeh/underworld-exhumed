@@ -66,6 +66,8 @@
 #include "ui.h"
 #ifndef __TURBOC__
 #include "i18n/localization.h"
+#include "i18n/user_text.h"
+#include "player.h"
 #include "presentation/scroll_text.h"
 #endif
 
@@ -847,7 +849,9 @@ char *port_convert_display(const char *text)
                 display_put(&buf, &len, &cap, digits);
             } else {
                 char far *str = get_string(value);
-                if (str != 0) {
+                if (value == player_name_handle && port_user_name())   /* P12: the name in Chinese */
+                    display_put(&buf, &len, &cap, port_user_name());
+                else if (str != 0) {
                     const char *template = port_i18n_template(str);
                     const char *shown = port_i18n_display(str);
                     if (template) {

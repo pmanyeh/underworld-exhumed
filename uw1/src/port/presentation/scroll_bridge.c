@@ -2,6 +2,7 @@
 #include "i18n/utf8.h"
 #include "i18n/input_alias.h"
 #include "i18n/phrases.h"
+#include "i18n/user_text.h"
 #include "plat.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -66,7 +67,8 @@ int port_scroll_write(int which,const char *legacy,int escapes)
        (a sentence's '.', a list's ", " and " and ", print_path_to's "very near"), shown after
        Chinese in Chinese */
     if(text==legacy) {   /* a name get_name wrote, or a piece the game's code prints by itself */
-        const char *zh=port_i18n_named(legacy);
+        const char *zh=port_user_text(legacy);   /* P12: the player's name or a save's description */
+        if(!zh)zh=port_i18n_named(legacy);
         if(!zh)zh=port_zh_literal(legacy);
         if(zh)text=zh;
     }

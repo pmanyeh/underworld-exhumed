@@ -32,7 +32,7 @@ def main():
     if rendering:
         sources += ['presentation/scroll_overlay.c','presentation/hd_font.c']
     else:
-        sources += ['presentation/scroll_bridge.c','i18n/localization.c']
+        sources += ['presentation/scroll_bridge.c','i18n/localization.c','i18n/user_text.c']
     command = [os.environ.get('CC') or shutil.which('clang') or 'cc','-std=c11','-g','-O1',
         '-Wall','-Wextra','-Werror','-Wno-unused-function','-I'+str(uw1/'src/port'),
         '-I'+str(root/'exhume/runtime/port/platform'),'-I'+str(root/'exhume/runtime/port'),

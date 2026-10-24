@@ -62,6 +62,9 @@ void far sp_hdr(void)
     strncpy(buf, player->name, 0xF);
     buf[0xF] = 0;
     strupr(buf);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_CENTRE);
+#endif
     string_to_screen(buf, (0x48 - string_width(buf)) / 2 + 0xF2, 0xB9);
     /* the class name, upper-cased in the string buffer */
     string_to_screen(seg039_3452_814(get_string((player->pclass + 0x17) | STR_CHARGEN)), 0xF2, 0xB2);

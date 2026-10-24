@@ -46,6 +46,10 @@
 #include <io.h>
 #include <fcntl.h>
 #include <stat.h>                       /* sys\stat.h; the build keeps it flat */
+#ifndef __TURBOC__
+#include "i18n/ui_text.h"
+#include "i18n/user_text.h"
+#endif
 /* UW1: map.h's Map_Load and Map_Save take the archive record and the level. */
 #include "combat.h"
 #include "critter.h"
@@ -171,6 +175,9 @@ void far get_save_descs(char descs[][40], register int16 *found)
         if (!(*found & (1 << i)))
             strcpy(descs[i], "<not used yet>");
     }
+#ifndef __TURBOC__
+    port_user_descs_load();     /* P12: their Chinese, beside them */
+#endif
 }
 
 /* Lists the four save slots' descriptions in the message scroll, as "I- " to "IV- "
@@ -268,6 +275,9 @@ char far RestoreGame(char slot)
                         fiz_update = 1;
                     }
 #endif
+#ifndef __TURBOC__
+                    port_user_name_load();
+#endif
                     return 1;
                 }
             }
@@ -293,8 +303,17 @@ char far SaveGame(char slot, register char *desc)
     p[1] = 0;
     scroll_clear(1);
     game_sprint(0xA8);                  /* "Please enter a save file description:" */
+#ifndef __TURBOC__
+    port_save_entry_begin(slot, desc);  /* P12: typed in Chinese on an HD panel */
+    if (wdialog(0, desc, desc, 1, 0x1E) == 0x1B) {
+        port_save_entry_end(0);
+        goto fail;
+    }
+    port_save_entry_end(1);
+#else
     if (wdialog(0, desc, desc, 1, 0x1E) == 0x1B)
         goto fail;
+#endif
     scroll_print("\n");
     game_sprint(0xA7);                  /* "Saving Game " */
     if (access(path, 0) < 0 && mkdir(path) < 0)
@@ -304,6 +323,9 @@ char far SaveGame(char slot, register char *desc)
         goto fail;
     if (!blttodrive(desc, "SAVE0\\desc", strlen(desc)))
         goto fail;
+#ifndef __TURBOC__
+    port_save_sidecars();
+#endif
     p[2] = 0;
     game_sprint(0xAA);
     if (SavePlayerInv(HomeDir)) {

@@ -70,6 +70,10 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"opt.level_medium", "細節：中"},
     {"opt.level_high", "細節：高"},
     {"opt.level_very_high", "細節：極高"},
+    {"opt.slot1", "存檔一"},                       /* the slots' numerals I .. IV */
+    {"opt.slot2", "存檔二"},
+    {"opt.slot3", "存檔三"},
+    {"opt.slot4", "存檔四"},
     {"opt.yes", "是"},
     {"opt.no", "否"},
     {"menu.intro", "開場介紹"},                    /* the main menu's buttons */
@@ -105,6 +109,10 @@ static const struct { const char *english, *zh; } literals[] = {
     {"Vit:", "生命力"},
     {"\\6    Save Game Descriptions", "\\6    存檔說明"},
     {"<not used yet>", "<尚未使用>"},
+    {"I- ", "存檔一："},                           /* GAMEWRAP.C's ShowSaveRest */
+    {"II- ", "存檔二："},
+    {"III- ", "存檔三："},
+    {"IV- ", "存檔四："},
     {"Chant the mantra: ", "誦唸祈禱語："},
     {"Mouse look enabled.\n","滑鼠視角已開啟。\n"},
     {"Mouse look disabled.\n", "滑鼠視角已關閉。\n"},

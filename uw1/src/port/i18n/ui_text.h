@@ -21,6 +21,14 @@ void port_ui_next(const char *english, const char *zh);
    days line, composed in Chinese for the English line about to be drawn. */
 void port_end_level(const char *english, int level, int pclass);
 void port_end_days(const char *english, int days);
+/* The player's words in Chinese (user_text.h): the save's description (GAMEWRAP.C's SaveGame,
+   around its wdialog, then after SAVE0\DESC is written) and the character's name (CHARGEN.C's
+   pickopt, around its loop); ok 0 when the entry was left with Escape. */
+void port_save_entry_begin(int slot, const char *desc);
+void port_save_entry_end(int ok);
+void port_save_sidecars(void);
+void port_name_entry_begin(const char *question);
+void port_name_entry_end(int ok);
 /* The words in the statistics page's art, as HD patches (STATS.C's RedispStat). */
 void port_stats_labels(void);
 #endif

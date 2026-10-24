@@ -143,6 +143,9 @@ void far draw_start_buttons(int n, struct Button far *b, unsigned char text, int
             }
             while ((w = string_width(s[i])) > 0x13E)
                 s[i][strlen(s[i]) - 1] = 0;
+#ifndef __TURBOC__
+            hd_label_align(HD_LABEL_CENTRE);
+#endif
             string_to_screen(s[i], 0xA0 - w / 2, 100 - i * 0x16);
         }
     }

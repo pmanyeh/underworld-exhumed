@@ -29,6 +29,7 @@
 #include "presentation/hd_label.h"
 #include "presentation/settings_text.h"
 #include "presentation/qty_dialog.h"
+#include "presentation/text_entry.h"
 #include "presentation/overlay_demo.h"
 #include "presentation/hd_demo.h"
 #include "presentation/presentation.h"
@@ -129,7 +130,10 @@ void port_on_flip(void)
 static int game_argc;
 static char **game_argv;
 static const char *locale = "en", *i18n_file, *i18n_log, *i18n_trace;
-static int locale_given;               /* --locale: the settings file's language does not apply */
+static int locale_given;
+/* P12: in English, labels only for the player's Chinese (a name, a description), in this font */
+static int user_labels;
+static char user_font_file[1024];               /* --locale: the settings file's language does not apply */
 static const char *cursor_log;
 static int modern_scroll;
 static const char *scroll_log;
@@ -155,7 +159,7 @@ static void scroll_pause(int ticks, void *unused) { (void)unused;scroll_wait(tic
 /* P12: the keyboard and the pointer, by way of the "Move how many?" panel (qty_dialog.c) */
 void kbd_byte(uint8_t sc);                  /* keyqueue.c */
 void mouse_event(const PlatPointer *ev);    /* mousedrv.c */
-static void key_hook(uint8_t sc) { if (!qty_dialog_key(sc)) kbd_byte(sc); }
+static void key_hook(uint8_t sc) { if (!text_entry_key(sc) && !qty_dialog_key(sc)) kbd_byte(sc); }
 static void pointer_hook(const PlatPointer *ev) { if (!qty_dialog_pointer(ev)) mouse_event(ev); }
 
 static int game(void *arg)
@@ -197,6 +201,10 @@ static int game(void *arg)
                               to64(scroll_style[box].latin_spacing), to64(scroll_style[box].line_spacing));
         }
         if (scroll_text_trace_open(scroll_log)<0) port_fatal("HD scroll: cannot open log");
+    } else if (user_labels && !hd_font_init(&measure_font[0], user_font_file)) {
+        label_metrics.font = measure_font[0];
+        label_metrics.em64 = 5 * 64;
+        hd_label_start(scroll_measure, &label_metrics, label_metrics.em64, label_pixel, port_draw_page);
     }
     status = uw1_main(game_argc, game_argv);
     hd_cursor_trace_close();
@@ -768,6 +776,7 @@ int main(int argc, char *argv[])
     caption_enable(modern_scroll);
     hd_label_enable(modern_scroll);
     qty_dialog_enable(modern_scroll, kbd_byte);
+    text_entry_enable(modern_scroll, kbd_byte);
     if (modern_scroll && !strcmp(locale, "zh-TW")) scroll_text_more_label(port_zh_lit("scroll.more"));
     if (modern_scroll) {
         /* P11.4: the locale's words for what a conversation compares, the home folder's first */
@@ -788,8 +797,13 @@ int main(int argc, char *argv[])
     else {
         static HdFont *settings_font;
         char where[1024];
-        if (!text_style_font_path(home, "jf-openhuninn-2.1.ttf", where, sizeof where) && !hd_font_init(&settings_font, where))
+        if (!text_style_font_path(home, "jf-openhuninn-2.1.ttf", where, sizeof where) && !hd_font_init(&settings_font, where)) {
             settings_text_start(settings_font, 0, 1);
+            snprintf(user_font_file, sizeof user_font_file, "%s", where);
+            presentation.label_font = settings_font;
+            user_labels = 1;
+            hd_label_enable(1);
+        }
     }
     presentation.demo = hd_demo;
     if (!test_hd_text) presentation.demo.font = NULL;
@@ -804,7 +818,7 @@ int main(int argc, char *argv[])
     hooks.lifecycle = on_lifecycle;
     if (test_overlay) hooks.overlay = overlay_demo_draw;
     if (test_hd_text) { hooks.overlay = hd_demo_draw; hooks.overlay_data = &hd_demo; }
-    if (hd_cursor) {
+    if (hd_cursor || user_labels) {
         hooks.scanout = presentation_scanout;
         hooks.overlay = presentation_draw;
         hooks.overlay_data = &presentation;

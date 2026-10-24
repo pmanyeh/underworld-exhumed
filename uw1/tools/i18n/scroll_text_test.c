@@ -169,3 +169,7 @@ int main(int argc,char **argv)
     printf("PASS %d assertions: UTF-8, CJK/English wrap, punctuation, append, pages/MORE, controls, choices, fallback, styles, 5000 concurrent snapshots\n",checks);
     return 0;
 }
+
+/* user_text.c's files (P12): none in this test */
+FILE *bc_fopen(const char *path, const char *mode) { (void)path; (void)mode; return NULL; }
+int bc_unlink(const char *path) { (void)path; return 0; }
