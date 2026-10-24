@@ -160,7 +160,19 @@ static void scroll_pause(int ticks, void *unused) { (void)unused;scroll_wait(tic
 void kbd_byte(uint8_t sc);                  /* keyqueue.c */
 void mouse_event(const PlatPointer *ev);    /* mousedrv.c */
 static void key_hook(uint8_t sc) { if (!text_entry_key(sc) && !qty_dialog_key(sc)) kbd_byte(sc); }
-static void pointer_hook(const PlatPointer *ev) { if (!qty_dialog_pointer(ev)) mouse_event(ev); }
+static volatile int pointer_x = -100, pointer_y = -100;
+static void pointer_hook(const PlatPointer *ev)
+{
+    if (ev->absolute) { pointer_x = (int)ev->x; pointer_y = (int)ev->y; }
+    if (!qty_dialog_pointer(ev)) mouse_event(ev);
+}
+/* Without the HD cursor the game's own is drawn into video memory: a box round the pointer for
+   the labels to look past (presentation.c), as the HD cursor's own box is otherwise */
+int port_pointer_box(int box[4])
+{
+    box[0] = pointer_x - 12; box[1] = pointer_y - 12; box[2] = pointer_x + 13; box[3] = pointer_y + 13;
+    return pointer_x > -100;
+}
 
 static int game(void *arg)
 {
@@ -766,10 +778,10 @@ int main(int argc, char *argv[])
     }
     if (modern_scroll) hd_cursor = 1;
     if (hd_cursor && ENHANCED(ENH_MOUSE_LOOK)) {
-        fputs("uw1port: HD cursor: mouse-look is not supported; use compatibility cursor or disable mouse-look\n", stderr);
-        if (presentation.scroll_fonts[1] != presentation.scroll_fonts[0]) hd_font_shutdown(presentation.scroll_fonts[1]);
-        hd_font_shutdown(presentation.scroll_fonts[0]);
-        return 1;
+        /* the HD cursor does not follow mouse-look; an enhancement the settings screen turns on
+           must not keep the game from starting, so the game's own cursor stays (P12) */
+        fputs("uw1port: HD cursor: mouse-look is not supported; using the game's own cursor\n", stderr);
+        hd_cursor = 0;
     }
     hd_cursor_enable(hd_cursor);
     scroll_text_enable(modern_scroll);
@@ -818,7 +830,7 @@ int main(int argc, char *argv[])
     hooks.lifecycle = on_lifecycle;
     if (test_overlay) hooks.overlay = overlay_demo_draw;
     if (test_hd_text) { hooks.overlay = hd_demo_draw; hooks.overlay_data = &hd_demo; }
-    if (hd_cursor || user_labels) {
+    if (hd_cursor || user_labels || modern_scroll) {
         hooks.scanout = presentation_scanout;
         hooks.overlay = presentation_draw;
         hooks.overlay_data = &presentation;

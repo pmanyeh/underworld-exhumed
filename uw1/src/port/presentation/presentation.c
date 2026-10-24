@@ -16,6 +16,7 @@ static uint8_t frame_palette[768];
 static ScrollFrame frame_text;
 static CaptionFrame frame_caption;
 static HdLabelFrame frame_labels;
+int port_pointer_box(int box[4]);   /* sys/main.c */
 static uint8_t frame_pixels[640 * 480];   /* the scan-out, for the labels' signatures */
 static int frame_w, frame_h;
 void presentation_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])
@@ -50,8 +51,9 @@ int presentation_draw(const PlatOverlay *frame, void *data)
         /* (its save-under box, MOUSE.C's _actual_mhide, starts a row above; a pixel's margin) */
         int cursor[4]={frame_cursor.x-frame_cursor.hotspot_x-1,frame_cursor.y-frame_cursor.hotspot_y-2,0,0};
         cursor[2]=cursor[0]+frame_cursor.width+2; cursor[3]=cursor[1]+frame_cursor.height+3;
+        int pointer=!p->cursor && port_pointer_box(cursor);
         drawn |= hd_label_draw(p->scroll_fonts[0]?p->scroll_fonts[0]:p->label_font,frame,&frame_labels,frame_pixels,frame_w,frame_h,frame_palette,
-                               p->scroll_style[0].border,p->scroll_style[0].baseline,frame_cursor.visible?cursor:NULL);
+                               p->scroll_style[0].border,p->scroll_style[0].baseline,frame_cursor.visible||pointer?cursor:NULL);
     }
     /* the "Move how many?" panel, over the scroll (P12) */
     if (p->scroll_fonts[0]) drawn |= qty_dialog_draw(p->scroll_fonts[0],frame);
