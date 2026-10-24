@@ -11,4 +11,6 @@ typedef struct PortPresentation {
 } PortPresentation;
 void presentation_scanout(uint8_t *pixels, int *width, int *height, uint8_t rgb6[768]);
 int presentation_draw(const PlatOverlay *frame, void *data);
+/* the backend's pointer events, for the cursor drawn over a panel and the labels (backend thread) */
+void presentation_pointer(const PlatPointer *ev);
 #endif

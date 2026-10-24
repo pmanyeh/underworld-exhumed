@@ -16,8 +16,20 @@ static uint8_t frame_palette[768];
 static ScrollFrame frame_text;
 static CaptionFrame frame_caption;
 static HdLabelFrame frame_labels;
-int port_pointer_box(int box[4]);   /* sys/main.c */
-void port_pointer_xy(int *x, int *y);
+/* the host's pointer, in the game's pixels, as the backend gives it (presentation_pointer) */
+static volatile int pointer_x = -100, pointer_y = -100;
+void presentation_pointer(const PlatPointer *ev)
+{
+    if (ev->absolute) { pointer_x = (int)ev->x; pointer_y = (int)ev->y; }
+}
+static void port_pointer_xy(int *x, int *y) { *x = pointer_x; *y = pointer_y; }
+/* Without the HD cursor the game's own is drawn into video memory: a box round the pointer for
+   the labels to look past, as the HD cursor's own box is otherwise */
+static int port_pointer_box(int box[4])
+{
+    box[0] = pointer_x - 12; box[1] = pointer_y - 12; box[2] = pointer_x + 13; box[3] = pointer_y + 13;
+    return pointer_x > -100;
+}
 static uint8_t frame_pixels[640 * 480];   /* the scan-out, for the labels' signatures */
 static int frame_w, frame_h;
 void presentation_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])

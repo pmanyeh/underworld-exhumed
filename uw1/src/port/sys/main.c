@@ -160,19 +160,10 @@ static void scroll_pause(int ticks, void *unused) { (void)unused;scroll_wait(tic
 void kbd_byte(uint8_t sc);                  /* keyqueue.c */
 void mouse_event(const PlatPointer *ev);    /* mousedrv.c */
 static void key_hook(uint8_t sc) { if (!text_entry_key(sc) && !qty_dialog_key(sc)) kbd_byte(sc); }
-static volatile int pointer_x = -100, pointer_y = -100;
 static void pointer_hook(const PlatPointer *ev)
 {
-    if (ev->absolute) { pointer_x = (int)ev->x; pointer_y = (int)ev->y; }
+    presentation_pointer(ev);
     if (!qty_dialog_pointer(ev)) mouse_event(ev);
-}
-/* Without the HD cursor the game's own is drawn into video memory: a box round the pointer for
-   the labels to look past (presentation.c), as the HD cursor's own box is otherwise */
-void port_pointer_xy(int *x, int *y) { *x = pointer_x; *y = pointer_y; }
-int port_pointer_box(int box[4])
-{
-    box[0] = pointer_x - 12; box[1] = pointer_y - 12; box[2] = pointer_x + 13; box[3] = pointer_y + 13;
-    return pointer_x > -100;
 }
 
 static int game(void *arg)

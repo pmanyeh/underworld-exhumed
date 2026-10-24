@@ -35,9 +35,11 @@ static int check_hook(const char *catalog, const char *log)
     if (translated == source || !(translated[0] & 0x80)) return 9;
     strcpy(utf8, translated);
     if (strcmp(get_string(3), source)) return 10;
-    CutsceneOrConversationStringBlock = 3072;
-    slot = get_string(0);
-    if (strcmp(slot, read_string(3072, 0)) || port_i18n_lookup(3072, 0, slot) != slot) return 11;
+    /* a key with no translation: a conversation's input token (P11.4 never translates them; the
+       cutscenes this used, block 3072, have had their subtitles since P11) */
+    CutsceneOrConversationStringBlock = 3589;
+    slot = get_string(50);
+    if (strcmp(slot, read_string(3589, 50)) || port_i18n_lookup(3589, 50, slot) != slot) return 11;
     before = OutString;
     slot = get_string((1 << 9) | 2);
     strcpy(first, slot);
