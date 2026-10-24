@@ -32,6 +32,12 @@ goldens 或 verifier 的比對範圍。以下是恢復時預定採用的做法�
   SHA `fd133b9a…dff98`（`test_l10n.py` 的 P8 catalog 測試會驗證可重現）。它們是 HD 程式路徑的回歸。
 - 新譯文的 runtime 驗證用 `verify_localized_replay.py`（每個 hit 符合 master）與 HD scroll log 的 QA 重播。
 
+**已知事項（2026-10-24，P11 收尾時重跑；維持暫停，使用者決定）：** 用 P8 catalog 重播，walk、restore、english、
+resize PASS；**dialogue 失敗**，兩次結果相同（306 個 checkpoint 只到 265）。第 6 次點對話選項後就岔開：HD 文字開啟時，
+點到哪個選項由 HD 版面判定（`CONVERSE.C` 的 `conv_play_menu` → `scroll_text_hit`），P10T 的文字參數與 P11 的選項顯示文字
+改變了版面，錄製時的座標便點到別處。分岔前的狀態全部相同；公開 session 的存檔與 DOS golden 相同。
+上次 PASS 是 2026-10-23 P10T、P11 之前的執行。依上面的暫停規則不作為 Gate，重錄留到 P13。
+
 ## 本機環境注意事項
 
 - 工作區路徑含空白時，pkg-config 的 `-I` 會被斷開，Native build 找不到 FreeType／mt32emu header。
