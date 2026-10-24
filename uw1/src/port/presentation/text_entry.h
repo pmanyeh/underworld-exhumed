@@ -20,6 +20,8 @@ void text_entry_begin(int kind, const char *prompt, const char *initial, int max
 const char *text_entry_end(void);
 /* backend thread: 1 when the panel took the key */
 int text_entry_key(uint8_t scancode);
+/* whether the panel is open (as qty_dialog_open) */
+int text_entry_open(void);
 /* presentation: 1 when drawn */
 int text_entry_draw(struct HdFont *font, const struct PlatOverlay *frame);
 #endif

@@ -65,6 +65,8 @@ const char *text_entry_end(void)
     return has_result ? result : NULL;
 }
 
+int text_entry_open(void) { return enabled && atomic_load(&open_now); }
+
 static void tap(uint8_t sc) { send_key(sc); send_key((uint8_t)(sc | 0x80)); }
 
 /* a printable ASCII character as the PC keyboard types it (US layout, set 1) */

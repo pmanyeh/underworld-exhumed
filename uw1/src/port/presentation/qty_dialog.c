@@ -33,6 +33,7 @@ void qty_dialog_begin(int max)
     atomic_fetch_add(&open_serial, 1);
 }
 void qty_dialog_end(void) { if (enabled) atomic_store(&open_max, 0); }
+int qty_dialog_open(void) { return enabled && atomic_load(&open_max) > 0; }
 
 static int active(void)
 {

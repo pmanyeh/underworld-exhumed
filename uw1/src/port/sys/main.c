@@ -168,6 +168,7 @@ static void pointer_hook(const PlatPointer *ev)
 }
 /* Without the HD cursor the game's own is drawn into video memory: a box round the pointer for
    the labels to look past (presentation.c), as the HD cursor's own box is otherwise */
+void port_pointer_xy(int *x, int *y) { *x = pointer_x; *y = pointer_y; }
 int port_pointer_box(int box[4])
 {
     box[0] = pointer_x - 12; box[1] = pointer_y - 12; box[2] = pointer_x + 13; box[3] = pointer_y + 13;

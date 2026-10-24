@@ -17,6 +17,7 @@ static ScrollFrame frame_text;
 static CaptionFrame frame_caption;
 static HdLabelFrame frame_labels;
 int port_pointer_box(int box[4]);   /* sys/main.c */
+void port_pointer_xy(int *x, int *y);
 static uint8_t frame_pixels[640 * 480];   /* the scan-out, for the labels' signatures */
 static int frame_w, frame_h;
 void presentation_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])
@@ -62,5 +63,13 @@ int presentation_draw(const PlatOverlay *frame, void *data)
     /* Game cursor last, above HD text. Settings owns its OS pointer and is
        composited above the game layer, so do not leave a second pointer there. */
     if (p->cursor && !settings_open()) drawn |= hd_cursor_draw(frame,&frame_cursor,frame_palette);
+    /* the game hides its cursor for its text entry (wdialog); over a panel of ours, which takes
+       clicks, the cursor's last picture follows the pointer (P12) */
+    if (p->cursor && !settings_open() && !frame_cursor.visible && (qty_dialog_open() || text_entry_open())) {
+        HdCursor shown=frame_cursor;
+        port_pointer_xy(&shown.x,&shown.y);
+        shown.visible=1;
+        drawn |= hd_cursor_draw(frame,&shown,frame_palette);
+    }
     return drawn;
 }

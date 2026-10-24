@@ -18,6 +18,8 @@ void qty_dialog_end(void);
 /* backend thread: 1 when the panel took the event (the game does not see it) */
 int qty_dialog_pointer(const struct PlatPointer *ev);
 int qty_dialog_key(uint8_t scancode);
+/* whether the panel is open (the game hides its cursor under it; presentation.c draws one) */
+int qty_dialog_open(void);
 /* presentation: 1 when drawn */
 int qty_dialog_draw(struct HdFont *font, const struct PlatOverlay *frame);
 #endif
