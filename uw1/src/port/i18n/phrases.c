@@ -29,6 +29,7 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"inv.your", "你的"},
     {"inv.destroyed", "壞掉了。\n"},
     {"inv.damaged", "受損了。\n"},
+    {"inv.empty", "是空的。\n"},
 };
 
 /* whole pieces the game's code prints by themselves; a name between "The " and the rest is
@@ -48,6 +49,9 @@ static const struct { const char *english, *zh; } literals[] = {
     {"No", "否"},
     {"\\6    Save Game Descriptions", "\\6    存檔說明"},
     {"<not used yet>", "<尚未使用>"},
+    {"Chant the mantra: ", "誦唸祈禱語："},
+    {"Mouse look enabled.\n","滑鼠視角已開啟。\n"},
+    {"Mouse look disabled.\n", "滑鼠視角已關閉。\n"},
 };
 
 const char *port_zh_lit(const char *key)

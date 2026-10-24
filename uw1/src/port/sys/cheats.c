@@ -216,9 +216,18 @@ static const char *c_lookwall(int argc, char *argv[], int run)
     if (run) look_nothing(2, (int)n);
     return NULL;
 }
+void far mantra_advance(void);      /* SKILLS.C */
+static const char *c_mantra(int argc, char *argv[], int run)
+{
+    (void)argv;
+    if (argc != 0) return "no arguments";
+    if (run) mantra_advance();
+    return NULL;
+}
 static const struct cheat_cmd cmds[] = {
     { "look", "ITEM [QTY [QUALITY [LORE]]] (look fixture)", c_look },
     { "lookwall", "N (wall look fixture)", c_lookwall },
+    { "mantra", "(shrine mantra fixture)", c_mantra },
     { "goto", "LEVEL X Y", c_goto },
     { "give", "ITEM [QTY [QUALITY]] [drop]", c_give },
     { "set", "FIELD VALUE", c_set },

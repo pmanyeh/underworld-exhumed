@@ -52,6 +52,10 @@
 #include "sys.h"
 #include "ui.h"
 #include "view3d.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#include "presentation/scroll_bridge.h"
+#endif
 
 /* Declared in each file that uses it, its own way (no header). */
 void far grfx_clear(void);
@@ -271,6 +275,17 @@ void far mantra_advance(void)
     register int tries;
 
     text[0] = 0;
+#ifndef __TURBOC__
+    /* P11.2: the prompt in the locale's language on the HD scroll; the mantra is typed as is.
+       The message scroll first, as wdialog has it, and an empty print to lay out its HD box
+       when nothing has been printed yet. */
+    if (port_zh()) {
+        do_main_scroll();
+        *foreground_color = scroll->font_color;
+        scroll_print("");
+    }
+    if (!port_zh() || port_scroll_ask(-1, port_zh_literal("Chant the mantra: "), text, 0xA, mouse_get_input) == -2)
+#endif
     wdialog("Chant the mantra: ", 0, text, 1, 0xA);
     scroll_print("\n");
     for (mantra = STRN_MANTRAS; mantra < STRN_MANTRAS + NUM_MANTRAS; mantra++)

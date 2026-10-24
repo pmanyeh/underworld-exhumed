@@ -97,22 +97,24 @@ int port_scroll_write(int which,const char *legacy,int escapes)
 #define ASK_ESC 27
 #define ASK_CHARS 30                    /* the line on the 320-wide scroll, prompt and caret too */
 static size_t ask_chars(const char *s) { size_t n=0;for(;*s;s++)if((*s&0xC0)!=0x80)n++;return n; }
-static void ask_draw(const ScrollBox *mark,const char *typed,const char *end)
+static int ask_draw(const ScrollBox *mark,const char *prompt,const char *typed,const char *end)
 {
     char line[200];
-    snprintf(line,sizeof line,">%s%s",typed,end);
+    snprintf(line,sizeof line,"%s%s%s",prompt,typed,end);
     scroll_text_rewind(0,mark);
-    if(scroll_text_write(0,line,0,0)<0)port_fatal("HD scroll: the typed answer does not fit");
+    return scroll_text_write(0,line,0,0);
 }
-int port_scroll_ask(int slot,char *result,int maxlen,int (*next_key)(void))
+int port_scroll_ask(int slot,const char *prompt,char *result,int maxlen,int (*next_key)(void))
 {
     ScrollBox mark;char typed[160]="",got[64];size_t len=0,i;int key,changed=1,ascii;
-    if(!scroll_text_enabled() || !input_alias_loaded() || maxlen<1)return -2;
+    if(!scroll_text_enabled() || (slot>=0 && !input_alias_loaded()) || maxlen<1)return -2;
+    if(!prompt)prompt=">";
     scroll_text_clear(0);               /* as the original prompt's HD path leaves it after */
     scroll_text_mark(0,&mark);
-    plat_text_input(1);
+    if(ask_draw(&mark,prompt,"","_")<0) {scroll_text_rewind(0,&mark);return -2;}   /* no line to type on yet */
+    plat_text_input(slot>=0);
     for(;;) {
-        if(changed)ask_draw(&mark,typed,"_");
+        if(changed && ask_draw(&mark,prompt,typed,"_")<0)port_fatal("HD scroll: the typed answer does not fit");
         changed=0;
         key=next_key();
         if(plat_text_take(got,sizeof got))
@@ -136,10 +138,11 @@ int port_scroll_ask(int slot,char *result,int maxlen,int (*next_key)(void))
             plat_sleep_ns(1000000);
     }
     plat_text_input(0);
-    ask_draw(&mark,key==ASK_ESC?"-":typed,"");
+    if(ask_draw(&mark,prompt,key==ASK_ESC?"-":typed,"")<0)port_fatal("HD scroll: the typed answer does not fit");
     for(ascii=1,i=0;typed[i];i++)if((unsigned char)typed[i]>=0x80)ascii=0;
     if(key==ASK_ESC)result[0]=0;
     else if(ascii) {strncpy(result,typed,(size_t)maxlen);result[maxlen]=0;}
-    else input_alias_map(slot,typed,result,(size_t)maxlen+1);
+    else if(slot>=0)input_alias_map(slot,typed,result,(size_t)maxlen+1);
+    else result[0]=0;
     return key;
 }

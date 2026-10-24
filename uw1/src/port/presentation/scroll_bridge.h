@@ -14,6 +14,8 @@ int port_scroll_write(int which,const char *text,int escapes);
    input method on: ASCII keys come from next_key (the game's own input), other text from the
    input method; Enter or Esc ends it. result gets ASCII only (input_alias_map for the
    conversation slot; typed ASCII unchanged), at most maxlen bytes. Returns the key that ended
-   it, or -2 when the HD scroll or the alias table is off, for the original prompt to run. */
-int port_scroll_ask(int slot,char *result,int maxlen,int (*next_key)(void));
+   it, or -2 when the HD scroll or the alias table is off, for the original prompt to run.
+   prompt: shown before the answer (0: ">"). slot < 0: an answer typed in ASCII only (a
+   mantra), with no input method and no aliases; other text gives an empty result. */
+int port_scroll_ask(int slot,const char *prompt,char *result,int maxlen,int (*next_key)(void));
 #endif

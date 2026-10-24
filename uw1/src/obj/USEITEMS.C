@@ -960,6 +960,17 @@ void far UseBook(struct Object far *obj, char how)
             if (!get_name(text + strlen(text), obj, 0, 0))
                 strcat(text, "UNNAMED");
             strcat(text, "...\n");
+#ifndef __TURBOC__
+            if (port_zh()) {
+                PortZh zh;
+                const char *n = port_zh_name(obj, 0, 0);
+                port_zh_begin(&zh);
+                port_zh_add(&zh, port_zh_lit("look.read"));
+                port_zh_add(&zh, n ? n : "UNNAMED");
+                port_zh_add(&zh, port_zh_lit("look.read_end"));
+                scroll_print(zh.text);
+            } else
+#endif
             scroll_print(text);
             str = get_string((OBJ_LINK(obj) & 0x1FF) | STR_BOOKS);
             scroll_print(str);
@@ -1230,6 +1241,16 @@ void far DumpTheBag(struct Object far *bag, char to_player)
         strcpy(text, "The ");
         get_name(text + strlen(text), bag, 0, 0);
         strcat(text, " is empty.\n");
+#ifndef __TURBOC__
+        if (port_zh()) {
+            PortZh zh;
+            const char *n = port_zh_name(bag, 0, 0);
+            port_zh_begin(&zh);
+            port_zh_add(&zh, n ? n : "UNNAMED");
+            port_zh_add(&zh, port_zh_lit("inv.empty"));
+            scroll_print(zh.text);
+        } else
+#endif
         scroll_print(text);
     }
     editchng(2);
