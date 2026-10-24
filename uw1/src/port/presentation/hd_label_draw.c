@@ -40,7 +40,7 @@ int hd_label_draw(struct HdFont *font, const struct PlatOverlay *frame, const Hd
         color.a = 255;
         for (i = 0; i < l->count && i < HD_LABEL_CELLS; i++)
             if (hd_scroll_glyph_border(font, frame, l->cells[i].scalar, l->cells[i].x64 / 64.0f,
-                                       l->y64 / 64.0f + baseline, l->em64 / 64.0f, clip, color, border) == HD_OK)
+                                       l->y64 / 64.0f + baseline, l->em64 / 64.0f, clip, color, l->border >= 0 ? l->border : border) == HD_OK)
                 drawn = 1;
     }
     return drawn;

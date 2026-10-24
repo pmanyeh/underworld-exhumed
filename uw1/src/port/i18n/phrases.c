@@ -32,6 +32,10 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"inv.empty", "是空的。\n"},
     {"scroll.more", "[繼續]"},                     /* literals.tsv's [MORE] */
     {"stats.level", "第%d級"},                     /* "1ST" .. "16TH" */
+    {"menu.intro", "開場介紹"},                    /* the main menu's buttons */
+    {"menu.create", "創造角色"},
+    {"menu.credits", "製作群"},
+    {"menu.journey", "繼續旅程"},
     {"stats.str", "力量"},
     {"stats.dex", "敏捷"},
     {"stats.int", "智慧"},

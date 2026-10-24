@@ -5,6 +5,10 @@
    decoded (port_i18n_display), or a piece of the game's code (port_zh_literal); NULL when it
    has none, or has no letters (numbers stay in the bitmap font) */
 const char *port_ui_text(const char *english);
+/* Main menu button i (0..3) in Chinese over the menu's background, its colour the picture's
+   letters' (the selected picture's when it is selected); 1: the caller does not show the
+   picture. x, y, w, h as the menu shows it (y bottom-up, the top row). */
+int port_menu_button(int i, int x, int y, int w, int h, const unsigned char *img, int selected);
 /* The words in the statistics page's art, as HD patches (STATS.C's RedispStat). */
 void port_stats_labels(void);
 #endif

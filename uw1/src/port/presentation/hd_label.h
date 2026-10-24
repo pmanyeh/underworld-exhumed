@@ -17,6 +17,7 @@ typedef struct HdLabel {
     uint32_t signature;
     int color, em64, y64, count;    /* y64: the line's top, 26.6 */
     int fill;                       /* a patch's opaque background (palette index), else -1 */
+    float border;                   /* the outline, game pixels; < 0: the HD text style's */
     HdLabelCell cells[HD_LABEL_CELLS];
 } HdLabel;
 typedef struct HdLabelFrame { uint64_t generation; int count; HdLabel labels[HD_LABELS]; } HdLabelFrame;
@@ -40,7 +41,14 @@ int hd_label_put(const char *text, int x, int y, int english_width, int height, 
    (top-down game pixels), which it covers with the box's commonest colour (the art's
    background), aligned in the box and centred on its rows. 0: published; -1: not. */
 int hd_label_patch(const char *text, int left, int top, int right, int bottom, int color, int align);
+/* The general box: text at em64 (0: the base em; it shrinks to fit), over the box's commonest
+   colour when fill is set, outlined border game pixels wide (< 0: the HD text style's). */
+int hd_label_box(const char *text, int left, int top, int right, int bottom, int color, int align,
+                 int em64, int fill, float border);
 void hd_label_clear(void);
+/* The game draws a picture over [left, right) x [top, bottom) (top-down game pixels): the
+   labels it covers go, even when it draws again what was under them (a background reloaded). */
+void hd_label_forget(int left, int top, int right, int bottom);
 void hd_label_read(HdLabelFrame *out);
 /* Presentation thread: the signature of a box of a 320-wide indexed scan-out. */
 uint32_t hd_label_signature(const uint8_t *pixels, int width, int height, const HdLabel *label);

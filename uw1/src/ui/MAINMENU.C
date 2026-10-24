@@ -35,6 +35,10 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/ui_text.h"
+#include "presentation/hd_label.h"
+#endif
 #include "file.h"
 
 unsigned char far grfx_load_font(char *name);    /* GRFX.C (gfx.h has why it is declared here) */
@@ -120,6 +124,10 @@ void far draw_start_buttons(int n, struct Button far *b, unsigned char text, int
         for (i = 0; i < n; i++) {
             p = b;
             img = p[i].img[i == sel];
+#ifndef __TURBOC__
+            /* P12: the main menu's lettered buttons in Chinese, over the clean background */
+            if (b == buttons && port_menu_button(i, p[i].x, p[i].y, p[i].w, p[i].h, img, i == sel)) continue;
+#endif
             show(p[i].x, p[i].y, img, p[i].h, p[i].w, 0, 0);
         }
     } else {
@@ -206,6 +214,9 @@ void far real_start(int intro)
                 grfx_load_font("fontbig.sys");
                 *foreground_color = 0xA2;
                 *background_color = 0xA2;
+#ifndef __TURBOC__
+                hd_label_align(HD_LABEL_CENTRE);
+#endif
                 string_to_screen(msg, 0xA0 - string_width(msg) / 2, 0x5A);
                 mouse_show();
                 while (mouse_get_input() < 0)
@@ -409,6 +420,9 @@ int far do_journey(void)
         grfx_load_font("fontbig.sys");
         *foreground_color = 0xA2;
         *background_color = 0xA2;
+#ifndef __TURBOC__
+        hd_label_align(HD_LABEL_CENTRE);
+#endif
         string_to_screen(msg, (0x140 - string_width(msg)) / 2 + 10, 0x5A);
         grfx_load_font("font5x6p.sys");
         if (RestoreGame(i + 1)) {

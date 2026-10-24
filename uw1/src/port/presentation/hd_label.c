@@ -30,6 +30,20 @@ void hd_label_clear(void)
     if (!hd_label_enabled() || !work.count) return;
     work.count = 0; publish();
 }
+void hd_label_forget(int left, int top, int right, int bottom)
+{
+    int i, gone = 0;
+    if (!hd_label_enabled()) return;
+    for (i = 0; i < work.count; ) {
+        HdLabel *o = &work.labels[i];
+        if (o->left < right && left < o->right && o->top < bottom && top < o->bottom) {
+            memmove(o, o + 1, sizeof *o * (size_t)(work.count - i - 1));
+            work.count--;
+            gone = 1;
+        } else i++;
+    }
+    if (gone) publish();
+}
 void hd_label_read(HdLabelFrame *out) { if (out) { lock(); *out = published; unlock(); } }
 
 /* FNV-1a over the box's pixels, row by row */
@@ -56,12 +70,12 @@ static int shape(const char *text, uint32_t *cps, int *adv, int *width)
     return off < len ? -1 : n;
 }
 
-/* shrinks the advances to fit room (the measure is linear in em); the em, or 0 below 3 pixels */
-static int fit(int *adv, int n, int *width, int room)
+/* the advances (measured at the base em) at em64, shrunk to fit room (the measure is linear in
+   em); the em, or 0 below 3 pixels */
+static int fit(int *adv, int n, int *width, int room, int em64)
 {
-    int i, em64 = base_em64;
-    if (*width <= room || room <= 0) return em64;
-    em64 = (int)((long long)base_em64 * room / *width);
+    int i, want = *width;
+    if (room > 0 && (long long)want * em64 / base_em64 > room) em64 = (int)((long long)base_em64 * room / want);
     if (em64 < 3 * 64) return 0;
     for (i = 0, *width = 0; i < n; i++) *width += adv[i] = (int)((long long)adv[i] * em64 / base_em64);
     return em64;
@@ -114,7 +128,9 @@ int hd_label_put(const char *text, int x, int y, int english_width, int height, 
         int centre = x + english_width / 2, l = centre - clip_left, r = clip_right + 1 - centre;
         room = 2 * (l < r ? l : r);
     }
-    if (!(em64 = fit(adv, n, &width, room * 64))) return -1;
+    /* the base em, or four fifths of a bigger font's height (fontbig) */
+    em64 = height * 64 * 4 / 5 > base_em64 ? height * 64 * 4 / 5 : base_em64;
+    if (!(em64 = fit(adv, n, &width, room * 64, em64))) return -1;
     start = align == HD_LABEL_LEFT ? x * 64
             : align == HD_LABEL_RIGHT ? (x + english_width) * 64 - width
             : (x * 64 + english_width * 32) - width / 2;
@@ -128,11 +144,18 @@ int hd_label_put(const char *text, int x, int y, int english_width, int height, 
     box.bottom = top + height > 200 ? 200 : top + height;
     if (box.left >= box.right || box.top >= box.bottom) return -1;
     box.fill = -1;
+    box.border = -1;
     add(&box, cps, adv, n, start, top * 64 + (height * 64 - em64) / 2, em64, color);
     return 0;
 }
 
 int hd_label_patch(const char *text, int left, int top, int right, int bottom, int color, int align)
+{
+    return hd_label_box(text, left, top, right, bottom, color, align, 0, 1, -1);
+}
+
+int hd_label_box(const char *text, int left, int top, int right, int bottom, int color, int align,
+                 int em, int patch, float border)
 {
     static int counts[256];
     uint32_t cps[HD_LABEL_CELLS];
@@ -143,15 +166,18 @@ int hd_label_patch(const char *text, int left, int top, int right, int bottom, i
     if (top < 0) top = 0;
     if (right > 320) right = 320;
     if (bottom > 200) bottom = 200;
-    if (left >= right || top >= bottom || !(em64 = fit(adv, n, &width, (right - left) * 64))) return -1;
+    if (left >= right || top >= bottom || !(em64 = fit(adv, n, &width, (right - left) * 64, em > 0 ? em : base_em64))) return -1;
     memset(&box, 0, sizeof box);
     box.left = left; box.top = top; box.right = right; box.bottom = bottom;
     /* the fill: the box's commonest colour, the art's background under its words */
-    memset(counts, 0, sizeof counts);
-    for (y = top; y < bottom; y++)
-        for (x = left; x < right; x++) counts[read_pixel(x, y) & 255]++;
-    for (i = 1; i < 256; i++) if (counts[i] > counts[best]) best = i;
-    box.fill = best;
+    if (patch) {
+        memset(counts, 0, sizeof counts);
+        for (y = top; y < bottom; y++)
+            for (x = left; x < right; x++) counts[read_pixel(x, y) & 255]++;
+        for (i = 1; i < 256; i++) if (counts[i] > counts[best]) best = i;
+    }
+    box.fill = patch ? best : -1;
+    box.border = border;
     x = align == HD_LABEL_LEFT ? left * 64 : align == HD_LABEL_RIGHT ? right * 64 - width : (left + right) * 32 - width / 2;
     add(&box, cps, adv, n, x, (top + bottom) * 32 - em64 / 2, em64, color);
     return 0;

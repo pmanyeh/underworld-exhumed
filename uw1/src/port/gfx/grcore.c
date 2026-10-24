@@ -152,6 +152,7 @@ void box(int a, int b, int c, int d)
 void show(int x, int y, unsigned char *bm, int a, int b, int c, int d)
 {
     uint16_t w[8];
+    if (hd_label_enabled()) hd_label_forget(x, 199 - y, x + b, 199 - y + a);   /* P12: a and b are the height and width */
     w[0] = W(x); w[1] = W(y);
     far_arg(bm, w + 2);
     w[4] = W(a); w[5] = W(b); w[6] = W(c); w[7] = W(d);
@@ -161,6 +162,7 @@ void show(int x, int y, unsigned char *bm, int a, int b, int c, int d)
 void seg003_581E(int handle, int x, int y, int w_, int h, int sx, int sy)
 {
     uint16_t w[7] = { W(handle), W(x), W(y), W(w_), W(h), W(sx), W(sy) };
+    if (hd_label_enabled()) hd_label_forget(x, 199 - y, x + w_, 199 - y + h);   /* P12: a saved area restored */
     call_entry(0x581E, w, 7, 0);
 }
 
