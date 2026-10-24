@@ -18,10 +18,41 @@ static const char *ordinal(const char *s)
     return buf;
 }
 
+/* the composed line the game draws next and its translation (port_ui_next) */
+static char next_english[128], next_zh[160];
+
+void port_ui_next(const char *english, const char *zh)
+{
+    next_english[0] = 0;
+    if (!english || !zh || strlen(english) >= sizeof next_english || strlen(zh) >= sizeof next_zh) return;
+    strcpy(next_english, english);
+    strcpy(next_zh, zh);
+}
+
+/* SKILLS.C's game_stats: "A level " N class, and "after " D " days in the Abyss" */
+void port_end_level(const char *english, int level, int pclass)
+{
+    char zh[160];
+    const char *cls = port_i18n_static(2, 0x17 + pclass);
+    if (!port_i18n_enabled() || !cls) return;
+    snprintf(zh, sizeof zh, port_zh_lit("end.level"), level, cls);
+    port_ui_next(english, zh);
+}
+
+void port_end_days(const char *english, int days)
+{
+    char zh[160];
+    const char *before = port_i18n_static(1, 0xBD), *after = port_i18n_static(1, 0xBE);
+    if (!port_i18n_enabled() || !before || !after) return;
+    snprintf(zh, sizeof zh, "%s%d%s", before, days, after);
+    port_ui_next(english, zh);
+}
+
 const char *port_ui_text(const char *english)
 {
     const char *p, *zh;
     if (!english || !port_i18n_enabled()) return NULL;
+    if (next_english[0] && !strcmp(english, next_english)) { next_english[0] = 0; return next_zh; }
     for (p = english; *p; p++)
         if ((*p >= 'A' && *p <= 'Z') || (*p >= 'a' && *p <= 'z')) break;
     if (!*p) return NULL;

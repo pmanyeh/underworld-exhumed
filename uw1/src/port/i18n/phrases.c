@@ -32,6 +32,7 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"inv.empty", "是空的。\n"},
     {"scroll.more", "[繼續]"},                     /* literals.tsv's [MORE] */
     {"stats.level", "第%d級"},                     /* "1ST" .. "16TH" */
+    {"end.level", "第%d級%s"},                     /* game_stats: level, class */
     {"opt.save", "儲存遊戲"},                      /* the options panel (OPTBTNS.GR) */
     {"opt.restore", "讀取遊戲"},
     {"opt.music", "音樂"},

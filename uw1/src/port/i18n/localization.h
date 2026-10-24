@@ -10,6 +10,9 @@ int port_i18n_init(const char *locale, const char *catalog_path);
 int port_i18n_enabled(void);
 const char *port_i18n_lookup(unsigned block, unsigned index, const char *fallback);
 void port_i18n_shutdown(void);
+/* P12: the translation of (block, index) without the English to check it against, for a line
+   the port composes itself; NULL when the catalog has none. */
+const char *port_i18n_static(unsigned block, unsigned index);
 
 /* Phase 2 observes the resolved key and retrieves UTF-8 for a diagnostic trace.
    The mutable legacy string is returned unchanged. UTF-8 is not copied into

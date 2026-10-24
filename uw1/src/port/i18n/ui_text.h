@@ -15,6 +15,12 @@ int port_menu_button(int i, int x, int y, int w, int h, const unsigned char *img
 void port_options_back(int pic);
 void port_options_btn(int row, int pic);
 void port_options_title(int pic);
+/* A line the game composes itself: when it next draws english, the label shows zh (once). */
+void port_ui_next(const char *english, const char *zh);
+/* The end of the game's statistics (SKILLS.C's game_stats): the level and class line and the
+   days line, composed in Chinese for the English line about to be drawn. */
+void port_end_level(const char *english, int level, int pclass);
+void port_end_days(const char *english, int days);
 /* The words in the statistics page's art, as HD patches (STATS.C's RedispStat). */
 void port_stats_labels(void);
 #endif

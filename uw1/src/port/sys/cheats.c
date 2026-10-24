@@ -38,6 +38,7 @@
 #include "sys.h"
 #include "ui.h"
 #include "conv.h"
+#include "gfx.h"
 #include "presentation/scroll_bridge.h"
 #include "i18n/utf8.h"
 /* Fixture files are host paths, outside the emulated DOS filesystem. */
@@ -217,6 +218,29 @@ static const char *c_lookwall(int argc, char *argv[], int run)
     return NULL;
 }
 void far mantra_advance(void);      /* SKILLS.C */
+void far game_stats(void);          /* SKILLS.C */
+void far grfx_clear(void);          /* declared where it is used (SHOWPIC.C) */
+/* endstats: the end of the game's screens (SKILLS.C, after the last talisman), the winning
+   picture, then the character's statistics, until a key or click; a fixture for its wording
+   (P12). The game's screen is drawn again after it only as far as play redraws it. */
+static const char *c_endstats(int argc, char *argv[], int run)
+{
+    (void)argv;
+    if (argc != 0) return "no arguments";
+    if (!run) return NULL;
+    mouse_hide();
+    grfx_clear();
+    LoadBitMap_ovr141_0(7, "DATA\\win1.byt");
+    grSoftPageFlip();
+    LoadBitMap_ovr141_0(-1, "DATA\\win2.byt");
+    game_stats();
+    grSoftPageFlip();
+    copy_visible_to_hidden();
+    while (mouse_get_input() < 0)
+        ;
+    mouse_show();
+    return NULL;
+}
 static const char *c_mantra(int argc, char *argv[], int run)
 {
     (void)argv;
@@ -228,6 +252,7 @@ static const struct cheat_cmd cmds[] = {
     { "look", "ITEM [QTY [QUALITY [LORE]]] (look fixture)", c_look },
     { "lookwall", "N (wall look fixture)", c_lookwall },
     { "mantra", "(shrine mantra fixture)", c_mantra },
+    { "endstats", "(end of game statistics fixture)", c_endstats },
     { "goto", "LEVEL X Y", c_goto },
     { "give", "ITEM [QTY [QUALITY]] [drop]", c_give },
     { "set", "FIELD VALUE", c_set },

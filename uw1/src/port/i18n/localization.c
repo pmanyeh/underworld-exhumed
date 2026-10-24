@@ -205,6 +205,14 @@ const char *port_i18n_lookup(unsigned block, unsigned index, const char *fallbac
     return e ? e->target : fallback;
 }
 
+/* P12: a key's translation for a line composed outside the game's string ring; the catalog
+   was checked against the game's data when it was built */
+const char *port_i18n_static(unsigned block, unsigned index)
+{
+    const struct entry *e = image ? locate(block, index) : NULL;
+    return e ? e->target : NULL;
+}
+
 int port_i18n_trace_open(const char *path)
 {
     if (trace) fclose(trace);

@@ -55,6 +55,11 @@
 #ifndef __TURBOC__
 #include "i18n/phrases.h"
 #include "presentation/scroll_bridge.h"
+#include "presentation/hd_label.h"
+#include "i18n/ui_text.h"
+#define PORT_CENTRE() hd_label_align(HD_LABEL_CENTRE)
+#else
+#define PORT_CENTRE()
 #endif
 
 /* Declared in each file that uses it, its own way (no header). */
@@ -388,6 +393,7 @@ void far game_stats(void)
     str = get_string(player_name_handle);
     y = 0xB4;
     x = 0xA0 - string_width(str) / 2;
+    PORT_CENTRE();
     string_to_screen(str, x, y);
 
     str = str_copy(text, get_string(0x2BB));    /* "A level " */
@@ -400,11 +406,16 @@ void far game_stats(void)
     str_cat(text, get_string((player->pclass + STRN_CLASSES) | STR_CHARGEN));
     y -= cur_font->height;
     x = 0xA0 - string_width(text) / 2;
+#ifndef __TURBOC__
+    port_end_level(text, player->level, player->pclass);   /* P12: composed in Chinese */
+#endif
+    PORT_CENTRE();
     string_to_screen(text, x, y);
 
     str = get_string(0x2BC);            /* "Banished the Slasher of Veils" */
     y -= cur_font->height;
     x = 0xA0 - string_width(str) / 2;
+    PORT_CENTRE();
     string_to_screen(str, x, y);
 
     hours = player->game_clock / 0x1C2000L;
@@ -414,6 +425,10 @@ void far game_stats(void)
     str_cat(text, get_string(0x2BE));   /* " days in the Abyss" */
     x = 0xA0 - string_width(text) / 2;
     y -= cur_font->height;
+#ifndef __TURBOC__
+    port_end_days(text, days);
+#endif
+    PORT_CENTRE();
     string_to_screen(text, x, y);
     y -= cur_font->height;
 
