@@ -43,8 +43,14 @@ int presentation_draw(const PlatOverlay *frame, void *data)
                               p->scroll_style[0].border>0.6f?p->scroll_style[0].border:0.6f);
     /* the bitmap UI's strings (P12): each while the screen under it is as the game left it */
     if (p->scroll_fonts[0] && frame_labels.count && frame_h==200)
+    {
+        /* the game's own cursor, drawn into video memory under the HD one, is no change to a label */
+        /* (its save-under box, MOUSE.C's _actual_mhide, starts a row above; a pixel's margin) */
+        int cursor[4]={frame_cursor.x-frame_cursor.hotspot_x-1,frame_cursor.y-frame_cursor.hotspot_y-2,0,0};
+        cursor[2]=cursor[0]+frame_cursor.width+2; cursor[3]=cursor[1]+frame_cursor.height+3;
         drawn |= hd_label_draw(p->scroll_fonts[0],frame,&frame_labels,frame_pixels,frame_w,frame_h,frame_palette,
-                               p->scroll_style[0].border,p->scroll_style[0].baseline);
+                               p->scroll_style[0].border,p->scroll_style[0].baseline,frame_cursor.visible?cursor:NULL);
+    }
     /* Game cursor last, above HD text. Settings owns its OS pointer and is
        composited above the game layer, so do not leave a second pointer there. */
     if (p->cursor && !settings_open()) drawn |= hd_cursor_draw(frame,&frame_cursor,frame_palette);

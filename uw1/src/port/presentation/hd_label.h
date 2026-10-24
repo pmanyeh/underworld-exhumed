@@ -10,6 +10,7 @@
 #include <stdint.h>
 #define HD_LABELS 64
 #define HD_LABEL_CELLS 40
+#define HD_LABEL_UNDER 1536    /* a box this many pixels or fewer keeps them, for hd_label_shows */
 enum { HD_LABEL_LEFT, HD_LABEL_CENTRE, HD_LABEL_RIGHT };
 typedef struct HdLabelCell { uint32_t scalar; int x64; } HdLabelCell;
 typedef struct HdLabel {
@@ -19,6 +20,8 @@ typedef struct HdLabel {
     int fill;                       /* a patch's opaque background (palette index), else -1 */
     float border;                   /* the outline, game pixels; < 0: the HD text style's */
     int page;                       /* the drawing page it was put on */
+    int kept;                       /* under holds the box's pixels, row by row */
+    uint8_t under[HD_LABEL_UNDER];
     HdLabelCell cells[HD_LABEL_CELLS];
 } HdLabel;
 typedef struct HdLabelFrame { uint64_t generation; int count; HdLabel labels[HD_LABELS]; } HdLabelFrame;
@@ -43,8 +46,10 @@ int hd_label_put(const char *text, int x, int y, int english_width, int height, 
    (top-down game pixels), which it covers with the box's commonest colour (the art's
    background), aligned in the box and centred on its rows. 0: published; -1: not. */
 int hd_label_patch(const char *text, int left, int top, int right, int bottom, int color, int align);
-/* The general box: text at em64 (0: the base em; it shrinks to fit), over the box's commonest
-   colour when fill is set, outlined border game pixels wide (< 0: the HD text style's). */
+/* The general box: text at em64 (0: the base em; it shrinks to fit), over fill (a palette index,
+   HD_LABEL_COMMONEST the box's commonest colour, -1 nothing), outlined border game pixels wide
+   (< 0: the HD text style's). */
+#define HD_LABEL_COMMONEST (-2)
 int hd_label_box(const char *text, int left, int top, int right, int bottom, int color, int align,
                  int em64, int fill, float border);
 void hd_label_clear(void);
@@ -59,11 +64,16 @@ void hd_label_resign(int left, int top, int right, int bottom);
    the labels wholly inside it on that page are copied too, signed with what is there now. */
 void hd_label_copy(int left, int top, int right, int bottom, int from);
 void hd_label_read(HdLabelFrame *out);
+/* Presentation thread: whether the scan-out under l is as it was signed, the game's cursor's
+   box (left, top, right, bottom; NULL none) aside when l kept its pixels, so that the cursor
+   over a label does not take it away. */
+int hd_label_shows(const uint8_t *pixels, int width, int height, const HdLabel *l, const int cursor[4]);
 /* Presentation thread: the signature of a box of a 320-wide indexed scan-out. */
 uint32_t hd_label_signature(const uint8_t *pixels, int width, int height, const HdLabel *label);
 struct HdFont;
 struct PlatOverlay;
 /* The labels whose box in the scan-out still has their signature; 1 when anything was drawn. */
 int hd_label_draw(struct HdFont *font, const struct PlatOverlay *frame, const HdLabelFrame *labels,
-                  const uint8_t *pixels, int width, int height, const uint8_t pal[768], float border, float baseline);
+                  const uint8_t *pixels, int width, int height, const uint8_t pal[768], float border, float baseline,
+                  const int cursor[4]);
 #endif

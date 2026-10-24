@@ -9,6 +9,12 @@ const char *port_ui_text(const char *english);
    letters' (the selected picture's when it is selected); 1: the caller does not show the
    picture. x, y, w, h as the menu shows it (y bottom-up, the top row). */
 int port_menu_button(int i, int x, int y, int w, int h, const unsigned char *img, int selected);
+/* The options panel (OPTIONS.C), after it shows OPTBTNS.GR picture pic: as the panel's
+   background (0 the icons, 1..5 a page's), as the button of row row, or as the detail page's
+   title; its words as HD patches. */
+void port_options_back(int pic);
+void port_options_btn(int row, int pic);
+void port_options_title(int pic);
 /* The words in the statistics page's art, as HD patches (STATS.C's RedispStat). */
 void port_stats_labels(void);
 #endif

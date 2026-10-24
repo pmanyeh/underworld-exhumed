@@ -66,6 +66,18 @@ int main(void)
     CHECK(hd_label_put("力量", 100, 100, 20, 6, 1, 0, 319) == 0);
     hd_label_read(&f);
     CHECK(f.labels[1].fill == -1);
+    /* the game's cursor over a label that kept its pixels is no change; elsewhere it is */
+    {
+        int cursor[4] = { 241, 28, 245, 32 };
+        screen[29 * 320 + 242] ^= 0x33;
+        CHECK(hd_label_shows(screen, 320, 200, &f.labels[0], cursor));
+        CHECK(!hd_label_shows(screen, 320, 200, &f.labels[0], NULL));
+        screen[29 * 320 + 242] ^= 0x33;
+        screen[33 * 320 + 250] ^= 0x33;
+        CHECK(!hd_label_shows(screen, 320, 200, &f.labels[0], cursor));
+        screen[33 * 320 + 250] ^= 0x33;
+        CHECK(f.labels[0].kept && hd_label_shows(screen, 320, 200, &f.labels[0], NULL));
+    }
     /* pages: a picture takes away its page's labels only; a sprite re-signs them; a copy from
        the other page brings that page's labels */
     hd_label_clear();

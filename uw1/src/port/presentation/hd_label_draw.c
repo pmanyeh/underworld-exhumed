@@ -23,7 +23,8 @@ static void fill(const struct PlatOverlay *frame, const HdLabel *l, const uint8_
 }
 
 int hd_label_draw(struct HdFont *font, const struct PlatOverlay *frame, const HdLabelFrame *labels,
-                  const uint8_t *pixels, int width, int height, const uint8_t pal[768], float border, float baseline)
+                  const uint8_t *pixels, int width, int height, const uint8_t pal[768], float border, float baseline,
+                  const int cursor[4])
 {
     static const float clip[4] = {0, 0, 320, 200};
     int k, i, drawn = 0;
@@ -32,7 +33,7 @@ int hd_label_draw(struct HdFont *font, const struct PlatOverlay *frame, const Hd
         const HdLabel *l = &labels->labels[k];
         const uint8_t *rgb = pal + ((unsigned)l->color & 255) * 3;
         HdColor color;
-        if (hd_label_signature(pixels, width, height, l) != l->signature) continue;
+        if (!hd_label_shows(pixels, width, height, l, cursor)) continue;
         if (l->fill >= 0) { fill(frame, l, pal); drawn = 1; }
         color.r = level(rgb[0]);
         color.g = level(rgb[1]);

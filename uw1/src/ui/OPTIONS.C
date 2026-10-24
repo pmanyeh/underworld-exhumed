@@ -48,6 +48,9 @@
 #include "sys.h"
 #include "ui.h"
 #include "view3d.h"
+#ifndef __TURBOC__
+#include "i18n/ui_text.h"
+#endif
 
 /* match: this file's _DATA is DS:1A30..1AA5, from LeftPanel to "optbtns"; DS:1AA6
    ("bad tmap ids size") starts the next file. */
@@ -135,6 +138,9 @@ void far draw_options_back(int pic)
 {
     reload_gr_vpic(ICON_OPTB, "optbtns", pic);
     pic_to_screen(ICON_OPTB, 4, 0xBD, 0x6C, 0x23);
+#ifndef __TURBOC__
+    port_options_back(pic);     /* P12: the picture's words in Chinese */
+#endif
 }
 
 /* Draws picture pic as the button of row row. */
@@ -142,6 +148,9 @@ void far draw_options_btn(int row, int pic)
 {
     reload_gr_vpic(ICON_OPTB + 0x1, "optbtns", pic);
     pic_to_screen(ICON_OPTB + 0x1, 5, 0xBD - (6 - row) * 15 - 2, 0x0E, 0x1F);
+#ifndef __TURBOC__
+    port_options_btn(row, pic);
+#endif
 }
 
 /* Puts out the lit button and lights button pic at row row. */
@@ -162,6 +171,9 @@ void far close_option_panel(void)
     options_page = 7;
     reload_gr_vpic(ICON_OPTB, "optbtns", 0);
     pic_to_screen(ICON_OPTB, 4, 0xBD, 0x6C, 0x23);
+#ifndef __TURBOC__
+    port_options_back(0);
+#endif
     if (RightButtonThing > IMODE_DEFAULT)
         new_IconSelect(RightButtonThing);
     gameopts_done = 1;
@@ -228,6 +240,9 @@ void far draw_detail_page(void)
     draw_options_back(5);
     reload_gr_vpic(ICON_OPTB + 0x2, "optbtns", level + 0x35);
     pic_to_screen(ICON_OPTB + 0x2, 5, 0xBC, 0x12, 0x22);
+#ifndef __TURBOC__
+    port_options_title(level + 0x35);
+#endif
     hilite(4 - level, level * 2 + 0x26);
 }
 
@@ -291,6 +306,9 @@ void far choose_detail(int row)
         grSoftPageFlip();
         reload_gr_vpic(ICON_OPTB + 0x2, "optbtns", level + 0x35);
         pic_to_screen(ICON_OPTB + 0x2, 5, 0xBC, 0x12, 0x22);
+#ifndef __TURBOC__
+        port_options_title(level + 0x35);
+#endif
         hilite(4 - level, level * 2 + 0x26);
     }
     if (row)

@@ -17,6 +17,20 @@ static void unlock(void) { atomic_flag_clear_explicit(&busy, memory_order_releas
 static void publish(void) { work.generation++; lock(); published = work; unlock(); }
 /* FNV-1a over the box's pixels, row by row */
 static uint32_t mix(uint32_t h, int v) { return (h ^ (uint32_t)(v & 255)) * 16777619u; }
+/* signs l with the drawing page under its box, keeping the pixels when the box is small */
+static void sign(HdLabel *l)
+{
+    uint32_t h = 2166136261u;
+    int px, py, keep = (l->right - l->left) * (l->bottom - l->top) <= HD_LABEL_UNDER, k = 0;
+    for (py = l->top; py < l->bottom; py++)
+        for (px = l->left; px < l->right; px++) {
+            int v = read_pixel(px, py);
+            h = mix(h, v);
+            if (keep) l->under[k++] = (uint8_t)v;
+        }
+    l->signature = h;
+    l->kept = keep;
+}
 
 void hd_label_enable(int on) { enabled = on != 0; }
 int hd_label_enabled(void) { return enabled && measure && read_pixel; }
@@ -57,11 +71,7 @@ void hd_label_resign(int left, int top, int right, int bottom)
     for (i = 0; i < work.count; i++) {
         HdLabel *o = &work.labels[i];
         if (o->page == page && o->left < right && left < o->right && o->top < bottom && top < o->bottom) {
-            uint32_t h = 2166136261u;
-            int px, py;
-            for (py = o->top; py < o->bottom; py++)
-                for (px = o->left; px < o->right; px++) h = mix(h, read_pixel(px, py));
-            o->signature = h;
+            sign(o);
             changed = 1;
         }
     }
@@ -69,20 +79,17 @@ void hd_label_resign(int left, int top, int right, int bottom)
 }
 void hd_label_copy(int left, int top, int right, int bottom, int from)
 {
-    int i, n, page, px, py;
+    int i, n, page;
     if (!hd_label_enabled()) return;
     page = draw_page ? draw_page() : 0;
     if (page == from) return;
     for (i = 0, n = work.count; i < n && work.count < HD_LABELS; i++) {
         HdLabel *o = &work.labels[i], *l;
-        uint32_t h = 2166136261u;
         if (o->page != from || o->left < left || o->right > right || o->top < top || o->bottom > bottom) continue;
         l = &work.labels[work.count++];
         *l = *o;
         l->page = page;
-        for (py = l->top; py < l->bottom; py++)
-            for (px = l->left; px < l->right; px++) h = mix(h, read_pixel(px, py));
-        l->signature = h;
+        sign(l);
     }
     if (work.count != n) publish();
 }
@@ -126,8 +133,7 @@ static int fit(int *adv, int n, int *width, int room, int em64)
 static void add(const HdLabel *box, const uint32_t *cps, const int *adv, int n, int start, int y64, int em64, int color)
 {
     HdLabel *l;
-    uint32_t h = 2166136261u;
-    int i, px, py;
+    int i;
     for (i = 0; i < work.count; ) {
         HdLabel *o = &work.labels[i];
         if (o->left < box->right && box->left < o->right && o->top < box->bottom && box->top < o->bottom) {
@@ -138,9 +144,7 @@ static void add(const HdLabel *box, const uint32_t *cps, const int *adv, int n, 
     if (work.count == HD_LABELS) { memmove(work.labels, work.labels + 1, sizeof work.labels[0] * (HD_LABELS - 1)); work.count--; }
     l = &work.labels[work.count];
     *l = *box;
-    for (py = l->top; py < l->bottom; py++)
-        for (px = l->left; px < l->right; px++) h = mix(h, read_pixel(px, py));
-    l->signature = h;
+    sign(l);
     l->page = draw_page ? draw_page() : 0;
     l->color = color;
     l->em64 = em64;
@@ -192,7 +196,7 @@ int hd_label_put(const char *text, int x, int y, int english_width, int height, 
 
 int hd_label_patch(const char *text, int left, int top, int right, int bottom, int color, int align)
 {
-    return hd_label_box(text, left, top, right, bottom, color, align, 0, 1, -1);
+    return hd_label_box(text, left, top, right, bottom, color, align, 0, HD_LABEL_COMMONEST, -1);
 }
 
 int hd_label_box(const char *text, int left, int top, int right, int bottom, int color, int align,
@@ -211,17 +215,30 @@ int hd_label_box(const char *text, int left, int top, int right, int bottom, int
     memset(&box, 0, sizeof box);
     box.left = left; box.top = top; box.right = right; box.bottom = bottom;
     /* the fill: the box's commonest colour, the art's background under its words */
-    if (patch) {
+    if (patch == HD_LABEL_COMMONEST) {
         memset(counts, 0, sizeof counts);
         for (y = top; y < bottom; y++)
             for (x = left; x < right; x++) counts[read_pixel(x, y) & 255]++;
         for (i = 1; i < 256; i++) if (counts[i] > counts[best]) best = i;
     }
-    box.fill = patch ? best : -1;
+    box.fill = patch == HD_LABEL_COMMONEST ? best : patch >= 0 ? (patch & 255) : -1;
     box.border = border;
     x = align == HD_LABEL_LEFT ? left * 64 : align == HD_LABEL_RIGHT ? right * 64 - width : (left + right) * 32 - width / 2;
     add(&box, cps, adv, n, x, (top + bottom) * 32 - em64 / 2, em64, color);
     return 0;
+}
+
+int hd_label_shows(const uint8_t *pixels, int width, int height, const HdLabel *l, const int cursor[4])
+{
+    int px, py, k = 0;
+    if (!pixels || l->bottom > height || l->right > width) return 0;
+    if (!l->kept || !cursor || cursor[0] >= l->right || cursor[2] <= l->left || cursor[1] >= l->bottom || cursor[3] <= l->top)
+        return hd_label_signature(pixels, width, height, l) == l->signature;
+    for (py = l->top; py < l->bottom; py++)
+        for (px = l->left; px < l->right; px++, k++)
+            if (pixels[py * width + px] != l->under[k] &&
+                !(px >= cursor[0] && px < cursor[2] && py >= cursor[1] && py < cursor[3])) return 0;
+    return 1;
 }
 
 uint32_t hd_label_signature(const uint8_t *pixels, int width, int height, const HdLabel *l)
