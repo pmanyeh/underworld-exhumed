@@ -13,6 +13,8 @@
 #include "gfx.h"
 #include "x86/asmrt.h"
 #include "x86/entry.h"
+#include "i18n/ui_text.h"
+#include "presentation/hd_label.h"
 
 #define SEG003 0x0090u                          /* seg003's EXE paragraph (asmgame.h) */
 
@@ -75,6 +77,12 @@ static char *padded(const char *s)
 void string_to_screen(char *s, int x, int y)
 {
     uint16_t w[4];
+    const char *zh;
+    /* P12: with the HD text, a translated string is an HD label in place of the bitmap text */
+    if (hd_label_enabled() && (zh = port_ui_text(s)) != NULL &&
+        hd_label_put(zh, x, y, string_width(s), cur_font->height, *foreground_color, *wleft, *wright) == 0)
+        return;
+    hd_label_align(HD_LABEL_LEFT);
     far_arg(padded(s), w);
     w[2] = W(x); w[3] = W(y);
     call_entry(0x4CED, w, 4, 0);

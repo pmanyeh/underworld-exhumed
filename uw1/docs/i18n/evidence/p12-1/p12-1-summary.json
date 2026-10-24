@@ -1,0 +1,34 @@
+{
+  "batch": "p12-1",
+  "blocks": [
+    7
+  ],
+  "drafted": 82,
+  "grammar_sensitive": 0,
+  "waivers": 0,
+  "layout_errors": 0,
+  "layout_by_box": {
+    "message": {
+      "rows": 109,
+      "multi_page": 0
+    }
+  },
+  "catalog_entries": 6900,
+  "catalog_sha256": "09a2ea0c1dfe976772dc9c79874e091475f84f2012af45addd61310b105bede5",
+  "build_repeatable": true,
+  "coverage": {
+    "translatable": 6983,
+    "translated_draft_or_better": 6893,
+    "reviewed_or_better": 485,
+    "approved": 0,
+    "completion_percent": 98.71,
+    "handling": {
+      "bitmap-ui": 261,
+      "direct": 5088,
+      "grammar": 977,
+      "input-token": 90,
+      "object-name": 413,
+      "template": 154
+    }
+  }
+}
