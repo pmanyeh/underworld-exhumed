@@ -47,8 +47,9 @@ jobs:
         with:
           path: uw1/tools/libs
           key: release-libs-macos-universal-${{ hashFiles('exhume/tools/setup-libs.sh') }}
-      - name: Build SDL3 and libmt32emu for arm64 and x86_64, fetch Nuked OPL3
+      - name: Build SDL3, libmt32emu and FreeType for arm64 and x86_64, fetch Nuked OPL3
         env:
+          SETUP_LIBS: "sdl3 mt32emu freetype"
           SETUP_MACOS_ARCHS: "arm64;x86_64"
           MACOSX_DEPLOYMENT_TARGET: "11.0"
         run: |

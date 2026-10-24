@@ -141,7 +141,7 @@ typedef struct ScrollMetrics { HdFont *font; int em64; } ScrollMetrics;
 static ScrollMetrics caption_metrics;
 void scroll_wait(int ticks, char mouse);
 static int scroll_measure(uint32_t cp, void *m) { return hd_scroll_advance(((ScrollMetrics *)m)->font,cp,((ScrollMetrics *)m)->em64); }
-static int to64(double v) { return (int)lround(v * 64); }
+static int to64(double v) { return (int)(v * 64 + (v < 0 ? -0.5 : 0.5)); }   /* rounded; no libm on Linux */
 static void scroll_pause(int ticks, void *unused) { (void)unused;scroll_wait(ticks,1); }
 
 static int game(void *arg)
