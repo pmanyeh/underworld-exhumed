@@ -55,11 +55,14 @@ static int letter_colour(const unsigned char *img, int n)
 int port_menu_button(int i, int x, int y, int w, int h, const unsigned char *img, int selected)
 {
     static const char *const keys[] = { "menu.intro", "menu.create", "menu.credits", "menu.journey" };
-    int colour, top = 199 - y;
+    int colour, top = 199 - y, half;
     (void)selected;
     if (i < 0 || i > 3 || !img || !hd_label_enabled() || !port_i18n_enabled()) return 0;
     if ((colour = letter_colour(img, w * h)) < 0) return 0;
-    return hd_label_box(port_zh_lit(keys[i]), x, top, x + w, top + h, colour, HD_LABEL_CENTRE,
+    /* centred on the screen, as the column of buttons is: the pictures' lettering is not
+       (Introduction sits a few pixels left) */
+    half = 0xA0 - x > x + w - 0xA0 ? 0xA0 - x : x + w - 0xA0;
+    return hd_label_box(port_zh_lit(keys[i]), 0xA0 - half, top, 0xA0 + half, top + h, colour, HD_LABEL_CENTRE,
                         12 * 64, -1, 1.0f) == 0;
 }
 
