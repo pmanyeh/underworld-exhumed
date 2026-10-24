@@ -59,6 +59,10 @@
 #include "sys.h"
 #include "ui.h"
 #ifndef __TURBOC__
+#include <stdio.h>
+#include "i18n/phrases.h"
+#endif
+#ifndef __TURBOC__
 #include "presentation/scroll_bridge.h"
 #endif
 
@@ -844,6 +848,9 @@ int far conv_inv_name(int16 far *stack)
     name[0] = 0;
     article = 0;
     mods[0] = 0;
+#ifndef __TURBOC__
+    port_zh_of_reset();
+#endif
     if (do_mods(obj, ident, mods))
         article = mods[0];
     if (article && describe && qty == 1) {
@@ -868,6 +875,33 @@ int far conv_inv_name(int16 far *stack)
     do_of(obj, ident, p);
     copy = bab_malloc(strlen(p) + 1);
     str_copy(copy, p);
+#ifndef __TURBOC__
+    if (port_zh()) {
+        /* P11.2: the same name in the locale's language, shown where a template uses it */
+        static char zh_names[8][192];
+        static unsigned zh_next;
+        char *zh = zh_names[zh_next++ % 8];
+        const char *t;
+        PortZh z;
+        char num[24];
+        port_zh_begin(&z);
+        if (qty > 1) {
+            snprintf(num, sizeof num, port_zh_lit("count"), qty);
+            port_zh_add(&z, num + (num[0] == ' '));
+        }
+        if (port_zh_of_mod() == 1) port_zh_add(&z, port_zh_lit("look.magical"));
+        if (port_zh_of_mod() == 2) port_zh_add(&z, port_zh_lit("look.cursed"));
+        port_zh_add(&z, port_zh_name(obj, 0, qty > 1));
+        if (port_zh_of_spell() >= 0) {
+            char of[160];
+            t = port_zh_string(port_zh_of_spell());
+            snprintf(of, sizeof of, port_zh_lit("look.spell"), t ? t : "UNNAMED");
+            port_zh_add(&z, of);
+        }
+        snprintf(zh, sizeof zh_names[0], "%s", z.text);
+        port_i18n_note_name(copy, zh);
+    }
+#endif
     handle = make_string(copy, STRBLK_DYNAMIC);
     babl_setmem(stack[-2], handle);
     return value;

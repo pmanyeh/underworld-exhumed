@@ -47,6 +47,9 @@
 static int zh_mod;          /* 1 magical, 2 cursed */
 static int zh_spell;        /* the enchantment's string id, -2 none */
 static int zh_charges;      /* the charges do_of printed, -2 none */
+void port_zh_of_reset(void) { zh_mod = 0; zh_spell = zh_charges = -2; }
+int port_zh_of_spell(void) { return zh_spell; }
+int port_zh_of_mod(void) { return zh_mod; }
 #endif
 
 /* Copy a far string, terminator included, to any address. */

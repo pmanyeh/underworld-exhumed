@@ -855,6 +855,8 @@ char *port_convert_display(const char *text)
                         if (sub) { display_put(&buf, &len, &cap, sub); free(sub); }
                     } else if (shown != str)
                         display_put(&buf, &len, &cap, shown);
+                    else if (port_i18n_named(str))   /* an item named for the script (P11.2) */
+                        display_put(&buf, &len, &cap, port_i18n_named(str));
                     else {
                         char far *conv = convert_string(str);
                         display_put(&buf, &len, &cap, conv);

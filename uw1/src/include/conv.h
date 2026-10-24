@@ -48,6 +48,9 @@ char far * far convert_string(char far *text);
 #ifndef __TURBOC__
 char *port_convert_display(const char *text);   /* P11.1: BABL.C, display only */
 char *port_template_shown(const char *source);
+void port_zh_of_reset(void);     /* LOOK.C: what do_mods and do_of last found (P11.2) */
+int port_zh_of_spell(void);
+int port_zh_of_mod(void);
 #endif
 int far AtIndex_ovr095_11C0(char far **s);
 void far vmAdd_ovr095_18CF(void);
