@@ -23,12 +23,12 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `06be938`，已 push（後續交接文件提交見 git log） |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `732949d`，已 push（後續交接文件提交見 git log） |
 | 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `438441b`，已 push |
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含戰鬥傷害數字與敵人血條（`06be938`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含戰鬥傷害數字與敵人血條及 Linux 連結修正（`732949d`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
@@ -217,7 +217,7 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 
 **A. 第 1 項：戰鬥傷害數字與敵人血條（已完成，待使用者實測）**
 
-- 主 repo `06be938`、exhume `438441b`，均已 push；執行檔已更新到 `UW1-zhTW-playtest`。
+- 主 repo `06be938`（Linux 連結修正 `732949d`）、exhume `438441b`，均已 push；執行檔已更新到 `UW1-zhTW-playtest`。
 - F11「強化功能」最下方：「戰鬥傷害數字」`damage-numbers`、「敵人血條」`enemy-health`，各自開關、預設關。
 - 實作與驗證報告：`uw1/docs/i18n/P13_COMBAT.md`。傷害、揮空、格擋來自原版事件；英文模式也顯示 Block／Miss。
 - 位置使用原版繪圖的 framebuffer 像素歸屬；完全被遮住的生物不顯示。血條最大血量為估計值。
