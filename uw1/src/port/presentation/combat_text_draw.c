@@ -3,14 +3,17 @@
 #include "i18n/utf8.h"
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
+
+/* Avoid a new libm dependency in the Linux game link. */
+static int floor_pixel(float x) { int i = (int)x; return i - (i > x); }
+static int ceil_pixel(float x) { int i = (int)x; return i + (i < x); }
 
 static void rect(const PlatOverlay *f, float l, float t, float r, float b, HdColor c)
 {
     int x, y, x0, y0, x1, y1;
     float sx = f->viewport_w / f->logical_width, sy = f->viewport_h / f->logical_height;
-    x0 = (int)floorf(f->viewport_x + l * sx); y0 = (int)floorf(f->viewport_y + t * sy);
-    x1 = (int)ceilf(f->viewport_x + r * sx); y1 = (int)ceilf(f->viewport_y + b * sy);
+    x0 = floor_pixel(f->viewport_x + l * sx); y0 = floor_pixel(f->viewport_y + t * sy);
+    x1 = ceil_pixel(f->viewport_x + r * sx); y1 = ceil_pixel(f->viewport_y + b * sy);
     if (x0 < 0) x0 = 0;
     if (y0 < 0) y0 = 0;
     if (x1 > f->width) x1 = f->width;
