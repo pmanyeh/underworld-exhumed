@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -24,7 +25,8 @@ def main():
     if args.sanitize:
         command += ['-fsanitize=address,undefined', '-fno-omit-frame-pointer']
     subprocess.run(command, check=True)
-    env = dict(os.environ, ASAN_OPTIONS='halt_on_error=1:detect_leaks=' + ('0' if os.name == 'nt' else '1'),
+    # LeakSanitizer is unavailable with the Windows and Apple Clang ASan runtimes.
+    env = dict(os.environ, ASAN_OPTIONS='halt_on_error=1:detect_leaks=' + ('1' if sys.platform.startswith('linux') else '0'),
                UBSAN_OPTIONS='halt_on_error=1:print_stacktrace=1')
     subprocess.run([str(exe)], check=True, env=env)
 
