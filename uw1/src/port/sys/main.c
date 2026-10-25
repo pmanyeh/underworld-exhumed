@@ -560,6 +560,8 @@ int main(int argc, char *argv[])
         fprintf(stderr, "uw1port: cannot create the home directory %s (--home)\n", home);
         return 1;
     }
+    /* --data may name a folder holding the game or GOG's game.gog, as the folder dialog may */
+    if (data && port_game_in(data, home, data_buf, sizeof data_buf) == 0) data = data_buf;
     if (!data && !(data = find_data(home, interactive, data_buf, sizeof data_buf))) return 1;
     if (plat_files_init(data, home)) {
         fprintf(stderr, "uw1port: %s is not a directory (give the UW1 directory with --data)\n", data);

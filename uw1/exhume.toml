@@ -187,6 +187,8 @@ tag_prefix = "uw1-"
 launcher = "uw1"
 category = "public.app-category.role-playing-games"
 copyright = "Port code MIT licence, abedegno. Ultima Underworld is copyright Electronic Arts; bring your own copy."
+# the HD text's FreeType, linked statically on macOS (THIRD-PARTY-NOTICES)
+licences = { FreeType = "docs/i18n/licenses/FTL.txt" }
 
 [fuzz]
 # Exhume's tools/fuzzasm.py (make fuzz, and make test's quick run): UW1's routine targets and

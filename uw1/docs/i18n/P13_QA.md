@@ -62,6 +62,16 @@ Noto Sans CJK TC，以及語言選項本身的「English」。
   改用對話的比對字（永遠不翻）。
 - 數量面板的游標位置原本寫在 `main.c`，探測工具不連結 `main.c`，改搬到 `presentation.c`。
 
+## 發行前的修正
+
+- **FreeType 授權：** Mac 版的 FreeType 是靜態連結，打包工具只依共享庫收授權檔，所以漏了 FTL。exhume 的
+  `[package]` 新增 `licences` 設定（靜態連結的函式庫授權），`exhume.toml` 填入 `FreeType = docs/i18n/licenses/FTL.txt`，
+  三個平台的包都會有 `licenses/FreeType/FTL.txt`。本機以 `licence_texts` 驗證。
+- **`--data` 與 `game.gog`：** `--help` 說 `--data` 可以給「裝著遊戲或 `game.gog` 的資料夾」，實際上只接受
+  遊戲資料夾本身。改成先用選資料夾對話框的同一套搜尋（`port_game_in`：往下四層，再找 CD 映像），找不到才照原樣。
+  驗證：指向遊戲資料夾、上一層資料夾、只有 `game.gog` 的資料夾（測試用 ISO 解出的 `UW.EXE` 與原檔相同）都能啟動；
+  不相干的資料夾照舊報錯。
+
 **環境注意：** 用 MSYS 的 `timeout` 包住指令時，`TMP`／`TEMP` 會被拿掉，clang 會因為無法建立暫存檔而失敗，
 直接執行就沒問題。
 

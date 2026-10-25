@@ -94,8 +94,9 @@ The optional native HD text module links the FreeType shared library when pkg-co
 finds freetype2. The local PoC uses unmodified source tag VER-2-14-3; system/CI package
 versions may differ. Portions of this software are copyright (c) The FreeType Project
 (www.freetype.org). All rights reserved. The full license is docs/i18n/licenses/FTL.txt.
-Library source and binaries are not committed. Any future package containing this
-library must include its license and the required attribution.
+Library source and binaries are not committed. Every release package includes this
+license as licenses/FreeType/FTL.txt ([package] licences in exhume.toml), the macOS
+package too, where FreeType is linked statically.
 
 jf open huninn (jf open 粉圓) 2.1 (https://github.com/justfont/open-huninn-font), justfont.
 SIL Open Font License 1.1; derived from Kosugi Maru (Copyright (c) 2010 MOTOYA CO.,LTD.) and
