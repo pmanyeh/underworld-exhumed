@@ -21,7 +21,7 @@
 可音譯不可意譯的人名、可意譯的職稱、具有劇情雙關的地名，分別記理由，不用單一規則硬套。
 同名不同角色或物件要另辨身份；敬稱／頭銜與本名分開記錄，避免把頭銜誤當名字。
 使用者已明確裁定的例外以 USER-DECISIONS.tsv 為準：安卡十字騎士團（Crux Ansata 的騎士團各種英文形式）；Sir Almric／Baron Almric 均譯阿姆瑞克男爵；Lady Arriana／Arial 暫視為不同人物，不互設英文別名。
-指南提供多種形式時選定單一主要名稱，其餘存 aliases_zh_tw。Paladin 採聖騎士，Ranger 採巡林漢；族名惡鬼族、個體惡鬼，哥布林保留異名。
+指南提供多種形式時選定單一主要名稱，其餘存 aliases_zh_tw。Paladin 採聖騎士，Ranger 採巡林漢；Goblin(s) 族名與個體都用哥布林（使用者 2026-10-25 決定，取代指南的惡鬼族），Gray／Green Goblins 為灰哥布林、綠哥布林，俗稱 Gobs 為哥布仔。
 同英文在指南中作組織與地點時分列，依 category 判斷；Seers of the Moonstone 經使用者決定，兩者都用「月之石預言者」。
 
 ## 對話

@@ -15,3 +15,7 @@ UD-20261023-013	USER_DECISION_20261023_B1	2026-10-23	UW1-BAC8B4ADCC01	Knights of
 UD-20261023-014	USER_DECISION_20261023_B1	2026-10-23	UW1-7BC7E9168F3E	Order of the Crux Ansata	安塔南十字騎士團	安卡十字騎士團	translation-current-choice		approved	使用者決定騎士團譯名與 Crux Ansata「安卡十字」一致（P10B-1 B1）；同一組織的各種英文形式一律用此譯名。
 UD-20261023-015	USER_DECISION_20261023_B1	2026-10-23	UW1-0C2C92D4F95B	Knights of the Crux Encampment	南十字騎士駐地	安卡十字騎士駐地	translation-current-choice		approved	使用者決定騎士團譯名與 Crux Ansata「安卡十字」一致（P10B-1 B1）；同一組織的各種英文形式一律用此譯名。
 UD-20261023-016	USER_DECISION_20261023_SEERS	2026-10-23	UW1-DB47B7ED10D7	Seers of the Moonstone	月石先知會所	月之石預言者	translation-current-choice	same-translation-as:UW1-4E4F7BC9678B	approved	使用者決定合併：Seers of the Moonstone 作地點時也用組織的譯名「月之石預言者」，對話一律如此。
+UD-20261025-001	USER_DECISION_20261025_GOBLIN	2026-10-25	UW1-320115565439	goblin	惡鬼	哥布林	translation-current-choice		approved	使用者決定 Goblin(s) 改用較常見的「哥布林」，取代指南的「惡鬼族」；綠／灰兩族為綠哥布林、灰哥布林。
+UD-20261025-003	USER_DECISION_20261025_GOBLIN	2026-10-25	UW1-3967A0384576	Gray Goblins	灰色惡鬼族	灰哥布林	translation-current-choice		approved	使用者決定 Goblin(s) 改用較常見的「哥布林」，取代指南的「惡鬼族」；綠／灰兩族為綠哥布林、灰哥布林。
+UD-20261025-004	USER_DECISION_20261025_GOBLIN	2026-10-25	UW1-A2C6B7FEA9B8	Green Goblins	綠色惡鬼族	綠哥布林	translation-current-choice		approved	使用者決定 Goblin(s) 改用較常見的「哥布林」，取代指南的「惡鬼族」；綠／灰兩族為綠哥布林、灰哥布林。
+UD-20261025-002	USER_DECISION_20261025_GOBLIN	2026-10-25	UW1-5F403F394D7B	goblin	惡鬼族	哥布林	translation-current-choice		approved	使用者決定 Goblin(s) 改用較常見的「哥布林」，取代指南的「惡鬼族」；綠／灰兩族為綠哥布林、灰哥布林。

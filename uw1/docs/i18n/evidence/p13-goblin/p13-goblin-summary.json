@@ -1,0 +1,13 @@
+{
+  "batch": "p13-goblin",
+  "decision": "UD-20261025-001..004",
+  "rows_changed": 80,
+  "rows_reviewed_kept": 23,
+  "validate": "PASS 0 problems",
+  "authority": "0 errors, 0 warnings",
+  "layout_errors": 0,
+  "catalog_entries": 6900,
+  "catalog_sha256": "78543defe8762bb545ca9b09d06cfae7097d96cd934990a035745f238748ff75",
+  "build_repeatable": true,
+  "replay_all_saves_match": true
+}

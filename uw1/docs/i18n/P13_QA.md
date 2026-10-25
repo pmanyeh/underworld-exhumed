@@ -72,6 +72,14 @@ Noto Sans CJK TC，以及語言選項本身的「English」。
   驗證：指向遊戲資料夾、上一層資料夾、只有 `game.gog` 的資料夾（測試用 ISO 解出的 `UW.EXE` 與原檔相同）都能啟動；
   不相干的資料夾照舊報錯。
 
+## 用詞修改
+
+- **Goblin(s)：惡鬼族 → 哥布林**（使用者 2026-10-25 決定，UD-20261025-001～004）。族名與個體都用哥布林，
+  Gray／Green Goblins 為灰哥布林、綠哥布林，俗稱 Gobs 為哥布仔；dire ghost 的「凶惡鬼魂」不受影響。
+  master 改了 80 列，其中 23 列是使用者審閱過的，依決定只換用詞，保留 `reviewed`、在註記留紀錄。
+  validate、authority（0 錯誤 0 警告）、layout QA（0 錯誤）、catalog 重複建置相同、16 個 session 存檔相同；
+  catalog 在 `build/i18n/p13-goblin`。
+
 **環境注意：** 用 MSYS 的 `timeout` 包住指令時，`TMP`／`TEMP` 會被拿掉，clang 會因為無法建立暫存檔而失敗，
 直接執行就沒問題。
 

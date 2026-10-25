@@ -285,10 +285,10 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 1	373	game	e200f462cab5897d7532d6ef31d67cbc70a74d7d46aeaf994531a2016092f0a8	一隻蝙蝠	draft		p11-2b draft	
 1	374	game	e5520e8c5915d3dd04bc7f88e13d8be4fe62efadaea4ea52165576fac7dcc329	一隻老鼠	draft		p11-2b draft	
 1	375	game	9e0b704a96454b589367a360a7db748e1fdee6a7c6c59445024f0c283c025b46	一隻蜘蛛	draft		p11-2b draft	
-1	376	game	a11935b266f848f248e09f61af20be1a770dfacc46887fc855ac208efaf11f53	一隻綠色惡鬼	draft		p11-2b draft	
+1	376	game	a11935b266f848f248e09f61af20be1a770dfacc46887fc855ac208efaf11f53	一隻綠哥布林	draft		p11-2b draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 1	377	game	0252c2441972f758d8fe2065f8692b44ff80f0051a7731cfa5b6b842563b6528	一具骷髏人	draft		p11-2b draft	
 1	378	game	758d975b00e1202e7395ada1c1aec3a972836f6c6b48d1a2dcc0b9aa714d999b	一隻小惡魔	draft		p11-2b draft	
-1	379	game	87925ad933529e94cfbc3c6f498d83bf186b4a8c9c361de4959211a0af4d6b74	一隻灰色惡鬼	draft		p11-2b draft	
+1	379	game	87925ad933529e94cfbc3c6f498d83bf186b4a8c9c361de4959211a0af4d6b74	一隻灰哥布林	draft		p11-2b draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 1	380	game	16a36dd60176dd5030fe16ca1d4c990d9fd74fddd6101cb0f18d5508c36673cb	一名山岳族人	draft		p11-2b draft	
 1	381	game	2e1695c725a9a7c830dfff70b3a09a1c46f8c1fd084fd973626966281f66b761	一隻蜥蜴人	draft		p11-2b draft	
 1	382	game	28d7dfab05b3d8b321ee7ca46681013255533c189749c5d102822f4bd02bbd12	一隻潛伏者	draft		p11-2b draft	
@@ -460,7 +460,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 2	50	chargen	54230802dfda0e8beeb5a86f02f85969d579ff8d6e237be0d167c83dde1cbafb	游泳	draft		p11-2b draft	
 3	0	books	92498841397273b396687a0e6238b7b398566583355188f6b258ba134ee5abe8	書頁是空白的。	draft		p10c-1 draft	
 3	2	books	72490e8d2f08b186b688157f1cba32111eb38344aba77d9728c2c38364edfc6f	我最親愛的阿弗瑞德：\n帶著我不會忘記你的這份心意進入深淵吧。男爵的公正看似殘酷，總好過絞刑台的繩索。無論多少年過去，我都會等你回來。永遠屬於你的，\n                 珊卓拉	draft		p10c-1 draft	
-3	3	books	987325d5f90016e26241d5c1523bb77fa46e5fac669f4a1ac4c6d4bcfaac36a0	那些笨惡鬼族給了我需要的工具；今晚我就要逃出這間骯髒的牢房——布拉吉特	draft		p10c-1 draft	
+3	3	books	987325d5f90016e26241d5c1523bb77fa46e5fac669f4a1ac4c6d4bcfaac36a0	那些笨哥布林給了我需要的工具；今晚我就要逃出這間骯髒的牢房——布拉吉特	draft		p10c-1 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3	4	books	e57d42b7d360759569d064db23105e93252cfe142053f7928e68d949dca11814	Uus Por 可以跳得很遠	draft		p10c-1 draft; 符文保留原文	
 3	32	books	b93539da60bb5f9b08060350c4c94b23205b1bf8b0994e73aec25f850b074960	這些藍圖根本看不懂。	draft		p10c-1 draft	
 3	33	books	5f02dbf1fc92dcd0a6d37a3473c584ef62ac6c563d9e97ebc94c548fd4f5856e	念誦祈禱語 RA，能讓你的攻擊打得更有效。	draft		p10c-1 draft; 祈禱語保留原文（玩家要在神殿輸入）	
@@ -591,16 +591,16 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 4	67	object_names	63ab5d3a30da2f08088d8fd46bc9884dfe2920223944556ee01658ad5bf7cc08	巨鼠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
 4	68	object_names	8ad429280b6a5a9c89f30c63a047ddd2d79bfa57d8fb9826915304d1c4acc805	巨蜘蛛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
 4	69	object_names	bd0cad9a7f6e84812b924fbfb49291853438b21205d08a33a0ff1133041c8151	強酸蛞蝓	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
-4	70	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
-4	71	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	70	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	哥布林	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）; 用詞依使用者決定改為哥布林（UD-20261025）	object-name
+4	71	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	哥布林	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）; 用詞依使用者決定改為哥布林（UD-20261025）	object-name
 4	72	object_names	63ab5d3a30da2f08088d8fd46bc9884dfe2920223944556ee01658ad5bf7cc08	巨鼠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
 4	73	object_names	5596b885e8f70903cfa3d27f18b470ade7f05d2b2a82a02c245f1873a3064e58	吸血蝙蝠	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
 4	74	object_names	3e5fc21de4601842c96f1d1d2f3c42d79be727e97ff3dc9121c519a470378243	骷髏人	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
 4	75	object_names	554d197f7cad1202b850200321199d6218686316527a8cd22bf3a0d96e28bce6	小惡魔	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
-4	76	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
-4	77	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
-4	78	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
-4	80	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	惡鬼	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
+4	76	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	哥布林	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）; 用詞依使用者決定改為哥布林（UD-20261025）	object-name
+4	77	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	哥布林	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）; 用詞依使用者決定改為哥布林（UD-20261025）	object-name
+4	78	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	哥布林	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）; 用詞依使用者決定改為哥布林（UD-20261025）	object-name
+4	80	object_names	fa75b5811ca39817d187d745939ed2a3c191ac85024499f46b4308394d3996bc	哥布林	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）; 用詞依使用者決定改為哥布林（UD-20261025）	object-name
 4	81	object_names	986cf7a86028c65882b0029e274c91d8970b70536895c0e38b907a4d58663e0f	蝙蝠猿	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
 4	82	object_names	28339595241c8f816199be5139374a820c59de53018e05d4d315609fbef4a189	血蟲	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
 4	83	object_names	b5ec2b79995a551bf0ae96ac8488b359a34c8e09945293c820418a3c7b747443	狼蜘蛛	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	object-name
@@ -1773,7 +1773,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3072	19	cutscene	4f215ef2bef555851e1bd202ac188f1dab50d856bd3aacc48cf21835f0c0e7f0	「請原諒我們，大人。」	draft		p11-sub draft	
 3072	20	cutscene	e48a4c4b89754cc52cb8bc8f50d652a867b7ddfc1aa50295ee7d8c947ceddc58	「那個邪惡的怪物逃走了。」	draft		p11-sub draft	
 3072	21	cutscene	8ffd3d3680dab26e4f796f73b785303eb1e06a3d9f270b7f2465346ee8c1b421	「我們二十個人去追，可是牠帶著可憐的艾莉雅逃進了冥河深淵。」	draft		p11-sub draft	
-3072	22	cutscene	fd3ec747559bcb42f753af74afedbb0f7cce14f288edec141db86cc3d45ebf89	「我們遭到攻擊……惡鬼族，還有更可怕的東西，大人。」	draft		p11-sub draft	
+3072	22	cutscene	fd3ec747559bcb42f753af74afedbb0f7cce14f288edec141db86cc3d45ebf89	「我們遭到攻擊……哥布林，還有更可怕的東西，大人。」	draft		p11-sub draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3072	23	cutscene	4fe260cc95e5a8e1eee5d22643f011b1b352eb228e8646d86ae5a45bcfed5697	「只有我們三個活了下來！」	draft		p11-sub draft	
 3072	24	cutscene	93ddd6283d23bc5e374029e26ad8e3397b01364db8233cec390f5c805150a1b4	「我明白了。」	draft		p11-sub draft	
 3072	25	cutscene	706359f2b669f995e8dc21bb5387b6094a91c55cf84cb3400c4d224a492a6545	男爵用他銳利的藍眼睛盯著你。	draft		p11-sub draft	
@@ -1944,7 +1944,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3586	23	conversation	59764b3b637dabd3f1b953769183f540f238bbe77307e9c757e1931b3d580a93	唉，這東西已經打完它最後一仗了。根本不值得修。	draft		p10b-3 draft	
 3586	24	conversation	bfa5e3761ddee9b2158b02bb942e1d9f9d5c644b0c7025cb0811df163d7852b7	啊，看來這是凱利班之劍的一半。不過少了另一半，我也沒轍！	draft		p10b-3 draft	
 3586	25	conversation	3216960ee009946d64d2b589d4b4161559e893f397218eb598aeaddfbd75ebd5	唉，你當我是什麼？這裡是鐵匠鋪，不是小飾品店。武器跟防具，那才是我的活兒！	draft		p10b-3 draft	
-3586	26	conversation	993d43146dcc6f70511c3444fd913876e600d4740dd6f6e64cd7e3a2f614c181	啊，你不會拿這種破爛來給我修吧？不值得我花時間。你瞧瞧！一文不值！八成是惡鬼族做的。不，你該買把新的才對，我敢說。	draft		p10b-3 draft	
+3586	26	conversation	993d43146dcc6f70511c3444fd913876e600d4740dd6f6e64cd7e3a2f614c181	啊，你不會拿這種破爛來給我修吧？不值得我花時間。你瞧瞧！一文不值！八成是哥布林做的。不，你該買把新的才對，我敢說。	draft		p10b-3 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3586	27	conversation	ea869b5073900aa050b9a035668e10a25b1abe7516bb6738110601e89ca85f86	啊！這個@SS2完好無缺！我沒什麼能替你做的。	draft		p11-1 draft	dynamic-template
 3586	28	conversation	3e71ab7281acd910cc0b62a52946914e3d7a0eecc4e761e0ee5680979ac8a35a	那你要修什麼？	draft		p10b-3 draft	
 3586	29	conversation	b953cac89f7cf36ca0a11b39bb1488d938c8c96d0b9bbdd9a6f50f3c3abf21fb	喔，在這裡。	draft		p10b-3 draft	
@@ -2411,8 +2411,8 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3590	31	conversation	e0fb8aaa973208ddd1e49e413716e13edd0f6581c2e40ae5aeec631ba2cba648	我又不是聖者，難事免費做！好手藝要好報酬！	draft		p10b-12 draft	
 3590	32	conversation	a2c4bb090445a642c3094c55d2908f91fb980315b2f81ba007134c74bc588847	本該如此。你想要什麼樣的報酬？	draft		p10b-12 draft	
 3590	33	conversation	8acd749da4453979cee1e3d4e2e8b4d5c16d04e3e6a6333b096a1d57607f7c79	嗯。好吧。我要怎麼付你？	draft		p10b-12 draft	
-3590	34	conversation	17c83f832bb2b412d983bb50fa8d0f2e0fb4c7b9f02e3df3c36b89d1a1804193	我工作要拿食物當報酬。差不多誰都可以。也許一隻惡鬼族。綠色的比較嫩。	draft		p10b-12 draft	
-3590	35	conversation	d4fc4b5d807064df380b878b4ac78c26c4e1ebdd9a6a74771a7b9153a8fa87b6	好吧。我會用食物付你，不過不一定是惡鬼族。	draft		p10b-12 draft	
+3590	34	conversation	17c83f832bb2b412d983bb50fa8d0f2e0fb4c7b9f02e3df3c36b89d1a1804193	我工作要拿食物當報酬。差不多誰都可以。也許一隻哥布林。綠色的比較嫩。	draft		p10b-12 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
+3590	35	conversation	d4fc4b5d807064df380b878b4ac78c26c4e1ebdd9a6a74771a7b9153a8fa87b6	好吧。我會用食物付你，不過不一定是哥布林。	draft		p10b-12 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3590	36	conversation	9bcffffb1e4652a7ae84c52641f2224cca9780a38ee285642997b89d2f13b4b9	抱歉。我付不起。	draft		p10b-12 draft	
 3590	37	conversation	bb8fd403bffad07b457814c9153142305e71cb55c85a68fac6406a4dba6d47f2	好吧，沒報酬，沒靴子。	draft		p10b-12 draft	
 3590	38	conversation	42397199dbccd21f019db1a007544a011d319970285b4cf6e10c75cce96559f1	好。給我龍鱗和線，我就做靴子。	draft		p10b-12 draft	
@@ -2467,7 +2467,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3591	8	conversation	718ba640b973e4b08a9eeeb7c7675ca5228cd45b4ffb1a273038e238f79ca098	哪個維尼克斯？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	9	conversation	cc07850c5e9229139005fd230419a5d512fb253e67cf4cfd4d58100b9d016a20	對，我是。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	10	conversation	4ad57088f6db41de3d7583f4df4cf8d38c81edb4dad38a433e0cc0aedd5de4f3	不，我不是。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3591	11	conversation	5369475430d537c12a805e53e02ae2bf96e61b15d608edddadbbbe776e276aff	維尼克斯，那個所謂綠色惡鬼族的所謂國王！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	11	conversation	5369475430d537c12a805e53e02ae2bf96e61b15d608edddadbbbe776e276aff	維尼克斯，那個所謂綠哥布林的所謂國王！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3591	12	conversation	058ffc8bb6ec6bb45f8db49f34fc59ff2633832ac745aa9c79c04f1191ec0d67	不，我不是他的朋友。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	13	conversation	303ee6080efc1db9ce17002d2c80a7f2950fc8f8a02521929b823f63546cf05e	對，我把他當朋友。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	14	conversation	c4a41eb4955f5e31193762f5c8d46da8734204536e2437dee6df7acc558976ab	那你就跟他一樣，是我的死敵！離我遠點，不然我就叫守衛了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -2475,7 +2475,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3591	16	conversation	fd9be9c3e4790de2e1452d7ba2726158c51580963e57df75d26e695205b68eab	嗯。好吧。你跟他說過話了？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	17	conversation	399210252493a4d4ed1bfd693f8d5672c46c20cfd94f373e238cd609b52e6f0f	對，說過了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	18	conversation	6770e8e9a0137b7f1b0c841a61880f7a70e53ce6900b6f5a36cbe974c4a5ec10	沒有。我該去嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3591	19	conversation	25f03de773eb4da55d41a22d497780cbbbf8b2a1c350ec66495957d2b9faab30	娘娘腔，對吧？根本不像個像樣的惡鬼！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	19	conversation	25f03de773eb4da55d41a22d497780cbbbf8b2a1c350ec66495957d2b9faab30	娘娘腔，對吧？根本不像個像樣的哥布林！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3591	20	conversation	8f19e361a5427943260b47e3d3c720910d30b8444f2a36f51cc7049092c1ed55	我當然同意。那你呢？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	21	conversation	9f2cee075d1e3231937f564e75fd4e21f0c43422f8d2b61521a72ae7f942bbb2	我不清楚。你現在能幫我嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	22	conversation	3dede566facc0fdcd5cbeee287a221f013ef0e7b5841f4c40e0fccb0d92f2189	別費事了！他完全是浪費時間。你運氣好，先來找了我。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -2485,11 +2485,11 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3591	26	conversation	46097dabdd4cbbef38d4dbe3f415757560a8ecb382bc5e621a28ecd3e8ed2e08	比如說？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	27	conversation	ac57eb6d5cfe33abc56f94ff32b9704071054913ed4c1c5e5fa6e49f41fc9c62	我相信你一定有。我該走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	28	conversation	28232ff69901f037f851ff38820efcbf727a137f240a879653a0450a4bb5460d	那麼，你能告訴我一些深淵的事嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3591	29	conversation	a872e5c9fd77ce72575d32b71cf4c3ea2f8638563f4ab1037b69a706dee803c0	我的敵人多得數不清。連這裡的害蟲都很麻煩。一隻叫「夜眼」納弗瑞的巨大母蜘蛛，一直威脅著我的族人。她還不是我唯一的麻煩，不過光她就夠受的了。你知道嗎，她的蛛網像鐵一樣堅韌，還燒不掉。惡鬼一旦被黏上，就只能待在那裡爛掉！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3591	29	conversation	a872e5c9fd77ce72575d32b71cf4c3ea2f8638563f4ab1037b69a706dee803c0	我的敵人多得數不清。連這裡的害蟲都很麻煩。一隻叫「夜眼」納弗瑞的巨大母蜘蛛，一直威脅著我的族人。她還不是我唯一的麻煩，不過光她就夠受的了。你知道嗎，她的蛛網像鐵一樣堅韌，還燒不掉。哥布林一旦被黏上，就只能待在那裡爛掉！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3591	30	conversation	251c33ce5d0b0cc970c3af2e08f1abda13910a556806e8295150a5725fcc2ab6	太可怕了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	31	conversation	bff4bdb491551328597003ccd3bea6f9720d2442901bfe4d761545af1efcb343	也許我能幫上忙。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	32	conversation	372024df501ce96f31276c21c60554ea3642f90ecd03d654f4ef109c51f02e70	別傻了！沒人殺得了可怕的納弗瑞！好了，你來這裡是有事吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3591	33	conversation	c1125f0317417f46b0ad1a4ec4e843068dd418a9721233598da9dfc8336e4275	我是凱查瓦爾，高貴惡鬼族最後據點的偉大首領，灰色一族的王。\n 多年前，我們被那個花言巧語的蠢蛋凱布勒斯騙來這裡，我們高貴的灰色一族帶著僕人，也就是卑賤無知的綠色惡鬼族，來新家照顧我們。\\m	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	control-code
+3591	33	conversation	c1125f0317417f46b0ad1a4ec4e843068dd418a9721233598da9dfc8336e4275	我是凱查瓦爾，高貴哥布林最後據點的偉大首領，灰色一族的王。\n 多年前，我們被那個花言巧語的蠢蛋凱布勒斯騙來這裡，我們高貴的灰色一族帶著僕人，也就是卑賤無知的綠哥布林，來新家照顧我們。\\m	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	control-code
 3591	34	conversation	f0aa4da057000acd983744c816be1e60d655f54cbcf0d9a0c81d0b75f2340b5e	後來我們給了他們自由，還讓他們享有平等的公民權，雖然大家都知道，這給他們的榮耀遠超過他們配得的。可看看他們怎麼回報我們！凱布勒斯的「文明」一垮，他們就分了出去，從此一直跟我們作對。\n 全靠我的領導，我們才能在這種對抗下團結在一起。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	35	conversation	fe577951db80f30e5a4f82dc0500ee52b187c3adcbd94098f231ec2bf1a7c672	這種差事一定很操心吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3591	36	conversation	35cb6a60b694d50dfed5600d538a2b81f1d47111510f5670b090fe590bb4af81	綠色那一族就沒有半點可取之處嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -2524,17 +2524,17 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3592	5	conversation	db4906ec2672bfc03f9f1ca87c6d9a10960ab9d00699b806099737c3513c0c17	沒事，我這就走。	draft		p10b-2 draft	
 3592	6	conversation	b4576ecbc37c81492c7137e100a4c2fdb8853c052b48f1d2093b2b332cabe89e	你有什麼理由要跟他談話？	draft		p10b-2 draft	
 3592	7	conversation	479ab8548acecffb3c274b133497a935efdb917c60fd1fdd34593cef34cf2a14	我想恭喜他娶到這麼好的新娘。	draft		p10b-2 draft	
-3592	8	conversation	c2f99c16841cc63a077a01e99ef628d45594a6426b804e4a2d5787fdfd6433ee	我帶來綠色惡鬼族的重要口信。	draft		p10b-2 draft	
+3592	8	conversation	c2f99c16841cc63a077a01e99ef628d45594a6426b804e4a2d5787fdfd6433ee	我帶來綠哥布林的重要口信。	draft		p10b-2 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3592	9	conversation	2f580994cfab4e1d76f1fc28dc590742c808445be589fdd63476dd929db380d7	我只是想跟他聊聊。	draft		p10b-2 draft	
 3592	10	conversation	51894e2bd8f176ef456f5b5aafbd47ae91f59c76ca3747b36c439728078db431	我有重要的情報要告訴他。	draft		p10b-2 draft	
 3592	11	conversation	b8e6f5bcd435fa84cebadbebecc51b92dfc904bfea1d8ec5ab1e160003f198d8	很好，你可以跟他談。別待太久，惹人嫌。他是個大忙人。	draft		p10b-2 draft	
 3592	12	conversation	df5aeddb9ebe333eeaa6065ad9c492a00c6fc524b8b418f2e29d213cca8e7906	多謝你了。	draft		p10b-2 draft	
 3592	13	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-2 draft	
-3592	14	conversation	c9c7e953c6ea29b3e2e34ec3917f53d0a0476aaaf72a0cd63cdf6b8f6bb35bab	我們不想聽他們的任何消息！你要是綠色惡鬼族的朋友，就給我滾！	draft		p10b-2 draft	
+3592	14	conversation	c9c7e953c6ea29b3e2e34ec3917f53d0a0476aaaf72a0cd63cdf6b8f6bb35bab	我們不想聽他們的任何消息！你要是綠哥布林的朋友，就給我滾！	draft		p10b-2 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3592	15	conversation	e919d6e9c95fcdb4a34c9de064028e47d89f0571bcc79641902ec42ff7dd5269	難道你不知道國王的時間比那寶貴多了嗎？凱查瓦爾沒空理這種瑣事。	draft		p10b-2 draft	
 3593	1	conversation	b8b7cfdf4758ef90476310dd4bffc7be69cdefdf57c1b98935a2fdc474fab753	嗯？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3593	2	conversation	20b7fb8723f1435cb4f465275f2b00491b1657ce2ceda9a57719db29462a179f	你好，惡鬼之王。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3593	3	conversation	58dc18a7b9136576ae7a0a819452716a82a4828d4641764d2b7e80935aaf4d22	向偉大高貴的綠色惡鬼族最強大、最威武的統治者致敬！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	2	conversation	20b7fb8723f1435cb4f465275f2b00491b1657ce2ceda9a57719db29462a179f	你好，哥布林之王。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
+3593	3	conversation	58dc18a7b9136576ae7a0a819452716a82a4828d4641764d2b7e80935aaf4d22	向偉大高貴的綠哥布林最強大、最威武的統治者致敬！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3593	4	conversation	2e6ff025a7a5e9886f4895a55c3cdb420f81c0b97d1379cc1efd3f94db27ca12	日安，殿下。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	5	conversation	b8a409e5f35df1899bc02e666e4b0186c41607eff07225a154d08ca863bad754	顯然你是個粗人，配不上這裡的高雅同伴。給我出去，等你學會模仿比你高明的人的禮儀再來吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	6	conversation	7225f8de71d3faac62ae37948e42a1569b09b4e1df70d4ec2e103bef0ea35b16	那你可有得等了！再見！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -2562,7 +2562,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3593	28	conversation	f8accb6851726e38db8b0b7008d7b5c5009563a126f17863b64c3b7389462af1	我聽說的這些聖物是什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	29	conversation	357aa57553a7dc164a95d63996993a15b64fbbd913c53b695020c2521e7488ff	深淵裡有哪些勢力？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	30	conversation	6be718f48476291ada6da11bcf2d16b387ea157328afce9b806873c16012f800	那這座大廳呢？真是美極了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3593	31	conversation	133f44b6b83ee6fa492386c498d42a4c2194049ad90a282f9e453ab2467268d2	哎，人總是盡力而為嘛。當然，那些討厭的灰色惡鬼族趁夜溜走的時候，把真正好的東西全帶走了——那正是凱布勒斯爵士死後不久，一切都在分崩離析的時候，你知道的——從那以後我們只好將就著過。\n 總有一天，我要把毒藥下到凱查瓦爾或他那個醜老婆身上（其實都一樣——你知道嗎，他可怕老婆了），到時候就知道誰厲害了。灰色惡鬼族的國王，哼，真敢說。\\m	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	control-code
+3593	31	conversation	133f44b6b83ee6fa492386c498d42a4c2194049ad90a282f9e453ab2467268d2	哎，人總是盡力而為嘛。當然，那些討厭的灰哥布林趁夜溜走的時候，把真正好的東西全帶走了——那正是凱布勒斯爵士死後不久，一切都在分崩離析的時候，你知道的——從那以後我們只好將就著過。\n 總有一天，我要把毒藥下到凱查瓦爾或他那個醜老婆身上（其實都一樣——你知道嗎，他可怕老婆了），到時候就知道誰厲害了。灰哥布林的國王，哼，真敢說。\\m	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	control-code
 3593	32	conversation	3ac3fbfad324e2198d529f108d3aafe65ccd825d2107999e623e8f777dcce117	哎呀，他根本是個暴發戶！他父親是個偷馬賊！不過別說這些了……你想知道什麼？我能怎麼幫你？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	33	conversation	f8accb6851726e38db8b0b7008d7b5c5009563a126f17863b64c3b7389462af1	我聽說的這些聖物是什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	34	conversation	169e0d1e40979c3e0c37fc16c6303f82fef173a4d951c2c0735f82012365e8cc	我想了解凱布勒斯爵士的事。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -2583,7 +2583,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3593	49	conversation	105aa02d795fbcfef7a86317a8c30ded1818421f6a725ce2d5b514139d6785a9	哎呀！真是的！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	50	conversation	171659cfb805c3b4881945cacabccc6338356d69564790f765b4e5585b3f8fee	那現在你見識到了！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	51	conversation	092d68ab4e1ee177d82a2ccd74927d001f502c2303a0a7424cd0cfa3db0d69ec	請原諒，不過我現在得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3593	52	conversation	4499764e13e4ceb164bb06c27d546e6517e12fc8693cf772a42b357fe2d4c5d8	噢，你只是嘴上說說吧。我相信你一定有更多事要做，不必聽我在這裡嘮叨。\n 還有，如果你碰巧遇到灰色惡鬼族的「國王」凱查瓦爾或「女王」瑞緹查爾，就當幫我個忙，捅他們一刀，好嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3593	52	conversation	4499764e13e4ceb164bb06c27d546e6517e12fc8693cf772a42b357fe2d4c5d8	噢，你只是嘴上說說吧。我相信你一定有更多事要做，不必聽我在這裡嘮叨。\n 還有，如果你碰巧遇到灰哥布林的「國王」凱查瓦爾或「女王」瑞緹查爾，就當幫我個忙，捅他們一刀，好嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3593	53	conversation	ec8637db894f01de9a0f6e0ac58e76b36f1418e5c7d542f1a4202566456316a6	再會了，陛下。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3593	54	conversation	588e2a029f58c3527f7c72aea165f23e68c74bbdbbad2ed35334751941cb3e8f	再見，大人。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3594	1	conversation	80926ba81f85f3695f25c6e903674be558c493caa64f8f8ecc5a7a670bf2d4cd	你沒去煩老大吧，嗯？	draft		p10b-2 draft	
@@ -3227,20 +3227,20 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3603	14	conversation	7590d5176fd85393a4d4414119dfd2dbed9191b135937d7592dfdaea4a2dc7e0	對，就是她。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	15	conversation	bf679cb7b448c4509fd72c452b15f2b02042177a1942f5c78705be35eb1769b8	我從沒見過她。那項罪名與我無關。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	16	conversation	4e5961d5914491032fa6ef7402fefc2eea984b70fbb953e038f73f61134b9f1c	我想是吧。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3603	17	conversation	4aa5c30bf155ab10ffc33098b595bf4e0c9ba4ef82e56d6d52d0ed3e14f50c8e	我們幾個鐘頭前才見過她，被一個洞穴巨人扛著，後面還追著一群傻瓜！他們準是撞上了惡鬼仔。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3603	18	conversation	9986084942ceb41bffd0e062f6423b1068ff0f55374c941052a6908a8fc5f0ab	啊，她早就不見了。一個洞穴巨人把她扛到下面去了。阿姆瑞克的手下在後面追趕，可是根本不是惡鬼仔的對手。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3603	19	conversation	df69455d7f057b369cd417ec5c4b56dd3f430773e14e980a8edec122623a910f	「惡鬼仔」？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	17	conversation	4aa5c30bf155ab10ffc33098b595bf4e0c9ba4ef82e56d6d52d0ed3e14f50c8e	我們幾個鐘頭前才見過她，被一個洞穴巨人扛著，後面還追著一群傻瓜！他們準是撞上了哥布仔。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
+3603	18	conversation	9986084942ceb41bffd0e062f6423b1068ff0f55374c941052a6908a8fc5f0ab	啊，她早就不見了。一個洞穴巨人把她扛到下面去了。阿姆瑞克的手下在後面追趕，可是根本不是哥布仔的對手。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
+3603	19	conversation	df69455d7f057b369cd417ec5c4b56dd3f430773e14e980a8edec122623a910f	「哥布仔」？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3603	20	conversation	8421d261307558547d59c82f1ef44dfa34e62c3781dc407519dae39268067cac	謝謝你。我得找到他們，證明我的清白！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	21	conversation	04b9b95706fcd6876a0e6b733ba604b797126c7332bbfdb0f1d693efe97363b9	她現在在哪裡？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	22	conversation	0a40449616922a862416513357c075a1e3212cd272884d0ff3e47ef1d63ca266	不過，我還是得把她救回來，洗清我的罪名。再見。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3603	23	conversation	e6ca845ef159d45abe7b1f9b3944e9f21fe37e0f929049d68510c7df7e37f61d	對，就是惡鬼族。分成綠色和灰色兩族，彼此是死對頭。他們的世仇讓我們的日子更加難過。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	23	conversation	e6ca845ef159d45abe7b1f9b3944e9f21fe37e0f929049d68510c7df7e37f61d	對，就是哥布林。分成綠色和灰色兩族，彼此是死對頭。他們的世仇讓我們的日子更加難過。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3603	24	conversation	4e3f32549ed5e5c46b7a33c02b08573d3f7f441d69f3a7549304f3bed00f93e5	他們為什麼結仇？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	25	conversation	535d471bb01d9ca55a86025e0b0f4f584eaf609397ac8f6d71264c9cafa6d13c	哪一方才有理？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	26	conversation	2a215158f68ac3a33e49a10ab37eb11b23294e3315887c7e18e5542b7c41279d	除了你們以外，這裡就只有他們住著嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	27	conversation	bf1507060be9e83a66153a30f10bc9c3835728d44b8fa3e6fdaccdab2ddc8377	沒人說得準。他們的衝突似乎是從大崩潰時開始的，也就是地底文明崩落的時候。我們只知道，兩族的首領都發誓絕不在任何事上取得共識。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	28	conversation	9922d04c1f700236556a039d15a72273f3be481c80fdb6a97e8ea7fe4dd9d1e6	你就沒有別的能告訴我了嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	29	conversation	2b7364f24f75be90c7720146afc87257582a775ce4c80df768d004fcda11aead	謝謝你。你幫了我很大的忙。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3603	30	conversation	47f2eb5c309fab0470376e92d65da8e8bd97dd14dadcdf641314d3a45bf8ef90	那在這些惡鬼族的地盤之外，還有什麼嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	30	conversation	47f2eb5c309fab0470376e92d65da8e8bd97dd14dadcdf641314d3a45bf8ef90	那在這些哥布林的地盤之外，還有什麼嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3603	31	conversation	99a308c5a665acbae91455ed098c50a8181e87ada120d656e73162c52b7d9030	又是你？還沒受夠比你高明的人嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	32	conversation	e8487b1c1ca8fcfb1e78d1e39acfba4c7eea7350c72cf69fb1a47f8ac13f9c1f	如果我的存在冒犯了你，我這就走。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	33	conversation	5e46505b8b4f64ee3f30e7f37a310e2328de0998cb05de68ba0631fea242b968	我當然受夠了，你這個蠢蛋！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -3250,15 +3250,15 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3603	37	conversation	c9be682cf00fe1ee008cc2ec57cd7fb5393a6d1ba2de74b57268f71ccaf11162	也祝你日安。我得繼續找下去了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	38	conversation	db17f63c23dfa48efa33c5ccc2e504d2f4840e4e00606cf5687646cc5d2d4b0b	既然你這麼好心，我就接受你慷慨的提議，請你離開吧。再見！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	39	conversation	cbc259f35bdef261917cffdb083aa013c67267377b962243047c96706726baf3	沒有，她早就不見了。你要是想追上她，最好快一點。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3603	40	conversation	a4e9d24f5e8b865835266d64aa43dd1bf9f02a05aea250d9946540ce1476156a	你一定也是被那個假虔誠的蠢貨阿姆瑞克男爵判刑的人吧。我們放逐者，就是他那套嚴苛審判下的倖存者，也是躲避惡鬼仔獵食的逃亡者。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	40	conversation	a4e9d24f5e8b865835266d64aa43dd1bf9f02a05aea250d9946540ce1476156a	你一定也是被那個假虔誠的蠢貨阿姆瑞克男爵判刑的人吧。我們放逐者，就是他那套嚴苛審判下的倖存者，也是躲避哥布仔獵食的逃亡者。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3603	41	conversation	f70812525ce4ce1bce4e686154fb423537ea8756e2d4748694c34ed3cb080ebd	啊，那你或許能告訴我他女兒的事。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3603	42	conversation	e93da7aa6e152f98d3267daeae10d1f2096f809785c79deabe839ea46ad7ff9f	你說的這些「惡鬼仔」是什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	42	conversation	e93da7aa6e152f98d3267daeae10d1f2096f809785c79deabe839ea46ad7ff9f	你說的這些「哥布仔」是什麼？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3603	43	conversation	facf654e9e0b103e5ce75a7f77f2369cf51837a2520f69d1645b4bf8d2b752a2	我該上路了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3603	44	conversation	11a63b0fadde9de755acbd3301f2f1ba32e654bc73c7c07b734d9213f29124c4	啊……越過惡鬼仔地盤的人，從來沒有一個回來過。不過傳聞說，下面還有更可怕的危險。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	44	conversation	11a63b0fadde9de755acbd3301f2f1ba32e654bc73c7c07b734d9213f29124c4	啊……越過哥布仔地盤的人，從來沒有一個回來過。不過傳聞說，下面還有更可怕的危險。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3603	45	conversation	1f380ca1fb0036af5d76fd05cbd33638afedfc66896ed350b22631fab0495bcc	好吧，還是謝謝你。再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	46	conversation	2d848d4481f0886ce5373aa3747b02ec312f594798805470bbfd4cb8ddf61730	也許我能替你解開這個謎。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	47	conversation	61984de85860a0188fefeb161b4bfd9fedf56e48facb00e3791ca7e13f1d655b	你們這些懦夫！難道就沒有一個人有勇氣自己下去看看嗎？	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3603	48	conversation	7a23034328e13cfadd8e69bd5a81fa769751eaadac36a415acb56d6067ce9b34	有些惡鬼族不再聽從首領的命令，在走道裡四處遊蕩，尋找獵物。他們偷走我們存的糧食，也很危險。真希望能擺脫他們。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3603	48	conversation	7a23034328e13cfadd8e69bd5a81fa769751eaadac36a415acb56d6067ce9b34	有些哥布林不再聽從首領的命令，在走道裡四處遊蕩，尋找獵物。他們偷走我們存的糧食，也很危險。真希望能擺脫他們。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3603	49	conversation	feaa3475c37e7e90b3cb57ca88618a80925f8608206f844cadba52798629176b	我會提防他們的。再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	50	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3603	51	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -3293,7 +3293,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3604	16	conversation	c530afe12eb7e5b916e484fe6421944ef4774798b6eae0206172e8328429304a	不！我才不是奸細。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	17	conversation	0b035e092892c27af77d0142715da5a08331536ca229b279452dc210e4efcc06	沒錯，我正是！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	18	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
-3604	19	conversation	4e57f795e672b612308e11d3cbc3460d14af4156833422acedf0464cd3a48be5	就算是灰色惡鬼族的奸細，也不會裝得這麼無知！凱查瓦爾是灰色惡鬼族的國王。所以你要是奸細，一定是綠色惡鬼族維尼克斯派來的！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	19	conversation	4e57f795e672b612308e11d3cbc3460d14af4156833422acedf0464cd3a48be5	就算是灰哥布林的奸細，也不會裝得這麼無知！凱查瓦爾是灰哥布林的國王。所以你要是奸細，一定是綠哥布林維尼克斯派來的！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3604	20	conversation	8b9d4d446b1679c6e0382a408ce8ef45c07ca9167f4e23ac9cddea7107e0f83e	我不是奸細！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	21	conversation	b78ee11f60878edc12099bd0fc73da6525baacbdfdd088c87eadd6c520fa7263	沒錯！全都是真的！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	22	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -3343,7 +3343,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3604	66	conversation	ea97a05a271e86b41f4fcbfce80cb401f58f070fda506486ab154783f8d4474a	我們底下？哼，我猜是火山燃燒的心臟吧。再往下，就是不列顛尼亞的五臟六腑了。想想看，朋友，總有一天你也會成為那裡的一部分，而不再是在這些我們稱為家的洞穴裡掙扎的又一具軀體。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	67	conversation	dbbd1f9a831e2023aeb76c82bee4d6b447e3734c7a75de99ebcca33a51542297	我明白了。再見！	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	68	conversation	67a534f2a19067998dc965c73735f53de2bbbd703a9d12141550246900e62de3	啊，你要知道，用交易換到有用的東西，往往比自己四處搜刮容易。找個願意交易的人，把你用不著的東西給他，換些更有用的回來。\\m	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	control-code
-3604	69	conversation	e7a7a61e09049ad8a8fc7b00971305db013a2df614284566235c545629d94a32	記得留意你在跟誰打交道。比方說，我聽說山岳族很喜歡黃金，惡鬼族倒不見得那麼在乎。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
+3604	69	conversation	e7a7a61e09049ad8a8fc7b00971305db013a2df614284566235c545629d94a32	記得留意你在跟誰打交道。比方說，我聽說山岳族很喜歡黃金，哥布林倒不見得那麼在乎。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3604	70	conversation	d2e2d866157c08bc4c590991b9083fc607009104a915cccc1f866d08f29c7426	謝謝你的幫忙，再會。	reviewed		P10B-1 draft; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	71	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
 3604	72	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	reviewed		P10B-1 draft; 交易用語沿用 3672:16-30; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	
@@ -3761,10 +3761,10 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3612	68	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-6 draft; 交易用語沿用 3672:16-30	
 3612	69	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-6 draft; 交易用語沿用 3672:16-30	
 3648	1	conversation	c58c5d02248ea7b2f35ca7885e0b9d6e712556bcd30f4d481f8ba46fce513a6c	嘿！這誰？你在幹嘛？	draft		p10b-2 draft	
-3648	2	conversation	61257e0ebbe9f81fc008f1ba63dbd2496c3e6fe45330ea5ae648e99e04f75ee7	我是所有惡鬼族的朋友。	draft		p10b-2 draft	
+3648	2	conversation	61257e0ebbe9f81fc008f1ba63dbd2496c3e6fe45330ea5ae648e99e04f75ee7	我是所有哥布林的朋友。	draft		p10b-2 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3648	3	conversation	461085a8a24031ee44d3fb6111b7b1d087282cd67efbf481def9f4b1f379d3a1	我是來欣賞你們族人聚落的宏偉建築的。	draft		p10b-2 draft	
 3648	4	conversation	3065574262aee0580a8d13c542b40f7941338395563906e4a8c07173f575d308	我只是在探險。	draft		p10b-2 draft	
-3648	5	conversation	492a6e43d794e564341b73b1a17df90616a194f61ee4bcaec95fb822540a534c	哈！希望不是綠色惡鬼族的朋友！	draft		p10b-2 draft	
+3648	5	conversation	492a6e43d794e564341b73b1a17df90616a194f61ee4bcaec95fb822540a534c	哈！希望不是綠哥布林的朋友！	draft		p10b-2 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3648	6	conversation	a965639b42cb4382d94a4c8c30edcbf662130373d82432e58e5de67d957b57f4	當然不是。我不是指他們。	draft		p10b-2 draft	
 3648	7	conversation	e6816a68651306c76765050925146cc8aa41b99536e099b510e3a1b7c2ad7686	當然是。他們跟大家一樣值得我交朋友。	draft		p10b-2 draft	
 3648	8	conversation	3d2159b2f99adf4852cd7d67bc53a383a4450734042fea007446c65da5c8fc5b	那好！你還是跟他們去吧！	draft		p10b-2 draft	
@@ -3787,7 +3787,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3648	25	conversation	f87df0d8dea0e1487388e16c2e4faa9ce7ea03188a2e291aa2cf1d0747626b7d	對，我照你的忠告做。	draft		p10b-2 draft	
 3648	26	conversation	0bde4cd71109c6d5919ae1471ec63a0d516ac82715b6e214baada72cf71125b0	對，我走路很會看路。	draft		p10b-2 draft	
 3649	1	conversation	d656eca7ba24124a537b62fe2559e0167691dbf699e0ca9c16623b80aa6bd8f3	喂！誰在那裡？	draft		p10b-2 draft	
-3649	2	conversation	31e24322c7d6292084c048386103b4fa1261f00b14779529c7380e76c0601242	我替綠色惡鬼族辦緊急的事。	draft		p10b-2 draft	
+3649	2	conversation	31e24322c7d6292084c048386103b4fa1261f00b14779529c7380e76c0601242	我替綠哥布林辦緊急的事。	draft		p10b-2 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3649	3	conversation	5af8c28f636afc747798b294b0d7dc8bebf2da4f402c9a18d15080aee6b2050d	我必須跟你們的首領談談。	draft		p10b-2 draft	
 3649	4	conversation	67724b4791651632bec52dfdbf641942e716af829cf1d9aa9609a28ce492c346	我叫@GS8。	draft		p11-1 draft	dynamic-template
 3649	5	conversation	2d65918363e66685eceff75ccb2ac2c97d368847d1fe0c2d5f9fc9c142bb7dc8	哈！我就知道！給我滾出這裡！	draft		p10b-2 draft	
@@ -3796,7 +3796,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3649	8	conversation	67724b4791651632bec52dfdbf641942e716af829cf1d9aa9609a28ce492c346	我叫@GS8。	draft		p11-1 draft	dynamic-template
 3649	9	conversation	cc4d69c6eb22eb4103b28b65d3fe8638f25835aa5fa2a9e5ff7664f06677d568	這不關你的事。	draft		p10b-2 draft	
 3649	10	conversation	ddb142cdd98695c2bc68d57cd533a02e92590992a43f1dcd651ebd269f4a8ad2	那好！你也不關我們的事！	draft		p10b-2 draft	
-3649	11	conversation	4fe22622e8ac0dec27b7491066c156410143c82f19239de4bd1d6e435b20867f	@GS8，嗯？我想我聽說過你。你新來的，嗯？你來對地方了。灰色惡鬼族是這裡最強的族群。	draft		p11-1 draft	dynamic-template
+3649	11	conversation	4fe22622e8ac0dec27b7491066c156410143c82f19239de4bd1d6e435b20867f	@GS8，嗯？我想我聽說過你。你新來的，嗯？你來對地方了。灰哥布林是這裡最強的族群。	draft		p11-1 draft; 用詞依使用者決定改為哥布林（UD-20261025）	dynamic-template
 3649	12	conversation	2acdec1ae89bed97e536c3acee75c3de87128fb072da652154f1a823c5892151	不過你要小心，要守規矩。不是我們每個都喜歡你這種怪人。你要乖乖的。	draft		p10b-2 draft	
 3649	13	conversation	3302563c3a929cbd43d73ab2612cf29d1788c2d5cb6f913c3c4240811633b2ac	謝謝你，我會的。	draft		p10b-2 draft	
 3649	14	conversation	ccac86890bd7f1438238fca6552bc637c4a35a528bb79ee665cadc9659a67aaa	我會盡力。	draft		p10b-2 draft	
@@ -3811,7 +3811,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3649	23	conversation	5378442433bf5d7742a5c22baa4deaea86256dc951df17289b766c8232e1ff74	那祝你旅途愉快。	draft		p10b-2 draft	
 3649	24	conversation	5970c0b656def034651a917734e339efd8bee3b399ffac8664529fc8ac960ef4	我在找你們的首領。	draft		p10b-2 draft	
 3649	25	conversation	ba3c09f39b786732b85be1052f4e5bf45f5c953af649d4d0e5cacf1188079dae	你能打開這道鐵柵門嗎？	draft		p10b-2 draft	
-3649	26	conversation	e2269fa366878f8e66ac3b61f5c56b81d51071f3f824dcffec8ea9b6a2fccb38	啊哈！綠色惡鬼族的朋友！你還喜歡他們？	draft		p10b-2 draft	
+3649	26	conversation	e2269fa366878f8e66ac3b61f5c56b81d51071f3f824dcffec8ea9b6a2fccb38	啊哈！綠哥布林的朋友！你還喜歡他們？	draft		p10b-2 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3649	27	conversation	bf6aad87658fff390e64cd415d471cabd67ade71a6e9e88450fc342b2d7f3a49	不，我已經受夠他們了。	draft		p10b-2 draft	
 3649	28	conversation	4c3077d3146475e8b7bccc8b9ae1d70bc346a8fe6a3bd8a36d8ee8b15c95a751	老實說，我從來就不喜歡。	draft		p10b-2 draft	
 3649	29	conversation	bb9f72f2af1674e28257be703998eea5e3abe32c9c09d7e2d4b87cf8ec695d04	對，我很喜歡跟他們相處。	draft		p10b-2 draft	
@@ -3832,7 +3832,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3650	8	conversation	8e94d4e037386eec1c37710bb44f8b596a96b2a7513d6ab352796b59eac56a21	又是你！你這次要幹嘛？	draft		p10b-2 draft	
 3650	9	conversation	e87d9ed37a06abf2d5daf3a5611cfd36af6a3ec7b63a9953a67a0f1119d09a66	沒事，謝謝你。再會。	draft		p10b-2 draft	
 3650	10	conversation	4f0dc507963b7353b8a22beb85702319f729c612b5145057f154f6d01aabe9fb	我想通過這道鐵柵門。	draft		p10b-2 draft	
-3650	11	conversation	9661899cb2fd1a3aff48def994a89b0289fa16460ba279d149d7564fdd8e2fbd	好吧。不過你要小心，綠色惡鬼族不好惹。	draft		p10b-2 draft	
+3650	11	conversation	9661899cb2fd1a3aff48def994a89b0289fa16460ba279d149d7564fdd8e2fbd	好吧。不過你要小心，綠哥布林不好惹。	draft		p10b-2 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3651	1	conversation	a5f02630dd666a73979b38bdce3c848d9520e429498a6142e3dfd18a8d7e854d	小伙子	reviewed	PoC role: template_fragment	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	grammar-sensitive,showcase
 3651	2	conversation	ce16c6f0dec4a112e26014dda6e1186aef71c2f8034c5c9af881b0be6780256c	姑娘	reviewed	PoC role: template_fragment	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	grammar-sensitive,showcase
 3651	3	conversation	d432ede95023399e87ade8c791956bc66bad5b0da3bbbbf1bd237a6b70e7d464	你好，陌生人！你來這裡有何貴幹？我以前沒在這地方見過你。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
@@ -3848,11 +3848,11 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3651	13	conversation	f91b1089d14969662ad795fd43c10e159af7a5f1b088e49e7e71524ac8d36ca0	也許吧。我聽過許多人說出和你一樣的話，其中倒也有幾個至今還活著。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	14	conversation	eae088b57f10a9bc1b437b495a300a75b7d75cfe5bada8aba25d27e7f96d1b24	那麼，你有什麼實用的消息？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	15	conversation	f294f1ce8c1f695441c8203ae6d4269dc07c676c102297d0b686df0ae3530324	那麼，告辭了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
-3651	16	conversation	48bfdac64e2528a401ef1709916577d75bc263b9625f89e24202d6efd16b8633	首先，我勸你把找到的有用東西都撿起來。這裡的物資十分稀少，能拿多少就拿多少。\n 你儘管搜集散落的東西，但最好別偷竊。深淵裡多數居民都會嚴加看守自己僅有的那點財物。\n 戰場是搜集物資的最佳地點。我就是為此而來。不久前，惡鬼族和地面上的人在這裡打了一仗。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 authority-ok:guard（此處為動詞「看守」，非守衛頭銜） P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	showcase
+3651	16	conversation	48bfdac64e2528a401ef1709916577d75bc263b9625f89e24202d6efd16b8633	首先，我勸你把找到的有用東西都撿起來。這裡的物資十分稀少，能拿多少就拿多少。\n 你儘管搜集散落的東西，但最好別偷竊。深淵裡多數居民都會嚴加看守自己僅有的那點財物。\n 戰場是搜集物資的最佳地點。我就是為此而來。不久前，哥布林和地面上的人在這裡打了一仗。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 authority-ok:guard（此處為動詞「看守」，非守衛頭銜） P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）; 用詞依使用者決定改為哥布林（UD-20261025）	showcase
 3651	17	conversation	f30e65846e68f1566d1a5c5500895fefd440f00bd7bfdd0ac217d27ff363b400	這裡住著哪些人？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	18	conversation	c6f6e2e6af93327e70e7fde5287ef3dbbc1129fc756ba2d2f966e1e297b9dc56	那場戰役是怎麼引起的？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
-3651	19	conversation	3ad873af13e29a0a4c85be2c1895e3d7e9f300b8a3c5745fe7c2a3a44ec052b4	我不知道。男爵很少派人進入深淵，想必是有要事。不過，看樣子惡鬼族輕易就打敗了他們。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	control-code,showcase
-3651	20	conversation	b7b3861928ed1dbb835f6b869b206e7b59c3a8c2cce4e988d3696671eb0dd7db	惡鬼族控制著上層洞穴的大部分地區。牠們分成兩族：綠色惡鬼族與灰色惡鬼族。兩族至今還沒消滅彼此，可不是因為不夠賣力。\n 你要特別小心灰色惡鬼族。我前不久才因為闖入牠們的地盤而被關起來。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
+3651	19	conversation	3ad873af13e29a0a4c85be2c1895e3d7e9f300b8a3c5745fe7c2a3a44ec052b4	我不知道。男爵很少派人進入深淵，想必是有要事。不過，看樣子哥布林輕易就打敗了他們。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23; 用詞依使用者決定改為哥布林（UD-20261025）	control-code,showcase
+3651	20	conversation	b7b3861928ed1dbb835f6b869b206e7b59c3a8c2cce4e988d3696671eb0dd7db	哥布林控制著上層洞穴的大部分地區。牠們分成兩族：綠哥布林與灰哥布林。兩族至今還沒消滅彼此，可不是因為不夠賣力。\n 你要特別小心灰哥布林。我前不久才因為闖入牠們的地盤而被關起來。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23; 用詞依使用者決定改為哥布林（UD-20261025）	showcase
 3651	21	conversation	0056e555e3c6b462bda9b4579af8bb7957667b790d4b7b9af4f9718d954ee3d0	那一定很可怕！	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	22	conversation	178d55e8373c3bbb3d20c1de1ba6b4c14ffd749d359fdb92a858dbfa9431a0be	你是怎麼逃出來的？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	23	conversation	46dcde194eef16cf91b5514c3c8e5b600b3bb4b45f2f1de15f4a7d0626321870	我的牢房顯然是儲藏室改建的，裡面還放著不少有用的東西，包括一根長竹竿。我用長竹竿碰到了開門的按鈕，偷偷溜走，回到自己人那裡。我想，我不會再去那地方冒險了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
@@ -3861,7 +3861,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3651	26	conversation	8d07d42ef1e729f645dccfc2300b4376716ccd6636b6836cc7fe0617398feab2	像你我這樣的人類，在一小塊地方落腳，日子還算平靜。我們下面住著山岳族，再往下我就不清楚了。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	27	conversation	74d26abc289ff28f4f2e5433bfa4574debbcf33ca37c0a3184eb1c839470477d	這個人類聚落在哪裡？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	28	conversation	3771dda2a82d04b6fa30e01d5ef57b6665e751c861cb54b21402812048c536ba	除了人類以外，其他種族都懷有敵意嗎？	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
-3651	29	conversation	f82c0a7c19e021e6a2ed0dd70674b87b3ece4532e58fcef56a74c4da16955165	這是個險惡的地方，這點你大可相信。上層洞穴裡沒有惡鬼族佔據的地方，也有巨蜘蛛和蠕蟲。我們這一小群人，是少數崇尚和平的居民之一。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23	control-code,showcase
+3651	29	conversation	f82c0a7c19e021e6a2ed0dd70674b87b3ece4532e58fcef56a74c4da16955165	這是個險惡的地方，這點你大可相信。上層洞穴裡沒有哥布林佔據的地方，也有巨蜘蛛和蠕蟲。我們這一小群人，是少數崇尚和平的居民之一。\\m	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 reviewed: 使用者確認（Claude 預審）2026-10-23; 用詞依使用者決定改為哥布林（UD-20261025）	control-code,showcase
 3651	30	conversation	65489bc43446662b97e0d80366453c6a52650148beddae803aebd9054f6ba2f2	從深淵入口往西走，再往北，就能找到我的同伴。途中有一道小深谷要跳過，不過你看起來是個身手靈活的@SS1。過了深谷，就會看到深淵各處代表文明的標誌：凱布勒斯的旗幟，上面繪著聖者的符號——聖符。\n 在沒有旗幟標示的地方，你可得格外小心。多數不尊重凱布勒斯遺志的生物，都不怎麼友善。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending P10A: 用詞對齊 Authority。 P10.5.1 第 1 輪：依審閱意見修改（2026-10-23），待下一輪確認; reviewed: 使用者審閱 2026-10-23（P10B-1_REVIEW）	dynamic-template,showcase
 3651	31	conversation	0c8abcb83b369001671ca04c40d733ebeb46d4a97fa03efbaa2042ea7fe97890	也許我會去找找這地方。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
 3651	32	conversation	f577e1ed0244a18d2516bc49148c045350cc29411a8a8e4ac6fbe3e327b89d73	謝謝你的幫助。	reviewed	PoC role: dialogue_or_choice	PoC draft; native rendering pending reviewed: 使用者確認（Claude 預審）2026-10-23	showcase
@@ -5643,12 +5643,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3793	19	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
 3793	20	conversation	d1a7c55fdf3520bc34173d9a6216e0d6b6a8dd6bca2e222b4fffdbbf7d8e91fe	我煩了。你現在去死！	draft		p10b-18 draft	
 3793	21	conversation	b0c5b14d9bbd0b6cb2a73869d9351a9c65115200f714326a2ad121a56550fbb4	抱歉。我這就上路。	draft		p10b-18 draft	
-3793	22	conversation	82342efe28f3b8fdfbb2449d10e14a0c9fcf3d500845febc05351a3d0ac08662	別命令我，惡鬼，不然我就砍了你的頭。	draft		p10b-18 draft	
+3793	22	conversation	82342efe28f3b8fdfbb2449d10e14a0c9fcf3d500845febc05351a3d0ac08662	別命令我，哥布林，不然我就砍了你的頭。	draft		p10b-18 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3793	23	conversation	f03596d7561485c630db76ea8f6ce23495bd005771c9c9f505ead3c06735a540	你最好是。	draft		p10b-18 draft	
 3793	24	conversation	df1357e9e6707fe3b94e1cb9fbd604888b1d30991123cee92a3559fa2f8dd38e	不，請等一下！	draft		p10b-18 draft	
 3793	25	conversation	6b17f0170266338d3f0d6bd2c6cd2a08328de9e44b03f42729babae7687bc38f	哈，走著瞧。	draft		p10b-18 draft	
 3793	26	conversation	a01ebe3cfbf1f67b0e20e4b24b3cbe145ba17c322d07b9dcbcd108d7d70435f5	咕啊啊啊啊！！！	draft		p10b-18 draft	
-3793	27	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的惡鬼。	draft		p10b-18 draft	
+3793	27	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的哥布林。	draft		p10b-18 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3793	28	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3793	29	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3793	30	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
@@ -5989,7 +5989,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3800	26	conversation	129c9913c8d7d4506b2e59ad79de7a611941fbbe9df2b759767d74d0592d6168	我自己處理。	draft		p10b-17 draft	
 3800	27	conversation	ef9bc50efb28fb7ed21eb004d47f77736de0be6e6f958bcaf67aacd9791c202e	哼……那你就待著吧。	draft		p10b-17 draft	
 3800	28	conversation	c7973f9e5776b37a87e9bf2af0fbb13ec5c1dbb00d585a03cb1688d9a256279c	呵呵……我開門，好啦。	draft		p10b-17 draft	
-3800	29	conversation	6dc6773b667c66ddb8e01f428074384537b80d46c2bfcf3377b4bde40e1a701e	我現在不想跟你說話，人類。你去跟惡鬼族說，也許他們有比較好的理由。	draft		p10b-17 draft	
+3800	29	conversation	6dc6773b667c66ddb8e01f428074384537b80d46c2bfcf3377b4bde40e1a701e	我現在不想跟你說話，人類。你去跟哥布林說，也許他們有比較好的理由。	draft		p10b-17 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3800	30	conversation	432ed478600e7d872ca643b48e5c29eec10546341ca666d4f42b15920416bf9c	你！你逃出牢房！壞人類，壞人類！	draft		p10b-17 draft	
 3800	31	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
 3800	32	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-17 draft; 交易用語沿用 3672:16-30	
@@ -6118,12 +6118,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3803	20	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
 3803	21	conversation	d1a7c55fdf3520bc34173d9a6216e0d6b6a8dd6bca2e222b4fffdbbf7d8e91fe	我煩了。你現在去死！	draft		p10b-18 draft	
 3803	22	conversation	b0c5b14d9bbd0b6cb2a73869d9351a9c65115200f714326a2ad121a56550fbb4	抱歉。我這就上路。	draft		p10b-18 draft	
-3803	23	conversation	daca08eddb4ff0fd774917c4c2a3267c905f8920b01dee0174312b8e9b613a00	別命令我，惡鬼，不然我就砍了你的頭。	draft		p10b-18 draft	
+3803	23	conversation	daca08eddb4ff0fd774917c4c2a3267c905f8920b01dee0174312b8e9b613a00	別命令我，哥布林，不然我就砍了你的頭。	draft		p10b-18 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3803	24	conversation	f03596d7561485c630db76ea8f6ce23495bd005771c9c9f505ead3c06735a540	你最好是。	draft		p10b-18 draft	
 3803	25	conversation	df1357e9e6707fe3b94e1cb9fbd604888b1d30991123cee92a3559fa2f8dd38e	不，請等一下！	draft		p10b-18 draft	
 3803	26	conversation	6b17f0170266338d3f0d6bd2c6cd2a08328de9e44b03f42729babae7687bc38f	哈，走著瞧。	draft		p10b-18 draft	
 3803	27	conversation	a01ebe3cfbf1f67b0e20e4b24b3cbe145ba17c322d07b9dcbcd108d7d70435f5	咕啊啊啊啊！！！	draft		p10b-18 draft	
-3803	28	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的惡鬼。	draft		p10b-18 draft	
+3803	28	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的哥布林。	draft		p10b-18 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3803	29	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3803	30	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3803	31	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
@@ -6160,12 +6160,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3804	19	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
 3804	20	conversation	d1a7c55fdf3520bc34173d9a6216e0d6b6a8dd6bca2e222b4fffdbbf7d8e91fe	我煩了。你現在去死！	draft		p10b-18 draft	
 3804	21	conversation	b0c5b14d9bbd0b6cb2a73869d9351a9c65115200f714326a2ad121a56550fbb4	抱歉。我這就上路。	draft		p10b-18 draft	
-3804	22	conversation	daca08eddb4ff0fd774917c4c2a3267c905f8920b01dee0174312b8e9b613a00	別命令我，惡鬼，不然我就砍了你的頭。	draft		p10b-18 draft	
+3804	22	conversation	daca08eddb4ff0fd774917c4c2a3267c905f8920b01dee0174312b8e9b613a00	別命令我，哥布林，不然我就砍了你的頭。	draft		p10b-18 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3804	23	conversation	f03596d7561485c630db76ea8f6ce23495bd005771c9c9f505ead3c06735a540	你最好是。	draft		p10b-18 draft	
 3804	24	conversation	df1357e9e6707fe3b94e1cb9fbd604888b1d30991123cee92a3559fa2f8dd38e	不，請等一下！	draft		p10b-18 draft	
 3804	25	conversation	d113b8502ca87584054c12d71c47ddea8b715adc837036700c437340b62991e0	走著瞧。	draft		p10b-18 draft	
 3804	26	conversation	a01ebe3cfbf1f67b0e20e4b24b3cbe145ba17c322d07b9dcbcd108d7d70435f5	咕啊啊啊啊！！！	draft		p10b-18 draft	
-3804	27	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的惡鬼。	draft		p10b-18 draft	
+3804	27	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的哥布林。	draft		p10b-18 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3804	28	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3804	29	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3804	30	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
@@ -6281,12 +6281,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3806	17	conversation	d27a2dc9028cbd80411a76a67245cc32b439c287281c2586aaee481ebd5870ec	對，我確實覺得你很笨！	draft		p10b-18 draft	
 3806	18	conversation	d1a7c55fdf3520bc34173d9a6216e0d6b6a8dd6bca2e222b4fffdbbf7d8e91fe	我煩了。你現在去死！	draft		p10b-18 draft	
 3806	19	conversation	b0c5b14d9bbd0b6cb2a73869d9351a9c65115200f714326a2ad121a56550fbb4	抱歉。我這就上路。	draft		p10b-18 draft	
-3806	20	conversation	82342efe28f3b8fdfbb2449d10e14a0c9fcf3d500845febc05351a3d0ac08662	別命令我，惡鬼，不然我就砍了你的頭。	draft		p10b-18 draft	
+3806	20	conversation	82342efe28f3b8fdfbb2449d10e14a0c9fcf3d500845febc05351a3d0ac08662	別命令我，哥布林，不然我就砍了你的頭。	draft		p10b-18 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3806	21	conversation	f03596d7561485c630db76ea8f6ce23495bd005771c9c9f505ead3c06735a540	你最好是。	draft		p10b-18 draft	
 3806	22	conversation	df1357e9e6707fe3b94e1cb9fbd604888b1d30991123cee92a3559fa2f8dd38e	不，請等一下！	draft		p10b-18 draft	
 3806	23	conversation	6b17f0170266338d3f0d6bd2c6cd2a08328de9e44b03f42729babae7687bc38f	哈，走著瞧。	draft		p10b-18 draft	
 3806	24	conversation	a01ebe3cfbf1f67b0e20e4b24b3cbe145ba17c322d07b9dcbcd108d7d70435f5	咕啊啊啊啊！！！	draft		p10b-18 draft	
-3806	25	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的惡鬼。	draft		p10b-18 draft	
+3806	25	conversation	35a15ef780c3aa1af322aefc1cd6fa875cbc8db3e012412c359d9651d1343f0b	謝謝你，好心的哥布林。	draft		p10b-18 draft; 用詞依使用者決定改為哥布林（UD-20261025）	
 3806	26	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3806	27	conversation	cbf65f6eb543b20eafb87263342a682e1c3dfefcbfcaab45fc8df419590983ed	我要你把這些東西交給我。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
 3806	28	conversation	6201e7113d322ebd20af37cbb89a4c304070cb37f24a386dc96bf3234faf8f01	抱歉，我得考慮一下這筆交易。	draft		p10b-18 draft; 交易用語沿用 3672:16-30	
@@ -6366,12 +6366,12 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3816	50	conversation	4fdb332b6eb3323e1103054bb099ccf99039f01a6c2e54197f8243a82a7e68ce	我有些食物要給你。	draft		p10b-19 draft	
 3816	51	conversation	eda163da4601edb62b9a7097931ea312e61af4e36c8ebdf2e09dad34bf3480e0	很高興再見到你，不過暫時再會了。	draft		p10b-19 draft	
 3846	1	conversation	432829e23c6cb95908b183891adb5efeeae81fafdebf2f15c4e5cdafb187b3c0	又是你。你沒更好的事做嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3846	2	conversation	314ac9d031140e7353f65032463576488799c8ad2daee62a287c12f74b2e9e85	嘿，你不是惡鬼族！你為什麼在這？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3846	3	conversation	49b188bb81afa4b2a4907caf101067da4151192041fb5f3e81f55882515c2cbf	你能跟我說說惡鬼族嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	2	conversation	314ac9d031140e7353f65032463576488799c8ad2daee62a287c12f74b2e9e85	嘿，你不是哥布林！你為什麼在這？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
+3846	3	conversation	49b188bb81afa4b2a4907caf101067da4151192041fb5f3e81f55882515c2cbf	你能跟我說說哥布林嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3846	4	conversation	f52645d730eaa3eeeb1b42fd469407f19af27a29af2642d295a9b6af24ea4061	你們的首領在哪裡？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3846	5	conversation	fafdddd00b94b818b5f015846b8ece60822bfb702ad11569d5b3cd1c25a467f9	我想跟你交易。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3846	6	conversation	5c000937f04db0f3fc38333d387c4f44904c125ef27de4aac65459c785d95fb4	我得上路了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3846	7	conversation	56df0b0bcfaea837e3f4d7baa0af30158913e8fcfa09784f2a24316d8c243d1d	綠色惡鬼族，對，很好。我們是深淵裡最強最勇敢的。灰色惡鬼族，他們討厭又弱。你不會想跟他們說話。也要小心一些壞惡鬼族，跟我們聚落不一樣。他們穿紅的。好的惡鬼族在有奇怪記號的旗子附近。像我。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	7	conversation	56df0b0bcfaea837e3f4d7baa0af30158913e8fcfa09784f2a24316d8c243d1d	綠哥布林，對，很好。我們是深淵裡最強最勇敢的。灰哥布林，他們討厭又弱。你不會想跟他們說話。也要小心一些壞哥布林，跟我們聚落不一樣。他們穿紅的。好的哥布林在有奇怪記號的旗子附近。像我。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3846	8	conversation	f52645d730eaa3eeeb1b42fd469407f19af27a29af2642d295a9b6af24ea4061	你們的首領在哪裡？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3846	9	conversation	050735160392614a1b3f764dd78ae99ef81f0c5789203af2f309721018a9cf35	我想跟你交換一些物品。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3846	10	conversation	129e67594e92d504b2511f9fa0d50e992ff5af7caa33ce5fa763eda9c6f01488	非常感謝你提供的消息。再會。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
@@ -6379,7 +6379,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3846	12	conversation	9f6a5208e8d457edadd7ec438ad352731ef429e7ee374e5e020be4e3a2c81dea	那你能跟我說說你的族人嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3846	13	conversation	3ad3359742b7b9983b8c86ffa514de469f8a76a785d61ab54a81aff5a638be56	也許我們可以交換一些貨物。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3846	14	conversation	758e0872233e2b38851a6b0dda4d7f3154b70742fad3398f725fb55eda2cc7e8	謝謝你。我會去找他。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3846	15	conversation	a849c117029e451b026da0a63be3d848d36c4a78f65b92d6d6a8d0fc03ba0d10	不，現在不要。也許別的惡鬼族吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	15	conversation	a849c117029e451b026da0a63be3d848d36c4a78f65b92d6d6a8d0fc03ba0d10	不，現在不要。也許別的哥布林吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3846	16	conversation	c969875b4e24e1bf0225cd3b6d6a3d37f2e00208d3cdc8519ba6af32d8413bfa	也許。你有什麼？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3846	17	conversation	2c2367974cda9d6855485ffd5b59484209684aa9f2ac5bde19009edebbf92653	好，再見。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3846	18	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
@@ -6396,14 +6396,14 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3846	29	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3846	30	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3846	31	conversation	a95d744a494b9cb91192e7d0f63ffc25f9cd77b60a28e42c1983613bf16ce8e7	你很不公平。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3846	32	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從惡鬼族手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3846	32	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從哥布林手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3847	1	conversation	432829e23c6cb95908b183891adb5efeeae81fafdebf2f15c4e5cdafb187b3c0	又是你。你沒更好的事做嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3847	2	conversation	314ac9d031140e7353f65032463576488799c8ad2daee62a287c12f74b2e9e85	嘿，你不是惡鬼族！你為什麼在這？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3847	3	conversation	49b188bb81afa4b2a4907caf101067da4151192041fb5f3e81f55882515c2cbf	你能跟我說說惡鬼族嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	2	conversation	314ac9d031140e7353f65032463576488799c8ad2daee62a287c12f74b2e9e85	嘿，你不是哥布林！你為什麼在這？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
+3847	3	conversation	49b188bb81afa4b2a4907caf101067da4151192041fb5f3e81f55882515c2cbf	你能跟我說說哥布林嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3847	4	conversation	f52645d730eaa3eeeb1b42fd469407f19af27a29af2642d295a9b6af24ea4061	你們的首領在哪裡？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3847	5	conversation	fafdddd00b94b818b5f015846b8ece60822bfb702ad11569d5b3cd1c25a467f9	我想跟你交易。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3847	6	conversation	5c000937f04db0f3fc38333d387c4f44904c125ef27de4aac65459c785d95fb4	我得上路了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3847	7	conversation	56df0b0bcfaea837e3f4d7baa0af30158913e8fcfa09784f2a24316d8c243d1d	綠色惡鬼族，對，很好。我們是深淵裡最強最勇敢的。灰色惡鬼族，他們討厭又弱。你不會想跟他們說話。也要小心一些壞惡鬼族，跟我們聚落不一樣。他們穿紅的。好的惡鬼族在有奇怪記號的旗子附近。像我。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	7	conversation	56df0b0bcfaea837e3f4d7baa0af30158913e8fcfa09784f2a24316d8c243d1d	綠哥布林，對，很好。我們是深淵裡最強最勇敢的。灰哥布林，他們討厭又弱。你不會想跟他們說話。也要小心一些壞哥布林，跟我們聚落不一樣。他們穿紅的。好的哥布林在有奇怪記號的旗子附近。像我。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3847	8	conversation	f52645d730eaa3eeeb1b42fd469407f19af27a29af2642d295a9b6af24ea4061	你們的首領在哪裡？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3847	9	conversation	050735160392614a1b3f764dd78ae99ef81f0c5789203af2f309721018a9cf35	我想跟你交換一些物品。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3847	10	conversation	129e67594e92d504b2511f9fa0d50e992ff5af7caa33ce5fa763eda9c6f01488	非常感謝你提供的消息。再會。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
@@ -6411,7 +6411,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3847	12	conversation	9f6a5208e8d457edadd7ec438ad352731ef429e7ee374e5e020be4e3a2c81dea	那你能跟我說說你的族人嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3847	13	conversation	3ad3359742b7b9983b8c86ffa514de469f8a76a785d61ab54a81aff5a638be56	也許我們可以交換一些貨物。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3847	14	conversation	758e0872233e2b38851a6b0dda4d7f3154b70742fad3398f725fb55eda2cc7e8	謝謝你。我會去找他。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3847	15	conversation	a849c117029e451b026da0a63be3d848d36c4a78f65b92d6d6a8d0fc03ba0d10	不，現在不要。也許別的惡鬼族吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	15	conversation	a849c117029e451b026da0a63be3d848d36c4a78f65b92d6d6a8d0fc03ba0d10	不，現在不要。也許別的哥布林吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3847	16	conversation	c969875b4e24e1bf0225cd3b6d6a3d37f2e00208d3cdc8519ba6af32d8413bfa	也許。你有什麼？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3847	17	conversation	2c2367974cda9d6855485ffd5b59484209684aa9f2ac5bde19009edebbf92653	好，再見。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3847	18	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
@@ -6428,23 +6428,23 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3847	29	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3847	30	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3847	31	conversation	a95d744a494b9cb91192e7d0f63ffc25f9cd77b60a28e42c1983613bf16ce8e7	你很不公平。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3847	32	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從惡鬼族手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3847	32	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從哥布林手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3852	1	conversation	31c4081fc7106b92fdb85d96b6c262b3f6d43d429849d758d3e49e7d80717c2e	哈囉，又是長得好笑的人。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3852	2	conversation	86261b372337d2675d0b504b01f5c0f5fbfb3e27e185618eca9d350224ca8041	你在這裡有事？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3852	3	conversation	dd19aebfd258d296ca15abc3604dcef970c06dcb684e9d8d2528aea673fe2d3b	你能跟我說說你的種族，惡鬼族嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3852	4	conversation	d32cb9565f1aa08be50079d288128dd922c38c1c42f75c98ef7b594287e61838	我在哪裡能找到綠色惡鬼族？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	3	conversation	dd19aebfd258d296ca15abc3604dcef970c06dcb684e9d8d2528aea673fe2d3b	你能跟我說說你的種族，哥布林嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
+3852	4	conversation	d32cb9565f1aa08be50079d288128dd922c38c1c42f75c98ef7b594287e61838	我在哪裡能找到綠哥布林？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3852	5	conversation	fafdddd00b94b818b5f015846b8ece60822bfb702ad11569d5b3cd1c25a467f9	我想跟你交易。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3852	6	conversation	2ad43e0a4893f9c6f7034ef7dfcb67cc991e254a20a526ce73c9cf4f1eb25238	不，我得走了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3852	7	conversation	af170e9125e96f54c54d56fe6b01c25d49a626518e63edfa19203dfe4ec80d24	灰色惡鬼族，灰色惡鬼族，不是只有惡鬼族。說惡鬼族，也許你連綠色惡鬼族也算進去，噁。你不會想知道他們的事。他們又討厭又野蠻。比人類還醜。跟我們沒關係，沒有，一點也沒有。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3852	8	conversation	b636607e30e6bb7b6bdbe855832cb659e6be079cb306ce1107e23d0a50e5ddef	好吧，那灰色惡鬼族呢？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	7	conversation	af170e9125e96f54c54d56fe6b01c25d49a626518e63edfa19203dfe4ec80d24	灰哥布林，灰哥布林，不是只有哥布林。說哥布林，也許你連綠哥布林也算進去，噁。你不會想知道他們的事。他們又討厭又野蠻。比人類還醜。跟我們沒關係，沒有，一點也沒有。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
+3852	8	conversation	b636607e30e6bb7b6bdbe855832cb659e6be079cb306ce1107e23d0a50e5ddef	好吧，那灰哥布林呢？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3852	9	conversation	00199ee3991eb5bee2750f22ee1f0b87f69d9369dbd39fa205a342d2260b73f3	那我會盡量避開他們。再會。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3852	10	conversation	3cbf76a8b8f5b781d489ecaa1d5e09ea51a65e39aea3d0265b75db2104b682b5	啊，對，灰色惡鬼族，好多了。我們是這一帶的統治者。其他人都敬仰我們，人類、綠色惡鬼族，連蜘蛛也是。你要找強大的族群，你來對地方了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	10	conversation	3cbf76a8b8f5b781d489ecaa1d5e09ea51a65e39aea3d0265b75db2104b682b5	啊，對，灰哥布林，好多了。我們是這一帶的統治者。其他人都敬仰我們，人類、綠哥布林，連蜘蛛也是。你要找強大的族群，你來對地方了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3852	11	conversation	11bc90ac77559843b3570ae28c3ac4941f5c88bfb3f98bf8542573fe6182fe35	也許吧。我會繼續探險。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3852	12	conversation	f63c3a5c9bf62eb70f09748f2b04cfb79e993bd94d20e484b6ba2f4534fb51c8	你想跟我交換一些物品嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3852	13	conversation	6db341c529e5872f0dc046e09e4c0277845c0d083df047d59bcdef8241c0e9ca	謝謝你撥空。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3852	14	conversation	1ce6d94f28d090c781254f77a011538dbaa63aca44f14b3152a1dc29ff655dd1	喔，不，不，不，你不會要綠色惡鬼族。他們邪惡又醜又笨。不，你跟著灰色惡鬼族。我們聰明又強悍。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	14	conversation	1ce6d94f28d090c781254f77a011538dbaa63aca44f14b3152a1dc29ff655dd1	喔，不，不，不，你不會要綠哥布林。他們邪惡又醜又笨。不，你跟著灰哥布林。我們聰明又強悍。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3852	15	conversation	1f1db916473ba4e174e3f9e32319d8e45e4a126c7086a5e90453c84fb83a348e	也許吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3852	16	conversation	577ee384ddc23feb043ba162652d446d58c776a50c76599040abb316d35454a8	我會去拜訪這些綠色惡鬼族，自己判斷。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	16	conversation	577ee384ddc23feb043ba162652d446d58c776a50c76599040abb316d35454a8	我會去拜訪這些綠哥布林，自己判斷。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3852	17	conversation	1e9682fa4b9fd526ca6a6794eed68415b83a15bf8b2e1475a3a597f925dcaa43	不，我不要你的東西。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3852	18	conversation	8f9d1f1d48d0a0bd1240c45068261a9af6521ae28d2b776616d33f84dbe390b8	好，你有什麼？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3852	19	conversation	54eb4537a29ade41e8d54f6e5fda592f2282842b8ce95bce3a4da376ab953977	那就再見。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
@@ -6462,23 +6462,23 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3852	31	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3852	32	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3852	33	conversation	a95d744a494b9cb91192e7d0f63ffc25f9cd77b60a28e42c1983613bf16ce8e7	你很不公平。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3852	34	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從惡鬼族手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3852	34	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從哥布林手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3856	1	conversation	31c4081fc7106b92fdb85d96b6c262b3f6d43d429849d758d3e49e7d80717c2e	哈囉，又是長得好笑的人。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3856	2	conversation	86261b372337d2675d0b504b01f5c0f5fbfb3e27e185618eca9d350224ca8041	你在這裡有事？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3856	3	conversation	dd19aebfd258d296ca15abc3604dcef970c06dcb684e9d8d2528aea673fe2d3b	你能跟我說說你的種族，惡鬼族嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3856	4	conversation	d32cb9565f1aa08be50079d288128dd922c38c1c42f75c98ef7b594287e61838	我在哪裡能找到綠色惡鬼族？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	3	conversation	dd19aebfd258d296ca15abc3604dcef970c06dcb684e9d8d2528aea673fe2d3b	你能跟我說說你的種族，哥布林嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
+3856	4	conversation	d32cb9565f1aa08be50079d288128dd922c38c1c42f75c98ef7b594287e61838	我在哪裡能找到綠哥布林？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3856	5	conversation	fafdddd00b94b818b5f015846b8ece60822bfb702ad11569d5b3cd1c25a467f9	我想跟你交易。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3856	6	conversation	2ad43e0a4893f9c6f7034ef7dfcb67cc991e254a20a526ce73c9cf4f1eb25238	不，我得走了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3856	7	conversation	af170e9125e96f54c54d56fe6b01c25d49a626518e63edfa19203dfe4ec80d24	灰色惡鬼族，灰色惡鬼族，不是只有惡鬼族。說惡鬼族，也許你連綠色惡鬼族也算進去，噁。你不會想知道他們的事。他們又討厭又野蠻。比人類還醜。跟我們沒關係，沒有，一點也沒有。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3856	8	conversation	b636607e30e6bb7b6bdbe855832cb659e6be079cb306ce1107e23d0a50e5ddef	好吧，那灰色惡鬼族呢？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	7	conversation	af170e9125e96f54c54d56fe6b01c25d49a626518e63edfa19203dfe4ec80d24	灰哥布林，灰哥布林，不是只有哥布林。說哥布林，也許你連綠哥布林也算進去，噁。你不會想知道他們的事。他們又討厭又野蠻。比人類還醜。跟我們沒關係，沒有，一點也沒有。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
+3856	8	conversation	b636607e30e6bb7b6bdbe855832cb659e6be079cb306ce1107e23d0a50e5ddef	好吧，那灰哥布林呢？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3856	9	conversation	00199ee3991eb5bee2750f22ee1f0b87f69d9369dbd39fa205a342d2260b73f3	那我會盡量避開他們。再會。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3856	10	conversation	3cbf76a8b8f5b781d489ecaa1d5e09ea51a65e39aea3d0265b75db2104b682b5	啊，對，灰色惡鬼族，好多了。我們是這一帶的統治者。其他人都敬仰我們，人類、綠色惡鬼族，連蜘蛛也是。你要找強大的族群，你來對地方了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	10	conversation	3cbf76a8b8f5b781d489ecaa1d5e09ea51a65e39aea3d0265b75db2104b682b5	啊，對，灰哥布林，好多了。我們是這一帶的統治者。其他人都敬仰我們，人類、綠哥布林，連蜘蛛也是。你要找強大的族群，你來對地方了。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3856	11	conversation	11bc90ac77559843b3570ae28c3ac4941f5c88bfb3f98bf8542573fe6182fe35	也許吧。我會繼續探險。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3856	12	conversation	f63c3a5c9bf62eb70f09748f2b04cfb79e993bd94d20e484b6ba2f4534fb51c8	你想跟我交換一些物品嗎？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3856	13	conversation	6db341c529e5872f0dc046e09e4c0277845c0d083df047d59bcdef8241c0e9ca	謝謝你撥空。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3856	14	conversation	1ce6d94f28d090c781254f77a011538dbaa63aca44f14b3152a1dc29ff655dd1	喔，不，不，不，你不會要綠色惡鬼族。他們邪惡又醜又笨。不，你跟著灰色惡鬼族。我們聰明又強悍。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	14	conversation	1ce6d94f28d090c781254f77a011538dbaa63aca44f14b3152a1dc29ff655dd1	喔，不，不，不，你不會要綠哥布林。他們邪惡又醜又笨。不，你跟著灰哥布林。我們聰明又強悍。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3856	15	conversation	1f1db916473ba4e174e3f9e32319d8e45e4a126c7086a5e90453c84fb83a348e	也許吧。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3856	16	conversation	577ee384ddc23feb043ba162652d446d58c776a50c76599040abb316d35454a8	我會去拜訪這些綠色惡鬼族，自己判斷。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	16	conversation	577ee384ddc23feb043ba162652d446d58c776a50c76599040abb316d35454a8	我會去拜訪這些綠哥布林，自己判斷。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3856	17	conversation	1e9682fa4b9fd526ca6a6794eed68415b83a15bf8b2e1475a3a597f925dcaa43	不，我不要你的東西。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3856	18	conversation	8f9d1f1d48d0a0bd1240c45068261a9af6521ae28d2b776616d33f84dbe390b8	好，你有什麼？	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
 3856	19	conversation	54eb4537a29ade41e8d54f6e5fda592f2282842b8ce95bce3a4da376ab953977	那就再見。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
@@ -6496,7 +6496,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3856	31	conversation	95084f355e6aa954137aee042660bd8d8d283c2a4325b3a4c7e35c7f74b5a742	是的，非這樣不可。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3856	32	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-22 draft; 交易用語沿用 3672:16-30	
 3856	33	conversation	a95d744a494b9cb91192e7d0f63ffc25f9cd77b60a28e42c1983613bf16ce8e7	你很不公平。	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
-3856	34	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從惡鬼族手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同	
+3856	34	conversation	fc76b7974efbace59ea50a96f0289f0bbab79d2392d65315fca767e67012e718	哈！沒人能從哥布林手裡拿東西！	draft		p10b-22 draft; 與同類 NPC 共用同一腳本，譯文相同; 用詞依使用者決定改為哥布林（UD-20261025）	
 3860	1	conversation	2b0427860cbcdb7100027cc34a9750efca287e5f6c39edcdea3d1ac5ea0e54e9	你好，@GS8。什麼風把你吹來的？	draft		p11-1 draft	dynamic-template
 3860	2	conversation	1f76f4ca7c4e9515fcdb70ad9c5ddf693a7bea066a7c93d92411415b6394efc9	啊，你一定就是我聽說過的那位@GS8。有什麼能為你效勞的？	draft		p11-1 draft	dynamic-template
 3860	3	conversation	5689e95272faa25d96de2c0cbc4df4eb48a91e4f75e28042e17c0aeff00d3765	我在找一個被綁架的女孩。	draft		p10b-21 draft	
@@ -6795,7 +6795,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3866	27	conversation	38ad8b34d9ea6288354627ca7d17424966715e825fb22303a11b184652bc7707	你說你是被硬丟到這裡，我信，可是說冤枉就是另一回事了。不過在我們之間不用裝。我們沒一個人相信阿姆瑞克那套小家子氣的公正。\n  既然你來了，就該跟我們待在一起。外面那些生物比阿姆瑞克能對你做的任何事都可怕得多。這裡靠近門的地方最安全。相信我。	draft		p10b-21 draft	
 3866	28	conversation	11537a2da9d6154c00518bdbfe31ddf7de5b82f4d571ff074784b19300ef0a2e	外面有什麼那麼可怕？	draft		p10b-21 draft	
 3866	29	conversation	c727625f2ac880739d45a5a563352c3afcd12b32dae310357c8e80ca37a9a5b6	你有到外面去過嗎？	draft		p10b-21 draft	
-3866	30	conversation	224716bfd4bb54f466845e28369e8d2e8fc2752898bc86837f97f7877e330a92	真教人不敢相信。據說從前這裡所有種族都和睦相處。現在可不是了，這是肯定的。這一層的惡鬼仔不停打仗，跟彼此打，也跟其他所有人打。下面還有些東西，我連提都不敢提。\n 傳聞說，深淵大部分有人殖民過的地方，還留著一些文明的殘跡，不過我從來沒有勇氣，也沒興趣去查證。	draft		p10b-21 draft; authority-ok:Courage（courage 是膽量，譯「勇氣」即同）	
+3866	30	conversation	224716bfd4bb54f466845e28369e8d2e8fc2752898bc86837f97f7877e330a92	真教人不敢相信。據說從前這裡所有種族都和睦相處。現在可不是了，這是肯定的。這一層的哥布仔不停打仗，跟彼此打，也跟其他所有人打。下面還有些東西，我連提都不敢提。\n 傳聞說，深淵大部分有人殖民過的地方，還留著一些文明的殘跡，不過我從來沒有勇氣，也沒興趣去查證。	draft		p10b-21 draft; authority-ok:Courage（courage 是膽量，譯「勇氣」即同）; 用詞依使用者決定改為哥布林（UD-20261025）	
 3866	31	conversation	c29d738d18f57cf3659620ce747bfc9c366a7b6bd7c3d78b8225228eb955bce8	我要怎麼找到殘存的文明？	draft		p10b-21 draft	
 3866	32	conversation	99e86a36460c71a321869b93be24fce0daed63ca082a0046c61ab090c1532e39	你對生存有什麼建議嗎？	draft		p10b-21 draft	
 3866	33	conversation	959ef275a8c233c3f123956095b971470a307b0a28d50705960795638361dd53	衷心歡迎你。你決定跟我們待在一起了嗎？	draft		p10b-21 draft	
