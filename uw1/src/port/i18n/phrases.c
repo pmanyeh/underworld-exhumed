@@ -6,6 +6,11 @@
 #include <string.h>
 
 static const struct { const char *key, *zh; } phrases[] = {
+    {"cheat.no_safe", "找不到可站立的安全位置，請讀取存檔。\n"},
+    {"cheat.rescued", "已返回安全位置。\n"},
+    {"cheat.applied", "密技設定已生效。\n"},
+    {"cheat.remembered", "已記住這一層的安全位置。\n"},
+    {"cheat.not_safe", "請先站在乾燥、沒有障礙的地面上。\n"},
     {"map.note_prompt", "地圖註記（Enter 完成，Esc 取消）"},
     {"combat.miss", "揮空"}, {"combat.block", "格擋"},
     {"of", "的"},                                  /* after an adjective: 磨損的 */

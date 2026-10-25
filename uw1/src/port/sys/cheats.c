@@ -319,7 +319,68 @@ static const char *c_use(int argc, char *argv[], int run)
     UseRect(ThePlayer, obj);
     return NULL;
 }
+/* Test fixtures only; the public menu table does not expose these commands. */
+unsigned char far go_into_dying_sequence(struct Object far *);
+void far backfire(struct Object far *, char);
+void far EtherealVoidSpecialEffects_seg008_150(void);
+extern struct Phys PN;
+static const char *c_hurt(int argc, char **argv, int run)
+{
+    long v; int old, i, type = 0;
+    if (argc != 2 || cheat_num(argv[1], 1, 255, &v)) return "physical|fire|poison|magic|void|backfire|death and 1..255";
+    if (strcmp(argv[0],"physical") && strcmp(argv[0],"fire") && strcmp(argv[0],"poison") && strcmp(argv[0],"magic") &&
+        strcmp(argv[0],"void") && strcmp(argv[0],"backfire") && strcmp(argv[0],"death")) return "a damage source";
+    if (!run) return NULL;
+    old = ThePlayer->hp;
+    if (!strcmp(argv[0],"void")) for (i=0;i<v;i++) EtherealVoidSpecialEffects_seg008_150();
+    else if (!strcmp(argv[0],"backfire")) backfire(ThePlayer,1);
+    else if (!strcmp(argv[0],"death")) go_into_dying_sequence(ThePlayer);
+    else {
+        if (!strcmp(argv[0],"fire")) type = DMG_FIRE;
+        else if (!strcmp(argv[0],"poison")) type = DMG_POISON;
+        else if (!strcmp(argv[0],"magic")) type = DMG_MAGIC;
+        damage_item(ThePlayer,0,0,0,(unsigned char)v,(unsigned char)type);
+    }
+    fprintf(stderr,"fixture: hurt %s hp %d -> %d\n",argv[0],old,ThePlayer->hp);
+    return NULL;
+}
+static void blocked_destination(void)
+{
+    int x,y;
+    for(y=5;y<=20;y++) for(x=5;x<=20;x++) Map_GetAddr(x,y)->type=TILE_SOLID;
+}
+static const char *c_fault(int argc,char **argv,int run)
+{
+    if (argc!=1 || (strcmp(argv[0],"bounds") && strcmp(argv[0],"teleport") && strcmp(argv[0],"blocked"))) return "bounds|teleport|blocked";
+    if (!run) return NULL;
+    if (!ENHANCED(ENH_GOD_MODE)) return "god-mode required";
+    if (!strcmp(argv[0],"bounds")) { PN.x=-256;PN.z=-8; }
+    else {
+        NewPlayerX=10;NewPlayerY=10;NewPlayerLevel=!strcmp(argv[0],"teleport")?10:2;
+        NewPlyFade=0;
+        if (!strcmp(argv[0],"blocked")) npp_func=blocked_destination;
+        editchng(8);
+    }
+    fprintf(stderr,"fixture: fault %s\n",argv[0]);return NULL;
+}
+static const char *c_state(int argc,char **argv,int run)
+{
+    (void)argv;if(argc) return "no arguments";
+    if(run) fprintf(stderr,"fixture: state level=%d hp=%d x=%d y=%d z=%d god=%u map=%u\n",PlayerLevel,ThePlayer->hp,PN.x,PN.y,PN.z,ENHANCED(ENH_GOD_MODE),ENHANCED(ENH_FULL_MAP));
+    return NULL;
+}
+extern char EndGameMode_dseg_1C8F;
+static const char *c_victory(int argc,char **argv,int run)
+{
+    (void)argv;if(argc) return "no arguments";
+    if(run) { EndGameMode_dseg_1C8F=1;editchng(0x400); }
+    return NULL;
+}
 static const struct cheat_cmd cmds[] = {
+    { "test-victory", "(ending flow fixture)", c_victory },
+    { "test-hurt", "SOURCE AMOUNT", c_hurt },
+    { "test-fault", "bounds|teleport|blocked", c_fault },
+    { "test-state", "", c_state },
     { "look", "ITEM [QTY [QUALITY [LORE]]] (look fixture)", c_look },
     { "lookwall", "N (wall look fixture)", c_lookwall },
     { "mantra", "(shrine mantra fixture)", c_mantra },

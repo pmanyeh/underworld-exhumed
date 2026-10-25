@@ -27,4 +27,6 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "mouse-wheel", "The mouse wheel scrolls an open bag and goes on past [MORE]", ENH_TIMING, NULL, NULL },
     { "damage-numbers", "Damage, misses and blocks float above visible enemies", ENH_PRESENTATION, NULL, NULL },
     { "enemy-health", "Health bars above visible creatures after they take damage (estimated maximum)", ENH_PRESENTATION, NULL, NULL },
+    { "full-map", "Show the whole dungeon map without changing explored areas", ENH_PRESENTATION, NULL, NULL },
+    { "god-mode", "No health loss or death, with recovery from invalid positions", ENH_GAMEPLAY, NULL, NULL },
 };

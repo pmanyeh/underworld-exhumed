@@ -380,21 +380,34 @@ void far move_physics(int incr, int frames, unsigned char easy)
 /* Runs the player's physics until the player is at rest (game/SKILLS.C). */
 void far finish_player(void)
 {
+#ifndef __TURBOC__
+    unsigned long native_steps = 0;
+#endif
     PlayerInput = PIN_NONE;
     while (PN.speed != 0 || PN.vel[2] != 0 || PN.acc[2] != 0 || PN.acc[1] != 0 || PN.acc[0] != 0
-           || fiz_update)
+           || fiz_update) {
+#ifndef __TURBOC__
+        if (ENHANCED(ENH_GOD_MODE) && ++native_steps > 4096) { port_god_wait_limit(); break; }
+#endif
         move_player(0x40);
+    }
 }
 
 /* One step of the player's physics, then the head bob for walking, the crouch of a
    jump and the sway of a sideways move. */
 void far move_player(int incr)
 {
+#ifndef __TURBOC__
+    if (!port_god_motion()) return;
+#endif
     PN.radius = ComObjData[OBJ_ITEM(ThePlayer)].radius;
     PN.height = ComObjData[OBJ_ITEM(ThePlayer)].height;
     playerMod[1] = playerMod[2] = playerMod[3] = 0;
     set_player_phys_params(incr);
     do_physics(&PN, &PT);
+#ifndef __TURBOC__
+    if (!port_god_motion()) return;
+#endif
     phys_affect_player();
     editchng(10);
     if ((PN.terrain & FOOT_AIR) == 0)

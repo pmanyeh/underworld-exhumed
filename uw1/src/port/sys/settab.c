@@ -31,7 +31,7 @@ extern const char *port_home;
 
 /* The rows, in each tab's order; the display rows read each other's values */
 enum { R_MUSIC, R_SPEECH, R_ROMS, R_VOLUME, R_MOUSE, R_LOOK, R_FULL, R_SCALE, R_ASPECT, R_INTEGER, R_FOLDER, R_RECORD, R_START,
-       R_LANGUAGE, R_FONT, R_SIZE, R_LINE, R_BORDER, R_SMOOTH, R_GLOSS };
+       R_LANGUAGE, R_FONT, R_SIZE, R_LINE, R_BORDER, R_SMOOTH, R_GLOSS, R_RESCUE, R_ANCHOR };
 
 /* Window scale offers only the scales whose window fits the display (with 4:3 as it stands) */
 static int scale_limit(void)
@@ -159,6 +159,12 @@ static int font_limit(void)
 }
 
 const struct setting port_settings[] = {
+    [R_RESCUE] = { .tab = SET_TAB_CHEATS, .label = "Return to safe position", .kind = SET_ACTION,
+                  .apply = port_cheat_rescue_request,
+                  .help = "Close settings and return to the game to recover; does not change quest progress" },
+    [R_ANCHOR] = { .tab = SET_TAB_CHEATS, .label = "Remember safe position", .kind = SET_ACTION,
+                  .apply = port_cheat_anchor_request,
+                  .help = "Remember this dry, clear floor as a rescue destination; kept only for this session" },
     [R_MUSIC]   = { .tab = SET_TAB_SOUND, .label = "Music", .kind = SET_CYCLE, .names = music_names, .stored = music_cards,
                     .def = 3, .restart = 1, .get = music_get, .put = music_put },
     [R_SPEECH]  = { .tab = SET_TAB_SOUND, .label = "Speech", .kind = SET_CYCLE, .names = speech_names, .stored = speech_cards,

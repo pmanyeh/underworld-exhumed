@@ -1330,6 +1330,9 @@ do_goal:
 char far set_up_target(void)
 {
     mytarget = Obj_IntTMem(OBJ_GTARG(meptr));
+#ifndef __TURBOC__
+    if (mytarget == 0) return 0;  /* a missing target is not a live creature */
+#endif
     if (mytarget->hp <= 0)
         return 0;
     txpos = OBJ_HOMEX(mytarget);
@@ -1423,6 +1426,9 @@ void far critter_discard_goal(void)
    scripted death) refuses. Returns 1 if it is dying. */
 unsigned char far go_into_dying_sequence(struct Object far *obj)
 {
+#ifndef __TURBOC__
+    if (port_god_protect(obj)) return 0;
+#endif
     if (obj->whoami == 0 || death_check(obj, 0)) {
         SET_SEQ(obj, SEQ_DYING);
         SET_FRAME(obj, 0);
@@ -1469,6 +1475,7 @@ unsigned char far damage_critter(struct Object far *obj, unsigned char damage,
     register int ratio;
 
 #ifndef __TURBOC__
+    if (port_god_protect(obj)) return 0;
     port_combat_damage(obj, damage);
 #endif
     minor = OBJ_MINOR(obj);

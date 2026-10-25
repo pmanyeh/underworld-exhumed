@@ -126,6 +126,9 @@ int far GetLevel(register int level)
             GetAutoMapLevel(&arc, level);
     }
     close_arc(&arc);
+#ifndef __TURBOC__
+    if (ok > 0) port_god_world_loaded();
+#endif
     return ok;
 }
 

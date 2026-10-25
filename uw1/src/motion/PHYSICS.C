@@ -171,6 +171,9 @@ void far EtherealVoidSpecialEffects_seg008_150(void)
         hp -= rand() % 3;
     else if (hp > 1 && !(rand() & 7))
         hp--;
+#ifndef __TURBOC__
+    hp = port_god_hp(ThePlayer->hp, hp);
+#endif
     ThePlayer->hp = hp;
     if (rand() % 12)
         set_effect(0x40, rand() % 30 + 15);
@@ -199,6 +202,9 @@ char far simple_fizix(int turn)
     register int i;
     register int heading;
 
+#ifndef __TURBOC__
+    if (!port_god_motion()) return 0;
+#endif
     if (PN.acc[2] == 0 && PN.speed < MaxPlayerAccel)
     {
         backwards = 0;

@@ -112,6 +112,11 @@ static signed char door_dir;
 static char notes_dirty;               /* UW1: char (cbw) */
 static int16 level;
 unsigned char PlayersMap[MAP_SIZE][MAP_SIZE];
+#ifndef __TURBOC__
+#define DRAW_MAP(x, y) port_full_map_byte((x), (y))
+#else
+#define DRAW_MAP(x, y) PlayersMap[(y)][(x)]
+#endif
 static int16 old_strings;
 static int16 num_words;
 static int16 map_mouse;
@@ -227,7 +232,7 @@ void far ShowDungeonMap(void)
 
     for (y = 1; y < 0x3F; y++) {
         for (x = 1; x < 0x3F; x++) {
-            t = PlayersMap[y][x] & 0xF;
+            t = DRAW_MAP(x, y) & 0xF;
             if (t <= 0 || t >= 10)
                 continue;
             DoTile(t, x, y);
@@ -271,7 +276,7 @@ char far ShadeSide(int side, int x, int y)
     case 2: y--; break;
     case 3: x--; break;
     }
-    t = PlayersMap[y][x] & 0xF;
+    t = DRAW_MAP(x, y) & 0xF;
     if (t > 0 && t < 10)
         return 0;
     if (t == 11) {
@@ -326,7 +331,7 @@ void far DoTile(int type, int x, int y)
 
     if (type == 0)
         return;
-    b = PlayersMap[y][x] >> 4;
+    b = DRAW_MAP(x, y) >> 4;
     shade = b & 3;
     kind = b & 0xFC;
     px = (x - 1) * 3 + 10;
@@ -380,8 +385,8 @@ void far DoDoorTile(int x, int y, register int px, register int py)
 {
     PixelDarken(++px, ++py, 6, 3);
     for (door_dir = 0; door_dir < 4; door_dir++) {
-        if ((PlayersMap[y + door_dy[door_dir]][x + door_dx[door_dir]] & 0xF) == 1
-            || (PlayersMap[y - door_dy[door_dir]][x - door_dx[door_dir]] & 0xF) == 1) {
+        if ((DRAW_MAP(x + door_dx[door_dir], y + door_dy[door_dir]) & 0xF) == 1
+            || (DRAW_MAP(x - door_dx[door_dir], y - door_dy[door_dir]) & 0xF) == 1) {
             PixelDarken(px + door_dy[door_dir], py + door_dx[door_dir], 6, 3);
             PixelDarken(px - door_dy[door_dir], py - door_dx[door_dir], 6, 3);
             break;
@@ -694,8 +699,23 @@ void far ShowAutoMapLevel(register int lev)
         grSoftPageFlip();
         set_the_window(0, 0xC7, 0x13F, 0);
         show(0, 0xC7, buf, 0xC8, 0x140, 0, 0);
+#ifndef __TURBOC__
+        if (!ENHANCED(ENH_FULL_MAP)) unswap_ws(ws);
+#else
         unswap_ws(ws);
+#endif
         ShowDungeonMap();
+#ifndef __TURBOC__
+        if (ENHANCED(ENH_FULL_MAP)) {
+            /* Keep the original map's random consumption; the extra art uses a private seed. */
+            if (port_full_map_begin(lev)) {
+                show(0, 0xC7, buf, 0xC8, 0x140, 0, 0);
+                ShowDungeonMap();
+                port_full_map_end();
+            }
+            unswap_ws(ws);
+        }
+#endif
         if (lev == PlayerLevel && lev != 9) {
             px = (OBJ_HOMEX(ThePlayer) - 1) * 3 + 10 - 1;
             py = (OBJ_HOMEY(ThePlayer) - 1) * 3 + 12;

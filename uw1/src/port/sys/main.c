@@ -554,6 +554,7 @@ int main(int argc, char *argv[])
     /* a bad input script stops the run before anything is written; its cheat lines (a test's,
        refused unless EXHUME_TEST_CHEATS=1) are checked against the game's table */
     cheat_init(&cheat_game);
+    port_cheat_menu_init();
     if (input_script && inscript_load(input_script, plat_key_byte, plat_pointer_event) < 0) return 1;
     /* a recording made with cheats (format 6) runs them again: a test's too */
     if (replay && cheat_from_recording(replay) < 0) return 1;
@@ -714,6 +715,7 @@ int main(int argc, char *argv[])
        would not show (volume=abc, scale=99) is its default there and here; the command line's
        display options win */
     settings_init(home, port_settings, port_settings_count, "Ultima Underworld");
+    port_cheat_settings();
     /* what this run really uses (the command line over the file) is what the screen shows and applies */
     port_settings_start(&cfg.fullscreen, cl_scale ? NULL : &cfg.scale, cl_aspect ? NULL : &cfg.aspect,
                         cl_integer ? NULL : &cfg.integer_scale);

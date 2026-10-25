@@ -365,6 +365,7 @@ void far reset_game(void)
 {
 #ifndef __TURBOC__
     combat_text_reset();
+    port_god_reset();
 #endif
     Punt_player_inv();
     FixPlayerEquips();
@@ -464,7 +465,18 @@ unsigned char far new_player_pos(void)
 {
     int16 x, y;
 
+#ifndef __TURBOC__
+    if (ENHANCED(ENH_GOD_MODE) && NewPlayerX < 0) {
+        port_god_teleport_begin();
+        return port_god_teleport_failed();
+    }
+#endif
     if (NewPlayerX > 0) {
+#ifndef __TURBOC__
+        port_god_teleport_begin();
+        if (!port_god_teleport_valid(NewPlayerLevel, NewPlayerX, NewPlayerY))
+            return port_god_teleport_failed();
+#endif
         if (NewPlyFade & 1) {
             render_FB();
             fadeout3d(curvrad);
@@ -477,7 +489,14 @@ unsigned char far new_player_pos(void)
         if (npp_func)
             npp_func();
         if (!find_good_x_and_y(ThePlayer, NewPlayerX, NewPlayerY, &x, &y, 0)
+#ifndef __TURBOC__
+            && (ENHANCED(ENH_GOD_MODE) || !find_good_x_and_y(ThePlayer, NewPlayerX, NewPlayerY, &x, &y, 1))) {
+#else
             && !find_good_x_and_y(ThePlayer, NewPlayerX, NewPlayerY, &x, &y, 1)) {
+#endif
+#ifndef __TURBOC__
+            if (port_god_teleport_failed()) return 1;
+#endif
             NewPlayerX = 0;
             ThePlayer->hp = 0;
             return 0;
