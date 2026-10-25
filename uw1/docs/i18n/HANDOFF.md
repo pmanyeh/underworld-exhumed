@@ -1,181 +1,258 @@
-# 交接：UW1 繁體中文化（2026-10-24）
+# 交接：UW1 繁體中文化與遊戲體驗強化（2026-10-25）
 
-換電腦繼續做專案用。內容：進度、要帶走的檔案、新電腦的設定、常用指令、規則，以及下一步。
+給新的對話 Session 或從沒碰過這個專案的 Agent 接手用。照第 0 節的順序讀，就知道現在在哪、下一步做什麼、怎麼做。
+換電腦時看第 2、3 節。
+
+本文件在工作區根目錄（`D:\git\Ultima Underworld\HANDOFF.md`）；repo 裡的 `uw1/docs/i18n/HANDOFF.md` 是同一份的副本，
+打包流程 `打包測試版流程.md` 的副本是 `uw1/docs/i18n/PLAYTEST_PACKAGING.md`。**改了要把副本一起更新再 commit**；
+換電腦、根目錄的檔案不見時，從 repo 的副本複製出來。
+
+## 0. 第一次接手：先做這幾件事
+
+1. **回覆一律用繁體中文（台灣用語）。** 使用者是專案擁有者，不是程式設計師出身，但很熟這款遊戲；說明要白話、
+   講結果，不要堆術語。
+2. **這是什麼專案：** 把 1992 年的 DOS 遊戲 *Ultima Underworld*（UW1）的原生 port（`underworld-exhumed`，
+   遊戲原始碼逐函式還原成 C，可以在 Windows／Mac／Linux 原生執行）做成繁體中文版，並加上可開關的現代化
+   「強化功能」。玩家要自備 GOG 版遊戲資料。
+3. **讀這三份：** 本文件 → `underworld-exhumed/uw1/docs/i18n/IDEAS_BACKLOG.md`（強化功能清單與做法）→
+   `underworld-exhumed/uw1/docs/i18n/P13_QA.md`（目前階段的報告）。
+4. **確認環境能跑**（第 3 節最後的四行指令）。全部通過才開始改東西。
+5. **使用者的 Token 有限**：做完一個段落就 commit、push，並更新本文件第 1、6 節，讓下一個人接得上。
 
 ## 1. 現況
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新 `5fa366f`，已 push |
-| 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `56f128a`，已 push |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新 `a2f7488`，已 push |
+| 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `3577541`，已 push |
 | 本機未 commit 的改動 | 無 |
-| 最後一個 tag | `zh-tw-native-p10a-batch1`（P11 的 tag `zh-tw-native-p11` 還沒建，見第 6 節） |
+| 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
+| 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔為最新版（`a7e8d7d`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
-- **P0–P9：**
-  - 原生 port 基礎
-  - 執行期翻譯查詢
-  - UTF-8 與中文排版
-  - HD 疊加層、FreeType 字型、HD 游標
-  - 中文訊息捲軸
-  - Bragit 對話試作
-- **P10 遊戲文字翻譯：**
-  - 對話 P10B-1～22，加上其餘字串 P10C；
-  - 整體覆蓋率 97.54%；
-  - 譯文全部是 `draft`，還沒有人工審閱紀錄。
-  - 進度見 [P10B_PROGRESS.md](P10B_PROGRESS.md)、[P10C_REPORT.md](P10C_REPORT.md)。
-- **P10T：** 中文字型、大小、間距可以設定，見 [P10T_TEXT_SETTINGS_REPORT.md](P10T_TEXT_SETTINGS_REPORT.md)。
-- **P11：**
-  - P11.1 對話模板句：[P11_1_TEMPLATES.md](P11_1_TEMPLATES.md)。
-  - P11.2 物品名稱與組句（兩個階段）：[P11_2_NAMES.md](P11_2_NAMES.md)。查看、狀態、食物、修理、使用物品、讀書、容器、神殿誦唸祈禱語，都改成中文組句。
-  - P11.4 中文輸入法與同義詞對照：[P11_4_INPUT_ALIASES.md](P11_4_INPUT_ALIASES.md)。
-  - 開場與過場動畫字幕：[P11_SUBTITLES.md](P11_SUBTITLES.md)。
-- **發行打包：**
-  - GitHub Actions `uw1-release` 已經能編 Windows、Linux 和 Mac universal（Mac 的 FreeType 用靜態連結）。
-  - Windows 版使用者實測 OK。
-  - Mac 版由朋友測試中。
-  - 依使用者決定，進度多一些之後再重編 Mac 版。
+- **P0–P9：** 原生 port 基礎、執行期翻譯查詢、UTF-8 與中文排版、HD 疊加層、FreeType 字型、HD 游標、中文訊息捲軸。
+- **P10：** 遊戲文字翻譯（對話 P10B-1～22、其餘 P10C）；P10T 中文字型與參數可設定。
+- **P11（tag `zh-tw-native-p11`）：** 對話模板句、物品名稱與組句、中文輸入法與同義詞、過場字幕。
+- **P12（tag `zh-tw-native-p12`）：** 報告 `uw1/docs/i18n/P12_UI.md`。HD 標籤層（點陣字與圖片上的英文改成 HD 中文）、
+  NPC 名稱、`[MORE]`、狀態面板、主選單、角色建立、選項選單、結局畫面、F11 設定畫面中文化（「語言與文字」分頁）、
+  數量滑桿、玩家可輸入中文名字與存檔說明（存檔欄位放 ASCII 替代值，中文存在 `SAVE0\NAME.UTF`、`DESC.UTF`）。
+- **P13（進行中）：** 報告 `uw1/docs/i18n/P13_QA.md`。
+  - P13.1 剩下的英文全部分類；P13.4 語言切換與退回英文；P13.5 四平台 CI、sanitizer、四種模式存檔比對：全部通過。
+  - 發行前修正：FreeType 授權進所有平台的包；`--data` 可指向含遊戲或 `game.gog` 的資料夾。
+  - 用詞：Goblin(s) 改「哥布林」（灰／綠哥布林、Gobs＝哥布仔、Goblin Home＝哥布林家園），兩份指引檔也已改。
+  - 專有名詞加註英文：對話與書本／卷軸中，人名、地名、組織第一次出現顯示「加拉蒙（Garamon）」；
+    F11「語言與文字」的「專有名詞加註英文」（預設每段第一次）。名單 `i18n/zh-TW/proper-names.tsv` 由
+    `tools/i18n/proper_names.py` 產生，**改了 authority 或譯文要重新產生**（`test_name_gloss.py` 會檢查）。
+- **強化功能（使用者 2026-10-25 提出，清單見 `IDEAS_BACKLOG.md`）：**
+
+  | 項目 | 開關（F11「強化功能」分頁） | commit |
+  | --- | --- | --- |
+  | 2. 背包有對的鑰匙就自動開鎖（門與箱子） | `auto-key`「自動開鎖」 | `a37584e` |
+  | 3. 滑鼠中鍵切換滑鼠視角 | 原有的 `mouse-look` | `57f777e` |
+  | 4. C 鍵切換戰鬥模式（原本 C 的「關容器」改到 X） | 原有的 `modern-keys` | `4c8d2a2` |
+  | 5. E 鍵把可拿的東西直接放進背包 | `e-takes`「E 鍵撿起」（要搭配 `modern-keys`） | `a7e8d7d` |
+  | 6. 血瓶、法力瓶顯示 25/32 與飄動的增減數字 | `flask-numbers`「血瓶法力瓶數值」 | `771147f` |
+
+  使用者已實測 2、3、4、6 項都 OK；第 5 項剛做完，尚未回報。
+- **覆蓋率：** 可翻譯 6,983 筆，已翻 6,893 筆（98.71%）；剩下 90 筆是比對字，依規則不翻。譯文全部是 `draft`。
 
 ### 每次改完都要通過的檢查（目前全部 PASS）
 
-- `tools/i18n/test_*.py` 單元測試；
-- 16 個公開 session 在英文與 zh-TW HD 模式重播，存檔兩者相同，也與 DOS golden 相同；
-- 遊戲原始碼（非 port 的 `.C`／`.H`）維持純 ASCII。
+- `tools/i18n/test_*.py` 單元測試（含 `test_name_gloss.py`）；
+- 16 個公開 session 在英文與 zh-TW HD 模式重播，存檔兩者相同，也與 DOS golden 相同（`p11-1-check.py p13-goblin`）；
+- 遊戲原始碼（`src/` 底下、`port/` 以外的 `.C`／`.H`／`.ASM`）維持純 ASCII（用 Python 逐位元組檢查，第 4 節有指令）；
+- 改 authority 時另跑 `tools/i18n/validate_authority.py`（CI 會跑；GUIDE-ALIGNMENT、SUMMARY.json 要跟著改）；
+- 改到 HD 文字、呈現層或字串查找時，另跑 `p10a-b1-text-regression.py`（sanitizer 與原版字串探測）；
+- push 後看 CI：`gh run list --repo pmanyeh/underworld-exhumed --limit 4`（`uw1-port` 與 `repocheck` 都要綠）。
 
-## 2. 帶到新電腦的東西
+## 2. 環境
 
-工作區是 `D:\git\Ultima Underworld`（下稱「工作區」）。腳本與設定檔用的是不含空白的捷徑路徑：
+工作區是 `D:\git\Ultima Underworld`。腳本與設定用不含空白的捷徑路徑（junction）：
 
 - `D:\git\uw1-native-poc` → 工作區
 - `D:\git\uw1-poc-libs` → `工作區\underworld-exhumed\uw1\tools\libs`
 
-**最簡單的做法：** 把整個工作區複製過去（含隱藏的 `.poc-*` 資料夾），再建這兩個捷徑。
-
-**git 拿不到、一定要帶的（無法重建，或重建很麻煩）：**
+**git 拿不到、一定要留著的：**
 
 | 位置（工作區下） | 內容 |
 | --- | --- |
-| `.poc-private\game\UW` | GOG 版 UW1 遊戲資料。重播、測試都指向這裡 |
-| `underworld-exhumed\uw1\i18n\zh-TW\private-authority\` | 手冊翻譯權威檔（本機私有，git 忽略）；`l10n.py authority` 檢查要用 |
+| `.poc-private\game\UW` | GOG 版 UW1 遊戲資料 |
+| `underworld-exhumed\uw1\i18n\zh-TW\private-authority\` | 手冊翻譯權威檔（本機私有） |
 | `underworld-exhumed\uw1\build\poc\native-v22.toml`、`replay.toml` | 重播設定（`EXHUME_CONFIG`） |
-| `underworld-exhumed\uw1\build\i18n\` | 各批的 `translations.py` 與中間檔；`p11-2b` 是目前重播檢查用的 catalog |
-| `underworld-exhumed\uw1\build\replay\verify-en-p6\` | 遊戲內測試（`p11-2-game.py`）用的存檔 |
-| `.poc-tools\*.py` | 批次翻譯與檢查腳本（`p10b-batch.py`、`p11-1-check.py`、`p11-2-game.py` 等） |
-| `.poc-tools\handoff\env.sh`、`make_play.py` | 建置與重播的環境變數、打包測試資料夾的腳本 |
-| 工作區根目錄的 `ULTIMA_UNDERWORLD_NATIVE_ZHTW_HD_MASTER_PLAN_v2.5.md` | 主計畫書（不在 git 裡） |
-| 工作區根目錄的 `Translation_Guide.md`、`手冊翻譯權威檔.md` | 翻譯指引 |
-| `UW1-zhTW-playtest\home\` | 使用者自己的存檔（SAVE1～3） |
+| `underworld-exhumed\uw1\build\i18n\` | 各批 `translations.py` 與 catalog；**`p13-goblin` 是目前最新的 catalog** |
+| `underworld-exhumed\uw1\build\replay\verify-en-p6\` | 遊戲內測試用的存檔（`items/port/SAVE1`，第一層） |
+| `.poc-tools\*.py`、`.poc-tools\handoff\` | 本機工具（見第 4 節） |
+| `ULTIMA_UNDERWORLD_NATIVE_ZHTW_HD_MASTER_PLAN_v2.5.md` | 主計畫書（不在 git 裡） |
+| `Translation_Guide.md`、`手冊翻譯權威檔.md` | 翻譯指引（使用者的） |
+| `打包測試版流程.md` | 打包測試版的步驟（給其他 Agent 照做） |
+| `UW1-zhTW-playtest\` | 使用者的測試資料夾與存檔（SAVE1～3），**不要動存檔、不要用 make_play.py 覆蓋** |
+| `UW1-zhTW-mac-kit\` | Mac 版的中文配件 |
 
-**可以重建、但直接帶比較快的：**
+**可重建：** `.poc-tools\python`（Python 3 + fontTools）、`.poc-tools\msys64`（clang64 工具鏈）、
+`uw1\tools\libs`（`make setup-libs`）、`uw1\tools\fonts`、`uw1\tools\nuked-opl3`（`make setup-sound`）。
 
-| 位置 | 重建方式 |
-| --- | --- |
-| `.poc-tools\python` | Python 3，需要 `fontTools`（檢查字型用） |
-| `.poc-tools\msys64` | MSYS2 的 clang64 工具鏈（clang、cmake、ninja、freetype、pkgconf） |
-| `uw1\tools\libs` | `make setup-libs`（SDL3、libmt32emu） |
-| `uw1\tools\fonts` | `jf-openhuninn-2.1.ttf`、`NotoSansCJKtc-Regular.otf` |
-| `uw1\tools\nuked-opl3` | `make setup-sound` |
+**Claude 的記憶**在 `C:\Users\pmany\.claude\projects\d--git-Ultima-Underworld\memory\`：回覆用繁體中文、翻譯連續做不停批、先讀本文件。
 
-**不用帶：**
-- `mac-artifact\`、各個 `*.zip` 測試包，需要時可以重新產生；
-- `uw1\build\port\`，編譯產物。
-
-**Claude 的記憶：**
-- 檔案在 `C:\Users\pmany\.claude\projects\d--git-Ultima-Underworld\memory\`，內容是兩條規則：回覆用繁體中文、翻譯連續做不停批。
-- 新電腦上，專案資料夾的名稱會依工作區路徑產生。工作區路徑一樣的話，直接複製這個資料夾；不一樣的話，請 Claude 依第 5 節重新記下。
-
-## 3. 新電腦設定
+## 3. 換電腦時
 
 ```bat
-:: 1. 工作區（整個複製過來，或 clone 後再補第 2 節的檔案）
 git clone --recurse-submodules -b feature/zh-tw-native https://github.com/pmanyeh/underworld-exhumed.git "D:\git\Ultima Underworld\underworld-exhumed"
 cd /d "D:\git\Ultima Underworld\underworld-exhumed\exhume" && git checkout feature/presentation-overlay
-
-:: 2. 捷徑（系統管理員不必要；junction 一般使用者就能建）
 mklink /J D:\git\uw1-native-poc "D:\git\Ultima Underworld"
 mklink /J D:\git\uw1-poc-libs "D:\git\Ultima Underworld\underworld-exhumed\uw1\tools\libs"
 ```
 
-注意：exhume 子模組 clone 下來會停在固定的 commit，要切到 `feature/presentation-overlay` 分支才能 commit。
+兩個 repo 都要設 `git config core.autocrlf true`，否則 git 會把上千個 CRLF 檔案顯示成已修改。
 
-**確認環境**（Git Bash）：
+確認環境（Git Bash）：
 
 ```sh
-source /d/git/uw1-native-poc/.poc-tools/handoff/env.sh      # 會 cd 到 uw1
-"$PY" ../exhume/tools/portbuild.py --config exhume.toml     # 應看到 third-party: ... FreeType HD text
+source /d/git/uw1-native-poc/.poc-tools/handoff/env.sh      # 會 cd 到 uw1，設好 $PY 與 PATH
+"$PY" ../exhume/tools/portbuild.py --config exhume.toml     # 應看到 linked build\port\uw1port.exe
 for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
-"$PY" /d/git/uw1-native-poc/.poc-tools/p11-1-check.py p11-2b # all_saves_match: true
+"$PY" /d/git/uw1-native-poc/.poc-tools/p11-1-check.py p13-goblin # all_saves_match: true
 ```
 
-## 4. 常用指令
+## 4. 常用指令與工具
 
 都在 `source env.sh` 之後、`uw1` 目錄下執行。
 
 | 做什麼 | 指令 |
 | --- | --- |
 | 編譯 | `"$PY" ../exhume/tools/portbuild.py --config exhume.toml` → `build/port/uw1port.exe` |
-| 批次翻譯：準備 | `"$PY" /d/git/uw1-native-poc/.poc-tools/p10b-batch.py prep NAME` |
-| 批次翻譯：寫入與檢查 | 編好 `build/i18n/NAME/translations.py`（`T`、`GRAMMAR`、`WAIVERS`、`NOTES`，可選 `HANDLINGS`）後，執行 `p10b-batch.py fill NAME`。會跑 validate、authority、layout_qa、build 兩次、coverage，證據寫到 `docs/i18n/evidence/NAME` |
-| 重播檢查 | `"$PY" /d/git/uw1-native-poc/.poc-tools/p11-1-check.py <catalog 所在批次>`，另可再跑 `tools/i18n/verify_localized_replay.py` |
-| 遊戲內測試 | `p11-2-game.py NAME SHOT_MS '9000 click 147 142 left' '20000 cheat mantra' ...` |
-| 打包測試資料夾 | `"$PY" .poc-tools/handoff/make_play.py OUT CATALOG GAME_DIR` |
+| 重播存檔比對 | `"$PY" /d/git/uw1-native-poc/.poc-tools/p11-1-check.py p13-goblin` |
+| ASCII 檢查 | `"$PY" -X utf8 -c "import pathlib;print([str(p) for p in pathlib.Path('src').rglob('*') if p.suffix.upper() in('.C','.H','.ASM') and 'port' not in p.parts and any(b>127 for b in p.read_bytes())])"`（要印出 `[]`） |
+| sanitizer 文字回歸 | `"$PY" /d/git/uw1-native-poc/.poc-tools/p10a-b1-text-regression.py`（約 3 分鐘，每項要 0） |
+| 遊戲內截圖 | `"$PY" /d/git/uw1-native-poc/.poc-tools/p12-shot.py NAME SHOT_MS [--save] [--keep-settings] '事件' ...` → `build/i18n/p12/shots/NAME.png` |
+| 四種模式的存檔比對 | `.poc-tools/p10-11-saves.py` |
+| 批次翻譯 | `p10b-batch.py prep NAME BLOCK...`，寫好 `build/i18n/NAME/translations.py` 後 `p10b-batch.py fill NAME` |
+| 傳送到 NPC 測對話 | `.poc-tools/p11-4-ime.py SLOT` |
+| 打包測試版 | 見 `打包測試版流程.md`（`make_play.py` **會先刪掉輸出資料夾**） |
 
-遊戲內測試的補充：
-- 開啟測試指令要設 `EXHUME_TEST_CHEATS=1`，可用的指令有 `look`、`lookwall`、`give`、`talk`、`mantra`、`goto`、`set`、`scroll`。
-- 9000 毫秒那一下是點「Journey Onward」進遊戲。
-- 時機不固定，偶爾會沒進去，重跑即可。
-- 滑鼠按下和放開要寫成兩個事件。
+**截圖工具 `p12-shot.py` 的用法與眉角**
+- `--save`：先讀測試存檔（第一層的起點，面對一面牆），約 9000 毫秒時已在遊戲中，事件從 9000 之後排。
+- 開強化功能：`export P12_EXTRA="--enhance modern-keys,e-takes"`。**不用時要 `unset P12_EXTRA`**，設成空字串會讓程式拿到空參數。
+- 英文模式：`P12_EN=1`。
+- 事件：`key e`、`down 3`／`up 3`（按住／放開）、`move X Y`（游標移到遊戲座標）、`click X Y left|right|middle`、
+  `mdown`／`mup`、`look DX DY`（滑鼠視角的移動）、`cheat 指令`。滑鼠按下與放開要分兩個事件。
+- **截圖是 960×720，遊戲座標 320×200：x 除以 3，y 除以 3.6**（4:3 比例校正）。用截圖找位置時別忘了。
+- 要看腳下的物品：開 `modern-keys` 後 `down 3` 按住約 1.5 秒往下看。
 
-打包腳本 `make_play.py` 會先刪掉 OUT 資料夾再重建：
-- 要保留的存檔請先移出來；
-- 只換執行檔的話，直接複製 `uw1port.exe` 就好。
+**測試指令**（只在輸入腳本裡、`EXHUME_TEST_CHEATS=1` 時有效；`src/port/sys/cheats.c`）：
+`goto 層 X Y`、`give 物品 [數量 [品質]] [drop]`（**鑰匙的「數量」是它開的鎖號**）、`set hp|mana|str|… 值`、
+`talk NPC編號`、`look 物品 [數量 [品質 [描述等級]]]`（**書本／卷軸 0x130～0x13F 的「數量」是文字編號**）、`lookwall`、
+`mantra`、`scroll`、`endstats`、`use 物件編號 X Y`（直接使用門或家具）。
+- 寫新的測試指令時注意：**指令在載入腳本時會先以 `run=0` 檢查參數，那時遊戲物件還沒載入**；
+  讀物件要放在 `if (!run) return NULL;` 之後，否則程式會當掉（0xC0000005）。
+- 找第一層上鎖的門：`.poc-tools` 外的草稿腳本已不在，做法是解析存檔的 `LEV.ARK`（每層 64×64 格的 4 位元組 tile，
+  bits 22–31 是第一個物件；物件 0–255 是 27 位元組、256–1023 是 8 位元組；門 0x140–0x145 的 link 指向鎖 0x10F，
+  鎖的 link & 0x1FF 是鎖號）。已知：門 725 在 (9,19)，鎖號 2。
 
-**Mac 版：** 到 GitHub 執行 `gh workflow run uw1-release.yml --repo pmanyeh/underworld-exhumed --ref feature/zh-tw-native`，完成後下載 artifact `macos`。
-- 打包檔裡沒有中文檔案；
-- `catalog.uw1loc` 含英文原文，不可上傳，要用本機的 `UW1-zhTW-mac-kit` 合併。
+**Mac 版：** `gh workflow run uw1-release.yml --repo pmanyeh/underworld-exhumed --ref feature/zh-tw-native`，
+下載 artifact `macos`；`catalog.uw1loc` 含英文原文，不可上傳，用本機 `UW1-zhTW-mac-kit` 合併（`打包測試版流程.md`）。
 
 ## 5. 規則與使用者決定（一定要遵守）
 
 **授權與安全**
 - 完整英文原文只留在本機，不 commit。evidence 只放 key 與計數，用 LF 換行。
-- 不可自動把譯文標成 `reviewed`；`reviewed` 只能來自人工審閱紀錄。
-- 不改 rune、mantra、內部 ID、BABL 語意、存檔語意。
-- UTF-8 不可進入原版 VM 的 buffer。
-- 遊戲原始碼維持純 ASCII。中文片語放在 `src/port/i18n/phrases.c`，遊戲程式只用 key 引用。
-- 不 reset、不丟棄使用者的改動。
+- 不可自動把譯文標成 `reviewed`；`reviewed` 只能來自人工審閱紀錄（使用者直接指定的用詞替換可保留原狀態並加註記）。
+- 不改 rune、mantra、內部 ID、BABL 語意、存檔語意。UTF-8 不可進入原版 VM 的 buffer。
+- 遊戲原始碼維持純 ASCII。中文放在 `src/port/i18n/phrases.c`、`settings_words.c`，遊戲程式只用 key 或掛鉤。
+- 中英文模式玩同一段操作，存檔必須相同。原版沒有的功能一律做成可開關的「強化功能」，預設關。
+- 不 reset、不丟棄使用者的改動；不動使用者的存檔。
 
 **使用者決定**
-- 翻譯連續做下去，不逐批停下等確認，也不產生審閱工作表（2026-10-23）。
-- 騎士團統一叫「安卡十字騎士團」。
-- Seers of the Moonstone 兩處都譯「月之石預言者」。
-- 中文輸入法加同義詞對照（P11.4）是發行前必做，已完成。
-- 書裡的暗語、祈禱語、符文維持英文。玩家要照英文輸入，例如 Folanae、AAM。
+- 翻譯連續做下去，不逐批停下等確認（2026-10-23）。
+- 騎士團統一叫「安卡十字騎士團」；Seers of the Moonstone 兩處都譯「月之石預言者」；Goblin(s)＝哥布林（2026-10-25）。
+- 書裡的暗語、祈禱語、符文維持英文（例如 Folanae、AAM）。
+- 專有名詞加註英文：人名、地名、組織；對話與書本／卷軸，一般訊息不加（2026-10-25）。預設「每段第一次」，待使用者確認。
+- 強化功能（2026-10-25）：
+  - 戰鬥數字與血條：**預設關**；英文模式也顯示（Block、Miss）；**玩家自己受傷的數字顯示在血瓶旁**（已由 `flask-numbers` 做到），不在 3D 畫面上。
+  - C 鍵給戰鬥模式，關容器改 X。
+  - E 鍵：對著可撿的物品撿起，對著門、開關等仍是使用。
+  - 全地圖：**只在畫地圖時當成全開，不寫進存檔**。
+- P8 HD 錄影暫停、不作為 Gate，恢復時機由使用者決定（2026-10-23）。
+- 設定畫面：語言與文字參數放在 F11 的「語言與文字」分頁；設定畫面本身也顯示中文（2026-10-24）。
+- 玩家的中文名字與存檔說明：存檔欄位放 ASCII 替代值，中文另存旁註檔（2026-10-24）。
 - Mac 版等進度多一些再重新編譯。
-- 回覆一律用繁體中文（台灣用語）。
+- 待使用者確認的譯名：主選單（開場介紹／創造角色／製作群／繼續旅程）、選項選單、設定畫面用語、「名叫華倫的幽靈」。
 
-**技術上的注意事項**
-- 在 Git Bash 的 heredoc 裡，`\\n` 會被吃掉。要寫含反斜線的 C 字串時，改用 Edit 工具，或在 Python 裡用 `chr(92)`。
-- 有些檔案是 CRLF 換行（例如 `SKILLS.C`），有些是 LF。修補前先確認；`.sh` 一律 LF。
+**技術注意事項**
+- **git 一律用 PowerShell 裡的 Git for Windows。** `source env.sh` 之後 Git Bash 的 `git` 是 MSYS2 的，讀不到使用者身分。
+  若 PowerShell 找不到 git，用完整路徑 `& "C:\Program Files\Git\cmd\git.exe"`，或 VS Code 的「原始檔控制」。
+- **commit 訊息含雙引號時**，PowerShell 5.1 傳給 git 會被拆開：用多個 `-m`，或寫進檔案再 `git commit -F 檔案`。
+- **工具的自動權限檢查偶爾連續失敗**（顯示 classifier no verdict）：不是指令本身有問題，等一下再試；
+  失敗前的指令可能其實已經執行（曾發生 commit 成功但沒回報）。重試前先看 `.git/logs/HEAD` 或 `git log`。
+- **Git Bash 的 heredoc 會吃掉 `\\`**：含反斜線的 C 字串改用 Edit 工具；中文透過 heredoc 傳給 Python 也會轉碼。
+- **MSYS 的 `timeout` 會拿掉 `TMP`／`TEMP`**，clang 因此失敗；跑測試時不要包 `timeout`。
+- **遊戲原始碼多半是 CRLF**（`.C`、`main.c`、`settab.c`、`cheats.c`…），有些是 LF（`BABL.C`、`presentation.c`、新檔）。
+  用 Edit 工具改會保留原換行；改完可用 `grep -c $'\r$' 檔案` 與 `wc -l` 對照確認。
+- `--home` 要用反斜線路徑（`C:\...`）；`C:/...` 形式在 `files.c` 的 `mkdirs` 會失敗。
+- exhume 的 `setcheck.py` 在這台電腦跑不起來（寫死 `~/UWGOG/UW1`）；設定畫面改用截圖驗證
+  （`p12-shot.py NAME 4000 --keep-settings '1000 key tab' …`，按 5 次 tab 到「語言與文字」）。
 
 ## 6. 下一步
 
-1. **P11 收尾：**
-   - 確認 Acceptance Gate P11（主計畫書 §Phase 11）；
-   - 經使用者同意後，建 tag `zh-tw-native-p11`。
-2. **P12：處理硬寫字與點陣 UI，並接上 HD UI**（主計畫書 §Phase 12）：
-   - 主選單、角色建立、存讀檔介面、`[MORE]`、狀態與技能面板、背包與人物欄的文字；
-   - 對話畫面標題的 NPC 名稱；
-   - 結局畫面（`game_stats`，「A level N 職業」「after D days in the Abyss」）；
-   - 遊戲裡選語言（English／繁體中文），設定不寫進存檔；
-   - 文字顯示參數的設定介面（細節要和使用者討論）。
-3. **還是英文的小地方：**
-   - 存檔選單的其他字；
-   - 遊戲標題字串；
-   - 玩家自己的名字；
-   - 內部錯誤與除錯訊息。
-4. **發行前要補的事：**
-   - Mac 打包的 `licenses` 還沒附 FreeType 授權（FTL）；
-   - `--data` 直接指定 GOG 資料夾時不會讀 `game.gog`，但 `--help` 說會（不指定 `--data` 時的自動搜尋是正常的）；
-   - 譯文全部還是 `draft`，要等人工審閱。
-5. **P13：** 完整遊玩 QA，在遊戲裡實際檢查譯文是否合適。
+### 6.1 做一個強化功能的標準步驟（照這樣做，前五項都是這樣完成的）
+
+1. **找原版的程式**：用 Grep 在 `uw1/src` 找相關函式。檔頭註解寫得很完整，先讀註解。
+2. **掛鉤只加 ASCII 呼叫**：在遊戲程式（`src/` 的 `.C`）裡用 `#ifndef __TURBOC__ … #endif` 包住，呼叫 port 端的函式；
+   實作放 `src/port/`（例如 `src/port/ui/autokey.c`、`src/port/presentation/flask_text.c`）。新檔會自動被編譯。
+3. **開關**：`src/port/portgame.h` 的 `ENH_` 列舉最後加一個（`ENH_COUNT` 之前）；`src/port/sys/enhtab.c` 照同樣順序加一列
+   （名稱、英文說明、`ENH_GAMEPLAY` 或 `ENH_PRESENTATION`）；程式裡用 `ENHANCED(ENH_xxx)` 判斷。
+4. **中文**：`src/port/i18n/settings_words.c` 加開關名稱與說明的中文（英文字串要和 enhtab.c **一字不差**）；
+   遊戲訊息放 `src/port/i18n/phrases.c`（`port_zh() ? port_zh_lit("key") : "English"`）。
+5. **文件**：`docs/ENHANCEMENTS.md` 的表格加一列（在 repo 根目錄的 docs，不是 uw1/docs）。
+6. **驗證**：編譯 → 用 `p12-shot.py` 開關各截一張對照 → 第 1 節的檢查全部跑 → commit、push → 看 CI。
+7. **收尾**：把執行檔複製到 `UW1-zhTW-playtest\`；在 `IDEAS_BACKLOG.md` 該項標題後註明「已完成、commit、開關名」；更新本文件。
+8. **回報使用者**：做了什麼、F11 哪個開關要打開、截圖確認了什麼、哪些沒驗證到。
+
+### 6.2 剩下的強化功能
+
+**A. 第 1 項：戰鬥傷害數字與敵人血條**（最大的一項，估計 2～3 個工作階段；細節見 `IDEAS_BACKLOG.md` 第 1 節）
+
+- 開關建議：`damage-numbers`、`enemy-health` 兩個，都 `ENH_PRESENTATION`、預設關。
+- **步驟 1，抓事件**（容易）：
+  - 所有傷害（近戰、魔法、陷阱、摔落）都經過 `src/critter/AI.C` 的 `damage_critter(obj, damage, from)`，玩家也是
+    （`obj == ThePlayer` 時不要顯示在 3D 畫面，玩家的變化已由 `flask-numbers` 顯示）。
+  - 揮空：`src/combat/COMBAT.C` 的 `do_miss(0)`；格擋：`do_miss(非 0)`，以及 `do_damage` 裡被盔甲扣到 `ddone == 0`。
+  - 在這些地方加掛鉤，送「哪個物件、多少傷害或揮空／格擋」到新的 port 模組（仿 `flask_text.c`：遊戲執行緒寫、
+    原子旗標上鎖、發佈快照）。先把數字畫在 3D 畫面固定位置，確認事件都抓得到。
+- **步驟 2，生物在螢幕上的位置**（難）：
+  - 3D 渲染器是 `tools/asm2c.py` 從組合語言自動轉的 C（`src/port/3d/*.c`，**不能手改**），要插程式只能透過
+    `tools/asm2c_spec.py` 的覆寫再重新產生；先例是 `tmapops.c` 的 `ENH_FULL_SPRITES`（`do_scalebm`）。
+  - 首選做法：在畫生物貼圖時記下它的螢幕範圍；`src/3d/DRAWOBJ.C` 的 `do_obj` 依序送出每個物件（render 1 是生物），
+    可以記下順序對應回是哪隻生物。
+  - 備案：用 `src/3d/GAMESORT.C` 的 `objxloc/objyloc/objzloc`（視角座標）配合相機參數自己投影，要校準。
+  - 看不到的生物不顯示；地圖、對話等非 3D 畫面不顯示（用 `flask_text_draw.c` 的「快照沒更新就隱藏」做法）。
+- **步驟 3，血條**：生物資料只有平均血量 `Creature[].avghit`，沒有每隻的上限；記下第一次看到的血量，與平均值取大者。
+  綠（>50%）、黃（>25%）、紅。只顯示被打中過的敵人。
+- **步驟 4，畫**：在 `src/port/presentation/presentation.c` 的 `presentation_draw` 加一段（仿 flask_text），
+  數字用 `hd_scroll_glyph_border` 畫，往上飄、淡出、同時多個錯開；血條用矩形。
+- 驗證：截圖時要有敵人。用 `cheat goto` 到有敵人的地方，或 `cheat talk` 的 NPC 附近；揮擊用 `modern-keys` 的空白鍵。
+
+**B. 第 7 項：全地圖密技**（要先做「密技選單」）
+
+- 使用者決定：**只在畫地圖時當成全開，不改存檔**。
+- 密技選單是主計畫書 §P13.7 第 6 項：在 F11 設定畫面可開關，細節之後要和使用者討論
+  （放哪個分頁、有哪些密技、要不要警告）。動工前先問使用者。
+- 做法線索：地圖畫在 `src/ui/AUTOMAP.C`（`ShowAutoMapLevel`）；「已探索」資料是 `PlayersMap`，存檔時由
+  `SaveAutoMapLevel` 寫回。全開的做法是**畫的時候**把每格當成已探索，不改 `PlayersMap` 本身，存檔自然不變。
+  動工時先讀 `ShowAutoMapLevel` 怎麼判斷一格要不要畫。
+
+### 6.3 其他待辦（等使用者）
+
+1. **P13.2、P13.3：使用者實際遊玩與審閱譯文。** 測試清單在 `P13_QA.md` 最後一節。使用者回報問題時，先用截圖工具重現再修。
+2. **待使用者決定：**
+   - P8 HD 錄影何時重錄（§P13.6）；
+   - §P13.7 的改進項目：打字問話題能否改成選擇、關鍵字打錯時 NPC 沒反應、數量滑桿改在放下時出現、
+     地圖註記的中文輸入、**密技選單**（見 6.2 B）；
+   - **HD 化的時程：** 目前只有文字與游標 HD 化。還沒做 M2（介面圖案重畫）、M3（HD 3D 繪製）、M4（HD 貼圖與寬螢幕）、
+     16:9（A 置中加兩側裝飾／B 上下裁切／C 真寬視野）。稽核在 `docs/modernization/UW1_UW2_SHARED_HD_MODERNIZATION_AUDIT.md`。
+   - **UW2 中文化（到 P14 再決定）：** 同一個 repo，先把 `uw1/src/port/` 共用的部分搬到共用位置，UW2 只補自己的對應與掛鉤；
+     發行包建議先維持 UW1、UW2 分兩包。
+3. **發行前要補的事：** 譯文全部還是 `draft`，要等人工審閱；遊戲標誌圖「Ultima Underworld」維持英文（需要美術素材）；
+   Mac 版的 `開始遊戲.command` 還帶 `--locale zh-TW`，會讓 F11 的語言切換失效（見 `打包測試版流程.md` 第五節）。
+4. **P13 Gate 與 tag `zh-tw-native-p13`：** 上面完成後，依主計畫書 §Acceptance Gate P13 確認，經使用者同意再建。
