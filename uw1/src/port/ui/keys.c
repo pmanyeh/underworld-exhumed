@@ -10,6 +10,7 @@
 #include "combat.h"
 #include "sys.h"
 #include <stdlib.h>
+#include <stdatomic.h>
 #include "view3d.h"
 #include "inv.h"
 #include "sound.h"
@@ -86,6 +87,28 @@ void far port_key_open_map(void)
 void far port_key_pitch(int dir)
 {
     chg_plyp(dir);
+}
+
+/* --enhance mouse-wheel: the notches the platform sent (main.c's pointer hook), taken a notch at a
+   time by ui/MOUSE.C's do_keyboard_input as PORT_KEY_WHEEL_UP or _DOWN */
+static _Atomic int wheel_notches;
+void port_wheel_push(int steps) { atomic_fetch_add(&wheel_notches, steps); }
+int port_wheel_take(void)
+{
+    int n = atomic_load(&wheel_notches);
+    while (n != 0 && !atomic_compare_exchange_weak(&wheel_notches, &n, n > 0 ? n - 1 : n + 1)) {}
+    return n > 0 ? 1 : n < 0 ? -1 : 0;
+}
+
+/* A wheel notch in the game: scrolls an open bag (down 1, up 0), as its arrows do */
+void far port_key_wheel(int down)
+{
+    if (OpenBag == 0)
+        return;
+    if (down)
+        ScrollItemsDown();
+    else
+        ScrollItemsUp();
 }
 
 /* c (UW1: x), v, b: close the open container, scroll the inventory down, up */

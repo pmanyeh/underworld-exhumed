@@ -27,6 +27,7 @@ unsigned char *key_on=keys, *Asc=keys, *Alt=&mods[0], *Shift=&mods[1], *Ctrl=&mo
 int16 GameInputMode, PlayerFacing, PlayerPitch;
 struct Object *ThePlayer;
 uint32_t enhance_on;
+int port_wheel_take(void) { return 0; }    /* port/ui/keys.c: no wheel notches here */
 void set_the_window(int a,int b,int c,int d) { (void)a;(void)b;(void)c;(void)d; }
 void do_changes(void) {}
 void mouse_look_mode(int on) { (void)on; }

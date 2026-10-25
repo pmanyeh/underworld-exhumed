@@ -444,6 +444,11 @@ int far do_keyboard_input(char array)
                 c |= KEY_CTRL;
             return c;
         }
+        /* port only: --enhance mouse-wheel, a notch of the wheel as a key of its own (port/ui/keys.c) */
+        if ((c = port_wheel_take()) != 0) {
+            key_time = GAME_TIME();
+            return c > 0 ? PORT_KEY_WHEEL_DOWN : PORT_KEY_WHEEL_UP;
+        }
     }
 #endif
     c = KEY();
