@@ -26,8 +26,17 @@ void hd_cursor_enable(int on) { enabled = on != 0; } /* before threads only */
 int hd_cursor_enabled(void) { return enabled; }
 void hd_cursor_hide(void)
 {
-    if (!enabled) return;
-    lock(); published.visible = 0; published.generation++; unlock(); log_state();
+    lock(); published.visible = published.tracked = 0; published.generation++; unlock();
+    if (enabled) log_state();
+}
+/* Track legacy geometry too: the map's quill is wider than the usual pointer. */
+void hd_cursor_track_box(int x, int y, int hx, int hy, int w, int h)
+{
+    lock();
+    published.tracked = w > 0 && h > 0;
+    published.box[0] = x - hx - 1; published.box[1] = y - hy - 2;
+    published.box[2] = x - hx + w + 1; published.box[3] = y - hy + h + 1;
+    unlock();
 }
 void hd_cursor_publish(int pic, int x, int y, int hx, int hy, int w, int h, int mode, int path, const uint8_t *pixels)
 {

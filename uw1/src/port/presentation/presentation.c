@@ -7,6 +7,7 @@
 #include "hd_label.h"
 #include "qty_dialog.h"
 #include "text_entry.h"
+#include "map_note_overlay.h"
 #include "ui/settings.h"
 #include <string.h>
 void vga_scanout(uint8_t *, int *, int *, uint8_t[768]);
@@ -19,6 +20,7 @@ static CaptionFrame frame_caption;
 static FlaskFrame frame_flasks;
 static CombatFrame frame_combat;
 static HdLabelFrame frame_labels;
+static MapNoteFrame frame_notes;
 /* the host's pointer, in the game's pixels, as the backend gives it (presentation_pointer) */
 static volatile int pointer_x = -100, pointer_y = -100;
 void presentation_pointer(const PlatPointer *ev)
@@ -39,7 +41,8 @@ void presentation_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])
 {
     vga_scanout(pixels,w,h,rgb6);
     hd_label_read(&frame_labels);
-    if (frame_labels.count) {
+    map_note_overlay_read(&frame_notes);
+    if (frame_labels.count || frame_notes.count) {
         frame_w=*w; frame_h=*h;
         memcpy(frame_pixels,pixels,(size_t)*w*(size_t)*h);
     }
@@ -70,15 +73,22 @@ int presentation_draw(const PlatOverlay *frame, void *data)
         drawn |= combat_text_draw(p->scroll_fonts[0] ? p->scroll_fonts[0] : p->label_font,
                                   frame, &frame_combat, 0.6f);
     /* the bitmap UI's strings (P12): each while the screen under it is as the game left it */
-    if ((p->scroll_fonts[0] || p->label_font) && frame_labels.count && frame_h==200)
+    if ((p->scroll_fonts[0] || p->label_font) && (frame_labels.count || frame_notes.count) && frame_h==200)
     {
         /* the game's own cursor, drawn into video memory under the HD one, is no change to a label */
         /* (its save-under box, MOUSE.C's _actual_mhide, starts a row above; a pixel's margin) */
         int cursor[4]={frame_cursor.x-frame_cursor.hotspot_x-1,frame_cursor.y-frame_cursor.hotspot_y-2,0,0};
         cursor[2]=cursor[0]+frame_cursor.width+2; cursor[3]=cursor[1]+frame_cursor.height+3;
-        int pointer=!p->cursor && port_pointer_box(cursor);
+        int pointer = 0;
+        if (!p->cursor) {
+            if (frame_cursor.tracked) { memcpy(cursor, frame_cursor.box, sizeof cursor); pointer = 1; }
+            else pointer = port_pointer_box(cursor);
+        }
         drawn |= hd_label_draw(p->scroll_fonts[0]?p->scroll_fonts[0]:p->label_font,frame,&frame_labels,frame_pixels,frame_w,frame_h,frame_palette,
                                p->scroll_style[0].border,p->scroll_style[0].baseline,frame_cursor.visible||pointer?cursor:NULL);
+        if (!settings_open()) drawn |= map_note_overlay_draw(p->scroll_fonts[0]?p->scroll_fonts[0]:p->label_font,
+                                      frame,&frame_notes,frame_pixels,frame_w,frame_h,frame_palette,
+                                      frame_cursor.visible||pointer?cursor:NULL);
     }
     /* the "Move how many?" panel, over the scroll (P12) */
     if (p->scroll_fonts[0]) drawn |= qty_dialog_draw(p->scroll_fonts[0],frame);

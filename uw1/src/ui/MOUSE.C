@@ -879,6 +879,7 @@ static int hd_mouse_picture(int path)
     int slot;
     struct Bitmap far *raw;
     const unsigned char *pixels;
+    hd_cursor_track_box(mouse_x, 199 - mouse_y, hotspot_x, hotspot_y, curs_w, cur_h);
     if (!hd_cursor_enabled()) return 0;
     slot = grs_which1(m_cursor_pic);
     if (slot >= first_vram) { hd_cursor_hide(); return 0; } /* unsupported: legacy raster */

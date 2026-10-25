@@ -72,6 +72,7 @@ jobs:
           LD_LIBRARY_PATH="$PWD/uw1/tools/libs/lib:${LD_LIBRARY_PATH:-}" python3 uw1/tools/i18n/test_hd_cursor.py
           python3 uw1/tools/i18n/test_mouse_cursor.py
           python3 uw1/tools/i18n/test_combat_text.py --sanitize
+          python3 uw1/tools/i18n/test_map_notes.py --sanitize
       - name: UTF-8 scroll flow and real FreeType logical layout (no game assets)
         run: |
           LD_LIBRARY_PATH="$PWD/uw1/tools/libs/lib:${LD_LIBRARY_PATH:-}" python3 uw1/tools/i18n/test_scroll_text.py
@@ -141,6 +142,7 @@ jobs:
           python3 uw1/tools/i18n/test_hd_cursor.py
           python3 uw1/tools/i18n/test_mouse_cursor.py
           python3 uw1/tools/i18n/test_combat_text.py --sanitize
+          python3 uw1/tools/i18n/test_map_notes.py --sanitize
       - name: UTF-8 scroll flow and real FreeType logical layout (no game assets)
         run: |
           python3 uw1/tools/i18n/test_scroll_text.py
@@ -187,6 +189,7 @@ jobs:
           python uw1/tools/i18n/test_hd_cursor.py
           python uw1/tools/i18n/test_mouse_cursor.py
           python uw1/tools/i18n/test_combat_text.py --sanitize
+          python uw1/tools/i18n/test_map_notes.py --sanitize
       - name: UTF-8 scroll flow and real FreeType logical layout (no game assets)
         run: |
           python uw1/tools/i18n/test_scroll_text.py

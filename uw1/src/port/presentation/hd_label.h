@@ -9,7 +9,7 @@
 #define UW1_HD_LABEL_H
 #include <stdint.h>
 #define HD_LABELS 64
-#define HD_LABEL_CELLS 40
+#define HD_LABEL_CELLS 48
 #define HD_LABEL_UNDER 1536    /* a box this many pixels or fewer keeps them, for hd_label_shows */
 enum { HD_LABEL_LEFT, HD_LABEL_CENTRE, HD_LABEL_RIGHT };
 typedef struct HdLabelCell { uint32_t scalar; int x64; } HdLabelCell;
@@ -42,6 +42,11 @@ void hd_label_align(int align);
    English). */
 int hd_label_put(const char *text, int x, int y, int english_width, int height, int color,
                  int clip_left, int clip_right);
+/* Prepare one independent label (map notes may overlap and have their own lifetime).
+   No change to the shared label list. Coordinates as hd_label_put; width is measured. */
+int hd_label_build(HdLabel *out, const char *text, int x, int y, int height, int color,
+                   int clip_right, int em64);
+void hd_label_refresh(HdLabel *label);
 /* A patch: text over words the game's art has in the box [left, right) x [top, bottom)
    (top-down game pixels), which it covers with the box's commonest colour (the art's
    background), aligned in the box and centred on its rows. 0: published; -1: not. */

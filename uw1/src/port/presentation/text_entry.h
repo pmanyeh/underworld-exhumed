@@ -9,7 +9,7 @@
 #include <stdint.h>
 struct HdFont;
 struct PlatOverlay;
-enum { TEXT_ENTRY_LINE, TEXT_ENTRY_NAME };   /* wdialog, which a Ctrl+A Ctrl+K empties first; or the name's loop */
+enum { TEXT_ENTRY_LINE, TEXT_ENTRY_NAME, TEXT_ENTRY_MAP };   /* wdialog, which a Ctrl+A Ctrl+K empties first; or the name's loop */
 
 void text_entry_enable(int on, void (*key)(uint8_t scancode));   /* before threads */
 /* game thread: the panel over [x, x+w) x [y, y+h) (top-down game pixels) with its prompt, the

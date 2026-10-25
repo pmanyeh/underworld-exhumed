@@ -37,7 +37,8 @@ def main():
             "presentation/hd_font.c", "i18n/utf8.c", "i18n/layout.c"]]
         command += [str(uw1/"src/port/presentation"/p) for p in [
             "scroll_text.c", "scroll_overlay.c", "caption.c", "caption_draw.c", "flask_text.c", "flask_text_draw.c",
-            "hd_label.c", "hd_label_draw.c", "combat_text.c", "combat_text_draw.c"]]
+            "hd_label.c", "hd_label_draw.c", "combat_text.c", "combat_text_draw.c",
+            "map_note_overlay.c", "map_note_overlay_draw.c"]]
         command += [str(root/"exhume/runtime/port/platform/png.c")]
         if os.name != "nt":
             command += ["-lm"]

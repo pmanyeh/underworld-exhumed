@@ -61,7 +61,11 @@ int main(void)
     HdCursor c; int region,n;
     bitmap.width=7;bitmap.height=9;memset(bits,2,sizeof bits);input.mode=MODE_GAME;
     hd_cursor_enable(0);CHECK(init_mouse()==0);mouse_show();draw3dMouse();
-    CHECK(screen_draws==1 && fb_draws==1);mouse_hide();
+    CHECK(screen_draws==1 && fb_draws==1);
+    hd_cursor_read(&c);
+    CHECK(!c.visible && c.tracked && c.box[0]==97 && c.box[2]==106);
+    CHECK(c.box[1]==93 && c.box[3]==105);
+    mouse_hide();hd_cursor_read(&c);CHECK(!c.tracked);
     hd_cursor_enable(1);mouse_show();hd_cursor_read(&c);
     CHECK(c.visible && c.picture==ICON_CURSORS && c.x==100 && c.y==99);
     CHECK(c.hotspot_x==2 && c.hotspot_y==4 && c.width==7 && c.height==9 && c.pixels[62]==2);

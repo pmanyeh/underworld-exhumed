@@ -194,6 +194,33 @@ int hd_label_put(const char *text, int x, int y, int english_width, int height, 
     return 0;
 }
 
+int hd_label_build(HdLabel *out, const char *text, int x, int y, int height, int color,
+                   int clip_right, int em64)
+{
+    uint32_t cps[HD_LABEL_CELLS];
+    int adv[HD_LABEL_CELLS], n, width, i, pos = x * 64;
+    if (!out || !hd_label_enabled() || !text || x < 0 || x > 319 || height <= 0 ||
+        (n = shape(text, cps, adv, &width)) <= 0) return -1;
+    if (clip_right > 319) clip_right = 319;
+    if (clip_right < x || !(em64 = fit(adv, n, &width, (clip_right + 1 - x) * 64, em64))) return -1;
+    memset(out, 0, sizeof *out);
+    out->left = x; out->right = x + (width + 63) / 64;
+    out->top = 199 - y; out->bottom = out->top + height;
+    if (out->top < 0 || out->bottom > 200) return -1;
+    out->fill = -1; out->border = 0;
+    out->em64 = em64; out->y64 = out->top * 64 + (height * 64 - em64) / 2;
+    out->color = color; out->page = draw_page ? draw_page() : 0;
+    for (i = 0; i < n; i++) {
+        out->cells[i].scalar = cps[i]; out->cells[i].x64 = pos;
+        pos += adv[i];
+    }
+    out->count = n;
+    sign(out);
+    return 0;
+}
+
+void hd_label_refresh(HdLabel *label) { if (label && hd_label_enabled()) sign(label); }
+
 int hd_label_patch(const char *text, int left, int top, int right, int bottom, int color, int align)
 {
     return hd_label_box(text, left, top, right, bottom, color, align, 0, HD_LABEL_COMMONEST, -1);

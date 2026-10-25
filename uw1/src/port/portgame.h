@@ -95,4 +95,5 @@ int port_wheel_take(void);                  /* the game's: -1 up, 1 down, 0 none
 int port_pitch_bound(void);                 /* game/PLAYER.C: the pitch's bound either way */
 
 #include "presentation/combat_text.h"
+#include "presentation/map_note_overlay.h"
 #endif

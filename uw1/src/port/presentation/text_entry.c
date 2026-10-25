@@ -35,21 +35,24 @@ static int chars(const char *s)
 
 void text_entry_begin(int k, const char *p, const char *initial, int max, const char *stand, int x, int y, int w, int h)
 {
+    const char *seed = initial;
+    size_t n;
     if (!enabled) return;
     lock();
     kind = k; max_chars = max; px = x; py = y; pw = w; ph = h;
     snprintf(prompt, sizeof prompt, "%s", p ? p : "");
-    snprintf(text, sizeof text, "%s", initial && utf8_validate(initial, strlen(initial), NULL) ? initial : "");
+    /* A test's committed text stands in for the OS input method. Apply the same bounds. */
+    if (getenv("EXHUME_TEST_CHEATS") && getenv("UW1_TEST_TYPED")) seed = getenv("UW1_TEST_TYPED");
+    if (!seed || !utf8_validate(seed, strlen(seed), NULL)) seed = "";
+    n = utf8_boundary_before(seed, strlen(seed), sizeof text - 1);
+    memcpy(text, seed, n); text[n] = 0;
     while (chars(text) > max_chars) {                  /* an initial text too long: its end goes */
-        size_t n = strlen(text);
+        n = strlen(text);
         while (n && ((unsigned char)text[n - 1] & 0xC0) == 0x80) n--;
         if (n) n--;
         text[n] = 0;
     }
     snprintf(standin, sizeof standin, "%s", stand ? stand : "");
-    /* a test's typed text (the input method cannot be scripted), only with the test cheats */
-    if (getenv("EXHUME_TEST_CHEATS") && getenv("UW1_TEST_TYPED") && utf8_validate(getenv("UW1_TEST_TYPED"), strlen(getenv("UW1_TEST_TYPED")), NULL))
-        snprintf(text, sizeof text, "%s", getenv("UW1_TEST_TYPED"));
     has_result = 0;
     unlock();
     atomic_store(&answered, 0);
@@ -59,10 +62,12 @@ void text_entry_begin(int k, const char *p, const char *initial, int max, const 
 
 const char *text_entry_end(void)
 {
+    const char *out;
     if (!enabled) return NULL;
     atomic_store(&open_now, 0);
     plat_text_input(0);
-    return has_result ? result : NULL;
+    lock(); out = has_result ? result : NULL; unlock();
+    return out;
 }
 
 int text_entry_open(void) { return enabled && atomic_load(&open_now); }
@@ -140,7 +145,7 @@ int text_entry_key(uint8_t sc)
     } else if (make == 0x1C) {
         int empty;
         lock(); empty = !text[0]; unlock();
-        if (!empty || kind == TEXT_ENTRY_LINE) answer();
+        if (!empty || kind == TEXT_ENTRY_LINE || kind == TEXT_ENTRY_MAP) answer();
     } else if (make == 0x01) {
         atomic_store(&answered, 1);
         tap(0x01);

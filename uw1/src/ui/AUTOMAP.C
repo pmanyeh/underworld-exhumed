@@ -188,6 +188,9 @@ unsigned char far GetAutoMapLevel(struct Arc *arc, int lev)
 void far ExitAutoMap(void)
 {
     struct Arc arc;
+#ifndef __TURBOC__
+    map_note_overlay_hide();
+#endif
 
     mouse_hide();
     input_del(map_mouse);
@@ -415,10 +418,16 @@ struct ATM far * far DetermineBetterHit(struct ATM far *a, struct ATM far *b, in
         return a;
     NOTE_COPY(buf, a->text);
     w = string_width(buf);
+#ifndef __TURBOC__
+    w = port_map_note_width(level, a, w);
+#endif
     ax = abs(a->x + w / 2 - x);
     ay = abs(a->y - 2 - y);
     NOTE_COPY(buf, b->text);
     w = string_width(buf);
+#ifndef __TURBOC__
+    w = port_map_note_width(level, b, w);
+#endif
     bx = abs(b->x + w / 2 - x);
     by = abs(b->y - 2 - y);
     if (by < ay)
@@ -489,6 +498,9 @@ void far ManageDungeonMap(void)
             len = -1;
             curx = note->x - 1;
             mouse_putxy(curx + 10, my + 0x12);
+#ifndef __TURBOC__
+            port_map_note_begin(level, note, ATM_Strings, num_words);
+#endif
             for (;;) {
                 while ((cmd = do_keyboard_input(0)) < 0)
                     if ((cmd = mouse_getbut(&but)) > 0)
@@ -519,8 +531,14 @@ void far ManageDungeonMap(void)
                 text[len + 1] = 0;
                 curx = note->x + string_width(text) - 1;
                 mouse_putxy(curx + 10, my + 0x12);
+#ifndef __TURBOC__
+                if (!port_map_note_editing())
+#endif
                 string_to_screen(text, note->x, note->y);
             }
+#ifndef __TURBOC__
+            port_map_note_end(level, note, text);
+#endif
             grfx_load_font("font5x6p.sys");
             if (text[0]) {
                 notes_dirty = 1;
@@ -540,6 +558,9 @@ void far ManageDungeonMap(void)
                 note = &ATM_Strings[i];
                 NOTE_COPY(text, note->text);
                 w = string_width(text);
+#ifndef __TURBOC__
+                w = port_map_note_width(level, note, w);
+#endif
                 if (note->x <= mx && note->x + w >= mx && note->y - 5 <= my && note->y >= my) {
                     best = DetermineBetterHit(best, note, mx, my);
                     if (best == note)
@@ -550,6 +571,10 @@ void far ManageDungeonMap(void)
                 notes_dirty = 1;
                 NOTE_COPY(text, best->text);
                 w = string_width(text);
+#ifndef __TURBOC__
+                w = port_map_note_width(level, best, w);
+                port_map_note_delete(level, best);
+#endif
                 set_the_color(0x106);
                 rectangle(best->x, best->y, best->x + w, best->y - 5);
                 if (num_words - 1 == hit)
@@ -579,6 +604,9 @@ void far RedisplayStrings(void)
     char buf[50];
     register int i;
 
+#ifndef __TURBOC__
+    map_note_overlay_begin();
+#endif
     grfx_load_font("font4x5p.sys");
     *foreground_color = 0x2D;
     *background_color = 0x2D;
@@ -586,10 +614,16 @@ void far RedisplayStrings(void)
         NOTE_COPY(buf, ATM_Strings[i].text);
         if (ATM_Strings[i].x >= 0) {
             NOTE_COPY(buf, ATM_Strings[i].text);
+#ifndef __TURBOC__
+            if (!port_map_note_draw(level, &ATM_Strings[i]))
+#endif
             string_to_screen(buf, ATM_Strings[i].x, ATM_Strings[i].y);
         }
     }
     grfx_load_font("font5x6p.sys");
+#ifndef __TURBOC__
+    map_note_overlay_publish();
+#endif
 }
 
 /* Writes the level's notes (block 0x23 + lev) if they changed, dropping the erased ones. */
@@ -598,6 +632,9 @@ void far SaveTheWords(int lev)
     struct Arc arc;
     register int i;
 
+#ifndef __TURBOC__
+    if (!notes_dirty || !num_words) port_map_notes_save(lev, ATM_Strings, num_words);
+#endif
     if (!notes_dirty)
         return;
     if (!num_words)
@@ -612,6 +649,9 @@ void far SaveTheWords(int lev)
         if (!put_arc(&arc, LEVARK_NOTES(lev), ATM_Strings, num_words * sizeof(struct ATM)))
             ;
         close_arc(&arc);
+#ifndef __TURBOC__
+        port_map_notes_save(lev, ATM_Strings, num_words);
+#endif
     }
 }
 
@@ -623,6 +663,9 @@ void far GetTheWords(int lev)
     old_strings = num_words = 0;
     if (open_arc(&arc, "SAVE0\\lev.ark")) {
         old_strings = num_words = get_arc(&arc, LEVARK_NOTES(lev), ATM_Strings) / sizeof(struct ATM);
+#ifndef __TURBOC__
+        port_map_notes_loaded(lev, ATM_Strings, num_words);
+#endif
         RedisplayStrings();
         close_arc(&arc);
     }
@@ -642,6 +685,7 @@ void far ShowAutoMapLevel(register int lev)
 
 #ifndef __TURBOC__
     combat_text_hide();
+    map_note_overlay_hide();
 #endif
     ws = swap_ws_out();
     buf = MK_FP(conv_ws_seg, 0);
