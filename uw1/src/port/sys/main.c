@@ -163,6 +163,12 @@ void mouse_event(const PlatPointer *ev);    /* mousedrv.c */
 static void key_hook(uint8_t sc) { if (!text_entry_key(sc) && !qty_dialog_key(sc)) kbd_byte(sc); }
 static void pointer_hook(const PlatPointer *ev)
 {
+    /* --enhance mouse-look: the middle button toggles it as the ` key does (the key's scan code,
+       through the keys' own path, so a recording has it as the key); the game has no use for it */
+    if (ev->button == PLAT_BUTTON_MIDDLE && (ev->type == PLAT_POINTER_DOWN || ev->type == PLAT_POINTER_UP)) {
+        if (ev->type == PLAT_POINTER_DOWN && ENHANCED(ENH_MOUSE_LOOK)) { key_hook(0x29); key_hook(0xA9); }
+        return;
+    }
     presentation_pointer(ev);
     if (!qty_dialog_pointer(ev)) mouse_event(ev);
 }
