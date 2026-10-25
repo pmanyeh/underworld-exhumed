@@ -23,12 +23,12 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `732949d`，已 push（後續交接文件提交見 git log） |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `30d41de`，已 push（後續交接文件提交見 git log） |
 | 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `438441b`，已 push |
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含戰鬥傷害數字與敵人血條及 Linux 連結修正（`732949d`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含 Z 開關地圖（`30d41de`）與先前戰鬥顯示功能，catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
@@ -57,7 +57,8 @@
   | 6. 血瓶、法力瓶顯示 25/32 與飄動的增減數字 | `flask-numbers`「血瓶法力瓶數值」 | `771147f` |
   | （追加）滑鼠滾輪：捲動打開的袋子、翻過「繼續」；F11 設定畫面一律可用滾輪捲動 | `mouse-wheel`「滑鼠滾輪」 | `6486815`（exhume `32fd048`） |
 
-  使用者已實測 2～6 項都 OK；滑鼠滾輪也已於 2026-10-25 確認 OK。戰鬥傷害數字與敵人血條已完成，待使用者實測；報告 `uw1/docs/i18n/P13_COMBAT.md`。
+  使用者已實測 1～6 項都 OK；滑鼠滾輪、戰鬥傷害數字與敵人血條均已於 2026-10-25 確認 OK；戰鬥報告 `uw1/docs/i18n/P13_COMBAT.md`。
+- **Z 開關地圖（2026-10-25，`30d41de`）**：開「現代按鍵」時，地圖上再按 Z 關閉；編寫註記時 Z 仍輸入文字，Enter 結束後才可用 Z 關閉。遊戲內已驗證反覆開關、編寫 ZZ 並保存、Esc 關閉；待使用者實測。截圖 `build/i18n/p12/shots/map-z-*.png`，工具 `.poc-tools/map-z-check.py`。
 - **F11 設定畫面**：項目超過一頁時，右側有捲軸、底部右邊顯示「▼ 下面還有 N 項」（exhume `88ce7f2`，使用者反映原本的小 v 看不到）。
 - **覆蓋率：** 可翻譯 6,983 筆，已翻 6,893 筆（98.71%）；剩下 90 筆是比對字，依規則不翻。譯文全部是 `draft`。
 
@@ -215,7 +216,7 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 
 ### 6.2 強化功能後續
 
-**A. 第 1 項：戰鬥傷害數字與敵人血條（已完成，待使用者實測）**
+**A. 第 1 項：戰鬥傷害數字與敵人血條（已完成，使用者已確認 OK）**
 
 - 主 repo `06be938`（Linux 連結修正 `732949d`）、exhume `438441b`，均已 push；執行檔已更新到 `UW1-zhTW-playtest`。
 - F11「強化功能」最下方：「戰鬥傷害數字」`damage-numbers`、「敵人血條」`enemy-health`，各自開關、預設關。
@@ -225,7 +226,7 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 - 624 項新測試含 ASan／UBSan、既有中文化測試、文字回歸、8 種 SDL 視窗合成都通過；16 個案例存檔比對一致。
 - 截圖：`build/i18n/p12/shots/combat-final.png`、`combat-en-block.png`、`combat-off.png`、`combat-health-only.png`、`combat-miss.png`、`combat-settings.png`。
 - 本機 DOS 重編譯 Gate 缺 Node.js，尚未驗證；原生建置、ASCII、asm2c 產物一致性與 repocheck 已通過。
-- 下一步先等使用者遊玩回報；密技選單與全地圖仍依 B 節先討論，不自動動工。
+- 使用者已於 2026-10-25 確認兩項功能 OK；密技選單與全地圖仍依 B 節先討論，不自動動工。
 
 **B. 第 7 項：全地圖密技**（要先做「密技選單」）
 
@@ -238,7 +239,7 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 
 ### 6.3 其他待辦（等使用者）
 
-1. **P13.2、P13.3：使用者實際遊玩與審閱譯文。** 另待實測「戰鬥傷害數字」「敵人血條」（F11「強化功能」）。 測試清單在 `P13_QA.md` 最後一節。使用者回報問題時，先用截圖工具重現再修。
+1. **P13.2、P13.3：使用者實際遊玩與審閱譯文。** 戰鬥傷害數字與敵人血條已確認 OK；新加的 Z 開關地圖待使用者實測。 測試清單在 `P13_QA.md` 最後一節。使用者回報問題時，先用截圖工具重現再修。
 2. **待使用者決定：**
    - P8 HD 錄影何時重錄（§P13.6）；
    - §P13.7 的改進項目：打字問話題能否改成選擇、關鍵字打錯時 NPC 沒反應、數量滑桿改在放下時出現、
