@@ -207,7 +207,8 @@ void far init_player(void)
         _input_addkey('q', 0, 1, (InputFn)port_key_interact);
         _input_addkey('e', 1, 1, (InputFn)port_key_interact);
         _input_addkey('z', 0, 1, (InputFn)port_key_open_map);
-        _input_addkey('c', 0, 1, (InputFn)port_key_bag);
+        _input_addkey('x', 0, 1, (InputFn)port_key_bag);           /* UltimaHacks' c; c draws the weapon */
+        _input_addkey('c', 0, 1, (InputFn)toggle_fightmode);       /* the user's: fight mode on and off */
         _input_addkey('v', 1, 1, (InputFn)port_key_bag);
         _input_addkey('b', 2, 1, (InputFn)port_key_bag);
         _input_addkey('g', 0, 1, (InputFn)port_key_compass);

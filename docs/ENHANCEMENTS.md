@@ -47,7 +47,7 @@ They are kept in the settings file (`enhance=` in `uw1port.cfg` or `uw2port.cfg`
 | Z | the map; on it S a level on, W a level back, C your own level; UW2 also D and A the previous and next world |
 | R, F | the rune bag, the statistics panel (again: back to the inventory) |
 | G, H | the compass, the flasks (as clicks on them) |
-| C, V, B | close the open container, scroll the inventory down, up |
+| C, V, B | close the open container, scroll the inventory down, up; in UW1 the container closes with X, and C draws or sheathes the weapon (fight mode), the one change from UltimaHacks' layout |
 
 The keypad still moves the pointer, F1 to F10 and the Ctrl shortcuts are as before, and the conversation menus take number keys as they always did.
 

@@ -79,7 +79,7 @@ void far port_key_pitch(int dir)
     chg_plyp(dir);
 }
 
-/* c, v, b: close the open container, scroll the inventory down, up */
+/* c (UW1: x), v, b: close the open container, scroll the inventory down, up */
 void far port_key_bag(int how)
 {
     if (how == 0)
