@@ -22,7 +22,7 @@ F11「強化功能」最下方有兩個獨立開關，預設都關閉：
 
 - Windows 原生版與 UBSan debug 版編譯成功。
 - `tools/i18n/test_combat_text.py --sanitize`：624 項通過，含相同色碼的遮擋、部分遮擋、座標、血量上限、事件到期、兩個獨立開關、槽位回收與重設、繪製範圍、綠黃紅門檻與死亡時隱藏血條。
-- `tools/i18n/test_*.py` 全部通過；`p10a-b1-text-regression.py` 的 14 組均為 0，含 ASan/UBSan、無 FreeType、文字探測與 port-check。
+- `tools/i18n/test_*.py` 全部通過；`p10a-b1-text-regression.py` 的 13 組均為 0，含 ASan/UBSan、無 FreeType、文字探測與 port-check。
 - `test_hd_cursor.py --window --sanitize`：8 種 SDL 合成、縮放與全螢幕情境通過；補齊此舊測試的現有呈現模組連結與互動面板替身。
 - 16 個公開案例：中英文、關閉／開啟戰鬥顯示的存檔一致，有 DOS 存檔 golden 的也一致。3 個 format-6 setup 錄製自帶強化設定，依原設定建立相同起始存檔，再對後續原版錄製開關戰鬥功能。
 - `asm2c.py --check`、原版遊戲來源 ASCII 檢查、`repocheck` 通過。

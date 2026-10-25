@@ -23,12 +23,12 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新 `6486815`，已 push |
-| 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `32fd048`，已 push |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `06be938`，已 push（後續交接文件提交見 git log） |
+| 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `438441b`，已 push |
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔為最新版（`6486815`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含戰鬥傷害數字與敵人血條（`06be938`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
@@ -49,6 +49,7 @@
 
   | 項目 | 開關（F11「強化功能」分頁） | commit |
   | --- | --- | --- |
+  | 1. 戰鬥傷害數字、敵人血條 | `damage-numbers`「戰鬥傷害數字」、`enemy-health`「敵人血條」，兩項獨立、預設關 | `06be938`（exhume `438441b`） |
   | 2. 背包有對的鑰匙就自動開鎖（門與箱子） | `auto-key`「自動開鎖」 | `a37584e` |
   | 3. 滑鼠中鍵切換滑鼠視角 | 原有的 `mouse-look` | `57f777e` |
   | 4. C 鍵切換戰鬥模式（原本 C 的「關容器」改到 X） | 原有的 `modern-keys` | `4c8d2a2` |
@@ -56,7 +57,7 @@
   | 6. 血瓶、法力瓶顯示 25/32 與飄動的增減數字 | `flask-numbers`「血瓶法力瓶數值」 | `771147f` |
   | （追加）滑鼠滾輪：捲動打開的袋子、翻過「繼續」；F11 設定畫面一律可用滾輪捲動 | `mouse-wheel`「滑鼠滾輪」 | `6486815`（exhume `32fd048`） |
 
-  使用者已實測 2～6 項都 OK；滑鼠滾輪也已於 2026-10-25 確認 OK。
+  使用者已實測 2～6 項都 OK；滑鼠滾輪也已於 2026-10-25 確認 OK。戰鬥傷害數字與敵人血條已完成，待使用者實測；報告 `uw1/docs/i18n/P13_COMBAT.md`。
 - **F11 設定畫面**：項目超過一頁時，右側有捲軸、底部右邊顯示「▼ 下面還有 N 項」（exhume `88ce7f2`，使用者反映原本的小 v 看不到）。
 - **覆蓋率：** 可翻譯 6,983 筆，已翻 6,893 筆（98.71%）；剩下 90 筆是比對字，依規則不翻。譯文全部是 `draft`。
 
@@ -212,29 +213,19 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 7. **收尾**：把執行檔複製到 `UW1-zhTW-playtest\`；在 `IDEAS_BACKLOG.md` 該項標題後註明「已完成、commit、開關名」；更新本文件。
 8. **回報使用者**：做了什麼、F11 哪個開關要打開、截圖確認了什麼、哪些沒驗證到。
 
-### 6.2 剩下的強化功能
+### 6.2 強化功能後續
 
-**A. 第 1 項：戰鬥傷害數字與敵人血條**（最大的一項，估計 2～3 個工作階段；細節見 `IDEAS_BACKLOG.md` 第 1 節）
+**A. 第 1 項：戰鬥傷害數字與敵人血條（已完成，待使用者實測）**
 
-- 開關建議：`damage-numbers`、`enemy-health` 兩個，都 `ENH_PRESENTATION`、預設關。
-- **步驟 1，抓事件**（容易）：
-  - 所有傷害（近戰、魔法、陷阱、摔落）都經過 `src/critter/AI.C` 的 `damage_critter(obj, damage, from)`，玩家也是
-    （`obj == ThePlayer` 時不要顯示在 3D 畫面，玩家的變化已由 `flask-numbers` 顯示）。
-  - 揮空：`src/combat/COMBAT.C` 的 `do_miss(0)`；格擋：`do_miss(非 0)`，以及 `do_damage` 裡被盔甲扣到 `ddone == 0`。
-  - 在這些地方加掛鉤，送「哪個物件、多少傷害或揮空／格擋」到新的 port 模組（仿 `flask_text.c`：遊戲執行緒寫、
-    原子旗標上鎖、發佈快照）。先把數字畫在 3D 畫面固定位置，確認事件都抓得到。
-- **步驟 2，生物在螢幕上的位置**（難）：
-  - 3D 渲染器是 `tools/asm2c.py` 從組合語言自動轉的 C（`src/port/3d/*.c`，**不能手改**），要插程式只能透過
-    `tools/asm2c_spec.py` 的覆寫再重新產生；先例是 `tmapops.c` 的 `ENH_FULL_SPRITES`（`do_scalebm`）。
-  - 首選做法：在畫生物貼圖時記下它的螢幕範圍；`src/3d/DRAWOBJ.C` 的 `do_obj` 依序送出每個物件（render 1 是生物），
-    可以記下順序對應回是哪隻生物。
-  - 備案：用 `src/3d/GAMESORT.C` 的 `objxloc/objyloc/objzloc`（視角座標）配合相機參數自己投影，要校準。
-  - 看不到的生物不顯示；地圖、對話等非 3D 畫面不顯示（用 `flask_text_draw.c` 的「快照沒更新就隱藏」做法）。
-- **步驟 3，血條**：生物資料只有平均血量 `Creature[].avghit`，沒有每隻的上限；記下第一次看到的血量，與平均值取大者。
-  綠（>50%）、黃（>25%）、紅。只顯示被打中過的敵人。
-- **步驟 4，畫**：在 `src/port/presentation/presentation.c` 的 `presentation_draw` 加一段（仿 flask_text），
-  數字用 `hd_scroll_glyph_border` 畫，往上飄、淡出、同時多個錯開；血條用矩形。
-- 驗證：截圖時要有敵人。用 `cheat goto` 到有敵人的地方，或 `cheat talk` 的 NPC 附近；揮擊用 `modern-keys` 的空白鍵。
+- 主 repo `06be938`、exhume `438441b`，均已 push；執行檔已更新到 `UW1-zhTW-playtest`。
+- F11「強化功能」最下方：「戰鬥傷害數字」`damage-numbers`、「敵人血條」`enemy-health`，各自開關、預設關。
+- 實作與驗證報告：`uw1/docs/i18n/P13_COMBAT.md`。傷害、揮空、格擋來自原版事件；英文模式也顯示 Block／Miss。
+- 位置使用原版繪圖的 framebuffer 像素歸屬；完全被遮住的生物不顯示。血條最大血量為估計值。
+- 動畫只讀 `*Time`，**不可新增 `GAME_TIME()`**（會消耗重播事件）。換樓層、讀檔、新遊戲、物件回收時清除暫存。
+- 624 項新測試含 ASan／UBSan、既有中文化測試、文字回歸、8 種 SDL 視窗合成都通過；16 個案例存檔比對一致。
+- 截圖：`build/i18n/p12/shots/combat-final.png`、`combat-en-block.png`、`combat-off.png`、`combat-health-only.png`、`combat-miss.png`、`combat-settings.png`。
+- 本機 DOS 重編譯 Gate 缺 Node.js，尚未驗證；原生建置、ASCII、asm2c 產物一致性與 repocheck 已通過。
+- 下一步先等使用者遊玩回報；密技選單與全地圖仍依 B 節先討論，不自動動工。
 
 **B. 第 7 項：全地圖密技**（要先做「密技選單」）
 
@@ -247,7 +238,7 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 
 ### 6.3 其他待辦（等使用者）
 
-1. **P13.2、P13.3：使用者實際遊玩與審閱譯文。** 測試清單在 `P13_QA.md` 最後一節。使用者回報問題時，先用截圖工具重現再修。
+1. **P13.2、P13.3：使用者實際遊玩與審閱譯文。** 另待實測「戰鬥傷害數字」「敵人血條」（F11「強化功能」）。 測試清單在 `P13_QA.md` 最後一節。使用者回報問題時，先用截圖工具重現再修。
 2. **待使用者決定：**
    - P8 HD 錄影何時重錄（§P13.6）；
    - §P13.7 的改進項目：打字問話題能否改成選擇、關鍵字打錯時 NPC 沒反應、數量滑桿改在放下時出現、
