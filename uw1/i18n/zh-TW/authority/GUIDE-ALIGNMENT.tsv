@@ -66,7 +66,7 @@ guide_line	category	guide_english	guide_options	term_id	source_en	selected_zh_tw
 73	place	Level 6	第六層	UW1-AEB126442000	Level 6	第六層	guide-range-expansion		
 73	place	Level 7	第七層	UW1-33E013740201	Level 7	第七層	guide-range-expansion		
 73	place	Level 8	第八層	UW1-4B6379E7B3C3	Level 8	第八層	guide-range-expansion		
-74	place	Goblin Home	小鬼出沒地 / 哥布林家園	UW1-E8E0A7673650	Goblin Home	小鬼出沒地	guide-exact		
+74	place	Goblin Home	哥布林家園	UW1-E8E0A7673650	Goblin Home	哥布林家園	user-approved-override		
 75	place	Lair of the Mountain-Folk	山岳族之穴	UW1-99C5392446FC	Lair of the Mountain-Folk	山岳族之穴	guide-exact		
 76	place	The Tombs	古墓群	UW1-AB24B2B1B53C	Tombs	古墓群	guide-exact		
 76	place	Crypts	地下墓穴	UW1-D3D4C56FCFD3	Crypts	地下墓穴	guide-exact		
@@ -81,9 +81,9 @@ guide_line	category	guide_english	guide_options	term_id	source_en	selected_zh_tw
 88	race	Mountain-Folk	山岳族	UW1-0E96A51D860C	Mountain-folk	山岳族	guide-exact		
 89	organization	Seers of the Moonstone	月之石預言者	UW1-4E4F7BC9678B	Seers of the Moonstone	月之石預言者	guide-exact		
 90	race	Lizardmen	蜥蜴人	UW1-007D6FFBCE75	lizardman	蜥蜴人	guide-exact		
-91	race	Goblins	惡鬼族 / 哥布林	UW1-5F403F394D7B	goblin	惡鬼族	guide-exact		
-92	faction	Gray Goblins	灰色惡鬼族	UW1-3967A0384576	Gray Goblins	灰色惡鬼族	guide-exact		
-93	faction	Green Goblins	綠色惡鬼族	UW1-A2C6B7FEA9B8	Green Goblins	綠色惡鬼族	guide-exact		
+91	race	Goblins	哥布林	UW1-5F403F394D7B	goblin	哥布林	user-approved-override		
+92	faction	Gray Goblins	灰哥布林	UW1-3967A0384576	Gray Goblins	灰哥布林	user-approved-override		
+93	faction	Green Goblins	綠哥布林	UW1-A2C6B7FEA9B8	Green Goblins	綠哥布林	user-approved-override		
 94	race	Trolls	洞穴巨人 / 巨魔	UW1-3C2C4E5B35AE	troll	洞穴巨人	guide-exact		
 95	faction	Exiles / Outcasts	放逐者	UW1-CE187B4E5688	Outcasts	放逐者	guide-exact		
 100	quest-object	Book of Truth	真實之書	UW1-A8F4BBDCA7D1	Book of Honesty	真實之書	same-talisman-by-author-and-context		
