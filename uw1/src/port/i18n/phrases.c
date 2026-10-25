@@ -25,6 +25,7 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"stats.out_of", "／"},
     {"autokey.with", "你用背包裡的"},             /* --enhance auto-key (port/ui/autokey.c) */
     {"autokey.unlocked", "打開了鎖。\n"},
+    {"take.pack_full", "背包沒有空位了。\n"},     /* --enhance e-takes (port/ui/keys.c) */
     {"food.that", ""},
     {"use.use", "要把"},
     {"use.on_what", "用在什麼上？\n"},

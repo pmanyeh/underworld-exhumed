@@ -14,6 +14,8 @@
 #include "inv.h"
 #include "sound.h"
 #include "object.h"
+#include "critter.h"
+#include "i18n/phrases.h"
 
 /* ui/INTERACT.C (and UW2's GAMESCR.C for the flasks and compass): no header declares these */
 void far flask_info(void);
@@ -24,6 +26,13 @@ void far player_3dlook(void);
 void far player_3duse(void);
 void far player_3dtalk(void);
 unsigned char far IsMobElem(struct Object far *obj);
+unsigned char far InPickRange(int dist, struct Object far *obj, struct Tile far *tile);
+char far BlockingTerrain(int dist, struct Object far *obj);
+void far release_3d(struct Object far *obj);
+void far player_3dget(void);
+unsigned char far EncumCheck(struct Object far *obj);   /* inv/INVDATA.C */
+unsigned char far HasOrIsObj(struct Object far *obj, int id);
+extern char releaseable;                /* the object picked can be taken (pick_3d) */
 extern int16 pTxtId;                    /* the texture a pick found, for look_nothing */
 extern struct Object far *newPlObj;     /* the object picked, for player_3dlook and _3duse */
 
@@ -90,6 +99,36 @@ void far port_key_bag(int how)
         ScrollItemsUp();
 }
 
+/* --enhance e-takes: e on something that can be taken puts it in the backpack's first free slot,
+   as taking it (player_3dget, the same checks: reach, the weight, an owner noticing) and dropping
+   it on that slot would. A whole stack goes. No free slot says so and leaves it there; with a
+   bag open in the panel, or out of reach, it is taken as the original takes it. */
+static void take_into_pack(void)
+{
+    int slot;
+    if (OpenBag != 0 || !InPickRange(PickDist, newPlObj, PickMap) || BlockingTerrain(PickDist, newPlObj)) {
+        player_3dget();
+        return;
+    }
+    for (slot = INV_PACK; slot <= INV_PACK_LAST; slot++)
+        if (Inventory[slot].f.index == 0 && ItemFitsSlot(newPlObj, slot) > 0)
+            break;
+    if (slot > INV_PACK_LAST) {
+        scroll_print(port_zh() ? (char *)port_zh_lit("take.pack_full") : "There is no room in your pack.\n");
+        return;
+    }
+    if (!EncumCheck(newPlObj)) {
+        game_sprint(0x5F);              /* too heavy, as the original says */
+        return;
+    }
+    if (HasOrIsObj(newPlObj, ITEM_MOONSTONE))
+        player->moonstone = 0;
+    player_grabbed(newPlObj, 0);
+    release_3d(newPlObj);
+    AddToInventory(newPlObj, slot);
+    RedisplayInvSlot(slot);
+}
+
 /* q looks (0), e uses (1) at the pointer, as a click there in look or use would (UltimaHacks'
    interactAtCursor): only in the 3D view, and no use while carrying something or aiming */
 void far port_key_interact(int use)
@@ -111,6 +150,8 @@ void far port_key_interact(int use)
     }
     if (!use)
         player_3dlook();
+    else if (ENHANCED(ENH_E_TAKES) && releaseable)
+        take_into_pack();
     else if ((IsMobElem(newPlObj) && OBJ_MAJOR(newPlObj) == 1) || (newPlObj->id & 0x1FF) == 0x1CD)
         player_3dtalk();                /* a character (or item 0x1CD): talk, as UltimaHacks */
     else
