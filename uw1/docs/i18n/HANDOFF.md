@@ -23,12 +23,12 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新 `a2f7488`，已 push |
-| 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `3577541`，已 push |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新 `555120b`，已 push |
+| 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `88ce7f2`，已 push |
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔為最新版（`a7e8d7d`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔是 `a7e8d7d`（`555120b` 的設定畫面捲軸還沒換進去：當時遊戲開著，檔案被鎖住；關掉遊戲後複製 `uw1/build/port/uw1port.exe` 即可），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
@@ -55,7 +55,8 @@
   | 5. E 鍵把可拿的東西直接放進背包 | `e-takes`「E 鍵撿起」（要搭配 `modern-keys`） | `a7e8d7d` |
   | 6. 血瓶、法力瓶顯示 25/32 與飄動的增減數字 | `flask-numbers`「血瓶法力瓶數值」 | `771147f` |
 
-  使用者已實測 2、3、4、6 項都 OK；第 5 項剛做完，尚未回報。
+  使用者已實測 2～6 項都 OK。
+- **F11 設定畫面**：項目超過一頁時，右側有捲軸、底部右邊顯示「▼ 下面還有 N 項」（exhume `88ce7f2`，使用者反映原本的小 v 看不到）。
 - **覆蓋率：** 可翻譯 6,983 筆，已翻 6,893 筆（98.71%）；剩下 90 筆是比對字，依規則不翻。譯文全部是 `draft`。
 
 ### 每次改完都要通過的檢查（目前全部 PASS）
