@@ -638,6 +638,9 @@ void far ShowAutoMapLevel(register int lev)
     char far *buf;
     register unsigned ws;
 
+#ifndef __TURBOC__
+    combat_text_hide();
+#endif
     ws = swap_ws_out();
     buf = MK_FP(conv_ws_seg, 0);
     mouse_hide();

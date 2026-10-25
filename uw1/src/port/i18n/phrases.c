@@ -6,6 +6,7 @@
 #include <string.h>
 
 static const struct { const char *key, *zh; } phrases[] = {
+    {"combat.miss", "揮空"}, {"combat.block", "格擋"},
     {"of", "的"},                                  /* after an adjective: 磨損的 */
     {"period", "。\n"},
     {"count", " %d 個"},

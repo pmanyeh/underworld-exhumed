@@ -1468,6 +1468,9 @@ unsigned char far damage_critter(struct Object far *obj, unsigned char damage,
     register struct Creature near *cr;
     register int ratio;
 
+#ifndef __TURBOC__
+    port_combat_damage(obj, damage);
+#endif
     minor = OBJ_MINOR(obj);
     index = OBJ_INCLASS(obj);
     cr = &Creature[(minor << 4) + index];

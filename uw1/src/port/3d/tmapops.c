@@ -5745,6 +5745,8 @@ L6923:
     SI = pop16();
 L6924:
     /* 6924  lodsw */
+    /* by hand: in_scalebm: stop attributing pixels before dispatching the next opcode */
+    combat_text_owner(0);
     AX = rw(pDS, SI); SI = (uint16_t)(SI + STEP(2));
 L6925:
     /* 6925  xchg    bx,ax */

@@ -893,6 +893,8 @@ L7A3F:
        sbm_inventory), and it is drawn by in_scalebm (TMAPOPS.ASM) with record offset 1Ch. */
 L7A41: /* _do_uwobj */
     /* 7A41  lodsw */
+    /* by hand: do_uwobj: non-creature sprites have no combat ownership */
+    combat_text_owner(0);
     AX = rw(pDS, SI); SI = (uint16_t)(SI + STEP(2));
 L7A42:
     /* 7A42  cmp     ax,1C0h */
@@ -1068,6 +1070,8 @@ L7AB8:
        in the cache and mapped; parse_cpg decodes and draws the frame. */
 L7ABD: /* _do_uwcrit */
     /* 7ABD  lodsw */
+    /* by hand: do_uwcrit: identify this sprite's object without changing the bytecode */
+    port_combat_sprite(pDS + (uint16_t)(SI - 2));
     AX = rw(pDS, SI); SI = (uint16_t)(SI + STEP(2));
 L7ABE:
     /* 7ABE  mov     cx,ax */
@@ -1167,6 +1171,8 @@ L7AFD:
     goto L7CDD;
 L7B00: /* L7B00 */
     /* 7B00  add     si,8 */
+    /* by hand: missing creature art: do not leave the previous sprite's owner */
+    combat_text_owner(0);
     SI = add16(SI, 0x8, 0);
 L7B03:
     /* 7B03  lodsw */
@@ -1799,6 +1805,8 @@ L7CCE:
     SP = (uint16_t)(SP + 2); return ASM_RET;
 L7CCF: /* L7CCF */
     /* 7CCF  mov     ax,seg seg051 */
+    /* by hand: parse_cpg: a missing frame/palette skips drawing and clears its owner */
+    combat_text_owner(0);
     AX = (uint16_t)(0x4723 + PORT_LOAD_SEG);
 L7CD2:
     /* 7CD2  mov     ds,ax */

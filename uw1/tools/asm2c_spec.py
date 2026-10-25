@@ -53,6 +53,21 @@ CODESEGS = {'seg000': (0x0000, 'CODE000'), 'seg001': (0x004E, 'CODE001'), 'seg00
 # C written by hand for one instruction, (module, address) -> (C, why).
 FAR_FROM_C = '{{ unsigned s_, o_; port_fp_split_recent({p}, &s_, &o_); {reg} = (uint16_t)o_; SET_{sreg}(s_); }}'
 OVERRIDES = {
+    ('PGCACHE', 0x7CCF): (
+        'combat_text_owner(0);\nAX = (uint16_t)(0x4723 + PORT_LOAD_SEG);',
+        "parse_cpg: a missing frame/palette skips drawing and clears its owner"),
+    ('PGCACHE', 0x7ABD): (
+        'port_combat_sprite(pDS + (uint16_t)(SI - 2));\nAX = rw(pDS, SI); SI = (uint16_t)(SI + STEP(2));',
+        "do_uwcrit: identify this sprite's object without changing the bytecode"),
+    ('PGCACHE', 0x7A41): (
+        'combat_text_owner(0);\nAX = rw(pDS, SI); SI = (uint16_t)(SI + STEP(2));',
+        "do_uwobj: non-creature sprites have no combat ownership"),
+    ('PGCACHE', 0x7B00): (
+        'combat_text_owner(0);\nSI = add16(SI, 0x8, 0);',
+        "missing creature art: do not leave the previous sprite's owner"),
+    ('TMAPOPS', 0x6924): (
+        'combat_text_owner(0);\nAX = rw(pDS, SI); SI = (uint16_t)(SI + STEP(2));',
+        "in_scalebm: stop attributing pixels before dispatching the next opcode"),
     ('GRENTRY', 0x0A46): (
         'AX = (uint16_t)(port_hole_mark() >= 0 ? port_hole_mark() * 0x101 : 0);',
         "clear_fbuf's xor ax,ax: the colour the 3D view is cleared to, 0; with the hole probe (a test, "

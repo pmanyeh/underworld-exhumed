@@ -189,6 +189,7 @@ void far strt_converse(void)
     update_sprites();
     if ((convoWorkspace = get_workspace()) == 0) return;
 #ifndef __TURBOC__
+    combat_text_hide();
     name_gloss_reset();                 /* P13: each conversation glosses its names afresh */
 #endif
     set_new_music(MUSIC_MAPS);

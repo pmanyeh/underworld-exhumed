@@ -4,6 +4,11 @@
 #undef main
 #include "presentation/presentation.h"
 #include "presentation/hd_cursor.h"
+/* No interactive text/quantity panel in this cursor/compositor fixture. */
+int qty_dialog_open(void) { return 0; }
+int qty_dialog_draw(HdFont *font, const PlatOverlay *frame) { (void)font; (void)frame; return 0; }
+int text_entry_open(void) { return 0; }
+int text_entry_draw(HdFont *font, const PlatOverlay *frame) { (void)font; (void)frame; return 0; }
 void vga_scanout(uint8_t *p,int *w,int *h,uint8_t pal[768]) {
     scanout(p,w,h,pal);pal[6]=63;pal[7]=0;pal[8]=0;
 }

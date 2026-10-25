@@ -363,6 +363,9 @@ void far free_demscr(void)
    special cursor mode ended. */
 void far reset_game(void)
 {
+#ifndef __TURBOC__
+    combat_text_reset();
+#endif
     Punt_player_inv();
     FixPlayerEquips();
     SET_HEADING(ThePlayer, 0);

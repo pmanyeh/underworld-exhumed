@@ -23,4 +23,9 @@ extern unsigned char port_code_block[];        /* mem/fardata.c */
 #define ASM_CODE_BASE(seg) ((seg) >= PORT_LOAD_SEG && (seg) < PORT_LOAD_SEG + CODE_PARAS \
                             ? port_code_block + (uint32_t)((seg) - PORT_LOAD_SEG) * 16u : (uint8_t *)0)
 
+/* Optional observer: separate display-only ownership of the 3D framebuffer. */
+#define ASM_MEMORY_WRITE(q, n) do { \
+    if ((uintptr_t)(q) - combat_write_base < combat_write_size) combat_text_write((q), (n)); \
+} while (0)
+
 #define ASM_TRACE_ENV "UW1PORT_ASMTRACE"

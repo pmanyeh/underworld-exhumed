@@ -55,8 +55,10 @@ void seg019_CEA(int count)
     port_far_entry(SEG019, 0x0CEA, w, 1);
 }
 
+static int combat_x, combat_y, combat_w, combat_h;
 void cPlaceFB(int x, int y, int w_, int h)
 {
+    combat_x = x; combat_y = y; combat_w = w_; combat_h = h;
     uint16_t w[4] = { W(x), W(y), W(w_), W(h) };
     port_far_entry(SEG019, 0x0D1D, w, 4);
 }
@@ -77,7 +79,9 @@ void cRender(void)
     if (!frames++) first_tick = *Time;
     else if (*Time - last_tick < PORT_FRAME_TICKS) short_frames++;
     last_tick = *Time;
+    port_combat_render_begin(combat_x, combat_y, combat_w, combat_h);
     port_far_entry(SEG019, 0x0D7A, 0, 0);
+    if (combat_write_size) combat_text_end();
 }
 
 /* UW1PORT_POS_LOG in the environment (main.c, at the end of a run): the player's position

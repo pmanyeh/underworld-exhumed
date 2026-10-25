@@ -244,6 +244,9 @@ void far init_3d(void)
 /* Starts the next frame's database at DbEntry, after init_3d's header. */
 void far reset_db(void)
 {
+#ifndef __TURBOC__
+    port_combat_tags_reset();
+#endif
     dbptr = DbEntry;
 }
 

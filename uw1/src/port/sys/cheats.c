@@ -181,6 +181,57 @@ static const char *c_scroll(int argc, char *argv[], int run)
     }
     fclose(f);text[size]=0;do_main_scroll();scroll_clear(1);scroll_print(text);free(text);return NULL;
 }
+/* Deterministic combat fixtures. The damage goes through the real damage handler;
+   misses/blocks through COMBAT.C, before fromwho is reused as an item id. */
+unsigned char far damage_critter(struct Object far *, unsigned char, struct Object far *);
+char far do_miss(int);
+extern int16 fromwho, hitobj;
+static const char *c_combat(int argc, char *argv[], int run)
+{
+    long slot, amount = 0;
+    int kind, saved_from, saved_hit;
+    struct Object *o;
+    if (argc != 2 || cheat_num(argv[0], 2, 255, &slot)) return "a mobile slot 2..255 and damage 1..255, miss or block";
+    kind = !strcmp(argv[1], "miss") ? COMBAT_MISS : !strcmp(argv[1], "block") ? COMBAT_BLOCK : COMBAT_DAMAGE;
+    if (kind == COMBAT_DAMAGE && cheat_num(argv[1], 1, 255, &amount)) return "damage 1..255, miss or block";
+    if (!run) return NULL;
+    o = Obj_IntTMem((int)slot);
+    if (OBJ_MAJOR(o) != MAJOR_CREATURE || !o->hp) return "not a live creature";
+    if (kind == COMBAT_DAMAGE) damage_critter(o, (unsigned char)amount, ThePlayer);
+    else {
+        saved_from = fromwho; saved_hit = hitobj;
+        fromwho = 1; hitobj = (int)slot;
+        do_miss(kind == COMBAT_MISS ? 0 : 1);
+        fromwho = saved_from; hitobj = saved_hit;
+    }
+    editchng(2);
+    return NULL;
+}
+/* Aim the test camera at a mobile, optionally with a clear light level. */
+void far set_light(signed char);
+static const char *c_view(int argc, char *argv[], int run)
+{
+    long slot, light = -1;
+    int dx, dy, distance;
+    struct Object *o;
+    if ((argc != 1 && argc != 2) || cheat_num(argv[0], 2, 255, &slot) ||
+        (argc == 2 && cheat_num(argv[1], 0, 7, &light))) return "a mobile slot 2..255, optionally light 0..7";
+    if (!run) return NULL;
+    o = Obj_IntTMem((int)slot);
+    if (OBJ_MAJOR(o) != MAJOR_CREATURE || !o->hp) return "not a live creature";
+    dx = (OBJ_HOMEX(o) << 8) + (OBJ_FINEX(o) << 5) - PN.x;
+    dy = (OBJ_HOMEY(o) << 8) + (OBJ_FINEY(o) << 5) - PN.y;
+    if (!dx && !dy) return "camera and target coincide";
+    distance = cSqRt((int32)dx * dx + (int32)dy * dy);
+    PlayerHeading = PlayerFacing = (uint16)(0x4000 - cAtan2((int)((int32)dy * 32767 / distance),
+                                                            (int)((int32)dx * 32767 / distance)));
+    SET_HEADING(ThePlayer, (uint16)PlayerFacing >> 13);
+    SET_FINEHEAD(ThePlayer, (uint16)PlayerFacing >> 8);
+    PlayerPitch = 0;
+    if (light >= 0) set_light((signed char)light);
+    editchng(2);
+    return NULL;
+}
 static const char *c_talk(int argc, char *argv[], int run)
 {
     long who;int i;struct Object *obj;
@@ -277,6 +328,8 @@ static const struct cheat_cmd cmds[] = {
     { "give", "ITEM [QTY [QUALITY]] [drop]", c_give },
     { "set", "FIELD VALUE", c_set },
     { "scroll", "UTF8_FILE (HD scroll fixture)", c_scroll },
+    { "combat", "SLOT DAMAGE|miss|block (combat fixture)", c_combat },
+    { "view", "SLOT [LIGHT] (camera fixture)", c_view },
     { "talk", "WHOAMI (conversation fixture)", c_talk },
     { "use", "INDEX X Y (door use fixture)", c_use },
 };

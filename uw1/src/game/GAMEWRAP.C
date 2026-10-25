@@ -107,6 +107,9 @@ int far GetLevel(register int level)
     register int ok = 1;
     struct Arc arc;
 
+#ifndef __TURBOC__
+    combat_text_reset();
+#endif
     SavePlayerInv(0);
     if (GrSq >= 0)
         GrSq = -1;

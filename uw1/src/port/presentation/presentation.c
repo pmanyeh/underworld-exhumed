@@ -17,6 +17,7 @@ static uint8_t frame_palette[768];
 static ScrollFrame frame_text;
 static CaptionFrame frame_caption;
 static FlaskFrame frame_flasks;
+static CombatFrame frame_combat;
 static HdLabelFrame frame_labels;
 /* the host's pointer, in the game's pixels, as the backend gives it (presentation_pointer) */
 static volatile int pointer_x = -100, pointer_y = -100;
@@ -46,6 +47,7 @@ void presentation_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])
     scroll_text_read(&frame_text);
     caption_read(&frame_caption);
     flask_text_read(&frame_flasks);
+    combat_text_read(&frame_combat);
     memcpy(frame_palette,rgb6,sizeof frame_palette);
 }
 int presentation_draw(const PlatOverlay *frame, void *data)
@@ -64,6 +66,9 @@ int presentation_draw(const PlatOverlay *frame, void *data)
     if (p->scroll_fonts[0] && frame_flasks.active)
         drawn |= flask_text_draw(p->scroll_fonts[0],frame,&frame_flasks,
                                  p->scroll_style[0].border>0.6f?p->scroll_style[0].border:0.6f);
+    if (!settings_open() && (p->scroll_fonts[0] || p->label_font))
+        drawn |= combat_text_draw(p->scroll_fonts[0] ? p->scroll_fonts[0] : p->label_font,
+                                  frame, &frame_combat, 0.6f);
     /* the bitmap UI's strings (P12): each while the screen under it is as the game left it */
     if ((p->scroll_fonts[0] || p->label_font) && frame_labels.count && frame_h==200)
     {
