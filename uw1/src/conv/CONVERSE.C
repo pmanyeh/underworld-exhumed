@@ -64,6 +64,7 @@
 #endif
 #ifndef __TURBOC__
 #include "presentation/scroll_bridge.h"
+#include "i18n/name_gloss.h"
 #endif
 
 /* UW1: declarations the headers do not have (or have in UW2's form). */
@@ -187,6 +188,9 @@ void far strt_converse(void)
     char name[0x28];
     update_sprites();
     if ((convoWorkspace = get_workspace()) == 0) return;
+#ifndef __TURBOC__
+    name_gloss_reset();                 /* P13: each conversation glosses its names afresh */
+#endif
     set_new_music(MUSIC_MAPS);
     change_music_maybe();
     convoScreen = MK_FP(convoWorkspace, 0);

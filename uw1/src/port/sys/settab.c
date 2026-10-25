@@ -31,7 +31,7 @@ extern const char *port_home;
 
 /* The rows, in each tab's order; the display rows read each other's values */
 enum { R_MUSIC, R_SPEECH, R_ROMS, R_VOLUME, R_MOUSE, R_LOOK, R_FULL, R_SCALE, R_ASPECT, R_INTEGER, R_FOLDER, R_RECORD, R_START,
-       R_LANGUAGE, R_FONT, R_SIZE, R_LINE, R_BORDER, R_SMOOTH };
+       R_LANGUAGE, R_FONT, R_SIZE, R_LINE, R_BORDER, R_SMOOTH, R_GLOSS };
 
 /* Window scale offers only the scales whose window fits the display (with 4:3 as it stands) */
 static int scale_limit(void)
@@ -145,6 +145,10 @@ static const char *const font_names[] = { "jf open huninn", "Noto Sans CJK TC", 
 static const char *const font_stored[] = { "jf-openhuninn-2.1.ttf", "NotoSansCJKtc-Regular.otf", NULL };
 static const char *const border_names[] = { "None", "Thin", "Medium", "Thick", NULL };
 static const char *const border_stored[] = { "0", "0.5", "1", "1.5", NULL };
+/* P13: names with their English in conversations and books (i18n/name_gloss.c), at once */
+static const char *const gloss_names[] = { "Off", "First time", "Every time", NULL };
+static const char *const gloss_stored[] = { "0", "1", "2", NULL };
+void name_gloss_mode(int mode);                                                /* i18n/name_gloss.c */
 void port_text_preview(uint32_t *px, int x, int y, int w, int h, int value);   /* presentation/settings_text.c */
 int text_style_font_path(const char *home, const char *file, char *out, size_t outsz);   /* presentation/text_style.c */
 /* the fonts offered: Noto Sans CJK TC only where it is (a playtest folder has jf open huninn) */
@@ -195,7 +199,16 @@ const struct setting port_settings[] = {
                     .stored = border_stored, .def = 0, .restart = 1, .help = "A dark edge round each character", .preview = port_text_preview },
     [R_SMOOTH]  = { .tab = SET_TAB_TEXT, .label = "Smooth edges", .kind = SET_BOOL, .key = "font_cjk_hd_antialiasing", .def = 1,
                     .restart = 1, .help = "Off: each pixel of a character all or nothing, as a bitmap font", .preview = port_text_preview },
+    [R_GLOSS]   = { .tab = SET_TAB_TEXT, .label = "English names", .kind = SET_CYCLE, .key = "name-gloss", .names = gloss_names,
+                    .stored = gloss_stored, .def = 1, .apply = name_gloss_mode,
+                    .help = "A name of a person, place or order with its English, in conversations and books" },
 };
+
+/* The English-names row's value, for the start (main.c) */
+int port_settings_gloss(void)
+{
+    return settings_value(R_GLOSS);
+}
 
 /* The language this run has (the command line over the file) */
 void port_settings_language(int zh)

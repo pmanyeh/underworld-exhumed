@@ -191,7 +191,8 @@ static const char *c_talk(int argc, char *argv[], int run)
     return "NPC not found on this level";
 }
 /* look ITEM [QTY [QUALITY [LORE]]]: the look command's description of a new object (LookAt),
-   which is then freed; a fixture for its wording (P11.2). */
+   which is then freed; a fixture for its wording (P11.2). For a book or scroll (0x130 to 0x13F)
+   QTY is its text's number (P13: a book's names glossed). */
 static const char *c_look(int argc, char *argv[], int run)
 {
     long v[4] = {0, 0, -1, 0};
@@ -203,7 +204,7 @@ static const char *c_look(int argc, char *argv[], int run)
             return "an item, then a quantity, a quality 0 to 63 and a lore 0 to 3 if given";
     if (!run) return NULL;
     if ((obj = CreateObj((int)v[0], 0)) == 0) return "no free object";
-    if (v[1] > 1 && OBJ_ISQUANT(obj)) obj->ol.f.link = (uint16)v[1];
+    if (v[1] > 1 && (OBJ_ISQUANT(obj) || (v[0] >= 0x130 && v[0] <= 0x13F))) obj->ol.f.link = (uint16)v[1];
     if (v[2] >= 0) obj->qn.f.quality = (uint16)v[2];
     LookAt(obj, (int)v[3]);
     Obj_Free(obj);

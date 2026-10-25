@@ -54,6 +54,7 @@
 #include "ui.h"
 #ifndef __TURBOC__
 #include "i18n/phrases.h"
+#include "presentation/scroll_bridge.h"
 #endif
 #include "conv.h"
 
@@ -973,7 +974,11 @@ void far UseBook(struct Object far *obj, char how)
 #endif
             scroll_print(text);
             str = get_string((OBJ_LINK(obj) & 0x1FF) | STR_BOOKS);
+#ifndef __TURBOC__
+            port_book_print(str);       /* P13: names glossed */
+#else
             scroll_print(str);
+#endif
             scroll_print("\n");
         } else
             make_stew();

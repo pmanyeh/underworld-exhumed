@@ -97,3 +97,11 @@ font_cjk_hd_antialiasing=false
 jf open 粉圓 2.1（justfont）以 SIL Open Font License 1.1 授權，可隨遊戲散布；授權全文
 `jf-openhuninn-OFL.txt` 須與字型檔放在一起。開發用的取得方式：`python3 tools/i18n/fetch_font.py`
 （固定版本與 SHA-256，下載到不提交的 `tools/fonts/`）。
+
+## 七、專有名詞加註英文
+
+對話與書本、卷軸中的人名、地名、組織名，第一次出現時顯示為「加拉蒙（Garamon）」，方便對照原版與攻略。
+每段對話、每本書各自重新計算；一般訊息不加註。名單是 `i18n/zh-TW/proper-names.tsv`。
+
+F11 設定畫面「語言與文字」分頁的「專有名詞加註英文」可選：關閉、每段第一次（預設）、每次。立即生效。
+設定檔的名稱是 `name-gloss`（`0` 關閉、`1` 每段第一次、`2` 每次）。

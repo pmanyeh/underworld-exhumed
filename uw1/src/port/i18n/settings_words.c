@@ -39,6 +39,9 @@ static const struct { const char *english, *zh; } words[] = {
     {"A dark edge round each character", "每個字外圍的深色邊框"},
     {"Smooth edges", "反鋸齒"},
     {"Off: each pixel of a character all or nothing, as a bitmap font", "關閉時，字的每個像素非有即無，像點陣字"},
+    {"English names", "專有名詞加註英文"}, {"Off", "關閉"}, {"First time", "每段第一次"}, {"Every time", "每次"},
+    {"A name of a person, place or order with its English, in conversations and books",
+     "對話與書本中的人名、地名、組織名，後面加上英文原名"},
     /* the enhancements' names and what each does */
     {"skip-intro", "略過開場"}, {"wrap-menu", "選單循環"}, {"fast-panels", "面板加速"},
     {"free-heading", "貼牆不轉向"}, {"subtitles", "過場字幕"}, {"skill-messages", "技能提升訊息"},

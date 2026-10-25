@@ -24,6 +24,7 @@
 #include "ui/settings.h"
 #include "i18n/localization.h"
 #include "i18n/input_alias.h"
+#include "i18n/name_gloss.h"
 #include "i18n/phrases.h"
 #include "presentation/caption.h"
 #include "presentation/hd_label.h"
@@ -431,6 +432,7 @@ extern const int port_settings_count;
 void port_settings_list(FILE *f);
 void port_settings_seed(int fullscreen, int scale, int aspect, int integer_scale, int lock);
 void port_settings_start(int *fullscreen, int *scale, int *aspect, int *integer_scale);
+int port_settings_gloss(void);                     /* settab.c */
 void port_settings_roms(const char *dir);
 
 int main(int argc, char *argv[])
@@ -793,6 +795,17 @@ int main(int argc, char *argv[])
             fprintf(stderr, "uw1port: input aliases: %s not loaded; conversations take English words only\n", aliases);
         else
             fprintf(stderr, "uw1port: input aliases: %s\n", aliases);
+        /* P13: the proper names a conversation or book shows with their English, Chinese only */
+        snprintf(aliases, sizeof aliases, "%s/i18n/%s/proper-names.tsv", home, locale);
+        if ((probe = fopen(aliases, "rb")) != NULL) fclose(probe);
+        else snprintf(aliases, sizeof aliases, "i18n/%s/proper-names.tsv", locale);
+        if (strcmp(locale, "zh-TW")) name_gloss_free();
+        else if (name_gloss_load(aliases))
+            fprintf(stderr, "uw1port: proper names: %s not loaded; names shown without their English\n", aliases);
+        else {
+            name_gloss_mode(port_settings_gloss());
+            fprintf(stderr, "uw1port: proper names: %s (%d)\n", aliases, name_gloss_count());
+        }
     }
     /* P12: the settings screen in the HD font, in Chinese in zh-TW; in English its own font, but
        the language's name in Chinese where a font for it is at hand */

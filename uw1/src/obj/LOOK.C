@@ -43,6 +43,7 @@
 #ifndef __TURBOC__
 #include <stdio.h>
 #include "i18n/phrases.h"
+#include "presentation/scroll_bridge.h"
 /* P11.2: what do_mods and do_of found, for LookAt's sentence in the locale's language */
 static int zh_mod;          /* 1 magical, 2 cursed */
 static int zh_spell;        /* the enchantment's string id, -2 none */
@@ -305,7 +306,11 @@ void far BookLook(struct Object far *obj, int print)
         return;
     }
     if ((obj->ol.f.link & 0x1FF) > 0xFF)
+#ifndef __TURBOC__
+        port_book_print(get_string((obj->ol.f.link & 0x1FF) | STR_BOOKS));   /* P13: names glossed */
+#else
         scroll_print(get_string((obj->ol.f.link & 0x1FF) | STR_BOOKS));
+#endif
     else {
         strcpy(text, "You read the ");
         if (!get_name(text + strlen(text), obj, 0, 0))
@@ -324,7 +329,11 @@ void far BookLook(struct Object far *obj, int print)
 #endif
         scroll_print(text);
         str = get_string((obj->ol.f.link & 0x1FF) | STR_BOOKS);
+#ifndef __TURBOC__
+        port_book_print(str);
+#else
         scroll_print(str);
+#endif
         scroll_print("\n");
     }
 }

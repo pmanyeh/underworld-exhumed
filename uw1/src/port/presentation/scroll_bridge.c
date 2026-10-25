@@ -1,6 +1,7 @@
 #include "scroll_bridge.h"
 #include "i18n/utf8.h"
 #include "i18n/input_alias.h"
+#include "i18n/name_gloss.h"
 #include "i18n/phrases.h"
 #include "i18n/user_text.h"
 #include "plat.h"
@@ -30,16 +31,28 @@ void port_scroll_choice_bind(int option,const char *legacy)
 }
 const char *port_scroll_choice_text(int option,const char *expanded)
 { return option>0 && option<20 && choices[option]?choices[option]:expanded; }
+/* P13: a book's text, its names with their English the first time (name_gloss.c); the
+   conversation's lines are all emitted below, and strt_converse starts each one afresh */
+static int in_book;
+int port_book_print(char *text)
+{
+    int result;
+    name_gloss_reset();
+    in_book=1;result=scroll_print(text);in_book=0;
+    return result;
+}
 int port_scroll_emit(const char *prefix,const char *text,const char *suffix,int choice)
 {
-    size_t a,b,c;char *copy;int previous=choice_context,result;
+    size_t a,b,c;char *copy,*glossed;int previous=choice_context,result;
     if(!scroll_text_enabled())return -1;
+    glossed=name_gloss_apply(text);
+    if(glossed)text=glossed;
     a=strlen(prefix);b=strlen(text);c=strlen(suffix);
     if(a>16384 || b>16384-a || c>16384-a-b)port_fatal("HD scroll: display text exceeds 16KiB");
     copy=malloc(a+b+c+1);if(!copy)port_fatal("HD scroll: allocation failed");
     memcpy(copy,prefix,a);memcpy(copy+a,text,b);memcpy(copy+a+b,suffix,c+1);
     choice_context=choice;result=scroll_print(copy);choice_context=previous;
-    free(copy);return result;
+    free(copy);free(glossed);return result;
 }
 int port_scroll_option(int option,const char *expanded)
 {
@@ -61,8 +74,9 @@ static const unsigned short cp437[128]={
 };
 int port_scroll_write(int which,const char *legacy,int escapes)
 {
-    const char *text=port_i18n_display(legacy);char *converted=NULL;int result;
+    const char *text=port_i18n_display(legacy);char *converted=NULL,*glossed=NULL;int result;
     size_t len,i,n=0;
+    if(in_book && text!=legacy && (glossed=name_gloss_apply(text))!=NULL)text=glossed;
     /* P11.2: the little English the game's code prints by itself between translated pieces
        (a sentence's '.', a list's ", " and " and ", print_path_to's "very near"), shown after
        Chinese in Chinese */
@@ -89,7 +103,7 @@ int port_scroll_write(int which,const char *legacy,int escapes)
         }
         converted[n]=0;text=converted;
     }
-    result=scroll_text_write(which,text,escapes,choice_context);free(converted);
+    result=scroll_text_write(which,text,escapes,choice_context);free(converted);free(glossed);
     if(result<0)port_fatal("HD scroll: invalid text, metrics or display capacity");
     return result;
 }

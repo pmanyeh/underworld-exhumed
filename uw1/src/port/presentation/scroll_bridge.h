@@ -10,6 +10,8 @@ void port_scroll_choice_bind(int option,const char *legacy);
 const char *port_scroll_choice_text(int option,const char *expanded);
 int port_scroll_option(int option,const char *expanded);
 int port_scroll_write(int which,const char *text,int escapes);
+/* P13: scroll_print of a book's or scroll's text, its names glossed as a conversation's are */
+int port_book_print(char *text);
 /* P11.4: a conversation's typed answer (babl_ask) on the HD message scroll, with the host's
    input method on: ASCII keys come from next_key (the game's own input), other text from the
    input method; Enter or Esc ends it. result gets ASCII only (input_alias_map for the
