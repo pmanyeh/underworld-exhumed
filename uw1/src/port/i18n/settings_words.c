@@ -14,6 +14,7 @@ static const struct { const char *english, *zh; } words[] = {
     {"Cmd+, opens this at any time \xC2\xB7 Esc closes", "隨時按 Cmd+, 開啟本畫面 \xC2\xB7 按 Esc 關閉"},
     {"The gear (or F11) opens this at any time \xC2\xB7 Esc closes", "隨時按齒輪（或 F11）開啟本畫面 \xC2\xB7 按 Esc 關閉"},
     {"Restart to apply", "重新啟動後生效"},
+    {"v %d more below", "▼ 下面還有 %d 項"},
     {"changes play", "會改變玩法"},
     {"Enter or click to choose a folder", "按 Enter 或點一下，選擇資料夾"},
     {"That folder is not right for this", "這個資料夾不適用"},
