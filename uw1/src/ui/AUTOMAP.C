@@ -128,6 +128,8 @@ void far AutoMap(void)
         _input_addkey(KEY_ESC, MODE_GAME, MODE_MAP, (InputFn)newscr);
 #ifndef __TURBOC__
         if (ENHANCED(ENH_MODERN_KEYS)) {     /* port only: modern-keys' map keys */
+            /* Notes read raw keys below, so Z still types while a note is being edited. */
+            _input_addkey('z', MODE_GAME, MODE_MAP, (InputFn)newscr);
             _input_addkey('s', 1, MODE_MAP, (InputFn)port_map_key);
             _input_addkey('w', -1, MODE_MAP, (InputFn)port_map_key);
             _input_addkey('c', 2, MODE_MAP, (InputFn)port_map_key);

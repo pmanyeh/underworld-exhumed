@@ -50,7 +50,7 @@ They are kept in the settings file (`enhance=` in `uw1port.cfg` or `uw2port.cfg`
 | Up, Down (the grey arrows), 1, 3 | look up, down (1 is now up); 2 and keypad 5 look ahead |
 | Space | attack with the last attack type, slash at first; `.` `;` `p` still thrust, slash and bash, and set the last type |
 | Q, E | look at, use, what is under the pointer (the crosshair with mouse-look); E on a person talks to them |
-| Z | the map; on it S a level on, W a level back, C your own level; UW2 also D and A the previous and next world |
+| Z | the map; in UW1, Z again closes it unless typing a map note. On the map S a level on, W a level back, C your own level; UW2 also D and A the previous and next world |
 | R, F | the rune bag, the statistics panel (again: back to the inventory) |
 | G, H | the compass, the flasks (as clicks on them) |
 | C, V, B | close the open container, scroll the inventory down, up; in UW1 the container closes with X, and C draws or sheathes the weapon (fight mode), the one change from UltimaHacks' layout |
