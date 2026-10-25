@@ -23,12 +23,12 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新 `555120b`，已 push |
-| 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `88ce7f2`，已 push |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新 `6486815`，已 push |
+| 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `32fd048`，已 push |
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔為最新版（`555120b`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔為最新版（`6486815`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
@@ -54,6 +54,7 @@
   | 4. C 鍵切換戰鬥模式（原本 C 的「關容器」改到 X） | 原有的 `modern-keys` | `4c8d2a2` |
   | 5. E 鍵把可拿的東西直接放進背包 | `e-takes`「E 鍵撿起」（要搭配 `modern-keys`） | `a7e8d7d` |
   | 6. 血瓶、法力瓶顯示 25/32 與飄動的增減數字 | `flask-numbers`「血瓶法力瓶數值」 | `771147f` |
+  | （追加）滑鼠滾輪：捲動打開的袋子、翻過「繼續」；F11 設定畫面一律可用滾輪捲動 | `mouse-wheel`「滑鼠滾輪」 | `6486815`（exhume `32fd048`） |
 
   使用者已實測 2～6 項都 OK。
 - **F11 設定畫面**：項目超過一頁時，右側有捲軸、底部右邊顯示「▼ 下面還有 N 項」（exhume `88ce7f2`，使用者反映原本的小 v 看不到）。
@@ -137,14 +138,15 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 - 開強化功能：`export P12_EXTRA="--enhance modern-keys,e-takes"`。**不用時要 `unset P12_EXTRA`**，設成空字串會讓程式拿到空參數。
 - 英文模式：`P12_EN=1`。
 - 事件：`key e`、`down 3`／`up 3`（按住／放開）、`move X Y`（游標移到遊戲座標）、`click X Y left|right|middle`、
-  `mdown`／`mup`、`look DX DY`（滑鼠視角的移動）、`cheat 指令`。滑鼠按下與放開要分兩個事件。
+  `mdown`／`mup`、`look DX DY`（滑鼠視角的移動）、`wheel N`（滾輪 N 格，往下為正）、`cheat 指令`。滑鼠按下與放開要分兩個事件。
 - **截圖是 960×720，遊戲座標 320×200：x 除以 3，y 除以 3.6**（4:3 比例校正）。用截圖找位置時別忘了。
 - 要看腳下的物品：開 `modern-keys` 後 `down 3` 按住約 1.5 秒往下看。
 
 **測試指令**（只在輸入腳本裡、`EXHUME_TEST_CHEATS=1` 時有效；`src/port/sys/cheats.c`）：
 `goto 層 X Y`、`give 物品 [數量 [品質]] [drop]`（**鑰匙的「數量」是它開的鎖號**）、`set hp|mana|str|… 值`、
 `talk NPC編號`、`look 物品 [數量 [品質 [描述等級]]]`（**書本／卷軸 0x130～0x13F 的「數量」是文字編號**）、`lookwall`、
-`mantra`、`scroll`、`endstats`、`use 物件編號 X Y`（直接使用門或家具）。
+`mantra`、`scroll 檔案`（檔案路徑要短，例如 `build/long.txt`，太長會被拒絕；多行文字可測「繼續」）、`endstats`、`use 物件編號 X Y`（直接使用門或家具）。
+- 改到 MOUSE.C 或平台層時：`tools/i18n/mouse_cursor_test.c` 與 `exhume/tools/tests/overlay/presentation.c` 是替身檔，新函式要在那裡補空的實作，否則測試連結失敗。
 - 寫新的測試指令時注意：**指令在載入腳本時會先以 `run=0` 檢查參數，那時遊戲物件還沒載入**；
   讀物件要放在 `if (!run) return NULL;` 之後，否則程式會當掉（0xC0000005）。
 - 找第一層上鎖的門：`.poc-tools` 外的草稿腳本已不在，做法是解析存檔的 `LEV.ARK`（每層 64×64 格的 4 位元組 tile，
