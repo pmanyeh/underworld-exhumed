@@ -23,6 +23,8 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"look.named", "，名叫"},
     {"look.texture_end", "。\n"},
     {"stats.out_of", "／"},
+    {"autokey.with", "你用背包裡的"},             /* --enhance auto-key (port/ui/autokey.c) */
+    {"autokey.unlocked", "打開了鎖。\n"},
     {"food.that", ""},
     {"use.use", "要把"},
     {"use.on_what", "用在什麼上？\n"},

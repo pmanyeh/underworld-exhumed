@@ -529,6 +529,9 @@ void far UseMagic(struct Object far *who, struct Object far *obj, char how);
 void far UseUtil(struct Object far *obj, char how);
 void far UseOilOn(struct Object far *obj, char how, char other);  /* ties UseKeyOn */
 void far UseKeyOn(struct Object far *obj, char how);
+#ifndef __TURBOC__
+int far port_auto_key(struct Object far *who, struct Object far *obj);   /* port/ui/autokey.c */
+#endif
 void far SpikeDoor_seg040_662(struct Object far *door);
 void far SpikeDoor_seg040_352B_6F9(struct Object far *obj, char how);
 void far UseBonesOn(struct Object far *obj, char how);

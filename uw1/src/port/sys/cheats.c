@@ -101,7 +101,9 @@ static const char *c_give(int argc, char *argv[], int run)
         return "an object a player can carry: 0x000 to 0x03F or 0x080 to 0x13F";
     if (!run) return NULL;
     if ((obj = CreateObj((int)item, 0)) == 0) return "no free object";
-    if (qty) {
+    if (qty && item >= ITEM_KEY_100 && item < ITEM_LOCK && item != ITEM_LOCKPICK)
+        obj->ol.f.owner = (uint16)qty;  /* a key: QTY is the lock it opens (auto-key's fixture) */
+    else if (qty) {
         if (!OBJ_ISQUANT(obj)) {
             Obj_Free(obj);
             return "not an object with a quantity";
@@ -249,6 +251,23 @@ static const char *c_mantra(int argc, char *argv[], int run)
     if (run) mantra_advance();
     return NULL;
 }
+/* use INDEX X Y: the player's use of a door or furniture, object INDEX on square X, Y of this
+   level (UseRect, as a click on it does); a fixture for auto-key (P13). */
+static const char *c_use(int argc, char *argv[], int run)
+{
+    long v[3];
+    struct Object far *obj;
+    if (argc != 3 || cheat_num(argv[0], 1, 1023, &v[0]) || cheat_num(argv[1], 0, 63, &v[1])
+        || cheat_num(argv[2], 0, 63, &v[2]))
+        return "an object 1 to 1023 and its square 0 to 63, 0 to 63";
+    if (!run) return NULL;              /* the objects are there only when it runs */
+    obj = Obj_IntTMem((int)v[0]);
+    if (OBJ_MAJOR(obj) != 5) return "not a door or furniture (class 5)";
+    MapObj_X = (int16)v[1];
+    MapObj_Y = (int16)v[2];
+    UseRect(ThePlayer, obj);
+    return NULL;
+}
 static const struct cheat_cmd cmds[] = {
     { "look", "ITEM [QTY [QUALITY [LORE]]] (look fixture)", c_look },
     { "lookwall", "N (wall look fixture)", c_lookwall },
@@ -259,6 +278,7 @@ static const struct cheat_cmd cmds[] = {
     { "set", "FIELD VALUE", c_set },
     { "scroll", "UTF8_FILE (HD scroll fixture)", c_scroll },
     { "talk", "WHOAMI (conversation fixture)", c_talk },
+    { "use", "INDEX X Y (door use fixture)", c_use },
 };
 
 const struct cheat_game cheat_game = { cmds, (int)(sizeof cmds / sizeof cmds[0]), cheat_ready };
