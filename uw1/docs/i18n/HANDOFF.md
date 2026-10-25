@@ -28,7 +28,7 @@
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔是 `a7e8d7d`（`555120b` 的設定畫面捲軸還沒換進去：當時遊戲開著，檔案被鎖住；關掉遊戲後複製 `uw1/build/port/uw1port.exe` 即可），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔為最新版（`555120b`），catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
