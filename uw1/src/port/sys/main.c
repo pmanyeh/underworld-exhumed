@@ -27,6 +27,7 @@
 #include "i18n/name_gloss.h"
 #include "i18n/phrases.h"
 #include "presentation/caption.h"
+#include "presentation/flask_text.h"
 #include "presentation/hd_label.h"
 #include "presentation/settings_text.h"
 #include "presentation/qty_dialog.h"
@@ -786,6 +787,7 @@ int main(int argc, char *argv[])
     hd_cursor_enable(hd_cursor);
     scroll_text_enable(modern_scroll);
     caption_enable(modern_scroll);
+    flask_text_enable(modern_scroll);
     hd_label_enable(modern_scroll);
     qty_dialog_enable(modern_scroll, kbd_byte);
     text_entry_enable(modern_scroll, kbd_byte);

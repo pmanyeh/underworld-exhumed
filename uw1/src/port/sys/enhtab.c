@@ -21,4 +21,5 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "rune-keys", "Ctrl+Alt+letter picks a rune you have, Ctrl+Alt+Backspace clears, Ctrl+Alt+Space casts", ENH_PRESENTATION, UH, NULL },
     { "tidy-objects", "A stack too heavy to take part of no longer loses an object slot, and lost slots are freed on arrival", ENH_GAMEPLAY, NULL, NULL },
     { "restore-at-rest", "A restored game starts at rest, without the motion or fall it was restored in", ENH_GAMEPLAY, NULL, NULL },
+    { "flask-numbers", "The flasks show their values, 25/32, and each change floats up from them (HD text)", ENH_PRESENTATION, NULL, NULL },
 };

@@ -47,6 +47,7 @@
 #include "ui.h"
 #ifndef __TURBOC__
 #include "i18n/phrases.h"
+#include "presentation/flask_text.h"
 #endif
 #include "view3d.h"
 
@@ -246,6 +247,11 @@ void far display_scr(void)
     ThePlayer->b11 = 0;
     v = player->play_mana;
     set_screen_frame(SCR_MANA, v);
+#ifndef __TURBOC__
+    if (ENHANCED(ENH_FLASK_NUMBERS))    /* port only: the flasks' values, shown in the HD text */
+        flask_text_update(ThePlayer->hp, playerdat->avghit, player->play_mana, player->max_mana,
+                          player->poison != 0, GAME_TIME());
+#endif
     if (PlayerLevel != 9) {
         v = (OBJ_HEADING(ThePlayer) << 5) + OBJ_FINEHEAD(ThePlayer);
         v = (v + 8 & 0xFF) >> 4;
