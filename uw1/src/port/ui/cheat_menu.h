@@ -2,6 +2,8 @@
 #define UW1_CHEAT_MENU_H
 void port_cheat_menu_init(void);
 void port_cheat_settings(void);
+void port_cheat_brightness_request(int value);
+void port_cheat_brightness_point(void);
 void port_cheat_rescue_request(int unused);
 void port_cheat_anchor_request(int unused);
 int port_god_protect(const void *object);

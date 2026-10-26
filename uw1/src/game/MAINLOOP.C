@@ -30,6 +30,7 @@ void far mainloop(void)
     while (notdone)
     {
 #ifndef __TURBOC__
+        port_cheat_brightness_point();
         port_cheat_point();     /* port only: recorded test and public menu commands */
         port_god_tick();
 #endif

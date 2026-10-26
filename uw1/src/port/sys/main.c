@@ -446,6 +446,7 @@ void port_settings_seed(int fullscreen, int scale, int aspect, int integer_scale
 void port_settings_start(int *fullscreen, int *scale, int *aspect, int *integer_scale);
 int port_settings_gloss(void);                     /* settab.c */
 void port_settings_roms(const char *dir);
+void port_settings_brightness(int replay);
 
 int main(int argc, char *argv[])
 {
@@ -716,6 +717,7 @@ int main(int argc, char *argv[])
        display options win */
     settings_init(home, port_settings, port_settings_count, "Ultima Underworld");
     port_cheat_settings();
+    port_settings_brightness(replay != NULL);
     /* what this run really uses (the command line over the file) is what the screen shows and applies */
     port_settings_start(&cfg.fullscreen, cl_scale ? NULL : &cfg.scale, cl_aspect ? NULL : &cfg.aspect,
                         cl_integer ? NULL : &cfg.integer_scale);

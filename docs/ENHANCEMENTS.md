@@ -35,7 +35,7 @@ They are kept in the settings file (`enhance=` in `uw1port.cfg` or `uw2port.cfg`
 | `enemy-health` | UW1 | presentation | A green/yellow/red health bar above a visible creature after it takes damage or starts a melee, missile or offensive spell attack against the player. Its maximum starts at the creature's HP when damage or an attack first triggers its bar (before damage is deducted) and rises only if higher HP is later observed; no type average is used. Occluded creatures have no bar; restore, level loads and freed slots clear the display state | a user of the Chinese build |
 | `full-map` | UW1 | presentation | F11 Cheats: the whole map, without changing exploration or the game's random sequence; applies on returning to play | this project |
 | `god-mode` | UW1 | gameplay | F11 Cheats: no health loss or death, with safe position recovery; applies on returning to play | this project |
-| `bright-view` | UW1 | presentation | F11 Cheats: gently reduce the current light source's shading slope and base for drawing, preserving distance gradients, vision range and exploration; applies on returning to play | this project |
+| `bright-view` | UW1 | presentation | F11 Cheats: gently reduce the current light source's shading slope and base for drawing, preserving distance gradients, vision range and exploration; F11 Brightness strength 0–15 (default 4), remembered and recorded; applies on returning to play | this project |
 
 **`perspective` in UW1**, the same moment looking down, off and on: the stone courses bend without it and run straight with it.
 

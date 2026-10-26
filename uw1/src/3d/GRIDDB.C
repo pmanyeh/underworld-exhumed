@@ -576,7 +576,11 @@ void far grdb_elem(unsigned char *automap)
     ptnuminq = 0xC8;
     ht = tmptr->height;
     sqmod = p_gloc->shade & 0xF;
+#ifndef __TURBOC__
+    if (port_bright_map_shade(p_gloc, sqmod) < 8) {
+#else
     if (sqmod < 8) {
+#endif
         code = tmptr->type;
         code = code | TxmTerr[tmptr->floor];
     } else if ((code = *automap) == 0)
@@ -659,7 +663,11 @@ void far grdb_elem(unsigned char *automap)
 #endif
     do_objsort(link);
     if (link && curautocode) {
+#ifndef __TURBOC__
+        if (port_bright_map_shade(p_gloc, sqmod) < 8)
+#else
         if (sqmod < 8)
+#endif
             code = code | curautocode << 6;
         curautocode = 0;
     }

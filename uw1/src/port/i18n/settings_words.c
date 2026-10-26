@@ -7,6 +7,8 @@
 
 static const struct { const char *english, *zh; } words[] = {
     {"Cheats", "密技"}, {"Run", "執行"},
+    {"Brightness strength", "增亮強度"},
+    {"With bright-view on: 0 original, 4 gentle, 15 brightest; close settings to apply", "開啟「提高亮度」後生效：0 原始明暗、4 溫和、15 最亮；關閉設定後套用"},
     {"full-map", "全地圖"}, {"god-mode", "無敵"}, {"bright-view", "提高亮度"},
     {"Return to safe position", "返回安全位置"},
     {"Remember safe position", "記住安全位置"},

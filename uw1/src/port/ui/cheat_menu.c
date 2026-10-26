@@ -10,11 +10,14 @@
 #include "ui/settings.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdatomic.h>
 void far player_setup(int x, int y);
 char far ChangeLevel(int from, int to);
 
 static struct { int x, y, valid; } anchor[10], recent[10];
 static int bad_motion, recovering, blocked, world_loaded, rollback_level, rollback_x, rollback_y;
+/* A dragged slider can change hundreds of times while the game is paused. */
+static atomic_int pending_strength = -1;
 static int valid_level(int l) { return l >= 1 && l <= 9; }
 static int valid_tile(int x, int y) { return x >= 1 && x <= 62 && y >= 1 && y <= 62; }
 static void say(const char *key, const char *en)
@@ -153,6 +156,13 @@ static const char *toggle(int argc, char **argv, int run, int bit)
 static const char *god(int n, char **a, int run) { return toggle(n, a, run, ENH_GOD_MODE); }
 static const char *map(int n, char **a, int run) { return toggle(n, a, run, ENH_FULL_MAP); }
 static const char *bright(int n, char **a, int run) { return toggle(n, a, run, ENH_BRIGHT_VIEW); }
+static const char *brightness(int n, char **a, int run)
+{
+    long value;
+    if (n != 1 || cheat_num(a[0], 0, BRIGHT_STRENGTH_MAX, &value)) return "0..15";
+    if (run) port_bright_strength_set((int)value);
+    return NULL;
+}
 static const char *rescue(int n, char **a, int run)
 {
     (void)a;
@@ -175,7 +185,7 @@ static const char *remember(int n, char **a, int run)
 static const struct cheat_cmd commands[] = {
     { "menu-god", "0|1", god }, { "menu-map", "0|1", map },
     { "menu-rescue", "", rescue }, { "menu-anchor", "", remember },
-    { "menu-bright", "0|1", bright }
+    { "menu-bright", "0|1", bright }, { "menu-bright-level", "0..15", brightness }
 };
 static const struct cheat_game menu = { commands, sizeof commands / sizeof commands[0], ready };
 void port_cheat_menu_init(void) { cheat_menu_init(&menu); }
@@ -186,6 +196,20 @@ static void request(const char *text)
 static void god_request(int on) { request(on ? "menu-god 1" : "menu-god 0"); }
 static void map_request(int on) { request(on ? "menu-map 1" : "menu-map 0"); }
 static void bright_request(int on) { request(on ? "menu-bright 1" : "menu-bright 0"); }
+void port_cheat_brightness_request(int value)
+{
+    if (value >= 0 && value <= BRIGHT_STRENGTH_MAX) atomic_store(&pending_strength, value);
+}
+void port_cheat_brightness_point(void)
+{
+    int value, empty = -1;
+    char command[32];
+    if (!ready()) return;
+    value = atomic_exchange(&pending_strength, -1);
+    if (value < 0) return;
+    snprintf(command, sizeof command, "menu-bright-level %d", value);
+    if (cheat_menu_request(command)) atomic_compare_exchange_strong(&pending_strength, &empty, value);
+}
 void port_cheat_rescue_request(int unused) { (void)unused; request("menu-rescue"); }
 void port_cheat_anchor_request(int unused) { (void)unused; request("menu-anchor"); }
 void port_cheat_settings(void)

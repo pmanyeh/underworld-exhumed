@@ -89,7 +89,7 @@ int main(int argc,char **argv)
     if(argc>2) {
         cheat_init(&test_game);port_cheat_menu_init();
         CHECK(cheat_from_recording(argv[2]) == (!strcmp(argv[1],"public") ? 0 : -1));
-        if(!strcmp(argv[1],"public")) { port_cheat_point();CHECK(ENHANCED(ENH_GOD_MODE));port_cheat_point();CHECK(placements==1); }
+        if(!strcmp(argv[1],"public")) { port_cheat_point();CHECK(ENHANCED(ENH_GOD_MODE));port_cheat_point();CHECK(placements==1);port_cheat_point();CHECK(port_bright_strength()==15); }
         else CHECK(!ENHANCED(ENH_GOD_MODE));
         printf("%s menu-only replay permission gate\n",failures?"FAIL":"PASS");return failures!=0;
     }
@@ -185,6 +185,43 @@ int main(int argc,char **argv)
     }
     CHECK(!memcmp(lights,original_lights,sizeof lights));port_bright_end();
     CHECK(!cheat_menu_request("menu-bright 0"));port_cheat_point();CHECK(!ENHANCED(ENH_BRIGHT_VIEW));
+    /* Coalesce repeated UI changes while paused; execute and record once at a safe point. */
+    {
+        int before=recorded;
+        scrnum=2;
+        for(i=0;i<400;i++)port_cheat_brightness_request(i%16);
+        port_cheat_brightness_point();port_cheat_point();CHECK(port_bright_strength()==4 && recorded==before);
+        scrnum=0;port_cheat_brightness_point();port_cheat_point();CHECK(port_bright_strength()==15 && recorded==before+1);
+        port_cheat_brightness_point();port_cheat_point();CHECK(recorded==before+1);
+        CHECK(brightness(1,(char *[]){"16"},0)!=NULL && brightness(1,(char *[]){"-1"},0)!=NULL);
+        port_cheat_brightness_request(0);port_cheat_brightness_point();port_cheat_point();CHECK(port_bright_strength()==0);
+    }
+    /* Every user strength preserves visibility and is monotonic, with exact restoration. */
+    {
+        struct Gloc original[17][33];unsigned char previous[17][33];int amount,x,y,level;
+        static const int levels[8][4]={{56,5,-3,3},{46,4,-3,3},{39,2,-2,4},{30,1,0,4},
+                                     {28,0,0,5},{21,0,0,6},{18,0,0,7},{18,0,0,7}};
+        enhance_on=1u<<ENH_BRIGHT_VIEW;
+        for(level=0;level<8;level++) {
+            smooth_div=levels[level][0];smooth_base=levels[level][1];smooth_lowpass=levels[level][2];curvrad=levels[level][3];
+            preset_grid(curvrad);memcpy(original,glocs,sizeof glocs);
+            for(y=0;y<17;y++)for(x=0;x<33;x++)previous[y][x]=glocs[y][x].shade&15;
+            for(amount=0;amount<=15;amount++) {
+                port_bright_strength_set(amount);port_bright_begin();
+                for(y=0;y<17;y++)for(x=0;x<33;x++) {
+                    int shade=glocs[y][x].shade&15;
+                    CHECK((shade==15)==((original[y][x].shade&15)==15));
+                    CHECK(port_bright_map_shade(&glocs[y][x],shade)==(original[y][x].shade&15));
+                    CHECK(shade<=previous[y][x]);previous[y][x]=(unsigned char)shade;
+                }
+                if(!amount)CHECK(!memcmp(glocs,original,sizeof glocs) && smooth_div==levels[level][0]);
+                port_bright_end();CHECK(!memcmp(glocs,original,sizeof glocs) && smooth_div==levels[level][0] && smooth_base==levels[level][1]);
+            }
+        }
+        port_bright_strength_set(-1);CHECK(port_bright_strength()==0);
+        port_bright_strength_set(99);CHECK(port_bright_strength()==15);
+        port_bright_strength_set(4);
+    }
     CHECK(seed==123);
     printf("%s %d cheat-menu checks: health, recovery, blocked positions, rollback, queue, full-map, brightness and RNG\n",failures?"FAIL":"PASS",checks);
     return failures!=0;

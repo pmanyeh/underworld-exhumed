@@ -14,6 +14,11 @@ out=uw1/'build/cheat-menu';out.mkdir(parents=True,exist_ok=True)
 exe=out/('check.exe' if os.name=='nt' else 'check')
 san=['-fsanitize=address,undefined','-fno-omit-frame-pointer'] if '--sanitize' in sys.argv else []
 obj=out/'menu.o';runtime=out/'runtime.o'
+table=(uw1/'src/port/sys/settab.c').read_text(encoding='utf-8')
+row=table.split('[R_BRIGHT_STRENGTH] = ',1)[1].split(' },',1)[0]+' }'
+(out/'brightness_setting_impl.h').write_text('static const struct setting brightness_rows[] = { '+row+' };\n',encoding='utf-8')
+start=table.split('void port_settings_brightness(int replay)',1)[1].split('\n}\n',1)[0]
+(out/'brightness_start_impl.h').write_text('void port_settings_brightness(int replay)'+start+'\n}\n',encoding='utf-8')
 view=(uw1/'src/3d/VIEW3D.C').read_text(encoding='utf-8')
 fn=view.split('void far preset_grid(int range)',1)[1].split('\n}\n',1)[0]
 (out/'bright_grid_impl.h').write_text('void preset_grid(int range)'+fn+'\n}\n',encoding='utf-8')
@@ -24,7 +29,7 @@ env=dict(os.environ,ASAN_OPTIONS='halt_on_error=1:detect_leaks=0',UBSAN_OPTIONS=
 env.pop('EXHUME_TEST_CHEATS',None)
 with tempfile.TemporaryDirectory() as temp:
     subprocess.run([str(exe)],cwd=temp,env=env,check=True)
-    for name,commands in [('public',['menu-god 1','menu-rescue']),('private',['set hp 1']),
+    for name,commands in [('public',['menu-god 1','menu-rescue','menu-bright-level 15']),('private',['set hp 1']),
                           ('mixed',['menu-god 1','give 1']),('invalid',['menu-god 9'])]:
         data=b'UWRP\x06'+bytes(7)+b'\x09\0\0'
         for i,cmd in enumerate(commands,1):
@@ -32,7 +37,7 @@ with tempfile.TemporaryDirectory() as temp:
         path=Path(temp)/(name+'.rec');path.write_bytes(data)
         subprocess.run([str(exe),name,str(path)],cwd=temp,env=env,check=True)
 ui=out/('settings.exe' if os.name=='nt' else 'settings')
-subprocess.run([P.host_cc(),'-std=c11','-D_DEFAULT_SOURCE','-I'+str(root/'exhume/runtime/port'),
+subprocess.run([P.host_cc(),'-std=c11','-D_DEFAULT_SOURCE','-I'+str(root/'exhume/runtime/port'),'-I'+str(out),'-I'+str(uw1/'src/port/presentation'),
     '-I'+str(root/'exhume/runtime/tests'),*san,str(Path(__file__).with_name('settings_cheats_test.c')),
     *[str(root/'exhume/runtime'/f) for f in ['port/ui/settings.c','port/ui/font.c','port/sys/enhance.c','tests/config_stub.c']],
     '-o',str(ui)],check=True)
