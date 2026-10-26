@@ -23,12 +23,12 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `8d5562d`，已 push（後續交接文件提交見 git log） |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `6b00da4`，已 push（後續交接文件提交見 git log） |
 | 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `5e92215`，已 push |
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含中文模式屬性頁／地圖英數 HD 字型（`8d5562d`）、物件不損耗（`3c4c9e1`）、增亮強度 0～15 滑桿（`b353ef0`）、照明漸層與個體血量基準修正（`3a6bc51`），及攻擊觸發敵人血條（`820a1be`）、提高亮度（`d11a79b`）、無敵預開啟讀檔修正（`d1e37ea`）及密技選單首版（`822b5bf`）：全地圖、無敵與安全位置救援，以及先前中文註記、Z 地圖與戰鬥顯示功能，catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含技能清單滑鼠滾輪（`6b00da4`）、中文模式屬性頁／地圖英數 HD 字型（`8d5562d`）、物件不損耗（`3c4c9e1`）、增亮強度 0～15 滑桿（`b353ef0`）、照明漸層與個體血量基準修正（`3a6bc51`），及攻擊觸發敵人血條（`820a1be`）、提高亮度（`d11a79b`）、無敵預開啟讀檔修正（`d1e37ea`）及密技選單首版（`822b5bf`）：全地圖、無敵與安全位置救援，以及先前中文註記、Z 地圖與戰鬥顯示功能，catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
@@ -324,3 +324,15 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
   16 個 session 四模式有效存檔一致、英文關閉模式與 DOS golden 原始位元組一致；NUL 後地圖文字填充例外沿用 C 節說明。
 - 報告 `uw1/docs/i18n/P13_HD_ASCII.md`；截圖／結果 `build/i18n/stats-ascii/`；工具 `.poc-tools/stats-ascii-check.py`、`stats-ascii-regression.py`。
 - 測試版只更新 EXE，33 個使用者存檔檔案雜湊不變；EXE SHA-256 `d0c4f1228e2403c5f9d6f4fc717c1c0beda95f7079f7ed534438fe7ebb92293d`。
+
+**F. 屬性頁技能清單滑鼠滾輪（2026-10-26 已實作 `6b00da4`，待使用者確認）**
+
+- 沿用 F11「強化功能」→「滑鼠滾輪」`mouse-wheel`；游標停在右側技能列或箭頭上，一格移動一列，首尾停止。中英文皆可用。
+- 游標在頁首／3D／血瓶不捲動；隱藏的開啟容器不會被誤捲。按鈕、袋子與「繼續」的既有操作保留。
+- `STATS.C/port_stats_scroll` 採原版步長、邊界與六列重畫，不等待滑鼠按鈕、不改技能值。DOS 分支不變。
+- 驗證發現舊滾輪在 KEY 掛鉤外消耗而漏記；現由原生 keyqueue 在 KEY 錄影內讀取，MOUSE.C 保留輪鍵、不加修飾鍵、不被連續按鍵模式覆寫。
+- 140 項真實原版按鈕／技能滾動檢查及 MOUSE.C 45 項檢查通過 ASan／UBSan；17 個單元測試、13 項文字回歸及 repocheck 通過。
+- 正常與 UBSan 實景均通過按鈕／滾輪像素比對、邊界、開關、游標內外、英文／中文 HD。公用錄影重播保留 6 個輪鍵，事件／時間／呼叫次數、最後 VGA 及存檔一致。
+- 16 個 session 四模式有效存檔相同、英文關閉模式與 DOS golden 原始位元組一致；只沿用 C 節 NUL 後地圖文字填充例外。
+- 報告 `uw1/docs/i18n/P13_STATS_WHEEL.md`；產物 `build/i18n/stats-wheel/`；工具 `.poc-tools/stats-wheel-check.py`、`stats-wheel-regression.py`。
+- 測試版只更新 EXE，33 個使用者存檔檔案雜湊不變；EXE SHA-256 `970b03cbf80f053a9ee8e69ee3795c27c0f5a187a131480951e28368b0d968fe`。
