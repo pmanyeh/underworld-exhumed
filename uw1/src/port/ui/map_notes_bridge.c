@@ -70,6 +70,7 @@ int port_map_note_draw(int level, const void *ptr)
     const struct ATM *n = ptr;
     MapNoteKey k = key_of(n);
     const char *zh = map_notes_get(level, &k);
+    if (!zh && port_zh()) zh = k.text;
     return zh && map_note_overlay_add(zh, n->x, n->y);
 }
 int port_map_note_width(int level, const void *ptr, int fallback)
@@ -78,6 +79,7 @@ int port_map_note_width(int level, const void *ptr, int fallback)
     MapNoteKey k = key_of(n);
     const char *zh = map_notes_get(level, &k);
     HdLabel l;
+    if (!zh && port_zh()) zh = k.text;
     if (zh && !hd_label_build(&l, zh, n->x, n->y, 6, 0x2D, 315, 5 * 64)) return l.right - l.left;
     return fallback;
 }

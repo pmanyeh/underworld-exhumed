@@ -63,6 +63,7 @@ jobs:
           python3 uw1/tools/i18n/test_l10n.py
           python3 -m unittest discover -s uw1/tools/i18n -p test_i18n.py
           python3 uw1/tools/i18n/test_runtime.py
+          python3 uw1/tools/i18n/test_hd_label.py
       - name: FreeType CJK render and cache checks (no game assets)
         run: |
           python3 uw1/tools/i18n/fetch_font.py
@@ -134,6 +135,7 @@ jobs:
           python3 uw1/tools/i18n/test_l10n.py
           python3 -m unittest discover -s uw1/tools/i18n -p test_i18n.py
           python3 uw1/tools/i18n/test_runtime.py
+          python3 uw1/tools/i18n/test_hd_label.py
       - name: FreeType CJK render and cache checks (no game assets)
         run: |
           python3 uw1/tools/i18n/fetch_font.py
@@ -182,6 +184,7 @@ jobs:
           python uw1/tools/i18n/test_l10n.py
           python -m unittest discover -s uw1/tools/i18n -p test_i18n.py
           python uw1/tools/i18n/test_runtime.py
+          python uw1/tools/i18n/test_hd_label.py
       - name: FreeType CJK render and cache checks (no game assets)
         run: |
           python uw1/tools/i18n/fetch_font.py

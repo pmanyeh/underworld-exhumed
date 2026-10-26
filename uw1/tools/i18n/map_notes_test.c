@@ -8,6 +8,10 @@
 #include <stdlib.h>
 #include <errno.h>
 static int failures, checks, rename_fail;
+static int chinese;
+static int port_zh(void) { return chinese; }
+struct ATM { char text[50]; short x, y; };
+#include "map_note_bridge_impl.h"
 #define CHECK(c) do { checks++; if (!(c)) { failures++; printf("FAIL %d: %s\n", __LINE__, #c); } } while (0)
 static char dir[512];
 static void path_of(const char *s, char *p)
@@ -87,6 +91,36 @@ int main(int argc, char **argv)
     screen[99 * 320 + 50] = 2;
     CHECK(!hd_label_shows(screen, 320, 200, &frame.notes[0], NULL));
     map_note_overlay_hide(); map_note_overlay_read(&frame); CHECK(!frame.count);
+    /* Legacy ASCII has no sidecar: Chinese draws HD, using the same width for erase. */
+    {
+        struct ATM ascii = { "Room 123 / Z", 100, 100 };
+        struct ATM saved = ascii;
+        CHECK(!port_map_note_draw(1, &ascii) && port_map_note_width(1, &ascii, 55) == 55);
+        chinese = 1;
+        CHECK(port_map_note_draw(1, &ascii));
+        map_note_overlay_publish(); map_note_overlay_read(&frame);
+        CHECK(frame.count == 1 && frame.notes[0].count == 12);
+        CHECK(port_map_note_width(1, &ascii, 55) == frame.notes[0].right - frame.notes[0].left);
+        CHECK(!memcmp(&ascii, &saved, sizeof ascii) && !exists("SAVE0\\NOTES.UTF"));
+        strcpy(ascii.text, "Z99"); ascii.x = 297;
+        map_note_overlay_begin(); CHECK(port_map_note_draw(1, &ascii));
+        map_note_overlay_publish(); map_note_overlay_read(&frame);
+        CHECK(frame.notes[0].right <= 316);
+        CHECK(port_map_note_width(1, &ascii, 55) == frame.notes[0].right - frame.notes[0].left);
+        ascii.text[0] = (char)0xFF;
+        CHECK(!port_map_note_draw(1, &ascii) && port_map_note_width(1, &ascii, 55) == 55);
+        strcpy(ascii.text, "#001"); ascii.x = 40;
+        CHECK(!map_notes_put(1, 1, 40, 100, zh));
+        chinese = 0;
+        map_note_overlay_begin(); CHECK(port_map_note_draw(1, &ascii));
+        map_note_overlay_publish(); map_note_overlay_read(&frame);
+        CHECK(frame.notes[0].cells[0].scalar == 0x5730);
+        CHECK(map_notes_remove(1, &notes[0]));
+        hd_label_enable(0); chinese = 1;
+        strcpy(ascii.text, "Room 123");
+        CHECK(!port_map_note_draw(1, &ascii) && port_map_note_width(1, &ascii, 55) == 55);
+        hd_label_enable(1); chinese = 0;
+    }
     for (i = 0; i < 46; i++) memcpy(longtext + i * 3, zh, 3);
     longtext[138] = 0;
     CHECK(!hd_label_build(&label, longtext, 0, 100, 6, 45, 315, 5 * 64) && label.count == 46);

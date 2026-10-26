@@ -52,6 +52,20 @@ int16 spsave[3] = { 0, 0, 0 };
 /* The x of the right edge everything is aligned to (UW2 0x135). */
 #define RIGHT   0x138
 
+#ifndef __TURBOC__
+/* Translate as usual, with an HD fallback for the page's ASCII names and values. */
+static void stats_string(char *text, int x, int y, int align)
+{
+    port_stats_ascii(1);
+    hd_label_align(align);
+    string_to_screen(text, x, y);
+    port_stats_ascii(0);
+}
+#define STATS_STRING(s, x, y, align) stats_string(s, x, y, align)
+#else
+#define STATS_STRING(s, x, y, align) string_to_screen(s, x, y)
+#endif
+
 /* The header: the name (up to 15 characters, upper-cased, centred), the class and the
    level with its ordinal ("12TH"). */
 void far sp_hdr(void)
@@ -62,19 +76,13 @@ void far sp_hdr(void)
     strncpy(buf, player->name, 0xF);
     buf[0xF] = 0;
     strupr(buf);
-#ifndef __TURBOC__
-    hd_label_align(HD_LABEL_CENTRE);
-#endif
-    string_to_screen(buf, (0x48 - string_width(buf)) / 2 + 0xF2, 0xB9);
+    STATS_STRING(buf, (0x48 - string_width(buf)) / 2 + 0xF2, 0xB9, HD_LABEL_CENTRE);
     /* the class name, upper-cased in the string buffer */
-    string_to_screen(seg039_3452_814(get_string((player->pclass + 0x17) | STR_CHARGEN)), 0xF2, 0xB2);
+    STATS_STRING(seg039_3452_814(get_string((player->pclass + 0x17) | STR_CHARGEN)), 0xF2, 0xB2, HD_LABEL_LEFT);
     itoa(player->level, buf, 10);
     n = player->level < 4 ? player->level - 1 : 3;
     strcat(buf, ordinals[n]);
-#ifndef __TURBOC__
-    hd_label_align(HD_LABEL_RIGHT);
-#endif
-    string_to_screen(buf, RIGHT - string_width(buf), 0xB2);
+    STATS_STRING(buf, RIGHT - string_width(buf), 0xB2, HD_LABEL_RIGHT);
 }
 
 /* Attribute i (0 to 2, as playerdat->attr holds them), one row each from y 0xB1 down. */
@@ -85,7 +93,7 @@ void far sp_att(unsigned char i)
     char buf[4];
 
     itoa(playerdat->attr[i], buf, 10);
-    string_to_screen(buf, RIGHT - string_width(buf), (2 - i) * 7 + 0x9D);
+    STATS_STRING(buf, RIGHT - string_width(buf), (2 - i) * 7 + 0x9D, HD_LABEL_RIGHT);
 }
 
 /* The hit points as "current/maximum", right-aligned; sp_mp the same for mana. */
@@ -99,7 +107,7 @@ void far sp_hp(void)
     buf[n] = '/';
     n++;
     itoa(playerdat->avghit, buf + n, 10);
-    string_to_screen(buf, RIGHT - string_width(buf), 0x96);
+    STATS_STRING(buf, RIGHT - string_width(buf), 0x96, HD_LABEL_RIGHT);
 }
 
 void far sp_mp(void)
@@ -112,7 +120,7 @@ void far sp_mp(void)
     buf[n] = '/';
     n++;
     itoa(player->max_mana, buf + n, 10);
-    string_to_screen(buf, RIGHT - string_width(buf), 0x8F);
+    STATS_STRING(buf, RIGHT - string_width(buf), 0x8F, HD_LABEL_RIGHT);
 }
 
 /* Experience is shown divided by ten. */
@@ -121,7 +129,7 @@ void far sp_xp(void)
     char buf[10];
 
     ltoa(player->exp / 10, buf, 10);
-    string_to_screen(buf, RIGHT - string_width(buf), 0x88);
+    STATS_STRING(buf, RIGHT - string_width(buf), 0x88, HD_LABEL_RIGHT);
 }
 
 /* Row i of the six-row skill list: skill i + skill_top with its name from block 2 (string
@@ -132,8 +140,8 @@ void far sp_skill(unsigned char i)
 
     itoa(player->skills[i + skill_top], buf, 10);
     seg003_581E(spsave[0], 0xF0, 0x80 - i * 7 + 1, 0x4C, (i + 1) * 7, 0, i * 7);
-    string_to_screen(seg039_3452_814(get_string((i + skill_top + 0x1F) | STR_CHARGEN)), 0xF2, 0x80 - i * 7);
-    string_to_screen(buf, RIGHT - string_width(buf), 0x80 - i * 7);
+    STATS_STRING(seg039_3452_814(get_string((i + skill_top + 0x1F) | STR_CHARGEN)), 0xF2, 0x80 - i * 7, HD_LABEL_LEFT);
+    STATS_STRING(buf, RIGHT - string_width(buf), 0x80 - i * 7, HD_LABEL_RIGHT);
 }
 
 /* Draws the statistics page. The first time it saves the two areas the page redraws

@@ -3,8 +3,10 @@
 #define UW1_UI_TEXT_H
 /* english as the game passes it: a name get_name just wrote (port_i18n_named), a string just
    decoded (port_i18n_display), or a piece of the game's code (port_zh_literal); NULL when it
-   has none, or has no letters (numbers stay in the bitmap font) */
+   has none, or has no letters (except the statistics page's scoped ASCII fallback). */
 const char *port_ui_text(const char *english);
+/* STATS.C scopes this around each draw: Chinese UI uses HD for ASCII fallbacks too. */
+void port_stats_ascii(int on);
 /* Main menu button i (0..3) in Chinese over the menu's background, its colour the picture's
    letters' (the selected picture's when it is selected); 1: the caller does not show the
    picture. x, y, w, h as the menu shows it (y bottom-up, the top row). */

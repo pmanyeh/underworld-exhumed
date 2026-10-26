@@ -22,6 +22,8 @@ static const char *ordinal(const char *s)
 
 /* the composed line the game draws next and its translation (port_ui_next) */
 static char next_english[128], next_zh[160];
+static int stats_ascii;
+void port_stats_ascii(int on) { stats_ascii = on != 0; }
 
 void port_ui_next(const char *english, const char *zh)
 {
@@ -99,12 +101,13 @@ const char *port_ui_text(const char *english)
     if (next_english[0] && !strcmp(english, next_english)) { next_english[0] = 0; return next_zh; }
     for (p = english; *p; p++)
         if ((*p >= 'A' && *p <= 'Z') || (*p >= 'a' && *p <= 'z')) break;
-    if (!*p) return NULL;
+    if (!*p) return stats_ascii ? english : NULL;
     if ((zh = port_i18n_named(english)) != NULL) return zh;
     if ((zh = port_i18n_display(english)) != english) return zh;
     if ((zh = port_i18n_display_nocase(english)) != NULL) return zh;
     if ((zh = ordinal(english)) != NULL) return zh;
-    return port_zh_literal(english);
+    zh = port_zh_literal(english);
+    return zh ? zh : stats_ascii ? english : NULL;
 }
 
 void vga_get_dac(uint8_t rgb6[768]);
