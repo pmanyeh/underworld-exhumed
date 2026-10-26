@@ -325,7 +325,7 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 - 報告 `uw1/docs/i18n/P13_HD_ASCII.md`；截圖／結果 `build/i18n/stats-ascii/`；工具 `.poc-tools/stats-ascii-check.py`、`stats-ascii-regression.py`。
 - 測試版只更新 EXE，33 個使用者存檔檔案雜湊不變；EXE SHA-256 `d0c4f1228e2403c5f9d6f4fc717c1c0beda95f7079f7ed534438fe7ebb92293d`。
 
-**F. 屬性頁技能清單滑鼠滾輪（2026-10-26 已實作 `6b00da4`，待使用者確認）**
+**F. 屬性頁技能清單滑鼠滾輪（`6b00da4`，使用者已於 2026-10-26 確認 OK）**
 
 - 沿用 F11「強化功能」→「滑鼠滾輪」`mouse-wheel`；游標停在右側技能列或箭頭上，一格移動一列，首尾停止。中英文皆可用。
 - 游標在頁首／3D／血瓶不捲動；隱藏的開啟容器不會被誤捲。按鈕、袋子與「繼續」的既有操作保留。
@@ -336,3 +336,10 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 - 16 個 session 四模式有效存檔相同、英文關閉模式與 DOS golden 原始位元組一致；只沿用 C 節 NUL 後地圖文字填充例外。
 - 報告 `uw1/docs/i18n/P13_STATS_WHEEL.md`；產物 `build/i18n/stats-wheel/`；工具 `.poc-tools/stats-wheel-check.py`、`stats-wheel-regression.py`。
 - 測試版只更新 EXE，33 個使用者存檔檔案雜湊不變；EXE SHA-256 `970b03cbf80f053a9ee8e69ee3795c27c0f5a187a131480951e28368b0d968fe`。
+
+**空白鍵綁定調查（2026-10-26，等待使用者決定是否取代）**
+
+- 使用者要求先確認空白鍵是否已有功能，若無才在「現代按鍵」下綁跳躍。
+- 已確認 `PLAYER.C/init_player` 在 `modern-keys` 下註冊空白鍵至 `port_key_attack`，會沿用上次攻擊方式（初始揮砍），按住可蓄力。
+- 現有 Shift／j 為跳躍，Ctrl+Shift／J 為另一種原版跳躍；`rune-keys` 的 Ctrl+Alt+空白鍵另外施法。
+- 已詢問是否將空白鍵的攻擊改為跳躍；原條件「沒有綁定」不成立，在收到取代的答覆前不改按鍵。
