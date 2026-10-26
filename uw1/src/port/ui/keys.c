@@ -90,7 +90,7 @@ void far port_key_pitch(int dir)
 }
 
 /* --enhance mouse-wheel: the notches the platform sent (main.c's pointer hook), taken a notch at a
-   time by ui/MOUSE.C's do_keyboard_input as PORT_KEY_WHEEL_UP or _DOWN */
+   time by sys/keyqueue.c inside KEY's replay hook as PORT_KEY_WHEEL_UP or _DOWN */
 static _Atomic int wheel_notches;
 void port_wheel_push(int steps) { atomic_fetch_add(&wheel_notches, steps); }
 int port_wheel_take(void)
@@ -100,9 +100,17 @@ int port_wheel_take(void)
     return n > 0 ? 1 : n < 0 ? -1 : 0;
 }
 
-/* A wheel notch in the game: scrolls an open bag (down 1, up 0), as its arrows do */
+/* A wheel notch: the skills under the pointer, or an open bag, as their arrows do.
+   mouse_getxy reads the game's cursor, whose motion is already recorded for replay. */
 void far port_key_wheel(int down)
 {
+    if (RightPanel == PANEL_STATS) {
+        int16 x, y;
+        mouse_getxy(&x, &y);
+        if (x >= 0xF0 && x <= 0x13B && y >= 0x52 && y <= 0x81)
+            port_stats_scroll(down);
+        return;
+    }
     if (OpenBag == 0)
         return;
     if (down)

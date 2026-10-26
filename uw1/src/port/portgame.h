@@ -92,6 +92,7 @@ enum { ENH_SKIP_INTRO, ENH_WRAP_MENU, ENH_FAST_PANELS, ENH_FREE_HEADING, ENH_SUB
 #define PORT_KEY_WHEEL_DOWN 0xBE
 void port_wheel_push(int steps);            /* the platform's thread: notches, down positive */
 int port_wheel_take(void);                  /* the game's: -1 up, 1 down, 0 none, a notch at a time */
+void port_stats_scroll(int down);           /* STATS.C: scroll the six skill rows without a button wait */
 int port_pitch_bound(void);                 /* game/PLAYER.C: the pitch's bound either way */
 
 #include "presentation/combat_text.h"

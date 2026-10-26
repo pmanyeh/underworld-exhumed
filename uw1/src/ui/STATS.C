@@ -144,6 +144,27 @@ void far sp_skill(unsigned char i)
     STATS_STRING(buf, RIGHT - string_width(buf), 0x80 - i * 7, HD_LABEL_RIGHT);
 }
 
+#ifndef __TURBOC__
+/* The wheel uses the arrows' one-row step and bounds, without waiting for a button. */
+void far port_stats_scroll(int down)
+{
+    int16 v = skill_top;
+    int dir = down ? 1 : -1;
+
+    if (!mvcheck(&v, down ? 0xE : 0, 1, dir))
+        return;
+    skill_top = v;
+    grfx_load_font("font5x6i.sys");
+    *foreground_color = 0x68;
+    *background_color = 0x68;
+    mouse_hide();
+    for (v = 0; v < 6; v++)
+        sp_skill(v);
+    mouse_show();
+    grfx_load_font("font5x6p.sys");
+}
+#endif
+
 /* Draws the statistics page. The first time it saves the two areas the page redraws
    (the skills and the hit point and mana figures) into video memory (spsave), so that
    scrolling the skills and updating the figures can restore the background. */

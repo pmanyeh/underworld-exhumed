@@ -19,7 +19,7 @@ struct Inplist *inplist = &input;
 /* Unused input paths remain in the included translation unit on PE/COFF. */
 static int16 edges[4], motion[3];
 static unsigned char keys[256], mods[4];
-static int button_reads;
+static int button_reads, key_result, key_reads;
 unsigned char didMouseInput;
 int16 *wleft=&edges[0], *wtop=&edges[1], *wright=&edges[2], *wbot=&edges[3];
 int16 *MouseDx=&motion[0], *MouseDy=&motion[1], *MouseOn=&motion[2];
@@ -34,7 +34,7 @@ void mouse_look_mode(int on) { (void)on; }
 int port_pitch_bound(void) { return 100; }
 void editchng(int bits_) { (void)bits_; }
 int scroll_print(char *s) { (void)s;return 0; }
-int rp_key(void) { return 0; }
+int rp_key(void) { int r = key_result; key_result = 0; key_reads++; return r; }
 void rp_mouse(void) {}
 int rp_mbuttons(void) { return button_reads>0 ? button_reads--,1 : 0; }
 uint32 rp_time(void) { return 0; }
@@ -91,6 +91,14 @@ int main(void)
     CHECK(mouse_dragged(0)==1 && mouse_x==108);
     button_reads=0;CHECK(mouse_dragged(0)==0);
     mouse_hide();hd_cursor_read(&c);CHECK(!c.visible && !mouse_saved);
-    printf("PASS actual MOUSE.C: %d assertions; nesting, save-under, regions, force stack, object, both raster paths\n",checks);
+    /* Replayed wheel keys survive held-key mode and do not acquire keyboard modifiers. */
+    *Shift = *Alt = *Ctrl = 1;
+    key_result = PORT_KEY_WHEEL_DOWN; n = key_reads;
+    CHECK(do_keyboard_input(1) == PORT_KEY_WHEEL_DOWN && key_reads == n + 1);
+    key_result = PORT_KEY_WHEEL_UP;
+    CHECK(do_keyboard_input(0) == PORT_KEY_WHEEL_UP && key_reads == n + 2);
+    *Shift = *Alt = *Ctrl = 0;
+    CHECK(do_keyboard_input(0) == -1);
+    printf("PASS actual MOUSE.C: %d assertions; cursor paths and recorded wheel input\n",checks);
     return 0;
 }

@@ -24,7 +24,7 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "flask-numbers", "The flasks show their values, 25/32, and each change floats up from them (HD text)", ENH_PRESENTATION, NULL, NULL },
     { "auto-key", "Using a locked door or chest unlocks it with the key that fits, if you carry it", ENH_GAMEPLAY, NULL, NULL },
     { "e-takes", "With modern-keys, E on something you can take puts it in your pack", ENH_GAMEPLAY, NULL, NULL },
-    { "mouse-wheel", "The mouse wheel scrolls an open bag and goes on past [MORE]", ENH_TIMING, NULL, NULL },
+    { "mouse-wheel", "The mouse wheel scrolls skills under the pointer, open bags, and past [MORE]", ENH_TIMING, NULL, NULL },
     { "damage-numbers", "Damage, misses and blocks float above visible enemies", ENH_PRESENTATION, NULL, NULL },
     { "enemy-health", "Health bars after creatures take damage or attack you; maximum is their highest observed health", ENH_PRESENTATION, NULL, NULL },
     { "full-map", "Show the whole dungeon map without changing explored areas", ENH_PRESENTATION, NULL, NULL },
