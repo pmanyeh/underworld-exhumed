@@ -23,12 +23,12 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `d11a79b`，已 push（後續交接文件提交見 git log） |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `820a1be`，已 push（後續交接文件提交見 git log） |
 | 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `5e92215`，已 push |
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含提高亮度（`d11a79b`）、無敵預開啟讀檔修正（`d1e37ea`）及密技選單首版（`822b5bf`）：全地圖、無敵與安全位置救援，以及先前中文註記、Z 地圖與戰鬥顯示功能，catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含攻擊觸發敵人血條（`820a1be`）、提高亮度（`d11a79b`）、無敵預開啟讀檔修正（`d1e37ea`）及密技選單首版（`822b5bf`）：全地圖、無敵與安全位置救援，以及先前中文註記、Z 地圖與戰鬥顯示功能，catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
@@ -224,9 +224,13 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 - 主 repo `06be938`（Linux 連結修正 `732949d`）、exhume `438441b`，均已 push；執行檔已更新到 `UW1-zhTW-playtest`。
 - F11「強化功能」最下方：「戰鬥傷害數字」`damage-numbers`、「敵人血條」`enemy-health`，各自開關、預設關。
 - 實作與驗證報告：`uw1/docs/i18n/P13_COMBAT.md`。傷害、揮空、格擋來自原版事件；英文模式也顯示 Block／Miss。
+- 2026-10-26 追加（`820a1be`，待使用者實測）：敵人對玩家真正啟動近戰、射擊、攻擊性施法時也顯示血條，不必命中或先傷到它。沿用 `enemy-health`；防禦施法、未啟動攻擊、其他 NPC 目標不觸發。
+- 新版執行檔已更新到 `UW1-zhTW-playtest`；只複製 EXE，25 個原有存檔檔案雜湊不變。
+- 新觸發只更新獨立呈現狀態，不修改敵人 HP、AI、亂數，也不製造傷害飄字。630 項呈現與 55 項真實 AI 函式檢查通過 ASan／UBSan；17 個單元測試、13 項文字回歸及 8 種 SDL 合成、16 個案例的中英文／顯示開關四模式存檔比對通過。
+- 實際遊戲的敵人 HP 維持 43，從攻擊前無血條到攻擊後有血條；中文、英文、關閉對照與 UBSan 均驗證，開著無敵也適用。工具 `.poc-tools/attack-bars-check.py`、`attack-bars-replay.py`；報告與截圖 `build/i18n/attack-bars/`。
 - 位置使用原版繪圖的 framebuffer 像素歸屬；完全被遮住的生物不顯示。血條最大血量為估計值。
 - 動畫只讀 `*Time`，**不可新增 `GAME_TIME()`**（會消耗重播事件）。換樓層、讀檔、新遊戲、物件回收時清除暫存。
-- 624 項新測試含 ASan／UBSan、既有中文化測試、文字回歸、8 種 SDL 視窗合成都通過；16 個案例存檔比對一致。
+- 原版首批 624 項測試含 ASan／UBSan、既有中文化測試、文字回歸、8 種 SDL 視窗合成都通過；16 個案例存檔比對一致。
 - 截圖：`build/i18n/p12/shots/combat-final.png`、`combat-en-block.png`、`combat-off.png`、`combat-health-only.png`、`combat-miss.png`、`combat-settings.png`。
 - 本機 DOS 重編譯 Gate 缺 Node.js，尚未驗證；原生建置、ASCII、asm2c 產物一致性與 repocheck 已通過。
 - 使用者已於 2026-10-25 確認兩項功能 OK；密技選單首版已依 2026-10-26 的授權完成（見 B），其餘候選功能未自動動工。
@@ -273,7 +277,7 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 
 ### 6.4 其他待辦（等使用者）
 
-1. **P13.2、P13.3：使用者實際遊玩與審閱譯文。** 戰鬥傷害數字、敵人血條與地圖中文註記已確認 OK；無敵預開啟的讀檔閃退已確認解除；Z 開關地圖、密技其他情境與新加提高亮度仍待使用者確認。 測試清單在 `P13_QA.md` 最後一節。使用者回報問題時，先用截圖工具重現再修。
+1. **P13.2、P13.3：使用者實際遊玩與審閱譯文。** 戰鬥傷害數字、敵人血條與地圖中文註記已確認 OK；無敵預開啟的讀檔閃退已確認解除；Z 開關地圖、密技其他情境、新加提高亮度及攻擊觸發血條仍待使用者確認。 測試清單在 `P13_QA.md` 最後一節。使用者回報問題時，先用截圖工具重現再修。
 2. **待使用者決定：**
    - P8 HD 錄影何時重錄（§P13.6）；
    - §P13.7 的改進項目：打字問話題能否改成選擇、關鍵字打錯時 NPC 沒反應、數量滑桿改在放下時出現、
