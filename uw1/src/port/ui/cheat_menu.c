@@ -17,7 +17,11 @@ static struct { int x, y, valid; } anchor[10], recent[10];
 static int bad_motion, recovering, blocked, world_loaded, rollback_level, rollback_x, rollback_y;
 static int valid_level(int l) { return l >= 1 && l <= 9; }
 static int valid_tile(int x, int y) { return x >= 1 && x <= 62 && y >= 1 && y <= 62; }
-static void say(const char *key, const char *en) { scroll_print(port_zh() ? (char *)port_zh_lit(key) : (char *)en); }
+static void say(const char *key, const char *en)
+{
+    if (scroll) scroll_print(port_zh() ? (char *)port_zh_lit(key) : (char *)en);
+    else fputs(en, stderr);
+}
 int port_god_protect(const void *o) { return ENHANCED(ENH_GOD_MODE) && o && o == ThePlayer; }
 int port_god_hp(int old_hp, int new_hp) { return ENHANCED(ENH_GOD_MODE) && old_hp > 0 && new_hp < old_hp ? old_hp : new_hp; }
 void port_god_reset(void)
@@ -81,12 +85,12 @@ ok:
 void port_god_bad_motion(void) { bad_motion = 1; }
 int port_god_motion(void)
 {
-    if (!ENHANCED(ENH_GOD_MODE) || recovering) return 1;
+    if (!ENHANCED(ENH_GOD_MODE) || !world_loaded || !in_game || recovering) return 1;
     if (blocked) return 0;
     if (!valid_level(PlayerLevel) || !mapdata || !ThePlayer) return 0;
     if (bad_motion || PN.x < 256 || PN.x >= 63 * 256 || PN.y < 256 || PN.y >= 63 * 256 ||
-        PN.z < 0 || PN.z > 0x3F8 || GrSq < 0 || GrSq >= MAP_TILES ||
-        GrSq != OBJ_HOMEX(ThePlayer) + OBJ_HOMEY(ThePlayer) * 64) { recover(0); return 0; }
+        PN.z < 0 || PN.z > 0x3F8 || GrSq < -1 || GrSq >= MAP_TILES ||
+        (GrSq >= 0 && GrSq != OBJ_HOMEX(ThePlayer) + OBJ_HOMEY(ThePlayer) * 64)) { recover(0); return 0; }
     return 1;
 }
 void port_god_wait_limit(void)
@@ -96,7 +100,9 @@ void port_god_wait_limit(void)
 void port_god_tick(void)
 {
     int x, y, l = PlayerLevel;
-    if (!ENHANCED(ENH_GOD_MODE) || !world_loaded || !in_game || scrnum != 0 || NewPlayerX || !ThePlayer || recovering) return;
+    /* Restore leaves GrSq=-1 until phys_affect_player links the saved position.
+       The first view is not initialized yet; never rescue or print in that interval. */
+    if (!ENHANCED(ENH_GOD_MODE) || !world_loaded || !in_game || !scroll || GrSq < 0 || scrnum != 0 || NewPlayerX || !ThePlayer || recovering) return;
     if (!port_god_motion()) return;
     if (PN.vel[2] || PN.acc[2] || !(PN.terrain & FOOT_FLOOR)) return;
     x = PN.x >> 8; y = PN.y >> 8;
@@ -130,7 +136,7 @@ int port_god_teleport_failed(void)
 }
 static int ready(void)
 {
-    return world_loaded && mapdata && in_game && scrnum == 0 && GameInputMode == GIM_NONE && !CursorObjPtr && !NewPlayerX && ThePlayer && ThePlayer->hp;
+    return world_loaded && mapdata && in_game && scroll && GrSq >= 0 && scrnum == 0 && GameInputMode == GIM_NONE && !CursorObjPtr && !NewPlayerX && ThePlayer && ThePlayer->hp;
 }
 static const char *toggle(int argc, char **argv, int run, int bit)
 {

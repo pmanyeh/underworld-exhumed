@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include <stddef.h>
 static int checks, failures, placements, level_changes, collision_calls, occupied, no_floor;
+static int messages;
+static struct Scroll message_scroll;
+struct Scroll *scroll = &message_scroll;
 #define CHECK(c) do { checks++; if (!(c)) { printf("FAIL %d: %s\n",__LINE__,#c); failures++; } } while (0)
 uint32_t enhance_on;
 static struct Object actor, held;
@@ -27,7 +30,7 @@ void (*npp_func)(void);
 static uint32_t seed=123;
 uint32_t port_rand_seed(void) { return seed; }
 void port_set_rand_seed(uint32_t s) { seed=s; }
-int scroll_print(char *s) { (void)s; return 0; }
+int scroll_print(char *s) { (void)s; CHECK(scroll != NULL); messages++; return 0; }
 int port_zh(void) { return 0; }
 const char *port_zh_lit(const char *s) { return s; }
 void editchng(int n) { (void)n; }
@@ -87,6 +90,20 @@ int main(int argc,char **argv)
     enhance_on=1u<<ENH_GOD_MODE;CHECK(port_god_protect(ThePlayer) && !port_god_protect(&held));
     for(i=0;i<35;i++) CHECK(port_god_hp(35,i)==35);
     CHECK(port_god_hp(35,40)==40);
+    /* Startup with god mode already enabled: loading's unlinked sentinel is normal.
+       The original physics must get to link the exact saved position itself. */
+    {
+        struct Phys saved = PN;
+        port_god_reset();in_game=0;scroll=NULL;GrSq=-1;
+        CHECK(port_god_motion());port_god_tick();
+        CHECK(!placements && !messages && !collision_calls && !memcmp(&PN,&saved,sizeof PN));
+        port_god_world_loaded();CHECK(port_god_motion());port_god_tick();
+        in_game=1;CHECK(port_god_motion());port_god_tick();
+        CHECK(!placements && !messages && !collision_calls && !anchor[1].valid && !memcmp(&PN,&saved,sizeof PN));
+        scroll=&message_scroll;port_god_tick();
+        CHECK(!placements && !messages && !anchor[1].valid && !memcmp(&PN,&saved,sizeof PN));
+        GrSq=10+10*64;
+    }
     port_god_tick();CHECK(anchor[1].valid && anchor[1].x==10);
     old_calls=collision_calls;port_god_tick();CHECK(collision_calls==old_calls);
     PN.x=-1;PN.vel[2]=-500;PN.acc[2]=-4;NewPlayerX=50;
