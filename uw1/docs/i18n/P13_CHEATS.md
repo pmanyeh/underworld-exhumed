@@ -56,6 +56,8 @@
 - 在沒有測試環境變數的情況下，F11 開啟／關閉亮度產生 format 6 錄影，正常與 UBSan 建置均可重播，
   SAVE0／SAVE1 所有檔案一致。另以同一組 format 5 輸入，僅增加啟動亮度開關，
   完成開關地圖與正常存檔後，比對所有存檔檔案逐位元組一致，含光源與探索資料。
+- 無敵與提高亮度一起預先開啟時，四個使用者存檔的副本均通過 UBSan 啟動載入及 Ctrl+R 重讀，
+  位置與血量保持一致；另有英文模式與無敵關閉對照。工具 `.poc-tools/bright-god-check.py`；未修改使用者存檔。
 - 本機工具 `.poc-tools/bright-check.py`（含 `--visual`、`--debug`）；截圖與報告在 `build/i18n/brightness/`。
 
 ## 全地圖與錄影
