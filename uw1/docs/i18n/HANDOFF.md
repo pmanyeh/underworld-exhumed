@@ -23,12 +23,12 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `820a1be`，已 push（後續交接文件提交見 git log） |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `3a6bc51`，已 push（後續交接文件提交見 git log） |
 | 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `5e92215`，已 push |
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含攻擊觸發敵人血條（`820a1be`）、提高亮度（`d11a79b`）、無敵預開啟讀檔修正（`d1e37ea`）及密技選單首版（`822b5bf`）：全地圖、無敵與安全位置救援，以及先前中文註記、Z 地圖與戰鬥顯示功能，catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含照明漸層與個體血量基準修正（`3a6bc51`），及攻擊觸發敵人血條（`820a1be`）、提高亮度（`d11a79b`）、無敵預開啟讀檔修正（`d1e37ea`）及密技選單首版（`822b5bf`）：全地圖、無敵與安全位置救援，以及先前中文註記、Z 地圖與戰鬥顯示功能，catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
@@ -226,9 +226,9 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 - 實作與驗證報告：`uw1/docs/i18n/P13_COMBAT.md`。傷害、揮空、格擋來自原版事件；英文模式也顯示 Block／Miss。
 - 2026-10-26 追加（`820a1be`，待使用者實測）：敵人對玩家真正啟動近戰、射擊、攻擊性施法時也顯示血條，不必命中或先傷到它。沿用 `enemy-health`；防禦施法、未啟動攻擊、其他 NPC 目標不觸發。
 - 新版執行檔已更新到 `UW1-zhTW-playtest`；只複製 EXE，25 個原有存檔檔案雜湊不變。
-- 新觸發只更新獨立呈現狀態，不修改敵人 HP、AI、亂數，也不製造傷害飄字。630 項呈現與 55 項真實 AI 函式檢查通過 ASan／UBSan；17 個單元測試、13 項文字回歸及 8 種 SDL 合成、16 個案例的中英文／顯示開關四模式存檔比對通過。
+- 新觸發只更新獨立呈現狀態，不修改敵人 HP、AI、亂數，也不製造傷害飄字。637 項呈現與 55 項真實 AI 函式檢查通過 ASan／UBSan；17 個單元測試、13 項文字回歸及 8 種 SDL 合成、16 個案例的中英文／顯示開關四模式存檔比對通過。
 - 實際遊戲的敵人 HP 維持 43，從攻擊前無血條到攻擊後有血條；中文、英文、關閉對照與 UBSan 均驗證，開著無敵也適用。工具 `.poc-tools/attack-bars-check.py`、`attack-bars-replay.py`；報告與截圖 `build/i18n/attack-bars/`。
-- 位置使用原版繪圖的 framebuffer 像素歸屬；完全被遮住的生物不顯示。血條最大血量為估計值。
+- 位置使用原版繪圖的 framebuffer 像素歸屬；完全被遮住的生物不顯示。血條上限已依 2026-10-26 回報改為首次觸發血條時的個體 HP，後續觀察到更高 HP 才上調，不使用種類平均值。
 - 動畫只讀 `*Time`，**不可新增 `GAME_TIME()`**（會消耗重播事件）。換樓層、讀檔、新遊戲、物件回收時清除暫存。
 - 原版首批 624 項測試含 ASan／UBSan、既有中文化測試、文字回歸、8 種 SDL 視窗合成都通過；16 個案例存檔比對一致。
 - 截圖：`build/i18n/p12/shots/combat-final.png`、`combat-en-block.png`、`combat-off.png`、`combat-health-only.png`、`combat-miss.png`、`combat-settings.png`。
@@ -251,18 +251,23 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 - 新測試 `tools/i18n/test_cheat_menu.py --sanitize` 已加入三個原生平台 CI；本機遊戲情境與截圖在 `build/i18n/cheats/`。
 - 首版完成全地圖、無敵及必要救援；2026-10-26 使用者要求下一項後新增「提高亮度」（見 C）。補血／法力、傳送、物品、屬性技能、時間停止尚未加入。
 
-**C. 提高亮度（2026-10-26 已實作，待使用者實測）**
+**C. 提高亮度（2026-10-26 依回報修正漸層，待使用者複測）**
 
 - 主 repo `d11a79b`，測試版執行檔已更新；原有 25 個存檔檔案雜湊保持不變。
 - F11「密技」→「提高亮度」`bright-view`，預設關；關閉設定回到 3D 遊戲後生效。
-- 僅在建立與繪製一般 3D 畫面時暫改明暗表，完成後完整還原；拾取畫面不套用。
+- 使用者回報首版全亮缺乏過渡；現改成在建立與繪製一般 3D 畫面時，將當前光源 `smooth_div` 乘 3/4、正的 `smooth_base` 減 1，沿用原版 `preset_grid`。色表不改寫，保留不同光源與 16 階明暗。
   不改光源、火把消耗、視野或探索範圍，不新增存檔欄位。
-- 核心 8163 項 ASan／UBSan 檢查、17 個既有單元測試程式、13 項文字回歸與 8 種 SDL 視窗合成、
+- 核心 21700 項 ASan／UBSan 檢查、17 個既有單元測試程式、13 項文字回歸與 8 種 SDL 視窗合成、
   16 個 session 的中英文／DOS golden 存檔比對通過。
-- 實際暗處開啟變亮，關閉後 3D 視圖逐像素還原；正常及 UBSan 的 F11 開關錄影重播存檔一致。
-  啟動亮度開啟的對照重播中，SAVE0／SAVE1 所有檔案逐位元組一致，含光源與探索。
+- 檢查八組原版光源、可見遮罩、漸層、快取失效與網格還原；保留剛建立的牆面高度位元給拾取。
+- 本輪照明與血條一起啟用的 16 組四模式，所有有效存檔資料一致。`items` 的原版地圖註記 NUL 後會殘留畫面色碼；
+  測試只對這段未使用文字填充歸零作額外比對，保留原始雜湊，關閉模式仍與 DOS golden 原始位元組一致。
+  不可宣稱本輪所有原始存檔位元組完全相同。詳見 `P13_CHEATS.md` 的明確例外。
 - 無敵與提高亮度一起預先開啟：四個使用者存檔的副本均通過 UBSan 啟動載入及 Ctrl+R 重新讀檔，位置／HP 保持一致；英文與無敵關閉對照也通過。工具 `.poc-tools/bright-god-check.py`，報告 `build/i18n/god-load/report.json`。
-- 工具 `.poc-tools/bright-check.py`（含 `--visual`、`--debug`），報告與截圖 `build/i18n/brightness/`；詳見 `P13_CHEATS.md`。
+- 最新工具 `.poc-tools/light-hp-check.py`（含 `--static`、`--hp`、`--record`、`--debug`）、`light-hp-replay.py`；報告／截圖 `build/i18n/light-hp-fix/`。
+- 本次修正提交 `3a6bc51`；測試版 EXE 已更新，25 個使用者存檔檔案雜湊不變。待使用者複測亮度過渡與滿血顏色。
+- 血條另以種類平均 45、個體 HP 3 的存檔副本驗證：攻擊前不顯示，攻擊後 3/3 綠，實際兩次各扣 1 後 1/3 黃；正常與 UBSan 均測，不改使用者存檔。
+- 原工具 `.poc-tools/bright-check.py` 與 `build/i18n/brightness/` 是首版全亮的歷史報告。
 
 ### 6.3 P13.7 第 5 項：地圖中文註記（已完成，使用者已確認 OK）
 
