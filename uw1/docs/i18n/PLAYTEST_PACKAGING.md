@@ -1,7 +1,7 @@
 # 打包 UW1 繁中整合測試版（目前 0.5）
 
 Windows 整合版是程式、相依 DLL、中文字型與 catalog 的私人攜帶包，不含原版遊戲與玩家 home。
-版本號是攜帶包版本，不代表 P13 人工驗收完成。Mac 舊包不自動升為 0.5。
+版本號是攜帶包版本，不代表 P13 人工驗收完成。舊 Mac 包不自動升版；另已補發經 Actions 編譯的獨立 Mac 0.5 包（第六節）。
 
 ## 一、準備與驗證
 
@@ -64,8 +64,23 @@ MANIFEST 記錄來源提交、子模組、catalog 和每個內容檔的 SHA-256�
 MSYS2、舊 Python venv 和約 48 GB 舊測試輸出不納入；不刪除原電腦的任何檔案。
 移機包含自己的遊戲資料、原文與存檔，**只供自己搬移，不公開上傳**。
 
-## 六、Mac 舊流程（本次未更新）
+## 六、Mac 通用版（2026-10-26 補發 0.5）
 
-GitHub `uw1-release.yml` 可產生 macos artifact，再於本機合併 `UW1-zhTW-mac-kit` 的字型和中文檔。
-catalog 不能上傳 GitHub。舊 `開始遊戲.command` 還有固定 locale 的限制，改動需在 Mac 實機驗證。
-不可把舊 Mac 包直接標成 0.5 或宣稱已實機驗證。
+以 GitHub CLI 啟動既有流程；workflow_dispatch 只產生 artifacts，不發布 Release：
+
+```powershell
+gh workflow run uw1-release.yml --repo pmanyeh/underworld-exhumed --ref feature/zh-tw-native
+gh run download <run-id> --repo pmanyeh/underworld-exhumed -n macos -D mac-artifact/run-<run-id>
+```
+
+本次 run `40308423602`、來源 `4c662c1`；macos job 已成功。產物為 arm64／x86_64 通用 app，
+FreeType 已靜態連結，完成 lipo、codesign --verify、otool 相依路徑及 --help 檢查。
+這是 ad-hoc 簽章，沒有 Apple 公證。後續完整遊戲測試因私有資源 SSH 金鑰格式／權限問題失敗，不能宣稱遊戲重播通過。
+
+中文檔只在本機合併，**不得把 catalog 上傳 Actions 或公開 GitHub**。
+本機工具 `.poc-tools/mac05-package.py` 產生 `UW1-zhTW-v0.5-macOS.zip` 及獨立 SHA256SUMS；
+不可在 Windows 解壓再普通壓縮 app，以免丟失執行權限與符號連結。
+合併時逐一複製原 ZipInfo／內容，app 內檔案與簽章檔完全不變；.command 需 LF、Unix 0755 權限。
+字型／catalog 放 app 旁，.command 先 cd 到自身位置，再執行 app 並指定旁邊的 home；不固定 locale。
+這些新啟動行為仍待 Mac 實際遊玩確認；舊 `UW1-zhTW-mac-kit` 和原有存檔不覆寫。
+完整來源、雜湊與限制見 `MAC_0.5.md`；Windows／私人移機包的既有 ZIP 與 SHA 檔保持原樣。

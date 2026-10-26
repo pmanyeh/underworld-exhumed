@@ -8,7 +8,7 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 本次交付 | **Windows x64 繁中整合測試版 0.5**，是攜帶包版本號，不代表 P13 已驗收 |
+| 本次交付 | **繁中整合測試版 0.5**：Windows x64、macOS 通用版（arm64／x86_64）；版本號不代表 P13 已驗收 |
 | 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native` |
 | 最新功能提交 | `6b00da4`：技能清單滾輪、補正滾輪錄影；完整文件提交以 git log 為準 |
 | Exhume 子模組 | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，固定 `5e92215` |
@@ -20,7 +20,8 @@
 
 本次檔案：
 
-- `UW1-zhTW-v0.5-Windows.zip`：乾淨的整合測試包，沒有 home、遊戲本體或寫死的資料路徑。
+- `UW1-zhTW-v0.5-Windows.zip`：乾淨的 Windows 整合測試包，沒有 home、遊戲本體或寫死的資料路徑。
+- `UW1-zhTW-v0.5-macOS.zip`：GitHub Actions 編譯後於本機合併中文檔的 Mac 通用版；校驗檔 `UW1-v0.5-macOS-SHA256SUMS.txt`。
 - `UW1-dev-handoff-v0.5.zip`：**私人移機資料**，含 Git bundles、必要的 Git 外資料、玩家 home 備份及移機說明。
 - `UW1-v0.5-SHA256SUMS.txt`：兩包的 SHA-256。全部保留在本機，不上傳含 catalog／原版資料的 ZIP。
 - `uw1/docs/i18n/RELEASE_0.5.md`：本次來源、功能與驗證摘要；執行檔／catalog 來源雜湊另見整合包的 `MANIFEST.json`。
@@ -143,7 +144,9 @@ source /d/git/uw1-native-poc/.poc-tools/handoff/env.sh
 - 中譯字型、專有名詞加註等設定在 F11「語言與文字」；有 catalog 時首啟預設中文，啟動器不要硬帶 `--locale`。
 - 保留既定用詞：安卡十字騎士團、月之石預言者、哥布林（Goblin）。暗語／祈禱語／符文維持原文。
 - 專有名詞人名／地名／組織在每段首次加英文，`proper-names.tsv` 由工具產生，改譯文後執行檢查。
-- Mac 等更多進度後才重新編譯；舊 Mac kit 不是 0.5，啟動器仍有固定 locale 的歷史限制，未在本次宣稱修好。
+- Mac 0.5 已由 GitHub Actions 編譯：run `40308423602`，來源 `4c662c1`。雙架構、簽章完整性、函式庫路徑與 --help 檢查通過；未經 Apple 公證。
+  新獨立 Mac 0.5 包保留 app 位元組與 Unix 權限，啟動器依當前資料夾自動找中文，不固定 locale。
+  完整私有資源測試因 SSH 金鑰格式／權限失敗而未執行，Mac 遊玩／IME／F11 語言切換仍待實機確認。舊 Mac kit 未覆寫。報告 `MAC_0.5.md`。
 
 ## 6. 下一步
 

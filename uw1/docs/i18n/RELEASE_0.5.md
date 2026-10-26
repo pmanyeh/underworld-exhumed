@@ -49,3 +49,9 @@ catalog（p13-goblin）SHA-256：`78543defe8762bb545ca9b09d06cfae7097d96cd934990
 - 私有權威資料在新 clone 也正確忽略，避免移機後誤 commit；大型暫存還原目錄不會被再次收進私人 ZIP。
 - 原玩家 home 的 141 個檔案（含 33 個存檔檔案）雜湊未變；備份逐檔相符。
 - `package-verification.json`、`restore-verification.json` 記錄檢查結果；原始測試輸出保留本機。
+
+## 後續補發 Mac 0.5
+
+2026-10-26 另依使用者要求以 GitHub Actions 編譯 `4c662c1`，macos 建置／打包檢查成功，
+並在本機合併中文檔為 `UW1-zhTW-v0.5-macOS.zip`。完整來源、SHA-256、Apple 公證及私有資源測試限制
+見 `MAC_0.5.md`。先前 Windows／私人移機 ZIP 與其校驗檔保持原樣，舊 Mac kit 也未覆寫。

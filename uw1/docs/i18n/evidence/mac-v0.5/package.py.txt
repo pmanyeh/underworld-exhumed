@@ -1,0 +1,97 @@
+from pathlib import Path
+import copy,hashlib,json,stat,struct,zipfile
+ws=Path(__file__).resolve().parent.parent;uw1=ws/'underworld-exhumed/uw1'
+run=40308423602;commit='4c662c17753f1a794057ba947420b5f10df9deb9'
+source=next((ws/f'mac-artifact/run-{run}').glob('*.zip'))
+dest=ws/'UW1-zhTW-v0.5-macOS.zip';top=dest.stem
+out=uw1/'build/i18n/mac-v0.5';out.mkdir(parents=True,exist_ok=True)
+assert not dest.exists()
+def sha(data):return hashlib.sha256(data).hexdigest()
+def archs(data):
+    magic,n=struct.unpack_from('>II',data)
+    assert magic in (0xcafebabe,0xcafebabf)
+    step=20 if magic==0xcafebabe else 32
+    return {struct.unpack_from('>I',data,8+i*step)[0] for i in range(n)}
+manifest={'version':'0.5','source_commit':commit,'exhume_commit':'5e92215f0f21dd1ae2b9f009555f012e5e8c8475',
+          'workflow_run':run,'workflow_url':f'https://github.com/pmanyeh/underworld-exhumed/actions/runs/{run}',
+          'artifact_id':12643726437,'source_zip_sha256':sha(source.read_bytes()),'architectures':['arm64','x86_64'],
+          'signing':'ad hoc; Apple notarisation not performed','files':{}}
+launcher='''#!/bin/sh
+cd "$(dirname "$0")" || exit 1
+APP="./UW1.app/Contents/MacOS/uw1port"
+if [ ! -x "$APP" ]; then
+  printf '%s\\n' '找不到可執行的 UW1.app；請在 Mac 完整解壓縮本包，保留原檔案權限。' >&2
+  exit 1
+fi
+exec "$APP" --home "$PWD/home" "$@"
+'''
+readme='''Ultima Underworld 繁體中文整合測試版 0.5（macOS 通用版）
+=======================================================
+
+本包支援 Apple Silicon（arm64）及 Intel（x86_64）。
+GitHub Actions 已完成通用版編譯、簽章完整性、相依函式庫路徑及 --help 啟動檢查。
+尚未完成 Mac 實際遊玩與中文輸入法驗證：完整遊戲測試因私有測試資料金鑰無法驗證而未執行。
+
+開始
+----
+1. 在 Mac 完整解壓縮整個資料夾，保留 UW1.app、fonts、i18n、licenses 等相對位置。
+2. 雙擊「開始遊戲.command」，由程式尋找自己的 GOG UW1 資料；找不到時選擇遊戲或 GOG 安裝資料夾。
+3. 本包採 ad-hoc 簽章，未經 Apple 公證。首次執行可能需要依 Mac 提示允許開啟。
+   若 .command 沒有執行權限，可在終端機執行 chmod +x 後拖入「開始遊戲.command」再按 Enter。
+4. 首次啟動有 catalog 時預設中文；F11「語言與文字」可切換語言。請使用 .command 啟動以找到旁邊的中文資料。
+5. 存檔、設定與自動錄影存在本資料夾的 home/。沿用舊存檔時先備份，再複製所有 SAVE 資料夾，
+   連同 NAME.UTF、DESC.UTF、NOTES.UTF 一起保留；不要覆蓋較新的存檔。
+
+本版包含 Windows 0.5 相同的遊戲功能：中文地圖註記、英數 HD 字型、技能清單滾輪、
+戰鬥傷害／敵人血條、自然增亮與強度滑桿、全地圖、無敵、安全位置救援、物件不損耗等。
+新增遊玩強化及密技預設關閉，於 F11 自行開啟；需要重啟的設定請依畫面提示重開。
+現代按鍵：C 戰鬥、X 關容器、F 屬性頁、Z 開關地圖（編寫註記時照常輸入）。
+空白鍵仍是攻擊；Shift／j 跳躍，沒有更改原有綁定。
+
+本包不含遊戲本體或玩家 home。catalog 含原文，僅供私人測試，不上傳公開網站。
+字型及程式授權見 licenses，來源和校驗見 MANIFEST.json；原始 app 的內容及簽章檔均保持不變。
+工作流程：https://github.com/pmanyeh/underworld-exhumed/actions/runs/40308423602
+'''
+app_files={};modes={};frameworks=[]
+with zipfile.ZipFile(source) as original,zipfile.ZipFile(dest,'x',zipfile.ZIP_DEFLATED,compresslevel=6) as result:
+    assert original.testzip() is None
+    for info in original.infolist():
+        tail=info.filename.split('/',1)[1] if '/' in info.filename else ''
+        if not tail:continue
+        assert '..' not in Path(tail).parts and not tail.startswith('/')
+        target=copy.copy(info);target.filename=top+'/'+tail
+        data=original.read(info);result.writestr(target,data)
+        if not info.is_dir():manifest['files'][tail]={'sha256':sha(data),'mode':oct(info.external_attr>>16)}
+        if tail.startswith('UW1.app/') and not info.is_dir():
+            app_files[tail]=sha(data);modes[tail]=info.external_attr>>16
+        if tail.endswith('Contents/MacOS/uw1port') or '/Contents/Frameworks/' in tail and tail.endswith('.dylib'):
+            assert archs(data)=={0x1000007,0x100000c},tail
+            frameworks.append(tail)
+    def add(name,data,mode=0o100644):
+        assert name not in manifest['files']
+        info=zipfile.ZipInfo(top+'/'+name);info.create_system=3;info.external_attr=mode<<16;info.compress_type=zipfile.ZIP_DEFLATED
+        result.writestr(info,data);manifest['files'][name]={'sha256':sha(data),'mode':oct(mode)}
+    add('開始遊戲.command',launcher.encode('utf-8'),0o100755)
+    add('說明.txt',readme.encode('utf-8'));add('VERSION.txt',b'0.5\n')
+    add('fonts/jf-openhuninn-2.1.ttf',(uw1/'tools/fonts/jf-openhuninn-2.1.ttf').read_bytes())
+    for name in ['text-settings.ini','input-aliases.tsv','proper-names.tsv','SETTINGS.zh-TW.md']:
+        add('i18n/zh-TW/'+name,(uw1/'i18n/zh-TW'/name).read_bytes())
+    add('i18n/zh-TW/catalog.uw1loc',(uw1/'build/i18n/p13-goblin/catalog-1.bin').read_bytes())
+    add('licenses/jf-openhuninn-OFL.txt',(uw1/'docs/i18n/licenses/jf-openhuninn-OFL.txt').read_bytes())
+    info=zipfile.ZipInfo(top+'/MANIFEST.json');info.create_system=3;info.external_attr=0o100644<<16;info.compress_type=zipfile.ZIP_DEFLATED
+    result.writestr(info,json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+with zipfile.ZipFile(dest) as z:
+    assert z.testzip() is None
+    for name,value in manifest['files'].items():
+        info=z.getinfo(top+'/'+name);assert sha(z.read(info))==value['sha256'] and oct(info.external_attr>>16)==value['mode']
+    for name,want in app_files.items():assert sha(z.read(top+'/'+name))==want
+    assert stat.S_IMODE(z.getinfo(top+'/開始遊戲.command').external_attr>>16)==0o755
+    assert not any('/home/' in n or n.upper().endswith('/UW.EXE') for n in z.namelist())
+digest=sha(dest.read_bytes())
+(ws/'UW1-v0.5-macOS-SHA256SUMS.txt').write_text(digest+'  '+dest.name+'\n',encoding='utf-8',newline='\n')
+(out/'開始遊戲.command').write_text(launcher,encoding='utf-8',newline='\n')
+report={'status':'PASS','zip':str(dest),'bytes':dest.stat().st_size,'sha256':digest,'source_zip':str(source),
+        'workflow_run':run,'source_commit':commit,'architectures':['arm64','x86_64'],'app_files_unchanged':len(app_files),
+        'universal_macho_files':frameworks,'permissions_preserved':True,'zip_crc':'PASS','mac_gameplay':'not verified',
+        'full_game_ci':'private assets SSH key invalid; tests did not reach gameplay'}
+(out/'package-verification.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2),flush=True)
