@@ -337,9 +337,9 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 - 報告 `uw1/docs/i18n/P13_STATS_WHEEL.md`；產物 `build/i18n/stats-wheel/`；工具 `.poc-tools/stats-wheel-check.py`、`stats-wheel-regression.py`。
 - 測試版只更新 EXE，33 個使用者存檔檔案雜湊不變；EXE SHA-256 `970b03cbf80f053a9ee8e69ee3795c27c0f5a187a131480951e28368b0d968fe`。
 
-**空白鍵綁定調查（2026-10-26，等待使用者決定是否取代）**
+**空白鍵綁定調查（2026-10-26，使用者決定保留攻擊）**
 
 - 使用者要求先確認空白鍵是否已有功能，若無才在「現代按鍵」下綁跳躍。
 - 已確認 `PLAYER.C/init_player` 在 `modern-keys` 下註冊空白鍵至 `port_key_attack`，會沿用上次攻擊方式（初始揮砍），按住可蓄力。
 - 現有 Shift／j 為跳躍，Ctrl+Shift／J 為另一種原版跳躍；`rune-keys` 的 Ctrl+Alt+空白鍵另外施法。
-- 已詢問是否將空白鍵的攻擊改為跳躍；原條件「沒有綁定」不成立，在收到取代的答覆前不改按鍵。
+- 使用者已選擇「保留目前空白鍵攻擊」：不更改按鍵綁定，跳躍維持 Shift／j，空白鍵維持攻擊。此項已確認結案。
