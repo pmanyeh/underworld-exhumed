@@ -447,6 +447,9 @@ unsigned char far crit_attack(register unsigned dist)
             SET_SEQ(meptr, i + 1);
             SET_RATE(meptr, 4);
             SET_FRAME(meptr, 0);
+#ifndef __TURBOC__
+            port_combat_attack(meptr);
+#endif
             return 1;
         } else if (OBJ_ATKFRAME(meptr) < 0xF)
             SET_ATKFRAME(meptr, OBJ_ATKFRAME(meptr) + 1);
@@ -540,6 +543,9 @@ unsigned char far crit_magik_attack(void)
             SET_SEQ(meptr, SEQ_CAST);
             SET_CAST(meptr, rand() % 16 < 0xB ? 1 : 2);
             SET_FRAME(meptr, 0);
+#ifndef __TURBOC__
+            port_combat_attack(meptr);
+#endif
         }
         return 1;
     }
@@ -559,6 +565,9 @@ unsigned char far crit_missile_attack(void)
             SET_SPEED(meptr, 0);
             SET_SEQ(meptr, SEQ_FIRE);
             SET_FRAME(meptr, 0);
+#ifndef __TURBOC__
+            port_combat_attack(meptr);
+#endif
         }
         return 1;
     }

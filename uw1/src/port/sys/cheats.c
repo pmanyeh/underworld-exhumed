@@ -189,15 +189,31 @@ extern int16 fromwho, hitobj;
 static const char *c_combat(int argc, char *argv[], int run)
 {
     long slot, amount = 0;
-    int kind, saved_from, saved_hit;
+    int kind, saved_from, saved_hit, action;
     struct Object *o;
-    if (argc != 2 || cheat_num(argv[0], 2, 255, &slot)) return "a mobile slot 2..255 and damage 1..255, miss or block";
+    if (argc != 2 || cheat_num(argv[0], 2, 255, &slot)) return "a mobile slot 2..255 and damage 1..255, miss, block, attack or status";
+    action = !strcmp(argv[1], "attack") ? 1 : !strcmp(argv[1], "status") ? 2 : 0;
     kind = !strcmp(argv[1], "miss") ? COMBAT_MISS : !strcmp(argv[1], "block") ? COMBAT_BLOCK : COMBAT_DAMAGE;
-    if (kind == COMBAT_DAMAGE && cheat_num(argv[1], 1, 255, &amount)) return "damage 1..255, miss or block";
+    if (!action && kind == COMBAT_DAMAGE && cheat_num(argv[1], 1, 255, &amount)) return "damage 1..255, miss, block, attack or status";
     if (!run) return NULL;
     o = Obj_IntTMem((int)slot);
     if (OBJ_MAJOR(o) != MAJOR_CREATURE || !o->hp) return "not a live creature";
-    if (kind == COMBAT_DAMAGE) damage_critter(o, (unsigned char)amount, ThePlayer);
+    if (action == 1) {
+        /* Ask the real AI to attack, without damaging the creature or revealing it here. */
+        set_critter_vars(o);
+        critter_set_goal(GOAL_ATTACK, 1);
+        SET_ATTITUDE(o, ATT_HOSTILE);
+        fprintf(stderr, "fixture: provoke slot=%ld hp=%u\n", slot, (unsigned)o->hp);
+    } else if (action == 2) {
+        CombatFrame frame;
+        int i, visible = 0, engaged = 0;
+        combat_text_read(&frame);
+        for (i = 0; i < frame.count; i++) if (frame.actors[i].slot == slot) {
+            visible = 1; engaged = frame.actors[i].engaged;
+        }
+        fprintf(stderr, "fixture: combat slot=%ld hp=%u visible=%d engaged=%d seq=%u target=%u\n",
+                slot, (unsigned)o->hp, visible, engaged, (unsigned)OBJ_SEQ(o), (unsigned)OBJ_GTARG(o));
+    } else if (kind == COMBAT_DAMAGE) damage_critter(o, (unsigned char)amount, ThePlayer);
     else {
         saved_from = fromwho; saved_hit = hitobj;
         fromwho = 1; hitobj = (int)slot;
@@ -389,7 +405,7 @@ static const struct cheat_cmd cmds[] = {
     { "give", "ITEM [QTY [QUALITY]] [drop]", c_give },
     { "set", "FIELD VALUE", c_set },
     { "scroll", "UTF8_FILE (HD scroll fixture)", c_scroll },
-    { "combat", "SLOT DAMAGE|miss|block (combat fixture)", c_combat },
+    { "combat", "SLOT DAMAGE|miss|block|attack|status (combat fixture)", c_combat },
     { "view", "SLOT [LIGHT] (camera fixture)", c_view },
     { "talk", "WHOAMI (conversation fixture)", c_talk },
     { "use", "INDEX X Y (door use fixture)", c_use },

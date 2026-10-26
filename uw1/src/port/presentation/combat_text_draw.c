@@ -55,7 +55,7 @@ int combat_text_draw(HdFont *font, const PlatOverlay *f, const CombatFrame *c, f
         const CombatActor *a = &c->actors[i];
         HdColor bg = { 15, 12, 10, 255 }, color = { 85, 220, 90, 255 };
         float ratio, x, y, w;
-        if (!a->hurt || a->hp <= 0 || a->maximum <= 0) continue;
+        if (!a->engaged || a->hp <= 0 || a->maximum <= 0) continue;
         ratio = a->hp / (float)a->maximum;
         if (ratio > 1) ratio = 1;
         if (ratio <= .25f) { color.r = 255; color.g = 70; color.b = 60; }

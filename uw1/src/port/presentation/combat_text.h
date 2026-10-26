@@ -9,7 +9,7 @@
 #define COMBAT_LIFE 384u
 enum { COMBAT_DAMAGE, COMBAT_MISS, COMBAT_BLOCK };
 typedef struct CombatActor {
-    int slot, hp, maximum, left, top, right, bottom, hurt;
+    int slot, hp, maximum, left, top, right, bottom, engaged;
 } CombatActor;
 typedef struct CombatFloat {
     int slot, kind, amount, age, lane;
@@ -26,6 +26,8 @@ void combat_text_reset(void);
 void combat_text_hide(void);
 void combat_text_forget(int slot);
 void combat_text_observe(int slot, int identity, int hp, int average);
+/* A creature that took damage or began attacking the player may show its health. */
+void combat_text_engage(int slot);
 void combat_text_event(int slot, int kind, int amount, const char *text, uint32_t now);
 /* framebuffer rows count up; screen rows count down. y is the view's bottom row. */
 void combat_text_begin(const void *fb, int x, int y, int width, int height,
@@ -43,6 +45,7 @@ int combat_text_draw(struct HdFont *font, const struct PlatOverlay *frame,
                      const CombatFrame *combat, float border);
 /* Game bridge: ASCII hooks in the original sources. */
 void port_combat_damage(const void *object, int damage);
+void port_combat_attack(const void *object);
 void port_combat_result(int target, int attacker, int kind);
 void port_combat_forget(const void *object);
 void port_combat_tags_reset(void);

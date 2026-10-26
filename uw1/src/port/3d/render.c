@@ -41,6 +41,17 @@ void port_combat_damage(const void *object, int damage)
     /* Display time must not consume a recorded GAME_TIME() event. */
     combat_text_event(slot, COMBAT_DAMAGE, damage < o->hp ? damage : o->hp, NULL, *Time);
 }
+/* Called only when an offensive melee, missile or spell animation starts.
+   No damage event: misses, blocks and god mode must still reveal the attacker. */
+void port_combat_attack(const void *object)
+{
+    const struct Object *o = object;
+    int slot;
+    if (!ENHANCED(ENH_ENEMY_HEALTH) || !o || (slot = slot_of(o)) < 2 ||
+        OBJ_MAJOR(o) != MAJOR_CREATURE || !o->hp || OBJ_GTARG(o) != 1) return;
+    combat_text_observe(slot, OBJ_ITEM(o), o->hp, Creature[OBJ_INMAJOR(o)].avghit);
+    combat_text_engage(slot);
+}
 void port_combat_result(int target, int attacker, int kind)
 {
     struct Object *o;

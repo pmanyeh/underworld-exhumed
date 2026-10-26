@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 
-static struct { int identity, known, hp, maximum, hurt; } actors[COMBAT_SLOTS];
+static struct { int identity, known, hp, maximum, engaged; } actors[COMBAT_SLOTS];
 static struct { CombatFloat event; uint32_t born; } events[COMBAT_FLOATS];
 static int count, owner;
 static uint16_t pixels[65536];
@@ -52,6 +52,10 @@ void combat_text_observe(int slot, int identity, int hp, int average)
     if (hp > actors[slot].maximum) actors[slot].maximum = hp;
     if (actors[slot].maximum < 1) actors[slot].maximum = 1;
 }
+void combat_text_engage(int slot)
+{
+    if (valid(slot) && actors[slot].known) actors[slot].engaged = 1;
+}
 static void age_events(uint32_t now)
 {
     int i, k;
@@ -83,7 +87,7 @@ void combat_text_event(int slot, int kind, int amount, const char *text, uint32_
     e->slot = slot; e->kind = kind; e->amount = amount; e->lane = lane % 3;
     snprintf(e->text, sizeof e->text, "%s", text ? text : "");
     events[count++].born = now;
-    if (valid(slot) && kind == COMBAT_DAMAGE) actors[slot].hurt = 1;
+    if (kind == COMBAT_DAMAGE) combat_text_engage(slot);
 }
 void combat_text_begin(const void *fb, int x, int y, int w, int h,
                        int numbers, int health, uint32_t now)
@@ -129,7 +133,7 @@ void combat_text_end(void)
     }
     for (i = 2; i < COMBAT_SLOTS; i++) if (bounds[i].slot) {
         CombatActor *a = &work.actors[work.count++];
-        *a = bounds[i]; a->hp = actors[i].hp; a->maximum = actors[i].maximum; a->hurt = actors[i].hurt;
+        *a = bounds[i]; a->hp = actors[i].hp; a->maximum = actors[i].maximum; a->engaged = actors[i].engaged;
     }
     if (work.numbers) for (i = 0; i < count; i++) {
         int slot = events[i].event.slot;

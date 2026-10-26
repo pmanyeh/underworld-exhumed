@@ -54,7 +54,7 @@ static const struct { const char *english, *zh; } words[] = {
      "對話與書本中的人名、地名、組織名，後面加上英文原名"},
     {"damage-numbers", "戰鬥傷害數字"}, {"enemy-health", "敵人血條"},
     {"Damage, misses and blocks float above visible enemies", "在看得見的敵人旁顯示傷害、揮空與格擋；空揮時顯示在視野中央"},
-    {"Health bars above visible creatures after they take damage (estimated maximum)", "受傷過的生物顯示血條；只顯示看得見的生物，最大血量為估計值"},
+    {"Health bars above visible creatures after they take damage or attack you (estimated maximum)", "受傷過或對你發動攻擊的生物顯示血條；只顯示看得見的生物，最大血量為估計值"},
     /* the enhancements' names and what each does */
     {"skip-intro", "略過開場"}, {"wrap-menu", "選單循環"}, {"fast-panels", "面板加速"},
     {"free-heading", "貼牆不轉向"}, {"subtitles", "過場字幕"}, {"skill-messages", "技能提升訊息"},
