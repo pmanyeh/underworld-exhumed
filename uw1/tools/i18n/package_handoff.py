@@ -62,12 +62,15 @@ def main():
     for path in (uw1 / 'build/poc').glob('*.toml'):
         add(path)
     # Keep authored translations and small evidence, not the many GB of framebuffer dumps.
-    for path in (uw1 / 'build/i18n').rglob('translations.py'):
-        add(path)
-    for path in (uw1 / 'build/i18n').rglob('*.json'):
-        if path.name in ('report.json', 'delivery.json', 'visual.json', 'visual-debug.json', 'record.json',
-                         'record-debug.json', 'save-equivalence.json') and path.stat().st_size < 4 * 1024 * 1024:
-            add(path)
+    reports = {'report.json', 'delivery.json', 'visual.json', 'visual-debug.json', 'record.json',
+               'record-debug.json', 'save-equivalence.json', 'package-verification.json', 'restore-verification.json'}
+    for base, dirs, names in os.walk(uw1 / 'build/i18n'):
+        # Temporary clones and portable smoke copies are not another source of history.
+        dirs[:] = [name for name in dirs if name != 'workspace' and not name.startswith(('restore-', 'portable-'))]
+        for name in names:
+            path = Path(base) / name
+            if name == 'translations.py' or name in reports and path.stat().st_size < 4 * 1024 * 1024:
+                add(path)
     for path in (uw1 / 'build/i18n/p13-goblin').iterdir():
         if path.is_file():
             add(path)

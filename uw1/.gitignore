@@ -9,3 +9,5 @@ tools/libs/
 tools/libs-web/
 tools/nuked-opl3/
 tools/fonts/
+# The owner's full manual/source authority is private, including on a fresh clone.
+i18n/zh-TW/private-authority/

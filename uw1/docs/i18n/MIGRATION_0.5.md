@@ -30,6 +30,7 @@ git -C "D:\git\Ultima Underworld\underworld-exhumed\exhume" checkout feature/pre
 
 bundle 路徑請使用完整絕對路徑，避免 submodule 在不同工作目錄尋找。
 兩個 repo 都設定 `git config core.autocrlf true`；用 `git log -1`／`git submodule status` 對照移機包 manifest。
+私有 `private-authority` 已由 repo 的 `.gitignore` 排除，不再依賴舊電腦的 `.git/info/exclude`。
 之後將 `移機包\workspace\` 裡的內容複製到工作區，保留其相對目錄結構。
 **不要先覆蓋私人資料再 clone 到非空 repo 目錄。**
 
@@ -55,6 +56,8 @@ mklink /J D:\git\uw1-poc-libs "D:\git\Ultima Underworld\underworld-exhumed\uw1\t
 
 如果無法使用 D 槽，必須相應調整 `.poc-tools/handoff/env.sh` 及使用固定 D 槽路徑的歷史腳本。
 首次接手不要假設它們已全部支援任意路徑。
+隨包函式庫的 pkg-config `prefix` 使用 `D:/git/uw1-poc-libs`，這個 junction 必須指向新工作區的函式庫。
+工具鏈／pkg-config 使用的路徑請維持無空白別名，避免旗標被切開；也可依 BUILDING.md 在新機重建函式庫。
 
 ## 4. 驗證與玩家存檔
 
