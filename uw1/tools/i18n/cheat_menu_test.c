@@ -55,7 +55,7 @@ void player_setup(int x,int y)
     PN.terrain=FOOT_FLOOR;
 }
 char ChangeLevel(int from,int to) { (void)from;level_changes++;PlayerLevel=to;GrSq=-1;return 1; }
-void settings_enhancement(int b,int t,void (*fn)(int)) { CHECK((b==ENH_FULL_MAP || b==ENH_GOD_MODE || b==ENH_BRIGHT_VIEW) && t==SET_TAB_CHEATS && fn); }
+void settings_enhancement(int b,int t,void (*fn)(int)) { CHECK((b==ENH_FULL_MAP || b==ENH_GOD_MODE || b==ENH_BRIGHT_VIEW || b==ENH_NO_WEAR) && t==SET_TAB_CHEATS && fn); }
 static int recorded;
 void rp_cheat_put(uint32_t poll,const char *s) { CHECK(poll>0 && !strncmp(s,"menu-",5)); recorded++; }
 static const struct cheat_game test_game={NULL,0,ready};
@@ -223,6 +223,9 @@ int main(int argc,char **argv)
         port_bright_strength_set(4);
     }
     CHECK(seed==123);
+    CHECK(!cheat_menu_request("menu-no-wear 1"));scrnum=2;port_cheat_point();CHECK(!ENHANCED(ENH_NO_WEAR));
+    scrnum=0;port_cheat_point();CHECK(ENHANCED(ENH_NO_WEAR) && !ENHANCED(ENH_GOD_MODE));
+    CHECK(!cheat_menu_request("menu-no-wear 0"));port_cheat_point();CHECK(!ENHANCED(ENH_NO_WEAR));
     printf("%s %d cheat-menu checks: health, recovery, blocked positions, rollback, queue, full-map, brightness and RNG\n",failures?"FAIL":"PASS",checks);
     return failures!=0;
 }

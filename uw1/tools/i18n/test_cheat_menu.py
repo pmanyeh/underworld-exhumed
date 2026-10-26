@@ -61,3 +61,16 @@ fn=ai.split('char far set_up_target(void)',1)[1].split('\n/* Whether a hurt',1)[
 target=out/('target.exe' if os.name=='nt' else 'target')
 subprocess.run([P.host_cc(),'-std=c11','-I'+str(out),*san,str(Path(__file__).with_name('cheat_target_test.c')),'-o',str(target)],check=True)
 subprocess.run([str(target)],env=env,check=True)
+# Test the real combat and inventory wear path, including damage and breakage.
+sources=[(uw1/'src/inv/INVDATA.C',['unsigned char far ObjWorn(','int far DamageInventory(']),
+         (uw1/'src/combat/DAMAGE.C',['unsigned char far check_res(','char far damage_object(','char far damage_item(']),
+         (uw1/'src/combat/COMBAT.C',['int far frp_check('])]
+functions=[]
+for path,names in sources:
+    source=path.read_text(encoding='utf-8')
+    functions += [name+source.split(name,1)[1].split('\n}\n',1)[0]+'\n}\n' for name in names]
+(out/'no_wear_impl.h').write_text('\n'.join(functions),encoding='utf-8')
+wear=out/('wear.exe' if os.name=='nt' else 'wear')
+subprocess.run([P.host_cc(),*P.FLAGS,*P.layout_flags(P.host_cc()),'-I'+str(root/'exhume/runtime/port'),
+    '-I'+str(out),*san,'-g','-O1',str(Path(__file__).with_name('no_wear_test.c')),'-o',str(wear)],check=True)
+subprocess.run([str(wear)],env=env,check=True)

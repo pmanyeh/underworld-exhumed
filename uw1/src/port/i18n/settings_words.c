@@ -8,6 +8,8 @@
 static const struct { const char *english, *zh; } words[] = {
     {"Cheats", "密技"}, {"Run", "執行"},
     {"Brightness strength", "增亮強度"},
+    {"no-wear", "物件不損耗"},
+    {"Equipped weapons, shields and armour do not lose condition through combat use", "武器使用、盾牌與防具格擋不減耐久；關閉設定並回到遊戲後生效"},
     {"With bright-view on: 0 original, 4 gentle, 15 brightest; close settings to apply", "開啟「提高亮度」後生效：0 原始明暗、4 溫和、15 最亮；關閉設定後套用"},
     {"full-map", "全地圖"}, {"god-mode", "無敵"}, {"bright-view", "提高亮度"},
     {"Return to safe position", "返回安全位置"},

@@ -393,7 +393,36 @@ static const char *c_victory(int argc,char **argv,int run)
     if(run) { EndGameMode_dseg_1C8F=1;editchng(0x400); }
     return NULL;
 }
+/* Inventory wear integration fixtures: normal allocation/equipping and the real wear entry. */
+static const char *c_equip(int n,char **a,int run)
+{
+    long item,slot,quality;struct Object *obj;
+    if(n!=3 || cheat_num(a[0],0,63,&item) || cheat_num(a[1],0,10,&slot) || cheat_num(a[2],1,63,&quality))
+        return "ITEM 0..63 SLOT 0..10 QUALITY 1..63";
+    if(!run)return NULL;
+    if(AskInventory((int)slot))return "slot occupied";
+    obj=CreateObj((int)item,0);if(!obj)return "no free object";
+    obj->qn.f.quality=(uint16)quality;
+    if(ItemFitsSlot(obj,(int)slot)<=0 || !AddToInventory(obj,(int)slot)) {Obj_Free(obj);return "item does not fit";}
+    RedisplayInvSlot((int)slot);editchng(2);return NULL;
+}
+static const char *c_wear(int n,char **a,int run)
+{
+    long slot,amount,how;struct Object *obj;int before,item,result;
+    if(n!=3 || cheat_num(a[0],0,10,&slot) || cheat_num(a[1],0,255,&amount) || cheat_num(a[2],0,2,&how))
+        return "SLOT 0..10 AMOUNT 0..255 HOW 0..2";
+    if(!run)return NULL;
+    obj=AskInventory((int)slot);if(!obj)return "empty slot";
+    before=OBJ_QUALITY(obj);item=OBJ_ITEM(obj);
+    result=DamageInventory((int)slot,(unsigned char)amount,DMG_PHYSICAL,(int)how,1);
+    obj=AskInventory((int)slot);
+    fprintf(stderr,"fixture: wear slot=%ld item=%d quality=%d->%d result=%d no_wear=%u hp=%u\n",
+            slot,item,before,obj?OBJ_QUALITY(obj):-1,result,ENHANCED(ENH_NO_WEAR),(unsigned)ThePlayer->hp);
+    editchng(2);return NULL;
+}
 static const struct cheat_cmd cmds[] = {
+    { "test-equip", "ITEM SLOT QUALITY", c_equip },
+    { "test-wear", "SLOT AMOUNT HOW", c_wear },
     { "test-victory", "(ending flow fixture)", c_victory },
     { "test-hurt", "SOURCE AMOUNT", c_hurt },
     { "test-fault", "bounds|teleport|blocked", c_fault },

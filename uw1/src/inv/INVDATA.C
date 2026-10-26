@@ -437,6 +437,10 @@ int far DamageInventory(int slot, unsigned char damage, unsigned char type, int 
         } else if (!(char)ObjWorn(OBJ_ITEM(obj), slot))  /* UW1: tested signed (cbw) */
             return -2;
     }
+#ifndef __TURBOC__
+    /* Combat wear only: keep explicit damage to inventory objects (how 2) intact. */
+    if (ENHANCED(ENH_NO_WEAR) && (how == 0 || how == 1)) return -1;
+#endif
     quality = obj->qn.f.quality;
     if (damage_item(obj, 0L, -1, -1, damage, type)) {
         if (debris) {

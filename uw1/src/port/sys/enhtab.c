@@ -30,4 +30,5 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "full-map", "Show the whole dungeon map without changing explored areas", ENH_PRESENTATION, NULL, NULL },
     { "god-mode", "No health loss or death, with recovery from invalid positions", ENH_GAMEPLAY, NULL, NULL },
     { "bright-view", "Gently brighten the current light source while keeping distance shading and exploration", ENH_PRESENTATION, NULL, NULL },
+    { "no-wear", "Equipped weapons, shields and armour do not lose condition through combat use", ENH_GAMEPLAY, NULL, NULL },
 };
