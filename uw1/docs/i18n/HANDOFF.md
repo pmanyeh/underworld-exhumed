@@ -23,12 +23,12 @@
 
 | 項目 | 狀態 |
 | --- | --- |
-| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `3c4c9e1`，已 push（後續交接文件提交見 git log） |
+| 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native`，最新程式提交 `8d5562d`，已 push（後續交接文件提交見 git log） |
 | 子模組 exhume | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，最新 `5e92215`，已 push |
 | 本機未 commit 的改動 | 無 |
 | 最後一個 tag | `zh-tw-native-p12`（在 `0169ca1`，2026-10-25） |
 | 目前階段 | **P13 進行中**：中文化的自動化檢查都完成，等使用者實際遊玩與審閱譯文；同時在做使用者要的強化功能 |
-| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含物件不損耗（`3c4c9e1`）、增亮強度 0～15 滑桿（`b353ef0`）、照明漸層與個體血量基準修正（`3a6bc51`），及攻擊觸發敵人血條（`820a1be`）、提高亮度（`d11a79b`）、無敵預開啟讀檔修正（`d1e37ea`）及密技選單首版（`822b5bf`）：全地圖、無敵與安全位置救援，以及先前中文註記、Z 地圖與戰鬥顯示功能，catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
+| 測試資料夾 | `UW1-zhTW-playtest`：執行檔已含中文模式屬性頁／地圖英數 HD 字型（`8d5562d`）、物件不損耗（`3c4c9e1`）、增亮強度 0～15 滑桿（`b353ef0`）、照明漸層與個體血量基準修正（`3a6bc51`），及攻擊觸發敵人血條（`820a1be`）、提高亮度（`d11a79b`）、無敵預開啟讀檔修正（`d1e37ea`）及密技選單首版（`822b5bf`）：全地圖、無敵與安全位置救援，以及先前中文註記、Z 地圖與戰鬥顯示功能，catalog 為 `p13-goblin`，`開始遊戲.bat` 不帶 `--locale` |
 
 ### 已完成
 
@@ -314,3 +314,13 @@ for t in tools/i18n/test_*.py; do "$PY" $t | tail -1; done  # 全部 OK／PASS
 3. **發行前要補的事：** 譯文全部還是 `draft`，要等人工審閱；遊戲標誌圖「Ultima Underworld」維持英文（需要美術素材）；
    Mac 版的 `開始遊戲.command` 還帶 `--locale zh-TW`，會讓 F11 的語言切換失效（見 `打包測試版流程.md` 第五節）。
 4. **P13 Gate 與 tag `zh-tw-native-p13`：** 上面完成後，依主計畫書 §Acceptance Gate P13 確認，經使用者同意再建。
+
+**E. 中文模式屬性頁與地圖英數字（2026-10-26 已實作 `8d5562d`，待使用者確認）**
+
+- 中文模式下，屬性頁的英文姓名、屬性／生命／法力／經驗／技能數值及符號一律走現有高解析字型，維持姓名置中、數值靠右。
+- 地圖沒有中文旁註的舊英數註解，以及新輸入的純英數或中英混合註解，也使用高解析字型；刪除點選採相同字寬。
+- 沿用 HD 字型設定，沒有新增開關；英文模式的 ASCII 維持原版。既有中文姓名／註解和正常存檔流程不變。
+- 17 個單元測試、160 項地圖 ASan／UBSan 檢查、13 項文字回歸、原生正常／UBSan 情境與 repocheck 通過。
+  16 個 session 四模式有效存檔一致、英文關閉模式與 DOS golden 原始位元組一致；NUL 後地圖文字填充例外沿用 C 節說明。
+- 報告 `uw1/docs/i18n/P13_HD_ASCII.md`；截圖／結果 `build/i18n/stats-ascii/`；工具 `.poc-tools/stats-ascii-check.py`、`stats-ascii-regression.py`。
+- 測試版只更新 EXE，33 個使用者存檔檔案雜湊不變；EXE SHA-256 `d0c4f1228e2403c5f9d6f4fc717c1c0beda95f7079f7ed534438fe7ebb92293d`。
