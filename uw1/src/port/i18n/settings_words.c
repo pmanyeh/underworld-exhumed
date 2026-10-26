@@ -7,10 +7,11 @@
 
 static const struct { const char *english, *zh; } words[] = {
     {"Cheats", "密技"}, {"Run", "執行"},
-    {"full-map", "全地圖"}, {"god-mode", "無敵"},
+    {"full-map", "全地圖"}, {"god-mode", "無敵"}, {"bright-view", "提高亮度"},
     {"Return to safe position", "返回安全位置"},
     {"Remember safe position", "記住安全位置"},
     {"Show the whole dungeon map without changing explored areas", "顯示整層地圖，不修改探索紀錄；關閉設定並回到遊戲後生效"},
+    {"Brighten the 3D view without changing light sources or exploration", "提高 3D 畫面亮度，不改變光源或探索範圍"},
     {"No health loss or death, with recovery from invalid positions", "不扣血、不死，異常位置時自動救援；關閉設定並回到遊戲後生效"},
     {"Close settings and return to the game to recover; does not change quest progress", "關閉設定並回到遊戲後，返回本層安全位置"},
     {"Remember this dry, clear floor as a rescue destination; kept only for this session", "把目前乾燥、沒有障礙的地面記為本層救援位置；只保留於本次遊玩"},

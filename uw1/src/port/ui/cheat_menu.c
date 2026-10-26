@@ -152,6 +152,7 @@ static const char *toggle(int argc, char **argv, int run, int bit)
 }
 static const char *god(int n, char **a, int run) { return toggle(n, a, run, ENH_GOD_MODE); }
 static const char *map(int n, char **a, int run) { return toggle(n, a, run, ENH_FULL_MAP); }
+static const char *bright(int n, char **a, int run) { return toggle(n, a, run, ENH_BRIGHT_VIEW); }
 static const char *rescue(int n, char **a, int run)
 {
     (void)a;
@@ -173,9 +174,10 @@ static const char *remember(int n, char **a, int run)
 }
 static const struct cheat_cmd commands[] = {
     { "menu-god", "0|1", god }, { "menu-map", "0|1", map },
-    { "menu-rescue", "", rescue }, { "menu-anchor", "", remember }
+    { "menu-rescue", "", rescue }, { "menu-anchor", "", remember },
+    { "menu-bright", "0|1", bright }
 };
-static const struct cheat_game menu = { commands, 4, ready };
+static const struct cheat_game menu = { commands, sizeof commands / sizeof commands[0], ready };
 void port_cheat_menu_init(void) { cheat_menu_init(&menu); }
 static void request(const char *text)
 {
@@ -183,10 +185,12 @@ static void request(const char *text)
 }
 static void god_request(int on) { request(on ? "menu-god 1" : "menu-god 0"); }
 static void map_request(int on) { request(on ? "menu-map 1" : "menu-map 0"); }
+static void bright_request(int on) { request(on ? "menu-bright 1" : "menu-bright 0"); }
 void port_cheat_rescue_request(int unused) { (void)unused; request("menu-rescue"); }
 void port_cheat_anchor_request(int unused) { (void)unused; request("menu-anchor"); }
 void port_cheat_settings(void)
 {
     settings_enhancement(ENH_FULL_MAP, SET_TAB_CHEATS, map_request);
     settings_enhancement(ENH_GOD_MODE, SET_TAB_CHEATS, god_request);
+    settings_enhancement(ENH_BRIGHT_VIEW, SET_TAB_CHEATS, bright_request);
 }

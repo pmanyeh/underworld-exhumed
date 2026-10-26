@@ -29,4 +29,5 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "enemy-health", "Health bars above visible creatures after they take damage (estimated maximum)", ENH_PRESENTATION, NULL, NULL },
     { "full-map", "Show the whole dungeon map without changing explored areas", ENH_PRESENTATION, NULL, NULL },
     { "god-mode", "No health loss or death, with recovery from invalid positions", ENH_GAMEPLAY, NULL, NULL },
+    { "bright-view", "Brighten the 3D view without changing light sources or exploration", ENH_PRESENTATION, NULL, NULL },
 };

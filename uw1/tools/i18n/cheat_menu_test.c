@@ -1,6 +1,7 @@
 /* Exercise the real menu/recovery/store code with a synthetic world and collision answers. */
 #include "../../src/port/ui/cheat_menu.c"
 #include "../../src/port/ui/full_map.c"
+#include "../../src/port/presentation/bright_view.c"
 #undef main
 #undef exit
 #undef fopen
@@ -16,6 +17,8 @@ static struct Scroll message_scroll;
 struct Scroll *scroll = &message_scroll;
 #define CHECK(c) do { checks++; if (!(c)) { printf("FAIL %d: %s\n",__LINE__,#c); failures++; } } while (0)
 uint32_t enhance_on;
+static unsigned char lights[4096], original_lights[4096];
+unsigned char *cLightTabs = lights;
 static struct Object actor, held;
 struct Object *ThePlayer = &actor, *CursorObjPtr;
 static struct Tile world[4096];
@@ -48,7 +51,7 @@ void player_setup(int x,int y)
     PN.terrain=FOOT_FLOOR;
 }
 char ChangeLevel(int from,int to) { (void)from;level_changes++;PlayerLevel=to;GrSq=-1;return 1; }
-void settings_enhancement(int b,int t,void (*fn)(int)) { CHECK((b==ENH_FULL_MAP || b==ENH_GOD_MODE) && t==SET_TAB_CHEATS && fn); }
+void settings_enhancement(int b,int t,void (*fn)(int)) { CHECK((b==ENH_FULL_MAP || b==ENH_GOD_MODE || b==ENH_BRIGHT_VIEW) && t==SET_TAB_CHEATS && fn); }
 static int recorded;
 void rp_cheat_put(uint32_t poll,const char *s) { CHECK(poll>0 && !strncmp(s,"menu-",5)); recorded++; }
 static const struct cheat_game test_game={NULL,0,ready};
@@ -136,6 +139,24 @@ int main(int argc,char **argv)
     port_full_map_end();CHECK(seed==123 && port_full_map_byte(8,8)==7);
     for(i=0;i<4096;i++)CHECK(((unsigned char *)PlayersMap)[i]==7);
     CHECK(!port_full_map_begin(0) && !port_full_map_begin(10));
-    printf("%s %d cheat-menu checks: health, recovery, blocked positions, rollback, queue, full-map and RNG\n",failures?"FAIL":"PASS",checks);
+    /* Brightening must retain tint, leave invisible shade 15 dark, and restore all
+       bytes before a pick frame or game logic can read the original tables again. */
+    for(i=0;i<4096;i++) lights[i]=(unsigned char)(i*19+i/256*11);
+    memcpy(original_lights,lights,sizeof lights);
+    enhance_on=0;port_bright_begin();CHECK(!memcmp(lights,original_lights,sizeof lights));port_bright_end();
+    CHECK(!cheat_menu_request("menu-bright 1"));PlayerLevel=1;port_cheat_point();CHECK(ENHANCED(ENH_BRIGHT_VIEW));
+    port_bright_begin();
+    for(i=0;i<15;i++) CHECK(!memcmp(lights+i*256,original_lights,256));
+    CHECK(!memcmp(lights+15*256,original_lights+15*256,256));
+    port_bright_begin();port_bright_end();CHECK(!memcmp(lights+256,original_lights,256));
+    enhance_on=0;port_bright_end();CHECK(!memcmp(lights,original_lights,sizeof lights));
+    /* A different table (monochrome/drug effect) is backed up afresh each frame. */
+    for(i=0;i<4096;i++) lights[i]^=0x39;
+    memcpy(original_lights,lights,sizeof lights);enhance_on=1u<<ENH_BRIGHT_VIEW;
+    port_bright_begin();CHECK(!memcmp(lights+256,original_lights,256));port_bright_end();
+    CHECK(!memcmp(lights,original_lights,sizeof lights));port_bright_end();
+    CHECK(!cheat_menu_request("menu-bright 0"));port_cheat_point();CHECK(!ENHANCED(ENH_BRIGHT_VIEW));
+    CHECK(seed==123);
+    printf("%s %d cheat-menu checks: health, recovery, blocked positions, rollback, queue, full-map, brightness and RNG\n",failures?"FAIL":"PASS",checks);
     return failures!=0;
 }

@@ -1,4 +1,4 @@
-"""Real cheat/recovery and drawing-only map code against a synthetic world; no game assets."""
+"""Real cheats/recovery and drawing-only map/brightness code; no game assets."""
 import os
 from pathlib import Path
 import subprocess
