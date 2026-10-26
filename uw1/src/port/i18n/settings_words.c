@@ -11,7 +11,7 @@ static const struct { const char *english, *zh; } words[] = {
     {"Return to safe position", "返回安全位置"},
     {"Remember safe position", "記住安全位置"},
     {"Show the whole dungeon map without changing explored areas", "顯示整層地圖，不修改探索紀錄；關閉設定並回到遊戲後生效"},
-    {"Brighten the 3D view without changing light sources or exploration", "提高 3D 畫面亮度，不改變光源或探索範圍"},
+    {"Gently brighten the current light source while keeping distance shading and exploration", "溫和提高目前光源亮度，保留遠近明暗、照明範圍與探索紀錄"},
     {"No health loss or death, with recovery from invalid positions", "不扣血、不死，異常位置時自動救援；關閉設定並回到遊戲後生效"},
     {"Close settings and return to the game to recover; does not change quest progress", "關閉設定並回到遊戲後，返回本層安全位置"},
     {"Remember this dry, clear floor as a rescue destination; kept only for this session", "把目前乾燥、沒有障礙的地面記為本層救援位置；只保留於本次遊玩"},
@@ -54,7 +54,7 @@ static const struct { const char *english, *zh; } words[] = {
      "對話與書本中的人名、地名、組織名，後面加上英文原名"},
     {"damage-numbers", "戰鬥傷害數字"}, {"enemy-health", "敵人血條"},
     {"Damage, misses and blocks float above visible enemies", "在看得見的敵人旁顯示傷害、揮空與格擋；空揮時顯示在視野中央"},
-    {"Health bars above visible creatures after they take damage or attack you (estimated maximum)", "受傷過或對你發動攻擊的生物顯示血條；只顯示看得見的生物，最大血量為估計值"},
+    {"Health bars after creatures take damage or attack you; maximum is their highest observed health", "受傷過或對你發動攻擊的生物顯示血條；以首次觸發時的血量為上限，若回復超過則提高上限"},
     /* the enhancements' names and what each does */
     {"skip-intro", "略過開場"}, {"wrap-menu", "選單循環"}, {"fast-panels", "面板加速"},
     {"free-heading", "貼牆不轉向"}, {"subtitles", "過場字幕"}, {"skill-messages", "技能提升訊息"},

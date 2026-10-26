@@ -37,7 +37,7 @@ void port_combat_damage(const void *object, int damage)
     const struct Object *o = object;
     int slot;
     if (!on() || !o || o == ThePlayer || damage <= 0 || (slot = slot_of(o)) < 2) return;
-    combat_text_observe(slot, OBJ_ITEM(o), o->hp, Creature[OBJ_INMAJOR(o)].avghit);
+    combat_text_observe(slot, OBJ_ITEM(o), o->hp);
     /* Display time must not consume a recorded GAME_TIME() event. */
     combat_text_event(slot, COMBAT_DAMAGE, damage < o->hp ? damage : o->hp, NULL, *Time);
 }
@@ -49,7 +49,7 @@ void port_combat_attack(const void *object)
     int slot;
     if (!ENHANCED(ENH_ENEMY_HEALTH) || !o || (slot = slot_of(o)) < 2 ||
         OBJ_MAJOR(o) != MAJOR_CREATURE || !o->hp || OBJ_GTARG(o) != 1) return;
-    combat_text_observe(slot, OBJ_ITEM(o), o->hp, Creature[OBJ_INMAJOR(o)].avghit);
+    combat_text_observe(slot, OBJ_ITEM(o), o->hp);
     combat_text_engage(slot);
 }
 void port_combat_result(int target, int attacker, int kind)
@@ -62,7 +62,7 @@ void port_combat_result(int target, int attacker, int kind)
     else if (target <= 1 || target >= NUM_MOBILE || OBJ_MAJOR(Obj_IntTMem(target)) != MAJOR_CREATURE) return;
     if (target) {
         o = Obj_IntTMem(target);
-        combat_text_observe(target, OBJ_ITEM(o), o->hp, Creature[OBJ_INMAJOR(o)].avghit);
+        combat_text_observe(target, OBJ_ITEM(o), o->hp);
     }
     text = kind == COMBAT_MISS ? (port_zh() ? port_zh_lit("combat.miss") : "Miss")
                                : (port_zh() ? port_zh_lit("combat.block") : "Block");
@@ -83,7 +83,7 @@ void port_combat_render_begin(int x, int y, int w, int h)
     for (i = 2; i < NUM_MOBILE; i++) {
         const struct Object *o = Obj_IntTMem(i);
         if (OBJ_MAJOR(o) == MAJOR_CREATURE)
-            combat_text_observe(i, OBJ_ITEM(o), o->hp, Creature[OBJ_INMAJOR(o)].avghit);
+            combat_text_observe(i, OBJ_ITEM(o), o->hp);
         else combat_text_forget(i);
     }
     combat_text_begin(asm_segbase(rw(seg048, 0x95A)), x, 199 - y + h - 1, w, h,

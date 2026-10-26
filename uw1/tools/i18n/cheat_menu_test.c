@@ -19,6 +19,10 @@ struct Scroll *scroll = &message_scroll;
 uint32_t enhance_on;
 static unsigned char lights[4096], original_lights[4096];
 unsigned char *cLightTabs = lights;
+int16 smooth_div, smooth_base, smooth_lowpass, curvrad;
+struct Gloc glocs[17][33];
+int cSqRt(int32 v) { int r=0; while ((r+1)*(r+1)<=v) r++; return r; }
+#include "bright_grid_impl.h"
 static struct Object actor, held;
 struct Object *ThePlayer = &actor, *CursorObjPtr;
 static struct Tile world[4096];
@@ -139,21 +143,46 @@ int main(int argc,char **argv)
     port_full_map_end();CHECK(seed==123 && port_full_map_byte(8,8)==7);
     for(i=0;i<4096;i++)CHECK(((unsigned char *)PlayersMap)[i]==7);
     CHECK(!port_full_map_begin(0) && !port_full_map_begin(10));
-    /* Brightening must retain tint, leave invisible shade 15 dark, and restore all
-       bytes before a pick frame or game logic can read the original tables again. */
+    /* Keep native colour maps and light-source differences; rebuild the actual
+       game's distance curve, preserve invisible cells and restore before picking. */
     for(i=0;i<4096;i++) lights[i]=(unsigned char)(i*19+i/256*11);
     memcpy(original_lights,lights,sizeof lights);
     enhance_on=0;port_bright_begin();CHECK(!memcmp(lights,original_lights,sizeof lights));port_bright_end();
     CHECK(!cheat_menu_request("menu-bright 1"));PlayerLevel=1;port_cheat_point();CHECK(ENHANCED(ENH_BRIGHT_VIEW));
-    port_bright_begin();
-    for(i=0;i<15;i++) CHECK(!memcmp(lights+i*256,original_lights,256));
-    CHECK(!memcmp(lights+15*256,original_lights+15*256,256));
-    port_bright_begin();port_bright_end();CHECK(!memcmp(lights+256,original_lights,256));
-    enhance_on=0;port_bright_end();CHECK(!memcmp(lights,original_lights,sizeof lights));
-    /* A different table (monochrome/drug effect) is backed up afresh each frame. */
-    for(i=0;i<4096;i++) lights[i]^=0x39;
-    memcpy(original_lights,lights,sizeof lights);enhance_on=1u<<ENH_BRIGHT_VIEW;
-    port_bright_begin();CHECK(!memcmp(lights+256,original_lights,256));port_bright_end();
+    {
+        static const int levels[8][4]={{56,5,-3,3},{46,4,-3,3},{39,2,-2,4},{30,1,0,4},
+                                     {28,0,0,5},{21,0,0,6},{18,0,0,7},{18,0,0,7}};
+        struct Gloc original[17][33]; int level,x,y,last,first;
+        for(level=0;level<8;level++) {
+            smooth_div=levels[level][0];smooth_base=levels[level][1];smooth_lowpass=levels[level][2];curvrad=levels[level][3];
+            preset_grid(curvrad);
+            for(y=0;y<17;y++)for(x=0;x<33;x++) {glocs[y][x].flags=0x87;glocs[y][x].shade|=0x50;}
+            memcpy(original,glocs,sizeof glocs);
+            enhance_on=1u<<ENH_BRIGHT_VIEW;port_bright_begin();
+            CHECK(smooth_div>0 && smooth_div<levels[level][0] && curvrad==levels[level][3]);
+            CHECK(!memcmp(lights,original_lights,sizeof lights));
+            for(y=0;y<17;y++)for(x=0;x<33;x++) {
+                CHECK((glocs[y][x].shade&15)==15 ? (original[y][x].shade&15)==15 : (original[y][x].shade&15)!=15);
+                CHECK((glocs[y][x].shade&15)<=(original[y][x].shade&15));
+                CHECK((glocs[y][x].shade&0xF0)==0x50 && glocs[y][x].flags==0x87);
+            }
+            first=last=glocs[0][16].shade&15;
+            for(x=1;x<=curvrad;x++) {CHECK((glocs[0][16+x].shade&15)>=last);last=glocs[0][16+x].shade&15;}
+            CHECK(last>first); /* real distance falloff remains, rather than full brightness */
+            port_bright_begin();port_bright_end();CHECK(smooth_div<levels[level][0]);
+            enhance_on=0;port_bright_end();CHECK(smooth_div==levels[level][0] && smooth_base==levels[level][1]);
+            CHECK(!memcmp(glocs,original,sizeof glocs));
+        }
+        /* A newly calculated wall-step bit must survive restoration for the pick frame. */
+        enhance_on=1u<<ENH_BRIGHT_VIEW;port_bright_begin();glocs[0][16].shade^=0x20;port_bright_end();
+        CHECK(glocs[0][16].shade==(original[0][16].shade^0x20));
+        /* The curve cache includes low-pass and radius, including special light levels. */
+        smooth_lowpass=-5;port_bright_begin();CHECK(glocs[0][17].shade%16==0);port_bright_end();
+        curvrad=2;preset_grid(curvrad);port_bright_begin();CHECK((glocs[0][19].shade&15)==15);port_bright_end();
+        /* Initial/special views may retain a different grid radius: never change visibility. */
+        preset_grid(7);curvrad=2;port_bright_begin();CHECK((glocs[0][19].shade&15)!=15);port_bright_end();
+        preset_grid(2);curvrad=7;port_bright_begin();CHECK((glocs[0][19].shade&15)==15);port_bright_end();
+    }
     CHECK(!memcmp(lights,original_lights,sizeof lights));port_bright_end();
     CHECK(!cheat_menu_request("menu-bright 0"));port_cheat_point();CHECK(!ENHANCED(ENH_BRIGHT_VIEW));
     CHECK(seed==123);

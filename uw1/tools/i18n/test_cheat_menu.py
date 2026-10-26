@@ -14,7 +14,10 @@ out=uw1/'build/cheat-menu';out.mkdir(parents=True,exist_ok=True)
 exe=out/('check.exe' if os.name=='nt' else 'check')
 san=['-fsanitize=address,undefined','-fno-omit-frame-pointer'] if '--sanitize' in sys.argv else []
 obj=out/'menu.o';runtime=out/'runtime.o'
-subprocess.run([P.host_cc(),*P.FLAGS,'-I'+str(root/'exhume/runtime/port'),*P.layout_flags(P.host_cc()),*san,'-g','-O1','-c',str(Path(__file__).with_name('cheat_menu_test.c')),'-o',str(obj)],check=True)
+view=(uw1/'src/3d/VIEW3D.C').read_text(encoding='utf-8')
+fn=view.split('void far preset_grid(int range)',1)[1].split('\n}\n',1)[0]
+(out/'bright_grid_impl.h').write_text('void preset_grid(int range)'+fn+'\n}\n',encoding='utf-8')
+subprocess.run([P.host_cc(),*P.FLAGS,'-I'+str(root/'exhume/runtime/port'),'-I'+str(out),*P.layout_flags(P.host_cc()),*san,'-g','-O1','-c',str(Path(__file__).with_name('cheat_menu_test.c')),'-o',str(obj)],check=True)
 subprocess.run([P.host_cc(),'-std=c11','-I'+str(uw1/'src/port'),'-I'+str(root/'exhume/runtime/port/sys'),*san,'-g','-O1','-c',str(root/'exhume/runtime/port/sys/cheat.c'),'-o',str(runtime)],check=True)
 subprocess.run([P.host_cc(),str(obj),str(runtime),*san,'-o',str(exe)],check=True)
 env=dict(os.environ,ASAN_OPTIONS='halt_on_error=1:detect_leaks=0',UBSAN_OPTIONS='halt_on_error=1:print_stacktrace=1')

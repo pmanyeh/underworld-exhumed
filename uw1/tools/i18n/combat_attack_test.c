@@ -41,10 +41,10 @@ static void fresh(int target)
 {
     memset(objects, 0, sizeof objects); memset(Creature, 0, sizeof Creature);
     meptr->id = 65; meptr->hp = 30; SET_GTARG(meptr,target); SET_SEQ(meptr,SEQ_STAND);
-    mycst->avghit = 20; mycst->attacks[0].prob = 100; mycst->caster = 127;
+    mycst->avghit = 80; mycst->attacks[0].prob = 100; mycst->caster = 127;
     enhance_on = 1u << ENH_ENEMY_HEALTH;
     random_calls = random_value = no_magic = 0; sight = 1;
-    combat_text_reset(); combat_text_observe(7,65,30,20);
+    combat_text_reset(); combat_text_observe(7, 65, 30);
 }
 static void revealed(int yes)
 {

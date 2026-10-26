@@ -206,13 +206,14 @@ static const char *c_combat(int argc, char *argv[], int run)
         fprintf(stderr, "fixture: provoke slot=%ld hp=%u\n", slot, (unsigned)o->hp);
     } else if (action == 2) {
         CombatFrame frame;
-        int i, visible = 0, engaged = 0;
+        int i, visible = 0, engaged = 0, maximum = 0;
         combat_text_read(&frame);
         for (i = 0; i < frame.count; i++) if (frame.actors[i].slot == slot) {
-            visible = 1; engaged = frame.actors[i].engaged;
+            visible = 1; engaged = frame.actors[i].engaged; maximum = frame.actors[i].maximum;
         }
-        fprintf(stderr, "fixture: combat slot=%ld hp=%u visible=%d engaged=%d seq=%u target=%u\n",
-                slot, (unsigned)o->hp, visible, engaged, (unsigned)OBJ_SEQ(o), (unsigned)OBJ_GTARG(o));
+        fprintf(stderr, "fixture: combat slot=%ld hp=%u visible=%d engaged=%d seq=%u target=%u maximum=%d average=%u\n",
+                slot, (unsigned)o->hp, visible, engaged, (unsigned)OBJ_SEQ(o), (unsigned)OBJ_GTARG(o),
+                maximum, (unsigned)Creature[OBJ_INMAJOR(o)].avghit);
     } else if (kind == COMBAT_DAMAGE) damage_critter(o, (unsigned char)amount, ThePlayer);
     else {
         saved_from = fromwho; saved_hit = hitobj;

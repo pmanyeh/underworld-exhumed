@@ -39,14 +39,14 @@ void combat_text_forget(int slot)
         if (events[i].event.slot != slot) events[k++] = events[i];
     count = k;
 }
-void combat_text_observe(int slot, int identity, int hp, int average)
+void combat_text_observe(int slot, int identity, int hp)
 {
     if (!valid(slot)) return;
     if (!actors[slot].known || actors[slot].identity != identity) {
         combat_text_forget(slot);
         actors[slot].known = 1;
         actors[slot].identity = identity;
-        actors[slot].maximum = average;
+        actors[slot].maximum = hp;
     }
     actors[slot].hp = hp;
     if (hp > actors[slot].maximum) actors[slot].maximum = hp;
@@ -54,7 +54,11 @@ void combat_text_observe(int slot, int identity, int hp, int average)
 }
 void combat_text_engage(int slot)
 {
-    if (valid(slot) && actors[slot].known) actors[slot].engaged = 1;
+    if (!valid(slot) || !actors[slot].known) return;
+    /* The render scan can have observed this actor long before combat began.
+       Establish the baseline once, at the first trigger (damage observes pre-hit HP). */
+    if (!actors[slot].engaged) actors[slot].maximum = actors[slot].hp > 0 ? actors[slot].hp : 1;
+    actors[slot].engaged = 1;
 }
 static void age_events(uint32_t now)
 {

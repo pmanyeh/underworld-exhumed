@@ -36,17 +36,17 @@ int main(void)
     PlatOverlay overlay = {0};
     int i;
     combat_text_reset();
-    combat_text_observe(7, 65, 30, 20);
-    combat_text_observe(8, 66, 10, 20);
+    combat_text_observe(7, 65, 30);
+    combat_text_observe(8, 66, 10);
     combat_text_event(1, COMBAT_DAMAGE, 4, NULL, 100); /* player's damage excluded */
     combat_text_event(7, COMBAT_DAMAGE, 5, NULL, 100);
-    combat_text_observe(7, 65, 25, 20);
+    combat_text_observe(7, 65, 25);
     frame(1, 1, 120); combat_text_end(); combat_text_read(&f);
     CHECK(f.count == 2 && f.floats == 1);
     CHECK(f.left == 52 && f.top == 19 && f.right == 224 && f.bottom == 132);
     CHECK(f.actors[0].hp == 25 && f.actors[0].maximum == 30 && f.actors[0].engaged);
     CHECK(f.actors[0].left == 92 && f.actors[0].right == 96 && f.actors[0].top == 81);
-    CHECK(f.actors[1].maximum == 20 && !f.actors[1].engaged);
+    CHECK(f.actors[1].maximum == 10 && !f.actors[1].engaged);
     CHECK(f.events[0].amount == 5 && f.events[0].age == 20);
     /* A wall paints identical colour bytes: ownership still erases, no colour guessing. */
     frame(1, 1, 130); combat_text_owner(0); combat_text_write(fb + 2 + 50 * 174 + 40, 4);
@@ -87,11 +87,11 @@ int main(void)
     frame(1, 1, 600); combat_text_end(); combat_text_read(&f); CHECK(f.floats == 0);
     for (i = 0; i < 100; i++) combat_text_event(7, COMBAT_DAMAGE, 1, NULL, 610);
     frame(1, 1, 620); combat_text_end(); combat_text_read(&f); CHECK(f.floats == COMBAT_FLOATS);
-    combat_text_forget(7); combat_text_observe(7, 65, 10, 12);
+    combat_text_forget(7); combat_text_observe(7, 65, 10);
     frame(1, 1, 630); combat_text_end(); combat_text_read(&f);
-    CHECK(!f.actors[0].engaged && f.actors[0].maximum == 12 && f.floats == 0);
+    CHECK(!f.actors[0].engaged && f.actors[0].maximum == 10 && f.floats == 0);
     combat_text_event(7, COMBAT_DAMAGE, 2, NULL, 640);
-    combat_text_observe(7, 70, 15, 10); /* reused slot, different creature */
+    combat_text_observe(7, 70, 15); /* reused slot, different creature */
     frame(1, 1, 650); combat_text_end(); combat_text_read(&f);
     CHECK(!f.actors[0].engaged && f.actors[0].maximum == 15 && f.floats == 0);
     combat_text_event(0, COMBAT_MISS, 0, "Miss", 660);
@@ -99,7 +99,7 @@ int main(void)
     combat_text_hide(); combat_text_read(&f); CHECK(f.count == 0 && f.floats == 0);
     combat_text_reset(); frame(1, 1, 200); combat_text_end(); combat_text_read(&f); CHECK(f.count == 0);
     /* Attacking reveals an untouched creature with no fabricated damage float. */
-    combat_text_observe(7, 65, 30, 20);
+    combat_text_observe(7, 65, 30);
     frame(0, 1, 210); combat_text_end(); combat_text_read(&f);
     CHECK(f.count == 1 && !f.actors[0].engaged);
     combat_text_engage(7);
@@ -111,8 +111,25 @@ int main(void)
     combat_text_end(); combat_text_read(&f); CHECK(f.count == 0);
     frame(0, 0, 240); combat_text_end(); combat_text_read(&f);
     CHECK(!combat_text_draw((HdFont *)1, &overlay, &f, .6f));
-    combat_text_forget(7); combat_text_observe(7, 65, 30, 20);
+    combat_text_forget(7); combat_text_observe(7, 65, 30);
     frame(0, 1, 250); combat_text_end(); combat_text_read(&f); CHECK(!f.actors[0].engaged);
+    /* Low initial HP is 100%, not a fraction of a species average. Never reset the
+       denominator after a hit; healing above it increases the observed maximum. */
+    combat_text_observe(8,66,10);combat_text_engage(8);
+    frame(0, 1, 260); combat_text_end(); combat_text_read(&f);
+    CHECK(f.actors[1].hp==10 && f.actors[1].maximum==10 && f.actors[1].engaged);
+    memset(rgba,0,sizeof rgba);combat_text_draw((HdFont *)1,&overlay,&f,.6f);
+    CHECK(color_present(85,220,90) && !color_present(255,205,65));
+    combat_text_observe(8,66,4);combat_text_engage(8);
+    frame(0,1,270);combat_text_end();combat_text_read(&f);CHECK(f.actors[1].maximum==10);
+    memset(rgba,0,sizeof rgba);combat_text_draw((HdFont *)1,&overlay,&f,.6f);CHECK(color_present(255,205,65));
+    combat_text_observe(8,66,15);frame(0,1,280);combat_text_end();combat_text_read(&f);
+    CHECK(f.actors[1].hp==15 && f.actors[1].maximum==15);
+    combat_text_forget(8);combat_text_observe(8,66,25);combat_text_observe(8,66,12);
+    combat_text_engage(8);frame(0,1,290);combat_text_end();combat_text_read(&f);
+    CHECK(f.actors[1].hp==12 && f.actors[1].maximum==12);
+    combat_text_observe(8,66,10);combat_text_engage(8);
+    frame(0,1,300);combat_text_end();combat_text_read(&f);CHECK(f.actors[1].maximum==12);
     combat_text_begin(fb, 0, 0, 321, 200, 1, 1, 200);
     combat_text_write(fb + 65535, 100); combat_text_end(); combat_text_read(&f); CHECK(f.count == 0);
     printf("%s %d combat checks: ownership/occlusion, bounds, HP estimates, events, flags, lifecycle, drawing\n", failures ? "FAIL" : "PASS", checks);

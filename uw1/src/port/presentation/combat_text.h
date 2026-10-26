@@ -25,7 +25,7 @@ typedef struct CombatFrame {
 void combat_text_reset(void);
 void combat_text_hide(void);
 void combat_text_forget(int slot);
-void combat_text_observe(int slot, int identity, int hp, int average);
+void combat_text_observe(int slot, int identity, int hp);
 /* A creature that took damage or began attacking the player may show its health. */
 void combat_text_engage(int slot);
 void combat_text_event(int slot, int kind, int amount, const char *text, uint32_t now);
