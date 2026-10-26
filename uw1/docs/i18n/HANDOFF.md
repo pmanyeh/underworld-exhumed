@@ -25,6 +25,16 @@
 - `UW1-v0.5-SHA256SUMS.txt`：兩包的 SHA-256。全部保留在本機，不上傳含 catalog／原版資料的 ZIP。
 - `uw1/docs/i18n/RELEASE_0.5.md`：本次來源、功能與驗證摘要；執行檔／catalog 來源雜湊另見整合包的 `MANIFEST.json`。
 
+### 0.5 本機交付驗證
+
+- 17 個單元程式、權威／專有名詞檢查、16 個四模式 session 全部通過。
+- 新包 32 檔（含 manifest），SHA-256／ZIP CRC 檢查通過；拒絕覆蓋舊資料夾的保護已實測。
+- 在只有 Windows 系統 PATH 的環境，實際執行 BAT：首次中文設定、中英文讀檔、HD 數值和技能滾輪正常；相對 UW 資料夾可用。
+- 私人移機包已以 Git bundles 離線還原到另一個暫存工作區，重新編譯並通過全部 17 個單元程式；原生依賴使用還原副本。
+  本機共用既有編譯器／Python 來驗證，新電腦仍須依說明重裝工具鏈。
+- 原玩家 home 的 141 個檔案、其中 33 個存檔檔案雜湊不變；備份與原檔一致。
+- 私有權威資料已加入 repo 的 `.gitignore`，新 clone 不再依賴舊機的本機 exclude。
+
 ## 2. 已完成、已確認與待確認
 
 | 功能 | 現況／報告 |
@@ -57,7 +67,7 @@
 - `.poc-tools/` 第一層腳本、`handoff/`：本機驗證工具和環境設定。
 - `uw1/build/poc/*.toml`、翻譯批次的 `translations.py`、最新 catalog／manifest、必要摘要報告。
 - `uw1/build/replay/verify-en-p6/` 下的 SAVE 測試資料、`tools/fonts`、`tools/libs`、`tools/nuked-opl3`。
-- 根目錄計畫書／指引、`.poc-evidence`、`translation`，以及 `UW1-zhTW-playtest/home` 備份。
+- 根目錄計畫書／指引、`.poc-evidence`、`translation`、`Game Resources`，以及 `UW1-zhTW-playtest/home` 備份。
 
 移機包不是工作區逐檔備份；**不含約 48 GB 舊測試輸出、MSYS2、Python 虛擬環境、舊 Mac 包或 Borland 工具鏈**。
 舊電腦先保留，確認新電腦可編譯、讀存檔後再自行整理。
@@ -84,7 +94,7 @@ mklink /J D:\git\uw1-native-poc "D:\git\Ultima Underworld"
 mklink /J D:\git\uw1-poc-libs "D:\git\Ultima Underworld\underworld-exhumed\uw1\tools\libs"
 ```
 
-Windows 兩個 repo 都設 `git config core.autocrlf true`。已有 junction 時先查目的地，不可直接刪除或覆蓋。
+Windows 兩個 repo 都設 `git config core.autocrlf true`，並在新機設定自己的 Git 身分與 GitHub 登入（不搬移憑證）。已有 junction 時先查目的地，不可直接刪除或覆蓋。
 MSYS2 可以安裝到 `.poc-tools/msys64`，或讓該位置連到實際安裝目錄。
 
 ## 4. 接手後的驗證與常用工具

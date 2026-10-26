@@ -33,6 +33,7 @@ bundle 路徑請使用完整絕對路徑，避免 submodule 在不同工作目�
 私有 `private-authority` 已由 repo 的 `.gitignore` 排除，不再依賴舊電腦的 `.git/info/exclude`。
 之後將 `移機包\workspace\` 裡的內容複製到工作區，保留其相對目錄結構。
 **不要先覆蓋私人資料再 clone 到非空 repo 目錄。**
+新電腦需另外設定 Git 的 user.name／user.email 及 GitHub 登入；移機包不含登入憑證。
 
 ## 3. 重建工具環境
 
