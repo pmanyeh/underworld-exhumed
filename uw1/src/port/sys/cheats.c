@@ -383,7 +383,7 @@ static const char *c_fault(int argc,char **argv,int run)
 static const char *c_state(int argc,char **argv,int run)
 {
     (void)argv;if(argc) return "no arguments";
-    if(run) fprintf(stderr,"fixture: state level=%d hp=%d x=%d y=%d z=%d god=%u map=%u\n",PlayerLevel,ThePlayer->hp,PN.x,PN.y,PN.z,ENHANCED(ENH_GOD_MODE),ENHANCED(ENH_FULL_MAP));
+    if(run) fprintf(stderr,"fixture: state level=%d hp=%d x=%d y=%d z=%d god=%u map=%u drawn=%d panel=%d bag=%d\n",PlayerLevel,ThePlayer->hp,PN.x,PN.y,PN.z,ENHANCED(ENH_GOD_MODE),ENHANCED(ENH_FULL_MAP),player->drawn,RightPanel,OpenBag != 0);
     return NULL;
 }
 extern char EndGameMode_dseg_1C8F;

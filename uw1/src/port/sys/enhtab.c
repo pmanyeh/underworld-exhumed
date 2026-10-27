@@ -17,7 +17,7 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "wide-pitch", "Look three times as far up and down, with what is behind you drawn", ENH_GAMEPLAY, UH, NULL },
     { "mouse-look", "The ` key or the middle button toggles mouse-look: the mouse turns the view, clicks act at the crosshair", ENH_TIMING, UH, NULL },
     { "invert-look", "Mouse-look's up and down inverted", ENH_PRESENTATION, UH, NULL },
-    { "modern-keys", "UltimaHacks' keys: WASD, arrows to turn and look, Space attacks, Q looks and E uses at the cursor, Z the map, R and F the panels", ENH_TIMING, UH, NULL },
+    { "modern-keys", "WASD, arrows to turn and look, Space jumps, C toggles combat, X closes containers, Q looks and E uses, Z the map, R and F the panels", ENH_TIMING, UH, NULL },
     { "rune-keys", "Ctrl+Alt+letter picks a rune you have, Ctrl+Alt+Backspace clears, Ctrl+Alt+Space casts", ENH_PRESENTATION, UH, NULL },
     { "tidy-objects", "A stack too heavy to take part of no longer loses an object slot, and lost slots are freed on arrival", ENH_GAMEPLAY, NULL, NULL },
     { "restore-at-rest", "A restored game starts at rest, without the motion or fall it was restored in", ENH_GAMEPLAY, NULL, NULL },

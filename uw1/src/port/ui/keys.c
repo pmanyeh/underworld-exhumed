@@ -37,20 +37,7 @@ extern char releaseable;                /* the object picked can be taken (pick_
 extern int16 pTxtId;                    /* the texture a pick found, for look_nothing */
 extern struct Object far *newPlObj;     /* the object picked, for player_3dlook and _3duse */
 
-extern int16 attackKey;                 /* combat/COMBAT.C: the key held to charge a blow */
 extern int16 m3dx, m3dy, m3dw, m3dh;    /* ui/MOUSE.C: the 3D view (m3dy its bottom edge) */
-
-static int last_attack = 6;             /* slash, until . ; or p choose another */
-
-/* Space (type 0): attack with the last attack type; . ; p (3, 6, 9) also choose it */
-void far port_key_attack(int type)
-{
-    if (type)
-        last_attack = type;
-    player_attack(type ? type : last_attack);
-    if (!type)
-        attackKey = 0x39;               /* Space's scan code, held to charge, as UltimaHacks */
-}
 
 /* h: as a click on the left flask, then on the right (UltimaHacks' clickFlasks) */
 void far port_key_flasks(void)

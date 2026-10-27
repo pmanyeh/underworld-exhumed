@@ -391,6 +391,29 @@ int far do_mouse_input(void)
     return b;
 }
 
+#ifndef __TURBOC__
+/* Modern actions use KEY's recorded make event, not the held-key repeater. Keep text
+   input (array == 0), scrolling, looking and movement on their original paths. */
+static int port_single_press(int scan)
+{
+    if (!ENHANCED(ENH_MODERN_KEYS))
+        return 0;
+    if (inplist->mode == MODE_MAP)
+        return scan == 0x2C || scan == 0x2E;       /* Z closes; C shows this level */
+    if (!(inplist->mode & 0x11))
+        return 0;
+    switch (scan) {
+    case 0x10: case 0x12:                         /* Q, E: look/use */
+    case 0x13: case 0x21:                         /* R, F: panels */
+    case 0x22: case 0x23: case 0x24:              /* G, H, J: info/jump */
+    case 0x29: case 0x2C: case 0x2D: case 0x2E:  /* `, Z, X, C: toggles/close */
+    case 0x39:                                   /* Space: jump */
+        return 1;
+    }
+    return 0;
+}
+#endif
+
 /* Key repeat from the held-key array: no more often than every 30 ticks of *Time since
    the last key, scans key_on (indexed by scan code) round from just after the last key
    found, and returns the character Asc gives for the first key held (the shifted table
@@ -405,7 +428,11 @@ int far do_keyarray_input(void)
     c = 0;
     start = key_index = (key_index + 1) & 0x7F;
     do {
-        if (key_on[key_index]) {
+        if (key_on[key_index]
+#ifndef __TURBOC__
+            && !port_single_press(key_index)
+#endif
+        ) {
             if (*Shift)
                 key_index |= 0x80;
             c = Asc[key_index];
@@ -455,8 +482,17 @@ int far do_keyboard_input(char array)
         return c & 0xFF;
     }
 #endif
-    if (array)
-        c = do_keyarray_input();
+    if (array) {
+#ifndef __TURBOC__
+        if (port_single_press((c >> 8) & 0x7F)) {
+            /* key_on counts make events and resets on break. Read after KEY so live
+               input and replay see the same first press, including a rapid re-press. */
+            if (key_on[(c >> 8) & 0x7F] != 1)
+                return -1;
+        } else
+#endif
+            c = do_keyarray_input();
+    }
     c &= 0xFF;
     if (c == 0)
         return -1;

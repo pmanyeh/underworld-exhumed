@@ -42,3 +42,18 @@ wheel = out / ('stats-wheel.exe' if os.name == 'nt' else 'stats-wheel')
 subprocess.run([cc, '-std=c11', '-Wall', '-Wextra', '-Werror', '-g', '-O1', '-I' + str(out),
                 *san, str(Path(__file__).with_name('stats_wheel_test.c')), '-o', str(wheel)], check=True)
 subprocess.run([str(wheel)], check=True, env=env)
+
+# Keyboard actions use the actual queue and the actual mouse/held-key reader.
+parts = []
+for path, signatures in [
+    ('src/ui/MOUSE.C', ['static int port_single_press(', 'int far do_keyarray_input(', 'int far do_keyboard_input(']),
+    ('src/motion/PLAYMOVE.C', ['static unsigned char port_move_key(', 'void far do_player_keyboard('])]:
+    source = (uw1 / path).read_text(encoding='utf-8')
+    parts += [sig + source.split(sig, 1)[1].split('\n}', 1)[0] + '\n}\n' for sig in signatures]
+motion = (uw1 / 'src/motion/PLAYMOVE.C').read_text(encoding='utf-8')
+arrays = [line for line in motion.splitlines() if line.startswith('static unsigned char ') and '_keys[9]' in line]
+(out / 'modern_keys_impl.h').write_text('\n'.join(arrays + parts), encoding='utf-8')
+modern = out / ('modern-keys.exe' if os.name == 'nt' else 'modern-keys')
+subprocess.run([cc, *P.FLAGS, '-I' + str(root / 'exhume/runtime/port'), '-I' + str(out),
+                *san, '-g', '-O1', str(Path(__file__).with_name('modern_keys_test.c')), '-o', str(modern)], check=True)
+subprocess.run([str(modern)], check=True, env=env)

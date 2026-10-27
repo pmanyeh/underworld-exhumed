@@ -23,7 +23,7 @@ They are kept in the settings file (`enhance=` in `uw1port.cfg` or `uw2port.cfg`
 | `wide-pitch` | UW1, UW2 | gameplay | Look three times as far up and down. Beyond the original's limit the game also draws the squares just behind you (without their objects), so the floor and ceiling have no gaps when you look steeply. Gameplay, since where you look decides where you aim, throw and click | [UltimaHacks](https://github.com/JohnGlassmyer/UltimaHacks) (its two-pass drawing, in C) |
 | `mouse-look` | UW1, UW2 | timing | The `` ` `` key turns mouse-look on and off (in UW1 the middle mouse button too). While it is on, the mouse turns the view and looks up and down, the pointer stays at the view's centre as a crosshair, and clicks act there; the port captures the pointer. It turns off by itself on the map and in conversations and back on after. `look-speed=` in the settings file sets how fast it turns, as a percentage (default 100, 10 to 400). Without `wide-pitch` it looks up and down only as far as the original | the idea from [UltimaHacks](https://github.com/JohnGlassmyer/UltimaHacks) |
 | `invert-look` | UW1, UW2 | presentation | Mouse-look's up and down the other way round; nothing without `mouse-look` | the idea from [UltimaHacks](https://github.com/JohnGlassmyer/UltimaHacks) |
-| `modern-keys` | UW1, UW2 | timing | UltimaHacks' key layout, below, in place of the original's movement keys. Each new key acts as the click it stands for | [UltimaHacks](https://github.com/JohnGlassmyer/UltimaHacks) (its layout, exactly) |
+| `modern-keys` | UW1, UW2 | timing | Based on UltimaHacks' key layout, below, with UW1's Space jump, C combat toggle and X container close. Each new key acts as the click or command it stands for | [UltimaHacks](https://github.com/JohnGlassmyer/UltimaHacks) |
 | `rune-keys` | UW1, UW2 | presentation | Ctrl+Alt with a letter puts that rune on the shelf (Y is Ylem: there is no X rune), Ctrl+Alt+Backspace clears the shelf, Ctrl+Alt+Space casts. A rune you do not have is refused with a sound. Movement keys are ignored while Ctrl and Alt are both held | [UltimaHacks](https://github.com/JohnGlassmyer/UltimaHacks) |
 | `tidy-objects` | UW1 | gameplay | Two fixes for "Problems in object list" (issue 9). In the original, asking for part of a floor stack that is then too heavy to pick up loses an object: the split part is taken off the stack and never freed. With this on it is freed, as UW2 does. And when the object lists are checked on arriving at a level or after a restore and fail only because objects were lost this way, the lost objects are put back on the free list first, so a saved game that already has some stops showing the message. Nothing is changed unless every other object is where it should be | this project (the first fix is UW2's own code) |
 | `restore-at-rest` | UW1, UW2 | gameplay | A restored game starts at rest where it was saved (issue 10). The original keeps the speed and any fall of the game you restore from, since a saved game holds no motion: a restore while falling can hurt you, and a restore while running slides you on. With this on the restore clears the player's motion; a game saved in mid-air then falls from rest | this project |
@@ -46,20 +46,22 @@ They are kept in the settings file (`enhance=` in `uw1port.cfg` or `uw2port.cfg`
 
 | Keys | What they do |
 |---|---|
-| W, X, S | run, walk, back |
+| W, S | run, back; UW2 also X to walk. In UW1, X only closes the open container |
 | A, D | slide left, right |
 | Left, Right (the grey arrows) | turn |
 | Shift, Ctrl+Shift | jump, standing long jump (J still jumps too); while flying or levitating, Shift held flies up and Ctrl down, and on the ground they do not stop other movement |
 | Ctrl with the grey arrows | step forward, back, left, right by a fixed amount |
 | Up, Down (the grey arrows), 1, 3 | look up, down (1 is now up); 2 and keypad 5 look ahead |
-| Space | attack with the last attack type, slash at first; `.` `;` `p` still thrust, slash and bash, and set the last type |
+| Space | UW1: jump, as j; the last-attack shortcut is removed. UW2: attack with the last attack type. `.` `;` `p` still thrust, slash and bash |
 | Q, E | look at, use, what is under the pointer (the crosshair with mouse-look); E on a person talks to them |
 | Z | the map; in UW1, Z again closes it unless typing a map note. On the map S a level on, W a level back, C your own level; UW2 also D and A the previous and next world |
 | R, F | the rune bag, the statistics panel (again: back to the inventory) |
 | G, H | the compass, the flasks (as clicks on them) |
-| C, V, B | close the open container, scroll the inventory down, up; in UW1 the container closes with X, and C draws or sheathes the weapon (fight mode), the one change from UltimaHacks' layout |
+| C, V, B | close the open container, scroll the inventory down, up; in UW1 the container closes with X, and C draws or sheathes the weapon (fight mode) |
 
 The keypad still moves the pointer, F1 to F10 and the Ctrl shortcuts are as before, and the conversation menus take number keys as they always did.
+
+In UW1 with modern keys, C, Z, X, R, F, Q, E, G, H, grave and the jump keys act once per press in gameplay; release and press again to repeat. Z and C also act once per press on the map. Movement, pitch, inventory scrolling and attack charging still support holding a key. Text entry, including map notes, keeps normal repeats; Ctrl+Alt+Space still casts with rune keys.
 
 **`wide-pitch` in UW1**, turning while looking all the way down, with the squares behind drawn and without (a test switch, below): without them the floor behind the player is missing, here the black wedge.
 

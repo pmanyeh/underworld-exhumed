@@ -55,3 +55,5 @@ catalog（p13-goblin）SHA-256：`78543defe8762bb545ca9b09d06cfae7097d96cd934990
 2026-10-26 另依使用者要求以 GitHub Actions 編譯 `4c662c1`，macos 建置／打包檢查成功，
 並在本機合併中文檔為 `UW1-zhTW-v0.5-macOS.zip`。完整來源、SHA-256、Apple 公證及私有資源測試限制
 見 `MAC_0.5.md`。先前 Windows／私人移機 ZIP 與其校驗檔保持原樣，舊 Mac kit 也未覆寫。
+
+使用者已於 2026-10-27 回報 Mac 0.5 實機測試 OK；Actions 私有資料重播未完成的限制仍保留。

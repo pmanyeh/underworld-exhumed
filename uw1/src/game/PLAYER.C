@@ -41,7 +41,6 @@
 #include "ui.h"
 #include "view3d.h"
 #ifndef __TURBOC__
-void far port_key_attack(int type);      /* ui/keys.c, port only */
 void far port_key_panel(int panel);
 void far port_key_interact(int use);
 void far port_key_open_map(void);
@@ -199,10 +198,7 @@ void far init_player(void)
 #endif
 #ifndef __TURBOC__
     if (ENHANCED(ENH_MODERN_KEYS)) {   /* port only: UltimaHacks' keys (ui/keys.c), its input-mode masks */
-        _input_addkey(' ', 0, 1, (InputFn)port_key_attack);
-        _input_addkey('.', 3, 1, (InputFn)port_key_attack);
-        _input_addkey(';', 6, 1, (InputFn)port_key_attack);
-        _input_addkey('p', 9, 1, (InputFn)port_key_attack);
+        _input_addkey(' ', 7, 0x11, (InputFn)parse_playin);       /* jump, as j; no Space attack */
         _input_addkey('r', 1, 1, (InputFn)port_key_panel);
         _input_addkey('f', 2, 1, (InputFn)port_key_panel);
         _input_addkey('q', 0, 1, (InputFn)port_key_interact);
@@ -256,17 +252,8 @@ void far init_player(void)
     _input_addkey(KEY_F4, 2, 1, (InputFn)deal_with_icons);
     _input_addkey(KEY_F5, 1, 1, (InputFn)deal_with_icons);
     _input_addkey(KEY_F6, 0, 1, (InputFn)deal_with_icons);
-#ifndef __TURBOC__
-    if (!ENHANCED(ENH_MODERN_KEYS))     /* port only: modern-keys remembers the attack type */
-#endif
     _input_addkey('p', 9, 1, (InputFn)player_attack);
-#ifndef __TURBOC__
-    if (!ENHANCED(ENH_MODERN_KEYS))     /* port only: modern-keys remembers the attack type */
-#endif
     _input_addkey('.', 3, 1, (InputFn)player_attack);
-#ifndef __TURBOC__
-    if (!ENHANCED(ENH_MODERN_KEYS))     /* port only: modern-keys remembers the attack type */
-#endif
     _input_addkey(';', 6, 1, (InputFn)player_attack);
     _input_addkey(KEY_SHIFT | KEY_BACKTAB, KEY_SHIFT | KEY_BACKTAB, 7, (InputFn)keyboard_mouse);
     _input_addkey('\t', '\t', 7, (InputFn)keyboard_mouse);

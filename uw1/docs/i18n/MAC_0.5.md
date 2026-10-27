@@ -19,16 +19,18 @@ SHA-256：`31ed75d08f7746ab646d066c6a36c53f35302d5ba7400ad7d25ac9081fd5b363`。
 - app 和原授權原樣保留，合併最新 p13-goblin catalog、粉圓字型與 OFL、文字設定／輸入別名／專有名詞。
 - 用 ZipInfo 保留 Unix 權限與可能的符號連結，原 app 的 8 個檔案逐位元組雜湊不變。
 - .command 使用 LF 和 0755 權限，先 cd 到包目錄，再指定 home 啟動，不固定 locale。
-  中文預設選取依現有 main.c 的相對 catalog 判斷；實機語言切換仍需使用者驗證。
+  中文預設選取依現有 main.c 的相對 catalog 判斷；實機測試回報見下方驗證狀態。
 - ZIP CRC、manifest 全檔雜湊、主程式／dylib 雙架構及執行權限通過；shell 語法檢查通過。
 - 不含遊戲本體與 home，沒有改動原玩家存檔。中文 ZIP 僅留本機，沒有上傳公開 GitHub。
 
-## 未完成的驗證
+## 驗證狀態（2026-10-27 更新）
+
+使用者已於 2026-10-27 回報 Mac 繁中整合測試版 0.5 實機測試 OK。
 
 Actions 的 test-macos 後續工作在抓取私有測試資料時回報 SSH key invalid format／Permission denied，
 尚未進入遊戲重播；整個 release workflow 不能視為全部通過。
-Mac 遊玩、IME 中文輸入、F11 語言切換、Gatekeeper 首啟仍待實際 Mac 驗證。
-本機為 Windows，只能確認 ZIP 結構、檔案／簽章內容未變、架構、權限與啟動腳本語法。
+上述 Actions 私有資料重播尚未完成的狀態仍保留；實機確認依使用者回報記錄。
+打包當時本機為 Windows，檢查範圍為 ZIP 結構、檔案／簽章內容未變、架構、權限與啟動腳本語法。
 
 本機工具 `.poc-tools/mac05-package.py`；報告 `uw1/build/i18n/mac-v0.5/package-verification.json`。
 實際合併腳本另留存 `evidence/mac-v0.5/package.py.txt`；新電腦可取回，重跑前應調整 run／來源路徑與新輸出名稱。
