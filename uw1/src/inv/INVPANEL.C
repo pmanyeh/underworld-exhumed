@@ -469,7 +469,11 @@ struct Object far * far AskHowMany(struct Object far *obj)
     initial[0] = '1';
     initial[1] = 0;
 #ifndef __TURBOC__
-    qty_dialog_begin(orig);     /* P12: an HD panel with a slider over the entry */
+    /* port only: --enhance split-all, the entry starts at the whole stack (at most the 999
+       its three digits hold) */
+    if (ENHANCED(ENH_SPLIT_ALL))
+        itoa(orig > 999 ? 999 : orig, initial, 10);
+    qty_dialog_begin(orig, atoi(initial));  /* P12: an HD panel with a slider over the entry */
 #endif
     key = wdialog(msg, initial, result, 0, 3);
 #ifndef __TURBOC__

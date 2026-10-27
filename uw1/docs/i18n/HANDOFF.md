@@ -1,13 +1,15 @@
-# 開發交接：UW1 繁中整合版／新對話入口（2026-10-27）
+# 開發交接：UW1 繁中整合版／新對話入口（2026-10-28）
 
 ## 1. 新對話接手順序
 
 1. 一律用繁體中文、台灣用語回覆。工作區為 `D:\git\Ultima Underworld`，主 repo 在其下的 `underworld-exhumed`。
-2. 先確認 Git 狀態，再讀 `uw1/docs/i18n/P13_MODERN_KEYS.md`、`P13_QA.md`、`IDEAS_BACKLOG.md`。
-3. 最新按鍵修改已實作、驗證、更新本機 Windows 測試版並推送，**使用者已於 2026-10-27 實測確認 OK**；既有功能與 Mac 0.5 亦已確認。
+2. 先確認 Git 狀態，再讀 `uw1/docs/i18n/P13_INPUT_STACKS.md`、`P13_QA.md`、`IDEAS_BACKLOG.md`。
+3. **2026-10-28 新增三項強化功能**（對話打錯字回應 `unknown-topic`、拆分數量預設全部 `split-all`、E 撿起自動堆疊併入 `e-takes`）
+   已實作、驗證、更新本機 Windows 測試版並推送，**尚待使用者實測確認**。三項預設關，要在 F11「強化功能」開啟。
+   2026-10-27 的新按鍵已由使用者確認 OK；既有功能與 Mac 0.5 亦已確認。
 4. **P13.2 全遊戲遊玩驗證與 P13.3 譯文審閱**由使用者邊玩邊測，列為持續進行中，**不算專案未完成的因素**。
    不要自動重做已確認功能或開始候選功能。
-5. 尚未開始第一層審閱批次，未授權 P13 tag。2026-10-27 授權的三項功能見第 8 節。
+5. 尚未開始第一層審閱批次，未授權 P13 tag，也未授權其他新功能。
 
 根目錄 `HANDOFF.md` 與 repo 的 `uw1/docs/i18n/HANDOFF.md` 必須保持同內容。
 下文 `uw1/...`、`docs/...` 相對主 repo；`.poc-tools/...`、`UW1-zhTW-playtest/...` 相對工作區。
@@ -18,20 +20,20 @@
 | 項目 | 現況 |
 | --- | --- |
 | 主 repo／分支 | `pmanyeh/underworld-exhumed`／`feature/zh-tw-native` |
-| 最新功能提交 | `f50151e`：空白鍵跳躍、移除 X 前進衝突、修正切換按鍵長按重複觸發 |
-| 後續文件提交 | `156f368` 已推送；本次交接整理的提交以 `git log -1` 為準 |
+| 最新功能提交 | 2026-10-28 三項強化功能，提交以 `git log -1` 為準；前一個功能提交 `f50151e`（新按鍵） |
 | Exhume 子模組 | `pmanyeh/Exhume`，固定 `5e92215f0f21dd1ae2b9f009555f012e5e8c8475` |
 | 子模組 checkout | 本機為固定提交的 detached HEAD，工作區乾淨；遠端開發分支 `feature/presentation-overlay` |
 | 階段／tag | P13 進行中；最後階段 tag 為 `zh-tw-native-p12`（`0169ca1`），尚未建立 P13 tag |
 | 版本號 | 0.5 是攜帶測試包版本號，不代表 P13 驗收完成 |
-| 本機 Windows 測試版 | `UW1-zhTW-playtest/uw1port.exe` 已包含本次新按鍵修改 |
-| 已交付 Mac 0.5 | 2026-10-27 使用者回報實機測試 OK；現有 Mac ZIP 不含本次新按鍵修改 |
+| 本機 Windows 測試版 | `UW1-zhTW-playtest/uw1port.exe` 已包含新按鍵與 2026-10-28 三項功能（預設關） |
+| 已交付 Mac 0.5 | 2026-10-27 使用者回報實機測試 OK；現有 Mac ZIP 不含新按鍵與三項新功能 |
 | ZIP／私人移機包 | 本次未重新打包或上傳私人資源 |
 
 已核實 CI：功能提交 `f50151e` 的 Windows／macOS／Linux／Web 與 repocheck 全通過，
 [run 40483012701](https://github.com/pmanyeh/underworld-exhumed/actions/runs/40483012701)。
 文件提交 `156f368` 的 `uw1-port` 與 repocheck 亦通過，
 [run 40483332761](https://github.com/pmanyeh/underworld-exhumed/actions/runs/40483332761)。
+2026-10-28 功能提交的 CI 結果請以 GitHub Actions 為準，新對話先核實。
 CI 建置通過不等於已重新交付含新按鍵的 Mac 整合包。
 
 ## 3. 使用者已確認的功能
@@ -69,7 +71,27 @@ X 的前進來自移動表持續輪詢；C 反覆切換來自每 30 ticks 的按
 舊 modern-keys 錄影中的 Space／X 意義已變，不宣稱其舊情境結果不變；未覆寫既有錄影、goldens 或 verifier。
 完整範圍與結果見 `P13_MODERN_KEYS.md`。
 
+## 4.1 2026-10-28 三項強化功能：已實作、待使用者確認
+
+| 功能 | 開關 | 行為 |
+| --- | --- | --- |
+| 對話打錯字回應 | `unknown-topic` | 打了 NPC 不認得的字（含不在對照表的中文詞），NPC 用自己原本的「不知道」回答；腳本仍不回話時補「我不知道這是什麼……」 |
+| 拆分數量預設全部 | `split-all` | 原版「Move how many?」與 HD 數量面板從整疊開始；Enter 全拿，打數字取代預設值 |
+| E 撿起自動堆疊 | 併入 `e-takes` | 目前背包面板（背包或打開的袋子）有能合併的同一疊就疊上去，沿用原版合併規則 |
+
+原因調查：英文打錯字時原版腳本幾乎都有回應；沒反應的是中文詞對照後變空字串，腳本當成沒打字。
+三項都歸 gameplay、預設關。實作、驗證與新增測試指令（`test-inv`、`test-take`、`UW1_TEST_ASK`）見 `P13_INPUT_STACKS.md`。
+
 ## 5. 本次驗證與玩家資料保護
+
+2026-10-28 三項功能：Windows 正常建置、17 個單元測試、16 個 session × 四模式存檔一致（新功能關閉）及 DOS golden 吻合；
+中英文實機情境 9 項通過，背包情境與英文對話情境錄影重播的 checkpoint 與存檔一致；authority、專有名詞、repocheck、
+原版掛鉤 ASCII、`git diff --check`（Git for Windows）通過。未執行 UBSan 建置與 DOS 重編譯。
+測試版只換 EXE：新 SHA-256 `a1a382b615dc7d81a2d7a2b225e556fd8e17fd2ee112ddce789e918c9dcf3afb`，
+舊檔備份 `uw1/build/i18n/p13-features/previous-playtest-uw1port.exe`；搭配原有 DLL、僅系統 PATH 的重播通過；
+玩家 `home` **100 個檔案**更新前後雜湊一致。產物與摘要在 `uw1/build/i18n/p13-features/`。
+
+注意：`env.sh` 把 MSYS2 的 git 放進 PATH，它對子模組 CRLF 檔案的 `git diff --check` 會誤報整份檔案；檢查 git 一律用 Git for Windows。
 
 2026-10-27 按鍵修改的實際結果：
 
@@ -111,7 +133,8 @@ Mac 0.5 來源 `4c662c1`、Actions run `40308423602`，使用者實測已確認�
 - 本機未找到舊 `uw1/build/i18n/p13-goblin/catalog-1.bin` 與 `.poc-tools/v05-check.py`，不要照舊路徑直接執行。
   Python venv、MSYS2 CLANG64、遊戲資料、函式庫與既有 SAVE 測試副本已可用，已完成編譯及驗證。
 - 本機新增工具：`.poc-tools/modern-keys-check.py`（units／replays／live）、`modern-keys-public.py`、
-  `modern-keys-deliver.py`，均屬 Git 外私人工作區工具。replays／錄製工具的固定輸出目錄已存在，
+  `modern-keys-deliver.py`；2026-10-28 另有 `p13-features-check.py`（units／replays／live）與 `p13-features-deliver.py`，
+  均屬 Git 外私人工作區工具。這台電腦不能建立 symlink，兩個新工具把 `data_skip` 清空（遊戲資料夾本來就沒有 SAVE1～4）。replays／錄製工具的固定輸出目錄已存在，
   重跑前應改為新的輸出位置；deliver 有 EXE 替換副作用，不要當一般測試重跑。
 - 舊情境腳本如 `p12-shot.py`、`stats-wheel-check.py`、`stats-ascii-check.py`、`no-wear-check.py`、
   `brightness-slider-check.py` 是歷史路徑，使用前先確認是否存在。
@@ -149,14 +172,13 @@ export EXHUME_CONFIG="$UW1/exhume.toml"
 
 ## 8. 下一步與完成條件
 
-1. 新按鍵已於 2026-10-27 經使用者確認 OK。Mac 舊 ZIP 不含新按鍵，需要交付新版時才另行編譯／打包。
+1. 等使用者實測 2026-10-28 三項功能（需在 F11 開啟），依回報修正。新按鍵已於 2026-10-27 確認 OK。
+   Mac 舊 ZIP 不含新按鍵與新功能，需要交付新版時才另行編譯／打包。
 2. **P13.2／P13.3**（進行中，使用者邊玩邊測，不算專案未完成因素）：各樓層對話、書本、主線／終局、交易、存讀檔、
    戰鬥、長時間遊玩與譯文品質。依使用者回報修正；需要時可整理第一層對話與書本的本機審閱批次，尚未產生。
 3. 只依人工審閱紀錄提升 reviewed；功能與 Mac「測試 OK」不等於全部譯文或全主線已驗收。
-4. **2026-10-27 授權動工**（`IDEAS_BACKLOG.md` 第 11～13 項）：對話打錯字時 NPC 回覆「我不知道這是什麼……」；
-   拆分堆疊數量預設全部（可開關，開啟後原版輸入框也改）；E 撿起時自動併入目前背包面板的相同可堆疊物品
-   （沿用原版合併流程、預設關、可併入 `e-takes`）。尚未授權：打字選話題改選擇、其他密技。
-   「放下物品時才選數量」已依使用者決定刪除。
+4. 2026-10-27 授權的三項（`IDEAS_BACKLOG.md` 第 11～13 項）已於 2026-10-28 實作，待確認。
+   尚未授權：打字選話題改選擇、其他密技。「放下物品時才選數量」已依使用者決定刪除。
 5. P8 HD 錄影仍暫停，不列 Gate。HD 介面／貼圖／寬螢幕與 UW2 中文化依主計畫另行決策。
 6. P13 全部 Gate 與人工驗收完成後，經使用者同意才建立 `zh-tw-native-p13`；不可因 0.5、功能確認或跨平台建置而提前建立。
 

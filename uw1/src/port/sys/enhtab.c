@@ -23,7 +23,7 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "restore-at-rest", "A restored game starts at rest, without the motion or fall it was restored in", ENH_GAMEPLAY, NULL, NULL },
     { "flask-numbers", "The flasks show their values, 25/32, and each change floats up from them (HD text)", ENH_PRESENTATION, NULL, NULL },
     { "auto-key", "Using a locked door or chest unlocks it with the key that fits, if you carry it", ENH_GAMEPLAY, NULL, NULL },
-    { "e-takes", "With modern-keys, E on something you can take puts it in your pack", ENH_GAMEPLAY, NULL, NULL },
+    { "e-takes", "With modern-keys, E on something you can take puts it in your pack, onto a matching stack on show", ENH_GAMEPLAY, NULL, NULL },
     { "mouse-wheel", "The mouse wheel scrolls skills under the pointer, open bags, and past [MORE]", ENH_TIMING, NULL, NULL },
     { "damage-numbers", "Damage, misses and blocks float above visible enemies", ENH_PRESENTATION, NULL, NULL },
     { "enemy-health", "Health bars after creatures take damage or attack you; maximum is their highest observed health", ENH_PRESENTATION, NULL, NULL },
@@ -31,4 +31,6 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "god-mode", "No health loss or death, with recovery from invalid positions", ENH_GAMEPLAY, NULL, NULL },
     { "bright-view", "Gently brighten the current light source while keeping distance shading and exploration", ENH_PRESENTATION, NULL, NULL },
     { "no-wear", "Equipped weapons, shields and armour do not lose condition through combat use", ENH_GAMEPLAY, NULL, NULL },
+    { "split-all", "Move how many? starts at the whole stack", ENH_GAMEPLAY, NULL, NULL },
+    { "unknown-topic", "A word you type that a person does not know gets an answer: theirs, or I don't know what that is...", ENH_GAMEPLAY, NULL, NULL },
 };

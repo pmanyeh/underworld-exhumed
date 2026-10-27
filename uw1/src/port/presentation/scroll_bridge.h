@@ -20,4 +20,7 @@ int port_book_print(char *text);
    prompt: shown before the answer (0: ">"). slot < 0: an answer typed in ASCII only (a
    mantra), with no input method and no aliases; other text gives an empty result. */
 int port_scroll_ask(int slot,const char *prompt,char *result,int maxlen,int (*next_key)(void));
+/* whether the last port_scroll_ask ended with Enter on something typed, other than spaces, in
+   any language (its result can be empty: words the alias table does not know) */
+int port_scroll_ask_typed(void);
 #endif

@@ -12,8 +12,8 @@ struct PlatPointer;
 struct PlatOverlay;
 
 void qty_dialog_enable(int on, void (*key)(uint8_t scancode));   /* before threads */
-/* game thread: around wdialog, with the stack's count */
-void qty_dialog_begin(int max);
+/* game thread: around wdialog, with the stack's count and the count the entry starts at */
+void qty_dialog_begin(int max, int initial);
 void qty_dialog_end(void);
 /* backend thread: 1 when the panel took the event (the game does not see it) */
 int qty_dialog_pointer(const struct PlatPointer *ev);

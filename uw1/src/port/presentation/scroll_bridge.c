@@ -120,6 +120,8 @@ static int ask_draw(const ScrollBox *mark,const char *prompt,const char *typed,c
     scroll_text_rewind(0,mark);
     return scroll_text_write(0,line,0,0);
 }
+static int ask_typed;
+int port_scroll_ask_typed(void) { return ask_typed; }
 int port_scroll_ask(int slot,const char *prompt,char *result,int maxlen,int (*next_key)(void))
 {
     ScrollBox mark;char typed[160]="",got[64];size_t len=0,i;int key,changed=1,ascii;
@@ -129,6 +131,12 @@ int port_scroll_ask(int slot,const char *prompt,char *result,int maxlen,int (*ne
     scroll_text_mark(0,&mark);
     if(ask_draw(&mark,prompt,"","_")<0) {scroll_text_rewind(0,&mark);return -2;}   /* no line to type on yet */
     plat_text_input(slot>=0);
+    /* A test's committed text stands in for the OS input method, as text_entry.c's UW1_TEST_TYPED */
+    if(slot>=0 && getenv("EXHUME_TEST_CHEATS") && getenv("UW1_TEST_ASK")) {
+        const char *seed=getenv("UW1_TEST_ASK");
+        len=utf8_validate(seed,strlen(seed),NULL)?utf8_boundary_before(seed,strlen(seed),sizeof typed-1):0;
+        memcpy(typed,seed,len);typed[len]=0;
+    }
     for(;;) {
         if(changed && ask_draw(&mark,prompt,typed,"_")<0)port_fatal("HD scroll: the typed answer does not fit");
         changed=0;
@@ -156,6 +164,7 @@ int port_scroll_ask(int slot,const char *prompt,char *result,int maxlen,int (*ne
     plat_text_input(0);
     if(ask_draw(&mark,prompt,key==ASK_ESC?"-":typed,"")<0)port_fatal("HD scroll: the typed answer does not fit");
     for(ascii=1,i=0;typed[i];i++)if((unsigned char)typed[i]>=0x80)ascii=0;
+    ask_typed=key!=ASK_ESC && strspn(typed," ")<len;
     if(key==ASK_ESC)result[0]=0;
     else if(ascii) {strncpy(result,typed,(size_t)maxlen);result[maxlen]=0;}
     else if(slot>=0)input_alias_map(slot,typed,result,(size_t)maxlen+1);

@@ -386,6 +386,34 @@ static const char *c_state(int argc,char **argv,int run)
     if(run) fprintf(stderr,"fixture: state level=%d hp=%d x=%d y=%d z=%d god=%u map=%u drawn=%d panel=%d bag=%d\n",PlayerLevel,ThePlayer->hp,PN.x,PN.y,PN.z,ENHANCED(ENH_GOD_MODE),ENHANCED(ENH_FULL_MAP),player->drawn,RightPanel,OpenBag != 0);
     return NULL;
 }
+/* test-inv: the backpack's slots and the open bag's on show, each ITEM:QTY (e-takes' and
+   split-all's fixture), the object on the cursor and the carried weight */
+extern union PlayerStore PlayerDat;     /* PLAYER.C's storage, as INVPANEL.C reaches it */
+static const char *c_inv(int argc,char **argv,int run)
+{
+    int slot;struct Object far *o;
+    (void)argv;if(argc) return "no arguments";
+    if(!run) return NULL;
+    fprintf(stderr,"fixture: inv weight=%d",PlayerDat.rec.weight);
+    for(slot=INV_PACK;slot<=(OpenBag?INV_BAG_LAST:INV_PACK_LAST);slot++)
+        if(slot!=INV_BAG && (o=AskInventory(slot))!=0)
+            fprintf(stderr," %d=0x%03X:%d",slot,OBJ_ITEM(o),OBJ_ISQUANT(o)?o->ol.f.link:1);
+    if(CursorObjPtr) fprintf(stderr," cursor=0x%03X:%d",OBJ_ITEM(CursorObjPtr),OBJ_ISQUANT(CursorObjPtr)?CursorObjPtr->ol.f.link:1);
+    fprintf(stderr,"\n");
+    return NULL;
+}
+/* test-take ITEM [QTY]: e-takes (E with modern-keys) on the nearest object of that item (a stack
+   of QTY), as though picked within reach */
+int far port_test_take(int item, int qty);         /* port/ui/keys.c */
+static const char *c_take(int argc,char **argv,int run)
+{
+    long v,q=0;
+    if(argc<1 || argc>2 || cheat_num(argv[0],0,0x1FF,&v) || (argc==2 && cheat_num(argv[1],1,999,&q)))
+        return "an item 0x000 to 0x1FF, and a quantity 1 to 999 if given";
+    if(!run) return NULL;
+    if(!ENHANCED(ENH_E_TAKES)) return "e-takes is off";
+    return port_test_take((int)v,(int)q) ? NULL : "none on the map";
+}
 extern char EndGameMode_dseg_1C8F;
 static const char *c_victory(int argc,char **argv,int run)
 {
@@ -427,6 +455,8 @@ static const struct cheat_cmd cmds[] = {
     { "test-hurt", "SOURCE AMOUNT", c_hurt },
     { "test-fault", "bounds|teleport|blocked", c_fault },
     { "test-state", "", c_state },
+    { "test-inv", "", c_inv },
+    { "test-take", "ITEM [QTY] (e-takes fixture)", c_take },
     { "look", "ITEM [QTY [QUALITY [LORE]]] (look fixture)", c_look },
     { "lookwall", "N (wall look fixture)", c_lookwall },
     { "mantra", "(shrine mantra fixture)", c_mantra },

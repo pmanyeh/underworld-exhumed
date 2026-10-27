@@ -7,10 +7,12 @@
 
 static int enabled;
 static void (*send_key)(uint8_t scancode);
-/* the game's side: open, and the stack's count; a new opening has a new serial */
-static atomic_int open_max, open_serial;
-/* the backend's side */
-static int seen_serial, value = 1, dragging;
+/* the game's side: open, the stack's count and the entry's starting count; a new opening has
+   a new serial */
+static atomic_int open_max, open_initial, open_serial;
+/* the backend's side; untouched until the player changes the count, when the first digit
+   replaces it as it does the entry's starting text */
+static int seen_serial, value = 1, untouched, dragging;
 
 /* The panel, over the message scroll (game pixels, top-down): the prompt, the slider and the
    count on its first row, the buttons on its second */
@@ -26,10 +28,12 @@ void qty_dialog_enable(int on, void (*key)(uint8_t))
     send_key = key;
 }
 
-void qty_dialog_begin(int max)
+void qty_dialog_begin(int max, int initial)
 {
     if (!enabled) return;
-    atomic_store(&open_max, max < 1 ? 1 : max > 999 ? 999 : max);
+    max = max < 1 ? 1 : max > 999 ? 999 : max;
+    atomic_store(&open_initial, initial < 1 ? 1 : initial > max ? max : initial);
+    atomic_store(&open_max, max);
     atomic_fetch_add(&open_serial, 1);
 }
 void qty_dialog_end(void) { if (enabled) atomic_store(&open_max, 0); }
@@ -39,7 +43,12 @@ static int active(void)
 {
     int serial = atomic_load(&open_serial);
     if (!enabled || atomic_load(&open_max) <= 0) return 0;
-    if (serial != seen_serial) { seen_serial = serial; value = 1; dragging = 0; }   /* the game's entry starts at 1 */
+    if (serial != seen_serial) {        /* the game's entry starts at 1, or the whole stack (split-all) */
+        seen_serial = serial;
+        value = atomic_load(&open_initial);
+        untouched = 1;
+        dragging = 0;
+    }
     return 1;
 }
 
@@ -61,6 +70,7 @@ static void set_value(int v)
     int max = atomic_load(&open_max);
     if (v < 1) v = 1;
     if (v > max) v = max;
+    untouched = 0;
     if (v == value) return;
     value = v;
     type_value(v);
@@ -121,7 +131,7 @@ int qty_dialog_key(uint8_t sc)
         if (!(sc & 0x80)) {
             int v = value * 10 + digit_of[make];
             int max = atomic_load(&open_max);
-            if (value == 1 && !dragging) v = digit_of[make];      /* the first digit replaces the 1 */
+            if ((value == 1 || untouched) && !dragging) v = digit_of[make];   /* the first digit replaces the 1 */
             set_value(v > max ? max : v);
         }
         return 1;
