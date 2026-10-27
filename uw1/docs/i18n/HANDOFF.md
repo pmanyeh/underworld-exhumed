@@ -10,9 +10,9 @@
 | --- | --- |
 | 本次交付 | **繁中整合測試版 0.5**：Windows x64、macOS 通用版（arm64／x86_64）；版本號不代表 P13 已驗收 |
 | 主 repo | `pmanyeh/underworld-exhumed`，分支 `feature/zh-tw-native` |
-| 最新功能提交 | `6b00da4`：技能清單滾輪、補正滾輪錄影；完整文件提交以 git log 為準 |
+| 最新功能提交 | `f50151e`：空白鍵跳躍、移除 X 前進衝突、修正切換按鍵長按重複觸發；完整文件提交以 git log 為準 |
 | Exhume 子模組 | `pmanyeh/Exhume`，分支 `feature/presentation-overlay`，固定 `5e92215` |
-| 翻譯 catalog | `uw1/build/i18n/p13-goblin/catalog-1.bin`，不是公開 Git 的一部分 |
+| 翻譯 catalog | 0.5 原來源為 `uw1/build/i18n/p13-goblin/catalog-1.bin`；本機本次依 master 重建於 `uw1/build/i18n/modern-keys/catalog-1.bin`，均不屬於公開 Git |
 | 翻譯進度 | 可翻譯 6,983 筆、已翻 6,893 筆（98.71%）；其餘 90 筆為比對文字，譯文全部仍是 draft |
 | 開發階段 | **P13 進行中**：自動檢查已完成，仍待實際遊玩與人工譯文審閱 |
 | 最後階段 tag | `zh-tw-native-p12`（`0169ca1`）；本次不建立 P13 驗收 tag |
