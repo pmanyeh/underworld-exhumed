@@ -6,7 +6,7 @@
 #include <string.h>
 
 static const struct { const char *english, *zh; } words[] = {
-    {"Cheats", "密技"}, {"Run", "執行"},
+    {"Cheats", "密技"}, {"Keys", "按鍵說明"}, {"Run", "執行"},
     {"Brightness strength", "增亮強度"},
     {"no-wear", "物件不損耗"},
     {"Equipped weapons, shields and armour do not lose condition through combat use", "武器使用、盾牌與防具格擋不減耐久；關閉設定並回到遊戲後生效"},

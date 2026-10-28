@@ -63,6 +63,8 @@ static int draw(uint32_t *px, int x, int y, uint32_t c, const char *utf8)
 
 static const struct settings_text hooks = { translate, draw, width };
 
+int settings_text_chinese(void) { return font && chinese; }
+
 void settings_text_start(HdFont *f, int zh, int smooth)
 {
     font = f;

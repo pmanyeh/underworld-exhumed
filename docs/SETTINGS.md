@@ -15,6 +15,7 @@ The first time you run a port, and on every start after that unless you turn it 
 | Enter | change the row's value (a switch flips, a list goes to the next choice, a folder row opens your system's folder picker) |
 | Tab | the next tab |
 | F11 (Cmd+, on macOS), Esc | close the screen |
+| Shift+F1 | open the screen on its Keys tab, and close it from there (UW1) |
 
 The mouse works too: click a tab, click a row to change it, drag a slider (Volume, Mouse-look speed).
 
@@ -66,6 +67,10 @@ One switch for each enhancement the game has, all off by default. The selected o
 | Game folder | The folder holding your copy of the game. A folder that is not the game is refused and the old one stays | `data` | next start | `--data DIR` (kept) |
 | Record sessions | Each session's inputs go to `recordings/` in the home folder (the newest five are kept), so a crash can be replayed | `recording` | next start | `--no-recording` (this run only) |
 | Show this at start | Opens this screen before the game starts | `settings-at-start` | next start | none |
+
+### Keys
+
+UW1 only: the keys and the mouse as this run has them, in the game's language. Nothing to change here; Up and Down (or the wheel) scroll the page. It lists only what works now: the original movement keys, or `modern-keys`' layout when that is on, and the lines for `e-takes`, `mouse-look`, `invert-look`, `mouse-wheel` and `rune-keys` only when they are on (so an enhancement turned on during the run shows here from the next start, with its keys). Ctrl+F10 is listed when the mouse is locked, and F12 when the run records with `--record`. **Shift+F1** opens the screen on this tab; F1 alone is still the game's options panel.
 
 ## The command line and the file
 

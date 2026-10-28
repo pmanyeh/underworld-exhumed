@@ -38,6 +38,7 @@
 #include "presentation/hd_cursor.h"
 #include "presentation/scroll_text.h"
 #include "presentation/text_style.h"
+#include "ui/key_help.h"
 
 extern const struct enhance_flag enhance_table[];   /* src/port/sys/enhtab.c */
 extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a test's cheats */
@@ -717,6 +718,7 @@ int main(int argc, char *argv[])
        display options win */
     settings_init(home, port_settings, port_settings_count, "Ultima Underworld");
     port_cheat_settings();
+    port_key_help_init(cfg.mouse_lock, rp_request == 1);
     port_settings_brightness(replay != NULL);
     /* what this run really uses (the command line over the file) is what the screen shows and applies */
     port_settings_start(&cfg.fullscreen, cl_scale ? NULL : &cfg.scale, cl_aspect ? NULL : &cfg.aspect,
