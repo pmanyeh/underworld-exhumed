@@ -2981,85 +2981,85 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3598	72	conversation	bdcfef24f7319a73dfb50d58522840a7a21c9ec089f4ac10d624489b2581385e	很簡單。	draft		p10b-13 draft	
 3598	73	conversation	b374832af7194ce3a4cd19dbed1da22b11d82cdfc90c52e35e787d943676ace0	你能告訴我哪裡還有符石嗎？	draft		p10b-13 draft	
 3598	74	conversation	3b5b36cf15903108d5eb461b7ac7dfb3ad894244f31940c45bf49023dc8a917b	抱歉，我不是有意打擾你。	draft		p10b-13 draft	
-3599	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.（你好，陌生人。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	2	conversation	cd89962085b98100536660b9f3242798bc34fff2430ea9346a66c4b154a618f5	你自己才 Bica 咧。	draft		p10b-5 draft	
 3599	3	conversation	d1e5cb33afbb66cf80c56823fc70f5ea6e6a74eb8acd58ca1d4b410e4466a20c	呃……你好。	draft		p10b-5 draft	
 3599	4	conversation	4060b3fd138b5e2ab3e2f8b821c2c9d5439718c1d9c424ac7aced4e76bd7e405	抱歉，你剛才說什麼？	draft		p10b-5 draft	
-3599	5	conversation	1634870c58e05098f63240575bb2c9b492f7d66775a3f155dcf1a5d00f8080e7	Tosa yeshor'click?  Tosa sorr?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	5	conversation	1634870c58e05098f63240575bb2c9b492f7d66775a3f155dcf1a5d00f8080e7	Tosa yeshor'click?  Tosa sorr?（你是朋友？你是敵人？）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	6	conversation	7a68156c32e207aa04270655c01ebf497e78c6756c01af5cea9265d25b61c411	抱歉，我聽不懂你的話。	draft		p10b-5 draft	
 3599	7	conversation	359e7581cc36f3db23533597ab965872afc67250bc4dfb8b4b4fd5e223696f38	你會說我的語言嗎？	draft		p10b-5 draft	
-3599	8	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
-3599	9	conversation	dec881db76fd80d6322aba7a7d690c3405b37c8dcd24b6ad9a2ef1a912064210	Yeshor'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	8	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.（敵人。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	9	conversation	dec881db76fd80d6322aba7a7d690c3405b37c8dcd24b6ad9a2ef1a912064210	Yeshor'click.（朋友。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	10	conversation	637f35969af59a3816865187e15c3c085cd301b426f80dc8b86e5362d8807225	'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
 3599	11	conversation	d34c6000ceedf798656647b74e9cfeced43371c1cbf80e5a271ed1c90fe2f09f	「'click」是「是」的意思嗎？	draft		p10b-5 draft	
 3599	12	conversation	99acc7dc62883eec77b4bb81b1b2d6fd6a0ddfa5c7c8e083fc5d756f3f295af5	「'click」是「不」的意思嗎？	draft		p11-1 draft	
 3599	13	conversation	c85a128ad3373f390b2771d306058422b1df951dc6a1f2190bc562faa3d1bec3	抱歉，我得走了。	draft		p10b-5 draft	
 3599	14	conversation	637f35969af59a3816865187e15c3c085cd301b426f80dc8b86e5362d8807225	'click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
-3599	15	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
-3599	16	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	15	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.（是。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	16	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica.（你好。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	17	conversation	d3b3afe0bbbd84af67ab89da9422f7cd8dbe36c9a9d08bbac161c29bffca366f	喔，又來了！	draft		p10b-5 draft	
-3599	18	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	18	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica.（你好。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	19	conversation	a22e05b777c5e20f33ec4f762e6aaf61ffac818578af8fe2236e9aac7fcb12f0	算了！我要走了。	draft		p10b-5 draft	
-3599	20	conversation	8ced2b7b0fbb82d0898edca482c2bce7085b30b509981c164bff30286ac5ae7e	Tosa thit sstresh.  Tosa eppa Urgo.\n	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3599	20	conversation	8ced2b7b0fbb82d0898edca482c2bce7085b30b509981c164bff30286ac5ae7e	Tosa thit sstresh.  Tosa eppa Urgo.（拜託你幫忙。你回去找穆爾戈。）\n	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	21	conversation	de9d0351cb6fcbea27861ed9e22de01ade2030dd68173e697675d49c44e83c9b	他指著柵欄後面走動的人影。	draft		p10b-5 draft	
 3599	22	conversation	eba2c612c6c45a22c8ac8f20599532b354ee15e9a7b9a829b6bc3fa42d118d12	你說是就是吧。	draft		p10b-5 draft	
 3599	23	conversation	852c821ec49ab5d3359552a708064a3c3cb804b085c03e1c445d1df31d6fcf7c	抱歉，我聽不懂你的話。再會。	draft		p10b-5 draft	
 3599	24	conversation	2f0974bd4c9b0404408a09813e1e1f76a38b4f8065e26c1d75363cbf6ec538e1	你想要什麼？	draft		p10b-5 draft	
-3599	25	conversation	289eb43a9a6d1a2fe90ae78e39eaac45e5ef1e9367f359d8f8f9bcbf6db95208	Tosa eppa Urgo?  Urgo sstresh tosa?  Urgo sorr.  Tosa sorr?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3599	25	conversation	289eb43a9a6d1a2fe90ae78e39eaac45e5ef1e9367f359d8f8f9bcbf6db95208	Tosa eppa Urgo?  Urgo sstresh tosa?  Urgo sorr.  Tosa sorr?（你回去找穆爾戈？穆爾戈幫你？穆爾戈是壞人。你是壞人？）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	26	conversation	cbcd746266165c6cf841b1d213219203535426bf8dd880ce7245dadfb3fca708	不，我不是。	draft		p10b-5 draft	
 3599	27	conversation	eba2c612c6c45a22c8ac8f20599532b354ee15e9a7b9a829b6bc3fa42d118d12	你說是就是吧。	draft		p10b-5 draft	
 3599	28	conversation	5d8a995a6fa7cf7c577cc9d49ca9e00d4aee4d0bcd5e2ad5caff27e2a8097276	為什麼？	draft		p10b-5 draft	
 3599	29	conversation	fae1cd1b4494d53a73eb68ecbd81562ca5bbd1f77c3652bb3e1ae1a037cc86e3	為什麼不？	draft		p10b-5 draft	
-3599	30	conversation	c2b74adfaf07a01014a23567d172a04feefbeb9608125e3419e1a2cdff291761	Tosa yeshor'click!  Isili 斯希薩里.  斯希薩里 yeshor'click.  Isili sstresh tosa, sseth?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	30	conversation	c2b74adfaf07a01014a23567d172a04feefbeb9608125e3419e1a2cdff291761	Tosa yeshor'click!  Isili 斯希薩里.  斯希薩里 yeshor'click.  Isili sstresh tosa, sseth?（你是朋友！我是斯希薩里。斯希薩里是朋友。我幫你，好嗎？）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	31	conversation	8aff5108a050bcfab25817bf86c37c2660c09db0c5cbea06cb49565c6644e7d2	是！	draft		p10b-5 draft	
 3599	32	conversation	4dcb71f5bfeb57f690a9df36a6b7872e5d60674acecb042d4719bc602bf9d210	不！	draft		p10b-5 draft	
 3599	33	conversation	f696560d0173d5bd9f45b6efa2ba6c1f43a90a1582bb9940518b37aa65c62572	我很高興。暫時再會了。	draft		p10b-5 draft	
 3599	34	conversation	62629b34025269b43f992e1d394bf56de7b78e9d507a8ebf55c9e658e7a5ff5b	Bica，斯希薩里朋友。	draft		p10b-5 draft	
-3599	35	conversation	6271325a981297b36b01bbff4c255ef72b985ba2ca2b6e5f1a908029ee1ba6cb	Tosa sorr!  Tosa 'click eppa! Tosa eppa, isili yethe tosa!	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	35	conversation	6271325a981297b36b01bbff4c255ef72b985ba2ca2b6e5f1a908029ee1ba6cb	Tosa sorr!  Tosa 'click eppa! Tosa eppa, isili yethe tosa!（你是敵人！你不准回來！你回來，我就殺了你！）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	36	conversation	f696560d0173d5bd9f45b6efa2ba6c1f43a90a1582bb9940518b37aa65c62572	我很高興。暫時再會了。	draft		p10b-5 draft	
 3599	37	conversation	23802710b0ecadb39466fccb11aeed3fbcdb269e13699b29cde67dd59978efb6	抱歉，我聽不懂你的話。再見。	draft		p10b-5 draft	
-3599	38	conversation	de5e6979eeea581eb7ea33c0dd0e3e2ceb41b533c2d73e5d15a5d1635e2d4632	Urgo sorr. Urgo sorra zekka, thes'click Thepa.  Thepa yethe Urgo.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3599	38	conversation	de5e6979eeea581eb7ea33c0dd0e3e2ceb41b533c2d73e5d15a5d1635e2d4632	Urgo sorr. Urgo sorra zekka, thes'click Thepa.  Thepa yethe Urgo.（穆爾戈是壞人。穆爾戈偷食物，打蜥蜴人。蜥蜴人要殺穆爾戈。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	39	conversation	c2b208d374dd9a7a0b7f6211595389fd37c2eaa6d6882e902f46ed1b6722a1ff	不，請不要！	draft		p10b-5 draft	
 3599	40	conversation	9349a40a3b4ff33e9bed2b755718fc3088cb5e61b66be052f037ccbae45c1cca	是，你一定要！	draft		p10b-5 draft	
 3599	41	conversation	995e0822a229f6f536e9c34031375965285b9512a132f541a4a726a72e899880	太複雜了。再見。	draft		p10b-5 draft	
-3599	42	conversation	bc2fecff4a76d8ebd59af5a68219156bb8a1f5dd949d0626b22c949670d29a77	Tosa sel'a zekka isili - isili sel'a Urgo tosa.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	42	conversation	bc2fecff4a76d8ebd59af5a68219156bb8a1f5dd949d0626b22c949670d29a77	Tosa sel'a zekka isili - isili sel'a Urgo tosa.（你給我食物——我就把穆爾戈交給你。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	43	conversation	ee0cb7d2da68c4f55855a55e7a19097e5a1e0422a2a0b91b5ceea277016912af	好，我會的。	draft		p10b-5 draft	
 3599	44	conversation	1cc92b9015a8e4c4beb5c805daafcfb474535f41cdabfe88a2016b822bc5371c	不，我不要。	draft		p10b-5 draft	
 3599	45	conversation	f84af1dea7b994a8990a13be360ff6661e55da673447cf4c330cefe706b507fa	我這裡就有一些。	draft		p10b-5 draft	
-3599	46	conversation	2174e4464f83451000eb602d1b7be532ef00fe88c765f0848d857b9bd606795f	Isili thesh tosa.  Tosa thesh yethe Urgo?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	46	conversation	2174e4464f83451000eb602d1b7be532ef00fe88c765f0848d857b9bd606795f	Isili thesh tosa.  Tosa thesh yethe Urgo?（我喜歡你。你想殺穆爾戈嗎？）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	47	conversation	c10c037156053bfe962132f8eb70e273899bcbf44d3db5e8d88a465a07e84d9e	當然。	draft		p10b-5 draft	
 3599	48	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不。	draft		p10b-5 draft	
-3599	49	conversation	03d427067bbc5facbaa2d5dc0d5d569367da7c1b3456d838e76f8d83798a43ac	Tosa yethe sorr Urgo, tosa eppa Isili.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	49	conversation	03d427067bbc5facbaa2d5dc0d5d569367da7c1b3456d838e76f8d83798a43ac	Tosa yethe sorr Urgo, tosa eppa Isili.（你殺了壞人穆爾戈，就回來找我。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	50	conversation	84d929baef18914ccf51a247426149e4b5e60cde180187f6775d2788eea4bf1e	喔。再見。	draft		p10b-5 draft	
 3599	51	conversation	892d8d4d0a04a19f52ff2b167c3d88caaa8a88abd98fa1963ce996605796742b	謝謝你。	draft		p10b-5 draft	
 3599	52	conversation	f59e2f52e3a02f6ee478fa16369ced83e4e07f876f82436257ef447b3791b553	走廊下去的隔壁那間？	draft		p10b-5 draft	
 3599	53	conversation	28392c2b50be79353d51c8b596c92ac40ca0e11421612130eeb2c41d3584998d	我不行。我實在做不到。	draft		p10b-5 draft	
-3599	54	conversation	9ba79c3c97a577b8cc61725e69404d59985e2d647da2d9c89833e2e2cf955340	Tosa yeshor'click.  Tosa eppa isili, sel'a isili zekka, isili sstresh Urgo.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	54	conversation	9ba79c3c97a577b8cc61725e69404d59985e2d647da2d9c89833e2e2cf955340	Tosa yeshor'click.  Tosa eppa isili, sel'a isili zekka, isili sstresh Urgo.（你是朋友。你回來找我，給我食物，我就幫穆爾戈。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	55	conversation	039e8635d722399faf25eb4f1dc12080554593c387432a60e248e7c519e05dab	好吧。一定辦到。	draft		p10b-5 draft	
 3599	56	conversation	647d12376b5556cd6f0700638a3dedbde339b18c3de4890eddec2e423b6320c4	再看看吧。	draft		p10b-5 draft	
-3599	57	conversation	213725f2c73ade58c9c4258fe00c92f1a575030c20a43c7f2aa7b81198c68a60	Tosa sel'a zekka?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	57	conversation	213725f2c73ade58c9c4258fe00c92f1a575030c20a43c7f2aa7b81198c68a60	Tosa sel'a zekka?（你要給食物？）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	58	conversation	cb0284c1c09fbca2d6fc422a2096b0fa38c3213423729aeef262279f000d6f37	在這裡。	draft		p10b-5 draft	
 3599	59	conversation	69170292dea628cdaef6333a2460adf0723bd6e6ef076a3ade779ab470e65074	我一點也找不到。	draft		p10b-5 draft	
 3599	60	conversation	7e7402d91b9921714ac6b4ac55c6258785474b35c8e6318d620d42ac645311f9	抱歉。我會再回來。	draft		p10b-5 draft	
 3599	61	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-5 draft	
-3599	62	conversation	00ee45ec4ce41154f03f9c9785a94e11a2578d4a25edcd47d34032297ed825f5	Tosa yethe Urgo?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3599	62	conversation	00ee45ec4ce41154f03f9c9785a94e11a2578d4a25edcd47d34032297ed825f5	Tosa yethe Urgo?（你殺了穆爾戈？）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	63	conversation	3a5e00fb42636adbdf5878442d89374f0c36a80186776fe5664afb39db51b91c	不，我不能。這違背我的誓言。	draft		p10b-5 draft	
 3599	64	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	好。	draft		p10b-5 draft	
-3599	65	conversation	356cf8f59318285411d8428348914486c4edc982cc27dc2eec9f8c5aae8d75f8	Isili thesh tosa! Tosa yeshor'click! Tosa eppa isili!	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3599	65	conversation	356cf8f59318285411d8428348914486c4edc982cc27dc2eec9f8c5aae8d75f8	Isili thesh tosa! Tosa yeshor'click! Tosa eppa isili!（我喜歡你！你是朋友！你要回來找我！）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	66	conversation	2f5335aae77b9c7e466cd02b3f78d918d57787267e1853dd669c1a7aa67ce98c	謝謝你。再見。	draft		p10b-5 draft	
-3599	67	conversation	99cf5e05c294a0cdf702c8ffdff258f671d7f062bd8bb0246ba860fb88194b06	Tosa 'click sel'a ossli. Isili 'click sstresh Urgo.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	67	conversation	99cf5e05c294a0cdf702c8ffdff258f671d7f062bd8bb0246ba860fb88194b06	Tosa 'click sel'a ossli. Isili 'click sstresh Urgo.（你給的不夠。我不幫穆爾戈。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	68	conversation	6c672eafc62815f174e73859c42d0edeceeac25dd2d9456184913a8ec769e081	喔……再見。	draft		p10b-5 draft	
 3599	69	conversation	1fb88d7517f8df0ddcbcd77decfbb5299cb8c9a4442ba2c418ccfaaeee3af42d	抱歉。這裡還有。	draft		p10b-5 draft	
-3599	70	conversation	af50aa9220f47cf5a6b2134c660fb540ec19b179c757ef92a894d422f7c0d309	Tosa yeshor'click! Tosa thes'click sorr! Tosa eppa isili!	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
-3599	71	conversation	60f7d0c7996213f7b587e3adc2ae0d3d767166f0803ede343c7d2c44825ecaf8	Tosa sorr.  Isili 'click sstresh tosa.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
-3599	72	conversation	82d66a7decf53fd28e447a4e10e003fdb3b6e8e7e6f60987186338fbbcf9d322	Tosa yeshor'click.  Eppa 伊許塔斯 sstresh.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	70	conversation	af50aa9220f47cf5a6b2134c660fb540ec19b179c757ef92a894d422f7c0d309	Tosa yeshor'click! Tosa thes'click sorr! Tosa eppa isili!（你是朋友！你打敗了壞人！你要回來找我！）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	71	conversation	60f7d0c7996213f7b587e3adc2ae0d3d767166f0803ede343c7d2c44825ecaf8	Tosa sorr.  Isili 'click sstresh tosa.（你是壞人。我不幫你。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	72	conversation	82d66a7decf53fd28e447a4e10e003fdb3b6e8e7e6f60987186338fbbcf9d322	Tosa yeshor'click.  Eppa 伊許塔斯 sstresh.（你是朋友。回去找伊許塔斯幫忙。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	73	conversation	47779075d03ec0a826a03fc9d64dcc7fce397ef3a26b5b73203cd7d4036bf153	謝謝你。再見。	draft		p10b-5 draft	
 3599	74	conversation	07449f0582036df6146aab78261c495432698f60a2b900e26fe9af6cde0365d2	其他……	draft		p10b-5 draft; 「其他……」讓玩家自行輸入（isht、murgo 不翻）	
-3599	76	conversation	9d85ad1ad43328a9f0cdeb81ac220598234423dadc65f022301d3309ae9eb219	Sel'a tosa sstresh.  Yisa Toosa.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	76	conversation	9d85ad1ad43328a9f0cdeb81ac220598234423dadc65f022301d3309ae9eb219	Sel'a tosa sstresh.  Yisa Toosa.（我幫你。往那邊去。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	77	conversation	efffad34cc474e81c3b1180edc2297257c66e9a43fd3f4222f79d85a49cbfa9a	他朝南方比了比。	draft		p10b-5 draft	
-3599	79	conversation	4477dfbcf6c933d51c39590a3c01fa59a12ea70c0ec92bb0f6c0b36ca654ea96	Tosa sstresh Urgo.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
-3599	80	conversation	09222e78e5192c1524b54dfcca97693883c5aadbdd9a0cb42f87bc38eddb897a	Isili 'click sstresh.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
-3599	81	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3599	79	conversation	4477dfbcf6c933d51c39590a3c01fa59a12ea70c0ec92bb0f6c0b36ca654ea96	Tosa sstresh Urgo.（你去幫穆爾戈。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	80	conversation	09222e78e5192c1524b54dfcca97693883c5aadbdd9a0cb42f87bc38eddb897a	Isili 'click sstresh.（我不幫。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	81	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?（交易？）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	82	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-5 draft	
 3599	83	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不。	draft		p10b-5 draft	
 3599	84	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-5 draft; 交易用語沿用 3672:16-30	
@@ -3067,16 +3067,16 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3599	86	conversation	1ed33b3a7d1da6b4d57aa5751e098b9407fd8d9ed65b6e141569221c4b477ee1	我得考慮一下這個出價。	draft		p10b-5 draft	
 3599	87	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-5 draft; 交易用語沿用 3672:16-30	
 3599	88	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-5 draft; 交易用語沿用 3672:16-30	
-3599	89	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3599	89	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.（是。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	90	conversation	ac324dcd5dde7dfae18a74b36ce4ba5f980bc678c6e90ba2147c2c44c5c47c47	'Click.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
-3599	91	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
-3599	92	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
-3599	93	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
-3599	94	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	91	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.（不好。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	92	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.（不，不。再會。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	93	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?（你想硬搶？）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	94	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?（不好？）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3599	95	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-5 draft	
 3599	96	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不。	draft		p10b-5 draft	
-3599	97	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
-3599	98	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）	
+3599	97	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.（是，可是不好。）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3599	98	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!（不要殺！）	draft		p10b-5 draft; 蜥蜴人語，保留原文（玩家要學會並輸入這些字）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3600	1	conversation	a30886e0118b1dc824a687c9c81eb06edc41ec12bb7472b440aa725a698fbca4	問候給你我獻上。伊許塔斯，我被這麼稱呼。什麼東西你想要？	draft		p10b-5 draft	
 3600	2	conversation	8be2ee62f76e02ea2063b5fa8d9ec87cc4f544807e80f4bec5eba59d4ad8e2fe	真了不起。你會說我的語言！	draft		p10b-5 draft	
 3600	3	conversation	48e6eaf3c334a1a63d52d8386804f011b3b4166bbe76bf62e6096a06a3d9557a	沒什麼，不過謝謝你。失陪了。	draft		p10b-5 draft	
@@ -4102,35 +4102,35 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3697	65	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-6 draft; 交易用語沿用 3672:16-30	
 3697	66	conversation	a0586c675802a48119fecfb0986d7ff90d9bca12263daa36081867951efde237	既然你堅持，就拿去吧。	draft		p10b-6 draft; 交易用語沿用 3672:16-30	
 3697	67	conversation	0bb4a35b724ed6683f09bc62bd162623915bb69b83e39894675778a56d503062	不！你休想拿走！	draft		p10b-6 draft; 交易用語沿用 3672:16-30	
-3698	1	conversation	ac87e40dcd32654d2fd72ae208bfd91e4379b583b853a0d0a9f52bde438f5598	Bica. Tosa yeshor'click?	draft		p10b-6 draft; 蜥蜴人語，保留原文	
-3698	2	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3698	1	conversation	ac87e40dcd32654d2fd72ae208bfd91e4379b583b853a0d0a9f52bde438f5598	Bica. Tosa yeshor'click?（你好。你是朋友嗎？）	draft		p10b-6 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3698	2	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.（是。）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	3	conversation	637f35969af59a3816865187e15c3c085cd301b426f80dc8b86e5362d8807225	'click.	draft		p10b-6 draft; 蜥蜴人語，保留原文	
-3698	4	conversation	c306c56a3f438bc819c172dcb4ff9ac6b39a72b0ad943b436005ab5a789dd407	Bica.  Tosa sorr.  Isili yethe tosa?	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
-3698	5	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3698	4	conversation	c306c56a3f438bc819c172dcb4ff9ac6b39a72b0ad943b436005ab5a789dd407	Bica.  Tosa sorr.  Isili yethe tosa?（你好。你是壞人。我該殺了你嗎？）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3698	5	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.（是。）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	6	conversation	637f35969af59a3816865187e15c3c085cd301b426f80dc8b86e5362d8807225	'click.	draft		p10b-6 draft; 蜥蜴人語，保留原文	
-3698	7	conversation	ecfe061bc305405c7fd3f78beb4617941793b2514ac6245f7a158e61f52d89e8	Tosa sor'click.  Tosa sstresh isili?	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
-3698	8	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3698	7	conversation	ecfe061bc305405c7fd3f78beb4617941793b2514ac6245f7a158e61f52d89e8	Tosa sor'click.  Tosa sstresh isili?（你是陌生人。你會幫我嗎？）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3698	8	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.（是。）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	9	conversation	637f35969af59a3816865187e15c3c085cd301b426f80dc8b86e5362d8807225	'click.	draft		p10b-6 draft; 蜥蜴人語，保留原文	
-3698	10	conversation	9a080bf4d7218cd81959f70eed4c7f89b4d7bacf56b2d42d2e22fe70e3cc6e2d	Isili sel'a tosa sstresh.	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3698	10	conversation	9a080bf4d7218cd81959f70eed4c7f89b4d7bacf56b2d42d2e22fe70e3cc6e2d	Isili sel'a tosa sstresh.（我會報答你的幫忙。）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	11	conversation	34fc40af849e2783b8e891d9400978411073cf7de0a3603022e310b90c0476e7	他給你看一張卷軸，上面寫著：\n 流浪者\n  伊斯利克名字是。請紅寶石找到。如果紅寶石找到，瑟帕的符文法術會被告訴。\n      靜默族翻譯	draft		p10b-6 draft	
 3698	12	conversation	a4fc225dd9a7fdc59366abcf5d23dfde2910b884e62f686ea3fbf8bd9dcf97d1	謝謝你。我會去辦。	draft		p10b-6 draft	
 3698	13	conversation	53e6958a806b04a575e7fc8c4a50dae7d372f1479144c66bc3644828a37cb9f7	我現在辦不到。再見。	draft		p10b-6 draft	
 3698	14	conversation	0838f8acec0d55dca9ca5e52a345fdbf565ada15120af4a70e2903420e69d264	我這裡有一顆紅寶石要給你。	draft		p10b-6 draft	
-3698	15	conversation	6a1e56feae070808c42abecc12695c6a307868e913f88615624b925649a497b5	Tosa yeshor'click.  Isili thesh tosa!	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3698	15	conversation	6a1e56feae070808c42abecc12695c6a307868e913f88615624b925649a497b5	Tosa yeshor'click.  Isili thesh tosa!（你是朋友。我喜歡你！）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	16	conversation	878863a82f683ca30b9c4f21cb1d649f188452700c0ed9e94c70bad0449e7ad0	謝謝你。我會再回來。	draft		p10b-6 draft	
-3698	17	conversation	0666108be8cef2ba8e75d91a12341720ca1eaf4c07e181aef978d6f12b046a48	Bica, yeshor'click.  Tosa sel'a isila sstresh?	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3698	17	conversation	0666108be8cef2ba8e75d91a12341720ca1eaf4c07e181aef978d6f12b046a48	Bica, yeshor'click.  Tosa sel'a isila sstresh?（你好，朋友。你幫我了嗎？）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	18	conversation	317a787d242b72c563f334376876456d807bc22958546a6ae09e0d3cb9fcddb3	這裡有一顆紅寶石。	draft		p10b-6 draft	
 3698	19	conversation	efa8875d7bb5947b2140b517079b0862ac21383d70bb244b1435487cc0f25f15	抱歉。我還沒拿到。	draft		p10b-6 draft	
-3698	20	conversation	cb8c9a9a26a911582dca5e261f6477242cdd1d134e1621eaa576c9154a263b62	Tosa 'click sel'a sstresh.  Bica.	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3698	20	conversation	cb8c9a9a26a911582dca5e261f6477242cdd1d134e1621eaa576c9154a263b62	Tosa 'click sel'a sstresh.  Bica.（你沒有幫忙。再會。）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	21	conversation	d66ba1ba140af8550369f5050cbff6afc812404ff59604949ea87364b2bb31d9	Bica。我會再試試。	draft		p10b-6 draft	
-3698	22	conversation	0797f58ae4c011e2d11c7a8b336fb14c95053bbcf60eca2adaa60f410749a0e1	Tosa yeshor'click!	draft		p10b-6 draft; 蜥蜴人語，保留原文	
+3698	22	conversation	0797f58ae4c011e2d11c7a8b336fb14c95053bbcf60eca2adaa60f410749a0e1	Tosa yeshor'click!（你是朋友！）	draft		p10b-6 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	23	conversation	8efbf10916fc3fef384f6bb90240394056c6d71468ced10d21cd46d331933e6b	Bica。謝謝你。	draft		p10b-6 draft	
-3698	24	conversation	3bacad81f51962ec6449178384c4f28807bebec119a0552fdc7a7dd3341f8af1	Tosa sel'a sstresh?	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3698	24	conversation	3bacad81f51962ec6449178384c4f28807bebec119a0552fdc7a7dd3341f8af1	Tosa sel'a sstresh?（你會幫忙嗎？）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	25	conversation	25bd1c073b6241cd20bbb52a623877352f10a928ecf692b93f351d5e9a8184c6	好。我會找一顆紅寶石。	draft		p10b-6 draft	
 3698	26	conversation	c80e8474e17eda42a9db386e6cbc60af70fed5972f69650792d4023b2db055ad	不。抱歉。再見。	draft		p10b-6 draft	
-3698	27	conversation	aa961a82f03ca8eda25d5215fffed334c12dbe7e253996c8e1cfee7a9e2c5111	Bica.  Tosa 伊斯利克 yeshor'click.  Isili thesh tosa.	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3698	27	conversation	aa961a82f03ca8eda25d5215fffed334c12dbe7e253996c8e1cfee7a9e2c5111	Bica.  Tosa 伊斯利克 yeshor'click.  Isili thesh tosa.（你好。你是伊斯利克的朋友。我喜歡你。）	draft		p10b-6 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	28	conversation	e517e8a6e0b48e05d59fb18dfbff90db2379974ca7fc09be01f67d038218e8eb	Bica。你也是我的朋友。	draft		p10b-6 draft	
-3698	29	conversation	c6779d13f6fb45e8634b394c218b5c7286ae5b9c8a39fff962efbb4055a5e646	'Click thit sstresh. Bica.	draft		p10b-6 draft; 蜥蜴人語，保留原文	
+3698	29	conversation	c6779d13f6fb45e8634b394c218b5c7286ae5b9c8a39fff962efbb4055a5e646	'Click thit sstresh. Bica.（不……拜託幫幫忙。再會。）	draft		p10b-6 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3698	30	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-6 draft	
 3699	1	conversation	f07c1c46b9951a280cfc30351d7e6776f097b2cadfdaeda5354e5801ec3ff00d	嗨。我叫瘋狂鮑伯。要不要一些破爛？	draft		p10b-22 draft	
 3699	2	conversation	c4e3edaa58e7becbf9035449dfb1058a978a7ba39f29622117480f44b48af294	好。麻煩你。	draft		p10b-22 draft	
@@ -6543,55 +6543,55 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3860	44	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
 3860	45	conversation	c2b82f4132914c1cc57cac6604351e5a2dd445db9eb2f6b41e375e356424a22f	既然你堅持，就拿去吧。	draft		p10b-21 draft	
 3860	46	conversation	9add31c433beebb81a3945bb87f0fca9f05d88df58f35125e05e534066761063	不！你休想拿走！	draft		p10b-21 draft	
-3861	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.（你好，陌生人。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	2	conversation	ab041c218cb0a6d3a5e38217849c0262eed6da2b1c34ae8f2421beab5b7f5d43	也向你 Bica。	draft		p10b-20 draft	
 3861	3	conversation	fc3e13cccee30f1f06ee92bd0ea637796978cfba24630720dbec459c3e98a4b1	你好，蜥蜴人。	draft		p10b-20 draft	
 3861	4	conversation	a4949e2c96de26681c9519749e57bfb362bbac2a8f40c89b24c35d1de111336d	什麼？	draft		p10b-20 draft	
-3861	5	conversation	4455feed7832de381a20aace07d050fae0e2c1e12a3e36db76260f19eb846da0	Tosa yeshor'click Thepa?	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3861	5	conversation	4455feed7832de381a20aace07d050fae0e2c1e12a3e36db76260f19eb846da0	Tosa yeshor'click Thepa?（你是蜥蜴人的朋友嗎？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	6	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3861	7	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3861	8	conversation	a4949e2c96de26681c9519749e57bfb362bbac2a8f40c89b24c35d1de111336d	什麼？	draft		p10b-20 draft	
-3861	9	conversation	4e83672faa38867cdcdad4fda57e81d44f0d5296bea3536638bf668108c933ac	Tosa 'click yeshor'click.  Tosa sorr?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	9	conversation	4e83672faa38867cdcdad4fda57e81d44f0d5296bea3536638bf668108c933ac	Tosa 'click yeshor'click.  Tosa sorr?（你不是朋友。你是敵人？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	10	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3861	11	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3861	12	conversation	6646f562f04c399e10fe13b1e33db516e4e80f7159035a18753a7826faa5abe3	也許。	draft		p10b-20 draft	
 3861	13	conversation	55c3e5daec20a64dcc70fbed694d58b7b529e567f03b0c43f0d6ac23630f7c4e	啥？	draft		p10b-20 draft	
-3861	14	conversation	124ca802280399ea9296854a834b89a23bc5ad92f29051c277215c00dd15efed	Tosa yeshor'click 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	14	conversation	124ca802280399ea9296854a834b89a23bc5ad92f29051c277215c00dd15efed	Tosa yeshor'click 斯希薩里?（你是斯希薩里的朋友嗎？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	15	conversation	8156126566fd28e889421018ecd605d618dc1d7be3c66fd9c305224954afc3e1	我想是吧。	draft		p10b-20 draft	
 3861	16	conversation	cbcd746266165c6cf841b1d213219203535426bf8dd880ce7245dadfb3fca708	不，我不是。	draft		p10b-20 draft	
 3861	17	conversation	593320ee19156652a5903a4e59a84c855b8e9f77b4dbe82150092816e6e1c6b1	那是誰？	draft		p10b-20 draft	
-3861	18	conversation	bacd58feaae2dff7f7d455b9a786dfe7cfb023b5c39431b0453d36f6a9ea86dd	Isili yeshor'click 斯希薩里!	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3861	18	conversation	bacd58feaae2dff7f7d455b9a786dfe7cfb023b5c39431b0453d36f6a9ea86dd	Isili yeshor'click 斯希薩里!（我是斯希薩里的朋友！）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	19	conversation	5a5ef3948b01f05016712a647f960153c67682f269851e2bef9cf6a1270da852	很好！你想以物易物嗎？	draft		p10b-20 draft	
 3861	20	conversation	aa481817a8501d247614663c507e28bbab0618a53afce212e89633bfb1f1ded7	那很好。請容我告退。	draft		p10b-20 draft	
 3861	21	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
-3861	22	conversation	fb5ee6e2261d9144e8005cfad1f1573742741cb0bb82e17ec0dbf7937fa7dd87	Tosa sorr 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	22	conversation	fb5ee6e2261d9144e8005cfad1f1573742741cb0bb82e17ec0dbf7937fa7dd87	Tosa sorr 斯希薩里?（你是斯希薩里的敵人？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	23	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3861	24	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3861	25	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
-3861	26	conversation	4cb2bddd0853b6f348a83aae396277ba9eba6db61b2fdc7c07a65d0dd1ad005a	Sorr Thepa!  Isili yethe tosa!	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3861	26	conversation	4cb2bddd0853b6f348a83aae396277ba9eba6db61b2fdc7c07a65d0dd1ad005a	Sorr Thepa!  Isili yethe tosa!（蜥蜴人的敵人！我要殺了你！）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	27	conversation	1213b300fc4f3e603395e70e086285ea4e33a7d95d3ac0e6afba9d479ccbee9f	蜥蜴人兇狠地低吼。	draft		p10b-20 draft	
 3861	28	conversation	f330716ccbace4c964a9550e30f05c6a015ee27abc38eafe891f5351e73619c9	我不是故意惹你不快。我這就走。	draft		p10b-20 draft	
 3861	29	conversation	f4ccbcdcbfaf4e58b29f62694622793025070efe5bbe40bb7f6531b50ef18eb1	你要是想打架，我很樂意奉陪！	draft		p10b-20 draft	
-3861	30	conversation	9680aa05cda41d24df9e2c12bc8d31721a96385b5209560b9c51a2ad51358947	Tosa thit eppa Urgo.  Thit eppa 斯希薩里.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3861	30	conversation	9680aa05cda41d24df9e2c12bc8d31721a96385b5209560b9c51a2ad51358947	Tosa thit eppa Urgo.  Thit eppa 斯希薩里.（拜託你回去找穆爾戈。拜託回去找斯希薩里。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	31	conversation	745aaea450d0ef8dafaa8be2639e86496dc402f0c83886e77678592b9bdc60f0	我聽不懂。再見。	draft		p10b-20 draft	
-3861	32	conversation	e1886930ef4335fb2a3a8a6a0cec13b34f8b83c7b7bdd706ac46d07ab3343251	Tosa yethe 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	32	conversation	e1886930ef4335fb2a3a8a6a0cec13b34f8b83c7b7bdd706ac46d07ab3343251	Tosa yethe 斯希薩里?（你殺了斯希薩里？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	33	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3861	34	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3861	35	conversation	810d7c3ca6aa6411102588f8636833035138a35f32f5e7b2df96d2ab2dc4d660	我不知道。	draft		p10b-20 draft	
-3861	36	conversation	49aa7e460a8a20e5be9746e2a885dbdd4e1b5fbb64c57484298f3414e6f37a27	Tosa sstresh 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	36	conversation	49aa7e460a8a20e5be9746e2a885dbdd4e1b5fbb64c57484298f3414e6f37a27	Tosa sstresh 斯希薩里?（你幫助斯希薩里？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	37	conversation	0adff56da4c96d106adeacd15750e179fadfd961d36779f75603fa0eed5aee24	我幫了。	draft		p10b-20 draft	
 3861	38	conversation	b23f6ac2c722aefe1c321ce473c90b82dad0931b87c9b4377eba063090894ba8	抱歉。我沒有。	draft		p10b-20 draft	
 3861	39	conversation	84e0e54fe03196f962aacc718f91a192a8dddfe1344ddc64db6cf12ee84801e9	請容我告退。再見。	draft		p10b-20 draft	
-3861	40	conversation	85b0e725bf76670c08025d68907ade4d4533a49b889aab75e3a2b7ac0a1d4557	Tosa 'click sstresh 斯希薩里?  Tosa 'click yeshor'click.  Bica.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	40	conversation	85b0e725bf76670c08025d68907ade4d4533a49b889aab75e3a2b7ac0a1d4557	Tosa 'click sstresh 斯希薩里?  Tosa 'click yeshor'click.  Bica.（你不幫斯希薩里？你不是朋友。再會。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	41	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica。	draft		p10b-20 draft	
 3861	42	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
-3861	43	conversation	48e3b360d20aa338e3708b051d669bce1517ea2ced777fbd1b8ba0625fefb468	Bica, yeshor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	43	conversation	48e3b360d20aa338e3708b051d669bce1517ea2ced777fbd1b8ba0625fefb468	Bica, yeshor'click.（你好，朋友。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	44	conversation	85e8c528c93a6876e9219e3ffb1e4b5965e709f244f6ae44e60b905ce781728a	Bica，朋友。	draft		p10b-20 draft	
 3861	45	conversation	d3dc3b8f8ac89e7dd2bb2377de335b072988d0e7f7de987ce47729a1dc30fdfe	Bica。我得走了。	draft		p10b-20 draft	
-3861	46	conversation	35d68467aa3286331adba761b02341213341aee89896ffc6ce778716769a4ab6	Tosa thit sstresh?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	46	conversation	35d68467aa3286331adba761b02341213341aee89896ffc6ce778716769a4ab6	Tosa thit sstresh?（你能幫個忙嗎？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	47	conversation	0648a1cf40426482603af9aaaf6c3a195145567da95963e835db6d32349268c4	是。你想交易嗎？	draft		p10b-20 draft	
 3861	48	conversation	6ac8a8e99a8a924ab34750d1299305f51ac954339ff41c0f46fc953fdc3baabf	不。Bica，我的朋友。	draft		p10b-20 draft	
-3861	49	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3861	49	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?（交易？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	50	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3861	51	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3861	52	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
@@ -6599,16 +6599,16 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3861	54	conversation	1ed33b3a7d1da6b4d57aa5751e098b9407fd8d9ed65b6e141569221c4b477ee1	我得考慮一下這個出價。	draft		p10b-20 draft	
 3861	55	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
 3861	56	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
-3861	57	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3861	57	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.（是。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	58	conversation	ac324dcd5dde7dfae18a74b36ce4ba5f980bc678c6e90ba2147c2c44c5c47c47	'Click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
-3861	59	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
-3861	60	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
-3861	61	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
-3861	62	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	59	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.（不好。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3861	60	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.（不，不。再會。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3861	61	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?（你想硬搶？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3861	62	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?（不好？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3861	63	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3861	64	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
-3861	65	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
-3861	66	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3861	65	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.（是，可是不好。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3861	66	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!（不要殺！）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3862	1	conversation	2b0427860cbcdb7100027cc34a9750efca287e5f6c39edcdea3d1ac5ea0e54e9	你好，@GS8。什麼風把你吹來的？	draft		p11-1 draft	dynamic-template
 3862	2	conversation	1f76f4ca7c4e9515fcdb70ad9c5ddf693a7bea066a7c93d92411415b6394efc9	啊，你一定就是我聽說過的那位@GS8。有什麼能為你效勞的？	draft		p11-1 draft	dynamic-template
 3862	3	conversation	5689e95272faa25d96de2c0cbc4df4eb48a91e4f75e28042e17c0aeff00d3765	我在找一個被綁架的女孩。	draft		p10b-21 draft	
@@ -6655,55 +6655,55 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3862	44	conversation	1271650b6642d687b34e0deac85d81227e78ec65cecfb1345ec345f5b45d3afe	不，你誤會我的意思了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
 3862	45	conversation	c2b82f4132914c1cc57cac6604351e5a2dd445db9eb2f6b41e375e356424a22f	既然你堅持，就拿去吧。	draft		p10b-21 draft	
 3862	46	conversation	9add31c433beebb81a3945bb87f0fca9f05d88df58f35125e05e534066761063	不！你休想拿走！	draft		p10b-21 draft	
-3864	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	1	conversation	938cd4ee09eb47255b7dac2cc3035adef437ba2cf1df6cbd85a88127ec4650f2	Bica, sor'click.（你好，陌生人。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	2	conversation	ab041c218cb0a6d3a5e38217849c0262eed6da2b1c34ae8f2421beab5b7f5d43	也向你 Bica。	draft		p10b-20 draft	
 3864	3	conversation	fc3e13cccee30f1f06ee92bd0ea637796978cfba24630720dbec459c3e98a4b1	你好，蜥蜴人。	draft		p10b-20 draft	
 3864	4	conversation	a4949e2c96de26681c9519749e57bfb362bbac2a8f40c89b24c35d1de111336d	什麼？	draft		p10b-20 draft	
-3864	5	conversation	4455feed7832de381a20aace07d050fae0e2c1e12a3e36db76260f19eb846da0	Tosa yeshor'click Thepa?	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3864	5	conversation	4455feed7832de381a20aace07d050fae0e2c1e12a3e36db76260f19eb846da0	Tosa yeshor'click Thepa?（你是蜥蜴人的朋友嗎？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	6	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3864	7	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3864	8	conversation	a4949e2c96de26681c9519749e57bfb362bbac2a8f40c89b24c35d1de111336d	什麼？	draft		p10b-20 draft	
-3864	9	conversation	4e83672faa38867cdcdad4fda57e81d44f0d5296bea3536638bf668108c933ac	Tosa 'click yeshor'click.  Tosa sorr?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	9	conversation	4e83672faa38867cdcdad4fda57e81d44f0d5296bea3536638bf668108c933ac	Tosa 'click yeshor'click.  Tosa sorr?（你不是朋友。你是敵人？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	10	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3864	11	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3864	12	conversation	6646f562f04c399e10fe13b1e33db516e4e80f7159035a18753a7826faa5abe3	也許。	draft		p10b-20 draft	
 3864	13	conversation	55c3e5daec20a64dcc70fbed694d58b7b529e567f03b0c43f0d6ac23630f7c4e	啥？	draft		p10b-20 draft	
-3864	14	conversation	124ca802280399ea9296854a834b89a23bc5ad92f29051c277215c00dd15efed	Tosa yeshor'click 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	14	conversation	124ca802280399ea9296854a834b89a23bc5ad92f29051c277215c00dd15efed	Tosa yeshor'click 斯希薩里?（你是斯希薩里的朋友嗎？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	15	conversation	8156126566fd28e889421018ecd605d618dc1d7be3c66fd9c305224954afc3e1	我想是吧。	draft		p10b-20 draft	
 3864	16	conversation	cbcd746266165c6cf841b1d213219203535426bf8dd880ce7245dadfb3fca708	不，我不是。	draft		p10b-20 draft	
 3864	17	conversation	593320ee19156652a5903a4e59a84c855b8e9f77b4dbe82150092816e6e1c6b1	那是誰？	draft		p10b-20 draft	
-3864	18	conversation	bacd58feaae2dff7f7d455b9a786dfe7cfb023b5c39431b0453d36f6a9ea86dd	Isili yeshor'click 斯希薩里!	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）	
+3864	18	conversation	bacd58feaae2dff7f7d455b9a786dfe7cfb023b5c39431b0453d36f6a9ea86dd	Isili yeshor'click 斯希薩里!（我是斯希薩里的朋友！）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	19	conversation	5a5ef3948b01f05016712a647f960153c67682f269851e2bef9cf6a1270da852	很好！你想以物易物嗎？	draft		p10b-20 draft	
 3864	20	conversation	aa481817a8501d247614663c507e28bbab0618a53afce212e89633bfb1f1ded7	那很好。請容我告退。	draft		p10b-20 draft	
 3864	21	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
-3864	22	conversation	fb5ee6e2261d9144e8005cfad1f1573742741cb0bb82e17ec0dbf7937fa7dd87	Tosa sorr 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	22	conversation	fb5ee6e2261d9144e8005cfad1f1573742741cb0bb82e17ec0dbf7937fa7dd87	Tosa sorr 斯希薩里?（你是斯希薩里的敵人？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	23	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3864	24	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3864	25	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
-3864	26	conversation	4cb2bddd0853b6f348a83aae396277ba9eba6db61b2fdc7c07a65d0dd1ad005a	Sorr Thepa!  Isili yethe tosa!	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）	
+3864	26	conversation	4cb2bddd0853b6f348a83aae396277ba9eba6db61b2fdc7c07a65d0dd1ad005a	Sorr Thepa!  Isili yethe tosa!（蜥蜴人的敵人！我要殺了你！）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Isili; authority-ok:Thepa（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	27	conversation	1213b300fc4f3e603395e70e086285ea4e33a7d95d3ac0e6afba9d479ccbee9f	蜥蜴人兇狠地低吼。	draft		p10b-20 draft	
 3864	28	conversation	f330716ccbace4c964a9550e30f05c6a015ee27abc38eafe891f5351e73619c9	我不是故意惹你不快。我這就走。	draft		p10b-20 draft	
 3864	29	conversation	f4ccbcdcbfaf4e58b29f62694622793025070efe5bbe40bb7f6531b50ef18eb1	你要是想打架，我很樂意奉陪！	draft		p10b-20 draft	
-3864	30	conversation	9680aa05cda41d24df9e2c12bc8d31721a96385b5209560b9c51a2ad51358947	Tosa thit eppa Urgo.  Thit eppa 斯希薩里.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）	
+3864	30	conversation	9680aa05cda41d24df9e2c12bc8d31721a96385b5209560b9c51a2ad51358947	Tosa thit eppa Urgo.  Thit eppa 斯希薩里.（拜託你回去找穆爾戈。拜託回去找斯希薩里。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Urgo（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	31	conversation	745aaea450d0ef8dafaa8be2639e86496dc402f0c83886e77678592b9bdc60f0	我聽不懂。再見。	draft		p10b-20 draft	
-3864	32	conversation	e1886930ef4335fb2a3a8a6a0cec13b34f8b83c7b7bdd706ac46d07ab3343251	Tosa yethe 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	32	conversation	e1886930ef4335fb2a3a8a6a0cec13b34f8b83c7b7bdd706ac46d07ab3343251	Tosa yethe 斯希薩里?（你殺了斯希薩里？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	33	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3864	34	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3864	35	conversation	810d7c3ca6aa6411102588f8636833035138a35f32f5e7b2df96d2ab2dc4d660	我不知道。	draft		p10b-20 draft	
-3864	36	conversation	49aa7e460a8a20e5be9746e2a885dbdd4e1b5fbb64c57484298f3414e6f37a27	Tosa sstresh 斯希薩里?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	36	conversation	49aa7e460a8a20e5be9746e2a885dbdd4e1b5fbb64c57484298f3414e6f37a27	Tosa sstresh 斯希薩里?（你幫助斯希薩里？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	37	conversation	0adff56da4c96d106adeacd15750e179fadfd961d36779f75603fa0eed5aee24	我幫了。	draft		p10b-20 draft	
 3864	38	conversation	b23f6ac2c722aefe1c321ce473c90b82dad0931b87c9b4377eba063090894ba8	抱歉。我沒有。	draft		p10b-20 draft	
 3864	39	conversation	84e0e54fe03196f962aacc718f91a192a8dddfe1344ddc64db6cf12ee84801e9	請容我告退。再見。	draft		p10b-20 draft	
-3864	40	conversation	85b0e725bf76670c08025d68907ade4d4533a49b889aab75e3a2b7ac0a1d4557	Tosa 'click sstresh 斯希薩里?  Tosa 'click yeshor'click.  Bica.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	40	conversation	85b0e725bf76670c08025d68907ade4d4533a49b889aab75e3a2b7ac0a1d4557	Tosa 'click sstresh 斯希薩里?  Tosa 'click yeshor'click.  Bica.（你不幫斯希薩里？你不是朋友。再會。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	41	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica。	draft		p10b-20 draft	
 3864	42	conversation	2b687db6298b629d3bcb482f16aa774a55eb5ae768407b8fba9982387b6c6f81	再見。	draft		p10b-20 draft	
-3864	43	conversation	48e3b360d20aa338e3708b051d669bce1517ea2ced777fbd1b8ba0625fefb468	Bica, yeshor'click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	43	conversation	48e3b360d20aa338e3708b051d669bce1517ea2ced777fbd1b8ba0625fefb468	Bica, yeshor'click.（你好，朋友。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	44	conversation	85e8c528c93a6876e9219e3ffb1e4b5965e709f244f6ae44e60b905ce781728a	Bica，朋友。	draft		p10b-20 draft	
 3864	45	conversation	d3dc3b8f8ac89e7dd2bb2377de335b072988d0e7f7de987ce47729a1dc30fdfe	Bica。我得走了。	draft		p10b-20 draft	
-3864	46	conversation	35d68467aa3286331adba761b02341213341aee89896ffc6ce778716769a4ab6	Tosa thit sstresh?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	46	conversation	35d68467aa3286331adba761b02341213341aee89896ffc6ce778716769a4ab6	Tosa thit sstresh?（你能幫個忙嗎？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	47	conversation	0648a1cf40426482603af9aaaf6c3a195145567da95963e835db6d32349268c4	是。你想交易嗎？	draft		p10b-20 draft	
 3864	48	conversation	6ac8a8e99a8a924ab34750d1299305f51ac954339ff41c0f46fc953fdc3baabf	不。Bica，我的朋友。	draft		p10b-20 draft	
-3864	49	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3864	49	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?（交易？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	50	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3864	51	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
 3864	52	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
@@ -6711,16 +6711,16 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3864	54	conversation	1ed33b3a7d1da6b4d57aa5751e098b9407fd8d9ed65b6e141569221c4b477ee1	我得考慮一下這個出價。	draft		p10b-20 draft	
 3864	55	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
 3864	56	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-20 draft; 交易用語沿用 3672:16-30	
-3864	57	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3864	57	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.（是。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	58	conversation	ac324dcd5dde7dfae18a74b36ce4ba5f980bc678c6e90ba2147c2c44c5c47c47	'Click.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
-3864	59	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
-3864	60	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.	draft		p10b-20 draft; 蜥蜴人語，保留原文	
-3864	61	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
-3864	62	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	59	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.（不好。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3864	60	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.（不，不。再會。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3864	61	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?（你想硬搶？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3864	62	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?（不好？）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3864	63	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-20 draft	
 3864	64	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-20 draft	
-3864	65	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
-3864	66	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-20 draft; 蜥蜴人語，保留原文	
+3864	65	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.（是，可是不好。）	draft		p10b-20 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3864	66	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!（不要殺！）	draft		p10b-20 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3865	1	conversation	ed577f55ca3d4bb2b21ed76e8b403923990071877f1c8f6b28fabf96e59d8fd1	陌生人，你好。	draft		p10b-21 draft	
 3865	2	conversation	45e56960ff25163a1259fa3443de49597b546f79fb8d6db62b5b75e26515bd56	朋友，你好！	draft		p10b-21 draft	
 3865	3	conversation	8ef1cd61b43b093083a14cc8ec51fdb920b9adc476e7bf4dffbca5637b8c2329	Bica。	draft		p10b-21 draft	
@@ -6748,7 +6748,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3865	29	conversation	82bdfaca6097d982db3a625e24bc48653784594015032908e5ad3f9b179aa687	你說蜥蜴人的語言。非常好。很多蜥蜴人會當你的朋友！	draft		p10b-21 draft	
 3865	30	conversation	9baa436ab278b84d11dc3ee1786c824e9f6dc589f1afae091d5063c8d4eb2ebf	謝謝你。我盡力而為。	draft		p10b-21 draft	
 3865	31	conversation	485295171454be8e1f040ef8afa2d13f977a16368ff0ff76bff0d9cf3bda6b97	謝謝你。我現在得走了。	draft		p10b-21 draft	
-3865	32	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?	draft		p10b-21 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）	
+3865	32	conversation	929044fe44c1f6cd0ba399bf2bf7938a580b947609173f8bc31f9d01a402e62e	Sel'a?（交易？）	draft		p10b-21 draft; 蜥蜴人語，保留原文; authority-ok:Sel'a（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3865	33	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-21 draft	
 3865	34	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-21 draft	
 3865	35	conversation	7fff4958ce16ba9bde07ec5d0ad7215d903b53996ef71b68358d1d08a3647f0c	我出這個價。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
@@ -6756,16 +6756,16 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 3865	37	conversation	1ed33b3a7d1da6b4d57aa5751e098b9407fd8d9ed65b6e141569221c4b477ee1	我得考慮一下這個出價。	draft		p10b-21 draft	
 3865	38	conversation	b24b0638bfe874ae4bf7183ee810932f86675b392c56ed9a8b2637a7ddfb509b	我不想再以物易物了。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
 3865	39	conversation	52ea67359dfa70ce35169fd2493590d8371919161a7fb2e28e322863448b9a87	再會。	draft		p10b-21 draft; 交易用語沿用 3672:16-30	
-3865	40	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.	draft		p10b-21 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
+3865	40	conversation	5195f863ce6c3f943c7287d0e4f10d69eed6949e944088f411ba19e527139dcc	Sseth.（是。）	draft		p10b-21 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3865	41	conversation	ac324dcd5dde7dfae18a74b36ce4ba5f980bc678c6e90ba2147c2c44c5c47c47	'Click.	draft		p10b-21 draft; 蜥蜴人語，保留原文	
-3865	42	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.	draft		p10b-21 draft; 蜥蜴人語，保留原文	
-3865	43	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.	draft		p10b-21 draft; 蜥蜴人語，保留原文	
-3865	44	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?	draft		p10b-21 draft; 蜥蜴人語，保留原文	
-3865	45	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?	draft		p10b-21 draft; 蜥蜴人語，保留原文	
+3865	42	conversation	e6d133a55e6fbb81217bba39d6d2651330a0a4fd0a1fc7ed49da79c4785104de	Sorr.（不好。）	draft		p10b-21 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3865	43	conversation	e374f5648ab3db4b84d2eff83b4de935cc869054347ba5ea3a90fb9df2e17e6b	'Click, 'click.  Bica.（不，不。再會。）	draft		p10b-21 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3865	44	conversation	5fb89af87c18fedeacdb985daa9132d2e8f01fb1979cbc713ccab155af91897c	Tosa ssil?（你想硬搶？）	draft		p10b-21 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3865	45	conversation	389eaed3972836b6e071d71fef463e24188711b60e53c4d793772bceebf66943	sorr?（不好？）	draft		p10b-21 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3865	46	conversation	5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da	是。	draft		p10b-21 draft	
 3865	47	conversation	38178a20b470cfd18299fb1593dd4ba706f1a83321dac051d01086efd8b7a96f	不是。	draft		p10b-21 draft	
-3865	48	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.	draft		p10b-21 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）	
-3865	49	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!	draft		p10b-21 draft; 蜥蜴人語，保留原文	
+3865	48	conversation	0b54af5b02241fb6655cf473cef10b8c271bab890c2646076f18d235f28bbde6	Sseth, sorr.（是，可是不好。）	draft		p10b-21 draft; 蜥蜴人語，保留原文; authority-ok:Sseth（蜥蜴人語詞彙，保留原文）; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
+3865	49	conversation	b236b4b130e7f9ba922e7336f40e3560c4d9b6fd23f1ab46a2be292776131982	'DCclick yethe!（不要殺！）	draft		p10b-21 draft; 蜥蜴人語，保留原文; 2026-10-28 依穆爾戈字典加註中文意思（使用者同意）	
 3866	1	conversation	779a36d52ba9f11823af8a8a5d5a32cdc736b2c4c3829dfa96fadcb9bf594f50	喲，又一個同伴被深淵抓來了！你犯了什麼罪，說來聽聽？	draft		p10b-21 draft	
 3866	2	conversation	a9858cd1d94507f04c316fa381376d6bac3eb5799bed58b2fc713816a9a8e39e	我沒有犯罪。	draft		p10b-21 draft	
 3866	3	conversation	74109fee1d82b789b52bdd00a04cdf6f2eb53ac44a59cf5e804ccfd91c4fe4b2	我一直住在這裡，是個安分的漁夫。	draft		p10b-21 draft	

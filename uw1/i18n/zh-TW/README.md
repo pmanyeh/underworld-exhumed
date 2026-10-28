@@ -8,7 +8,7 @@
 | `master.tsv` | STRINGS.PAK 的靜態字串，以 resolved `(block,index)` 識別 |
 | `literals.tsv` | 程式碼裡的 hard-coded 文字（Phase 12 才接 runtime；目前只保存） |
 | `proper-names.tsv` | 對話與書本裡加註英文的專有名詞（人名、地名、組織），由 `tools/i18n/proper_names.py` 從 authority 產生，不要手改；改了 authority 或譯文後重新產生（`test_name_gloss.py` 會檢查是否最新） |
-| [authority/](authority/README.md) | 980 個術語的權威選詞稿，已依使用者指南整理；尚未套入正式遊戲譯文 |
+| [authority/](authority/README.md) | 979 個術語的權威選詞稿，已依使用者指南整理；尚未套入正式遊戲譯文 |
 
 `master.tsv` 只收**有翻譯工作的列**（有譯文、備註、非預設狀態或人工 flags）。
 沒出現的 key 就是尚未翻譯。要找下一批要翻的字串，用工具匯出含英文的工作表（只留本機）：
