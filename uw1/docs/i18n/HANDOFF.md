@@ -26,7 +26,7 @@
 | 子模組 checkout | 本機為固定提交的 detached HEAD，工作區乾淨；遠端開發分支 `feature/presentation-overlay` |
 | 階段／tag | P13 進行中；最後階段 tag 為 `zh-tw-native-p12`（`0169ca1`），尚未建立 P13 tag |
 | 版本號 | 0.5 是攜帶測試包版本號，不代表 P13 驗收完成 |
-| 本機 Windows 測試版 | `UW1-zhTW-playtest/uw1port.exe` 已包含新按鍵與 2026-10-28 三項功能（預設關） |
+| 本機 Windows 測試版 | `UW1-zhTW-playtest/uw1port.exe` 已包含新按鍵、2026-10-28 三項功能（預設關）與按鍵說明頁；SHA-256 `9bda58a8…`，前一版備份 `uw1/build/i18n/key-help/previous-playtest-uw1port.exe`，home 100 檔雜湊不變 |
 | 已交付 Mac 0.5 | 2026-10-27 使用者回報實機測試 OK；現有 Mac ZIP 不含新按鍵與三項新功能 |
 | ZIP／私人移機包 | 本次未重新打包或上傳私人資源 |
 

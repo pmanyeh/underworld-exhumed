@@ -62,4 +62,8 @@ F7 切換背包／屬性面板（`pull_chain`）；F8 施放架上的符文；F9
 - 16 個 session × 英文／中文／中文 HD／中文 HD 自訂參數：存檔原始雜湊一致，有 DOS golden 的亦吻合；未改寫 golden。
 - repocheck、`git diff --check`（Git for Windows，兩個 repo）通過。未執行 UBSan 全套與 DOS 重編譯。
 
-本機工具 `.poc-tools/key-help-check.py`（單元測試、四模式回歸）；產物 `uw1/build/i18n/key-help/`。
+本機測試版只換 EXE：新 SHA-256 `9bda58a89be25292a2c682b0ad0549628aee987be9230e870d0b666784d563d1`，
+舊檔備份 `uw1/build/i18n/key-help/previous-playtest-uw1port.exe`；搭配原有 DLL、僅系統 PATH 的重播通過；
+玩家 `home` 100 個檔案更新前後雜湊一致。
+
+本機工具 `.poc-tools/key-help-check.py`、`key-help-deliver.py`（單元測試、四模式回歸）；產物 `uw1/build/i18n/key-help/`。
