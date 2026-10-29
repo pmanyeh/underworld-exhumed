@@ -1,8 +1,8 @@
 /* The settings screen's Keys tab (Exhume's ui/settings.c, SET_TAB_HELP; Shift+F1 opens it): the
    keys and the mouse as this run has them. The key bindings are made once, in init_player
    (game/PLAYER.C), from the enhancements the run started with, so the lines follow ENHANCED:
-   modern-keys' keys in place of the original movement keys, e-takes' E, mouse-look, the wheel and
-   the rune keys only when on. In Chinese when the screen is (settings_text.c). Not compat.h: its
+   modern-keys' keys in place of the original movement keys, e-takes' E, mouse-look, the wheel,
+   easy-erase's put-down and the rune keys only when on. In Chinese when the screen is (settings_text.c). Not compat.h: its
    pack(1) would lay struct settings_line out other than settings.c does. */
 #include "portgame.h"
 #include "sys/enhance.h"
@@ -11,7 +11,7 @@
 #include "ui/settings.h"
 
 /* when a line is shown */
-enum { ALWAYS, CLASSIC, MODERN, E_USE, E_TAKE, LOOK, INVERT, WHEEL, RUNES, LOCK, RECORD };
+enum { ALWAYS, CLASSIC, MODERN, E_USE, E_TAKE, LOOK, INVERT, WHEEL, ERASE, RUNES, LOCK, RECORD };
 
 struct entry {
     int when, heading;
@@ -85,6 +85,7 @@ static const struct entry entries[] = {
     { LOOK, 0, "", "and a click acts at the crosshair", NULL, NULL },
     { INVERT, 0, "", "(up and down inverted)", NULL, "（上下反轉）" },
     { WHEEL, 0, "Wheel", "Skills, open bags, past [MORE]", "滾輪", "捲動技能、開著的袋子、跳過〔更多〕" },
+    { ERASE, 0, "Right button, Esc", "Put the map's eraser down", "右鍵、Esc", "放下地圖的橡皮擦" },
 
     { RUNES, 1, NULL, "Rune keys", NULL, "符文快捷鍵" },
     { RUNES, 0, "Ctrl+Alt+letter", "Put a rune you have on the shelf", "Ctrl＋Alt＋字母", "選一顆你有的符文" },
@@ -116,6 +117,7 @@ static int shown(int when)
     case LOOK:    return ENHANCED(ENH_MOUSE_LOOK) != 0;
     case INVERT:  return ENHANCED(ENH_MOUSE_LOOK) && ENHANCED(ENH_INVERT_LOOK);
     case WHEEL:   return ENHANCED(ENH_MOUSE_WHEEL) != 0;
+    case ERASE:   return ENHANCED(ENH_EASY_ERASE) != 0;
     case RUNES:   return ENHANCED(ENH_RUNE_KEYS) != 0;
     case LOCK:    return mouse_lock;
     case RECORD:  return recording;

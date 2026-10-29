@@ -442,6 +442,57 @@ struct ATM far * far DetermineBetterHit(struct ATM far *a, struct ATM far *b, in
     return a;
 }
 
+#ifndef __TURBOC__
+/* Port only: --enhance easy-erase. The eraser takes the note whose box holds the pointer's
+   middle, and a miss puts it down, so the next click starts a note. With this on a click a
+   few pixels off a note (EASE_X either side, EASE_UP above, EASE_DOWN below) takes the
+   nearest, and a miss keeps the eraser; the right button, Escape or a miss on the side
+   panel puts it down. Gives back a point in the chosen note's box for the erasing below,
+   which is the original's, or one in no note's when put down. */
+#define EASE_X 3
+#define EASE_UP 6
+#define EASE_DOWN 3
+static void port_erase_pick(int16 *mx, int16 *my)
+{
+    struct ATM far *best;
+    struct ATM far *note;
+    char buf[50];
+    int c;
+    int i;
+    int w;
+
+    for (;;) {
+        while ((c = mouse_get_input()) != 1)
+            if (c == 2 || c == KEY_ESC)
+                goto put_down;
+        mouse_getxy(mx, my);
+        best = 0;
+        for (i = 0; i < num_words; i++) {
+            note = &ATM_Strings[i];
+            if (note->x == -1)
+                continue;
+            NOTE_COPY(buf, note->text);
+            w = port_map_note_width(level, note, string_width(buf));
+            if (note->x - EASE_X <= *mx && note->x + w + EASE_X >= *mx &&
+                note->y - 5 - EASE_DOWN <= *my && note->y + EASE_UP >= *my)
+                best = DetermineBetterHit(best, note, *mx, *my);
+        }
+        if (best) {
+            NOTE_COPY(buf, best->text);
+            *mx = best->x + port_map_note_width(level, best, string_width(buf)) / 2;
+            *my = best->y - 2;
+            return;
+        }
+        if (*mx > 0x104 + 0x16)
+            break;
+        mouse_release(1);
+    }
+put_down:
+    mouse_release(1);
+    *mx = *my = -100;
+}
+#endif
+
 /* The map screen's mouse handler (see the file comment). Notes are typed in capitals in
    the small font, up to 46 characters and the screen edge, ended by Enter, Escape or a
    click. The level arrows move between levels 1 and 0x63 (ChangeAutoMapLevel loads
@@ -479,9 +530,17 @@ void far ManageDungeonMap(void)
         mouse_hide();
         force_mouse_cursor(ICON_CURSORS + 0xD);
         mouse_show();
+#ifndef __TURBOC__
+        if (ENHANCED(ENH_EASY_ERASE))
+            port_erase_pick(&mx, &my);
+        else {
+#endif
         while (mouse_get_input() != 1)
             ;
         mouse_getxy(&mx, &my);
+#ifndef __TURBOC__
+        }
+#endif
         mouse_constrain(0x16, 7, 0x13F, 0xC7);
         unforce_mouse_cursor(1);
     } else if (mx > 0x113 && mx < 0x140 && my > 0xB7 && my < 0xC7)

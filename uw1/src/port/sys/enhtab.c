@@ -33,4 +33,5 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "no-wear", "Equipped weapons, shields and armour do not lose condition through combat use", ENH_GAMEPLAY, NULL, NULL },
     { "split-all", "Move how many? starts at the whole stack", ENH_GAMEPLAY, NULL, NULL },
     { "unknown-topic", "A word you type that a person does not know gets an answer: theirs, or I don't know what that is...", ENH_GAMEPLAY, NULL, NULL },
+    { "easy-erase", "The map's eraser takes a note it is near and stays in hand after a miss; right button or Esc puts it down", ENH_GAMEPLAY, NULL, NULL },
 };
