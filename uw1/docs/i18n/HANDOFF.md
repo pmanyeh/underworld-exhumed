@@ -1,5 +1,33 @@
 # 開發交接：UW1 繁中整合版／新對話入口（2026-10-31）
 
+## 0. 下一個 Session：UW2 中文化開工（2026-10-31 使用者決定）
+
+UW1 已告一段落（0.6、tag `zh-tw-native-p13`）。新 Session 直接開始 UW2；**使用者要求只要還有 token 就持續推進，不逐步等確認**，
+遇到真正需要使用者決定的事（用詞、會改玩法的取捨、發佈）才停下來問。
+
+已有的資源：
+
+- UW2 移植版：`uw2/`（主 repo），自己的建置工具 `uw2/tools/portbuild.py`（`uw2/docs/BUILDING.md`），CI `uw2-port` 通過；本機有舊的 `uw2/build/port/uw2port.exe`，先重新編譯確認。
+  `uw2/src/port/` 目前**沒有任何 i18n／HD 文字程式碼**。
+- UW2 遊戲資料：工作區 `Game Resources/Ultima Underworld 2/UW2/`（GOG `game.gog` 解出，Git 外；`UW2.EXE` SHA-256 `bf233abb…`）。
+- UW2 譯文：工作區 `i18n/uw2/zh-TW/master.tsv`（同伴提供，9,547 筆，格式同 UW1 主表，全部 draft，Git 外）與 `GLOSSARY.md`；
+  已依 UW1 權威資料修正 202 列、比對字改回英文 4 列，雜湊與遊戲資料 9,547 列全部相符（§4.2）。CNV.ARK 為 LZSS 壓縮。
+- 規劃：工作區主計畫 v2.5 的「Phase 14 — UW2 Localization Port」。原則：UTF-8、locale 載入、CJK 排版、FreeType／字形快取、
+  catalog 工具、驗證器、HD 文字／游標呈現等**共用**，不可把 UW1 的 i18n 整套複製一份；UW2 只加遊戲特有的接點
+  （字串／區塊對應、對話掛鉤、UI 位置、動態句型、名稱差異、UW2 測試）。**先做 UW2 垂直切片，再大量套譯文。**
+
+建議起手順序（新 Session 依實際程式再調整）：
+
+1. 確認 Git 乾淨、UW2 本機可編譯與重播既有 session（建立 UW2 的 env／路徑，同 §7 的 UW1 作法）。
+2. 盤點 UW1 `uw1/src/port/i18n/`、`presentation/`（hd_font、scroll_text、hd_label…）與 `tools/i18n/` 哪些已是遊戲無關、哪些綁 UW1，
+   規劃抽到共用位置（Exhume runtime 或共用目錄），UW1 回歸（16 session × 四模式）必須保持一致。
+3. UW2 垂直切片：catalog 由 UW2 主表建置 → 訊息欄／對話一段中文 → HD 字型顯示；四模式存檔與英文模式 DOS golden 不變。
+4. 之後依 UW1 P8～P12 的順序擴大：對話、書本卷軸、物品、介面標籤、過場字幕、中文輸入、存檔名稱等，每批都要建置、測試、提交。
+5. UW2 強化功能（UW1 的 F11 項目）屬另議，先不移植，除非使用者要求。
+
+UW1 之後只依回報修正；UW1 的規則（§9）同樣適用於 UW2（原版 `.C/.H` 保持 ASCII、掛鉤放 `#ifndef __TURBOC__`、
+catalog 與遊戲檔不上傳、玩家資料不覆寫、強化功能預設關）。
+
 ## 1. 新對話接手順序
 
 1. 一律用繁體中文、台灣用語回覆。工作區為 `D:\git\Ultima Underworld`，主 repo 在其下的 `underworld-exhumed`。
