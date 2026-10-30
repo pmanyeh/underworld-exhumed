@@ -44,6 +44,9 @@
 #include "player.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "presentation/hd_cursor.h"
+#endif
 
 /* Initialised data, DS:268..291, in definition order. FM Towns keeps the statics after
    _current_buttongroup (+4 onwards) and the four publics in its small-data group, in this
@@ -141,6 +144,9 @@ int far init_mouse(void)
 unsigned char far _actual_mhide(void)
 {
     if (mouse_saved) {
+#ifndef __TURBOC__
+        hd_cursor_hide(); /* presentation only; the original save-under is still restored */
+#endif
         set_the_color(0x101);
         rectangle(mouse_x - hotspot_x, mouse_y + hotspot_y + 1,
                   mouse_x - hotspot_x + curs_w - 1, mouse_y + hotspot_y - cur_h + 1);
@@ -825,11 +831,36 @@ void far MousReSave3d(void)
     mouse_saved = 1;
 }
 
+#ifndef __TURBOC__
+/* Phase 14, as UW1's: with the HD scroll the cursor's picture is drawn over the HD text by
+   the presentation layer instead of into video memory. The original decoder and EMS lookup
+   stay on the game thread and the pixels are copied before its buffer changes; the cursor's
+   selection, input, nesting and save-under all remain the game's. */
+static int hd_mouse_picture(int path)
+{
+    int slot;
+    void far *raw;
+    const unsigned char *pixels;
+    hd_cursor_track_box(mouse_x, 199 - mouse_y, hotspot_x, hotspot_y, curs_w, cur_h);
+    if (!hd_cursor_enabled()) return 0;
+    slot = grs_which1(m_cursor_pic);
+    if (slot >= first_vram) { hd_cursor_hide(); return 0; }   /* unsupported: the game's raster */
+    raw = seg009_7(slot);
+    pixels = grs_unpack(raw);
+    hd_cursor_publish(m_cursor_pic, mouse_x, 199 - mouse_y, hotspot_x, hotspot_y,
+                      curs_w, cur_h, inplist ? inplist->mode : 0, path, pixels);
+    return 1;
+}
+#endif
+
 void far drawMouse(void)
 {
     MousReSave();
     ShowClip = Transparency = 1;
-    pic_to_screen(m_cursor_pic, mouse_x - hotspot_x, mouse_y + hotspot_y, cur_h, curs_w);
+#ifndef __TURBOC__
+    if (!hd_mouse_picture(0))
+#endif
+        pic_to_screen(m_cursor_pic, mouse_x - hotspot_x, mouse_y + hotspot_y, cur_h, curs_w);
     ShowClip = Transparency = 0;
     set_the_color(0);
 }
@@ -842,7 +873,10 @@ void far draw3dMouse(void)
     x = mouse_x - hotspot_x - m3dx;
     y = mouse_y + hotspot_y - m3dy + m3dh - 1;
     ShowClip = Transparency = 1;
-    pic_to_fbuf(m_cursor_pic, x, y);
+#ifndef __TURBOC__
+    if (!hd_mouse_picture(1))
+#endif
+        pic_to_fbuf(m_cursor_pic, x, y);
     ShowClip = Transparency = 0;
 }
 

@@ -6,11 +6,13 @@
 #include "i18n/cp437.h"
 #include "i18n/localization.h"
 #include "i18n/utf8.h"
+#include "presentation/hd_cursor.h"
 #include "presentation/hd_font.h"
 #include "presentation/scroll_overlay.h"
 #include "presentation/scroll_text.h"
 #include "presentation/text_style.h"
 #include "port.h"
+#include "ui/settings.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -72,6 +74,8 @@ int port_text_setup(const char *home)
         return -1;
     }
     scroll_text_enable(hd_scroll);
+    /* the game's cursor over the HD text, not under it (MOUSE.C), as UW1 has it with the HD scroll */
+    hd_cursor_enable(hd_scroll);
     if (!hd_scroll) return 0;
     text_style_program("uw2port");
     snprintf(config, sizeof config, "%s/" PORT_CONFIG_FILE, home);
@@ -107,19 +111,25 @@ int port_text_setup(const char *home)
 /* Presentation thread only: the text and the palette are latched with the scan-out, so the
    overlay never reads the game's state. */
 static ScrollFrame frame_text;
+static HdCursor frame_cursor;
 static uint8_t frame_palette[768];
 
 static void text_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])
 {
     vga_scanout(pixels, w, h, rgb6);
+    hd_cursor_read(&frame_cursor);
     scroll_text_read(&frame_text);
     memcpy(frame_palette, rgb6, sizeof frame_palette);
 }
 
 static int text_draw(const PlatOverlay *frame, void *data)
 {
+    int drawn;
     (void)data;
-    return scroll_overlay_draw_styled(draw_font, draw_style, frame, &frame_text, frame_palette);
+    drawn = scroll_overlay_draw_styled(draw_font, draw_style, frame, &frame_text, frame_palette);
+    /* the cursor last, above the text; the settings screen has its own pointer */
+    if (!settings_open()) drawn |= hd_cursor_draw(frame, &frame_cursor, frame_palette);
+    return drawn;
 }
 
 void port_text_hooks(PlatHooks *hooks)
