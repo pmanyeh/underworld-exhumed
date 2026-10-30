@@ -20,6 +20,8 @@ void flask_text_enable(int on);         /* before threads */
 int flask_text_enabled(void);
 /* Game thread, each frame the flasks are up: the values and the game's clock (GAME_TIME). */
 void flask_text_update(int hp, int max_hp, int mana, int max_mana, int poisoned, uint32_t now);
+/* Game thread, when flask-numbers is turned off in play: nothing shown, no floats from the old values */
+void flask_text_clear(void);
 void flask_text_read(FlaskFrame *out);
 /* Presentation thread: the snapshot, while the game is still giving it; 1 when drawn. */
 struct HdFont;

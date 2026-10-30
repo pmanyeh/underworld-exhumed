@@ -56,4 +56,13 @@ void flask_text_update(int hp, int max_hp, int mana, int max_mana, int poisoned,
     lock(); published = work; unlock();
 }
 
+void flask_text_clear(void)
+{
+    known = 0;
+    work.count = 0;
+    work.active = 0;
+    work.generation++;
+    lock(); published = work; unlock();
+}
+
 void flask_text_read(FlaskFrame *out) { if (out) { lock(); *out = published; unlock(); } }

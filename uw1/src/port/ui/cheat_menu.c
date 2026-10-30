@@ -8,6 +8,8 @@
 #include "inv.h"
 #include "i18n/phrases.h"
 #include "ui/settings.h"
+#include "presentation/flask_text.h"
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdatomic.h>
@@ -153,6 +155,24 @@ static const char *toggle(int argc, char **argv, int run, int bit)
     }
     return NULL;
 }
+/* The enhancements the settings screen turns on and off in play, not at the next start: each read
+   where it acts or draws, with nothing set up from it when the run starts */
+static const int live[] = { ENH_INVERT_LOOK, ENH_FLASK_NUMBERS, ENH_AUTO_KEY, ENH_E_TAKES, ENH_DAMAGE_NUMBERS,
+                            ENH_ENEMY_HEALTH, ENH_SPLIT_ALL, ENH_UNKNOWN_TOPIC, ENH_EASY_ERASE };
+#define LIVE ((int)(sizeof live / sizeof live[0]))
+static const char *enhance(int argc, char **argv, int run)
+{
+    long v;
+    int i, bit = argc == 2 ? enhance_index(argv[0]) : -1;
+    for (i = 0; i < LIVE && live[i] != bit; i++) {}
+    if (i == LIVE || cheat_num(argv[1], 0, 1, &v)) return "an enhancement the screen sets in play, and 0 or 1";
+    if (run) {
+        if (v) enhance_on |= 1u << bit; else enhance_on &= ~(1u << bit);
+        if (bit == ENH_FLASK_NUMBERS && !v) flask_text_clear();
+        say("enhance.applied", "Setting applied.\n");
+    }
+    return NULL;
+}
 static const char *god(int n, char **a, int run) { return toggle(n, a, run, ENH_GOD_MODE); }
 static const char *map(int n, char **a, int run) { return toggle(n, a, run, ENH_FULL_MAP); }
 static const char *bright(int n, char **a, int run) { return toggle(n, a, run, ENH_BRIGHT_VIEW); }
@@ -187,7 +207,7 @@ static const struct cheat_cmd commands[] = {
     { "menu-god", "0|1", god }, { "menu-map", "0|1", map },
     { "menu-rescue", "", rescue }, { "menu-anchor", "", remember },
     { "menu-bright", "0|1", bright }, { "menu-bright-level", "0..15", brightness },
-    { "menu-no-wear", "0|1", no_wear }
+    { "menu-no-wear", "0|1", no_wear }, { "menu-enhance", "NAME 0|1", enhance }
 };
 static const struct cheat_game menu = { commands, sizeof commands / sizeof commands[0], ready };
 void port_cheat_menu_init(void) { cheat_menu_init(&menu); }
@@ -199,6 +219,23 @@ static void god_request(int on) { request(on ? "menu-god 1" : "menu-god 0"); }
 static void map_request(int on) { request(on ? "menu-map 1" : "menu-map 0"); }
 static void bright_request(int on) { request(on ? "menu-bright 1" : "menu-bright 0"); }
 static void no_wear_request(int on) { request(on ? "menu-no-wear 1" : "menu-no-wear 0"); }
+static void enhance_request(int bit, int on)
+{
+    char command[64];
+    snprintf(command, sizeof command, "menu-enhance %s %d", enhance_flag(bit)->name, on != 0);
+    request(command);
+}
+/* the screen's apply gets only the value: one for each of live[], in its order */
+static void live0(int on) { enhance_request(live[0], on); }
+static void live1(int on) { enhance_request(live[1], on); }
+static void live2(int on) { enhance_request(live[2], on); }
+static void live3(int on) { enhance_request(live[3], on); }
+static void live4(int on) { enhance_request(live[4], on); }
+static void live5(int on) { enhance_request(live[5], on); }
+static void live6(int on) { enhance_request(live[6], on); }
+static void live7(int on) { enhance_request(live[7], on); }
+static void live8(int on) { enhance_request(live[8], on); }
+static void (*const live_request[LIVE])(int) = { live0, live1, live2, live3, live4, live5, live6, live7, live8 };
 void port_cheat_brightness_request(int value)
 {
     if (value >= 0 && value <= BRIGHT_STRENGTH_MAX) atomic_store(&pending_strength, value);
@@ -217,8 +254,10 @@ void port_cheat_rescue_request(int unused) { (void)unused; request("menu-rescue"
 void port_cheat_anchor_request(int unused) { (void)unused; request("menu-anchor"); }
 void port_cheat_settings(void)
 {
+    int i;
     settings_enhancement(ENH_FULL_MAP, SET_TAB_CHEATS, map_request);
     settings_enhancement(ENH_GOD_MODE, SET_TAB_CHEATS, god_request);
     settings_enhancement(ENH_BRIGHT_VIEW, SET_TAB_CHEATS, bright_request);
     settings_enhancement(ENH_NO_WEAR, SET_TAB_CHEATS, no_wear_request);
+    for (i = 0; i < LIVE; i++) settings_enhancement(live[i], SET_TAB_ENHANCE, live_request[i]);
 }

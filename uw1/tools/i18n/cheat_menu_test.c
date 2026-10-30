@@ -55,7 +55,19 @@ void player_setup(int x,int y)
     PN.terrain=FOOT_FLOOR;
 }
 char ChangeLevel(int from,int to) { (void)from;level_changes++;PlayerLevel=to;GrSq=-1;return 1; }
-void settings_enhancement(int b,int t,void (*fn)(int)) { CHECK((b==ENH_FULL_MAP || b==ENH_GOD_MODE || b==ENH_BRIGHT_VIEW || b==ENH_NO_WEAR) && t==SET_TAB_CHEATS && fn); }
+#include "../../src/port/sys/enhtab.c"
+int enhance_index(const char *n) { int i; for(i=0;i<ENH_COUNT;i++) if(!strcmp(enhance_table[i].name,n)) return i; return -1; }
+const struct enhance_flag *enhance_flag(int i) { return i>=0 && i<ENH_COUNT ? &enhance_table[i] : NULL; }
+static int flask_clears;
+void flask_text_clear(void) { flask_clears++; }
+static uint32_t live_rows;
+static void (*live_fn[32])(int);
+void settings_enhancement(int b,int t,void (*fn)(int))
+{
+    CHECK(fn && b>=0 && b<ENH_COUNT);
+    if(t==SET_TAB_CHEATS) CHECK(b==ENH_FULL_MAP || b==ENH_GOD_MODE || b==ENH_BRIGHT_VIEW || b==ENH_NO_WEAR);
+    else { CHECK(t==SET_TAB_ENHANCE); live_rows|=1u<<b; live_fn[b]=fn; }
+}
 static int recorded;
 void rp_cheat_put(uint32_t poll,const char *s) { CHECK(poll>0 && !strncmp(s,"menu-",5)); recorded++; }
 static const struct cheat_game test_game={NULL,0,ready};
@@ -89,7 +101,8 @@ int main(int argc,char **argv)
     if(argc>2) {
         cheat_init(&test_game);port_cheat_menu_init();
         CHECK(cheat_from_recording(argv[2]) == (!strcmp(argv[1],"public") ? 0 : -1));
-        if(!strcmp(argv[1],"public")) { port_cheat_point();CHECK(ENHANCED(ENH_GOD_MODE));port_cheat_point();CHECK(placements==1);port_cheat_point();CHECK(port_bright_strength()==15); }
+        if(!strcmp(argv[1],"public")) { port_cheat_point();CHECK(ENHANCED(ENH_GOD_MODE));port_cheat_point();CHECK(placements==1);port_cheat_point();CHECK(port_bright_strength()==15);
+                                        port_cheat_point();CHECK(ENHANCED(ENH_SPLIT_ALL)); }
         else CHECK(!ENHANCED(ENH_GOD_MODE));
         printf("%s menu-only replay permission gate\n",failures?"FAIL":"PASS");return failures!=0;
     }
@@ -226,6 +239,29 @@ int main(int argc,char **argv)
     CHECK(!cheat_menu_request("menu-no-wear 1"));scrnum=2;port_cheat_point();CHECK(!ENHANCED(ENH_NO_WEAR));
     scrnum=0;port_cheat_point();CHECK(ENHANCED(ENH_NO_WEAR) && !ENHANCED(ENH_GOD_MODE));
     CHECK(!cheat_menu_request("menu-no-wear 0"));port_cheat_point();CHECK(!ENHANCED(ENH_NO_WEAR));
-    printf("%s %d cheat-menu checks: health, recovery, blocked positions, rollback, queue, full-map, brightness and RNG\n",failures?"FAIL":"PASS",checks);
+    /* Enhancements the settings screen sets in play: each row its own flag, at a safe point, recorded */
+    {
+        static const int want[] = { ENH_INVERT_LOOK, ENH_FLASK_NUMBERS, ENH_AUTO_KEY, ENH_E_TAKES, ENH_DAMAGE_NUMBERS,
+                                    ENH_ENEMY_HEALTH, ENH_SPLIT_ALL, ENH_UNKNOWN_TOPIC, ENH_EASY_ERASE };
+        uint32_t mask=0, before=enhance_on;
+        int r, clears;
+        char *bad[][2] = { {"god-mode","1"}, {"modern-keys","1"}, {"mouse-wheel","1"}, {"split-all","2"}, {"nonesuch","1"} };
+        for(i=0;i<(int)(sizeof want/sizeof want[0]);i++) mask|=1u<<want[i];
+        CHECK(live_rows==mask);
+        for(i=0;i<(int)(sizeof want/sizeof want[0]);i++) {
+            enhance_on=0;r=recorded;
+            live_fn[want[i]](1);port_cheat_point();CHECK(enhance_on==1u<<want[i] && recorded==r+1);
+            live_fn[want[i]](0);port_cheat_point();CHECK(enhance_on==0 && recorded==r+2);
+        }
+        live_fn[ENH_SPLIT_ALL](1);scrnum=2;port_cheat_point();CHECK(!ENHANCED(ENH_SPLIT_ALL));
+        scrnum=0;port_cheat_point();CHECK(ENHANCED(ENH_SPLIT_ALL));
+        live_fn[ENH_FLASK_NUMBERS](1);port_cheat_point();clears=flask_clears;
+        live_fn[ENH_FLASK_NUMBERS](0);port_cheat_point();CHECK(!ENHANCED(ENH_FLASK_NUMBERS) && flask_clears==clears+1 && ENHANCED(ENH_SPLIT_ALL));
+        for(i=0;i<(int)(sizeof bad/sizeof bad[0]);i++) CHECK(enhance(2,bad[i],0) != NULL);
+        CHECK(enhance(1,bad[0],0) != NULL);
+        { char *ok[2]={"easy-erase","1"};CHECK(enhance(2,ok,0)==NULL && !ENHANCED(ENH_EASY_ERASE)); }
+        enhance_on=before;
+    }
+    printf("%s %d cheat-menu checks: health, recovery, blocked positions, rollback, queue, full-map, brightness, live enhancements and RNG\n",failures?"FAIL":"PASS",checks);
     return failures!=0;
 }

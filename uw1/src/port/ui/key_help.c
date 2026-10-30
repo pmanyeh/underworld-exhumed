@@ -1,6 +1,7 @@
 /* The settings screen's Keys tab (Exhume's ui/settings.c, SET_TAB_HELP; Shift+F1 opens it): the
    keys and the mouse as this run has them. The key bindings are made once, in init_player
-   (game/PLAYER.C), from the enhancements the run started with, so the lines follow ENHANCED:
+   (game/PLAYER.C), from the enhancements the run started with; the lines follow ENHANCED, so
+   those the screen turns on in play (cheat_menu.c's live[]) show from then:
    modern-keys' keys in place of the original movement keys, e-takes' E, mouse-look, the wheel,
    easy-erase's put-down and the rune keys only when on. In Chinese when the screen is (settings_text.c). Not compat.h: its
    pack(1) would lay struct settings_line out other than settings.c does. */

@@ -29,7 +29,7 @@ env=dict(os.environ,ASAN_OPTIONS='halt_on_error=1:detect_leaks=0',UBSAN_OPTIONS=
 env.pop('EXHUME_TEST_CHEATS',None)
 with tempfile.TemporaryDirectory() as temp:
     subprocess.run([str(exe)],cwd=temp,env=env,check=True)
-    for name,commands in [('public',['menu-god 1','menu-rescue','menu-bright-level 15']),('private',['set hp 1']),
+    for name,commands in [('public',['menu-god 1','menu-rescue','menu-bright-level 15','menu-enhance split-all 1']),('private',['set hp 1']),
                           ('mixed',['menu-god 1','give 1']),('invalid',['menu-god 9'])]:
         data=b'UWRP\x06'+bytes(7)+b'\x09\0\0'
         for i,cmd in enumerate(commands,1):

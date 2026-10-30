@@ -1,6 +1,6 @@
 # Enhancements
 
-The ports play the original games exactly: every recorded session replays in them identically to DOS. Enhancements are changes the original games do not have. Each is off unless you turn it on (in the settings screen, F11 or Cmd+, on macOS, on its Enhancements tab, or with `--enhance`), and a session played with any of them says so in its log and in its recording.
+The ports play the original games exactly: every recorded session replays in them identically to DOS. Enhancements are changes the original games do not have. Each is off unless you turn it on (in the settings screen, F11 or Cmd+, on macOS, on its Enhancements tab, or with `--enhance`), and a session played with any of them says so in its log and in its recording. In UW1 some of them can be turned on and off in play from the settings screen, the change kept in the recording; which, in [SETTINGS.md](SETTINGS.md#enhancements).
 
 ```
 uw2port --enhance list                 the enhancements, with what each does
