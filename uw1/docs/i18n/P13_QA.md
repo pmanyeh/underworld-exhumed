@@ -146,7 +146,7 @@ Enter 完成、Esc 取消；編寫時 Z 是文字，結束後才可關閉地圖�
 
 **強化功能即時生效（2026-10-30）：** 使用者確認 `split-all` 實測 OK 後，問能否不用重啟。F11「強化功能」中只在動作或繪圖當下讀開關的 9 項
 （`invert-look`、`flask-numbers`、`auto-key`、`e-takes`、`damage-numbers`、`enemy-health`、`split-all`、`unknown-topic`、`easy-erase`）
-改為回到 3D 畫面就生效，並照密技做法記進錄影；其他仍需重啟。單元、sanitizer、實機錄影重播與四模式存檔驗證完成，待使用者實測確認；詳見 `P13_LIVE_ENHANCE.md`。
+改為回到 3D 畫面就生效，並照密技做法記進錄影；其他仍需重啟。單元、sanitizer、實機錄影重播與四模式存檔驗證完成，2026-10-31 使用者已確認 OK；詳見 `P13_LIVE_ENHANCE.md`。
 
 **技能清單滾輪（2026-10-26）：** F11「滑鼠滾輪」也可捲動屬性頁下半部技能。
 游標停在技能列或箭頭上，每格移動一列，首尾停止；原有按鈕保留。
