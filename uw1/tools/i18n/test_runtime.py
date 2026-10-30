@@ -2,6 +2,7 @@
 
 Run in the native compiler environment: python3 tools/i18n/test_runtime.py -v
 """
+from portsrc import RUNTIME, port_src
 import ctypes
 import json
 import os
@@ -37,8 +38,8 @@ class RuntimeTests(unittest.TestCase):
         command = [compiler, "-std=c11", "-Wall", "-Wextra", "-Werror", "-shared"]
         if os.name != "nt":
             command += ["-fPIC"]
-        subprocess.run(command + ["-I", str(UW1 / "src/port"), str(UW1 / "src/port/i18n/localization.c"),
-                                  str(UW1 / "src/port/i18n/utf8.c"),
+        subprocess.run(command + ["-I", str(UW1 / "src/port"), "-I", str(RUNTIME), str(port_src('i18n/localization.c')),
+                                  str(port_src('i18n/utf8.c')),
                                   "-o", str(library)], check=True)
         cls.lib = ctypes.CDLL(str(library))
         cls.lib.port_i18n_init.argtypes = [ctypes.c_char_p, ctypes.c_char_p]

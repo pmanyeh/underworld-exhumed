@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """HD labels (hd_label.c): layout, alignment, signatures and bounds with a fake screen; no assets."""
+from portsrc import RUNTIME, port_src
 import os
 from pathlib import Path
 import shutil
@@ -16,7 +17,7 @@ class HdLabelTests(unittest.TestCase):
             self.skipTest('no C compiler')
         out = UW1 / 'build/hd-scroll'
         out.mkdir(parents=True, exist_ok=True)
-        source = (UW1 / 'src/port/i18n/ui_text.c').read_text(encoding='utf-8')
+        source = (port_src('i18n/ui_text.c')).read_text(encoding='utf-8')
         stats = (UW1 / 'src/ui/STATS.C').read_text(encoding='utf-8')
         signatures = ['static const char *ordinal(', 'const char *port_ui_text(']
         functions = [sig + source.split(sig, 1)[1].split('\n}', 1)[0] + '\n}\n'
@@ -27,8 +28,8 @@ class HdLabelTests(unittest.TestCase):
                                                encoding='utf-8')
         exe = out / ('stats_ascii' + ('.exe' if os.name == 'nt' else ''))
         subprocess.run([cc, '-std=c11', '-Wall', '-Wextra', '-Werror', '-I' + str(out),
-                        '-I' + str(UW1 / 'src/port'), str(Path(__file__).with_name('stats_ascii_test.c')),
-                        str(UW1 / 'src/port/presentation/hd_label.c'), str(UW1 / 'src/port/i18n/utf8.c'),
+                        '-I' + str(UW1 / 'src/port'), "-I" + str(RUNTIME), str(Path(__file__).with_name('stats_ascii_test.c')),
+                        str(port_src('presentation/hd_label.c')), str(port_src('i18n/utf8.c')),
                         '-o', str(exe)], check=True)
         subprocess.run([str(exe)], check=True)
 
@@ -39,9 +40,9 @@ class HdLabelTests(unittest.TestCase):
         out = UW1 / 'build/hd-scroll'
         out.mkdir(parents=True, exist_ok=True)
         exe = out / ('hd_label' + ('.exe' if os.name == 'nt' else ''))
-        subprocess.run([cc, '-std=c11', '-g', '-O1', '-Wall', '-Wextra', '-Werror', '-I' + str(UW1 / 'src/port'),
+        subprocess.run([cc, '-std=c11', '-g', '-O1', '-Wall', '-Wextra', '-Werror', '-I' + str(UW1 / 'src/port'), "-I" + str(RUNTIME),
                         str(Path(__file__).with_name('hd_label_test.c')),
-                        str(UW1 / 'src/port/presentation/hd_label.c'), str(UW1 / 'src/port/i18n/utf8.c'),
+                        str(port_src('presentation/hd_label.c')), str(port_src('i18n/utf8.c')),
                         '-o', str(exe)], check=True)
         run = subprocess.run([str(exe)], capture_output=True, text=True)
         self.assertEqual(run.returncode, 0, run.stdout + run.stderr)

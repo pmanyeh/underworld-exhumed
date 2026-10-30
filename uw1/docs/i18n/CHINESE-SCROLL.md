@@ -28,7 +28,7 @@ Font 失敗不會悄悄退回低解析中文；catalog 缺少／失效則延用�
 
 ## 資料與 thread contract
 
-[localization.c](../../src/port/i18n/localization.c) 增加有界的 display provenance：
+[localization.c](../../../exhume/runtime/port/i18n/localization.c) 增加有界的 display provenance：
 保存 decoded ring pointer、原英文的 owned copy 與 catalog target，lookup 不改變 `get_string` 回傳值。
 同英文內容的另一個 pointer 不會自動獲得翻譯。來源被修改、metadata eviction、缺 key、source drift，均回到原文。
 Made/dynamic block 的 `get_string` 會清除該 pointer 的 provenance，避免動態字串誤用舊的靜態翻譯。
@@ -48,7 +48,7 @@ VM、比較／文法函式、BABL heap 與 `babl_display` 仍保留原資料。U
 離開 conversation 清掉選項與 NPC 內容；map／menu 不顯示 scroll overlay。
 ASCII typed-answer／yes-no editor 暫時保留原路徑並隱藏 main HD scroll，結束後清理該 scroll；未實作中文輸入或 IME。
 
-[scroll_text](../../src/port/presentation/scroll_text.h) 是 game-thread producer：
+[scroll_text](../../../exhume/runtime/port/presentation/scroll_text.h) 是 game-thread producer：
 每個 scroll 有最多 1,024 個 owned scalar cells，包含 logical position、palette colour、choice identity。
 輸入上限為 16 KiB，strict UTF-8；先複製文字再執行可能等待輸入的控制碼，不借用 caller 的字串跨 wait。
 Snapshot 以 acquire/release atomic lock 複製，明確保存 Native struct packing；presentation thread 不讀 game structs、
@@ -63,7 +63,7 @@ clip 到 paper bounds。Resize／aspect／fullscreen 不重排文字，也不改
 
 ## Wrapping / controls / input
 
-復用 P3 [layout](../../src/port/i18n/layout.h)：只在 codepoint boundary 斷行、英文優先 space、長單字 fallback、
+復用 P3 [layout](../../../exhume/runtime/port/i18n/layout.h)：只在 codepoint boundary 斷行、英文優先 space、長單字 fallback、
 中文字間換行、保留 CR/LF/CRLF 與明示換行。補上 `…` 的行首禁則，與計劃列出的標點一致。
 含 `scroll_esc=0` 的資料將 backslash 當 literal，避免 save descriptions 中的文字被執行為控制碼。
 沿用 P3 的基本 kinsoku／overflow policy，並非完整 UAX #14、grapheme、kerning 或 shaping。

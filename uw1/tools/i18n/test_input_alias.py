@@ -2,6 +2,7 @@
 """P11.4 tests: input_alias.c (built and run, no game assets), and the zh-TW table against
 input-keys.tsv: one row per compared string, the same hash, every word the player can only know
 in Chinese given at least one Chinese alias, and no alias claimed by two words of a conversation."""
+from portsrc import RUNTIME, port_src
 import collections
 import csv
 import os
@@ -54,8 +55,8 @@ class MapTests(unittest.TestCase):
         out = UW1 / 'build/hd-scroll'
         out.mkdir(parents=True, exist_ok=True)
         exe = out / ('input-alias' + ('.exe' if os.name == 'nt' else ''))
-        subprocess.run([cc, '-std=c11', '-g', '-O1', '-Wall', '-Wextra', '-Werror', '-I' + str(UW1 / 'src/port'),
-                        str(Path(__file__).with_name('input_alias_test.c')), str(UW1 / 'src/port/i18n/input_alias.c'),
+        subprocess.run([cc, '-std=c11', '-g', '-O1', '-Wall', '-Wextra', '-Werror', '-I' + str(UW1 / 'src/port'), "-I" + str(RUNTIME),
+                        str(Path(__file__).with_name('input_alias_test.c')), str(port_src('i18n/input_alias.c')),
                         '-o', str(exe)], check=True)
         with tempfile.TemporaryDirectory() as scratch:
             run = subprocess.run([str(exe), scratch], capture_output=True, text=True, encoding='utf-8', errors='replace')

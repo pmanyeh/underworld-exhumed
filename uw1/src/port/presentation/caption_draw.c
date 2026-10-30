@@ -1,6 +1,6 @@
 /* caption.h's presentation-thread side: the snapshot drawn in the HD font. */
 #include "caption.h"
-#include "hd_font.h"
+#include "presentation/hd_font.h"
 
 int caption_draw(struct HdFont *font, const struct PlatOverlay *frame, const CaptionFrame *c, const uint8_t pal[768], float border)
 {

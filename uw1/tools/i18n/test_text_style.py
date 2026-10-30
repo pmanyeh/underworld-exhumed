@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build and run the HD text settings test (P10T); no game assets, SDL or FreeType."""
+from portsrc import RUNTIME, port_src
 import argparse
 import os
 from pathlib import Path
@@ -17,8 +18,8 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     exe = out/(('text-style-asan' if args.sanitize else 'text-style')+('.exe' if os.name == 'nt' else ''))
     command = [os.environ.get('CC') or shutil.which('clang') or 'cc', '-std=c11', '-g', '-O1',
-               '-Wall', '-Wextra', '-Werror', '-I'+str(uw1/'src/port'),
-               str(Path(__file__).with_name('text_style_test.c')), str(uw1/'src/port/presentation/text_style.c'),
+               '-Wall', '-Wextra', '-Werror', '-I'+str(uw1/'src/port'), "-I" + str(RUNTIME),
+               str(Path(__file__).with_name('text_style_test.c')), str(port_src('presentation/text_style.c')),
                '-o', str(exe)]
     if args.sanitize:
         command[1:1] = ['-fsanitize=address,undefined', '-fno-omit-frame-pointer']

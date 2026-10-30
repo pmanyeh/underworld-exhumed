@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Compile/run real C FreeType rendering tests; no SDL window or game assets."""
+from portsrc import RUNTIME, port_src
 import argparse
 import os
 from pathlib import Path
@@ -32,12 +33,12 @@ def main():
     stem = "stub" if args.no_freetype else "window" if args.window else "font"
     stem += "-asan" if args.sanitize else ""
     exe = out / (stem + (".exe" if os.name == "nt" else ""))
-    common = [str(uw1 / "src/port" / n) for n in
+    common = [str(port_src(n)) for n in
               ["presentation/hd_font.c", "i18n/utf8.c", "i18n/layout.c"]]
     if args.window:
-        common += [str(uw1 / "src/port/presentation" / n) for n in ["hd_demo.c", "overlay_demo.c"]]
+        common += [str(port_src('presentation/' + n)) for n in ["hd_demo.c", "overlay_demo.c"]]
     command = [cc, "-std=c11", "-g", "-O1", "-Wall", "-Wextra", "-Werror", "-Wno-unused-function",
-               "-I" + str(uw1 / "src/port"),
+               "-I" + str(uw1 / "src/port"), "-I" + str(RUNTIME),
                "-I" + str(root / "exhume/runtime/port/platform"),
                "-I" + str(root / "exhume/runtime/port"),
                str(Path(__file__).with_name(source))] + common + [
@@ -45,7 +46,7 @@ def main():
     if args.sanitize:
         command += ["-fsanitize=address,undefined", "-fno-omit-frame-pointer"]
     if not args.no_freetype:
-        command += ["-DUW1_HAVE_FREETYPE"]
+        command += ["-DHD_HAVE_FREETYPE"]
     subprocess.run(command + flags + (["-lm"] if os.name != "nt" else []), check=True)
     env["ASAN_OPTIONS"] = "halt_on_error=1:detect_leaks=" + ("0" if os.name == "nt" else "1")
     env["UBSAN_OPTIONS"] = "halt_on_error=1:print_stacktrace=1"

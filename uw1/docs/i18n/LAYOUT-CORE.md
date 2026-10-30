@@ -25,9 +25,9 @@ Exhume 既有的 7 個 tooling/profile backlog commits 維持未合併。
 
 ## Changes / Files
 
-- [utf8.c](../../src/port/i18n/utf8.c)、[utf8.h](../../src/port/i18n/utf8.h)：strict scalar iteration / validation / count / boundary。
-- [layout.c](../../src/port/i18n/layout.c)、[layout.h](../../src/port/i18n/layout.h)：units、metrics callback、line ranges 與禁則。
-- [localization.c](../../src/port/i18n/localization.c)：catalog 共用新的 validator，保留拒絕 embedded NUL 的規則。
+- [utf8.c](../../../exhume/runtime/port/i18n/utf8.c)、[utf8.h](../../../exhume/runtime/port/i18n/utf8.h)：strict scalar iteration / validation / count / boundary。
+- [layout.c](../../../exhume/runtime/port/i18n/layout.c)、[layout.h](../../../exhume/runtime/port/i18n/layout.h)：units、metrics callback、line ranges 與禁則。
+- [localization.c](../../../exhume/runtime/port/i18n/localization.c)：catalog 共用新的 validator，保留拒絕 embedded NUL 的規則。
 - [test_layout.py](../../tools/i18n/test_layout.py)：獨立編譯真實 C core，使用 Python 作 UTF-8 對照與排版 invariants。
 - [test_runtime.py](../../tools/i18n/test_runtime.py)：既有 lookup 測試連結共用 UTF-8 module。
 - [layout_stress.c](../../tools/i18n/layout_stress.c)、[verify_layout_sanitizers.py](../../tools/i18n/verify_layout_sanitizers.py)：ASan / UBSan 的 exact-length heap input 壓力測試。

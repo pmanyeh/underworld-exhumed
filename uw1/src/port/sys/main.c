@@ -734,35 +734,11 @@ int main(int argc, char *argv[])
         /* P10T: the defaults, the locale's settings file, the player's, --font; in each file
            font_cjk_hd_* for both boxes, then each box's own (message, talk) */
         char files[2][1200];
-        int result, box, f;
+        int result, box;
         snprintf(files[1], sizeof files[1], "%s/" PORT_CONFIG_FILE, home);
-        text_style_locale_file(home, locale, files[0], sizeof files[0]);
-        for (box = 0; box < 2; box++) {
-            text_style_defaults(&scroll_style[box]);
-            for (f = 0; f < 2; f++) {
-                text_style_load(files[f], -1, &scroll_style[box]);
-                text_style_load(files[f], box ? TEXT_STYLE_TALK : TEXT_STYLE_MESSAGE, &scroll_style[box]);
-            }
-            if (font_path) snprintf(scroll_style[box].file, sizeof scroll_style[box].file, "%s", font_path);
-            if (text_style_font_path(home, scroll_style[box].file, scroll_font_file[box], sizeof scroll_font_file[box]) && !font_path) {
-                /* a font the Language tab chose that this folder lacks: the default (P12) */
-                HdTextStyle d;
-                text_style_defaults(&d);
-                fprintf(stderr, "uw1port: HD text: font not found: %s; using %s\n", scroll_style[box].file, d.file);
-                snprintf(scroll_style[box].file, sizeof scroll_style[box].file, "%s", d.file);
-            }
-            if (text_style_font_path(home, scroll_style[box].file, scroll_font_file[box], sizeof scroll_font_file[box])) {
-                fprintf(stderr, "uw1port: HD text: font not found: %s (looked in fonts/ of the home folder, fonts/ and tools/fonts/)\n",
-                        scroll_style[box].file);
-                return 1;
-            }
-            scroll_fallback_file[box][0] = 0;
-            if (scroll_style[box].fallback_file[0] &&
-                text_style_font_path(home, scroll_style[box].fallback_file, scroll_fallback_file[box], sizeof scroll_fallback_file[box])) {
-                fprintf(stderr, "uw1port: HD text: fallback font not found: %s; using none\n", scroll_style[box].fallback_file);
-                scroll_fallback_file[box][0] = 0;
-            }
-        }
+        if (text_style_boxes(home, locale, files[1], font_path, scroll_style, scroll_font_file, scroll_fallback_file,
+                             files[0], sizeof files[0]))
+            return 1;
         for (box = 0; box < 2; box++) {
             if (box && same_font() && scroll_style[1].antialiasing == scroll_style[0].antialiasing) {
                 presentation.scroll_fonts[1] = presentation.scroll_fonts[0];

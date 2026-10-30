@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build/run cursor pixel and concurrent publication checks (no game assets)."""
+from portsrc import RUNTIME, port_src
 import argparse
 import os
 from pathlib import Path
@@ -27,15 +28,15 @@ def main():
     flags = shlex.split(subprocess.check_output(["pkg-config", "--cflags", "--libs", "sdl3"] +
         (["freetype2"] if args.window else []), text=True, env=env))
     command = [cc, "-std=c11", "-g", "-O1", "-Wall", "-Wextra", "-Werror", "-Wno-unused-function",
-               "-I" + str(uw1 / "src/port"), "-I" + str(root / "exhume/runtime/port/platform"),
+               "-I" + str(uw1 / "src/port"), "-I" + str(RUNTIME), "-I" + str(root / "exhume/runtime/port/platform"),
                "-I" + str(root / "exhume/runtime/port"),
                str(Path(__file__).with_name("cursor_window_test.c" if args.window else "hd_cursor_test.c")),
-               str(uw1 / "src/port/presentation/hd_cursor.c"), "-o", str(target)]
+               str(port_src('presentation/hd_cursor.c')), "-o", str(target)]
     if args.window:
-        command += ["-DUW1_HAVE_FREETYPE"] + [str(uw1/"src/port"/p) for p in [
+        command += ["-DHD_HAVE_FREETYPE"] + [str(port_src(p)) for p in [
             "presentation/presentation.c", "presentation/hd_demo.c", "presentation/overlay_demo.c",
             "presentation/hd_font.c", "i18n/utf8.c", "i18n/layout.c"]]
-        command += [str(uw1/"src/port/presentation"/p) for p in [
+        command += [str(port_src('presentation/' + p)) for p in [
             "scroll_text.c", "scroll_overlay.c", "caption.c", "caption_draw.c", "flask_text.c", "flask_text_draw.c",
             "hd_label.c", "hd_label_draw.c", "combat_text.c", "combat_text_draw.c",
             "map_note_overlay.c", "map_note_overlay_draw.c"]]

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """The player's words in Chinese (user_text.c): stand-ins, side files and what is shown; no assets."""
+from portsrc import RUNTIME, port_src
 import os
 from pathlib import Path
 import shutil
@@ -18,9 +19,9 @@ class UserTextTests(unittest.TestCase):
         out = UW1 / 'build/hd-scroll'
         out.mkdir(parents=True, exist_ok=True)
         exe = out / ('user_text' + ('.exe' if os.name == 'nt' else ''))
-        subprocess.run([cc, '-std=c11', '-g', '-O1', '-Wall', '-Wextra', '-Werror', '-I' + str(UW1 / 'src/port'),
+        subprocess.run([cc, '-std=c11', '-g', '-O1', '-Wall', '-Wextra', '-Werror', '-I' + str(UW1 / 'src/port'), "-I" + str(RUNTIME),
                         str(Path(__file__).with_name('user_text_test.c')),
-                        str(UW1 / 'src/port/i18n/user_text.c'), str(UW1 / 'src/port/i18n/utf8.c'),
+                        str(port_src('i18n/user_text.c')), str(port_src('i18n/utf8.c')),
                         '-o', str(exe)], check=True)
         with tempfile.TemporaryDirectory() as d:
             run = subprocess.run([str(exe), d], capture_output=True, text=True)

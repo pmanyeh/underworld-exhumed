@@ -115,7 +115,7 @@ missing = "no libmt32emu (brew install mt32emu, or make setup-libs)"
 # Optional native HD text. Only this UW1 module sees FreeType headers; a build
 # without it keeps English/overlay behavior and diagnoses --test-hd-text clearly.
 name = "freetype2"
-define = "UW1_HAVE_FREETYPE"
+define = "HD_HAVE_FREETYPE"
 for = "presentation/hd_font.c"
 label = "FreeType HD text"
 missing = "no FreeType (HD text disabled; see i18n/README.md)"

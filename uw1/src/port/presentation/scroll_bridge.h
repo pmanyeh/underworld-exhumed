@@ -1,6 +1,6 @@
 #ifndef UW1_SCROLL_BRIDGE_H
 #define UW1_SCROLL_BRIDGE_H
-#include "scroll_text.h"
+#include "presentation/scroll_text.h"
 #include "i18n/localization.h"
 /* Game-thread display calls. These never return translated strings to the VM. */
 int port_scroll_emit(const char *prefix,const char *display,const char *suffix,int choice);

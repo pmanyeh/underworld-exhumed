@@ -21,7 +21,7 @@ compile/link 與實際 FreeType CJK renderer tests 均通過；Web 以無 FreeTy
 
 ## Renderer contract
 
-[hd_font.h](../../src/port/presentation/hd_font.h) 提供 opaque `HdFont`、init/shutdown、
+[hd_font.h](../../../exhume/runtime/port/presentation/hd_font.h) 提供 opaque `HdFont`、init/shutdown、
 native/logical measure 與 logical-coordinate draw；header 不暴露 SDL 或 FreeType types。
 Font、cache 及所有呼叫均由 presentation thread 擁有；main 在啟動前建立，`plat_run` 返回後釋放。
 Web browser loop 未返回時不提早釋放；無 FreeType build 使用明確 `HD_UNAVAILABLE` stub。

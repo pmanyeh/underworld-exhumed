@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build/run real display flow and provenance checks; no game assets."""
+from portsrc import RUNTIME, port_src
 import argparse
 import os
 from pathlib import Path
@@ -32,14 +33,14 @@ def main():
     if rendering:
         sources += ['presentation/scroll_overlay.c','presentation/hd_font.c']
     else:
-        sources += ['presentation/scroll_bridge.c','i18n/localization.c','i18n/user_text.c','i18n/name_gloss.c']
+        sources += ['presentation/scroll_bridge.c','i18n/localization.c','i18n/cp437.c','i18n/user_text.c','i18n/name_gloss.c']
     command = [os.environ.get('CC') or shutil.which('clang') or 'cc','-std=c11','-g','-O1',
-        '-Wall','-Wextra','-Werror','-Wno-unused-function','-I'+str(uw1/'src/port'),
+        '-Wall','-Wextra','-Werror','-Wno-unused-function','-I'+str(uw1/'src/port'), "-I" + str(RUNTIME),
         '-I'+str(root/'exhume/runtime/port/platform'),'-I'+str(root/'exhume/runtime/port'),
         str(Path(__file__).with_name('scroll_window_test.c' if args.window else 'scroll_render_test.c' if args.render else 'scroll_text_test.c'))]
-    command += [str(uw1/'src/port'/s) for s in sources]
+    command += [str(port_src(s)) for s in sources]
     if rendering:
-        command += ['-DUW1_HAVE_FREETYPE',str(root/'exhume/runtime/port/platform/png.c')]
+        command += ['-DHD_HAVE_FREETYPE',str(root/'exhume/runtime/port/platform/png.c')]
         if os.name!='nt':command+=['-lm']
     if args.sanitize:command+=['-fsanitize=address,undefined','-fno-omit-frame-pointer']
     subprocess.run(command+['-o',str(exe)]+flags,check=True)

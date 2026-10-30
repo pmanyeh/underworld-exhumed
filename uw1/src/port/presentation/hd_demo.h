@@ -1,6 +1,6 @@
 #ifndef UW1_HD_DEMO_H
 #define UW1_HD_DEMO_H
-#include "hd_font.h"
+#include "presentation/hd_font.h"
 typedef struct HdDemo {
     HdFont *font;
     int geometry, reported; /* presentation thread only after startup */

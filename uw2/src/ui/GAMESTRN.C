@@ -37,6 +37,9 @@
 #include "object.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/localization.h"
+#endif
 
 HOST_LAYOUT_BEGIN
 struct StringBlock {
@@ -91,9 +94,22 @@ char far * far get_string(int id)
     found = -1;
     for (i = 0; i < string_blocks; i++)
         if (Strings[i].block == block) { found = i; break; }
-    if (found >= 0) return Strings[found].strings[string];
+    if (found >= 0) {
+#ifndef __TURBOC__
+        port_i18n_forget(Strings[found].strings[string]);
+        port_i18n_note_dynamic(block, string);
+#endif
+        return Strings[found].strings[string];
+    }
+#ifndef __TURBOC__
+    /* Phase 14: the translation is noted beside the decoded string, for display only (the HD
+       scroll); the game's own string, grammar and memory stay English, as in UW1. */
+    if (block == 0) block = CutsceneOrConversationStringBlock;
+    return port_i18n_observe(block, string, read_string(block, string));
+#else
     if (block == 0) return read_string(CutsceneOrConversationStringBlock, string);
     return read_string(block, string);
+#endif
 }
 
 /* Adds s (the pointer itself, not a copy) as the next string of a made block, taking one

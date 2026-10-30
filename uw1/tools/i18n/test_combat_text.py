@@ -1,4 +1,5 @@
 """Combat ownership, display state and draw clipping; no original assets or SDL required."""
+from portsrc import RUNTIME, port_src
 import argparse
 import os
 from pathlib import Path
@@ -16,9 +17,9 @@ def main():
     exe = out / ('combat' + ('-asan' if args.sanitize else '') + ('.exe' if os.name == 'nt' else ''))
     cc = os.environ.get('CC') or shutil.which('clang') or 'cc'
     command = [cc, '-std=c11', '-g', '-O1', '-Wall', '-Wextra', '-Werror',
-               '-I' + str(uw1 / 'src/port'), '-I' + str(uw1.parent / 'exhume/runtime/port/platform'),
+               '-I' + str(uw1 / 'src/port'), "-I" + str(RUNTIME), '-I' + str(uw1.parent / 'exhume/runtime/port/platform'),
                str(Path(__file__).with_name('combat_text_test.c')),
-               *[str(uw1 / 'src/port' / s) for s in ['presentation/combat_text.c', 'presentation/combat_text_draw.c', 'i18n/utf8.c']],
+               *[str(port_src(s)) for s in ['presentation/combat_text.c', 'presentation/combat_text_draw.c', 'i18n/utf8.c']],
                '-o', str(exe)]
     if os.name != 'nt':
         command += ['-lm']
@@ -46,7 +47,7 @@ def main():
                     '-c', str(Path(__file__).with_name('combat_attack_test.c')), '-o', str(obj)], check=True)
     attack = out / ('attack' + ('-asan' if args.sanitize else '') + ('.exe' if os.name == 'nt' else ''))
     subprocess.run([P.host_cc(), '-std=c11', '-I' + str(uw1 / 'src/port/presentation'), *san,
-                    str(obj), str(uw1 / 'src/port/presentation/combat_text.c'), '-o', str(attack)], check=True)
+                    str(obj), str(port_src('presentation/combat_text.c')), '-o', str(attack)], check=True)
     subprocess.run([str(attack)], check=True, env=env)
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """P13 tests: name_gloss.c (built and run, no game assets), and the zh-TW proper-names table:
 up to date with the authority and master, one English a name, LF UTF-8."""
+from portsrc import RUNTIME, port_src
 import csv
 import os
 from pathlib import Path
@@ -41,8 +42,8 @@ class GlossTests(unittest.TestCase):
         out = UW1 / 'build/hd-scroll'
         out.mkdir(parents=True, exist_ok=True)
         exe = out / ('name-gloss' + ('.exe' if os.name == 'nt' else ''))
-        subprocess.run([cc, '-std=c11', '-g', '-O1', '-Wall', '-Wextra', '-Werror', '-I' + str(UW1 / 'src/port'),
-                        str(Path(__file__).with_name('name_gloss_test.c')), str(UW1 / 'src/port/i18n/name_gloss.c'),
+        subprocess.run([cc, '-std=c11', '-g', '-O1', '-Wall', '-Wextra', '-Werror', '-I' + str(UW1 / 'src/port'), "-I" + str(RUNTIME),
+                        str(Path(__file__).with_name('name_gloss_test.c')), str(port_src('i18n/name_gloss.c')),
                         '-o', str(exe)], check=True)
         with tempfile.TemporaryDirectory() as scratch:
             run = subprocess.run([str(exe), scratch], capture_output=True, text=True, encoding='utf-8', errors='replace')

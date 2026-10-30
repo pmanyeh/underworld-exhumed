@@ -141,7 +141,7 @@ python3 tools/overlaycheck.py --sanitize --output build/overlaycheck-asan
 
 ## UTF-8 / Chinese Layout Core
 
-Native C API 位於 [utf8.h](../src/port/i18n/utf8.h) 與 [layout.h](../src/port/i18n/layout.h)，
+Native C API 位於 [utf8.h](../../exhume/runtime/port/i18n/utf8.h) 與 [layout.h](../../exhume/runtime/port/i18n/layout.h)，
 無 SDL / FreeType dependency。`utf8_next/prev/validate/count/boundary_before` 使用明示長度與 byte offset，
 嚴格拒絕 malformed / truncated UTF-8。`layout_text` 將來源轉成 scalar、newline 與原子控制碼 units，
 以 caller 的整數 pixel/fixed-point advance callback 換行；輸出保留每個 unit 的原始 byte span。

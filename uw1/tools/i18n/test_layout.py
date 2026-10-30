@@ -1,4 +1,5 @@
 """Test the real UTF-8/layout C core without SDL, FreeType or game assets."""
+from portsrc import RUNTIME, port_src
 import ctypes as C
 from itertools import chain
 from pathlib import Path
@@ -49,8 +50,8 @@ def build_library():
     flags = ["-std=c11", "-Wall", "-Wextra", "-Werror", "-shared"]
     if os.name != "nt":
         flags += ["-fPIC"]
-    subprocess.run([compiler] + flags + ["-I", str(UW1 / "src/port"),
-                   str(UW1 / "src/port/i18n/utf8.c"), str(UW1 / "src/port/i18n/layout.c"),
+    subprocess.run([compiler] + flags + ["-I", str(UW1 / "src/port"), "-I", str(RUNTIME),
+                   str(port_src('i18n/utf8.c')), str(port_src('i18n/layout.c')),
                    "-o", str(target)], check=True)
     lib = C.CDLL(str(target))
     for name in ("utf8_next", "utf8_prev"):

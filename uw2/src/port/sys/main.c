@@ -21,6 +21,7 @@
 #include "sys/cheat.h"
 #include "sys/inscript.h"
 #include "ui/settings.h"
+#include "presentation/localized.h"
 
 extern const struct enhance_flag enhance_table[];   /* src/port/sys/enhtab.c */
 extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a test's cheats */
@@ -117,8 +118,12 @@ static char **game_argv;
 
 static int game(void *arg)
 {
+    int status;
     (void)arg;
-    return uw2_main(game_argc, game_argv);
+    port_text_begin();
+    status = uw2_main(game_argc, game_argv);
+    port_text_end();
+    return status;
 }
 
 static void on_lifecycle(int ev)
@@ -197,6 +202,12 @@ static const char help_text[] =
     "                         holding it or GOG's game.gog; found by itself when not given\n"
     "                         ($UW2PORT_DATA, the last folder used, GOG's install folders)\n"
     "  --home DIR             where saved games and settings go ($UW2PORT_HOME, else ~/.uw2port)\n"
+    "Language (Phase 14, in progress):\n"
+    "  --locale en|zh-TW      the language of the game's text (default en)\n"
+    "  --i18n-file FILE       the zh-TW catalog (default i18n/zh-TW/catalog.uw2loc in the home\n"
+    "                         folder, else in the current folder)\n"
+    "  --hd-scroll            the message scroll and conversations in the HD font (needs zh-TW)\n"
+    "  --font FILE            the HD font (default jf-openhuninn-2.1.ttf, looked for in fonts/)\n"
     "Enhancements (off by default; docs/ENHANCEMENTS.md):\n"
     "  --enhance NAME[,NAME]  turn on changes the original game does not have, kept until\n"
     "                         changed; --enhance list lists them\n"
@@ -332,7 +343,7 @@ int main(int argc, char *argv[])
     int audio_device = 1, interactive, recording = 1, status;
     PlatConfig cfg;
     PlatHooks hooks;
-    int i, dropped = 0, first_run = 0;
+    int i, r, dropped = 0, first_run = 0;
     const char *enh_on[16], *enh_off[16];   /* --enhance and --no-enhance lists, in order */
     int n_on = 0, n_off = 0, enh_list = 0;
     int settings_list = 0;
@@ -393,6 +404,7 @@ int main(int argc, char *argv[])
         else if (!strcmp(a, "--hw-log") && i + 1 < argc) hw_log = argv[++i];
         else if (!strcmp(a, "-v")) port_trace = 1;
         else if (!strcmp(a, "--help") || !strcmp(a, "-h")) usage(1);
+        else if ((r = port_text_option(argc, argv, &i)) != 0) { if (r < 0) usage(0); }
         else if (a[0] == '-' && a[1] == '-') usage(0);
         /* a folder or file dropped on the program's icon (Windows, Linux) arrives as an argument */
         else if (!roms && a[0] != '-' && mt32roms_pick(a, NULL)) { roms = a; dropped = 1; }
@@ -551,8 +563,10 @@ int main(int argc, char *argv[])
     port_settings_roms(roms);
     port_settings_seed(cfg.fullscreen, cfg.scale, cfg.aspect, cfg.integer_scale, cfg.mouse_lock);
     pit_start();
+    if (port_text_setup(home)) return 1;
     memset(&hooks, 0, sizeof hooks);
     hooks.scanout = vga_scanout;
+    port_text_hooks(&hooks);
     hooks.key = kbd_byte;
     hooks.pointer = mouse_event;
     hooks.lifecycle = on_lifecycle;

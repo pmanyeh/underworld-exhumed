@@ -1,5 +1,5 @@
 #include "map_notes.h"
-#include "utf8.h"
+#include "i18n/utf8.h"
 #include "user_text.h"
 #include <stdio.h>
 #include <stdlib.h>

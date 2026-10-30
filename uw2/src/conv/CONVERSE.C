@@ -50,6 +50,12 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/localization.h"
+#include "presentation/scroll_text.h"
+int port_scroll_emit(const char *prefix, const char *text, const char *suffix);   /* presentation/localized.c */
+char *port_template_shown(const char *source);                                  /* BABL.C */
+#endif
 
 /* This file's own uninitialised data, DS:47FC..4927, in its _BSS with talking_to. */
 /* name: The FM Towns build keeps all of it static, so none of it has an original name and
@@ -494,6 +500,16 @@ void far conv_play_menu(int option)
 /* The "say" built-in (and SAY_OP): the NPC's line, in the NPC's scroll, \P first. */
 void far npc_say(char far *s)
 {
+#ifndef __TURBOC__
+    if (scroll_text_enabled()) {
+        do_npc_scroll();
+        port_scroll_emit("\\P", port_i18n_display(s), "\n");
+        set_workspace();
+        do_play_scroll();
+        convo_say_flag = 0;
+        return;
+    }
+#endif
     str_copy(conv_buffer, "\\P");
     str_cat(conv_buffer, s);
     str_cat(conv_buffer, "\n");
@@ -507,6 +523,16 @@ void far npc_say(char far *s)
 /* The "respond" built-in (and RESPOND_OP): a line in the player's scroll. */
 void far play_respond(char far *s)
 {
+#ifndef __TURBOC__
+    if (scroll_text_enabled()) {
+        do_play_scroll();
+        port_scroll_emit("", port_i18n_display(s), "\n");
+        set_workspace();
+        do_play_scroll();
+        convo_say_flag = 1;
+        return;
+    }
+#endif
     str_copy(conv_buffer, s);
     str_cat(conv_buffer, "\n");
     do_play_scroll();
@@ -519,6 +545,16 @@ void far play_respond(char far *s)
 /* The player's chosen line, in the conversation scroll in colour \1. */
 void far play_say(char far *s)
 {
+#ifndef __TURBOC__
+    if (scroll_text_enabled()) {
+        do_npc_scroll();
+        port_scroll_emit("\\1", port_i18n_display(s), "\\0\n");
+        set_workspace();
+        do_play_scroll();
+        convo_say_flag = 1;
+        return;
+    }
+#endif
     str_copy(conv_buffer, "\\1");
     str_cat(conv_buffer, s);
     str_cat(conv_buffer, "\\0\n");
@@ -537,6 +573,18 @@ void far conv_print(int16 far *stack)
     id = getmem(stack[-1]);
     original = get_string(id);
     expanded = convert_string(original);
+#ifndef __TURBOC__
+    if (scroll_text_enabled()) {
+        char *shown = port_template_shown(original);
+        do_npc_scroll();
+        port_scroll_emit("\\2", shown ? shown : expanded == original ? port_i18n_display(original) : expanded, "\\0\n");
+        do_play_scroll();
+        set_workspace();
+        free(shown);
+        if (expanded != original) bab_free(expanded);
+        return;
+    }
+#endif
     str_copy(conv_buffer, "\\2");
     str_cat(conv_buffer, expanded);
     str_cat(conv_buffer, "\\0\n");

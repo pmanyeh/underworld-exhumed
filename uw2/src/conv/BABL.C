@@ -49,6 +49,12 @@
 #include "gfx.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/localization.h"
+#include "presentation/scroll_text.h"
+char *port_template_shown(const char *source);
+char *port_convert_display(const char *text);
+#endif
 
 /* A block of the script heap: its size in bytes (header and tag included) and, while
    free, the next free block. An allocated block points at itself and ends with a tag,
@@ -641,6 +647,89 @@ char far * far convert_string(char far *text)
     return buffer;
 }
 
+#ifndef __TURBOC__
+/* Phase 14, display only, as UW1's P11.1: convert_string's substitution of a translated
+   template (UTF-8), the values read as convert_string reads them, a substituted string shown
+   in its translation when it has one (a template's own expanded the same way). The result
+   is malloc'd for the caller to free and never reaches the script's memory or heap. */
+static void display_put(char **buf, size_t *len, size_t *cap, const char *s)
+{
+    size_t n = strlen(s);
+    if (*len + n + 1 > *cap) {
+        size_t want = (*len + n + 1) * 2;
+        char *grown = realloc(*buf, want);
+        if (!grown) return;
+        *buf = grown;
+        *cap = want;
+    }
+    memcpy(*buf + *len, s, n + 1);
+    *len += n;
+}
+
+/* The display text of source when it is a translated template and the HD scroll shows
+   UTF-8, else NULL (the English expansion stands). */
+char *port_template_shown(const char *source)
+{
+    const char *template = port_i18n_template(source);
+    return template && scroll_text_enabled() ? port_convert_display(template) : NULL;
+}
+
+char *port_convert_display(const char *text)
+{
+    const char *s = text;
+    char *buf = NULL, digits[20], one[2] = {0, 0};
+    size_t len = 0, cap = 0;
+    char kind, type;
+    int number;
+    register int value;
+    register int extra;
+    display_put(&buf, &len, &cap, "");
+    while (s && *s) {
+        if (*s == '@' && s[1] != '@') {
+            s++;
+            kind = *s++;
+            type = kind != 'C' ? *s++ : 'I';
+            str_ncopy(digits, (char far *)s, 19);
+            number = atoi(digits);
+            while (*s && (isdigit((unsigned char)*s) || *s == '-')) s++;
+            if (*s == 'G' || *s == 'S' || *s == 'P' || *s == 'C')
+                extra = AtIndex_ovr095_11C0((char far **)&s) - 1;
+            else
+                extra = 0;
+            if (kind == 'G') value = getmem(number + extra);
+            else if (kind == 'P') value = getmem(conv_local_ovr095_2030(number) + extra);
+            else if (kind == 'S') value = conv_local_ovr095_2030(number + extra);
+            else value = number;
+            if (type == 'I') {
+                itoa(value, digits, 10);
+                display_put(&buf, &len, &cap, digits);
+            } else {
+                char far *str = get_string(value);
+                if (str != 0) {
+                    const char *template = port_i18n_template(str);
+                    const char *shown = port_i18n_display(str);
+                    if (template) {
+                        char *sub = port_convert_display(template);
+                        if (sub) { display_put(&buf, &len, &cap, sub); free(sub); }
+                    } else if (shown != str)
+                        display_put(&buf, &len, &cap, shown);
+                    else {
+                        char far *conv = convert_string(str);
+                        display_put(&buf, &len, &cap, conv);
+                        if (conv != str) bab_free(conv);
+                    }
+                }
+            }
+            continue;
+        }
+        if (*s == '@') s++;                 /* "@@" is a literal @ */
+        one[0] = *s++;
+        display_put(&buf, &len, &cap, one);
+    }
+    return buf;
+}
+#endif
+
 /* Reads the index part of an @-variable, which is itself a variable (only an integer
    one, else 0), and advances *s past it. */
 int far AtIndex_ovr095_11C0(register char far **s)
@@ -1115,7 +1204,14 @@ void far vmSay_ovr095_1EA2(void)
     entry = babl_import_table;
     while (entry->count != 0) {
         if (str_cmp("say", entry->name) == 0) {
+#ifndef __TURBOC__
+            /* Phase 14: a translated template shown with its values (the HD scroll only) */
+            char *shown = port_template_shown(source);
+            ((void (far *)(char far *))funcs[entry->index])(shown ? shown : text);
+            free(shown);
+#else
             ((void (far *)(char far *))funcs[entry->index])(text);
+#endif
             break;
         }
         entry++;
@@ -1133,7 +1229,14 @@ void far babl_respond_ovr095_1F4A(void)
     entry = babl_import_table;
     while (entry->count != 0) {
         if (str_cmp("respond", entry->name) == 0) {
+#ifndef __TURBOC__
+            /* Phase 14: a translated template shown with its values (the HD scroll only) */
+            char *shown = port_template_shown(source);
+            ((void (far *)(char far *))funcs[entry->index])(shown ? shown : text);
+            free(shown);
+#else
             ((void (far *)(char far *))funcs[entry->index])(text);
+#endif
             break;
         }
         entry++;

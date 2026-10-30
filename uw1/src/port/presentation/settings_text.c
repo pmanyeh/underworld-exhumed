@@ -3,7 +3,7 @@
    of the Chinese text with the values the screen now has. On the thread that draws the screen,
    which is the presentation thread's (the font is the presentation's). */
 #include "settings_text.h"
-#include "hd_font.h"
+#include "presentation/hd_font.h"
 #include "i18n/settings_words.h"
 #include "i18n/utf8.h"
 #include "ui/settings.h"

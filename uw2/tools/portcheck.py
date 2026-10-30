@@ -38,6 +38,9 @@ FLAGS = ['-x', 'c', '-std=gnu89', '-fsigned-char', '-D_POSIX_C_SOURCE=200809L', 
          '-fdiagnostics-show-option', '-fno-caret-diagnostics',
          '-include', os.path.join(RT, 'compat.h'), '-I', PORT, '-I', os.path.join(RT, 'include'),
          '-iquote', os.path.join(root, 'src', 'include'), '-iquote', exhume.INCLUDE,
+         # last: the runtime's shared port headers (i18n/, presentation/), for a game source's
+         # port-only hooks; after every other directory, so it never hides a header found before
+         '-I', RT,
          # widths: what a 16-bit int and 32-bit long become on a 64-bit host
          '-Wpointer-to-int-cast', '-Wint-to-pointer-cast', '-Wshorten-64-to-32',
          '-Wno-unused-value', '-Wno-parentheses', '-Wno-dangling-else',

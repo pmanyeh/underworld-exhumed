@@ -33,7 +33,7 @@ translator/QA export 與可重跑的 round-trip。**不是大量翻譯 Phase**�
 | Pipeline（inventory／validate／normalize／build／coverage／export／import） | [l10n.py](../../tools/i18n/l10n.py)（standard library） |
 | Master dataset／literal namespace | [master.tsv](../../i18n/zh-TW/master.tsv)、[literals.tsv](../../i18n/zh-TW/literals.tsv) |
 | 不含文字的 inventory fingerprint | [inventory-baseline.json](../../i18n/inventory-baseline.json) |
-| Runtime QA trace、全遊戲 catalog 上限 | [localization.c](../../src/port/i18n/localization.c)／[.h](../../src/port/i18n/localization.h)、[GAMESTRN.C](../../src/ui/GAMESTRN.C) 的 made-block 一行、[main.c](../../src/port/sys/main.c) 的 `--i18n-trace` |
+| Runtime QA trace、全遊戲 catalog 上限 | [localization.c](../../../exhume/runtime/port/i18n/localization.c)／[.h](../../../exhume/runtime/port/i18n/localization.h)、[GAMESTRN.C](../../src/ui/GAMESTRN.C) 的 made-block 一行、[main.c](../../src/port/sys/main.c) 的 `--i18n-trace` |
 | 既有工具改讀 master | [pack_translations.py](../../tools/i18n/pack_translations.py)、[validate_poc.py](../../tools/i18n/validate_poc.py)、[verify_localized_replay.py](../../tools/i18n/verify_localized_replay.py)、[validate_vertical_slice.py](../../tools/i18n/validate_vertical_slice.py) |
 | Tests／CI | 新 [test_l10n.py](../../tools/i18n/test_l10n.py)（17）；[test_runtime.py](../../tools/i18n/test_runtime.py) 16 → 19；layout／scroll tests 改讀 master；`uw1-port.yml` 三平台新增 asset-free localization step |
 | 文件 | [i18n README](../../i18n/README.md) workflow、[譯者說明](../../i18n/zh-TW/README.md)、本報告 |

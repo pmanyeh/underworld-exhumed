@@ -1,6 +1,6 @@
 /* flask_text.h's presentation-thread side: the values on the flasks and the floating changes. */
 #include "flask_text.h"
-#include "hd_font.h"
+#include "presentation/hd_font.h"
 #include <stdio.h>
 
 /* the flasks (PANELS.C's FL_X; 24 wide) and where on them, top-down game pixels */

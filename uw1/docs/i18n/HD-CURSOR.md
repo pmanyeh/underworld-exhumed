@@ -33,7 +33,7 @@ save-under、constraint、drag threshold、keyboard warp、mouse-look 及 input 
 永久烘進 presentation image；原 save／restore 呼叫仍執行。未選用時仍呼叫原函式。
 
 game thread 透過原 `grs_which1`、`seg009_1`、`grs_unpack` 解碼 bitmap；在 decoder 暫存被
-覆寫前將 indexed pixels 複製進 [HdCursor](../../src/port/presentation/hd_cursor.h)。
+覆寫前將 indexed pixels 複製進 [HdCursor](../../../exhume/runtime/port/presentation/hd_cursor.h)。
 Snapshot 包含 visible、picture、logical x/y、hotspot、width/height、mode、path 與 generation。
 logical Y 為 top-down `199 - mouse_y`；hotspot 沿用原版 width/2−1、height/2。
 Header 明確保存 struct packing，避免 game 的 pack(1) 改變 Native snapshot ABI。

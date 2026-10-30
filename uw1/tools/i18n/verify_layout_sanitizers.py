@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Compile/run the standalone core stress driver with ASan and UBSan."""
+from portsrc import RUNTIME, port_src
 import os
 from pathlib import Path
 import shutil
@@ -16,8 +17,8 @@ def main():
         raise SystemExit("Clang with AddressSanitizer/UndefinedBehaviorSanitizer required")
     subprocess.run([compiler, "-std=c11", "-Wall", "-Wextra", "-Werror", "-g", "-O1",
                     "-fsanitize=address,undefined", "-fno-omit-frame-pointer",
-                    "-I", str(uw1 / "src/port"), str(uw1 / "tools/i18n/layout_stress.c"),
-                    str(uw1 / "src/port/i18n/utf8.c"), str(uw1 / "src/port/i18n/layout.c"),
+                    "-I", str(uw1 / "src/port"), "-I", str(RUNTIME), str(uw1 / "tools/i18n/layout_stress.c"),
+                    str(port_src('i18n/utf8.c')), str(port_src('i18n/layout.c')),
                     "-o", str(target)], check=True)
     env = dict(os.environ)
     env["ASAN_OPTIONS"] = "halt_on_error=1:detect_leaks=" + ("0" if os.name == "nt" else "1")

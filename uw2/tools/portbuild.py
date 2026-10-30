@@ -164,6 +164,15 @@ def sound_deps():
     return cflags, libs, extra
 
 
+def text_deps():
+    """FreeType for the HD text (the runtime's presentation/hd_font.c), when pkg-config finds it:
+    (flags for hd_font.c, link flags). Without it the port builds and draws no HD text."""
+    r = subprocess.run(['pkg-config', '--cflags', '--libs', 'freetype2'], capture_output=True, text=True, env=pkg_env())
+    if r.returncode: return [], []
+    flags = r.stdout.split()
+    return ['-DHD_HAVE_FREETYPE'] + [f for f in flags if f.startswith('-I')], [f for f in flags if not f.startswith('-I')]
+
+
 def opl_library_name():
     """The release build's shared Nuked OPL3, by the host's convention."""
     if sys.platform == 'darwin': return 'libnukedopl3.dylib'
@@ -204,7 +213,7 @@ def windows_resource(cc):
     return [obj]
 
 
-def compile_port(cc, path, sound_cflags=()):
+def compile_port(cc, path, sound_cflags=(), text_cflags=()):
     if path.startswith(NUKED + os.sep):     # third-party: its own flags, optimised
         if RELEASE:                         # a shared library of its own, beside the program
             lib = os.path.join(OUT, opl_library_name())
@@ -223,6 +232,7 @@ def compile_port(cc, path, sound_cflags=()):
     os.makedirs(os.path.dirname(obj), exist_ok=True)
     extra = pkg_config('--cflags') if is_backend(path) else []
     if path.endswith(os.path.join('sound', 'audio.c')): extra = list(sound_cflags)
+    if path.endswith(os.path.join('presentation', 'hd_font.c')): extra = list(text_cflags)
     # the ROM finder needs libmt32emu's flags alone, as Exhume's [[port.pkg]] gives them
     if path.endswith(os.path.join('sound', 'mt32roms.c')):
         extra = [f for i, f in enumerate(sound_cflags) if f != '-DAUDIO_HAVE_OPL'
@@ -363,9 +373,10 @@ def main(argv):
     game = [p for p in sources.all_sources() if p.upper().endswith('.C') and not portcheck.dos_only(p)]
     game += sources.replay_sources()     # the record and replay hooks' code, shared with the replay DOS build
     snd_cflags, snd_libs, snd_extra = sound_deps()
+    txt_cflags, txt_libs = text_deps() if not a.web else ([], [])
     with ThreadPoolExecutor(max_workers=os.cpu_count() or 4) as ex:
         gres = list(ex.map(lambda p: portcheck.compile_one(a.cc, p), game))
-        pres = list(ex.map(lambda p: compile_port(a.cc, p, snd_cflags), port_sources() + snd_extra))
+        pres = list(ex.map(lambda p: compile_port(a.cc, p, snd_cflags, txt_cflags), port_sources() + snd_extra))
     bad = [(p, e) for p, rc, e, o in gres + pres if not o]
     for p, e in bad:
         print(f'{os.path.relpath(p, root)}: does not compile\n' + '\n'.join(l for l in e.split('\n') if 'error' in l)[:2000])
@@ -379,6 +390,7 @@ def main(argv):
         print(f'{os.path.relpath(p, root)}: warnings\n' + '\n'.join(l for l in e.split('\n') if 'warning' in l)[:2000])
     print('sound: ' + ', '.join([('Nuked OPL3' if '-DAUDIO_HAVE_OPL' in snd_cflags else 'no OPL emulator (tools/setup-sound.sh)'),
                                  ('libmt32emu' if '-DAUDIO_HAVE_MT32EMU' in snd_cflags else 'no libmt32emu (brew install mt32emu, or make setup-libs)')]))
+    print('text: ' + ('FreeType HD text' if txt_cflags else 'no FreeType (no HD text)'))
     # the sound drivers' threads: in the C library on macOS and on Linux's glibc 2.34 and later,
     # in winpthreads on Windows (MinGW), which -pthread links
     threads = [] if sys.platform == 'darwin' else ['-pthread']
@@ -393,7 +405,7 @@ def main(argv):
             rpath = ['-Wl,--enable-new-dtags', '-Wl,-rpath,$ORIGIN', '-Wl,-rpath,$ORIGIN/../lib']
     elif sys.platform.startswith('linux') and any(f.startswith('-L' + LIBS) for f in pkg_config('--libs') + snd_libs):
         rpath = ['-Wl,-rpath,' + os.path.join(LIBS, 'lib')]     # runs without LD_LIBRARY_PATH
-    libs = pkg_config('--libs') + snd_libs
+    libs = pkg_config('--libs') + snd_libs + txt_libs
     if a.web: return link_web(a.cc, objs, libs)
     if RELEASE and sys.platform.startswith('linux'): libs = strip_rpaths(libs)
     objs += windows_resource(a.cc)

@@ -26,7 +26,7 @@ Exhume 的 7 個既有 tooling/profile backlog commits 維持未合併，不變�
 
 ## Changes / Ownership
 
-- [localization.c](../../src/port/i18n/localization.c)、[localization.h](../../src/port/i18n/localization.h)：
+- [localization.c](../../../exhume/runtime/port/i18n/localization.c)、[localization.h](../../../exhume/runtime/port/i18n/localization.h)：
   UW1-owned catalog、read-only UTF-8 lookup、source drift fallback、diagnostic observer。
 - [GAMESTRN.C](../../src/ui/GAMESTRN.C)：僅新增 `#ifndef __TURBOC__` 的 include 與 Native observation hook。
   DOS branch 保留原本語句；`read_string()` decoder、八個 buffers、made blocks 均未重寫。

@@ -26,6 +26,9 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "presentation/scroll_text.h"
+#endif
 
 /* This file's _BSS, DS:8186: where the answer starts. Only this file uses it. */
 /* name: static in FM Towns, so static here; provisional name. */
@@ -33,6 +36,10 @@ static int16 answer_x;
 
 void far init_scroll(void)
 {
+#ifndef __TURBOC__
+    scroll_text_clear(0);
+    scroll_text_clear(1);
+#endif
     scroll = &main_scroll;
     scroll_mode = 0;
     draw_scroll(0x10, 0x1E, 0xDF, 1, 0);
@@ -153,6 +160,9 @@ int far wdialog(char *prompt, char *initial, char *result, char anychar, int max
     char tmp[52];
     int pos;
     int i;
+#ifndef __TURBOC__
+    int hd_was = scroll_text_suspend(1);
+#endif
 
     if (maxlen > 50)
         maxlen = 50;
@@ -275,6 +285,10 @@ int far wdialog(char *prompt, char *initial, char *result, char anychar, int max
         strcpy(result, text);
         scroll->cur_x = x;
     }
+#ifndef __TURBOC__
+    scroll_text_suspend(0);
+    if (hd_was) scroll_clear(1);
+#endif
     return key;
 }
 
@@ -287,6 +301,9 @@ int far wyorn(char *question, int id, char *answer)
     char cur;
     char sel;
     int key;
+#ifndef __TURBOC__
+    int hd_was = scroll_text_suspend(1);
+#endif
 
     cur = *answer;
     sel = *answer;
@@ -323,9 +340,17 @@ int far wyorn(char *question, int id, char *answer)
     if (key == 27) {
         wd_bool(0);
         *answer = 0;
+#ifndef __TURBOC__
+        scroll_text_suspend(0);
+        if (hd_was) scroll_clear(1);
+#endif
         return -1;
     }
     *answer = cur;
+#ifndef __TURBOC__
+    scroll_text_suspend(0);
+    if (hd_was) scroll_clear(1);
+#endif
     return key;
 }
 
@@ -333,6 +358,9 @@ int far wyorn(char *question, int id, char *answer)
    mouse around it when the cursor is over the scroll. */
 void far scroll_clear(char redraw)
 {
+#ifndef __TURBOC__
+    scroll_text_clear(scroll == &npc_scroll);
+#endif
     if (redraw) {
         set_mouse_in();
         if (mouse_in_scroll)

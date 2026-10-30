@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Compile the real MOUSE.C cursor paths against graphics-only doubles."""
+from portsrc import RUNTIME, port_src
 import os
 from pathlib import Path
 import subprocess
@@ -19,9 +20,9 @@ cc = P.host_cc()
 san = ['-fsanitize=address,undefined', '-fno-omit-frame-pointer'] if '--sanitize' in sys.argv else []
 subprocess.run([cc] + P.FLAGS + san + ['-g', '-O1', '-ffunction-sections', '-fdata-sections', '-c',
     str(Path(__file__).with_name('mouse_cursor_test.c')), '-o', str(obj)], check=True)
-subprocess.run([cc] + san + ['-std=c11', '-g', '-O1', '-I'+str(uw1/'src/port'),
+subprocess.run([cc] + san + ['-std=c11', '-g', '-O1', '-I'+str(uw1/'src/port'), "-I" + str(RUNTIME),
     '-I'+str(root/'exhume/runtime/port/platform'), '-c',
-    str(uw1/'src/port/presentation/hd_cursor.c'), '-o', str(cursor)], check=True)
+    str(port_src('presentation/hd_cursor.c')), '-o', str(cursor)], check=True)
 gc = '-Wl,-dead_strip' if sys.platform == 'darwin' else '-Wl,--gc-sections'
 link = ['-Wl,--exclude-all-symbols'] if os.name == 'nt' else []
 subprocess.run([cc, str(obj), str(cursor), gc, '-o', str(exe)] + link + san, check=True)

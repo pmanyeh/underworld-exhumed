@@ -1,6 +1,6 @@
 /* hd_label.h's presentation-thread side: the labels whose box is as the game left it. */
 #include "hd_label.h"
-#include "hd_font.h"
+#include "presentation/hd_font.h"
 
 static uint8_t level(uint8_t v6) { return (uint8_t)((v6 << 2) | (v6 >> 4)); }
 

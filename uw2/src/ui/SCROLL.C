@@ -45,6 +45,10 @@
 #include "gfx.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "presentation/scroll_text.h"
+int port_scroll_write(int which, const char *legacy, int escapes);   /* presentation/localized.c */
+#endif
 
 /* This file's _BSS, DS:34B0..34B3 (seg044's starts at 34B4). */
 /* match: laid out by name: scroll 83, mouse_in_scroll 653. It cannot start any lower
@@ -169,6 +173,36 @@ int far scroll_print(char far *s)
 
     if (scrmode != 1 && scrmode != 4)
         return -1;
+#ifndef __TURBOC__
+    if (scroll_text_enabled()) {
+        /* Phase 14, as UW1's: UTF-8 never visits copy[49], scroll_wrap or the game's glyphs.
+           Clear the real paper, then publish only the HD scroll's own display cells; the
+           scroll's position and colour follow them, as the game's printing leaves them. */
+        int which = scroll == &npc_scroll;
+        set_mouse_in();
+        if (mouse_in_scroll) mouse_hide();
+        if (menus_active && scroll_mode != 1) {
+            menus_active = 0;
+            scroll_clear(0);
+        }
+        set_the_color(0x71);
+        rectangle(scroll->top, scroll->x0, scroll->bottom, scroll->y0);
+        scroll_text_screen(scrmode);
+        scroll_text_box(which, scroll->left, 199 - scroll->last_y,
+                        scroll->bottom + 1, 200 - scroll->y0, 8, scroll->font_color);
+        port_scroll_write(which, s, scroll_esc);
+        scroll->cur_x = scroll_text_x(which);
+        scroll->cur_y = 199 - scroll_text_y(which);
+        scroll->font_color = scroll_text_color(which);
+        *foreground_color = (unsigned char)scroll->font_color;
+        *background_color = 0x71;
+        scroll->start_line = scroll_text_lines(which);
+        didMouseInput = 0;
+        click_time = GAME_TIME();
+        if (mouse_in_scroll) mouse_show();
+        return scroll->start_line;
+    }
+#endif
 
     set_mouse_in();
     if (mouse_in_scroll)

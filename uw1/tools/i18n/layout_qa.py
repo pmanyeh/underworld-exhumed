@@ -4,6 +4,7 @@ scroll's own code and the default font, in the box the game shows it in, and rep
 [MORE] pages and failures. A player's menu option, and any string outside a conversation
 (game messages, books, writings, trap text), goes to the message scroll (box 0, three lines);
 an NPC's line to the conversation's box (1, nine lines); the role comes from babl_audit. Needs the player's STRINGS.PAK/CNV.ARK for the roles; reports keys and counts."""
+from portsrc import RUNTIME, port_src
 import argparse
 import collections
 import json
@@ -30,9 +31,9 @@ def build(uw1):
     flags = shlex.split(subprocess.check_output(['pkg-config', '--cflags', '--libs', 'freetype2'], text=True, env=env))
     root = uw1.parent
     subprocess.run([os.environ.get('CC') or shutil.which('clang') or 'cc', '-std=c11', '-O1', '-Wall', '-Wextra', '-Werror',
-                    '-DUW1_HAVE_FREETYPE', '-I' + str(uw1 / 'src/port'), '-I' + str(root / 'exhume/runtime/port/platform'),
+                    '-DHD_HAVE_FREETYPE', '-I' + str(uw1 / 'src/port'), "-I" + str(RUNTIME), '-I' + str(root / 'exhume/runtime/port/platform'),
                     '-I' + str(root / 'exhume/runtime/port'), str(Path(__file__).with_name('layout_qa.c')),
-                    *(str(uw1 / 'src/port' / s) for s in ('presentation/scroll_text.c', 'presentation/hd_font.c',
+                    *(str(port_src(s)) for s in ('presentation/scroll_text.c', 'presentation/hd_font.c',
                                                           'i18n/layout.c', 'i18n/utf8.c')),
                     '-o', str(exe)] + flags, check=True)
     return exe
