@@ -1,6 +1,6 @@
 # 開發交接：UW1 繁中整合版／新對話入口（2026-10-31）
 
-## 0. 下一個 Session：UW2 中文化開工（2026-10-31 使用者決定）
+## 0. UW2 中文化：Phase 14 進行中（2026-10-31 使用者決定開工）
 
 UW1 已告一段落（0.6、tag `zh-tw-native-p13`）。新 Session 直接開始 UW2；**使用者要求只要還有 token 就持續推進，不逐步等確認**，
 遇到真正需要使用者決定的事（用詞、會改玩法的取捨、發佈）才停下來問。
@@ -16,13 +16,27 @@ UW1 已告一段落（0.6、tag `zh-tw-native-p13`）。新 Session 直接開始
   catalog 工具、驗證器、HD 文字／游標呈現等**共用**，不可把 UW1 的 i18n 整套複製一份；UW2 只加遊戲特有的接點
   （字串／區塊對應、對話掛鉤、UI 位置、動態句型、名稱差異、UW2 測試）。**先做 UW2 垂直切片，再大量套譯文。**
 
-建議起手順序（新 Session 依實際程式再調整）：
+**2026-10-31 進度（Phase 14 第一批：共用模組＋垂直切片，已提交推送）** — 詳見 `uw2/docs/i18n/P14_SLICE.md`：
 
-1. 確認 Git 乾淨、UW2 本機可編譯與重播既有 session（建立 UW2 的 env／路徑，同 §7 的 UW1 作法）。
-2. 盤點 UW1 `uw1/src/port/i18n/`、`presentation/`（hd_font、scroll_text、hd_label…）與 `tools/i18n/` 哪些已是遊戲無關、哪些綁 UW1，
-   規劃抽到共用位置（Exhume runtime 或共用目錄），UW1 回歸（16 session × 四模式）必須保持一致。
-3. UW2 垂直切片：catalog 由 UW2 主表建置 → 訊息欄／對話一段中文 → HD 字型顯示；四模式存檔與英文模式 DOS golden 不變。
-4. 之後依 UW1 P8～P12 的順序擴大：對話、書本卷軸、物品、介面標籤、過場字幕、中文輸入、存檔名稱等，每批都要建置、測試、提交。
+- 共用模組已搬到 Exhume runtime（子模組 `f591c3c`，`runtime/port/i18n/`：utf8、layout、localization、cp437；
+  `runtime/port/presentation/`：hd_font、text_style、scroll_text、scroll_overlay、hd_cursor）。FreeType 巨集改名 `HD_HAVE_FREETYPE`。
+  UW1 綁遊戲的模組（phrases、ui_text、scroll_bridge、hd_label、caption…）仍留 UW1，UW2 需要時再抽共用。
+  UW1 回歸（17 單元測試、16 session × 四模式）與搬移前逐一相同。主 repo 提交 `e08d8dc`。
+- UW2：`uw2/src/port/presentation/localized.c` 接線（`--locale`、`--i18n-file`、`--hd-scroll`、`--font`；測試 `--scroll-log`、`--i18n-trace`、`--shot-on-text N`），
+  掛鉤在 GAMESTRN／SCROLL／SCROLLIO／BABL／CONVERSE。對話已顯示中文；英文與「載入 catalog」模式 12 session 與 DOS golden 逐檢查點一致，HD 模式存檔相同。
+- UW2 主表以 `l10n.py normalize` 補推導旗標 935 列（備份 `master.tsv.pre-normalize-20261031`）；catalog 9,543 筆，本機 `uw2/build/i18n/slice/catalog.uw2loc`（不提交）。
+- 本機工具：`.poc-tools/handoff/env-uw2.sh`（UW2 環境，含 `PKG_CONFIG_DONT_DEFINE_PREFIX=1`，否則 pkgconf 把 prefix 改成相對路徑而找不到 mt32emu）、
+  `.poc-tools/uw2-slice-check.py`（UW2 四模式）、`.poc-tools/uw2-shared-check.py`（UW1 units／replays，比對搬移前）。
+  UW2 字型放 `uw2/tools/fonts/`（已加入 .gitignore，從 UW1 複製）。無視窗截 HD 畫面：`SDL_VIDEODRIVER=offscreen` 不加 `--hidden`，配 `--shot-on-text N --screenshot A --window-shot B`。
+- 注意：這個工作區的檔案是 CRLF、索引是 LF；用工具改檔後要轉回 LF，否則整份顯示為修改。Bash heredoc 會吃掉 `\\n`，含跳脫字元的 C 改用 Edit 工具。
+  Windows 上跑 UW2 `tools/portstubs.py` 會產生假差異（路徑分隔符、MinGW CRT 符號），不要提交。
+
+**下一步（Phase 14 後續批次，依 UW1 P8～P12 順序）：**
+
+1. 訊息欄組句（「You see a sack.」等）：移植 UW1 P11.2 的 `port_zh` 組句與 `phrases`（UW1 `GAMESTRN.C`、`LOOK.C` 的掛鉤），句型表需抽出共用機制、UW2 自有內容。
+2. 對話選單（`port_scroll_option`／`choice_bind`、點選命中 `scroll_text_hit`）、輸入話題（input aliases）、專有名詞首次加註（name_gloss）——考慮把 UW1 `scroll_bridge.c` 抽成共用。
+3. HD 游標（UW2 `MOUSE.C` 掛鉤；目前遊戲游標會壓在 HD 文字上）。
+4. 書本卷軸、物品名、介面標籤（`string_to_screen`／hd_label）、過場字幕、中文輸入、存檔名稱、F11 語言分頁、啟動時依 catalog 預設中文。
 5. UW2 強化功能（UW1 的 F11 項目）屬另議，先不移植，除非使用者要求。
 
 UW1 之後只依回報修正；UW1 的規則（§9）同樣適用於 UW2（原版 `.C/.H` 保持 ASCII、掛鉤放 `#ifndef __TURBOC__`、
@@ -55,8 +69,8 @@ catalog 與遊戲檔不上傳、玩家資料不覆寫、強化功能預設關）
 | 項目 | 現況 |
 | --- | --- |
 | 主 repo／分支 | `pmanyeh/underworld-exhumed`／`feature/zh-tw-native` |
-| 最新功能提交 | 2026-10-31 HD 描邊快取（標題頁游標延遲），提交以 `git log -1` 為準；之前 `4f95eb9`（強化功能即時生效）、`aee554b`（地圖橡皮擦輔助）、`3122640`（按鍵說明頁）、`b3249e6`（三項強化功能） |
-| Exhume 子模組 | `pmanyeh/Exhume`，固定 `370b998bb5e1214b7b712731c504774fd86f8a02`（2026-10-28 按鍵說明頁） |
+| 最新功能提交 | 2026-10-31 UW2 Phase 14 共用模組＋垂直切片 `e08d8dc`（§0）；UW1 最後一項為 2026-10-31 HD 描邊快取（標題頁游標延遲），提交以 `git log -1` 為準；之前 `4f95eb9`（強化功能即時生效）、`aee554b`（地圖橡皮擦輔助）、`3122640`（按鍵說明頁）、`b3249e6`（三項強化功能） |
+| Exhume 子模組 | `pmanyeh/Exhume`，固定 `f591c3c`（2026-10-31 共用文字模組，UW2 Phase 14）；前一個 `370b998`（2026-10-28 按鍵說明頁） |
 | 子模組 checkout | 本機為固定提交的 detached HEAD，工作區乾淨；遠端開發分支 `feature/presentation-overlay` |
 | 階段／tag | 2026-10-31 經使用者同意建立 `zh-tw-native-p13`（UW1 段落完成；譯文審閱仍可後續提交）；前一階段 `zh-tw-native-p12`（`0169ca1`） |
 | 版本號 | 0.6（2026-10-31）；攜帶測試包版本號，譯文多數仍為 draft |
