@@ -126,7 +126,39 @@ int main(int argc, char **argv)
     CHECK(hd_text_draw(f,&p,text,strlen(text),-1000000,-1000000,32,0,white)==HD_OK);
     for(i=0;i<64;i++)CHECK(guard[i]==0xcd && guard[bytes+64+i]==0xcd);
     for(row=0;row<p.height;row++)for(col=p.width*4;col<p.pitch;col++)CHECK(p.rgba[(size_t)row*p.pitch+col]==0xcd);
+    {   /* A border, opaque (its outline made once and kept with the glyph) and faded, clipped too */
+        static const float all[4]={0,0,320,200};
+        HdColor gold={230,170,40,255};
+        PlatOverlay q={0};
+        size_t qb;
+        unsigned ink=0,body=0;
+        uint8_t *once;
+        q.width=1600;q.height=1000;q.pitch=q.width*4;q.window_width=1600;q.window_height=1000;
+        q.logical_width=320;q.logical_height=200;q.viewport_w=1600;q.viewport_h=1000;
+        qb=(size_t)q.pitch*q.height;q.rgba=calloc(1,qb);once=malloc(qb);CHECK(q.rgba&&once);
+        CHECK(hd_scroll_glyph_border(f,&q,0x958B,100,80,20,all,gold,1)==HD_OK);
+        memcpy(once,q.rgba,qb);hd_font_stats(f,&a);
+        for(i=0;i<qb;i+=4)if(once[i+3]==255){if(!once[i]&&!once[i+1]&&!once[i+2])ink++;else if(once[i]==230)body++;}
+        CHECK(ink>1000 && body>1000);
+        memset(q.rgba,0,qb);
+        CHECK(hd_scroll_glyph_border(f,&q,0x958B,100,80,20,all,gold,1)==HD_OK);
+        hd_font_stats(f,&b);CHECK(!memcmp(once,q.rgba,qb) && b.bitmap_bytes==a.bitmap_bytes && b.rasterizations==a.rasterizations);
+        CHECK(hd_scroll_glyph_border(f,&q,0x958B,100,80,20,all,gold,.5f)==HD_OK);   /* another radius: rebuilt */
+        hd_font_stats(f,&a);CHECK(a.bitmap_bytes<b.bitmap_bytes);
+        memset(q.rgba,0,qb);gold.a=150;
+        CHECK(hd_scroll_glyph_border(f,&q,0x958B,100,80,20,all,gold,1)==HD_OK);
+        for(i=0,ink=0;i<qb;i+=4)ink+=q.rgba[i+3]!=0;
+        CHECK(ink>1000);
+        free(once);free(q.rgba);
+        gold.a=255;free(guard);
+        guard=malloc(bytes+128);CHECK(guard);memset(guard,0xcd,bytes+128);p.rgba=guard+64;
+        for(row=0;row<p.height;row++)memset(p.rgba+(size_t)row*p.pitch,0,p.width*4);
+        CHECK(hd_scroll_glyph_border(f,&p,0x958B,-6,-9,40,all,gold,2)==HD_OK);
+        CHECK(hd_scroll_glyph_border(f,&p,0x958B,300,180,40,all,gold,2)==HD_OK);
+        for(i=0;i<64;i++)CHECK(guard[i]==0xcd && guard[bytes+64+i]==0xcd);
+        for(row=0;row<p.height;row++)for(col=p.width*4;col<p.pitch;col++)CHECK(p.rgba[(size_t)row*p.pitch+col]==0xcd);
+    }
     free(guard); hd_font_shutdown(f); hd_font_shutdown(NULL);
-    printf("PASS %d assertions: CJK/AA, metrics, cache hit/eviction/face/size, alpha, malformed input, wrapping, clipping\n",checks);
+    printf("PASS %d assertions: CJK/AA, metrics, cache hit/eviction/face/size, alpha, malformed input, wrapping, clipping, borders\n",checks);
     return 0;
 }

@@ -29,6 +29,8 @@ typedef struct Glyph {
     int width, height, left, top, advance;
     uint8_t *mask;
     uint64_t used;
+    uint8_t *ring;                      /* the border's mask for radius ring_r (outline), or NULL */
+    int ring_r;
 } Glyph;
 struct HdFont {
     FT_Library library;
@@ -58,7 +60,7 @@ void hd_font_shutdown(HdFont *f)
 {
     unsigned i;
     if (!f) return;
-    for (i = 0; i < CACHE_SLOTS; i++) free(f->glyphs[i].mask);
+    for (i = 0; i < CACHE_SLOTS; i++) { free(f->glyphs[i].mask); free(f->glyphs[i].ring); }
     if (f->fallback) FT_Done_Face(f->fallback);
     if (f->face) FT_Done_Face(f->face);
     if (f->library) FT_Done_FreeType(f->library);
@@ -71,8 +73,9 @@ void hd_font_stats(const HdFont *f, HdFontStats *out)
 static void evict(HdFont *f, Glyph *g)
 {
     f->stats.bitmap_bytes -= (size_t)g->width * g->height;
+    if (g->ring) f->stats.bitmap_bytes -= (size_t)(g->width + 2 * g->ring_r) * (g->height + 2 * g->ring_r);
     f->stats.entries--; f->stats.evictions++;
-    free(g->mask); memset(g, 0, sizeof *g);
+    free(g->mask); free(g->ring); memset(g, 0, sizeof *g);
 }
 static Glyph *oldest(HdFont *f)
 {
@@ -300,6 +303,39 @@ void hd_font_set_antialiasing(HdFont *f, int on)
     for (i = 0; i < CACHE_SLOTS; i++)
         if (f->glyphs[i].size) evict(f, &f->glyphs[i]);
 }
+/* The border of radius r as one mask: the glyph's mask at every whole offset of the border, as
+   painting it opaque at each offset would leave it (1 - the product of 1 - each alpha), kept
+   with the glyph; VIEW is it as a glyph to paint, r pixels bigger each way. A big glyph at a
+   big radius is a hundred paints a frame without it (the start menu's buttons). NULL when it
+   cannot be made. */
+static const Glyph *outline(HdFont *f, Glyph *g, int r, Glyph *view)
+{
+    int w = g->width + 2 * r, h = g->height + 2 * r, ox, oy, row, col;
+    if (!g->mask || r > 64) return NULL;
+    if (!g->ring || g->ring_r != r) {
+        double *keep;
+        size_t bytes = (size_t)w * h, i;
+        if (g->ring) { f->stats.bitmap_bytes -= (size_t)(g->width + 2 * g->ring_r) * (g->height + 2 * g->ring_r); free(g->ring); g->ring = NULL; }
+        keep = malloc(bytes * sizeof *keep);
+        g->ring = malloc(bytes);
+        if (!keep || !g->ring) { free(keep); free(g->ring); g->ring = NULL; return NULL; }
+        for (i = 0; i < bytes; i++) keep[i] = 1;
+        for (oy = -r; oy <= r; oy++) for (ox = -r; ox <= r; ox++) {
+            if (!(ox || oy) || ox * ox + oy * oy > r * r + r) continue;
+            for (row = 0; row < g->height; row++) for (col = 0; col < g->width; col++) {
+                unsigned a = g->mask[(size_t)row * g->width + col];
+                if (a) keep[(size_t)(row + r + oy) * w + (col + r + ox)] *= (255 - a) / 255.0;
+            }
+        }
+        for (i = 0; i < bytes; i++) g->ring[i] = (uint8_t)(255 - (int)(keep[i] * 255 + .5));
+        free(keep);
+        g->ring_r = r;
+        f->stats.bitmap_bytes += bytes;
+    }
+    *view = *g;
+    view->width = w; view->height = h; view->left = g->left - r; view->top = g->top + r; view->mask = g->ring;
+    return view;
+}
 int hd_scroll_glyph(HdFont *f,const PlatOverlay *p,uint32_t scalar,
                     float x,float y,float em,const float clip[4],HdColor color)
 {
@@ -328,9 +364,12 @@ int hd_scroll_glyph_border(HdFont *f,const PlatOverlay *p,uint32_t scalar,
         /* the outline: the mask in black at every whole offset within the border's radius,
            in output pixels (at least one) */
         HdColor ink={0,0,0,color.a};
+        Glyph view;const Glyph *ring;
         int r=(int)(border*sy+.5),ox,oy;
         if(r<1)r=1;
-        for(oy=-r;oy<=r;oy++)for(ox=-r;ox<=r;ox++)
+        /* opaque: the outline made once and kept; faded (combat text), each offset as before */
+        if(color.a==255 && (ring=outline(f,g,r,&view))!=NULL)paint(p,ring,gx,gy,ink,x0,y0,x1,y1);
+        else for(oy=-r;oy<=r;oy++)for(ox=-r;ox<=r;ox++)
             if((ox || oy) && ox*ox+oy*oy<=r*r+r)paint(p,g,gx+ox,gy+oy,ink,x0,y0,x1,y1);
     }
     paint(p,g,gx,gy,color,x0,y0,x1,y1);
