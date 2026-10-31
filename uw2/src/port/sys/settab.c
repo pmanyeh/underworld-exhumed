@@ -31,7 +31,7 @@ extern const char *port_home;
 
 /* The rows, in each tab's order; the display rows read each other's values */
 enum { R_MUSIC, R_SPEECH, R_ROMS, R_VOLUME, R_MOUSE, R_LOOK, R_FULL, R_SCALE, R_ASPECT, R_INTEGER, R_FOLDER, R_RECORD, R_START,
-       R_LANGUAGE, R_FONT, R_SIZE, R_LINE, R_BORDER, R_SMOOTH, R_GLOSS, R_RESCUE, R_ANCHOR };
+       R_LANGUAGE, R_FONT, R_SIZE, R_LINE, R_BORDER, R_SMOOTH, R_GLOSS, R_RESCUE, R_ANCHOR, R_BRIGHT_STRENGTH };
 
 /* Window scale offers only the scales whose window fits the display (with 4:3 as it stands) */
 static int scale_limit(void)
@@ -159,6 +159,8 @@ static int font_limit(void)
 
 void port_cheat_rescue_request(int unused);         /* ui/cheat_menu.c */
 void port_cheat_anchor_request(int unused);
+void port_cheat_brightness_request(int value);
+#include "presentation/bright_view.h"
 
 const struct setting port_settings[] = {
     [R_MUSIC]   = { .tab = SET_TAB_SOUND, .label = "Music", .kind = SET_CYCLE, .names = music_names, .stored = music_cards,
@@ -204,6 +206,10 @@ const struct setting port_settings[] = {
     [R_GLOSS]   = { .tab = SET_TAB_TEXT, .label = "English names", .kind = SET_CYCLE, .key = "name-gloss", .names = gloss_names,
                     .stored = gloss_stored, .def = 1, .apply = name_gloss_mode,
                     .help = "A name of a person, place or order with its English, in conversations and books" },
+    [R_BRIGHT_STRENGTH] = { .tab = SET_TAB_CHEATS, .label = "Brightness strength", .kind = SET_SLIDER,
+                    .key = "bright-strength", .lo = 0, .hi = BRIGHT_STRENGTH_MAX, .step = 1,
+                    .def = BRIGHT_STRENGTH_DEFAULT, .apply = port_cheat_brightness_request,
+                    .help = "With bright-view on: 0 original, 4 gentle, 15 brightest; close settings to apply" },
     [R_RESCUE]  = { .tab = SET_TAB_CHEATS, .label = "Return to safe position", .kind = SET_ACTION,
                     .apply = port_cheat_rescue_request,
                     .help = "Close settings and return to the game to recover; does not change quest progress" },
@@ -286,4 +292,13 @@ void port_text_choice(int *size, int *line, int *border10, int *smooth)
     *line = settings_value(R_LINE);
     *border10 = tenths[b >= 0 && b < 4 ? b : 0];
     *smooth = settings_value(R_SMOOTH);
+}
+
+/* Recorded commands own a replay's strength. Old recordings start at the former fixed strength,
+   irrespective of the viewer's settings file (as UW1's). */
+void port_settings_brightness(int replay)
+{
+    if (replay) settings_set_start(R_BRIGHT_STRENGTH, BRIGHT_STRENGTH_DEFAULT);
+    else if (settings_value(R_BRIGHT_STRENGTH) != BRIGHT_STRENGTH_DEFAULT)
+        port_cheat_brightness_request(settings_value(R_BRIGHT_STRENGTH));
 }

@@ -27,6 +27,7 @@ extern const struct enhance_flag enhance_table[];   /* src/port/sys/enhtab.c */
 extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a test's cheats */
 void port_cheat_menu_init(void);                    /* src/port/ui/cheat_menu.c */
 void port_cheat_settings(void);
+void port_settings_brightness(int replay);          /* src/port/sys/settab.c */
 
 int uw2_main(int argc, char *argv[]);
 void borland_init(void);
@@ -561,6 +562,7 @@ int main(int argc, char *argv[])
        display options win */
     settings_init(home, port_settings, port_settings_count, "Ultima Underworld II");
     port_cheat_settings();              /* ui/cheat_menu.c: the Cheats tab, the enhancements set in play */
+    port_settings_brightness(replay != NULL);
     /* what this run really uses (the command line over the file) is what the screen shows and applies */
     port_settings_start(&cfg.fullscreen, cl_scale ? NULL : &cfg.scale, cl_aspect ? NULL : &cfg.aspect,
                         cl_integer ? NULL : &cfg.integer_scale);

@@ -394,6 +394,7 @@ void far do_3d_grab(void)
 void far render_FB(void)
 {
 #ifndef __TURBOC__
+    port_bright_begin();                /* port only: --enhance bright-view */
     if (port_steep())                   /* port only: --enhance wide-pitch beyond the original's pitch */
         port_view_passes();
     else {
@@ -410,6 +411,9 @@ void far render_FB(void)
     *dbptr++ = 0;
     set_the_window(0, xhgt - 1, xwid - 1, 0);
     cRender();
+#ifndef __TURBOC__
+    port_bright_end();
+#endif
     set_the_window(0, 0xC7, 0x13F, 0);
 }
 
@@ -418,6 +422,7 @@ void far establish_view(void)
 {
     strtime = GAME_TIME();
 #ifndef __TURBOC__
+    port_bright_begin();                /* port only: --enhance bright-view */
     if (port_steep()) {                 /* port only: --enhance wide-pitch beyond the original's pitch */
         port_view_passes();
         gr_putlab(0xA0);
@@ -432,6 +437,7 @@ void far establish_view(void)
     }
     send_db();
 #ifndef __TURBOC__
+    port_bright_end();
     if (port_hole_mark() >= 0)          /* port only: the hole probe's count (holeprobe.c) */
         port_hole_report((const unsigned char far *)stdat, 0x69D6, PlayerPitch);
 #endif

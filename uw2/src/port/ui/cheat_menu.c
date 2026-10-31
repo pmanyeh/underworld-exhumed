@@ -19,6 +19,7 @@
 #include "ui/settings.h"
 #include "presentation/flask_text.h"
 #include <stdio.h>
+#include <stdatomic.h>
 #include <string.h>
 
 static void say(const char *key, const char *en)
@@ -187,6 +188,14 @@ static const char *enhance(int argc, char **argv, int run)
 static const char *no_wear(int n, char **a, int run) { return toggle(n, a, run, ENH_NO_WEAR); }
 static const char *map(int n, char **a, int run) { return toggle(n, a, run, ENH_FULL_MAP); }
 static const char *god(int n, char **a, int run) { return toggle(n, a, run, ENH_GOD_MODE); }
+static const char *bright(int n, char **a, int run) { return toggle(n, a, run, ENH_BRIGHT_VIEW); }
+static const char *brightness(int n, char **a, int run)
+{
+    long value;
+    if (n != 1 || cheat_num(a[0], 0, BRIGHT_STRENGTH_MAX, &value)) return "0..15";
+    if (run) port_bright_strength_set((int)value);
+    return NULL;
+}
 static const char *rescue(int n, char **a, int run)
 {
     (void)a;
@@ -209,7 +218,8 @@ static const char *remember(int n, char **a, int run)
 
 static const struct cheat_cmd commands[] = {
     { "menu-god", "0|1", god }, { "menu-map", "0|1", map },
-    { "menu-rescue", "", rescue }, { "menu-anchor", "", remember }, { "menu-no-wear", "0|1", no_wear }, { "menu-enhance", "NAME 0|1", enhance }
+    { "menu-rescue", "", rescue }, { "menu-anchor", "", remember },
+    { "menu-bright", "0|1", bright }, { "menu-bright-level", "0..15", brightness }, { "menu-no-wear", "0|1", no_wear }, { "menu-enhance", "NAME 0|1", enhance }
 };
 static const struct cheat_game menu = { commands, sizeof commands / sizeof commands[0], ready };
 void port_cheat_menu_init(void) { cheat_menu_init(&menu); }
@@ -219,6 +229,24 @@ static void request(const char *text)
     if (cheat_menu_request(text)) fputs("uw2port: cheat menu queue unavailable\n", stderr);
 }
 static void god_request(int on) { request(on ? "menu-god 1" : "menu-god 0"); }
+static void bright_request(int on) { request(on ? "menu-bright 1" : "menu-bright 0"); }
+/* A dragged slider can change hundreds of times while the game is paused: the last value is
+   queued at the main loop's next safe point */
+static atomic_int pending_strength = -1;
+void port_cheat_brightness_request(int value)
+{
+    if (value >= 0 && value <= BRIGHT_STRENGTH_MAX) atomic_store(&pending_strength, value);
+}
+void port_cheat_brightness_point(void)
+{
+    int value, empty = -1;
+    char command[32];
+    if (!ready()) return;
+    value = atomic_exchange(&pending_strength, -1);
+    if (value < 0) return;
+    snprintf(command, sizeof command, "menu-bright-level %d", value);
+    if (cheat_menu_request(command)) atomic_compare_exchange_strong(&pending_strength, &empty, value);
+}
 static void map_request(int on) { request(on ? "menu-map 1" : "menu-map 0"); }
 void port_cheat_rescue_request(int unused) { (void)unused; request("menu-rescue"); }
 void port_cheat_anchor_request(int unused) { (void)unused; request("menu-anchor"); }
@@ -244,6 +272,7 @@ void port_cheat_settings(void)
     int i;
     settings_enhancement(ENH_FULL_MAP, SET_TAB_CHEATS, map_request);
     settings_enhancement(ENH_GOD_MODE, SET_TAB_CHEATS, god_request);
+    settings_enhancement(ENH_BRIGHT_VIEW, SET_TAB_CHEATS, bright_request);
     settings_enhancement(ENH_NO_WEAR, SET_TAB_CHEATS, no_wear_request);
     for (i = 0; i < LIVE; i++) settings_enhancement(live[i], SET_TAB_ENHANCE, live_request[i]);
 }

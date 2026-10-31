@@ -30,6 +30,7 @@ void far mainloop(void)
     while (notdone)
     {
 #ifndef __TURBOC__
+        port_cheat_brightness_point();  /* port only: the settings screen's brightness slider */
         port_cheat_point();     /* port only: a test's cheats (Exhume's sys/cheat.c), between passes */
         port_god_tick();        /* port only: --enhance god-mode's safe positions */
 #endif
