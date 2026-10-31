@@ -58,9 +58,9 @@ One switch for each enhancement the game has, all off by default. The selected o
 
 | Option | What it does | Settings-file key | When | Command line |
 |---|---|---|---|---|
-| each enhancement | turns it on or off | `enhance=` (a comma-separated list of the names that are on) | next start; in UW1 some at once (below) | `--enhance NAME[,NAME]` and `--no-enhance NAME` (kept); `--enhance list` lists them |
+| each enhancement | turns it on or off | `enhance=` (a comma-separated list of the names that are on) | next start; some at once (below) | `--enhance NAME[,NAME]` and `--no-enhance NAME` (kept); `--enhance list` lists them |
 
-In UW1, `invert-look`, `flask-numbers`, `auto-key`, `e-takes`, `damage-numbers`, `enemy-health`, `split-all`, `unknown-topic` and `easy-erase` take effect in play, once the screen is closed and you are back in the 3D view with nothing on the cursor, and say "Setting applied." in the message scroll. Each is read where it acts or draws, with nothing set up from it when the game starts. Like the Cheats tab's switches, the change is kept in the session's recording (format 6, `menu-enhance NAME 0|1`), so the recording replays as it was played. The others still need a restart: those set up when the game starts (`modern-keys`, `mouse-look`, `rune-keys`, `perspective`, `wide-pitch` and the like) and those that only act at a start or a restore (`skip-intro`, `restore-at-rest`).
+In UW1, `invert-look`, `flask-numbers`, `auto-key`, `e-takes`, `damage-numbers`, `enemy-health`, `split-all`, `unknown-topic` and `easy-erase` take effect in play, once the screen is closed and you are back in the 3D view with nothing on the cursor, and say "Setting applied." in the message scroll. Each is read where it acts or draws, with nothing set up from it when the game starts. Like the Cheats tab's switches, the change is kept in the session's recording (format 6, `menu-enhance NAME 0|1`), so the recording replays as it was played. In UW2, `invert-look` and `split-all` do the same, through the same recorded command. The others still need a restart: those set up when the game starts (`modern-keys`, `mouse-look`, `rune-keys`, `perspective`, `wide-pitch` and the like) and those that only act at a start or a restore (`skip-intro`, `restore-at-rest`).
 
 ### Game
 

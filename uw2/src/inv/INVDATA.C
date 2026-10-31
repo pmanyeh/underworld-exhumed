@@ -418,6 +418,11 @@ int far DamageInventory(int slot, unsigned char damage, unsigned char type, int 
         } else if (!ObjWorn(OBJ_ITEM(obj), slot))
             return -2;
     }
+#ifndef __TURBOC__
+    /* port only: --enhance no-wear (the settings screen's Cheats tab), as UW1's: combat wear
+       only, explicit damage to inventory objects (how 2) kept */
+    if (ENHANCED(ENH_NO_WEAR) && (how == 0 || how == 1)) return -1;
+#endif
     quality = obj->qn.f.quality;
     if (damage_item(obj, 0L, -1, -1, damage, type)) {
         if (debris) {

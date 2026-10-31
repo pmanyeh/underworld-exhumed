@@ -89,6 +89,7 @@ int port_text_setup(const char *home, int interactive)
             fclose(probe);
             if (!have) {
                 zh = 1;
+                port_settings_language(1);      /* the Language tab: the language this first run chose */
                 port_config_set(home, "language", "zh-TW");
             }
             if (zh) { locale = "zh-TW"; i18n_file = catalog; hd_scroll = 1; }
@@ -107,7 +108,8 @@ int port_text_setup(const char *home, int interactive)
         fputs("uw2port: --hd-scroll needs --locale zh-TW\n", stderr);
         return -1;
     }
-    port_settings_language(!strcmp(locale, "zh-TW"));     /* the Language tab shows what this run has */
+    /* the Language tab shows the command line's language; else the settings file's, as it is */
+    if (locale_given) port_settings_language(!strcmp(locale, "zh-TW"));
     scroll_text_enable(hd_scroll);
     /* UW2's colours for the scroll's \0..\6 escapes (SCROLL.C's spec_col) and its [MORE] (0x12,
        SCROLLIO.C's scroll_more), in place of UW1's */
