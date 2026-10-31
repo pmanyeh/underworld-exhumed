@@ -45,6 +45,8 @@ SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`
   2026-10-31 第四版（第八批 `feee9fc`：中文姓名／存檔說明、數量面板）：EXE SHA-256 `efc835129ff1e6e6…`，舊檔在 `backup/`，home 60 檔雜湊不變；說明.txt 已更新。
   2026-10-31 第五版（`634dd8a` split-all）：EXE SHA-256 `0c4e29b6115535ec…`，舊 EXE 與 `uw2port.cfg` 在 `backup/`；
   `home/uw2port.cfg` 的 enhance 加上 `split-all`（同 UW1 測試版），其他檔不動。
+  2026-11-01 第六版（`76cd472`：F11 中文、即時套用、密技分頁、六項強化）：EXE SHA-256 `ebd3c7f57d103f95…`，舊 EXE 與 cfg 在 `backup/`；
+  enhance 加上 flask-numbers、auto-key、e-takes、mouse-wheel、no-wear、unknown-topic（同 UW1 測試版），home 其他 71 檔雜湊不變；說明.txt 已更新。
   使用者已確認第一版回報的問題（創造人物對齊與屬性名、對話顏色、文字疊在地圖與過場）修正 OK。
 更新測試版時只換 EXE（先備份舊檔），不要動 `home\`。
 
@@ -55,11 +57,20 @@ SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`
 
 1. （第三批已完成：UW2 `input-aliases.tsv` 22 列、`proper-names.tsv` 93 名、`babl_ask` 中文輸入、每段對話重設加註；見 `P14_SLICE.md`。
    本機 `.poc-tools/uw2-cnv-unpack.py` 解 UW2 CNV.ARK 給 `babl_audit` 用。輸入法實機尚未遊玩驗證。）
-2. 還沒接的拼接訊息：SPELLS2 的辨識怪物、WORLDEV 修理、MISCUTIL 方向、PLAYER 座標等；用 `--scroll-log` 找仍是英文的行。
+2. （第十批已完成：BARTER 估價、SPELLS2 研究怪物、MISCUTIL 偵測方位、OBJUSE「要把○○用在什麼上？」。）
+   第九批：F11 中文與「語言與文字」分頁（settings_text／settings_words 移入 Exhume runtime，UW1 共用）。
 3. （第八批：中文姓名、存檔說明、數量面板已完成。）（第六、七批：主選單、屬性頁、選項面板美術字已改中文。）（第四批：`string_to_screen` 的 HD 標籤已接，hd_label 搬到 runtime；見 `P14_SLICE.md`。）美術字的補丁（選項面板、主選單、屬性頁，UW1 ui_text 的
    `port_options_*`／`port_menu_button`／`port_stats_labels`）、跨頁標籤複製（過場字幕已於第五批完成）、數量面板、中文姓名與存檔說明（text_entry、user_text）、
    F11 語言分頁、啟動時依 catalog 預設中文、測試版打包。
-4. UW2 強化功能（UW1 的 F11 項目）屬另議，先不移植，除非使用者要求。
+4. **2026-11-01 使用者要求：UW1 新增的功能也加到 UW2，兩代體驗一致。** 已完成（各自提交、回歸通過）：
+   F11 即時套用＋密技分頁（`port/ui/cheat_menu.c`，`menu-enhance`／`menu-no-wear` 走錄影佇列）、no-wear、unknown-topic、
+   flask-numbers（flask_text 移入 runtime，`flask_text_place`）、auto-key（`port/ui/autokey.c`）、mouse-wheel（屬性頁 RightPanel 是 2，滑動中是 4）、
+   e-takes（含 UW2 撿起的書／月石／壓力板；測試指令 test-inv、test-take）。
+   注意：`enhtab.c` 的順序必須和 `portgame.h` 的 enum 一致；最後一欄 only 是「只在另一款遊戲有」，新功能填 NULL。
+   還沒做：full-map、easy-erase、地圖中文註記（map_note_overlay／map_notes_bridge）、god-mode＋返回／記住安全位置、bright-view＋亮度、
+   damage-numbers、enemy-health、按鍵說明分頁（key_help）、modern-keys 的 Space 跳躍／C 戰鬥／X 關容器、滑鼠中鍵切換滑鼠視角。
+   unknown-topic、auto-key 尚未實機觸發（需要有 babl_ask 的 NPC／上鎖的門）；Nystul（slot 130）在城堡、對話有 babl_ask。
+   本機 setcheck：Windows 不能建「rt-4:3_aspect」資料夾，roundtrip 有 5 項中斷（`.poc-tools/setcheck-safe-tempnames.py` 是繞法）。
 
 UW1 之後只依回報修正；UW1 的規則（§9）同樣適用於 UW2（原版 `.C/.H` 保持 ASCII、掛鉤放 `#ifndef __TURBOC__`、
 catalog 與遊戲檔不上傳、玩家資料不覆寫、強化功能預設關）。

@@ -162,6 +162,16 @@
 - 使用者要求「跟 UW1 一樣，預設為全部」（`634dd8a`）：UW2 加 `--enhance split-all`（遊戲性強化，預設關），
   「要移動幾個？」與數量面板從整疊開始（最多 999）；實測 5 枚金幣面板顯示「5 / 5」。測試版設定已開啟。
 
+## 第九、十批與 UW1 功能移植（2026-11-01）
+
+- 第九批（`44288c6`）：F11 設定畫面中文、「語言與文字」分頁；`settings_text.c`／`settings_words.c` 移入 Exhume runtime（`404b08b`），
+  UW1 共用；語言範例句由遊戲提供（`settings_text_sample`）。語言欄只在命令列指定或首次自動選中文時覆寫，否則照設定檔（setcheck roundtrip）。
+- 第十批（`9581879`）：BARTER 估價、SPELLS2 研究怪物（法術與抗性清單用「、」「和」）、MISCUTIL 偵測方位、OBJUSE「要把○○用在什麼上？」的中文組句。
+  實測「要把開鎖器用在什麼上？」。
+- 使用者要求 UW1 新增功能也加到 UW2：即時套用與密技分頁（`4dbf4f3`）、unknown-topic（`1d634cc`）、flask-numbers（`cbd083f`，
+  flask_text 移入 runtime）、auto-key 與 mouse-wheel（`a7b30dc`）、e-takes（`76cd472`）。實測：錄影含 `menu-enhance split-all 1` 重播存檔相同；
+  血瓶「20/35」「-15」；滾輪捲動技能清單；E 鍵撿起 5 枚金幣放空格、再 3 枚疊成 8。
+
 ## 已知與下一步
 
 - 訊息欄的組句（「You see a sack.」等由程式拼接的句子）仍是英文：需移植 UW1 P11.2 的 `port_zh` 組句與 `phrases`。
