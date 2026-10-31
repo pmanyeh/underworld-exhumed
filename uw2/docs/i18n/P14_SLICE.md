@@ -171,6 +171,9 @@
 - 使用者要求 UW1 新增功能也加到 UW2：即時套用與密技分頁（`4dbf4f3`）、unknown-topic（`1d634cc`）、flask-numbers（`cbd083f`，
   flask_text 移入 runtime）、auto-key 與 mouse-wheel（`a7b30dc`）、e-takes（`76cd472`）。實測：錄影含 `menu-enhance split-all 1` 重播存檔相同；
   血瓶「20/35」「-15」；滾輪捲動技能清單；E 鍵撿起 5 枚金幣放空格、再 3 枚疊成 8。
+- full-map（`604abd1`）：地圖畫面先照原版畫，再借用 PlayersMap 補上未探索格子（目前樓層讀記憶體、其他樓層讀存檔 LEV.ARK 與材質區塊）重畫，
+  畫完立刻還原探索紀錄與亂數種子。地圖中文註記與 easy-erase（`9597750`）：註記面板「地圖註記（Enter 完成，Esc 取消）」實測出現；
+  原有英文註記在中文模式以 HD 字型顯示；easy-erase 點在「HELLO」字上可擦掉（原版要點在字的上方）。輸入法文字無法用測試腳本送，中文內容需實機驗證。
 
 ## 已知與下一步
 
