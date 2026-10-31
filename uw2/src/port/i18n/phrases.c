@@ -37,6 +37,13 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"inv.damaged", "受損了。\n"},
     {"trap.on", "上的"},                             /* SKILLS.C: "<object>上的<trap>" */
     {"vend.price", "（%d 金幣）"},                    /* WORLDEV.C: a vending machine's price */
+    {"use.use", "要把"},                             /* OBJUSE.C's UseThing, as UW1's */
+    {"use.on_what", "用在什麼上？\n"},
+    {"study.is", "是"},                             /* SPELLS2.C: Study Monster's "This creature is " */
+    {"list.sep", "、"},                             /* between the items of a list */
+    {"list.and", "和"},                             /* before a list's last item */
+    {"path.and", "，"},                             /* MISCUTIL.C's print_path_to: direction and depth */
+    {"path.near", "就在附近"},
     {"scroll.more", "[繼續]"},
     {"qty.prompt", "要移動幾個？"},                /* "Move how many?" as a panel (qty_dialog.c), as UW1's */
     {"qty.minus", "－"},

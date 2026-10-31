@@ -759,6 +759,18 @@ void far do_judgement(void)
     str_copy(appraisal, get_string((certainty + 3) | STR_CONV)); /* "...I guess" .. "...I know" */
     str_cat(appraisal, get_string(0xE02));  /* " that I am getting " */
     str_cat(appraisal, get_string((result + 8) | STR_CONV)); /* "a terrible deal.." .. "an excellent deal.." */
+#ifndef __TURBOC__
+    if (port_zh()) {
+        /* Phase 14: the same three pieces in their translations, display only, as UW1's */
+        PortZh zh;
+        port_zh_begin(&zh);
+        port_zh_id(&zh, (certainty + 3) | STR_CONV);
+        port_zh_id(&zh, 0xE02);
+        port_zh_id(&zh, (result + 8) | STR_CONV);
+        play_say(zh.text);
+        return;
+    }
+#endif
     play_say(appraisal);
 }
 

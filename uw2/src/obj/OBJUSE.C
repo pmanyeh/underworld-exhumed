@@ -30,6 +30,9 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#endif
 
 /* Defined below; in no header, because SPELLS2.C and BABLHACK.C call it with an int. */
 int far useNSpellCharges(struct Object far *obj, char n);
@@ -214,6 +217,17 @@ void far UseThing(struct Object far *obj, void (far *fn)())
     strcpy(buf, "Use ");
     get_name(buf + strlen(buf), obj, 0, 0);
     strcat(buf, " on what?\n");
+#ifndef __TURBOC__
+    if (port_zh()) {
+        /* Phase 14: in the locale's words, display only, as UW1's */
+        PortZh zh;
+        port_zh_begin(&zh);
+        port_zh_add(&zh, port_zh_lit("use.use"));
+        port_zh_add(&zh, port_zh_name(obj, 0, 0));
+        port_zh_add(&zh, port_zh_lit("use.on_what"));
+        scroll_print(zh.text);
+    } else
+#endif
     scroll_print(buf);
     force_mouse_cursor(OBJ_ITEM(obj));
     CursorObjPtr = obj;

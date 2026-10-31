@@ -21,6 +21,10 @@
 #include "gfx.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#include "i18n/localization.h"
+#endif
 
 /* name: FM Towns names are used where the same operation is clear in its code:
    flip_bool toggles a byte; check_dirs checks the data directories; check_fds
@@ -105,6 +109,28 @@ void far print_path_to(char far *s, int px, int py, int ignored,
     register int how = ignored;
     register int range = radius;
     shown = 0;
+#ifndef __TURBOC__
+    if (port_zh()) {
+        /* Phase 14: the same pieces in the locale's words, display only */
+        PortZh zh;
+        port_zh_begin(&zh);
+        port_zh_add(&zh, port_i18n_display(s));
+        if (range < 0) {
+            port_zh_id(&zh, (0x28 - range - 1) | STR_GAME);
+            shown = 1;
+        } else if (abs(px - ox) + abs(py - oy) > range) {
+            port_zh_id(&zh, (postodir(px, py, ox, oy) + 0x28) | STR_GAME);
+            shown = 1;
+        }
+        if (how != previous && how) {
+            if (shown) port_zh_add(&zh, port_zh_lit("path.and"));
+            port_zh_id(&zh, (how + 0x37 - previous) | STR_GAME);
+        } else if (!shown && how) port_zh_add(&zh, port_zh_lit("path.near"));
+        port_zh_add(&zh, port_zh_lit("period"));
+        scroll_print(zh.text);
+        return;
+    }
+#endif
     scroll_print(s);
     if (range < 0) {
         game_sprint(0x28 - range - 1);

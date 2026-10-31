@@ -35,6 +35,9 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#endif
 
 /* match: OBJUSE.C defines useNSpellCharges(obj, char n); this file pushes an int. */
 int far useNSpellCharges(struct Object far *obj, int n);
@@ -49,6 +52,11 @@ int16 demons[5] = { ITEM_IMP, ITEM_IMP, ITEM_HORDLING, ITEM_DESPOILER, ITEM_DEST
    Creature spells, plus for race 0x17 (liches, inferred) more by its abilities (flying,
    locks, fire, power). Duplicates are dropped; a race 0x0F critter's heal shows as another
    spell. Returns true when there were any. */
+#ifndef __TURBOC__
+/* Phase 14: while set, study_monster_spells also lists the spells in their translations */
+static PortZh *zh_spells;
+#endif
+
 char far study_monster_spells(struct Object far *obj, struct Creature *crit, char *str)
 {
     int count = 0;
@@ -103,11 +111,21 @@ char far study_monster_spells(struct Object far *obj, struct Creature *crit, cha
                 else
                     minor += 0x100;
                 str_cat(str, get_string(minor | STR_SPELLS));
+#ifndef __TURBOC__
+                if (zh_spells) {
+                    port_zh_id(zh_spells, minor | STR_SPELLS);
+                    if (count - i > 2) port_zh_add(zh_spells, port_zh_lit("list.sep"));
+                    if (count - i == 2) port_zh_add(zh_spells, port_zh_lit("list.and"));
+                }
+#endif
                 if (count - i > 2)
                     strcat(str, ", ");
                 if (count - i == 2)
                     str_cat(str, get_string(0x274));  /* ' and ' */
             }
+#ifndef __TURBOC__
+            if (zh_spells) port_zh_id(zh_spells, 0x260);
+#endif
             str_cat(str, get_string(0x260));  /* '.' */
         }
     }
@@ -143,6 +161,64 @@ char far sp_study_monster(struct Object far *caster, struct Object far *target)
         if (check_res(target, 1, 0x80) == 0)
             flags |= 2;
     }
+#ifndef __TURBOC__
+    if (port_zh()) {
+        /* Phase 14: the same report in the locale's words, display only */
+        PortZh zh, spl;
+        int found = 0;
+        port_zh_begin(&zh);
+        port_zh_id(&zh, (flags + 0x135) | STR_GAME);
+        port_zh_add(&zh, port_zh_lit("study.is"));
+        if (isnpc) {
+            whoami = target->whoami;
+            target->whoami = 0;
+        }
+        port_zh_add(&zh, port_zh_name(target, 0, 0));
+        port_zh_id(&zh, 0x60 | STR_GAME);
+        port_zh_id(&zh, 0x139 | STR_GAME);
+        if (isnpc && target->whoami == 100 && !OBJ_TERRAIN(target)) itoa(0x1E, str, 10);
+        else if (isnpc) itoa(target->hp, str, 10);
+        else itoa(3 | target->qn.f.quality, str, 10);
+        port_zh_add(&zh, str);
+        port_zh_id(&zh, 0x60 | STR_GAME);
+        if (!isnpc) {
+            port_zh_id(&zh, 0x13D | STR_GAME);
+            port_zh_id(&zh, 0x346);
+            port_zh_add(&zh, port_zh_lit("list.sep"));
+            port_zh_id(&zh, 0x347);
+            port_zh_id(&zh, 0x60 | STR_GAME);
+        } else {
+            if (crit->b0F) port_zh_id(&zh, 0x13C | STR_GAME);
+            port_zh_begin(&spl);
+            zh_spells = &spl;
+            str[0] = 0;
+            if (study_monster_spells(target, crit, str)) {
+                port_zh_id(&zh, 0x144 | STR_GAME);
+                port_zh_add(&zh, spl.text);
+            }
+            zh_spells = 0;
+            port_zh_begin(&spl);
+            for (i = 0; i < 6; i++)
+                if (check_res(target, 1, dtypes[i]) == 0 && (dtypes[i] != 8 || crit->race != 0x17)) {
+                    if (found) port_zh_add(&spl, port_zh_lit("list.sep"));
+                    port_zh_id(&spl, (i + 0x146) | STR_GAME);
+                    found = 1;
+                }
+            if (crit->race == 0x17) {
+                port_zh_add(&spl, port_zh_lit("list.sep"));
+                port_zh_id(&spl, 0xD25);
+            }
+            if (found) {
+                port_zh_id(&zh, 0x13D | STR_GAME);
+                port_zh_add(&zh, spl.text);
+                port_zh_id(&zh, 0x60 | STR_GAME);
+            }
+            target->whoami = whoami;
+        }
+        scroll_print(zh.text);
+        return 1;
+    }
+#endif
     game_sprint(flags + 0x135);  /* 'This creature is ', 'This powerful creature is ', ... undead ... */
     str[0] = 0;
     if (isnpc) {
