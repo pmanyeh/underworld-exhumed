@@ -89,6 +89,10 @@ static const struct { const char *english, *zh; } literals[] = {
     {"poison trap", "毒陷阱"},
     {"You see ", "你看到"},
     {"a ", ""},                                    /* SPELLS2.C: before an object's description */
+    {"Str:", "力量"},                              /* CHARGEN.C's attributes, as UW1's */
+    {"Dex:", "敏捷"},
+    {"Int:", "智慧"},
+    {"Vit:", "生命力"},
     {"Yes", "是"},                                 /* SCROLLIO.C's wyorn */
     {"No", "否"},
     {"<not used yet>", "<尚未使用>"},               /* GAMEWRAP.C's save list */
