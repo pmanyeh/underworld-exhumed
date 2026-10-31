@@ -51,9 +51,7 @@
 #include "sys.h"
 #include "ui.h"
 #ifndef __TURBOC__
-#include "i18n/localization.h"
-#include "presentation/scroll_text.h"
-int port_scroll_emit(const char *prefix, const char *text, const char *suffix);   /* presentation/localized.c */
+#include "presentation/scroll_bridge.h"
 char *port_template_shown(const char *source);                                  /* BABL.C */
 #endif
 
@@ -348,6 +346,15 @@ void far converse_event_loop(void)
             set_workspace();
             i = 1;
             while (i < bablOptCount) {
+#ifndef __TURBOC__
+                if (scroll_text_enabled()) {
+                    /* Phase 14: the option's translation, its cells marked for clicks */
+                    port_scroll_option(i, babl_display[i]);
+                    set_workspace();
+                    i++;
+                    continue;
+                }
+#endif
                 line[0] = i + '0';
                 line[1] = '.';
                 line[2] = ' ';
@@ -376,11 +383,17 @@ int far conv_choice_ovr103_A13(int16 far *stack)
     register int lines;
     convo_mode = 1;
     bablOptCount = 1;
+#ifndef __TURBOC__
+    port_scroll_choices_reset();
+#endif
     used = lines = 0;
     base = stack[-1];
     string_no = getmem(base);
     while (string_no != 0) {
         babl_opts[bablOptCount] = get_string(string_no);
+#ifndef __TURBOC__
+        port_scroll_choice_bind(bablOptCount, babl_opts[bablOptCount]);
+#endif
         babl_display[bablOptCount] = convert_string(babl_opts[bablOptCount]);
         if (babl_display[bablOptCount] == babl_opts[bablOptCount]) {
             babl_display[bablOptCount] = bab_malloc((int32)(str_len(babl_opts[bablOptCount]) + 1));
@@ -395,6 +408,13 @@ int far conv_choice_ovr103_A13(int16 far *stack)
     set_workspace();
     for (i = 0; i < 10; i++) convo_line_option[i] = -1;
     for (i = 1; i < bablOptCount; i++) {
+#ifndef __TURBOC__
+        if (scroll_text_enabled()) {
+            port_scroll_option(i, babl_display[i]);
+            set_workspace();
+            continue;
+        }
+#endif
         line[0] = i + '0';
         line[1] = '.';
         line[2] = ' ';
@@ -422,6 +442,9 @@ int far conv_fmenu_ovr103_BF2(int16 far *stack)
     register int lines;
     convo_mode = 1;
     bablOptCount = 1;
+#ifndef __TURBOC__
+    port_scroll_choices_reset();
+#endif
     used = 0;
     base = stack[-1];
     value_base = stack[-2];
@@ -431,6 +454,9 @@ int far conv_fmenu_ovr103_BF2(int16 far *stack)
     while (string_no != 0) {
         if (value != 0) {
             babl_opts[bablOptCount] = get_string(string_no);
+#ifndef __TURBOC__
+            port_scroll_choice_bind(bablOptCount, babl_opts[bablOptCount]);
+#endif
             babl_display[bablOptCount] = convert_string(babl_opts[bablOptCount]);
             if (babl_display[bablOptCount] == babl_opts[bablOptCount]) {
                 babl_display[bablOptCount] = bab_malloc((int32)(str_len(babl_opts[bablOptCount]) + 1));
@@ -448,6 +474,13 @@ int far conv_fmenu_ovr103_BF2(int16 far *stack)
     set_workspace();
     for (i = 0; i < 10; i++) convo_line_option[i] = -1;
     for (i = 1; i < bablOptCount; i++) {
+#ifndef __TURBOC__
+        if (scroll_text_enabled()) {
+            port_scroll_option(i, babl_display[i]);
+            set_workspace();
+            continue;
+        }
+#endif
         line[0] = i + '0';
         line[1] = '.';
         line[2] = ' ';
@@ -470,17 +503,25 @@ int far conv_fmenu_ovr103_BF2(int16 far *stack)
    substituted texts. */
 void far conv_play_menu(int option)
 {
-    int y, row;
+    int x, y, row;
     register int i;
     register int selected;
     if (convo_mode == 0) return;
     set_workspace();
     if (option == 0) {
+        x = inplist->x + 0x10;          /* PLAYER.C's region starts at x 0x10, y 1 */
         y = inplist->y + 1;
         row = (0x1e - y) / cur_font->height;
-        selected = convo_line_option[row];
+#ifndef __TURBOC__
+        if (scroll_text_enabled()) selected = scroll_text_hit(x, 199 - y);
+        else
+#endif
+            selected = convo_line_option[row];
     } else selected = option;
     if (selected <= 0 || selected >= bablOptCount) return;
+#ifndef __TURBOC__
+    if (scroll_text_enabled()) scroll_text_selection(selected);
+#endif
     convo_mode = 0;
     convoContinue = 0;
     mouse_release(0);
@@ -490,7 +531,13 @@ void far conv_play_menu(int option)
     menus_active = 0;
     do_npc_scroll();
     for (i = 1; i < bablOptCount; i++) {
-        if (i == selected) play_say(babl_display[i]);
+        if (i == selected) {
+#ifndef __TURBOC__
+            if (scroll_text_enabled()) play_say((char *)port_scroll_choice_text(i, babl_display[i]));
+            else
+#endif
+                play_say(babl_display[i]);
+        }
         if (babl_opts[i] != babl_display[i]) bab_free(babl_display[i]);
     }
     do_play_scroll();
@@ -503,7 +550,7 @@ void far npc_say(char far *s)
 #ifndef __TURBOC__
     if (scroll_text_enabled()) {
         do_npc_scroll();
-        port_scroll_emit("\\P", port_i18n_display(s), "\n");
+        port_scroll_emit("\\P", port_i18n_display(s), "\n", 0);
         set_workspace();
         do_play_scroll();
         convo_say_flag = 0;
@@ -526,7 +573,7 @@ void far play_respond(char far *s)
 #ifndef __TURBOC__
     if (scroll_text_enabled()) {
         do_play_scroll();
-        port_scroll_emit("", port_i18n_display(s), "\n");
+        port_scroll_emit("", port_i18n_display(s), "\n", 0);
         set_workspace();
         do_play_scroll();
         convo_say_flag = 1;
@@ -548,7 +595,7 @@ void far play_say(char far *s)
 #ifndef __TURBOC__
     if (scroll_text_enabled()) {
         do_npc_scroll();
-        port_scroll_emit("\\1", port_i18n_display(s), "\\0\n");
+        port_scroll_emit("\\1", port_i18n_display(s), "\\0\n", 0);
         set_workspace();
         do_play_scroll();
         convo_say_flag = 1;
@@ -577,7 +624,7 @@ void far conv_print(int16 far *stack)
     if (scroll_text_enabled()) {
         char *shown = port_template_shown(original);
         do_npc_scroll();
-        port_scroll_emit("\\2", shown ? shown : expanded == original ? port_i18n_display(original) : expanded, "\\0\n");
+        port_scroll_emit("\\2", shown ? shown : expanded == original ? port_i18n_display(original) : expanded, "\\0\n", 0);
         do_play_scroll();
         set_workspace();
         free(shown);

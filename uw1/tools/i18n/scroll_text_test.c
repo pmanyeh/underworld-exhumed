@@ -32,6 +32,7 @@ char *port_template_shown(const char *source) { (void)source;return NULL; }
 void plat_text_input(int on) { (void)on; }
 size_t plat_text_take(char *out,size_t n) { if(n)out[0]=0;return 0; }
 void plat_sleep_ns(uint64_t ns) { (void)ns; }
+void plat_request_shot(void) {}
 static void bounds(void)
 {
     int i;ScrollBox *b;

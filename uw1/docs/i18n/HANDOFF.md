@@ -7,8 +7,8 @@ UW1 已告一段落（0.6、tag `zh-tw-native-p13`）。新 Session 直接開始
 
 已有的資源：
 
-- UW2 移植版：`uw2/`（主 repo），自己的建置工具 `uw2/tools/portbuild.py`（`uw2/docs/BUILDING.md`），CI `uw2-port` 通過；本機有舊的 `uw2/build/port/uw2port.exe`，先重新編譯確認。
-  `uw2/src/port/` 目前**沒有任何 i18n／HD 文字程式碼**。
+- UW2 移植版：`uw2/`（主 repo），自己的建置工具 `uw2/tools/portbuild.py`（`uw2/docs/BUILDING.md`），CI `uw2-port`。
+  建置與重播見下方「本機工具」；Phase 14 的程式與報告見 `uw2/docs/i18n/P14_SLICE.md`。
 - UW2 遊戲資料：工作區 `Game Resources/Ultima Underworld 2/UW2/`（GOG `game.gog` 解出，Git 外；`UW2.EXE` SHA-256 `bf233abb…`）。
 - UW2 譯文：工作區 `i18n/uw2/zh-TW/master.tsv`（同伴提供，9,547 筆，格式同 UW1 主表，全部 draft，Git 外）與 `GLOSSARY.md`；
   已依 UW1 權威資料修正 202 列、比對字改回英文 4 列，雜湊與遊戲資料 9,547 列全部相符（§4.2）。CNV.ARK 為 LZSS 壓縮。
@@ -31,13 +31,19 @@ UW1 已告一段落（0.6、tag `zh-tw-native-p13`）。新 Session 直接開始
 - 注意：這個工作區的檔案是 CRLF、索引是 LF；用工具改檔後要轉回 LF，否則整份顯示為修改。Bash heredoc 會吃掉 `\\n`，含跳脫字元的 C 改用 Edit 工具。
   Windows 上跑 UW2 `tools/portstubs.py` 會產生假差異（路徑分隔符、MinGW CRT 符號），不要提交。
 
+**2026-10-31 第二批（HD 游標、共用 bridge、訊息欄組句、對話選單）** — 見 `P14_SLICE.md`「第二批」：
+HD 游標提交 `89a5157`；Exhume `956588f`：`name_gloss`、`input_alias`、`user_text`、`scroll_bridge` 也搬到 Exhume runtime（bridge 需遊戲提供 `scroll_print`、
+`port_template_shown` 與自己的 `i18n/phrases.h`）；UW2 有自己的 `src/port/i18n/phrases.c`；LOOK／USEITEMS／INTERACT／GAMESCR／INVDATA／CRITTIME／SKILLS
+的組句與對話選項已接。實測「你看到布袋。」。
+
 **下一步（Phase 14 後續批次，依 UW1 P8～P12 順序）：**
 
-1. 訊息欄組句（「You see a sack.」等）：移植 UW1 P11.2 的 `port_zh` 組句與 `phrases`（UW1 `GAMESTRN.C`、`LOOK.C` 的掛鉤），句型表需抽出共用機制、UW2 自有內容。
-2. 對話選單（`port_scroll_option`／`choice_bind`、點選命中 `scroll_text_hit`）、輸入話題（input aliases）、專有名詞首次加註（name_gloss）——考慮把 UW1 `scroll_bridge.c` 抽成共用。
-3. HD 游標（UW2 `MOUSE.C` 掛鉤；目前遊戲游標會壓在 HD 文字上）。
-4. 書本卷軸、物品名、介面標籤（`string_to_screen`／hd_label）、過場字幕、中文輸入、存檔名稱、F11 語言分頁、啟動時依 catalog 預設中文。
-5. UW2 強化功能（UW1 的 F11 項目）屬另議，先不移植，除非使用者要求。
+1. 對話中文輸入話題（UW2 的 `input-aliases.tsv`，用 UW1 `babl_audit`／工具由 UW2 CNV.ARK 產生；`getInputText` 改走 `port_scroll_ask`）、
+   專有名詞首次加註（UW2 的 `proper-names.tsv`）、`localized.c` 載入這兩個表。
+2. 還沒接的拼接訊息：SPELLS2 的辨識怪物、WORLDEV 修理、MISCUTIL 方向、PLAYER 座標等；用 `--scroll-log` 找仍是英文的行。
+3. 介面標籤（`string_to_screen`／hd_label、ui_text）、過場字幕（caption）、數量面板、中文姓名與存檔說明（text_entry、user_text）、
+   F11 語言分頁、啟動時依 catalog 預設中文、測試版打包。
+4. UW2 強化功能（UW1 的 F11 項目）屬另議，先不移植，除非使用者要求。
 
 UW1 之後只依回報修正；UW1 的規則（§9）同樣適用於 UW2（原版 `.C/.H` 保持 ASCII、掛鉤放 `#ifndef __TURBOC__`、
 catalog 與遊戲檔不上傳、玩家資料不覆寫、強化功能預設關）。
@@ -70,7 +76,7 @@ catalog 與遊戲檔不上傳、玩家資料不覆寫、強化功能預設關）
 | --- | --- |
 | 主 repo／分支 | `pmanyeh/underworld-exhumed`／`feature/zh-tw-native` |
 | 最新功能提交 | 2026-10-31 UW2 Phase 14 共用模組＋垂直切片 `e08d8dc`（§0）；UW1 最後一項為 2026-10-31 HD 描邊快取（標題頁游標延遲），提交以 `git log -1` 為準；之前 `4f95eb9`（強化功能即時生效）、`aee554b`（地圖橡皮擦輔助）、`3122640`（按鍵說明頁）、`b3249e6`（三項強化功能） |
-| Exhume 子模組 | `pmanyeh/Exhume`，固定 `f591c3c`（2026-10-31 共用文字模組，UW2 Phase 14）；前一個 `370b998`（2026-10-28 按鍵說明頁） |
+| Exhume 子模組 | `pmanyeh/Exhume`，固定 `956588f`（2026-10-31 共用 bridge，UW2 Phase 14 第二批）；之前 `f591c3c`（共用文字模組）、 `370b998`（2026-10-28 按鍵說明頁） |
 | 子模組 checkout | 本機為固定提交的 detached HEAD，工作區乾淨；遠端開發分支 `feature/presentation-overlay` |
 | 階段／tag | 2026-10-31 經使用者同意建立 `zh-tw-native-p13`（UW1 段落完成；譯文審閱仍可後續提交）；前一階段 `zh-tw-native-p12`（`0169ca1`） |
 | 版本號 | 0.6（2026-10-31）；攜帶測試包版本號，譯文多數仍為 draft |

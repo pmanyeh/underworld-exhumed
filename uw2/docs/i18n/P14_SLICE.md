@@ -56,6 +56,22 @@
 - repocheck、原版掛鉤 ASCII 通過。未執行 DOS 重編譯（gate 由 CI 執行）。
 - 注意：在 Windows 上執行 `tools/portstubs.py` 會因路徑分隔符與 MinGW 的 CRT 符號產生假差異，與本次修改無關，不要提交其輸出。
 
+## 第二批：HD 游標、共用 bridge、訊息欄組句（2026-10-31）
+
+- HD 游標（提交 `89a5157`）：`MOUSE.C` 的 `drawMouse`／`draw3dMouse` 在 HD 捲軸開啟時改由呈現層畫游標（在 HD 文字之上），存背景等仍是遊戲自己的。
+- 再搬一批到 Exhume runtime：`i18n/name_gloss`（專有名詞首次加註）、`input_alias`（中文輸入話題）、`user_text`（玩家中文姓名／存檔說明）、
+  `presentation/scroll_bridge`（HD 捲軸的寫入、選項、書本、打字回答）。bridge 需要遊戲提供 `scroll_print`、`port_template_shown`（BABL.C）
+  與各自的句型表 `i18n/phrases.h`（`port_zh_lit`、`port_zh_literal`）；兩款遊戲都有。新增測試用 `port_scroll_shot_after(N)`。
+  UW1 測試替身補 `plat_request_shot`。
+- UW2 自己的句型表 `src/port/i18n/phrases.c`（同 UW1 的 API，內容只放 UW2 用得到的）。
+- UW2 的組句（全部 `#ifndef __TURBOC__`、只在 HD 捲軸＋catalog 時，顯示用）：
+  - `GAMESTRN.C`：`PortZh` 工具（`ui.h` 宣告）、`get_name` 記下名稱譯文（單獨印出的名稱顯示中文）、`game_strings_3`。
+  - `LOOK.C`：查看物品／生物／書本／骨頭的整句（數量、品質、魔力／詛咒、黑岩寶石的冷暖、法術與充能、毒、所有者）。
+  - `USEITEMS.C`：手錶時間、食物、閱讀；`INTERACT.C`：查看牆面／地面；`GAMESCR.C`：生命／法力 N／M；
+    `INVDATA.C`：裝備損壞；`CRITTIME.C`：NPC 發現偷竊；`SKILLS.C`：解除陷阱。
+  - `CONVERSE.C`：對話選項經 bridge 顯示譯文、點選以 HD 文字格命中（UW2 的點擊區從 x 0x10 起），選擇後回顯譯文。
+- 字面對照（bridge 對單獨印出的英文片段）：`The `、`You see `、`trap`、`poison trap`、`Not a spell`、存檔清單標籤、滑鼠視角訊息等。
+
 ## 已知與下一步
 
 - 訊息欄的組句（「You see a sack.」等由程式拼接的句子）仍是英文：需移植 UW1 P11.2 的 `port_zh` 組句與 `phrases`。

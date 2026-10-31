@@ -371,6 +371,17 @@ int far seg039_3452_89A(char far *s);
 unsigned char far init_strings(void);
 int far replace_string(char far *s, int id);
 int far get_name(char far *dst, struct Object far *obj, char article, char plural);
+#ifndef __TURBOC__
+/* Phase 14 (GAMESTRN.C, as UW1's P11.2): display sentences in the locale's language, the HD
+   scroll only (port_zh: presentation/localized.c) */
+typedef struct PortZh { char text[512]; } PortZh;
+int port_zh(void);
+void port_zh_begin(PortZh *zh);
+void port_zh_add(PortZh *zh, const char *s);
+void port_zh_id(PortZh *zh, int id);
+const char *port_zh_string(int id);
+const char *port_zh_name(struct Object far *obj, char article, char plural);
+#endif
 
 /* Defined where no source has it yet: data the link takes from the EXE. */
 extern struct StringNode far *StringsPak_Address_Indices;

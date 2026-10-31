@@ -30,6 +30,9 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#endif
 
 /* This file's uninitialised data: the four mouse-area handles, FM Towns names. Defined
    here, they land at DS:817C to DS:8183 in the EXE's order. */
@@ -128,6 +131,18 @@ void far flask_info(void)
         str_cat(msg, " out of ");
         str_cat(msg, max);
         str_cat(msg, "\n");
+#ifndef __TURBOC__
+        if (port_zh()) {
+            PortZh zh;
+            port_zh_begin(&zh);
+            port_zh_id(&zh, ((inplist->x > 0x1E) + 0x66) | STR_GAME);
+            port_zh_add(&zh, cur);
+            port_zh_add(&zh, port_zh_lit("stats.out_of"));
+            port_zh_add(&zh, max);
+            port_zh_add(&zh, "\n");
+            scroll_print(zh.text);
+        } else
+#endif
         scroll_print(msg);
         mouse_release(1);
     }

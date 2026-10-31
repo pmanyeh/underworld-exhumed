@@ -32,6 +32,10 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#include "presentation/scroll_bridge.h"
+#endif
 
 /* match: this file's _BSS, DS:8184 (ovr137's ends there): of the files before ovr140's TxmTerr,
    only this one uses it (seg044 does too). */
@@ -80,6 +84,15 @@ void far UseWatch(void)
     text[i++] = minutes / 10 + '0';
     text[i++] = minutes % 10 + '0';
     text[i++] = 0;
+#ifndef __TURBOC__
+    if (port_zh()) {
+        PortZh zh;
+        port_zh_begin(&zh);
+        port_zh_id(&zh, 0x227);
+        port_zh_add(&zh, text + str_len(get_string(0x227)));
+        scroll_print(zh.text);
+    } else
+#endif
     scroll_print(text);
     game_sprint(0x60);  /* '.' */
 }
@@ -287,6 +300,16 @@ int far UseFood(struct Object far *who, struct Object far *food, unsigned char h
             taste = ((int)(rand() * 20L / 0x8000L) + OBJ_QUALITY(food)) >> 4;
             if (taste > 4)
                 taste = 4;
+#ifndef __TURBOC__
+            if (port_zh()) {
+                PortZh zh;
+                const char *t = port_zh_name(food, 0, 0);
+                port_zh_begin(&zh);
+                port_zh_add(&zh, port_zh_lit("food.that"));
+                port_zh_add(&zh, t ? t : "");
+                scroll_print(zh.text);
+            } else
+#endif
             scroll_print(text);
             taste += 0xBB;
         }
@@ -501,11 +524,26 @@ void far UseBook(struct Object far *obj, unsigned char how)
             strcpy(text, "You read the ");
             get_name(text + strlen(text), obj, 0, 0);
             strcat(text, "...\n");
+#ifndef __TURBOC__
+            if (port_zh()) {
+                PortZh zh;
+                const char *n = port_zh_name(obj, 0, 0);
+                port_zh_begin(&zh);
+                port_zh_add(&zh, port_zh_lit("look.read"));
+                port_zh_add(&zh, n ? n : "");
+                port_zh_add(&zh, port_zh_lit("look.read_end"));
+                scroll_print(zh.text);
+            } else
+#endif
             scroll_print(text);
             if ((OBJ_LINK(obj) & 0x1FF) == 6)
                 player->quests[26] = (player->quests[26] & 0xFFFFFFFBL) + 4;
             str = get_string((OBJ_LINK(obj) & 0x1FF) | STR_BOOKS);
+#ifndef __TURBOC__
+            port_book_print(str);       /* names glossed */
+#else
             scroll_print(str);
+#endif
             scroll_print("\n");
         }
         else

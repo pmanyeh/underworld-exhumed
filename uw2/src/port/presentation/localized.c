@@ -3,11 +3,10 @@
    and a replay are the same in every language. The modules are the runtime's, shared with
    UW1; this file only wires them to UW2's options, folders and game thread. */
 #include "presentation/localized.h"
-#include "i18n/cp437.h"
 #include "i18n/localization.h"
-#include "i18n/utf8.h"
 #include "presentation/hd_cursor.h"
 #include "presentation/hd_font.h"
+#include "presentation/scroll_bridge.h"
 #include "presentation/scroll_overlay.h"
 #include "presentation/scroll_text.h"
 #include "presentation/text_style.h"
@@ -21,7 +20,6 @@ void scroll_wait(int ticks, char mouse);        /* SCROLLIO.C */
 
 static const char *locale = "en", *i18n_file, *font_path;
 static const char *scroll_log, *i18n_trace;     /* tests: the HD scroll's and the lookups' JSONL */
-static int shot_on_text;                        /* tests: the screenshot after the HD scroll's Nth line */
 static int hd_scroll;
 static char catalog[1200];
 
@@ -48,7 +46,7 @@ int port_text_option(int argc, char **argv, int *i)
     if (!strcmp(a, "--font")) { font_path = argv[++*i]; return 1; }
     if (!strcmp(a, "--scroll-log")) { scroll_log = argv[++*i]; return 1; }
     if (!strcmp(a, "--i18n-trace")) { i18n_trace = argv[++*i]; return 1; }
-    if (!strcmp(a, "--shot-on-text")) { shot_on_text = atoi(argv[++*i]); return 1; }
+    if (!strcmp(a, "--shot-on-text")) { port_scroll_shot_after(atoi(argv[++*i])); return 1; }
     return 0;
 }
 
@@ -180,42 +178,4 @@ void port_text_end(void)
 int port_zh(void)
 {
     return scroll_text_enabled() && port_i18n_enabled();
-}
-
-int scroll_print(char *text);                   /* SCROLL.C */
-
-/* A line composed for display (prefix, text, suffix: a conversation's escapes round a line
-   that may be a translation) printed through scroll_print; -1 with the HD scroll off. */
-int port_scroll_emit(const char *prefix, const char *text, const char *suffix)
-{
-    size_t a = strlen(prefix), b = strlen(text), c = strlen(suffix);
-    char *copy;
-    int result;
-    if (!scroll_text_enabled()) return -1;
-    if (a > 16384 || b > 16384 - a || c > 16384 - a - b) port_fatal("HD scroll: display text exceeds 16KiB");
-    if (!(copy = malloc(a + b + c + 1))) port_fatal("HD scroll: allocation failed");
-    memcpy(copy, prefix, a); memcpy(copy + a, text, b); memcpy(copy + a + b, suffix, c + 1);
-    result = scroll_print(copy);
-    free(copy);
-    return result;
-}
-
-/* SCROLL.C's scroll_print with the HD scroll on: the string's translation when it is one the
-   catalog gave (port_i18n_display), else the game's own text as UTF-8. */
-int port_scroll_write(int which, const char *legacy, int escapes)
-{
-    const char *text = port_i18n_display(legacy);
-    char *converted = NULL;
-    size_t len = strlen(text);
-    int result;
-    if (len > 16384) port_fatal("HD scroll: input exceeds 16KiB");
-    if (!utf8_validate(text, len, NULL)) {
-        if (!(converted = cp437_to_utf8(text, len))) port_fatal("HD scroll: allocation failed");
-        text = converted;
-    }
-    result = scroll_text_write(which, text, escapes, 0);
-    free(converted);
-    if (result < 0) port_fatal("HD scroll: invalid text, metrics or display capacity");
-    if (shot_on_text > 0 && !--shot_on_text) plat_request_shot();
-    return result;
 }

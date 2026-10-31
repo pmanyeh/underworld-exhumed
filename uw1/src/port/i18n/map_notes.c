@@ -1,6 +1,6 @@
 #include "map_notes.h"
 #include "i18n/utf8.h"
-#include "user_text.h"
+#include "i18n/user_text.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

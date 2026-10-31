@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """P13: i18n/zh-TW/proper-names.tsv, the names a conversation or book shows with their English
-the first time (src/port/i18n/name_gloss.c). From the authority's people, places and orders
+the first time (Exhume runtime/port/i18n/name_gloss.c). From the authority's people, places and orders
 (authority/PROPER-NOUNS.tsv, approved or project-selected) whose Chinese the conversations' or
 books' translations use. A Chinese name several English terms share takes the one the game uses
 most (the most game keys). The English is the authority's own, already published there.

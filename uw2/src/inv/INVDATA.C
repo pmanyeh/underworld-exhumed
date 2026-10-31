@@ -33,6 +33,9 @@
 #include "object.h"
 #include "player.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#endif
 #include "uw2.h"
 
 
@@ -440,6 +443,17 @@ int far DamageInventory(int slot, unsigned char damage, unsigned char type, int 
     else
         strcat(text, " was");
     strcat(text, msg);
+#ifndef __TURBOC__
+    if (port_zh()) {
+        /* Phase 14: "Your <name> was destroyed / damaged." in the locale's order */
+        PortZh zh;
+        port_zh_begin(&zh);
+        port_zh_add(&zh, port_zh_lit("inv.your"));
+        port_zh_add(&zh, port_zh_name(obj, 0, 0));
+        port_zh_add(&zh, port_zh_lit(result ? "inv.destroyed" : "inv.damaged"));
+        scroll_print(zh.text);
+    } else
+#endif
     scroll_print(text);
     RedisplayInvSlot(slot);
     return result;

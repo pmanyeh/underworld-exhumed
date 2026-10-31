@@ -37,6 +37,19 @@
 
 /* Copy a far string, terminator included, to any address. */
 #define far_strcpy(d, s) FAR_COPY(d, s, str_len(s) + 1)
+#ifndef __TURBOC__
+#include <stdio.h>
+#include "i18n/phrases.h"
+#include "presentation/scroll_bridge.h"
+/* Phase 14, as UW1's P11.2: what do_mods and do_of found, for LookAt's sentence in the
+   locale's language */
+static int zh_mod;          /* 1 magical, 2 cursed, 3 a blackrock gem's word (zh_gem) */
+static int zh_gem;          /* that word's string id */
+static int zh_spell;        /* the enchantment's string id, -2 none */
+static int zh_charges;      /* the charges do_of printed, -2 none */
+static int zh_poison;       /* do_of said ' of Poison' */
+static void zh_critter(PortZh *zh, struct Object far *obj);
+#endif
 
 
 
@@ -71,12 +84,27 @@ void far LookAt(struct Object far *obj, int lore)
         strcpy(text, "You see ");
         first = 0;
         name[0] = 0;
+#ifndef __TURBOC__
+        zh_mod = zh_poison = 0;
+        zh_spell = zh_charges = -2;
+#endif
         if (do_mods(obj, lore, name))
             first = name[0];
         qual[0] = 0;
         if (OBJ_MAJOR(obj) == MAJOR_CREATURE) {
             CritterLook(obj, text);
             str_cat(text, ".\n");
+#ifndef __TURBOC__
+            if (port_zh()) {
+                PortZh zh;
+                port_zh_begin(&zh);
+                port_zh_add(&zh, port_zh_lit("look.you_see"));
+                zh_critter(&zh, obj);
+                port_zh_add(&zh, port_zh_lit("period"));
+                scroll_print(zh.text);
+                return;
+            }
+#endif
             scroll_print(text);
             return;
         }
@@ -117,6 +145,47 @@ void far LookAt(struct Object far *obj, int lore)
             str_cat(text, owner);
         }
         strcat(text, ".\n");
+#ifndef __TURBOC__
+        if (port_zh()) {
+            /* '[N] [quality] [magical] name [of spell [with charges]] [belonging to]' in the
+               locale's order (display only) */
+            PortZh zh;
+            const char *t;
+            char num[160];
+            port_zh_begin(&zh);
+            port_zh_add(&zh, port_zh_lit("look.you_see"));
+            if (plural) {
+                snprintf(num, sizeof num, port_zh_lit("count"), obj->ol.f.link);
+                port_zh_add(&zh, num);
+            }
+            if (qual[0] != 0) {
+                t = port_zh_string((com->qualtype * 6 + q) | STR_OBJLOOK);
+                port_zh_add(&zh, t ? t : qual);
+                port_zh_add(&zh, t ? port_zh_lit("of") : " ");
+            }
+            if (zh_mod == 1) port_zh_add(&zh, port_zh_lit("look.magical"));
+            if (zh_mod == 2) port_zh_add(&zh, port_zh_lit("look.cursed"));
+            if (zh_mod == 3) port_zh_id(&zh, zh_gem);
+            port_zh_add(&zh, port_zh_name(obj, 0, plural));
+            if (zh_poison) port_zh_add(&zh, port_zh_lit("look.poison"));
+            if (zh_spell >= 0) {
+                t = port_zh_string(zh_spell);
+                snprintf(num, sizeof num, port_zh_lit("look.spell"), t ? t : "UNNAMED");
+                port_zh_add(&zh, num);
+                if (zh_charges > 0) {
+                    snprintf(num, sizeof num, port_zh_lit("look.charges"), zh_charges);
+                    port_zh_add(&zh, num);
+                } else if (zh_charges == 0)
+                    port_zh_add(&zh, port_zh_lit("look.no_charges"));
+            }
+            if (ComObjData[OBJ_ITEM(obj)].can_own && obj->ol.f.owner > 0 && (obj->ol.f.owner & 0x1F) <= 0x1E) {
+                port_zh_add(&zh, port_zh_lit("look.owner"));
+                port_zh_id(&zh, ((obj->ol.f.owner & 0x1F) + 0x172) | STR_GAME);
+            }
+            port_zh_add(&zh, port_zh_lit("period"));
+            scroll_print(zh.text);
+        } else
+#endif
         scroll_print(text);
     } else if (OBJ_CLASS(obj) == CLASS_DECAL)
         RectLook(obj, lore);
@@ -137,14 +206,24 @@ char far do_mods(struct Object far *obj, int lore, char *s)
         if (lore == 3) {
             if (!flag && major == 9) {
                 strcat(s, "cursed ");
+#ifndef __TURBOC__
+                zh_mod = 2;
+#endif
                 return 1;
             }
         } else if (lore == 2 || (OBJ_CLASS(obj) == CLASS_BOOK && OBJ_INCLASS(obj) <= 8)) {
             strcat(s, "magical ");
+#ifndef __TURBOC__
+            zh_mod = 1;
+#endif
             return 1;
         }
     }
     if ((obj->id & 0x1F8) == FIRST_BLACKROCK_GEM) {
+#ifndef __TURBOC__
+        zh_mod = 3;
+        zh_gem = ((obj->ol.f.owner > 0) + 0x164) | STR_GAME;
+#endif
         str = get_string(((obj->ol.f.owner > 0) + 0x164) | STR_GAME);
         far_strcpy(s + strlen(s), str);
         return 1;
@@ -172,6 +251,9 @@ char far do_of(struct Object far *obj, int lore, char *s)
         link = &obj->ol.link;
         if (Obj_InList(&link, 0, 6, 0, 0) != 0) {
             strcat(s, " of Poison");
+#ifndef __TURBOC__
+            zh_poison = 1;
+#endif
             return 1;
         }
     }
@@ -190,6 +272,9 @@ char far do_of(struct Object far *obj, int lore, char *s)
         else
             effect += major << 4;
         name = get_string(effect | STR_SPELLS);
+#ifndef __TURBOC__
+        zh_spell = effect | STR_SPELLS;
+#endif
         if (name == 0 || *name == 0)
             name = "UNNAMED";
         strcat(s, " of ");
@@ -202,6 +287,9 @@ char far do_of(struct Object far *obj, int lore, char *s)
                 charges = spell->qn.f.quality;
             if (charges >= 0) {
                 strcat(s, " with ");
+#ifndef __TURBOC__
+                zh_charges = charges > 0 && OBJ_ITEM(obj) >= FIRST_POTION && OBJ_ITEM(obj) <= ITEM_BROWN_POTION ? 1 : charges;
+#endif
                 if (charges > 0) {
                     char num[3] = "00";
 
@@ -249,16 +337,35 @@ void far BookLook(struct Object far *obj, int print)
         return;
     }
     if ((obj->ol.f.link & 0x1FF) > 0xFF)
+#ifndef __TURBOC__
+        port_book_print(get_string((obj->ol.f.link & 0x1FF) | STR_BOOKS));   /* names glossed */
+#else
         scroll_print(get_string((obj->ol.f.link & 0x1FF) | STR_BOOKS));
+#endif
     else {
         strcpy(text, "You read the ");
         get_name(text + strlen(text), obj, 0, 0);
         strcat(text, "...\n");
+#ifndef __TURBOC__
+        if (port_zh()) {
+            PortZh zh;
+            const char *n = port_zh_name(obj, 0, 0);
+            port_zh_begin(&zh);
+            port_zh_add(&zh, port_zh_lit("look.read"));
+            port_zh_add(&zh, n ? n : "");
+            port_zh_add(&zh, port_zh_lit("look.read_end"));
+            scroll_print(zh.text);
+        } else
+#endif
         scroll_print(text);
         if ((obj->ol.f.link & 0x1FF) == 6)
             player->quests[26] = (player->quests[26] & 0xFFFFFFFBL) + 4;
         str = get_string((obj->ol.f.link & 0x1FF) | STR_BOOKS);
+#ifndef __TURBOC__
+        port_book_print(str);
+#else
         scroll_print(str);
+#endif
         scroll_print("\n");
     }
 }
@@ -350,13 +457,28 @@ void far BonesLook(struct Object far *obj, int print)
         if (obj->ol.f.owner == 0x3D)
             scroll_print("Relk.\n");
         if (obj->ol.f.owner == 0x3F)
+#ifndef __TURBOC__
+            scroll_print(port_zh() ? (char *)port_zh_lit("look.bones_adventurer") : "an adventurer.\n");
+#else
             scroll_print("an adventurer.\n");
+#endif
         else {
             SET_ITEM(&tmp, obj->ol.f.owner + FIRST_CREATURE);
             tmp.whoami = 0;
             get_name(text, &tmp, 1, 0);
-            scroll_print(text);
-            scroll_print(".\n");
+#ifndef __TURBOC__
+            if (port_zh()) {
+                PortZh zh;
+                port_zh_begin(&zh);
+                port_zh_add(&zh, port_zh_name(&tmp, 1, 0));
+                port_zh_add(&zh, port_zh_lit("look.bones_end"));
+                scroll_print(zh.text);
+            } else
+#endif
+            {
+                scroll_print(text);
+                scroll_print(".\n");
+            }
         }
     }
 }
@@ -427,6 +549,41 @@ void far CritterLook(struct Object far *obj, char *s)
     }
 }
 
+#ifndef __TURBOC__
+/* CritterLook's '<attitude> <kind> named <Name>' in the locale's order, its choices made as
+   CritterLook makes them (display only) */
+static void zh_critter(PortZh *zh, struct Object far *obj)
+{
+    char far *desc, far *name, far *attitude;
+    const char *t;
+    int desc_id = OBJ_ITEM(obj) | STR_OBJNAMES;
+    unsigned char who = obj->whoami;
+    desc = get_string(desc_id);
+    if (*desc == 0) {
+        if (OBJ_GOAL(obj) == 11) desc = get_string(desc_id = (OBJ_SEQ(obj) + 0x115) | STR_GAME);
+        else desc = 0;
+    }
+    attitude = who < 0xF0 || who == 0xFF ? get_string((OBJ_ATTITUDE(obj) + 0x60) | STR_OBJLOOK) : 0;
+    if (attitude && *attitude == 0) attitude = 0;
+    name = who > 0 ? get_string((who + 0x10) | STR_CONV) : 0;
+    if (name && *name == 0) name = 0;
+    if (desc != 0 && attitude != 0) {
+        t = port_zh_string((OBJ_ATTITUDE(obj) + 0x60) | STR_OBJLOOK);
+        port_zh_add(zh, t ? t : attitude);
+        port_zh_add(zh, t ? port_zh_lit("of") : " ");
+    }
+    if (desc != 0 && (name == 0 || isupper(*name))) {
+        t = port_zh_string(desc_id);
+        port_zh_add(zh, t ? t : fix_name_string(desc, attitude == 0, 0));
+    }
+    if (name != 0) {
+        t = port_zh_string((who + 0x10) | STR_CONV);
+        if (desc != 0 && isupper(*name)) port_zh_add(zh, port_zh_lit("look.named"));
+        port_zh_add(zh, t ? t : fix_name_string(name, desc == 0, 0));
+    }
+}
+#endif
+
 /* The second line of a look for books and scrolls (BookLook), keys (KeyLook), bones
    (BonesLook) and doors: a closed door whose owner bit 0 is set prints string 0x91, which is
    empty in the game's STRINGS.PAK. */
@@ -487,5 +644,30 @@ int far GetObjDesc(struct Object far *obj, int lore, char *s)
         end = s + strlen(s);
         get_name(end, obj, 0, qty > 1);
     }
+#ifndef __TURBOC__
+    if (port_zh()) {
+        /* Phase 14: the description's translation beside it (port_i18n_note_name), for the
+           callers that print it by itself (SPELLS2.C's identify and enchant messages); eight
+           kept, as the notes are */
+        static char shown[8][160];
+        static int next;
+        char *z = shown[next++ & 7];
+        PortZh zh;
+        const char *t;
+        port_zh_begin(&zh);
+        if (OBJ_MAJOR(obj) == MAJOR_CREATURE)
+            zh_critter(&zh, obj);
+        else {
+            if (qual[0] != 0) {
+                t = port_zh_string((com->qualtype * 6 + q) | STR_OBJLOOK);
+                port_zh_add(&zh, t ? t : qual);
+                port_zh_add(&zh, t ? port_zh_lit("of") : " ");
+            }
+            port_zh_add(&zh, port_zh_name(obj, 0, qty > 1));
+        }
+        snprintf(z, sizeof shown[0], "%s", zh.text);
+        port_i18n_note_name(s, z);
+    }
+#endif
     return qty;
 }

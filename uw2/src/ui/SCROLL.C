@@ -46,8 +46,7 @@
 #include "sys.h"
 #include "ui.h"
 #ifndef __TURBOC__
-#include "presentation/scroll_text.h"
-int port_scroll_write(int which, const char *legacy, int escapes);   /* presentation/localized.c */
+#include "presentation/scroll_bridge.h"
 #endif
 
 /* This file's _BSS, DS:34B0..34B3 (seg044's starts at 34B4). */

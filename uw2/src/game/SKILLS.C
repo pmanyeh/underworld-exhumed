@@ -37,6 +37,9 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#endif
 #include "view3d.h"
 
 struct VoidTile { unsigned char x, y; };
@@ -929,12 +932,29 @@ int far RemoveTrap(struct Object far *obj, int skill)
                 strcpy(name, "poison trap");
             else
                 get_name(name, trap, 0, 0);
-            scroll_print("The ");
-            scroll_print(name);
-            scroll_print(" on the ");
-            get_name(name, obj, 0, 0);
-            scroll_print(name);
-            game_sprint(0x168);         /* " was successfully disarmed." */
+#ifndef __TURBOC__
+            if (port_zh()) {
+                /* Phase 14: "The <trap> on the <object> was successfully disarmed." in the
+                   locale's order: the object, trap.on, the trap, then the string's translation */
+                PortZh zh;
+                const char *t = OBJ_INMAJOR(trap) == 15 || (OBJ_INMAJOR(trap) == 0 && OBJ_OWNER(trap))
+                                ? port_zh_literal(name) : port_zh_name(trap, 0, 0);
+                port_zh_begin(&zh);
+                port_zh_add(&zh, port_zh_name(obj, 0, 0));
+                port_zh_add(&zh, port_zh_lit("trap.on"));
+                port_zh_add(&zh, t ? t : name);
+                port_zh_id(&zh, 0x168 | STR_GAME);
+                scroll_print(zh.text);
+            } else
+#endif
+            {
+                scroll_print("The ");
+                scroll_print(name);
+                scroll_print(" on the ");
+                get_name(name, obj, 0, 0);
+                scroll_print(name);
+                game_sprint(0x168);         /* " was successfully disarmed." */
+            }
             if (trig)
             {
                 quality = OBJ_QUALITY(trig);
