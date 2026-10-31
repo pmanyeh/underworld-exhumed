@@ -36,6 +36,12 @@ HD 游標提交 `89a5157`；Exhume `956588f`：`name_gloss`、`input_alias`、`u
 `port_template_shown` 與自己的 `i18n/phrases.h`）；UW2 有自己的 `src/port/i18n/phrases.c`；LOOK／USEITEMS／INTERACT／GAMESCR／INVDATA／CRITTIME／SKILLS
 的組句與對話選項已接。實測「你看到布袋。」。
 
+**2026-10-31 UW2 本機測試版（使用者同意建立）**：工作區 `UW2-zhTW-playtest/`（Git 外、只留本機）：`uw2port.exe`（提交 `2c943ed` 建置，
+SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`licenses/`、`i18n/zh-TW/`（catalog.uw2loc、input-aliases.tsv、proper-names.tsv）、
+`開始遊戲.bat`（`--data` 指向工作區的 UW2 遊戲資料、`--home` 為資料夾內 `home\`）、`說明.txt`（已中文化範圍、打字話題、仍英文的部分）。
+首次執行自動進入中文（`language=zh-TW` 寫入 home 的 uw2port.cfg）。只用系統 PATH 啟動檢查通過。等待使用者遊玩回報。
+更新測試版時只換 EXE（先備份舊檔），不要動 `home\`。
+
 **下一步（Phase 14 後續批次，依 UW1 P8～P12 順序）：**
 
 1. （第三批已完成：UW2 `input-aliases.tsv` 22 列、`proper-names.tsv` 93 名、`babl_ask` 中文輸入、每段對話重設加註；見 `P14_SLICE.md`。
