@@ -137,7 +137,8 @@ void grPageFlip(void)
     port_on_flip();                     /* the --shot-at-flip debug screenshots */
 }
 void grSoftPageFlip(void) { seg003_0272_2AC1(); }
-/* the pen, for the HD labels: 100h and 101h are the cursor's save and save-under (MOUSE.C) */
+/* the pen, for the HD labels: 100h and 101h are the cursor's save and save-under (MOUSE.C), 106h
+   the options panel's copy to the screen (WRAPPER.C), which redraws its labels itself */
 static int pen;
 void set_the_color(int c) { pen = c; seg003_0272_3195((uint16_t)c); }
 void init_colors(void) { seg003_0272_31BE(); }
@@ -173,7 +174,7 @@ static int clip_rect(int16_t *ax, int16_t *bx, int16_t *cx, int16_t *dx)
    away (corners (x0, y0) and (x1, y1), y up), even when it fills it with what was there */
 static void forget_box(int x0, int y0, int x1, int y1)
 {
-    if (hd_label_enabled() && pen != 0x100 && pen != 0x101)
+    if (hd_label_enabled() && pen != 0x100 && pen != 0x101 && pen != 0x106)
         hd_label_forget(x0 < x1 ? x0 : x1, 199 - (y0 > y1 ? y0 : y1), (x0 > x1 ? x0 : x1) + 1,
                         199 - (y0 < y1 ? y0 : y1) + 1);
 }

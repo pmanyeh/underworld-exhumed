@@ -47,6 +47,12 @@
 #include "sys.h"
 #include "ui.h"
 #include "view3d.h"
+#ifndef __TURBOC__
+#include "i18n/phrases.h"
+#include "presentation/hd_label.h"
+void port_options_row(int row, const char *text);   /* presentation/localized.c */
+static void port_options_words(void);
+#endif
 
 /* This file's _BSS, DS:8178..817B. */
 /* match: laid out by name: save_rest 843, music_sound 925. Only this file uses them.
@@ -342,6 +348,9 @@ void far load_message(int row, int col, int how)
     mouse_hide();
     copy_rectangle(0xEC, 0xC2 - (col << 4) - 2, 0x4F, 0x10, 0x58, 0x4F - (row << 4), how);
     mouse_show();
+#ifndef __TURBOC__
+    port_options_words();
+#endif
 }
 
 void far quit_group_fun(void)
@@ -430,6 +439,9 @@ void far install_buttongroup(struct buttongroup *g)
     if (g->init)
         g->init();
     blit_panel_to_main();
+#ifndef __TURBOC__
+    port_options_words();
+#endif
 }
 
 /* Draws button b lit or unlit by copying it from the hidden copies of the group's
@@ -438,6 +450,9 @@ void far draw_button(int b, int hilit)
 {
     copy_rectangle(0xEC, 0xC2 - (b << 4) - 2, 0x4F, 0x10, hilit ? 0x58 : 4,
                    (hilit ? 0xC6 : 0xC6) - (b << 4) - 2, 0);
+#ifndef __TURBOC__
+    port_options_words();
+#endif
 }
 
 /* Copies a w by h rectangle from (sx, sy) of the hidden page to (x, y); how 0 also draws
@@ -491,3 +506,46 @@ void far load_buttongroup_images(int n)
     grSoftPageFlip();
     mouse_show();
 }
+
+#ifndef __TURBOC__
+/* Phase 14, as UW1's P12 options panel: the words of the current group's seven rows (top to
+   bottom) in the locale's language, as HD patches over the buttons' art, by the group's
+   pictures (buttongroup.images) and the state its title rows show. Display only. */
+static void port_options_words(void)
+{
+    static const char *const game[7] = { "opt.save", "opt.restore", "opt.music", "opt.sound", "opt.detail",
+                                         "opt.quit", "opt.return" };
+    static const char *const detail[7] = { 0, "opt.set_level", "opt.low", "opt.medium", "opt.high", "opt.very_high",
+                                           "opt.done" };
+    static const char *const levels[4] = { "opt.level_low", "opt.level_medium", "opt.level_high",
+                                            "opt.level_very_high" };
+    static const char *const quit[7] = { "opt.quit_title", "opt.sure", "opt.yes", "opt.no", 0, 0, 0 };
+    static const char *const file[7] = { 0, "opt.slot1", "opt.slot2", "opt.slot3", "opt.slot4", "opt.cancel", 0 };
+    static const char *const sound[7] = { 0, 0, "opt.on", "opt.off", "opt.done", 0, 0 };
+    const char *const *rows;
+    const char *title = 0, *second = 0;
+    int b;
+    if (!hd_label_enabled() || !port_zh()) return;
+    switch (current_buttongroup->images) {
+    case 0: rows = game; break;
+    case 1: rows = detail; title = levels[player->detail & 3]; break;
+    case 2: rows = quit; break;
+    case 3: rows = file; title = save_rest == 1 ? "opt.restore_title" : "opt.save_title"; break;
+    case 4:
+        rows = sound;
+        if (music_sound == 0) {
+            title = music_is_on() ? "opt.music_on" : "opt.music_off";
+            second = "opt.turn_music";
+        } else {
+            title = fx_is_on() ? "opt.sound_on" : "opt.sound_off";
+            second = "opt.turn_sound";
+        }
+        break;
+    default: return;
+    }
+    for (b = 0; b < 7; b++) {
+        const char *key = b == 0 && title ? title : b == 1 && second ? second : rows[b];
+        if (key) port_options_row(b, port_zh_lit(key));
+    }
+}
+#endif

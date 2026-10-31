@@ -312,6 +312,34 @@ void port_stats_labels(void)
         (void)hd_label_patch(port_zh_lit(keys[i]), 0xF0, 24 + i * 7, 0x110, 30 + i * 7, 0xC4, HD_LABEL_LEFT);
 }
 
+/* WRAPPER.C: the options panel's row (0..6, top to bottom: x 0xEC to 0x13B, 16 rows each from
+   row 7) as an HD patch over the button's art, in the art's letters' colour */
+void port_options_row(int row, const char *text)
+{
+    static unsigned char px[0x4F * 16];
+    uint8_t dac[768];
+    int x, y, top = 7 + row * 16, colour;
+    if (!hd_label_enabled() || row < 0 || row > 6) return;
+    for (y = 0; y < 16; y++)
+        for (x = 0; x < 0x4F; x++) px[y * 0x4F + x] = label_pixel(0xEC + x, top + y) & 0xFF;
+    vga_get_dac(dac);
+    {
+        /* the letters are thin strokes: the brightest colour of at least 1% of the row's pixels */
+        static int counts[256];
+        int i, light = -1;
+        colour = -1;
+        memset(counts, 0, sizeof counts);
+        for (i = 0; i < (int)sizeof px; i++) counts[px[i]]++;
+        for (i = 1; i < 256; i++)
+            if (counts[i] * 100 >= (int)sizeof px) {
+                int l = dac[i * 3] * 3 + dac[i * 3 + 1] * 6 + dac[i * 3 + 2];
+                if (l > light) { light = l; colour = i; }
+            }
+        if (colour < 0) return;
+    }
+    (void)hd_label_patch(text, 0xEC + 2, top + 2, 0xEC + 0x4D, top + 14, colour, HD_LABEL_CENTRE);
+}
+
 /* "12TH": a level and its English ordinal (STATS.C's sp_hdr), as the locale's words */
 static const char *ordinal(const char *s)
 {
