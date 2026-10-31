@@ -112,22 +112,12 @@ const char *port_ui_text(const char *english)
 
 void vga_get_dac(uint8_t rgb6[768]);
 
-/* The brightest of a picture's common colours (each at least a twentieth of its opaque
-   pixels): a lettered button's letters, whatever their outline and shading. */
+/* a lettered button's letters' colour (hd_label_letter_colour) in the palette as it is */
 static int letter_colour(const unsigned char *img, int n)
 {
-    static int counts[256];
     uint8_t dac[768];
-    int i, opaque = 0, best = -1, light = -1;
-    memset(counts, 0, sizeof counts);
-    for (i = 0; i < n; i++) if (img[i]) { counts[img[i]]++; opaque++; }
     vga_get_dac(dac);
-    for (i = 1; i < 256; i++)
-        if (counts[i] * 20 >= opaque && counts[i]) {
-            int l = dac[i * 3] * 3 + dac[i * 3 + 1] * 6 + dac[i * 3 + 2];
-            if (l > light) { light = l; best = i; }
-        }
-    return best;
+    return hd_label_letter_colour(img, n, dac);
 }
 
 int port_menu_button(int i, int x, int y, int w, int h, const unsigned char *img, int selected)

@@ -218,6 +218,7 @@ void port_text_hooks(PlatHooks *hooks)
 
 static int measure(uint32_t cp, void *m) { return hd_scroll_advance(((Metrics *)m)->font, cp, ((Metrics *)m)->em64); }
 static Metrics label_metrics, caption_metrics;
+static const char *ordinal(const char *s);
 unsigned char gr_read_pixel(int x, int y);      /* gfx/grcore.c: the drawing page, bottom-up */
 int port_draw_page(void);                       /* gfx/grcore.c */
 static int label_pixel(int x, int y) { return gr_read_pixel(x, 199 - y); }
@@ -268,6 +269,7 @@ const char *port_ui_text(const char *english)
     if ((zh = port_i18n_named(english)) != NULL) return zh;
     if ((zh = port_i18n_display(english)) != english) return zh;
     if ((zh = port_i18n_display_nocase(english)) != NULL) return zh;
+    if ((zh = ordinal(english)) != NULL) return zh;
     return port_zh_literal(english);
 }
 
@@ -278,6 +280,48 @@ void port_text_end(void)
     hd_font_shutdown(measure_font[0]);
     measure_font[0] = measure_font[1] = NULL;
     port_i18n_shutdown();
+}
+
+/* MAINMENU.C: main menu button i (0..3) in Chinese over the menu's background, its colour the
+   picture's letters' (the selected picture's when it is selected), centred on the screen as the
+   column of buttons is; 1: the caller does not show the picture. x, y, w, h as the menu shows
+   it (y bottom-up, the top row). As UW1's ui_text.c. */
+int port_menu_button(int i, int x, int y, int w, int h, const unsigned char *img, int selected)
+{
+    static const char *const keys[] = { "menu.intro", "menu.create", "menu.credits", "menu.journey" };
+    uint8_t dac[768];
+    int colour, top = 199 - y, half;
+    (void)selected;
+    if (i < 0 || i > 3 || !img || !hd_label_enabled() || !port_i18n_enabled()) return 0;
+    vga_get_dac(dac);
+    if ((colour = hd_label_letter_colour(img, w * h, dac)) < 0) return 0;
+    half = 0xA0 - x > x + w - 0xA0 ? 0xA0 - x : x + w - 0xA0;
+    return hd_label_box(port_zh_lit(keys[i]), 0xA0 - half, top, 0xA0 + half, top + h, colour, HD_LABEL_CENTRE,
+                        12 * 64, -1, 1.0f) == 0;
+}
+
+/* STATS.C's RedispStat: the words in the statistics page's art (STR .. EXP, one row each from the
+   six rows from the top row 24, below the class's label, x 0xF0 to 0x110, left of the values)
+   as HD patches over the art's background */
+void port_stats_labels(void)
+{
+    static const char *const keys[] = { "stats.str", "stats.dex", "stats.int", "stats.vit", "stats.mana", "stats.exp" };
+    int i;
+    if (!hd_label_enabled() || !port_i18n_enabled()) return;
+    for (i = 0; i < 6; i++)
+        (void)hd_label_patch(port_zh_lit(keys[i]), 0xF0, 24 + i * 7, 0x110, 30 + i * 7, 0xC4, HD_LABEL_LEFT);
+}
+
+/* "12TH": a level and its English ordinal (STATS.C's sp_hdr), as the locale's words */
+static const char *ordinal(const char *s)
+{
+    static char buf[32];
+    int n = 0;
+    const char *p = s;
+    while (*p >= '0' && *p <= '9') n = n * 10 + (*p++ - '0');
+    if (p == s || (strcmp(p, "ST") && strcmp(p, "ND") && strcmp(p, "RD") && strcmp(p, "TH"))) return NULL;
+    snprintf(buf, sizeof buf, port_zh_lit("stats.level"), n);
+    return buf;
 }
 
 int port_zh(void)

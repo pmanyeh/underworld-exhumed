@@ -25,12 +25,23 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"look.named", "，名叫"},
     {"food.that", ""},                              /* "That <food>" before its taste's string */
     {"stats.out_of", "／"},                          /* GAMESCR.C: vitality and mana */
+    {"stats.level", "第%d級"},                     /* STATS.C: "1ST" .. "16TH" */
+    {"stats.str", "力量"},                         /* the statistics page's art */
+    {"stats.dex", "敏捷"},
+    {"stats.int", "智慧"},
+    {"stats.vit", "生命力"},
+    {"stats.mana", "法力"},
+    {"stats.exp", "經驗值"},
     {"inv.your", "你的"},                          /* INVDATA.C: worn out */
     {"inv.destroyed", "壞掉了。\n"},
     {"inv.damaged", "受損了。\n"},
     {"trap.on", "上的"},                             /* SKILLS.C: "<object>上的<trap>" */
     {"vend.price", "（%d 金幣）"},                    /* WORLDEV.C: a vending machine's price */
     {"scroll.more", "[繼續]"},
+    {"menu.intro", "開場介紹"},                    /* the main menu's buttons, as UW1's */
+    {"menu.create", "創造角色"},
+    {"menu.credits", "製作群"},
+    {"menu.journey", "繼續旅程"},
 };
 
 /* whole pieces the game's code prints by themselves; a name between "The " and the rest is

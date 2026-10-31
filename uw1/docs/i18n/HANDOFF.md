@@ -41,7 +41,7 @@ HD 游標提交 `89a5157`；Exhume `956588f`：`name_gloss`、`input_alias`、`u
 1. （第三批已完成：UW2 `input-aliases.tsv` 22 列、`proper-names.tsv` 93 名、`babl_ask` 中文輸入、每段對話重設加註；見 `P14_SLICE.md`。
    本機 `.poc-tools/uw2-cnv-unpack.py` 解 UW2 CNV.ARK 給 `babl_audit` 用。輸入法實機尚未遊玩驗證。）
 2. 還沒接的拼接訊息：SPELLS2 的辨識怪物、WORLDEV 修理、MISCUTIL 方向、PLAYER 座標等；用 `--scroll-log` 找仍是英文的行。
-3. （第四批：`string_to_screen` 的 HD 標籤已接，hd_label 搬到 runtime；見 `P14_SLICE.md`。）美術字的補丁（選項面板、主選單、屬性頁，UW1 ui_text 的
+3. （第六批：主選單、屬性頁美術字已改中文。）（第四批：`string_to_screen` 的 HD 標籤已接，hd_label 搬到 runtime；見 `P14_SLICE.md`。）美術字的補丁（選項面板、主選單、屬性頁，UW1 ui_text 的
    `port_options_*`／`port_menu_button`／`port_stats_labels`）、跨頁標籤複製（過場字幕已於第五批完成）、數量面板、中文姓名與存檔說明（text_entry、user_text）、
    F11 語言分頁、啟動時依 catalog 預設中文、測試版打包。
 4. UW2 強化功能（UW1 的 F11 項目）屬另議，先不移植，除非使用者要求。
@@ -77,7 +77,7 @@ catalog 與遊戲檔不上傳、玩家資料不覆寫、強化功能預設關）
 | --- | --- |
 | 主 repo／分支 | `pmanyeh/underworld-exhumed`／`feature/zh-tw-native` |
 | 最新功能提交 | 2026-10-31 UW2 Phase 14 共用模組＋垂直切片 `e08d8dc`（§0）；UW1 最後一項為 2026-10-31 HD 描邊快取（標題頁游標延遲），提交以 `git log -1` 為準；之前 `4f95eb9`（強化功能即時生效）、`aee554b`（地圖橡皮擦輔助）、`3122640`（按鍵說明頁）、`b3249e6`（三項強化功能） |
-| Exhume 子模組 | `pmanyeh/Exhume`，固定 `ee345b5`（2026-10-31 共用標籤與字幕，UW2 Phase 14 第四、五批）；之前 `956588f`（共用 bridge）、 `f591c3c`（共用文字模組）、 `370b998`（2026-10-28 按鍵說明頁） |
+| Exhume 子模組 | `pmanyeh/Exhume`，固定 `04ace69`（2026-10-31 字色函式，UW2 Phase 14 第六批）；之前 `ee345b5`（共用標籤與字幕）；之前 `956588f`（共用 bridge）、 `f591c3c`（共用文字模組）、 `370b998`（2026-10-28 按鍵說明頁） |
 | 子模組 checkout | 本機為固定提交的 detached HEAD，工作區乾淨；遠端開發分支 `feature/presentation-overlay` |
 | 階段／tag | 2026-10-31 經使用者同意建立 `zh-tw-native-p13`（UW1 段落完成；譯文審閱仍可後續提交）；前一階段 `zh-tw-native-p12`（`0169ca1`） |
 | 版本號 | 0.6（2026-10-31）；攜帶測試包版本號，譯文多數仍為 draft |

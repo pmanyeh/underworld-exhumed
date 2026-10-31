@@ -34,6 +34,10 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "presentation/hd_label.h"
+int port_menu_button(int i, int x, int y, int w, int h, const unsigned char *img, int selected);
+#endif
 
 /* name: FM Towns keeps these as statics, so their names are not known. */
 static unsigned char far *opbuf = 0;    /* where gronk_gr puts the next button picture */
@@ -93,6 +97,11 @@ void far draw_start_buttons(int n, struct Button far *b, unsigned char text, int
         for (i = 0; i < n; i++) {
             p = b;
             img = p[i].img[i == sel];
+#ifndef __TURBOC__
+            /* Phase 14, as UW1's P12: the main menu's lettered buttons in Chinese, over the
+               clean background (presentation/localized.c) */
+            if (b == buttons && port_menu_button(i, p[i].x, p[i].y, p[i].w, p[i].h, img, i == sel)) continue;
+#endif
             show(p[i].x, p[i].y, img, p[i].h, p[i].w, 0, 0);
         }
     } else {
@@ -108,6 +117,9 @@ void far draw_start_buttons(int n, struct Button far *b, unsigned char text, int
             }
             while ((w = string_width(s[i])) > 0x13E)
                 s[i][strlen(s[i]) - 1] = 0;
+#ifndef __TURBOC__
+            hd_label_align(HD_LABEL_CENTRE);
+#endif
             string_to_screen(s[i], 0xA0 - w / 2, 100 - i * 0x16);
         }
     }

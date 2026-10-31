@@ -26,6 +26,9 @@
 #include "player.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+void port_stats_labels(void);              /* presentation/localized.c */
+#endif
 
 /* The first row shown in the skill list (DS:1B92): 0 shows the unspent skill points
    first, n starts at skill n - 1. */
@@ -139,6 +142,9 @@ void far RedispStat(void)
     *foreground_color = *background_color = 0xC4;
     mouse_hide();
     grfx_quikfont(FONT_5X6I);
+#ifndef __TURBOC__
+    port_stats_labels();                /* Phase 14: the art's STR .. EXP as HD patches */
+#endif
     sp_hdr();
     for (i = 0; i < 3; i++)
         sp_att(i);
