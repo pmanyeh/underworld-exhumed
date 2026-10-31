@@ -17,6 +17,7 @@
 #include "presentation/scroll_bridge.h"
 #include "presentation/scroll_overlay.h"
 #include "presentation/scroll_text.h"
+#include "presentation/settings_text.h"
 #include "presentation/text_style.h"
 #include "port.h"
 #include "ui/settings.h"
@@ -25,6 +26,8 @@
 #include <string.h>
 
 void scroll_wait(int ticks, char mouse);        /* SCROLLIO.C */
+void port_settings_language(int zh);            /* sys/settab.c */
+int port_settings_gloss(void);
 extern unsigned char spec_col[7];               /* SCROLL.C */
 
 static const char *locale = "en", *i18n_file, *font_path;
@@ -104,6 +107,7 @@ int port_text_setup(const char *home, int interactive)
         fputs("uw2port: --hd-scroll needs --locale zh-TW\n", stderr);
         return -1;
     }
+    port_settings_language(!strcmp(locale, "zh-TW"));     /* the Language tab shows what this run has */
     scroll_text_enable(hd_scroll);
     /* UW2's colours for the scroll's \0..\6 escapes (SCROLL.C's spec_col) and its [MORE] (0x12,
        SCROLLIO.C's scroll_more), in place of UW1's */
@@ -114,7 +118,15 @@ int port_text_setup(const char *home, int interactive)
     hd_label_enable(hd_scroll);
     /* cutscene subtitles (CUTS.C) in the HD font */
     caption_enable(hd_scroll);
-    if (!hd_scroll) return 0;
+    if (!hd_scroll) {
+        /* the settings screen in its own font, but the language's name in Chinese where a font
+           for it is at hand, as UW1's */
+        static HdFont *settings_font;
+        char where[1024];
+        if (!text_style_font_path(home, "jf-openhuninn-2.1.ttf", where, sizeof where) && !hd_font_init(&settings_font, where))
+            settings_text_start(settings_font, 0, 1);
+        return 0;
+    }
     text_style_program("uw2port");
     snprintf(config, sizeof config, "%s/" PORT_CONFIG_FILE, home);
     if (text_style_boxes(home, locale, config, font_path, style, font_file, fallback_file, settings, sizeof settings))
@@ -161,9 +173,15 @@ int port_text_setup(const char *home, int interactive)
         else snprintf(aliases, sizeof aliases, "i18n/%s/proper-names.tsv", locale);
         if (name_gloss_load(aliases))
             fprintf(stderr, "uw2port: proper names: %s not loaded; names are shown without their English\n", aliases);
-        else
+        else {
+            name_gloss_mode(port_settings_gloss());
             fprintf(stderr, "uw2port: proper names: %s, %d names\n", aliases, name_gloss_count());
+        }
     }
+    /* the settings screen (F11) in the HD font and in Chinese; the Language tab's sample UW2's */
+    settings_text_sample("\xe4\xbd\xa0\xe7\x9c\x8b\xe5\x88\xb0\xe4\xb8\x80\xe6\x8a\x8a\xe5\xa0\xaa\xe7\x94\xa8\xe7\x9a\x84\xe9\x95\xb7\xe5\x8a\x8d\xe3\x80\x82",
+                         "\xe4\xb8\x8d\xe5\x88\x97\xe9\xa1\x9b\xe7\x8e\x8b\xef\xbc\x9a\xe6\xad\xa1\xe8\xbf\x8e\xe4\xbe\x86\xe5\x88\xb0\xe6\x88\x91\xe7\x9a\x84\xe5\x9f\x8e\xe5\xa0\xa1\xe3\x80\x82");
+    settings_text_start(draw_font[0], 1, style[0].antialiasing);
     return 0;
 }
 

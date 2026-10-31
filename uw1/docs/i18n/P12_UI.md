@@ -49,7 +49,7 @@ Exhume `runtime/port/presentation/qty_dialog.{c,h}`：「Move how many?」改成
 - exhume（`runtime/port/ui/settings.{c,h}`）新增遊戲提供譯文與字型的掛鉤、設定列的說明與預覽欄位、
   `settings_set_start`，以及「語言與文字」分頁。這個分頁只在遊戲的設定表有它的列時才出現，其他遊戲不受影響。
   exhume 的 `settings_test.c` 新增 4 項檢查。
-- UW1（`settab.c`、`i18n/settings_words.c`、`presentation/settings_text.c`）：中文模式下整個設定畫面用 HD 字型
+- UW1（`settab.c`、`i18n/settings_words.c`、`presentation/settings_text.c`；後兩者 2026-10-31 移入 Exhume runtime，與 UW2 共用）：中文模式下整個設定畫面用 HD 字型
   顯示中文，強化功能的名稱與說明也是。「語言與文字」分頁有：
   - 語言：English／繁體中文；
   - 中文字型：只列找得到的字型；

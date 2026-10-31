@@ -30,7 +30,8 @@ extern const char *port_home;
 #endif
 
 /* The rows, in each tab's order; the display rows read each other's values */
-enum { R_MUSIC, R_SPEECH, R_ROMS, R_VOLUME, R_MOUSE, R_LOOK, R_FULL, R_SCALE, R_ASPECT, R_INTEGER, R_FOLDER, R_RECORD, R_START };
+enum { R_MUSIC, R_SPEECH, R_ROMS, R_VOLUME, R_MOUSE, R_LOOK, R_FULL, R_SCALE, R_ASPECT, R_INTEGER, R_FOLDER, R_RECORD, R_START,
+       R_LANGUAGE, R_FONT, R_SIZE, R_LINE, R_BORDER, R_SMOOTH, R_GLOSS };
 
 /* Window scale offers only the scales whose window fits the display (with 4:3 as it stands) */
 static int scale_limit(void)
@@ -134,6 +135,28 @@ static int game_check(const char *path) { return port_game_dir_ok(path); }
 static const char *const mouse_names[] = { "Follow", "Lock", NULL };
 static const char *const mouse_stored[] = { "follow", "lock", NULL };
 
+/* The Language tab, as UW1's: the locale, and the HD Chinese text's commonest settings, under the
+   keys the HD text reads from the settings file (text_style.c); each applies at the next start,
+   the text rows' sample drawn with the values now chosen (presentation/settings_text.c) */
+static const char *const language_names[] = { "English", "Traditional Chinese", NULL };
+static const char *const language_stored[] = { "en", "zh-TW", NULL };
+static const char *const font_names[] = { "jf open huninn", "Noto Sans CJK TC", NULL };
+static const char *const font_stored[] = { "jf-openhuninn-2.1.ttf", "NotoSansCJKtc-Regular.otf", NULL };
+static const char *const border_names[] = { "None", "Thin", "Medium", "Thick", NULL };
+static const char *const border_stored[] = { "0", "0.5", "1", "1.5", NULL };
+/* names with their English in conversations and books (i18n/name_gloss.c), at once */
+static const char *const gloss_names[] = { "Off", "First time", "Every time", NULL };
+static const char *const gloss_stored[] = { "0", "1", "2", NULL };
+void name_gloss_mode(int mode);                                                /* i18n/name_gloss.c */
+void port_text_preview(uint32_t *px, int x, int y, int w, int h, int value);   /* presentation/settings_text.c */
+int text_style_font_path(const char *home, const char *file, char *out, size_t outsz);   /* presentation/text_style.c */
+/* the fonts offered: Noto Sans CJK TC only where it is (a playtest folder has jf open huninn) */
+static int font_limit(void)
+{
+    char where[1024];
+    return text_style_font_path(port_home, font_stored[1], where, sizeof where) ? 1 : 2;
+}
+
 const struct setting port_settings[] = {
     [R_MUSIC]   = { .tab = SET_TAB_SOUND, .label = "Music", .kind = SET_CYCLE, .names = music_names, .stored = music_cards,
                     .def = 2, .restart = 1, .get = music_get, .put = music_put },
@@ -161,6 +184,23 @@ const struct setting port_settings[] = {
     [R_RECORD]  = { .tab = SET_TAB_GAME, .label = "Record sessions", .kind = SET_BOOL, .key = "recording", .def = 1,
                     .restart = 1 },
     [R_START]   = { .tab = SET_TAB_GAME, .label = "Show this at start", .kind = SET_BOOL, .key = "settings-at-start", .def = 1 },
+    [R_LANGUAGE] = { .tab = SET_TAB_TEXT, .label = "Game language", .kind = SET_CYCLE, .key = "language", .names = language_names,
+                     .stored = language_stored, .def = 0, .restart = 1,
+                     .help = "The game's text and this screen in the language chosen; a saved game opens in either" },
+    [R_FONT]    = { .tab = SET_TAB_TEXT, .label = "Chinese font", .kind = SET_CYCLE, .key = "font_cjk_hd_file", .names = font_names,
+                    .stored = font_stored, .def = 0, .restart = 1, .limit = font_limit, .help = "The typeface of the Chinese text" },
+    [R_SIZE]    = { .tab = SET_TAB_TEXT, .label = "Text size", .kind = SET_SLIDER, .key = "font_cjk_hd_size", .lo = 3, .hi = 10,
+                    .step = 1, .def = 5, .restart = 1, .help = "The Chinese text's size, in the game's pixels", .preview = port_text_preview },
+    [R_LINE]    = { .tab = SET_TAB_TEXT, .label = "Line spacing", .kind = SET_SLIDER, .key = "font_cjk_hd_line_spacing", .lo = -3,
+                    .hi = 8, .step = 1, .def = 0, .restart = 1, .help = "Space added between lines: more, and fewer lines fit a page",
+                    .preview = port_text_preview },
+    [R_BORDER]  = { .tab = SET_TAB_TEXT, .label = "Outline", .kind = SET_CYCLE, .key = "font_cjk_hd_border", .names = border_names,
+                    .stored = border_stored, .def = 0, .restart = 1, .help = "A dark edge round each character", .preview = port_text_preview },
+    [R_SMOOTH]  = { .tab = SET_TAB_TEXT, .label = "Smooth edges", .kind = SET_BOOL, .key = "font_cjk_hd_antialiasing", .def = 1,
+                    .restart = 1, .help = "Off: each pixel of a character all or nothing, as a bitmap font", .preview = port_text_preview },
+    [R_GLOSS]   = { .tab = SET_TAB_TEXT, .label = "English names", .kind = SET_CYCLE, .key = "name-gloss", .names = gloss_names,
+                    .stored = gloss_stored, .def = 1, .apply = name_gloss_mode,
+                    .help = "A name of a person, place or order with its English, in conversations and books" },
 };
 const int port_settings_count = (int)(sizeof port_settings / sizeof port_settings[0]);
 
@@ -214,4 +254,27 @@ void port_settings_seed(int fullscreen, int scale, int aspect, int integer_scale
     settings_set_value(R_ASPECT, aspect != 0);
     settings_set_value(R_INTEGER, integer_scale != 0);
     settings_set_value(R_MOUSE, lock != 0);
+}
+
+/* The English-names row's value, for the start (localized.c) */
+int port_settings_gloss(void)
+{
+    return settings_value(R_GLOSS);
+}
+
+/* The language this run has (the command line over the file) */
+void port_settings_language(int zh)
+{
+    settings_set_start(R_LANGUAGE, zh != 0);
+}
+
+/* The text rows' values as the screen now has them, for the sample (settings_text.c) */
+void port_text_choice(int *size, int *line, int *border10, int *smooth)
+{
+    static const int tenths[] = { 0, 5, 10, 15 };
+    int b = settings_value(R_BORDER);
+    *size = settings_value(R_SIZE);
+    *line = settings_value(R_LINE);
+    *border10 = tenths[b >= 0 && b < 4 ? b : 0];
+    *smooth = settings_value(R_SMOOTH);
 }
