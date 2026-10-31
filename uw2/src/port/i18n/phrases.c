@@ -39,6 +39,7 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"vend.price", "（%d 金幣）"},                    /* WORLDEV.C: a vending machine's price */
     {"cheat.applied", "密技設定已生效。\n"},        /* ui/cheat_menu.c, as UW1's */
     {"enhance.applied", "設定已生效。\n"},
+    {"conv.unknown", "我不知道這是什麼……\n"},   /* --enhance unknown-topic (conv/CONVERSE.C) */
     {"use.use", "要把"},                             /* OBJUSE.C's UseThing, as UW1's */
     {"use.on_what", "用在什麼上？\n"},
     {"study.is", "是"},                             /* SPELLS2.C: Study Monster's "This creature is " */

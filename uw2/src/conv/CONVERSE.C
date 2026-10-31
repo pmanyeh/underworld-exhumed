@@ -53,6 +53,7 @@
 #ifndef __TURBOC__
 #include "presentation/scroll_bridge.h"
 #include "i18n/name_gloss.h"
+#include "i18n/phrases.h"
 char *port_template_shown(const char *source);                                  /* BABL.C */
 #endif
 
@@ -89,6 +90,27 @@ static int16 babl_ask_handle = 0;           /* the string babl_ask returns */
 char far *conv_buffer = 0;
 static char cnv_file[] = "DATA\\cnv.ark";
 uint16 cnv_id = 0;
+
+#ifndef __TURBOC__
+/* port only: --enhance unknown-topic, as UW1's. Set when the player typed an answer to babl_ask
+   and cleared by what the person then says or prints; still set when the script next shows a
+   menu, asks again or ends, the person says that it does not know what that is. The line has
+   no pause and convo_say_flag (the wait at the end) is left as it was. */
+static char ask_unanswered;
+static void unknown_topic(void)
+{
+    char *line;
+    if (!ask_unanswered)
+        return;
+    ask_unanswered = 0;
+    line = port_zh() ? (char *)port_zh_lit("conv.unknown") : "I don't know what that is...\n";
+    do_npc_scroll();
+    if (port_scroll_emit("", line, "", 0) < 0)
+        scroll_print(line);
+    set_workspace();
+    do_play_scroll();
+}
+#endif
 
 /* Start a conversation with thing, if it will talk. A wisp is talked to through
    talk_to_disembodied(0x30). Anything not a creature, a critter with goal 15, or any
@@ -323,7 +345,13 @@ void far Converse(unsigned char who, int subclass)
     convo_askstr = bab_malloc(0xa0L);
     if (!OBJ_HAS_INV(talking_to))
         generate_inventory(talking_to);
+#ifndef __TURBOC__
+    ask_unanswered = 0;
+#endif
     babl_run();
+#ifndef __TURBOC__
+    unknown_topic();
+#endif
     wait_time = 0x1f4;
     if (update_converse_data(talking_to) != 0 || convo_say_flag == 0)
         wait_time = 0;
@@ -385,6 +413,9 @@ int far conv_choice_ovr103_A13(int16 far *stack)
     char line[0xa0];
     register int row;
     register int lines;
+#ifndef __TURBOC__
+    unknown_topic();
+#endif
     convo_mode = 1;
     bablOptCount = 1;
 #ifndef __TURBOC__
@@ -444,6 +475,9 @@ int far conv_fmenu_ovr103_BF2(int16 far *stack)
     char line[0xa0];
     register int row;
     register int lines;
+#ifndef __TURBOC__
+    unknown_topic();
+#endif
     convo_mode = 1;
     bablOptCount = 1;
 #ifndef __TURBOC__
@@ -552,6 +586,8 @@ void far conv_play_menu(int option)
 void far npc_say(char far *s)
 {
 #ifndef __TURBOC__
+    if (s[0] != '\\' || s[1] != '1')    /* the player's words said back in their colour answer nothing */
+        ask_unanswered = 0;
     if (scroll_text_enabled()) {
         do_npc_scroll();
         port_scroll_emit("\\P", port_i18n_display(s), "\n", 0);
@@ -625,6 +661,7 @@ void far conv_print(int16 far *stack)
     original = get_string(id);
     expanded = convert_string(original);
 #ifndef __TURBOC__
+    ask_unanswered = 0;
     if (scroll_text_enabled()) {
         char *shown = port_template_shown(original);
         do_npc_scroll();
@@ -663,11 +700,26 @@ int far getInputText_ovr103_1117(void)
 {
     char response[0xa0];
 #ifndef __TURBOC__
+    int typed;
+    unknown_topic();
     /* Phase 14, as UW1's P11.4: typed in the locale's language on the HD scroll (the host's
        input method), mapped to the script's English by the alias table; else the original */
-    if (port_scroll_ask(cnv_id, 0, response, 0x32, mouse_get_input) == -2)
+    if ((typed = port_scroll_ask(cnv_id, 0, response, 0x32, mouse_get_input)) == -2)
 #endif
     wdialog(0, 0, response, 1, 0x32);
+#ifndef __TURBOC__
+    /* unknown-topic: something typed, whether or not it maps to the script's English. Words the
+       alias table does not know map to nothing, which the scripts take for nothing typed (a
+       question again, or silence); they go in as a word the script does not know either, as an
+       English player's unknown word does, for the person's own answer to it */
+    if (typed != -2)
+        typed = port_scroll_ask_typed();
+    else
+        typed = strspn(response, " ") < strlen(response);
+    ask_unanswered = ENHANCED(ENH_UNKNOWN_TOPIC) && typed;
+    if (ask_unanswered && strspn(response, " ") == strlen(response))
+        strcpy(response, "?");
+#endif
     scroll_print("\n");
     set_workspace();
     str_copy(convo_askstr, response);
