@@ -151,10 +151,43 @@ static const char *c_set(int argc, char *argv[], int run)
     return NULL;
 }
 
+/* test-inv: the backpack's slots and the open bag's on show, each ITEM:QTY (e-takes' and
+   split-all's fixture), the object on the cursor, as UW1's */
+static const char *c_inv(int argc, char *argv[], int run)
+{
+    int slot;
+    struct Object far *o;
+    (void)argv;
+    if (argc) return "no arguments";
+    if (!run) return NULL;
+    fprintf(stderr, "fixture: inv");
+    for (slot = 11; slot <= (OpenBag ? 27 : 18); slot++)
+        if (slot != 19 && (o = AskInventory(slot)) != 0)
+            fprintf(stderr, " %d=0x%03X:%d", slot, OBJ_ITEM(o), OBJ_ISQUANT(o) ? o->ol.f.link : 1);
+    if (CursorObjPtr) fprintf(stderr, " cursor=0x%03X:%d", OBJ_ITEM(CursorObjPtr), OBJ_ISQUANT(CursorObjPtr) ? CursorObjPtr->ol.f.link : 1);
+    fprintf(stderr, "\n");
+    return NULL;
+}
+
+/* test-take ITEM [QTY]: e-takes (E with modern-keys) on the nearest object of that item (a stack
+   of QTY), as though picked within reach */
+int far port_test_take(int item, int qty);         /* port/ui/keys.c */
+static const char *c_take(int argc, char *argv[], int run)
+{
+    long v, q = 0;
+    if (argc < 1 || argc > 2 || cheat_num(argv[0], 0, 0x1FF, &v) || (argc == 2 && cheat_num(argv[1], 1, 999, &q)))
+        return "an item 0x000 to 0x1FF, and a quantity 1 to 999 if given";
+    if (!run) return NULL;
+    if (!ENHANCED(ENH_E_TAKES)) return "e-takes is off";
+    return port_test_take((int)v, (int)q) ? NULL : "none on the map";
+}
+
 static const struct cheat_cmd cmds[] = {
     { "goto", "LEVEL X Y", c_goto },
     { "give", "ITEM [QTY [QUALITY]] [drop]", c_give },
     { "set", "FIELD VALUE", c_set },
+    { "test-inv", "", c_inv },
+    { "test-take", "ITEM [QTY] (e-takes fixture)", c_take },
 };
 
 const struct cheat_game cheat_game = { cmds, (int)(sizeof cmds / sizeof cmds[0]), cheat_ready };

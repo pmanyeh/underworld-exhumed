@@ -27,4 +27,5 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "flask-numbers", "The flasks show their values, 25/32, and each change floats up from them (HD text)", ENH_PRESENTATION, NULL, NULL },
     { "auto-key", "Using a locked door or chest unlocks it with the key that fits, if you carry it", ENH_GAMEPLAY, NULL, NULL },
     { "mouse-wheel", "The mouse wheel scrolls skills under the pointer, open bags, and past [MORE]", ENH_TIMING, NULL, NULL },
+    { "e-takes", "With modern-keys, E on something you can take puts it in your pack, onto a matching stack on show", ENH_GAMEPLAY, NULL, NULL },
 };

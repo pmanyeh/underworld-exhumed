@@ -42,6 +42,7 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"conv.unknown", "我不知道這是什麼……\n"},   /* --enhance unknown-topic (conv/CONVERSE.C) */
     {"autokey.with", "你用背包裡的"},             /* --enhance auto-key (port/ui/autokey.c) */
     {"autokey.unlocked", "打開了鎖。\n"},
+    {"take.pack_full", "背包沒有空位了。\n"},     /* --enhance e-takes (port/ui/keys.c) */
     {"use.use", "要把"},                             /* OBJUSE.C's UseThing, as UW1's */
     {"use.on_what", "用在什麼上？\n"},
     {"study.is", "是"},                             /* SPELLS2.C: Study Monster's "This creature is " */

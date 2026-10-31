@@ -14,6 +14,10 @@
 #include "inv.h"
 #include "sound.h"
 #include "object.h"
+#include "portgame.h"
+#include "i18n/phrases.h"
+#include "map.h"
+#include "event.h"
 #include <stdatomic.h>
 
 /* ui/INTERACT.C (and UW2's GAMESCR.C for the flasks and compass): no header declares these */
@@ -91,6 +95,114 @@ void far port_key_bag(int how)
         ScrollItemsUp();
 }
 
+/* inv.h's slots: the backpack's, the open bag and its eight on show */
+#define INV_PACK 11
+#define INV_PACK_LAST 18
+#define INV_BAG_ITEMS 20
+#define INV_BAG_LAST 27
+unsigned char far InPickRange(int dist, struct Object far *obj, struct Tile far *tile);   /* ui/INTERACT.C */
+unsigned char far BlockingTerrain(int dist, struct Object far *obj);
+void far release_3d(struct Object far *obj);
+void far player_3dget(void);
+extern unsigned char releaseable;
+extern union Link far *releasePtr;
+
+/* The slot on show in the panel (the backpack's, or the open bag's eight) whose stack obj would
+   merge with when put down on it (INVPANEL.C's AddTogether and AddToOccupiedSlot), or -1. */
+static int stack_on_show(struct Object far *obj)
+{
+    int slot, first = OpenBag != 0 ? INV_BAG_ITEMS : INV_PACK, last = OpenBag != 0 ? INV_BAG_LAST : INV_PACK_LAST;
+    struct Object far *onto;
+    for (slot = first; slot <= last; slot++) {
+        if ((onto = AskInventory(slot)) == 0
+            || (OBJ_MAJOR(onto) == MAJOR_MISC && OBJ_MINOR(onto) == MINOR_CONTAINER))
+            continue;
+        if (AddTogether(obj, onto) && ItemFitsSlot(obj, slot) == 1)
+            return slot;
+    }
+    return -1;
+}
+
+/* --enhance e-takes, as UW1's: e on something that can be taken puts it in the backpack's first
+   free slot, as taking it (player_3dget, the same checks and consequences: reach, the weight, an
+   owner noticing, UW2's book and moonstones, a pressure plate) and dropping it on that slot
+   would. A whole stack goes. When the panel shows a stack it merges with, the backpack's or the
+   open bag's, it goes onto that stack as dropping it there would. No free slot says so and
+   leaves it there; with a bag open in the panel and no stack there to go onto, or out of reach,
+   it is taken as the original takes it. */
+static void take_into_pack(void)
+{
+    int slot = -1, onto, i;
+    if (!InPickRange(PickDist, newPlObj, PickMap) || BlockingTerrain(PickDist, newPlObj)) {
+        player_3dget();
+        return;
+    }
+    onto = stack_on_show(newPlObj);
+    if (onto < 0 && OpenBag != 0) {
+        player_3dget();
+        return;
+    }
+    if (onto < 0) {
+        for (slot = INV_PACK; slot <= INV_PACK_LAST; slot++)
+            if (Inventory[slot].f.index == 0 && ItemFitsSlot(newPlObj, slot) > 0)
+                break;
+        if (slot > INV_PACK_LAST) {
+            scroll_print(port_zh() ? (char *)port_zh_lit("take.pack_full") : "There is no room in your pack.\n");
+            return;
+        }
+    }
+    if (!EncumCheck(newPlObj)) {
+        game_sprint(0x6C);              /* too heavy, as the original says */
+        return;
+    }
+    if (OBJ_ITEM(newPlObj) == ITEM_BOOK_138 && OBJ_DOORDIR(newPlObj)) {
+        player->quests[26] = (player->quests[26] & 0xFFFFFFFBL) + 4;
+        player_did_bad(0x1C);
+    }
+    if (HasOrIsObj(newPlObj, ITEM_MOONSTONE))
+        for (i = 0; i < 2; i++)
+            if (player->moonstones[i] == PlayerLevel) {
+                player->moonstones[i] = 0;
+                break;
+            }
+    player_grabbed(newPlObj, 0);
+    release_3d(newPlObj);
+    check_pplate(newPlObj, PickMap, OBJ_Z(newPlObj), 0xF);
+    if (onto >= 0) {
+        AddToOccupiedSlot(newPlObj, onto);
+        return;
+    }
+    AddToInventory(newPlObj, slot);
+    RedisplayInvSlot(slot);
+}
+
+/* sys/cheats.c's test-take: e-takes on the object of that item (and that many, qty not 0) on the
+   tile nearest the player, as though picked within reach (the test's fixture); 0 when there is none */
+int far port_test_take(int item, int qty)
+{
+    struct Object far *o, *found = 0;
+    struct Tile far *where = 0;
+    int x, y, d, best = 0x7FFF;
+    for (y = 0; y < 64; y++)
+        for (x = 0; x < 64; x++)
+            for (o = Obj_PtrTMem(&Map_GetAddr(x, y)->objects); o != 0; o = Obj_PtrTMem(&o->qn.link))
+                if (OBJ_ITEM(o) == item && o != ThePlayer && (qty == 0 || (OBJ_ISQUANT(o) && o->ol.f.link == qty))
+                    && (d = abs(x - OBJ_HOMEX(ThePlayer)) + abs(y - OBJ_HOMEY(ThePlayer))) < best) {
+                    best = d;
+                    found = o;
+                    where = Map_GetAddr(x, y);
+                }
+    if (found == 0)
+        return 0;
+    newPlObj = found;
+    releaseable = 1;
+    PickDist = 0;                       /* any distance, never blocked */
+    PickMap = where;                    /* the tile and its list, as pick_3d's */
+    releasePtr = &where->objects;
+    take_into_pack();
+    return 1;
+}
+
 /* q looks (0), e uses (1) at the pointer, as a click there in look or use would (UltimaHacks'
    interactAtCursor): only in the 3D view, and no use while carrying something or aiming */
 void far port_key_interact(int use)
@@ -112,6 +224,8 @@ void far port_key_interact(int use)
     }
     if (!use)
         player_3dlook();
+    else if (ENHANCED(ENH_E_TAKES) && releaseable)
+        take_into_pack();
     else if ((IsMobElem(newPlObj) && OBJ_MAJOR(newPlObj) == 1) || (newPlObj->id & 0x1FF) == 0x1CD)
         player_3dtalk();                /* a character (or item 0x1CD): talk, as UltimaHacks */
     else
