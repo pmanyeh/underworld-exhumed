@@ -38,8 +38,8 @@ HD 游標提交 `89a5157`；Exhume `956588f`：`name_gloss`、`input_alias`、`u
 
 **下一步（Phase 14 後續批次，依 UW1 P8～P12 順序）：**
 
-1. 對話中文輸入話題（UW2 的 `input-aliases.tsv`，用 UW1 `babl_audit`／工具由 UW2 CNV.ARK 產生；`getInputText` 改走 `port_scroll_ask`）、
-   專有名詞首次加註（UW2 的 `proper-names.tsv`）、`localized.c` 載入這兩個表。
+1. （第三批已完成：UW2 `input-aliases.tsv` 22 列、`proper-names.tsv` 93 名、`babl_ask` 中文輸入、每段對話重設加註；見 `P14_SLICE.md`。
+   本機 `.poc-tools/uw2-cnv-unpack.py` 解 UW2 CNV.ARK 給 `babl_audit` 用。輸入法實機尚未遊玩驗證。）
 2. 還沒接的拼接訊息：SPELLS2 的辨識怪物、WORLDEV 修理、MISCUTIL 方向、PLAYER 座標等；用 `--scroll-log` 找仍是英文的行。
 3. 介面標籤（`string_to_screen`／hd_label、ui_text）、過場字幕（caption）、數量面板、中文姓名與存檔說明（text_entry、user_text）、
    F11 語言分頁、啟動時依 catalog 預設中文、測試版打包。

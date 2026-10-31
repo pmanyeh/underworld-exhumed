@@ -52,6 +52,7 @@
 #include "ui.h"
 #ifndef __TURBOC__
 #include "presentation/scroll_bridge.h"
+#include "i18n/name_gloss.h"
 char *port_template_shown(const char *source);                                  /* BABL.C */
 #endif
 
@@ -173,6 +174,9 @@ void far strt_converse(void)
     char name[0x28];
     update_sprites();
     if ((convoWorkspace = get_workspace()) == 0) return;
+#ifndef __TURBOC__
+    name_gloss_reset();                 /* each conversation glosses its names afresh */
+#endif
     set_random_walking_music(0);
     change_music_maybe();
     convoScreen = MK_FP(convoWorkspace, 0);
@@ -658,6 +662,11 @@ int far conv_pause_ovr103_10DD(int16 far *stack)
 int far getInputText_ovr103_1117(void)
 {
     char response[0xa0];
+#ifndef __TURBOC__
+    /* Phase 14, as UW1's P11.4: typed in the locale's language on the HD scroll (the host's
+       input method), mapped to the script's English by the alias table; else the original */
+    if (port_scroll_ask(cnv_id, 0, response, 0x32, mouse_get_input) == -2)
+#endif
     wdialog(0, 0, response, 1, 0x32);
     scroll_print("\n");
     set_workspace();

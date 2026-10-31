@@ -3,6 +3,8 @@
    and a replay are the same in every language. The modules are the runtime's, shared with
    UW1; this file only wires them to UW2's options, folders and game thread. */
 #include "presentation/localized.h"
+#include "i18n/input_alias.h"
+#include "i18n/name_gloss.h"
 #include "i18n/localization.h"
 #include "presentation/hd_cursor.h"
 #include "presentation/hd_font.h"
@@ -103,6 +105,27 @@ int port_text_setup(const char *home)
     }
     if (settings[0]) fprintf(stderr, "uw2port: HD text: locale settings %s\n", settings);
     scroll_text_more_label("[\xe7\xb9\xbc\xe7\xba\x8c]");    /* [繼續], as UW1's */
+    {
+        /* the locale's words for what a conversation compares (CONVERSE.C's babl_ask), the
+           home folder's first, else the current folder's */
+        char aliases[1200];
+        FILE *probe;
+        snprintf(aliases, sizeof aliases, "%s/i18n/%s/input-aliases.tsv", home, locale);
+        if ((probe = fopen(aliases, "rb")) != NULL) fclose(probe);
+        else snprintf(aliases, sizeof aliases, "i18n/%s/input-aliases.tsv", locale);
+        if (input_alias_load(aliases))
+            fprintf(stderr, "uw2port: input aliases: %s not loaded; conversations take English words only\n", aliases);
+        else
+            fprintf(stderr, "uw2port: input aliases: %s\n", aliases);
+        /* the proper names a conversation or book shows with their English the first time */
+        snprintf(aliases, sizeof aliases, "%s/i18n/%s/proper-names.tsv", home, locale);
+        if ((probe = fopen(aliases, "rb")) != NULL) fclose(probe);
+        else snprintf(aliases, sizeof aliases, "i18n/%s/proper-names.tsv", locale);
+        if (name_gloss_load(aliases))
+            fprintf(stderr, "uw2port: proper names: %s not loaded; names are shown without their English\n", aliases);
+        else
+            fprintf(stderr, "uw2port: proper names: %s, %d names\n", aliases, name_gloss_count());
+    }
     return 0;
 }
 

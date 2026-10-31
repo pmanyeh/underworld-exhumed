@@ -72,6 +72,21 @@
   - `CONVERSE.C`：對話選項經 bridge 顯示譯文、點選以 HD 文字格命中（UW2 的點擊區從 x 0x10 起），選擇後回顯譯文。
 - 字面對照（bridge 對單獨印出的英文片段）：`The `、`You see `、`trap`、`poison trap`、`Not a spell`、存檔清單標籤、滑鼠視角訊息等。
 
+## 第三批：中文輸入話題、專有名詞加註（2026-10-31）
+
+- `.poc-tools/uw2-cnv-unpack.py`（本機）把 UW2 的 LZSS 壓縮 CNV.ARK 解成 UW1 格式，UW1 的 `babl_audit.py` 照用：
+  102 段對話、7,304 個對話字串，被比對的 22 個（與先前稽核相同）。
+- `i18n/zh-TW/input-aliases.tsv`（提交）：22 列，別名取自譯文裡玩家看到的寫法——賈納的暗號「烽火」（畫面是「beacon（烽火）」）、
+  畢夏普、致命追蹤彈權杖、默贊賣的藥水（鋼鐵之軀、耐火術、解毒術、大／小醫療術、恢復法力、隱形術、法力增幅、耐擊術；
+  「resist fire」用「抗火術」）、尼斯圖的「王座廳」「凌晨四點」、哥布林守衛的「一號」。哥布林守衛的通關密語
+  deco morono、xyzzy 照畫面英文輸入，不配中文。
+- `CONVERSE.C` 的 `babl_ask`：HD 捲軸開啟且對照表已載入時走共用的 `port_scroll_ask`（輸入法打中文，對照成腳本比對的英文），否則原版 `wdialog`。
+- `tools/i18n/proper_names.py`（提交）產生 `i18n/zh-TW/proper-names.tsv`（93 個名稱）：UW1 權威資料的人名／地名／組織、
+  UW2 詞彙表的新專有名詞（`i18n/zh-TW/proper-nouns.tsv`）、遊戲 NPC 名牌（block 7）的中文；只收 UW2 對話／書本譯文用到的。
+  `--check` 比對提交的表。`localized.c` 載入兩個表；`strt_converse` 每段對話重設加註。實測 `lb`：「不列顛尼亞（Britannia）」「派特森（Patterson）」首次加註。
+- `tools/i18n/test_input_alias.py`（提交）：對照表格式、同段對話別名不重複、與 STRINGS.PAK 的雜湊與比對字一致，並用 runtime 的
+  `input_alias.c` 實測對照結果。實機輸入法路徑尚未遊玩驗證（UW2 沒有傳送到 NPC 的測試指令；有 babl_ask 的對話不在既有重播裡）。
+
 ## 已知與下一步
 
 - 訊息欄的組句（「You see a sack.」等由程式拼接的句子）仍是英文：需移植 UW1 P11.2 的 `port_zh` 組句與 `phrases`。
