@@ -48,6 +48,7 @@ SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`
   2026-11-01 第六版（`76cd472`：F11 中文、即時套用、密技分頁、六項強化）：EXE SHA-256 `ebd3c7f57d103f95…`，舊 EXE 與 cfg 在 `backup/`；
   enhance 加上 flask-numbers、auto-key、e-takes、mouse-wheel、no-wear、unknown-topic（同 UW1 測試版），home 其他 71 檔雜湊不變；說明.txt 已更新。
   2026-11-01 第七版（`9597750`：地圖中文註記、easy-erase、full-map）：EXE SHA-256 `507d6cd1fb4a99dd…`；enhance 加上 easy-erase、full-map，home 其他檔不變。
+  2026-11-01 第八版（`b61f409`：god-mode、bright-view）：EXE SHA-256 `3f6cd1b45855d325…`；enhance 加上 god-mode、bright-view，bright-strength=9（同 UW1 測試版），home 其他檔不變。
   使用者已確認第一版回報的問題（創造人物對齊與屬性名、對話顏色、文字疊在地圖與過場）修正 OK。
 更新測試版時只換 EXE（先備份舊檔），不要動 `home\`。
 
@@ -70,7 +71,9 @@ SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`
    注意：`enhtab.c` 的順序必須和 `portgame.h` 的 enum 一致；最後一欄 only 是「只在另一款遊戲有」，新功能填 NULL。
    full-map（`604abd1`，`port/ui/full_map.c`）、地圖中文註記＋easy-erase（`9597750`：map_notes／map_note_overlay 移入 runtime，
    `map_notes_config("UW2NOTES", 80)`；UW2 原版橡皮擦判定框在文字上方，easy-erase 往下延伸到文字）。
-   還沒做：god-mode＋返回／記住安全位置、bright-view＋亮度、
+   god-mode＋返回／記住安全位置（`21c71db`，`port/ui/cheat_menu.h` 由 portgame.h 引入；測試指令 test-state）、
+   bright-view＋增亮強度（`b61f409`，`port/presentation/bright_view.c`）。
+   還沒做：
    damage-numbers、enemy-health、按鍵說明分頁（key_help）、modern-keys 的 Space 跳躍／C 戰鬥／X 關容器、滑鼠中鍵切換滑鼠視角。
    unknown-topic、auto-key 尚未實機觸發（需要有 babl_ask 的 NPC／上鎖的門）；Nystul（slot 130）在城堡、對話有 babl_ask。
    本機 setcheck：Windows 不能建「rt-4:3_aspect」資料夾，roundtrip 有 5 項中斷（`.poc-tools/setcheck-safe-tempnames.py` 是繞法）。
