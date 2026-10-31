@@ -30,4 +30,5 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "e-takes", "With modern-keys, E on something you can take puts it in your pack, onto a matching stack on show", ENH_GAMEPLAY, NULL, NULL },
     { "full-map", "Show the whole dungeon map without changing explored areas", ENH_PRESENTATION, NULL, NULL },
     { "easy-erase", "The map's eraser takes a note it is near and stays in hand after a miss; right button or Esc puts it down", ENH_GAMEPLAY, NULL, NULL },
+    { "god-mode", "No health loss or death, with recovery from invalid positions", ENH_GAMEPLAY, NULL, NULL },
 };

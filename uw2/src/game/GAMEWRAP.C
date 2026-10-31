@@ -113,6 +113,9 @@ int far GetLevel(int level)
         close_arc(1);
     }
     change_GrSq(sq, -1);
+#ifndef __TURBOC__
+    if (ok > 0) port_god_world_loaded();    /* port only: --enhance god-mode */
+#endif
     return ok;
 }
 

@@ -39,6 +39,10 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"vend.price", "（%d 金幣）"},                    /* WORLDEV.C: a vending machine's price */
     {"cheat.applied", "密技設定已生效。\n"},        /* ui/cheat_menu.c, as UW1's */
     {"enhance.applied", "設定已生效。\n"},
+    {"cheat.no_safe", "找不到可站立的安全位置，請讀取存檔。\n"},
+    {"cheat.rescued", "已返回安全位置。\n"},
+    {"cheat.remembered", "已記住這一層的安全位置。\n"},
+    {"cheat.not_safe", "請先站在乾燥、沒有障礙的地面上。\n"},
     {"conv.unknown", "我不知道這是什麼……\n"},   /* --enhance unknown-topic (conv/CONVERSE.C) */
     {"autokey.with", "你用背包裡的"},             /* --enhance auto-key (port/ui/autokey.c) */
     {"autokey.unlocked", "打開了鎖。\n"},

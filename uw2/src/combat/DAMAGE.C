@@ -59,6 +59,9 @@ char far remove_lock(struct Object far *obj, char all)
    0 is returned. Otherwise returns 1 when Obj_Punt removed it. */
 char far try_remove(union Link far *head, struct Object far *obj)
 {
+#ifndef __TURBOC__
+    if (port_god_protect(obj)) return 0;   /* port only: --enhance god-mode */
+#endif
     if (obj >= (struct Object far *)objdata)
         return Obj_Punt(head, obj, 0) == 0;
     obj->hp = 0;
@@ -238,6 +241,9 @@ unsigned char far check_res(struct Object far *obj, unsigned char damage, unsign
 char far damage_item(struct Object far *obj, struct Object far *who, int x, int y,
                      unsigned char damage, unsigned char type)
 {
+#ifndef __TURBOC__
+    if (port_god_protect(obj)) return 0;   /* port only: --enhance god-mode */
+#endif
     damage = check_res(obj, damage, type);
     if (OBJ_MAJOR(obj) == MAJOR_CREATURE)
         return damage_critter(obj, damage, who);

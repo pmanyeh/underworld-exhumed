@@ -169,6 +169,16 @@ static const char *c_inv(int argc, char *argv[], int run)
     return NULL;
 }
 
+/* test-state: the level, hit points, position and god-mode's state (its fixture), as UW1's */
+static const char *c_state(int argc, char *argv[], int run)
+{
+    (void)argv;
+    if (argc) return "no arguments";
+    if (run) fprintf(stderr, "fixture: state level=%d hp=%d x=%d y=%d z=%d god=%u map=%u\n", PlayerLevel, ThePlayer->hp,
+                     PN.x, PN.y, PN.z, ENHANCED(ENH_GOD_MODE), ENHANCED(ENH_FULL_MAP));
+    return NULL;
+}
+
 /* test-take ITEM [QTY]: e-takes (E with modern-keys) on the nearest object of that item (a stack
    of QTY), as though picked within reach */
 int far port_test_take(int item, int qty);         /* port/ui/keys.c */
@@ -186,6 +196,7 @@ static const struct cheat_cmd cmds[] = {
     { "goto", "LEVEL X Y", c_goto },
     { "give", "ITEM [QTY [QUALITY]] [drop]", c_give },
     { "set", "FIELD VALUE", c_set },
+    { "test-state", "", c_state },
     { "test-inv", "", c_inv },
     { "test-take", "ITEM [QTY] (e-takes fixture)", c_take },
 };

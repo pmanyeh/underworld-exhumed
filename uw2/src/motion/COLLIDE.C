@@ -219,6 +219,16 @@ void far TerrainCheck(unsigned char range)
     int y;
     char j;
 
+#ifndef __TURBOC__
+    /* port only: --enhance god-mode, the player kept on the map */
+    if (ENHANCED(ENH_GOD_MODE) && curP->index == 1 &&
+        (curP->x < 8 || curP->x > 503 || curP->y < 8 || curP->y > 503 || curP->z < 0 || curP->z > 127)) {
+        port_god_bad_motion();
+        curP->x = max(8, min(503, curP->x));
+        curP->y = max(8, min(503, curP->y));
+        curP->z = max(0, min(127, curP->z));
+    }
+#endif
     memset(tiles, 0x11, sizeof tiles);
     centptr = Map_GetAddr(curP->x >> 3, curP->y >> 3);
     x = curP->x & 7;

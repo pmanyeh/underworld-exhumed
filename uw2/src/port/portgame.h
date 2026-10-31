@@ -65,7 +65,7 @@ extern unsigned char dseg062_62a6[];       /* seg021's data (FD71) */
 enum { ENH_SKIP_INTRO, ENH_WRAP_MENU, ENH_FAST_PANELS, ENH_FREE_HEADING, ENH_SUBTITLES,
        ENH_SKILL_MESSAGES, ENH_PERSPECTIVE, ENH_FULL_SPRITES,
        ENH_WIDE_PITCH, ENH_MOUSE_LOOK, ENH_INVERT_LOOK, ENH_MODERN_KEYS, ENH_RUNE_KEYS,
-       ENH_TIDY_OBJECTS, ENH_RESTORE_AT_REST, ENH_SPLIT_ALL, ENH_NO_WEAR, ENH_UNKNOWN_TOPIC, ENH_FLASK_NUMBERS, ENH_AUTO_KEY, ENH_MOUSE_WHEEL, ENH_E_TAKES, ENH_FULL_MAP, ENH_EASY_ERASE,
+       ENH_TIDY_OBJECTS, ENH_RESTORE_AT_REST, ENH_SPLIT_ALL, ENH_NO_WEAR, ENH_UNKNOWN_TOPIC, ENH_FLASK_NUMBERS, ENH_AUTO_KEY, ENH_MOUSE_WHEEL, ENH_E_TAKES, ENH_FULL_MAP, ENH_EASY_ERASE, ENH_GOD_MODE,
        ENH_COUNT };
 /* --enhance modern-keys: the key code a lone left Shift gives (ui/MOUSE.C), unused by the game */
 #define PORT_KEY_LSHIFT 0xBF
@@ -76,5 +76,6 @@ enum { ENH_SKIP_INTRO, ENH_WRAP_MENU, ENH_FAST_PANELS, ENH_FREE_HEADING, ENH_SUB
 void port_wheel_push(int steps);            /* the platform's thread: notches, down positive */
 int port_wheel_take(void);                  /* the game's: -1 up, 1 down, 0 none, a notch at a time */
 int port_pitch_bound(void);                 /* game/PLAYER.C: the pitch's bound either way */
+#include "ui/cheat_menu.h"                  /* god-mode's hooks (port/ui/cheat_menu.c) */
 
 #endif

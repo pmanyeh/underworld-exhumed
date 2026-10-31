@@ -1419,6 +1419,9 @@ void far critter_discard_goal(void)
    scripted death) refuses. Returns 1 if it is dying. */
 unsigned char far go_into_dying_sequence(struct Object far *obj)
 {
+#ifndef __TURBOC__
+    if (port_god_protect(obj)) return 0;   /* port only: --enhance god-mode */
+#endif
     if (obj->whoami == 0 || death_check(obj, 0)) {
         SET_SEQ(obj, 7);
         SET_FRAME(obj, 0);
@@ -1479,6 +1482,9 @@ unsigned char far damage_critter(struct Object far *obj, unsigned char damage,
     register struct Creature near *cr;
     register int ratio;
 
+#ifndef __TURBOC__
+    if (port_god_protect(obj)) return 0;   /* port only: --enhance god-mode */
+#endif
     minor = OBJ_MINOR(obj);
     index = obj->id & ID_INCLASS;
     cr = &Creature[(minor << 4) + index];

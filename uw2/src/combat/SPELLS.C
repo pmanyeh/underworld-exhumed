@@ -225,6 +225,9 @@ void far backfire(struct Object far *who, char sub)
 
     if (OBJ_MAJOR(who) != MAJOR_CREATURE)
         return;
+#ifndef __TURBOC__
+    if (port_god_protect(who)) return;     /* port only: --enhance god-mode */
+#endif
     damage = rollem(sub, 8);
     if (who->hp <= 3)
         return;

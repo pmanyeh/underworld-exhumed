@@ -156,6 +156,9 @@ char far update_converse_data(struct Object far *npc)
     bab_var_out("play_hunger", &val, 1);
     player->hunger = val;
     bab_var_out("play_hp", &val, 1);
+#ifndef __TURBOC__
+    val = port_god_hp(ThePlayer->hp, val);  /* port only: --enhance god-mode */
+#endif
     ThePlayer->hp = val;
     bab_var_out("play_mana", &val, 1);
     player->play_mana = val;

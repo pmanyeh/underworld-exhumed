@@ -31,6 +31,7 @@ void far mainloop(void)
     {
 #ifndef __TURBOC__
         port_cheat_point();     /* port only: a test's cheats (Exhume's sys/cheat.c), between passes */
+        port_god_tick();        /* port only: --enhance god-mode's safe positions */
 #endif
         do_changes();
         input_dispatch(inplist);
