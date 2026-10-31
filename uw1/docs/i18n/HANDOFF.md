@@ -39,7 +39,8 @@ HD 游標提交 `89a5157`；Exhume `956588f`：`name_gloss`、`input_alias`、`u
 **2026-10-31 UW2 本機測試版（使用者同意建立）**：工作區 `UW2-zhTW-playtest/`（Git 外、只留本機）：`uw2port.exe`（提交 `2c943ed` 建置，
 SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`licenses/`、`i18n/zh-TW/`（catalog.uw2loc、input-aliases.tsv、proper-names.tsv）、
 `開始遊戲.bat`（`--data` 指向工作區的 UW2 遊戲資料、`--home` 為資料夾內 `home\`）、`說明.txt`（已中文化範圍、打字話題、仍英文的部分）。
-首次執行自動進入中文（`language=zh-TW` 寫入 home 的 uw2port.cfg）。只用系統 PATH 啟動檢查通過。等待使用者遊玩回報。
+首次執行自動進入中文（`language=zh-TW` 寫入 home 的 uw2port.cfg）。只用系統 PATH 啟動檢查通過。
+  2026-10-31 第二版（使用者回報修正 `7816de9`）：EXE SHA-256 `7305a30e3bdff16f…`，第一版備份在 `backupW2port-v1-da3cf146.exe`，home 13 檔雜湊不變。
 更新測試版時只換 EXE（先備份舊檔），不要動 `home\`。
 
 **UW2 構想清單**：`uw2/docs/i18n/IDEAS_BACKLOG.md`。第 1 項「開場與無語音過場加上語音」（2026-10-31 使用者提出，**未授權動工**）：
