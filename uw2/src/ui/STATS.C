@@ -213,6 +213,25 @@ void far mous_in_stat(void)
     while (GAME_TIME() - start < 8 && key < 3 && (key & 3));
 }
 
+#ifndef __TURBOC__
+/* --enhance mouse-wheel, as UW1's: the arrows' one-row step and bounds, without waiting for a
+   button */
+void far port_stats_scroll(int down)
+{
+    int16 v = skill_top;
+    if (!mvcheck(&v, down ? 0xF : 0, 1, down ? 1 : -1))
+        return;
+    skill_top = v;
+    grfx_quikfont(FONT_5X6I);
+    *foreground_color = *background_color = 0xC9;
+    mouse_hide();
+    for (v = 0; v < 6; v++)
+        sp_skill(v);
+    mouse_show();
+    grfx_quikfont(FONT_5X6P);
+}
+#endif
+
 void far panel_check(void)
 {
     if (RightPanel == 2 && inplist->mode == 1)

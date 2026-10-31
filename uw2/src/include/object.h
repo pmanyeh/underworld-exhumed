@@ -456,6 +456,9 @@ void far checkTrap(struct Object far *who, struct Object far *obj, int how, int 
 struct Object far * far place_new(struct Object far *obj, int item);
 void far UseThing(struct Object far *obj, void (far *fn)());
 int far checkLock(struct Object far *who, struct Object far *door, int key);
+#ifndef __TURBOC__
+int far port_auto_key(struct Object far *who, struct Object far *obj);   /* port/ui/autokey.c */
+#endif
 void far BlastFunction(void);
 void far remove_spell(struct Object far *obj);
 extern int32 nextSpellTime;

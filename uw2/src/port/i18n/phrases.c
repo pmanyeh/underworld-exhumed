@@ -40,6 +40,8 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"cheat.applied", "密技設定已生效。\n"},        /* ui/cheat_menu.c, as UW1's */
     {"enhance.applied", "設定已生效。\n"},
     {"conv.unknown", "我不知道這是什麼……\n"},   /* --enhance unknown-topic (conv/CONVERSE.C) */
+    {"autokey.with", "你用背包裡的"},             /* --enhance auto-key (port/ui/autokey.c) */
+    {"autokey.unlocked", "打開了鎖。\n"},
     {"use.use", "要把"},                             /* OBJUSE.C's UseThing, as UW1's */
     {"use.on_what", "用在什麼上？\n"},
     {"study.is", "是"},                             /* SPELLS2.C: Study Monster's "This creature is " */

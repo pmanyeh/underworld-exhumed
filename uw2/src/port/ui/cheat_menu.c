@@ -40,7 +40,7 @@ static const char *toggle(int argc, char **argv, int run, int bit)
 
 /* The enhancements the settings screen turns on and off in play, not at the next start: each read
    where it acts, with nothing set up from it when the run starts */
-static const int live[] = { ENH_INVERT_LOOK, ENH_SPLIT_ALL, ENH_UNKNOWN_TOPIC, ENH_FLASK_NUMBERS };
+static const int live[] = { ENH_INVERT_LOOK, ENH_SPLIT_ALL, ENH_UNKNOWN_TOPIC, ENH_FLASK_NUMBERS, ENH_AUTO_KEY };
 #define LIVE ((int)(sizeof live / sizeof live[0]))
 static const char *enhance(int argc, char **argv, int run)
 {
@@ -79,7 +79,8 @@ static void live0(int on) { enhance_request(live[0], on); }
 static void live1(int on) { enhance_request(live[1], on); }
 static void live2(int on) { enhance_request(live[2], on); }
 static void live3(int on) { enhance_request(live[3], on); }
-static void (*const live_request[LIVE])(int) = { live0, live1, live2, live3 };
+static void live4(int on) { enhance_request(live[4], on); }
+static void (*const live_request[LIVE])(int) = { live0, live1, live2, live3, live4 };
 
 void port_cheat_settings(void)
 {

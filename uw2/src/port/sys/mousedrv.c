@@ -20,6 +20,7 @@
    _703 gives the buttons. */
 #include <stdatomic.h>
 #include "port.h"
+#include "sys/enhance.h"
 #include "plat.h"
 
 #define D dseg062_62a6
@@ -53,6 +54,11 @@ void mouse_event(const PlatPointer *ev)
     int x = (int)(ev->x * 2.0f), y = (int)ev->y;
     int look = atomic_load(&look_on);
     float k = look ? (float)atomic_load(&look_pct) / 100.0f : 1.0f;
+    /* --enhance mouse-wheel: the notches go to the game as keys (port/ui/keys.c); never a pointer event */
+    if (ev->type == PLAT_POINTER_WHEEL) {
+        if (ENHANCED(ENH_MOUSE_WHEEL)) port_wheel_push((int)ev->dy);
+        return;
+    }
     if (ev->absolute && !look) {
         int ax = (int)ev->x, ay = (int)ev->y;
         atomic_store(&abs_x, ax < 0 ? 0 : ax > 319 ? 319 : ax);

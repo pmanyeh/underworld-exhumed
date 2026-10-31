@@ -14,6 +14,7 @@
 #include "inv.h"
 #include "sound.h"
 #include "object.h"
+#include <stdatomic.h>
 
 /* ui/INTERACT.C (and UW2's GAMESCR.C for the flasks and compass): no header declares these */
 void far flask_info(void);
@@ -157,4 +158,36 @@ void far port_key_rune(int ch)
     GameInputMode = 0;
     mous_in_rune();
     GameInputMode = mode;
+}
+
+/* --enhance mouse-wheel, as UW1's: the notches the platform sent (sys/mousedrv.c), taken a notch
+   at a time by sys/keyqueue.c inside KEY's replay hook as PORT_KEY_WHEEL_UP or _DOWN */
+static _Atomic int wheel_notches;
+void port_wheel_push(int steps) { atomic_fetch_add(&wheel_notches, steps); }
+int port_wheel_take(void)
+{
+    int n = atomic_load(&wheel_notches);
+    while (n != 0 && !atomic_compare_exchange_weak(&wheel_notches, &n, n > 0 ? n - 1 : n + 1)) {}
+    return n > 0 ? 1 : n < 0 ? -1 : 0;
+}
+
+void far port_stats_scroll(int down);   /* ui/STATS.C */
+
+/* A wheel notch: the skills under the pointer, or an open bag, as their arrows do.
+   mouse_getxy reads the game's cursor, whose motion is already recorded for replay. */
+void far port_key_wheel(int down)
+{
+    if (RightPanel == 2) {              /* the statistics page */
+        int16 x, y;
+        mouse_getxy(&x, &y);
+        if (x >= 0xF0 && x <= 0x13B && y >= 0x56 && y <= 0x85)
+            port_stats_scroll(down);
+        return;
+    }
+    if (OpenBag == 0)
+        return;
+    if (down)
+        ScrollItemsDown();
+    else
+        ScrollItemsUp();
 }

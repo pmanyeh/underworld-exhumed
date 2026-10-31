@@ -415,6 +415,14 @@ int far do_keyboard_input(char array)
     }
 #endif
     c = KEY();
+#ifndef __TURBOC__
+    /* Wheel keys already passed through KEY's recording hook. Keep them even in held-key
+       mode, without applying keyboard modifiers to the wheel (as UW1's). */
+    if ((c & 0xFF) == PORT_KEY_WHEEL_UP || (c & 0xFF) == PORT_KEY_WHEEL_DOWN) {
+        key_time = GAME_TIME();
+        return c & 0xFF;
+    }
+#endif
     if (array)
         c = do_keyarray_input();
     c &= 0xFF;

@@ -150,7 +150,10 @@ int key(void)
 {
     uint8_t al;
     uint16_t ax, bx;
-    int i;
+    int i, wheel = port_wheel_take();
+    /* --enhance mouse-wheel: read inside KEY's replay hook so every notch is recorded with the
+       keyboard, as UW1's */
+    if (wheel) return wheel > 0 ? PORT_KEY_WHEEL_DOWN : PORT_KEY_WHEEL_UP;
     for (;;) {
         if (!whole(&al)) return 0;
         if (al == 0xE1) {

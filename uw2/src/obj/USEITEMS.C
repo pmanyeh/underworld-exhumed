@@ -618,7 +618,11 @@ void far UseCont(struct Object far *who, struct Object far *obj, char how)
 {
     char name[20];
 
-    if (checkLock(who, obj, 0) == 0)
+    if (checkLock(who, obj, 0) == 0
+#ifndef __TURBOC__
+        && !port_auto_key(who, obj)             /* port only: --enhance auto-key, a key carried */
+#endif
+        )
     {
         get_name(name, obj, 0, 0);
         scroll_print("The ");
@@ -921,7 +925,11 @@ void far UseRect(struct Object far *who, struct Object far *obj)
     case 0:
         if (OBJ_INCLASS(obj) < 8)
         {
-            if (checkLock(who, obj, 0) == 0)
+            if (checkLock(who, obj, 0) == 0
+#ifndef __TURBOC__
+                && !port_auto_key(who, obj)     /* port only: --enhance auto-key, a key carried */
+#endif
+                )
             {
                 if (OBJ_ITEM(who) == ITEM_ADVENTURER)
                 {
