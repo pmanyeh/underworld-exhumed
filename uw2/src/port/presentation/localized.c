@@ -262,6 +262,15 @@ void port_text_begin(void)
 /* SCROLL.C's and the bitmap UI's strings: the translation of a string string_to_screen draws
    (gfx/grcore.c), or NULL to draw the English: the player's own words, a name get_name noted,
    a string just decoded (also when upper-cased since), or a piece the code prints by itself */
+/* 2026-10-31 (the user): in Chinese, English letters and digits the bitmap UI draws are HD
+   too wherever they have no translation; only printable ASCII (the game's own high characters
+   keep their bitmap). As UW1's ui_text.c. */
+static int printable(const char *s)
+{
+    for (; *s; s++) if ((unsigned char)*s < 0x20 || (unsigned char)*s > 0x7E) return 0;
+    return 1;
+}
+
 const char *port_ui_text(const char *english)
 {
     const char *p, *zh;
@@ -269,12 +278,13 @@ const char *port_ui_text(const char *english)
     if (!english || !port_i18n_enabled()) return NULL;
     for (p = english; *p; p++)
         if ((*p >= 'A' && *p <= 'Z') || (*p >= 'a' && *p <= 'z')) break;
-    if (!*p) return NULL;
+    if (!*p) return printable(english) ? english : NULL;
     if ((zh = port_i18n_named(english)) != NULL) return zh;
     if ((zh = port_i18n_display(english)) != english) return zh;
     if ((zh = port_i18n_display_nocase(english)) != NULL) return zh;
     if ((zh = ordinal(english)) != NULL) return zh;
-    return port_zh_literal(english);
+    if ((zh = port_zh_literal(english)) != NULL) return zh;
+    return printable(english) ? english : NULL;
 }
 
 void port_text_end(void)

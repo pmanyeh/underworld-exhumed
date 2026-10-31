@@ -22,8 +22,9 @@ static const char *ordinal(const char *s)
 
 /* the composed line the game draws next and its translation (port_ui_next) */
 static char next_english[128], next_zh[160];
-static int stats_ascii;
-void port_stats_ascii(int on) { stats_ascii = on != 0; }
+/* STATS.C's scope for its ASCII names and values (2026-10-26); since 2026-10-31 every ASCII
+   string is HD in Chinese (port_ui_text), so the scope changes nothing */
+void port_stats_ascii(int on) { (void)on; }
 
 void port_ui_next(const char *english, const char *zh)
 {
@@ -93,6 +94,15 @@ void port_name_entry_end(int ok)
     port_user_name_set(ok ? zh : NULL);
 }
 
+/* 2026-10-31 (the user): with the HD text in Chinese, English letters and digits the bitmap UI
+   draws are HD too, wherever they have no translation; only printable ASCII (a string with the
+   game's own high characters keeps its bitmap) */
+static int printable(const char *s)
+{
+    for (; *s; s++) if ((unsigned char)*s < 0x20 || (unsigned char)*s > 0x7E) return 0;
+    return 1;
+}
+
 const char *port_ui_text(const char *english)
 {
     const char *p, *zh;
@@ -101,13 +111,13 @@ const char *port_ui_text(const char *english)
     if (next_english[0] && !strcmp(english, next_english)) { next_english[0] = 0; return next_zh; }
     for (p = english; *p; p++)
         if ((*p >= 'A' && *p <= 'Z') || (*p >= 'a' && *p <= 'z')) break;
-    if (!*p) return stats_ascii ? english : NULL;
+    if (!*p) return printable(english) ? english : NULL;
     if ((zh = port_i18n_named(english)) != NULL) return zh;
     if ((zh = port_i18n_display(english)) != english) return zh;
     if ((zh = port_i18n_display_nocase(english)) != NULL) return zh;
     if ((zh = ordinal(english)) != NULL) return zh;
     zh = port_zh_literal(english);
-    return zh ? zh : stats_ascii ? english : NULL;
+    return zh ? zh : printable(english) ? english : NULL;
 }
 
 void vga_get_dac(uint8_t rgb6[768]);

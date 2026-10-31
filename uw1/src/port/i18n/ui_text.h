@@ -2,10 +2,11 @@
 #ifndef UW1_UI_TEXT_H
 #define UW1_UI_TEXT_H
 /* english as the game passes it: a name get_name just wrote (port_i18n_named), a string just
-   decoded (port_i18n_display), or a piece of the game's code (port_zh_literal); NULL when it
-   has none, or has no letters (except the statistics page's scoped ASCII fallback). */
+   decoded (port_i18n_display), or a piece of the game's code (port_zh_literal); else, in
+   Chinese, the string itself when it is printable ASCII (its letters and digits in the HD font,
+   2026-10-31); NULL in English or for the game's own high characters. */
 const char *port_ui_text(const char *english);
-/* STATS.C scopes this around each draw: Chinese UI uses HD for ASCII fallbacks too. */
+/* STATS.C's former scope for its ASCII; no effect since 2026-10-31, all ASCII being HD in Chinese. */
 void port_stats_ascii(int on);
 /* Main menu button i (0..3) in Chinese over the menu's background, its colour the picture's
    letters' (the selected picture's when it is selected); 1: the caller does not show the

@@ -27,6 +27,7 @@
 #include "sys.h"
 #include "ui.h"
 #ifndef __TURBOC__
+#include "presentation/hd_label.h"
 void port_stats_labels(void);              /* presentation/localized.c */
 #endif
 
@@ -52,12 +53,18 @@ void far sp_hdr(void)
     strncpy(buf, player->name, 0xF);
     buf[0xF] = 0;
     strupr(buf);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_CENTRE);
+#endif
     string_to_screen(buf, (0x48 - string_width(buf)) / 2 + 0xF0, 0xBD);
     /* "Fighter" .. "Shepherd", upper-cased in the string buffer */
     string_to_screen(seg039_3452_814(get_string((player->pclass + 0x17) | STR_CHARGEN)), 0xF0, 0xB6);
     itoa(player->level, buf, 10);
     n = player->level < 4 ? player->level - 1 : 3;
     strcat(buf, ordinals[n]);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_RIGHT);
+#endif
     string_to_screen(buf, 0x135 - string_width(buf), 0xB6);
 }
 
@@ -69,6 +76,9 @@ void far sp_att(unsigned char i)
     char buf[4];
 
     itoa(playerdat->attr[i], buf, 10);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_RIGHT);
+#endif
     string_to_screen(buf, 0x135 - string_width(buf), (2 - i) * 7 + 0xA1);
 }
 
@@ -82,6 +92,9 @@ void far sp_hp(void)
     buf[n] = '/';
     n++;
     itoa(playerdat->avghit, buf + n, 10);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_RIGHT);
+#endif
     string_to_screen(buf, 0x135 - string_width(buf), 0x9A);
 }
 
@@ -95,6 +108,9 @@ void far sp_mp(void)
     buf[n] = '/';
     n++;
     itoa(player->max_mana, buf + n, 10);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_RIGHT);
+#endif
     string_to_screen(buf, 0x135 - string_width(buf), 0x93);
 }
 
@@ -104,6 +120,9 @@ void far sp_xp(void)
     char buf[10];
 
     ltoa(player->exp / 10, buf, 10);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_RIGHT);
+#endif
     string_to_screen(buf, 0x135 - string_width(buf), 0x8C);
 }
 
@@ -124,6 +143,9 @@ void far sp_skill(unsigned char i)
     }
     seg003_0272_5025(spsave[0], 0xF0, 0x84 - i * 7 + 1, 0x4C, (i + 1) * 7, 0, i * 7);
     string_to_screen(seg039_3452_814(get_string((sk + 0x1F) | STR_CHARGEN)), 0xF0, 0x84 - i * 7);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_RIGHT);
+#endif
     string_to_screen(buf, 0x135 - string_width(buf), 0x84 - i * 7);
 }
 

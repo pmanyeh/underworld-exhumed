@@ -29,11 +29,13 @@ int main(void)
     stats_string("31/33", 292, 150, HD_LABEL_RIGHT);
     CHECK(bitmap == 1); hd_label_read(&f); CHECK(!f.count);
     chinese = 1;
-    CHECK(!port_ui_text("31/33") && !port_ui_text("PLAYER123"));
+    CHECK(!strcmp(port_ui_text("31/33"), "31/33") && !strcmp(port_ui_text("PLAYER123"), "PLAYER123"));
     stats_string("31/33", 292, 150, HD_LABEL_RIGHT);
     hd_label_read(&f); CHECK(f.count == 1 && f.labels[0].count == 5);
     CHECK(f.labels[0].cells[0].x64 == (312 - 15) * 64);
-    CHECK(!port_ui_text("31/33")); /* scope ends with each draw */
+    CHECK(!strcmp(port_ui_text("31/33"), "31/33")); /* every ASCII string, not only the page's */
+    /* the game's own high characters keep the bitmap */
+    CHECK(!port_ui_text("\x80" "bc"));
     stats_string("9", 308, 150, HD_LABEL_RIGHT);
     hd_label_read(&f); CHECK(f.count == 1 && f.labels[0].count == 1);
     CHECK(f.labels[0].cells[0].x64 == 309 * 64); /* no stale digits on update */
@@ -48,7 +50,7 @@ int main(void)
     chinese = 0; CHECK(!port_ui_text("9") && !strcmp(port_ui_text("#NAME"), "名字"));
     hd_label_enable(0); chinese = 1;
     stats_string("123", 300, 136, HD_LABEL_RIGHT);
-    CHECK(bitmap == 2 && !port_ui_text("123"));
-    puts("PASS statistics ASCII: locale, scoped fallback, alignment, refresh and translations");
+    CHECK(bitmap == 2);
+    puts("PASS statistics ASCII: locale, ASCII in Chinese, alignment, refresh and translations");
     return 0;
 }

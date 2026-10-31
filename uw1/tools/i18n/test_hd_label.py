@@ -19,7 +19,7 @@ class HdLabelTests(unittest.TestCase):
         out.mkdir(parents=True, exist_ok=True)
         source = (port_src('i18n/ui_text.c')).read_text(encoding='utf-8')
         stats = (UW1 / 'src/ui/STATS.C').read_text(encoding='utf-8')
-        signatures = ['static const char *ordinal(', 'const char *port_ui_text(']
+        signatures = ['static const char *ordinal(', 'static int printable(', 'const char *port_ui_text(']
         functions = [sig + source.split(sig, 1)[1].split('\n}', 1)[0] + '\n}\n'
                      for sig in signatures]
         state = source.split('static char next_english', 1)[1].split('\nvoid port_ui_next', 1)[0]

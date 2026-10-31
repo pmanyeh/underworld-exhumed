@@ -40,3 +40,13 @@
 本機工具：`.poc-tools/stats-ascii-check.py`（可加 `--debug`、`--entry`）、
 `stats-ascii-regression.py`。全部情境使用獨立存檔副本。
 本機 DOS 重編譯 Gate 仍缺 Node.js，未驗證。
+
+## 2026-10-31 擴大到所有介面英數字（使用者要求，UW1 與 UW2 一致）
+
+使用者看到 UW2 屬性頁的數字仍是點陣字，要求「中文模式時，英數文字盡量都用高解析中文字型呈現，UW1、UW2 都一樣」。
+
+- `port_ui_text`：中文模式下，沒有譯文的字串只要是可列印 ASCII（0x20～0x7E）就以原文交給 HD 標籤；
+  含遊戲自己高位元字元的字串仍用原版點陣字。英文模式不變。原本 `STATS.C` 的作用範圍（`port_stats_ascii`）因此不再需要，保留為無作用的函式。
+- 涵蓋 `string_to_screen` 畫的所有英數：屬性頁、人物欄負重、存檔清單、玩家英文姓名、數量與其他介面數字。
+  對齊沿用各處既有的 `hd_label_align`（靠右的數值、置中的標題）。
+- `stats_ascii_test.c`、`test_hd_label.py` 改為驗證新規則（不限屬性頁、高位元字元保留點陣）。
