@@ -30,6 +30,9 @@
 #include "object.h"
 #include "player.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "presentation/qty_dialog.h"
+#endif
 #include "uw2.h"
 
 /* This file's _BSS, DS:6AD0..6B0F. */
@@ -449,7 +452,13 @@ struct Object far * far AskHowMany(struct Object far *obj)
     msg = "Move how many? ";
     initial[0] = '1';
     initial[1] = 0;
+#ifndef __TURBOC__
+    qty_dialog_begin(orig, atoi(initial));  /* Phase 14: an HD panel with a slider over the entry */
+#endif
     key = wdialog(msg, initial, result, 0, 3);
+#ifndef __TURBOC__
+    qty_dialog_end();
+#endif
     if (key != 27 && key != 3) {
         if (key != 0 && key < 4) {
             if (key == 1)

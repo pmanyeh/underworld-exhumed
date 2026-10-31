@@ -38,6 +38,13 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"trap.on", "上的"},                             /* SKILLS.C: "<object>上的<trap>" */
     {"vend.price", "（%d 金幣）"},                    /* WORLDEV.C: a vending machine's price */
     {"scroll.more", "[繼續]"},
+    {"qty.prompt", "要移動幾個？"},                /* "Move how many?" as a panel (qty_dialog.c), as UW1's */
+    {"qty.minus", "－"},
+    {"qty.plus", "＋"},
+    {"qty.half", "一半"},
+    {"qty.all", "全部"},
+    {"qty.ok", "確定"},
+    {"qty.cancel", "取消"},
     {"opt.save", "儲存遊戲"},                      /* the options panel (WRAPPER.C), as UW1's */
     {"opt.restore", "讀取遊戲"},
     {"opt.music", "音樂"},

@@ -39,7 +39,7 @@ Exhume `runtime/port/presentation/hd_label.{c,h}`、`hd_label_draw.c`：
 
 ### 數量對話框（原 §P13.7 第 3 點，併入 P12）
 
-`src/port/presentation/qty_dialog.{c,h}`：「Move how many?」改成 HD 面板，內容是提示、滑桿、數值，
+Exhume `runtime/port/presentation/qty_dialog.{c,h}`：「Move how many?」改成 HD 面板，內容是提示、滑桿、數值，
 以及 −／＋／一半／全部／確定／取消。原版的輸入框照樣收答案：玩家在面板上的操作，由畫面層換成按鍵
 （退格、數字、Enter、Esc）送進鍵盤通道，遊戲、錄影與重播看到的都只是按鍵。玩家直接打數字也會同步到滑桿。
 點在面板外，照原版（左鍵 1 個、右鍵全部）。
@@ -64,7 +64,7 @@ Exhume `runtime/port/presentation/hd_label.{c,h}`、`hd_label_draw.c`：
 
 ### 玩家的中文文字（2026-10-24 使用者決定併入 P12）
 
-`src/port/i18n/user_text.{c,h}`、`src/port/presentation/text_entry.{c,h}`：
+Exhume `runtime/port/i18n/user_text.{c,h}`、`runtime/port/presentation/text_entry.{c,h}`：
 
 - **輸入：** 角色名字與存檔說明，在中文模式下改由 HD 輸入面板輸入，支援輸入法。架構和數量對話框相同：原版的
   輸入框照樣收答案。按 Enter 時，面板把結果打進原版輸入框（存檔說明先 Ctrl+A、Ctrl+K 清空）。內容是 ASCII 就照打；

@@ -9,6 +9,8 @@
 #include "i18n/user_text.h"
 #include "presentation/hd_label.h"
 #include "presentation/caption.h"
+#include "presentation/qty_dialog.h"
+#include "presentation/text_entry.h"
 #include "i18n/localization.h"
 #include "presentation/hd_cursor.h"
 #include "presentation/hd_font.h"
@@ -169,6 +171,8 @@ int port_text_setup(const char *home, int interactive)
    overlay never reads the game's state. */
 static ScrollFrame frame_text;
 static HdCursor frame_cursor;
+static volatile int pointer_x = -100, pointer_y = -100;    /* the host's pointer, game pixels */
+const char *port_ui_text(const char *english);
 static HdLabelFrame frame_labels;
 static CaptionFrame frame_caption;
 static uint8_t frame_palette[768];
@@ -207,9 +211,35 @@ static int text_draw(const PlatOverlay *frame, void *data)
         drawn |= hd_label_draw(draw_font[0], frame, &frame_labels, frame_pixels, frame_w, frame_h, frame_palette,
                                draw_style[0].border, draw_style[0].baseline, frame_cursor.visible ? cursor : NULL);
     }
+    /* the "Move how many?" panel and the player's words typed in Chinese, over the scroll */
+    drawn |= qty_dialog_draw(draw_font[0], frame);
+    drawn |= text_entry_draw(draw_font[0], frame);
     /* the cursor last, above the text; the settings screen has its own pointer */
     if (!settings_open()) drawn |= hd_cursor_draw(frame, &frame_cursor, frame_palette);
+    /* the game hides its cursor for its text entry (wdialog); over a panel of ours, which takes
+       clicks, the cursor's last picture follows the pointer, as UW1's */
+    if (!settings_open() && !frame_cursor.visible && (qty_dialog_open() || text_entry_open())) {
+        HdCursor shown = frame_cursor;
+        shown.x = pointer_x; shown.y = pointer_y;
+        shown.visible = 1;
+        drawn |= hd_cursor_draw(frame, &shown, frame_palette);
+    }
     return drawn;
+}
+
+/* The keyboard and the pointer, by way of the HD panels (the player's words typed in Chinese,
+   text_entry.c; "Move how many?", qty_dialog.c), which type their answers into the game through
+   its own keyboard hook, so the game, the recorder and the replays see only keys */
+static void (*game_key)(uint8_t sc);
+static void (*game_pointer)(const PlatPointer *ev);
+static void text_key(uint8_t sc)
+{
+    if (!text_entry_key(sc) && !qty_dialog_key(sc)) game_key(sc);
+}
+static void text_pointer(const PlatPointer *ev)
+{
+    if (ev->absolute) { pointer_x = (int)ev->x; pointer_y = (int)ev->y; }
+    if (!qty_dialog_pointer(ev)) game_pointer(ev);
 }
 
 void port_text_hooks(PlatHooks *hooks)
@@ -218,6 +248,50 @@ void port_text_hooks(PlatHooks *hooks)
     hooks->scanout = text_scanout;
     hooks->overlay = text_draw;
     hooks->overlay_data = NULL;
+    game_key = hooks->key;
+    game_pointer = hooks->pointer;
+    qty_dialog_enable(1, game_key);
+    qty_dialog_place(14, 210);          /* UW2's message scroll, x 0x10 to 0xDF */
+    text_entry_enable(1, game_key);
+    hooks->key = text_key;
+    hooks->pointer = text_pointer;
+}
+
+/* GAMEWRAP.C's SaveGame: the save's description typed in Chinese, around its wdialog, then the
+   Chinese written beside SAVE0\DESC (copied to the slot with it); as UW1's ui_text.c */
+static char typed_desc[128];
+static int typed_desc_set;
+void port_save_entry_begin(int slot, const char *desc)
+{
+    const char *zh = port_user_text(desc), *prompt = port_i18n_static(1, 0xB7);
+    typed_desc_set = 0;
+    text_entry_begin(TEXT_ENTRY_LINE, prompt ? prompt : "", zh ? zh : desc, 15, port_user_desc_standin(slot),
+                     14, 166, 210, 31);
+}
+void port_save_entry_end(int ok)
+{
+    const char *zh = text_entry_end();
+    typed_desc[0] = 0;
+    typed_desc_set = ok;
+    if (ok && zh) snprintf(typed_desc, sizeof typed_desc, "%s", zh);
+}
+void port_save_sidecars(void)
+{
+    port_user_desc_save(typed_desc_set && typed_desc[0] ? typed_desc : NULL);
+    port_user_name_save();
+}
+
+/* CHARGEN.C's pickopt: the character's name, on a panel over the question's line */
+void port_name_entry_begin(const char *question)
+{
+    const char *zh = port_ui_text(question);
+    port_user_name_set(NULL);
+    text_entry_begin(TEXT_ENTRY_NAME, zh ? zh : question, "", 8, USER_NAME_STANDIN, 0xA4, 199 - 0x6B - 2, 0x91, 14);
+}
+void port_name_entry_end(int ok)
+{
+    const char *zh = text_entry_end();
+    port_user_name_set(ok ? zh : NULL);
 }
 
 static int measure(uint32_t cp, void *m) { return hd_scroll_advance(((Metrics *)m)->font, cp, ((Metrics *)m)->em64); }

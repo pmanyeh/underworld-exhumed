@@ -5,8 +5,8 @@
 #include "presentation/caption.h"
 #include "flask_text.h"
 #include "presentation/hd_label.h"
-#include "qty_dialog.h"
-#include "text_entry.h"
+#include "presentation/qty_dialog.h"
+#include "presentation/text_entry.h"
 #include "map_note_overlay.h"
 #include "ui/settings.h"
 #include <string.h>

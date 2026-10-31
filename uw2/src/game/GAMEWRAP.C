@@ -51,6 +51,14 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/user_text.h"
+void port_save_entry_begin(int slot, const char *desc);   /* presentation/localized.c */
+void port_save_entry_end(int ok);
+void port_save_sidecars(void);
+void port_name_entry_begin(const char *question);
+void port_name_entry_end(int ok);
+#endif
 
 
 /* match: the tests in SaveLevel and copy_file have empty bodies: the bytes keep each
@@ -162,6 +170,9 @@ void far get_save_descs(char descs[][40], int16 *found)
         if (!(*found & (1 << i)))
             strcpy(descs[i], "<not used yet>");
     }
+#ifndef __TURBOC__
+    port_user_descs_load();     /* Phase 14, as UW1's P12: their Chinese, beside them */
+#endif
 }
 
 void far ShowSaveRest(void)
@@ -242,6 +253,9 @@ char far RestoreGame(char slot)
                     game_sprint(0xB9);  /* '...' */
                     set_creatures_from_saved_game();
 #ifndef __TURBOC__
+                    port_user_name_load();      /* the character's Chinese name, if it has one */
+#endif
+#ifndef __TURBOC__
                     /* port only: --enhance restore-at-rest. The save holds no motion, and
                        the restore kept the motion of the game it replaced (PN's speed,
                        velocity, acceleration and impact): cleared as player_setup does,
@@ -274,10 +288,20 @@ int far SaveGame(char slot, char *desc)
     strcpy(path, HomeDir);
     scroll_clear(1);
     game_sprint(0xB7);                  /* "Please enter a save file description:" */
+#ifndef __TURBOC__
+    port_save_entry_begin(slot, desc);  /* Phase 14: typed in Chinese on an HD panel */
+    if (wdialog(0, desc, desc, 1, 0x1E) == 0x1B) {
+        port_save_entry_end(0);
+        ret = 2;
+        goto fail;
+    }
+    port_save_entry_end(1);
+#else
     if (wdialog(0, desc, desc, 1, 0x1E) == 0x1B) {
         ret = 2;
         goto fail;
     }
+#endif
     if (strlen(desc) == 0)
         strcpy(desc, " ");
     scroll_print("\n");
@@ -285,6 +309,9 @@ int far SaveGame(char slot, char *desc)
     strcat(path, "desc");
     if (!blttodrive(desc, path, strlen(desc)))
         goto fail;
+#ifndef __TURBOC__
+    port_save_sidecars();               /* the Chinese beside SAVE0's desc, copied with it */
+#endif
     p = strrchr(path, '0');
     *p = slot + '0';
     p[1] = 0;

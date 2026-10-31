@@ -566,9 +566,9 @@ int main(int argc, char *argv[])
     if (port_text_setup(home, interactive)) return 1;
     memset(&hooks, 0, sizeof hooks);
     hooks.scanout = vga_scanout;
-    port_text_hooks(&hooks);
     hooks.key = kbd_byte;
     hooks.pointer = mouse_event;
+    port_text_hooks(&hooks);            /* after the keyboard and pointer, which it wraps */
     hooks.lifecycle = on_lifecycle;
     if (input_script) hooks.tick = inscript_tick;
     if (interactive) {

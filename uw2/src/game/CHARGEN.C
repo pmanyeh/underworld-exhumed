@@ -39,6 +39,13 @@
 #include "sys.h"
 #include "ui.h"
 #ifndef __TURBOC__
+void port_save_entry_begin(int slot, const char *desc);   /* presentation/localized.c */
+void port_save_entry_end(int ok);
+void port_save_sidecars(void);
+void port_name_entry_begin(const char *question);
+void port_name_entry_end(int ok);
+#endif
+#ifndef __TURBOC__
 #include "presentation/hd_label.h"
 #endif
 #include "view3d.h"
@@ -450,6 +457,9 @@ int far pickopt(struct ChrOpt far *opt)
         x = string_width(s) + 0xA8;
         y = 0x6B;
         buf[1] = 0;
+#ifndef __TURBOC__
+        port_name_entry_begin(s);   /* Phase 14: typed in Chinese on an HD panel */
+#endif
         while ((c = mouse_get_input()) != '\r' || empty) {
             if (isspace(c) && len == 0)
                 continue;
@@ -474,6 +484,9 @@ int far pickopt(struct ChrOpt far *opt)
             }
         }
         opt->name[len] = 0;
+#ifndef __TURBOC__
+        port_name_entry_end(1);
+#endif
         return 0;
     }
     while (!done) {
