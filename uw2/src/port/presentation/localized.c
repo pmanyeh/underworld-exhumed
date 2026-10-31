@@ -23,6 +23,7 @@
 #include <string.h>
 
 void scroll_wait(int ticks, char mouse);        /* SCROLLIO.C */
+extern unsigned char spec_col[7];               /* SCROLL.C */
 
 static const char *locale = "en", *i18n_file, *font_path;
 static const char *scroll_log, *i18n_trace;     /* tests: the HD scroll's and the lookups' JSONL */
@@ -102,6 +103,9 @@ int port_text_setup(const char *home, int interactive)
         return -1;
     }
     scroll_text_enable(hd_scroll);
+    /* UW2's colours for the scroll's \0..\6 escapes (SCROLL.C's spec_col) and its [MORE] (0x12,
+       SCROLLIO.C's scroll_more), in place of UW1's */
+    scroll_text_colors(spec_col, 0x12);
     /* the game's cursor over the HD text, not under it (MOUSE.C), as UW1 has it with the HD scroll */
     hd_cursor_enable(hd_scroll);
     /* the bitmap UI's strings (string_to_screen) as HD labels, as UW1's P12 */

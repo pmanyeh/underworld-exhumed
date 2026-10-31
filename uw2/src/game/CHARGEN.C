@@ -38,6 +38,9 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "presentation/hd_label.h"
+#endif
 #include "view3d.h"
 
 /* One chargen question from DATA\chrgen.dat, 0x12 bytes. */
@@ -276,8 +279,12 @@ void far drawopt(struct ChrOpt far *opt)
         if (opt->name != 0) {
             show(x, y, chrbuf + chroff[6], 0x10, 0x91, 0, 0);
             string_to_screen(s, x += 4, y - 3);
-        } else
+        } else {
+#ifndef __TURBOC__
+            hd_label_align(HD_LABEL_CENTRE);
+#endif
             string_to_screen(s, x + (0x91 - string_width(s)) / 2, y - 3);
+        }
     } else
         y += h + 4;
     if (opt->strings != 0) {
@@ -295,6 +302,9 @@ void far drawopt(struct ChrOpt far *opt)
                 char far *s;
 
                 s = get_string(opt->strings[i] | STR_CHARGEN);
+#ifndef __TURBOC__
+                hd_label_align(HD_LABEL_CENTRE);
+#endif
                 string_to_screen(s, x + (w - string_width(s)) / 2, y - 3);
                 break;
             }
@@ -350,6 +360,9 @@ void far selopt(struct ChrOpt far *opt, unsigned char new, unsigned char old)
                 char far *s;
 
                 s = get_string(opt->strings[j ? new : old] | STR_CHARGEN);
+#ifndef __TURBOC__
+                hd_label_align(HD_LABEL_CENTRE);
+#endif
                 string_to_screen(s, x + (w - string_width(s)) / 2, y - 3);
                 break;
             }
@@ -600,6 +613,9 @@ char far gen_char(unsigned char far *buf, unsigned char far *dat, struct ChrOpt 
                 stage++;
             sknow = set_skills(0, skills);
             mouse_hide();
+#ifndef __TURBOC__
+            hd_label_align(HD_LABEL_RIGHT);
+#endif
             string_to_screen(s, 0x8F - string_width(s), 0xB2);
             show_atts();
             show_skills();
@@ -637,6 +653,9 @@ char far gen_char(unsigned char far *buf, unsigned char far *dat, struct ChrOpt 
         case 6:
             s = opts[6].name;
             mouse_hide();
+#ifndef __TURBOC__
+            hd_label_align(HD_LABEL_CENTRE);
+#endif
             string_to_screen(s, (0x7E - string_width(s)) / 2 + 0x11, 0xBD);
             mouse_show();
             if (*s)
@@ -665,7 +684,13 @@ restart:
     set_cuts_ems(1);
     grSoftPageFlip();
     show(0, 0xC7, chrbuf, 0xC8, 0x140, 0, 0);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_CENTRE);
+#endif
     string_to_screen(name, (0xA0 - string_width(name)) / 2 + 0xA0, cur_font->height + 0x62);
+#ifndef __TURBOC__
+    hd_label_align(HD_LABEL_CENTRE);
+#endif
     string_to_screen(done, (0xA0 - string_width(done)) / 2 + 0xA0, 0x62);
     grSoftPageFlip();
     set_the_color(0x106);

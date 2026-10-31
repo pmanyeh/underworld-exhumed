@@ -131,14 +131,30 @@ uint16_t seg003_asm_far(uint16_t off, struct seg003_regs r) { return seg003_run(
 
 void setup_font(void) { seg003_0272_3BFD(); }
 void init_graphics(void) { seg003_0272_283D(); }
+/* The two pages the library draws on, by their bottom rows' addresses (Ytab[0]) as the flips
+   show them, for the HD labels a copy from the other page brings (rectangle's pen 106h) */
+static int page_seen[2] = { -1, -1 };
+static void note_page(void)
+{
+    int p = Ytab[0];
+    if (p != page_seen[0] && p != page_seen[1]) page_seen[page_seen[0] < 0 ? 0 : 1] = p;
+}
+static int other_page(void)
+{
+    note_page();
+    return Ytab[0] == page_seen[0] ? page_seen[1] : page_seen[0];
+}
+
 void grPageFlip(void)
 {
+    note_page();
     seg003_0272_2ABE();
+    note_page();
     port_on_flip();                     /* the --shot-at-flip debug screenshots */
 }
-void grSoftPageFlip(void) { seg003_0272_2AC1(); }
+void grSoftPageFlip(void) { note_page(); seg003_0272_2AC1(); note_page(); }
 /* the pen, for the HD labels: 100h and 101h are the cursor's save and save-under (MOUSE.C), 106h
-   the options panel's copy to the screen (WRAPPER.C), which redraws its labels itself */
+   a copy of the box from the other page (CHARGEN.C's panels, WRAPPER.C's options panel) */
 static int pen;
 void set_the_color(int c) { pen = c; seg003_0272_3195((uint16_t)c); }
 void init_colors(void) { seg003_0272_31BE(); }
@@ -174,9 +190,18 @@ static int clip_rect(int16_t *ax, int16_t *bx, int16_t *cx, int16_t *dx)
    away (corners (x0, y0) and (x1, y1), y up), even when it fills it with what was there */
 static void forget_box(int x0, int y0, int x1, int y1)
 {
-    if (hd_label_enabled() && pen != 0x100 && pen != 0x101 && pen != 0x106)
+    if (hd_label_enabled() && pen != 0x100 && pen != 0x101)
         hd_label_forget(x0 < x1 ? x0 : x1, 199 - (y0 > y1 ? y0 : y1), (x0 > x1 ? x0 : x1) + 1,
                         199 - (y0 < y1 ? y0 : y1) + 1);
+}
+
+/* after a copy from the other page (pen 106h), the labels on it in the box come too, as UW1's */
+static void copy_box(int x0, int y0, int x1, int y1)
+{
+    int from;
+    if (!hd_label_enabled() || pen != 0x106 || (from = other_page()) < 0) return;
+    hd_label_copy(x0 < x1 ? x0 : x1, 199 - (y0 > y1 ? y0 : y1), (x0 > x1 ? x0 : x1) + 1,
+                  199 - (y0 < y1 ? y0 : y1) + 1, from);
 }
 
 void rectangle(int x, int y, int w, int h)
@@ -184,12 +209,14 @@ void rectangle(int x, int y, int w, int h)
     int16_t ax = (int16_t)x, bx = (int16_t)y, cx = (int16_t)w, dx = (int16_t)h;
     forget_box(x, y, w, h);
     if (clip_rect(&ax, &bx, &cx, &dx)) seg003_0272_342E(ax, bx, cx, dx);
+    copy_box(x, y, w, h);
 }
 
 void urectangle(int a, int b, int c, int d)
 {
     forget_box(a, b, c, d);
     seg003_0272_342E((int16_t)a, (int16_t)b, (int16_t)c, (int16_t)d);
+    copy_box(a, b, c, d);
 }
 
 /* A bitmap's far pointer split as the DOS caller made it. fbshow's callers pass pictures they

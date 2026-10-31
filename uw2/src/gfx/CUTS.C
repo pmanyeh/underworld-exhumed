@@ -65,6 +65,9 @@
 #include "sys.h"
 #include "ui.h"
 #ifndef __TURBOC__
+#include "presentation/scroll_text.h"
+#endif
+#ifndef __TURBOC__
 #include "i18n/localization.h"
 #include "presentation/caption.h"
 #endif
@@ -1517,9 +1520,13 @@ void far show_cutscene(register unsigned n)
         y += 4;
         h += 5;
     }
+#ifndef __TURBOC__
+    scroll_text_screen(0);              /* Phase 14: the HD scroll's text gives way to the cutscene */
+#endif
     show_anm(n, x, y, w, h);
 #ifndef __TURBOC__
     caption_clear();
+    scroll_text_screen(scrmode);
 #endif
     grfx_quikfont(FONT_5X6P);
     if (in_game) load_txtmaps();
