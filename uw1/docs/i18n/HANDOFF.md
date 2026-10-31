@@ -40,7 +40,9 @@ HD 游標提交 `89a5157`；Exhume `956588f`：`name_gloss`、`input_alias`、`u
 SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`licenses/`、`i18n/zh-TW/`（catalog.uw2loc、input-aliases.tsv、proper-names.tsv）、
 `開始遊戲.bat`（`--data` 指向工作區的 UW2 遊戲資料、`--home` 為資料夾內 `home\`）、`說明.txt`（已中文化範圍、打字話題、仍英文的部分）。
 首次執行自動進入中文（`language=zh-TW` 寫入 home 的 uw2port.cfg）。只用系統 PATH 啟動檢查通過。
-  2026-10-31 第二版（使用者回報修正 `7816de9`）：EXE SHA-256 `7305a30e3bdff16f…`，第一版備份在 `backupW2port-v1-da3cf146.exe`，home 13 檔雜湊不變。
+  2026-10-31 第二版（使用者回報修正 `7816de9`）：EXE SHA-256 `7305a30e3bdff16f…`，第一版備份在 `backup/uw2port-v1-da3cf146.exe`，home 13 檔雜湊不變。
+  2026-10-31 第三版（中文模式英數字全面高解析 `fca1de6`）：EXE SHA-256 `1f46718c37371434…`，第二版備份 `backup/uw2port-7305a30e.exe`，home 49 檔雜湊不變。
+  使用者已確認第一版回報的問題（創造人物對齊與屬性名、對話顏色、文字疊在地圖與過場）修正 OK。
 更新測試版時只換 EXE（先備份舊檔），不要動 `home\`。
 
 **UW2 構想清單**：`uw2/docs/i18n/IDEAS_BACKLOG.md`。第 1 項「開場與無語音過場加上語音」（2026-10-31 使用者提出，**未授權動工**）：
@@ -91,7 +93,7 @@ catalog 與遊戲檔不上傳、玩家資料不覆寫、強化功能預設關）
 | 子模組 checkout | 本機為固定提交的 detached HEAD，工作區乾淨；遠端開發分支 `feature/presentation-overlay` |
 | 階段／tag | 2026-10-31 經使用者同意建立 `zh-tw-native-p13`（UW1 段落完成；譯文審閱仍可後續提交）；前一階段 `zh-tw-native-p12`（`0169ca1`） |
 | 版本號 | 0.6（2026-10-31）；攜帶測試包版本號，譯文多數仍為 draft |
-| 本機 Windows 測試版 | `UW1-zhTW-playtest/uw1port.exe` 已包含新按鍵、2026-10-28 三項功能、按鍵說明頁、2026-10-29 地圖橡皮擦輔助、2026-10-30 強化功能即時生效與 2026-10-31 HD 描邊快取（強化功能皆預設關）；SHA-256 `c75f8823…`，前一版（`81486b36…`）備份 `uw1/build/i18n/hd-border/previous-playtest-uw1port.exe`，home 104 檔雜湊不變 |
+| 本機 Windows 測試版 | `UW1-zhTW-playtest/uw1port.exe` 已包含新按鍵、2026-10-28 三項功能、按鍵說明頁、2026-10-29 地圖橡皮擦輔助、2026-10-30 強化功能即時生效與 2026-10-31 HD 描邊快取（強化功能皆預設關）；2026-10-31 再更新為共用模組版、中文模式英數字全面高解析（`fca1de6`，使用者要求 UW1 也擴大）：SHA-256 `f9f2247a415fe5e9…`，前一版（`c75f8823…`）備份 `UW1-zhTW-playtest/backup/uw1port-c75f8823.exe`，home 102 檔雜湊不變 |
 | 0.6 整合包 | 工作區 `release-v0.6/`：`UW1-zhTW-v0.6-Windows.zip`（`a430bac4…`）、`UW1-zhTW-v0.6-macOS.zip`（`c1d62169…`）、`UW1-v0.6-SHA256SUMS.txt`；只留本機。詳見 `RELEASE_0.6.md` |
 | Mac | 0.5 於 2026-10-27 實機 OK；0.6 由 Actions run `41094295701` 編譯，Mac 上尚未實機遊玩 |
 | ZIP／私人移機包 | 0.6 未重做開發移機包；私人資源未上傳 |
