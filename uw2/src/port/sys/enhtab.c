@@ -24,4 +24,5 @@ const struct enhance_flag enhance_table[ENH_COUNT] = {
     { "split-all", "Move how many? starts at the whole stack", ENH_GAMEPLAY, NULL, NULL },
     { "no-wear", "Equipped weapons, shields and armour do not lose condition through combat use", ENH_GAMEPLAY, NULL, NULL },
     { "unknown-topic", "A word you type that a person does not know gets an answer: theirs, or I don't know what that is...", ENH_GAMEPLAY, NULL, NULL },
+    { "flask-numbers", "The flasks show their values, 25/32, and each change floats up from them (HD text)", ENH_PRESENTATION, NULL, NULL },
 };

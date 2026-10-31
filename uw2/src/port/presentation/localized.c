@@ -9,6 +9,7 @@
 #include "i18n/user_text.h"
 #include "presentation/hd_label.h"
 #include "presentation/caption.h"
+#include "presentation/flask_text.h"
 #include "presentation/qty_dialog.h"
 #include "presentation/text_entry.h"
 #include "i18n/localization.h"
@@ -120,6 +121,9 @@ int port_text_setup(const char *home, int interactive)
     hd_label_enable(hd_scroll);
     /* cutscene subtitles (CUTS.C) in the HD font */
     caption_enable(hd_scroll);
+    /* --enhance flask-numbers: over UW2's flasks (PANELS.C's FL_X, the panel's 0x43) */
+    flask_text_enable(hd_scroll);
+    flask_text_place(0xF8, 0x120, 200 - 0x43);
     if (!hd_scroll) {
         /* the settings screen in its own font, but the language's name in Chinese where a font
            for it is at hand, as UW1's */
@@ -195,6 +199,7 @@ static volatile int pointer_x = -100, pointer_y = -100;    /* the host's pointer
 const char *port_ui_text(const char *english);
 static HdLabelFrame frame_labels;
 static CaptionFrame frame_caption;
+static FlaskFrame frame_flasks;
 static uint8_t frame_palette[768];
 static uint8_t frame_pixels[640 * 480];   /* the scan-out, for the labels' signatures */
 static int frame_w, frame_h;
@@ -210,6 +215,7 @@ static void text_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])
     hd_cursor_read(&frame_cursor);
     scroll_text_read(&frame_text);
     caption_read(&frame_caption);
+    flask_text_read(&frame_flasks);
     memcpy(frame_palette, rgb6, sizeof frame_palette);
 }
 
@@ -222,6 +228,10 @@ static int text_draw(const PlatOverlay *frame, void *data)
     if (frame_caption.active)
         drawn |= caption_draw(draw_font[0], frame, &frame_caption, frame_palette,
                               draw_style[0].border > 0.6f ? draw_style[0].border : 0.6f);
+    /* --enhance flask-numbers: the flasks' values and changes */
+    if (frame_flasks.active)
+        drawn |= flask_text_draw(draw_font[0], frame, &frame_flasks,
+                                 draw_style[0].border > 0.6f ? draw_style[0].border : 0.6f);
     /* the bitmap UI's strings, each while the screen under it is as the game left it; the game's
        cursor, drawn by the HD layer, is no change to a label (a pixel's margin round its box) */
     if (frame_labels.count && frame_h == 200) {

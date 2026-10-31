@@ -12,6 +12,7 @@
 #include "sys/cheat.h"
 #include "sys/enhance.h"
 #include "ui/settings.h"
+#include "presentation/flask_text.h"
 #include <stdio.h>
 
 static void say(const char *key, const char *en)
@@ -39,7 +40,7 @@ static const char *toggle(int argc, char **argv, int run, int bit)
 
 /* The enhancements the settings screen turns on and off in play, not at the next start: each read
    where it acts, with nothing set up from it when the run starts */
-static const int live[] = { ENH_INVERT_LOOK, ENH_SPLIT_ALL, ENH_UNKNOWN_TOPIC };
+static const int live[] = { ENH_INVERT_LOOK, ENH_SPLIT_ALL, ENH_UNKNOWN_TOPIC, ENH_FLASK_NUMBERS };
 #define LIVE ((int)(sizeof live / sizeof live[0]))
 static const char *enhance(int argc, char **argv, int run)
 {
@@ -49,6 +50,7 @@ static const char *enhance(int argc, char **argv, int run)
     if (i == LIVE || cheat_num(argv[1], 0, 1, &v)) return "an enhancement the screen sets in play, and 0 or 1";
     if (run) {
         if (v) enhance_on |= 1u << bit; else enhance_on &= ~(1u << bit);
+        if (bit == ENH_FLASK_NUMBERS && !v) flask_text_clear();
         say("enhance.applied", "Setting applied.\n");
     }
     return NULL;
@@ -76,7 +78,8 @@ static void enhance_request(int bit, int on)
 static void live0(int on) { enhance_request(live[0], on); }
 static void live1(int on) { enhance_request(live[1], on); }
 static void live2(int on) { enhance_request(live[2], on); }
-static void (*const live_request[LIVE])(int) = { live0, live1, live2 };
+static void live3(int on) { enhance_request(live[3], on); }
+static void (*const live_request[LIVE])(int) = { live0, live1, live2, live3 };
 
 void port_cheat_settings(void)
 {
