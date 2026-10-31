@@ -43,6 +43,8 @@ SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`
   2026-10-31 第二版（使用者回報修正 `7816de9`）：EXE SHA-256 `7305a30e3bdff16f…`，第一版備份在 `backup/uw2port-v1-da3cf146.exe`，home 13 檔雜湊不變。
   2026-10-31 第三版（中文模式英數字全面高解析 `fca1de6`）：EXE SHA-256 `1f46718c37371434…`，第二版備份 `backup/uw2port-7305a30e.exe`，home 49 檔雜湊不變。中文模式英數字全面高解析：2026-10-31 使用者已確認 OK（UW1、UW2）。
   2026-10-31 第四版（第八批 `feee9fc`：中文姓名／存檔說明、數量面板）：EXE SHA-256 `efc835129ff1e6e6…`，舊檔在 `backup/`，home 60 檔雜湊不變；說明.txt 已更新。
+  2026-10-31 第五版（`634dd8a` split-all）：EXE SHA-256 `0c4e29b6115535ec…`，舊 EXE 與 `uw2port.cfg` 在 `backup/`；
+  `home/uw2port.cfg` 的 enhance 加上 `split-all`（同 UW1 測試版），其他檔不動。
   使用者已確認第一版回報的問題（創造人物對齊與屬性名、對話顏色、文字疊在地圖與過場）修正 OK。
 更新測試版時只換 EXE（先備份舊檔），不要動 `home\`。
 
