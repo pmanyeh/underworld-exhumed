@@ -42,6 +42,7 @@ SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`
 首次執行自動進入中文（`language=zh-TW` 寫入 home 的 uw2port.cfg）。只用系統 PATH 啟動檢查通過。
   2026-10-31 第二版（使用者回報修正 `7816de9`）：EXE SHA-256 `7305a30e3bdff16f…`，第一版備份在 `backup/uw2port-v1-da3cf146.exe`，home 13 檔雜湊不變。
   2026-10-31 第三版（中文模式英數字全面高解析 `fca1de6`）：EXE SHA-256 `1f46718c37371434…`，第二版備份 `backup/uw2port-7305a30e.exe`，home 49 檔雜湊不變。中文模式英數字全面高解析：2026-10-31 使用者已確認 OK（UW1、UW2）。
+  2026-10-31 第四版（第八批 `feee9fc`：中文姓名／存檔說明、數量面板）：EXE SHA-256 `efc835129ff1e6e6…`，舊檔在 `backup/`，home 60 檔雜湊不變；說明.txt 已更新。
   使用者已確認第一版回報的問題（創造人物對齊與屬性名、對話顏色、文字疊在地圖與過場）修正 OK。
 更新測試版時只換 EXE（先備份舊檔），不要動 `home\`。
 
@@ -53,7 +54,7 @@ SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`
 1. （第三批已完成：UW2 `input-aliases.tsv` 22 列、`proper-names.tsv` 93 名、`babl_ask` 中文輸入、每段對話重設加註；見 `P14_SLICE.md`。
    本機 `.poc-tools/uw2-cnv-unpack.py` 解 UW2 CNV.ARK 給 `babl_audit` 用。輸入法實機尚未遊玩驗證。）
 2. 還沒接的拼接訊息：SPELLS2 的辨識怪物、WORLDEV 修理、MISCUTIL 方向、PLAYER 座標等；用 `--scroll-log` 找仍是英文的行。
-3. （第六、七批：主選單、屬性頁、選項面板美術字已改中文。）（第四批：`string_to_screen` 的 HD 標籤已接，hd_label 搬到 runtime；見 `P14_SLICE.md`。）美術字的補丁（選項面板、主選單、屬性頁，UW1 ui_text 的
+3. （第八批：中文姓名、存檔說明、數量面板已完成。）（第六、七批：主選單、屬性頁、選項面板美術字已改中文。）（第四批：`string_to_screen` 的 HD 標籤已接，hd_label 搬到 runtime；見 `P14_SLICE.md`。）美術字的補丁（選項面板、主選單、屬性頁，UW1 ui_text 的
    `port_options_*`／`port_menu_button`／`port_stats_labels`）、跨頁標籤複製（過場字幕已於第五批完成）、數量面板、中文姓名與存檔說明（text_entry、user_text）、
    F11 語言分頁、啟動時依 catalog 預設中文、測試版打包。
 4. UW2 強化功能（UW1 的 F11 項目）屬另議，先不移植，除非使用者要求。
@@ -93,7 +94,7 @@ catalog 與遊戲檔不上傳、玩家資料不覆寫、強化功能預設關）
 | 子模組 checkout | 本機為固定提交的 detached HEAD，工作區乾淨；遠端開發分支 `feature/presentation-overlay` |
 | 階段／tag | 2026-10-31 經使用者同意建立 `zh-tw-native-p13`（UW1 段落完成；譯文審閱仍可後續提交）；前一階段 `zh-tw-native-p12`（`0169ca1`） |
 | 版本號 | 0.6（2026-10-31）；攜帶測試包版本號，譯文多數仍為 draft |
-| 本機 Windows 測試版 | `UW1-zhTW-playtest/uw1port.exe` 已包含新按鍵、2026-10-28 三項功能、按鍵說明頁、2026-10-29 地圖橡皮擦輔助、2026-10-30 強化功能即時生效與 2026-10-31 HD 描邊快取（強化功能皆預設關）；2026-10-31 再更新為共用模組版、中文模式英數字全面高解析（`fca1de6`，使用者要求 UW1 也擴大；2026-10-31 使用者已確認 OK）：SHA-256 `f9f2247a415fe5e9…`，前一版（`c75f8823…`）備份 `UW1-zhTW-playtest/backup/uw1port-c75f8823.exe`，home 102 檔雜湊不變 |
+| 本機 Windows 測試版 | `UW1-zhTW-playtest/uw1port.exe` 已包含新按鍵、2026-10-28 三項功能、按鍵說明頁、2026-10-29 地圖橡皮擦輔助、2026-10-30 強化功能即時生效與 2026-10-31 HD 描邊快取（強化功能皆預設關）；2026-10-31 再更新為共用模組版、中文模式英數字全面高解析（`fca1de6`，使用者要求 UW1 也擴大；2026-10-31 使用者已確認 OK）：SHA-256 `f9f2247a415fe5e9…`，前一版（`c75f8823…`）備份 `UW1-zhTW-playtest/backup/uw1port-c75f8823.exe`，home 102 檔雜湊不變；同日再換為第八批建置（text_entry、qty_dialog 改用 runtime，行為不變）SHA-256 `c5618fba0e18ce38…`，前一版備份 `backup/uw1port-f9f2247a.exe` |
 | 0.6 整合包 | 工作區 `release-v0.6/`：`UW1-zhTW-v0.6-Windows.zip`（`a430bac4…`）、`UW1-zhTW-v0.6-macOS.zip`（`c1d62169…`）、`UW1-v0.6-SHA256SUMS.txt`；只留本機。詳見 `RELEASE_0.6.md` |
 | Mac | 0.5 於 2026-10-27 實機 OK；0.6 由 Actions run `41094295701` 編譯，Mac 上尚未實機遊玩 |
 | ZIP／私人移機包 | 0.6 未重做開發移機包；私人資源未上傳 |
