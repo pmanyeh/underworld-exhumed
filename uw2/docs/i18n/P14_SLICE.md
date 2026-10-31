@@ -87,6 +87,29 @@
 - `tools/i18n/test_input_alias.py`（提交）：對照表格式、同段對話別名不重複、與 STRINGS.PAK 的雜湊與比對字一致，並用 runtime 的
   `input_alias.c` 實測對照結果。實機輸入法路徑尚未遊玩驗證（UW2 沒有傳送到 NPC 的測試指令；有 babl_ask 的對話不在既有重播裡）。
 
+## 第四批：點陣介面標籤（2026-10-31）
+
+- `hd_label`（`.c`、`.h`、`_draw.c`）搬到 Exhume runtime（UW1 照用）。
+- UW2 `gfx/grcore.c`：`string_to_screen` 遇到有譯文的字串改放 HD 標籤（不畫點陣字）；`port_draw_page`（`Ytab[0]`）；
+  `rectangle`／`urectangle` 以游標存背景以外的畫筆（100h、101h 除外）填色時移除底下的標籤，`show` 貼圖時移除、畫透明精靈時重新簽章
+  （否則清掉捲軸後紙面不變，標籤會殘留）。UW1 另有跨頁複製（`hd_label_copy`），UW2 尚未接。
+- `localized.c`：`port_ui_text`（玩家文字、`get_name` 記下的名稱、剛解碼的字串、大寫化過的字串、字面對照）、
+  標籤的量字與繪製（在 HD 文字之上、游標之下）。
+- 實測：對話名牌「不列顛王（Lord British）」、存檔清單「存檔一：<尚未使用>」以 HD 字型顯示；儲存後不殘留。
+- 販賣機「〈物品〉是目前的選擇（N 金幣）。」組句（`WORLDEV.C`，名稱首字大寫會讓名稱對照失效）。
+
+## 第五批：過場字幕（2026-10-31）
+
+- `caption`（`.c`、`.h`、`_draw.c`）搬到 Exhume runtime（UW1 照用）。
+- UW2 `CUTS.C`：字幕指令（`cutsop_txt`）以譯文設定 HD 字幕；有語音時（字幕強化功能未開）也顯示中文字幕；
+  清除指令、播放結束時清掉；有中文字幕時 `cuts_draw_text` 只清區塊、不畫英文。
+- `localized.c`：字幕的量字（訊息字型的 1.4 倍，同 UW1）與繪製（描邊至少 0.6）。
+- 實測：開場宴會畫面「雖然這項工作仍然艱鉅，」。
+- 預設語言（同 UW1）：玩家執行（非 `--hidden`／重播／錄影）且沒給 `--locale` 時，讀 `uw2port.cfg` 的 `language=`；
+  還沒有設定而找得到 catalog（home 的 `i18n/zh-TW/catalog.uw2loc`，否則目前資料夾的）就用中文＋HD 捲軸，並寫入 `language=zh-TW`。
+  測試執行不受影響，回歸結果不變。
+- Exhume `ee345b5`。
+
 ## 已知與下一步
 
 - 訊息欄的組句（「You see a sack.」等由程式拼接的句子）仍是英文：需移植 UW1 P11.2 的 `port_zh` 組句與 `phrases`。

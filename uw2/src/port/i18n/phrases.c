@@ -29,6 +29,7 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"inv.destroyed", "壞掉了。\n"},
     {"inv.damaged", "受損了。\n"},
     {"trap.on", "上的"},                             /* SKILLS.C: "<object>上的<trap>" */
+    {"vend.price", "（%d 金幣）"},                    /* WORLDEV.C: a vending machine's price */
     {"scroll.more", "[繼續]"},
 };
 

@@ -11,8 +11,8 @@
 
 | 檔案 | 做什麼 |
 | --- | --- |
-| `src/port/presentation/caption.{c,h}` | 字幕層（遊戲執行緒）：取字幕譯文，在動畫的文字區置中、靠下、依寬度換行（最多 6 行；行首不放結尾標點），發布快照 |
-| `src/port/presentation/caption_draw.c` | 畫面執行緒：用訊息框的 HD 字型、加描邊畫出快照 |
+| Exhume `runtime/port/presentation/caption.{c,h}` | 字幕層（遊戲執行緒）：取字幕譯文，在動畫的文字區置中、靠下、依寬度換行（最多 6 行；行首不放結尾標點），發布快照 |
+| Exhume `runtime/port/presentation/caption_draw.c` | 畫面執行緒：用訊息框的 HD 字型、加描邊畫出快照 |
 | `src/gfx/CUTS.C` | `txt` 與 `say`（含有語音時）設定字幕；`erase`、換下一個動畫檔、動畫結束時清除；有中文字幕時不畫英文點陣字 |
 | `src/port/presentation/presentation.c`、`sys/main.c` | 啟用與量字（字級為訊息框的 1.4 倍） |
 

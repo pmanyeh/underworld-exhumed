@@ -42,6 +42,10 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include <stdio.h>
+#include "i18n/phrases.h"
+#endif
 
 /* match: declared here, not in event.h: TRIGGER.C defines set_numbered_variable with an
    unsigned char op, and this file's callers push an int. */
@@ -2208,6 +2212,21 @@ void far go_vend(int which, int machine, int x, int y, int choice)
         price = (((int)ComObjData[sample.id & ID_ITEM].value + 1) >> 1) + 1;
         sample.ol.f.owner = 0;
         get_name(text, (struct Object far *)&sample, 1, 0);
+#ifndef __TURBOC__
+        if (port_zh()) {
+            /* Phase 14: "<Item> is the current selection (N gp)." in the locale's words */
+            PortZh zh;
+            char num[40];
+            port_zh_begin(&zh);
+            port_zh_add(&zh, port_zh_name((struct Object far *)&sample, 1, 0));
+            port_zh_id(&zh, 0x15D | STR_GAME);
+            snprintf(num, sizeof num, port_zh_lit("vend.price"), price);
+            port_zh_add(&zh, num);
+            port_zh_id(&zh, 0x60 | STR_GAME);
+            scroll_print(zh.text);
+            break;
+        }
+#endif
         if (text[0] >= 'a' && text[0] <= 'z')
             text[0] = text[0] + 'A' - 'a';
         scroll_print(text);

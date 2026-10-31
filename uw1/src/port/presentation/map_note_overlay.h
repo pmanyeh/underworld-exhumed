@@ -1,6 +1,6 @@
 #ifndef UW1_MAP_NOTE_OVERLAY_H
 #define UW1_MAP_NOTE_OVERLAY_H
-#include "hd_label.h"
+#include "presentation/hd_label.h"
 #include "i18n/map_notes.h"
 typedef struct MapNoteFrame { int count; HdLabel notes[MAP_NOTE_LIMIT]; } MapNoteFrame;
 void map_note_overlay_begin(void);

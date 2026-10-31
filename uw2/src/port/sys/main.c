@@ -563,7 +563,7 @@ int main(int argc, char *argv[])
     port_settings_roms(roms);
     port_settings_seed(cfg.fullscreen, cfg.scale, cfg.aspect, cfg.integer_scale, cfg.mouse_lock);
     pit_start();
-    if (port_text_setup(home)) return 1;
+    if (port_text_setup(home, interactive)) return 1;
     memset(&hooks, 0, sizeof hooks);
     hooks.scanout = vga_scanout;
     port_text_hooks(&hooks);

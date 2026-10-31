@@ -7,7 +7,7 @@ F11 設定畫面中文化，並新增「語言與文字」分頁。拆分堆疊�
 
 ### HD 標籤層（M1 的基礎）
 
-`src/port/presentation/hd_label.{c,h}`、`hd_label_draw.c`：
+Exhume `runtime/port/presentation/hd_label.{c,h}`、`hd_label_draw.c`：
 
 - **攔截點陣字：** `string_to_screen`（`gfx/grcore.c`）在 HD 中文下，有譯文的字串改成發布 HD 標籤，不畫點陣字。
   譯文來源依序為 `get_name` 剛寫的名稱、剛解出的字串（含被轉成大寫的）、程式寫死的片語（`phrases.c`）、

@@ -64,6 +64,10 @@
 #include "sound.h"
 #include "sys.h"
 #include "ui.h"
+#ifndef __TURBOC__
+#include "i18n/localization.h"
+#include "presentation/caption.h"
+#endif
 #include "view3d.h"
 
 /* A colour cycle of the LPF header, 8 bytes, 16 of them at +0x80. */
@@ -575,6 +579,21 @@ int far cutsop_music(uint16 far *code, struct CutsState *st)
 /* 0xC38, opcode 0: txt(colour, string): a subtitle, string string of the cutscene's
    string block, split at newlines and then to lines 320 pixels wide; drawn by
    cuts_draw_text after the frame. String FFFFh clears it. */
+#ifndef __TURBOC__
+/* Phase 14, as UW1's: the subtitle's translation in the HD font, in the cutscene's text area,
+   with or without speech; none (the English stands) when it has no translation */
+static void cuts_caption(uint16 far *code, struct CutsState *st)
+{
+    char far *text;
+    const char *shown;
+    if (!caption_enabled()) return;
+    text = get_string(code[1]);
+    shown = port_i18n_display(text);
+    if (shown != text) caption_set(shown, *(unsigned char far *)code, st->x, st->y, st->w, st->h);
+    else caption_clear();
+}
+#endif
+
 int far cutsop_txt(uint16 far *code, struct CutsState *st)
 {
     char far *text;
@@ -587,9 +606,15 @@ int far cutsop_txt(uint16 far *code, struct CutsState *st)
     register int count, line;
     if (st->flags.bit.b0) return 2;
     if (code[1] == 0xFFFF) {
+#ifndef __TURBOC__
+        caption_clear();
+#endif
         st->flag39 = 0;
         return 2;
     }
+#ifndef __TURBOC__
+    cuts_caption(code, st);
+#endif
     st->color38 = *(unsigned char far *)code;
     text = get_string(code[1]);
     lines[0] = text;
@@ -632,6 +657,9 @@ int far cutsop_txt(uint16 far *code, struct CutsState *st)
 /* 0xE4D, opcode 1 */
 int far cutsop_erase(uint16 far *code, struct CutsState *st)
 {
+#ifndef __TURBOC__
+    caption_clear();
+#endif
     st->flag39 = 0;
     return 0;
 }
@@ -738,6 +766,7 @@ int far cutsop_say(uint16 far *code, register struct CutsState *st)
             else {
                 st->flags.bit.b6 = 1;
                 if (ENHANCED(ENH_SUBTITLES)) cutsop_txt(code, st);   /* port only: --enhance subtitles */
+                else if (!st->flags.bit.b0) cuts_caption(code, st); /* Phase 14: the translation with the speech */
             }
 #else
             else st->flags.bit.b6 = 1;
@@ -984,6 +1013,9 @@ void far cuts_draw_text(register struct CutsState *st)
     *foreground_color = st->color38;
     *background_color = st->color38;
     y = st->y - st->h + cur_font->height * st->flag39 + 2;
+#ifndef __TURBOC__
+    if (caption_active()) return;       /* the translation is drawn in the HD font instead */
+#endif
     for (i = 0; i < st->flag39; i++) {
         x = (st->x + st->w - string_width(st->text_lines[i])) / 2;
         string_to_screen(st->text_lines[i], x, y);
@@ -1486,6 +1518,9 @@ void far show_cutscene(register unsigned n)
         h += 5;
     }
     show_anm(n, x, y, w, h);
+#ifndef __TURBOC__
+    caption_clear();
+#endif
     grfx_quikfont(FONT_5X6P);
     if (in_game) load_txtmaps();
     if (n < 0x100) {

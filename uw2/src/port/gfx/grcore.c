@@ -10,6 +10,8 @@
 #include "gfx.h"
 #include "grlib.h"
 #include "x86/asmrt.h"
+#include "presentation/hd_label.h"
+const char *port_ui_text(const char *english);  /* presentation/localized.c */
 
 #define SEG370D (0x370Du + PORT_LOAD_SEG)       /* seg003's data, seg_370D */
 
@@ -135,7 +137,9 @@ void grPageFlip(void)
     port_on_flip();                     /* the --shot-at-flip debug screenshots */
 }
 void grSoftPageFlip(void) { seg003_0272_2AC1(); }
-void set_the_color(int c) { seg003_0272_3195((uint16_t)c); }
+/* the pen, for the HD labels: 100h and 101h are the cursor's save and save-under (MOUSE.C) */
+static int pen;
+void set_the_color(int c) { pen = c; seg003_0272_3195((uint16_t)c); }
 void init_colors(void) { seg003_0272_31BE(); }
 void clear_window(void) { seg003_0272_3423(); }
 
@@ -165,14 +169,25 @@ static int clip_rect(int16_t *ax, int16_t *bx, int16_t *cx, int16_t *dx)
     return 1;
 }
 
+/* Phase 14, as UW1's P12: a box filled by any pen but the cursor's takes the HD labels under it
+   away (corners (x0, y0) and (x1, y1), y up), even when it fills it with what was there */
+static void forget_box(int x0, int y0, int x1, int y1)
+{
+    if (hd_label_enabled() && pen != 0x100 && pen != 0x101)
+        hd_label_forget(x0 < x1 ? x0 : x1, 199 - (y0 > y1 ? y0 : y1), (x0 > x1 ? x0 : x1) + 1,
+                        199 - (y0 < y1 ? y0 : y1) + 1);
+}
+
 void rectangle(int x, int y, int w, int h)
 {
     int16_t ax = (int16_t)x, bx = (int16_t)y, cx = (int16_t)w, dx = (int16_t)h;
+    forget_box(x, y, w, h);
     if (clip_rect(&ax, &bx, &cx, &dx)) seg003_0272_342E(ax, bx, cx, dx);
 }
 
 void urectangle(int a, int b, int c, int d)
 {
+    forget_box(a, b, c, d);
     seg003_0272_342E((int16_t)a, (int16_t)b, (int16_t)c, (int16_t)d);
 }
 
@@ -210,7 +225,11 @@ void show(int x, int y, unsigned char *bm, int a, int b, int c, int d)
     }
     SETW(0x0DC6, c);
     SETW(0x0DC8, d);
+    /* the labels: a picture (a and b the height and width) takes those under it away; a sprite
+       (Transparency) leaves them, over what it drew */
+    if (hd_label_enabled() && !Transparency) hd_label_forget(x, 199 - y, x + b, 199 - y + a);
     seg003_0272_21D4((int16_t)x, (int16_t)y, off, seg, (int16_t)b, (int16_t)a);
+    if (hd_label_enabled() && Transparency) hd_label_resign(x, 199 - y, x + b, 199 - y + a);
 }
 
 /* _49AE: claim n bytes of video memory from the bump pointer (GRLIBF.ASM's _3206); the old
@@ -305,8 +324,22 @@ static uint16_t copy_string(const char *s)
 /* string_to_screen -> 527E (_3B36); _44DC -> 5287 (_3B8F, shadowed); string_width -> _43C5 */
 void string_to_screen(char *s, int x, int y)
 {
-    uint16_t si = copy_string(s);
+    uint16_t si;
+    const char *zh;
+    /* Phase 14, as UW1's P12: with the HD text, a translated string is an HD label in place of
+       the bitmap text */
+    if (hd_label_enabled() && (zh = port_ui_text(s)) != NULL &&
+        hd_label_put(zh, x, y, string_width(s), cur_font->height, *foreground_color, *wleft, *wright) == 0)
+        return;
+    hd_label_align(HD_LABEL_LEFT);
+    si = copy_string(s);
     seg003_0272_3B36((uint16_t)x, (uint16_t)y, si);
+}
+
+/* the page the library draws on, named by its bottom row's address (Ytab), for the labels */
+int port_draw_page(void)
+{
+    return Ytab[0];
 }
 
 void seg003_0272_44DC(char *s, int x, int y)
