@@ -43,6 +43,7 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"autokey.with", "你用背包裡的"},             /* --enhance auto-key (port/ui/autokey.c) */
     {"autokey.unlocked", "打開了鎖。\n"},
     {"take.pack_full", "背包沒有空位了。\n"},     /* --enhance e-takes (port/ui/keys.c) */
+    {"map.note_prompt", "地圖註記（Enter 完成，Esc 取消）"},   /* port/ui/map_notes_bridge.c, as UW1's */
     {"use.use", "要把"},                             /* OBJUSE.C's UseThing, as UW1's */
     {"use.on_what", "用在什麼上？\n"},
     {"study.is", "是"},                             /* SPELLS2.C: Study Monster's "This creature is " */

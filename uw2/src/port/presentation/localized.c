@@ -10,6 +10,7 @@
 #include "presentation/hd_label.h"
 #include "presentation/caption.h"
 #include "presentation/flask_text.h"
+#include "presentation/map_note_overlay.h"
 #include "presentation/qty_dialog.h"
 #include "presentation/text_entry.h"
 #include "i18n/localization.h"
@@ -124,6 +125,10 @@ int port_text_setup(const char *home, int interactive)
     /* --enhance flask-numbers: over UW2's flasks (PANELS.C's FL_X, the panel's 0x43) */
     flask_text_enable(hd_scroll);
     flask_text_place(0xF8, 0x120, 200 - 0x43);
+    /* the map's notes typed in Chinese (port/ui/map_notes_bridge.c): UW2's 80 levels, its notes'
+       colour (AUTOMAP.C's 0x4E) and right edge */
+    map_notes_config("UW2NOTES", 80);
+    map_note_overlay_style(0x4E, 0x13B);
     if (!hd_scroll) {
         /* the settings screen in its own font, but the language's name in Chinese where a font
            for it is at hand, as UW1's */
@@ -200,6 +205,7 @@ const char *port_ui_text(const char *english);
 static HdLabelFrame frame_labels;
 static CaptionFrame frame_caption;
 static FlaskFrame frame_flasks;
+static MapNoteFrame frame_notes;
 static uint8_t frame_palette[768];
 static uint8_t frame_pixels[640 * 480];   /* the scan-out, for the labels' signatures */
 static int frame_w, frame_h;
@@ -208,7 +214,8 @@ static void text_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])
 {
     vga_scanout(pixels, w, h, rgb6);
     hd_label_read(&frame_labels);
-    if (frame_labels.count) {
+    map_note_overlay_read(&frame_notes);
+    if (frame_labels.count || frame_notes.count) {
         frame_w = *w; frame_h = *h;
         memcpy(frame_pixels, pixels, (size_t)*w * (size_t)*h);
     }
@@ -234,12 +241,15 @@ static int text_draw(const PlatOverlay *frame, void *data)
                                  draw_style[0].border > 0.6f ? draw_style[0].border : 0.6f);
     /* the bitmap UI's strings, each while the screen under it is as the game left it; the game's
        cursor, drawn by the HD layer, is no change to a label (a pixel's margin round its box) */
-    if (frame_labels.count && frame_h == 200) {
+    if ((frame_labels.count || frame_notes.count) && frame_h == 200) {
         int cursor[4] = { frame_cursor.x - frame_cursor.hotspot_x - 1, frame_cursor.y - frame_cursor.hotspot_y - 2, 0, 0 };
         cursor[2] = cursor[0] + frame_cursor.width + 2;
         cursor[3] = cursor[1] + frame_cursor.height + 3;
         drawn |= hd_label_draw(draw_font[0], frame, &frame_labels, frame_pixels, frame_w, frame_h, frame_palette,
                                draw_style[0].border, draw_style[0].baseline, frame_cursor.visible ? cursor : NULL);
+        if (!settings_open())
+            drawn |= map_note_overlay_draw(draw_font[0], frame, &frame_notes, frame_pixels, frame_w, frame_h,
+                                           frame_palette, frame_cursor.visible ? cursor : NULL);
     }
     /* the "Move how many?" panel and the player's words typed in Chinese, over the scroll */
     drawn |= qty_dialog_draw(draw_font[0], frame);

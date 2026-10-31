@@ -7,7 +7,7 @@
 #include "presentation/hd_label.h"
 #include "presentation/qty_dialog.h"
 #include "presentation/text_entry.h"
-#include "map_note_overlay.h"
+#include "presentation/map_note_overlay.h"
 #include "ui/settings.h"
 #include <string.h>
 void vga_scanout(uint8_t *, int *, int *, uint8_t[768]);

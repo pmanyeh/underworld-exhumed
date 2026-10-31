@@ -58,6 +58,7 @@ static char far *note_copy(char *dst, char far *src)
     return dst;
 }
 #define NOTE_COPY(dst, src) note_copy(dst, src)
+#include "presentation/map_note_overlay.h"
 #else
 #define NOTE_COPY(dst, src) str_copy(dst, src)
 #endif
@@ -246,6 +247,9 @@ unsigned char far GetAutoMapLevel(int flags, int lev)
    the current level's map and restores the game palette and pointer. */
 void far ExitAutoMap(void)
 {
+#ifndef __TURBOC__
+    map_note_overlay_hide();
+#endif
     mouse_hide();
     unforce_mouse_cursor(0);
     SaveTheWords(level);
@@ -476,10 +480,16 @@ struct ATM far * far DetermineBetterHit(struct ATM far *a, struct ATM far *b, in
         return a;
     NOTE_COPY(buf, a->text);
     w = string_width(buf);
+#ifndef __TURBOC__
+    w = port_map_note_width(level, a, w);
+#endif
     ax = abs(a->x + w / 2 - x);
     ay = abs(a->y - 2 - y);
     NOTE_COPY(buf, b->text);
     w = string_width(buf);
+#ifndef __TURBOC__
+    w = port_map_note_width(level, b, w);
+#endif
     bx = abs(b->x + w / 2 - x);
     by = abs(b->y - 2 - y);
     if (by < ay)
@@ -511,6 +521,66 @@ int far true_gem_region(int x, int y)
         region = 0;
     return region;
 }
+
+#ifndef __TURBOC__
+/* Port only: --enhance easy-erase, as UW1's. The eraser takes the note whose box holds the
+   pointer, and a miss puts it down, so the next click starts a note. With this on a click a few
+   pixels off a note (EASE_X either side, EASE_UP above, EASE_DOWN below) takes the nearest, and
+   a miss keeps the eraser; the right button, Escape or a miss on the side panel puts it down.
+   Gives back a point in the chosen note's box for the erasing below (which takes 5 off the
+   pointer's y first), or one in no note's when put down. */
+#define EASE_X 3
+#define EASE_UP 6
+#define EASE_DOWN 3
+#define TEXT_BELOW 6                    /* UW2 draws a note's text below the original's box */
+static void port_erase_pick(int16 *mx, int16 *my)
+{
+    struct ATM far *best;
+    struct ATM far *note;
+    char buf[50];
+    int c;
+    int i;
+    int w;
+    int y;
+
+    for (;;) {
+        do {
+            c = mouse_get_input_sp();
+            if (c == KEY_ESC)
+                goto put_down;
+            if (c > 3)
+                keyboard_mouse(c);
+        } while (c < 1 || c > 3);
+        if (c != 1)
+            goto put_down;
+        mouse_getxy(mx, my);
+        y = *my - 5;                    /* the erasing's point, as below */
+        best = 0;
+        for (i = 0; i < num_words; i++) {
+            note = &ATM_Strings[i];
+            if (note->x == -1)
+                continue;
+            NOTE_COPY(buf, note->text);
+            w = port_map_note_width(level, note, string_width(buf));
+            if (note->x - EASE_X <= *mx && note->x + w + EASE_X >= *mx &&
+                note->y - 5 - EASE_DOWN <= y && note->y + TEXT_BELOW + EASE_UP >= y)
+                best = DetermineBetterHit(best, note, *mx, y);
+        }
+        if (best) {
+            NOTE_COPY(buf, best->text);
+            *mx = best->x + port_map_note_width(level, best, string_width(buf)) / 2;
+            *my = best->y - 2 + 5;
+            return;
+        }
+        if (*mx > 0xFC + 0x13)
+            break;
+        mouse_release(1);
+    }
+put_down:
+    mouse_release(1);
+    *mx = *my = -100;
+}
+#endif
 
 /* The map screen's mouse handler (see the file comment). Notes are typed in capitals in
    the small font, up to 46 characters and the screen edge, ended by Enter, Escape or a
@@ -553,12 +623,20 @@ void far ManageDungeonMap(void)
         mouse_hide();
         force_mouse_cursor(0x1079);
         mouse_show();
+#ifndef __TURBOC__
+        if (ENHANCED(ENH_EASY_ERASE))
+            port_erase_pick(&mx, &my);
+        else {
+#endif
         do {
             key = mouse_get_input_sp();
             if (key > 3)
                 keyboard_mouse(key);
         } while (key < 1 || key > 3);
         mouse_getxy(&mx, &my);
+#ifndef __TURBOC__
+        }
+#endif
         mouse_constrain(9, 3, 0x13F, 0xC7);
         unforce_mouse_cursor(1);
     } else if (mx > 0x10C && mx < 0x140 && my > 0xAC && my < 0xC7)
@@ -587,6 +665,9 @@ void far ManageDungeonMap(void)
             len = -1;
             curx = note->x - 1;
             mouse_putxy(curx + 9, my + 0xF);
+#ifndef __TURBOC__
+            port_map_note_begin(level, note, ATM_Strings, num_words);
+#endif
             for (;;) {
                 while ((cmd = do_keyboard_input(0)) < 0)
                     if ((cmd = mouse_getbut(&but)) > 0)
@@ -615,8 +696,14 @@ void far ManageDungeonMap(void)
                 text[len + 1] = 0;
                 curx = note->x + string_width(text) - 1;
                 mouse_putxy(curx + 9, my + 0xF);
+#ifndef __TURBOC__
+                if (!port_map_note_editing())
+#endif
                 string_to_screen(text, note->x, note->y);
             }
+#ifndef __TURBOC__
+            port_map_note_end(level, note, text);
+#endif
             grfx_quikfont(FONT_5X6P);
             if (text[0]) {
                 notes_dirty = 1;
@@ -637,6 +724,9 @@ void far ManageDungeonMap(void)
                 note = &ATM_Strings[i];
                 NOTE_COPY(text, note->text);
                 w = string_width(text);
+#ifndef __TURBOC__
+                w = port_map_note_width(level, note, w);
+#endif
                 if (note->x <= mx && note->x + w >= mx && note->y - 5 <= my && note->y >= my) {
                     best = DetermineBetterHit(best, note, mx, my);
                     if (best == note)
@@ -647,6 +737,10 @@ void far ManageDungeonMap(void)
                 notes_dirty = 1;
                 NOTE_COPY(text, best->text);
                 w = string_width(text);
+#ifndef __TURBOC__
+                w = port_map_note_width(level, best, w);
+                port_map_note_delete(level, best);
+#endif
                 set_the_color(0x106);
                 rectangle(best->x, best->y, best->x + w, best->y - 5);
                 if (num_words - 1 == hit)
@@ -682,6 +776,9 @@ void far RedisplayStrings(void)
     char buf[50];
     register int i;
 
+#ifndef __TURBOC__
+    map_note_overlay_begin();
+#endif
     grfx_quikfont(FONT_4X5P);
     *foreground_color = 0x4E;
     *background_color = 0x4E;
@@ -689,10 +786,16 @@ void far RedisplayStrings(void)
         NOTE_COPY(buf, ATM_Strings[i].text);
         if (ATM_Strings[i].x >= 0) {
             NOTE_COPY(buf, ATM_Strings[i].text);
+#ifndef __TURBOC__
+            if (!port_map_note_draw(level, &ATM_Strings[i]))
+#endif
             string_to_screen(buf, ATM_Strings[i].x, ATM_Strings[i].y);
         }
     }
     grfx_quikfont(FONT_5X6P);
+#ifndef __TURBOC__
+    map_note_overlay_publish();
+#endif
 }
 
 /* Writes the level's notes (block 0xEF + lev) if they changed, dropping the erased ones. */
@@ -700,6 +803,9 @@ void far SaveTheWords(int lev)
 {
     register int i;
 
+#ifndef __TURBOC__
+    if (!notes_dirty) port_map_notes_save(lev, ATM_Strings, num_words);
+#endif
     if (!notes_dirty)
         return;
     if (!(num_words | old_strings))
@@ -714,6 +820,9 @@ void far SaveTheWords(int lev)
         if (!put_arc(1, lev + 0xEF, (char far *)ATM_Strings, num_words * sizeof(struct ATM)))
             ;
         close_arc(1);
+#ifndef __TURBOC__
+        port_map_notes_save(lev, ATM_Strings, num_words);
+#endif
     }
 }
 
@@ -724,6 +833,9 @@ unsigned char far GetTheWords(int lev)
     if (open_arc(1, HomeDir)) {
         old_strings = num_words = get_arc(1, lev + 0xEF, (char far *)ATM_Strings) / sizeof(struct ATM);
         close_arc(1);
+#ifndef __TURBOC__
+        port_map_notes_loaded(lev, ATM_Strings, num_words);
+#endif
         return 1;
     }
     return 0;
