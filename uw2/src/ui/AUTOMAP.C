@@ -771,6 +771,11 @@ void far show_gem_parts(int lev)
 /* Draws the map screen for level lev: the background, the map, the gem, the player's
    position (only on his own level and with player->automap set), the notes and the level
    number within its world. */
+#ifndef __TURBOC__
+int port_full_map_begin(int lev);       /* port/ui/full_map.c */
+void port_full_map_end(void);
+#endif
+
 void far ShowAutoMapLevel(int lev)
 {
     int px;
@@ -791,6 +796,21 @@ void far ShowAutoMapLevel(int lev)
     release_workspace();
     if (ok) {
         ShowDungeonMap();
+#ifndef __TURBOC__
+        /* port only: --enhance full-map (port/ui/full_map.c), drawn again whole over a fresh
+           background, the player's map and the random seed put back after */
+        if (port_full_map_begin(lev)) {
+            ws = get_workspace();
+            if (ws != 0) {
+                buf = MK_FP(ws, 0);
+                set_workspace();
+                disk_to_vid(0, buf);
+                release_workspace();
+            }
+            ShowDungeonMap();
+            port_full_map_end();
+        }
+#endif
         show_gem_parts(lev);
         if (lev == PlayerLevel && player->automap) {
             px = (OBJ_HOMEX(ThePlayer) - 1) * 3 + 10 - 1;

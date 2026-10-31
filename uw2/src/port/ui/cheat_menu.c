@@ -56,9 +56,10 @@ static const char *enhance(int argc, char **argv, int run)
     return NULL;
 }
 static const char *no_wear(int n, char **a, int run) { return toggle(n, a, run, ENH_NO_WEAR); }
+static const char *map(int n, char **a, int run) { return toggle(n, a, run, ENH_FULL_MAP); }
 
 static const struct cheat_cmd commands[] = {
-    { "menu-no-wear", "0|1", no_wear }, { "menu-enhance", "NAME 0|1", enhance }
+    { "menu-map", "0|1", map }, { "menu-no-wear", "0|1", no_wear }, { "menu-enhance", "NAME 0|1", enhance }
 };
 static const struct cheat_game menu = { commands, sizeof commands / sizeof commands[0], ready };
 void port_cheat_menu_init(void) { cheat_menu_init(&menu); }
@@ -67,6 +68,7 @@ static void request(const char *text)
 {
     if (cheat_menu_request(text)) fputs("uw2port: cheat menu queue unavailable\n", stderr);
 }
+static void map_request(int on) { request(on ? "menu-map 1" : "menu-map 0"); }
 static void no_wear_request(int on) { request(on ? "menu-no-wear 1" : "menu-no-wear 0"); }
 static void enhance_request(int bit, int on)
 {
@@ -86,6 +88,7 @@ static void (*const live_request[LIVE])(int) = { live0, live1, live2, live3, liv
 void port_cheat_settings(void)
 {
     int i;
+    settings_enhancement(ENH_FULL_MAP, SET_TAB_CHEATS, map_request);
     settings_enhancement(ENH_NO_WEAR, SET_TAB_CHEATS, no_wear_request);
     for (i = 0; i < LIVE; i++) settings_enhancement(live[i], SET_TAB_ENHANCE, live_request[i]);
 }
