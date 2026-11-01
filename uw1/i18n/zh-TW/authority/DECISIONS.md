@@ -94,11 +94,11 @@ Sir Almric 與 Baron Almric 均譯阿姆瑞克男爵；Lady Arriana 與 Arial �
 
 ## UW1-BF04191D6B5F — Speed（spell）
 
-- 目前選詞：降速術
-- 調整前：加速術
-- 狀態：project-selected；依據：USER_TRANSLATION_GUIDE
+- 目前選詞：加速術
+- 調整前：降速術
+- 狀態：approved；依據：USER_TRANSLATION_GUIDE；人工決策 UD-20261101-001
 - 指南行號：150
-- 判斷：依指南採「降速術」作歷史譯名。實際程式對施術者啟用 Hasted，世界物理更新次數減半；不是對指定敵人施放獨立 Slow。與作用中效果 Haste 分列。
+- 判斷：原依指南採「降速術」作歷史譯名，2026-11-01 使用者確認那是舊手冊誤譯，改「加速術」。實際程式對施術者啟用 Hasted，世界物理更新次數減半；不是對指定敵人施放獨立 Slow。與作用中效果 Haste 分列。
 
 ## UW1-25246B35EBB7 — Electrical Bolt（spell）
 
@@ -258,6 +258,12 @@ Sir Almric 與 Baron Almric 均譯阿姆瑞克男爵；Lady Arriana 與 Arial �
 - **UW1-FA3EF10A4A89 — Thepa（race）**：保留「瑟帕」作為族群自稱，註明意思就是「蜥蜴人」；
   蜥蜴人語句子依意思加註「蜥蜴人」，以名稱提及時（3600 靜默族的說明）用音譯。狀態改為 approved。
 - 人工決策：UD-20261028-001（USER_DECISION_20261028_LIZARD）；同日使用者也同意為蜥蜴人語句子加註中文意思。
+
+## 2026-11-01 — Speed（Rel Tym Por）
+
+- **UW1-BF04191D6B5F — Speed（spell）**：由「降速術」改為「加速術」。效果是施術者變快，
+  舊中文手冊的「降速」是誤譯。UW2 的同名法術與符文訂購單一起改。
+- 人工決策：UD-20261101-001（USER_DECISION_20261101_SPEED）
 
 ## 輸入碼與缺漏
 

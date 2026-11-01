@@ -131,7 +131,7 @@ guide_line	category	guide_english	guide_options	term_id	source_en	selected_zh_tw
 147	spell	Conceal	隱蔽術	UW1-9AB054A37156	Conceal	隱蔽術	guide-exact	3	Bet Sanct Lor
 148	spell	Lightning	雷擊術	UW1-25246B35EBB7	Electrical Bolt	雷擊術	same-spell-confirmed-by-rune-sequence	3	Ort Grav
 149	spell	Night Vision	夜視術	UW1-A353468D0E46	Night Vision	夜視術	guide-exact	3	Quas Lor
-150	spell	Speed	降速術	UW1-BF04191D6B5F	Speed	降速術	historical-guide-name-with-mechanism-note	3	Rel Tym Por
+150	spell	Speed	降速術	UW1-BF04191D6B5F	Speed	加速術	user-approved-override	3	Rel Tym Por
 151	spell	Strengthen Door	封門術 / 強化門扉	UW1-D1EF0785462A	Strengthen Door	封門術	guide-exact	3	Sanct Jux
 154	spell	Heal	醫療術	UW1-762041C7151E	Heal	醫療術	guide-exact	4	In Mani
 155	spell	Levitate	飄浮術	UW1-6E1757802F31	Levitate	飄浮術	guide-exact	4	Hur Por

@@ -17,7 +17,7 @@
 
 ## 重要處理
 
-Speed 採指南「降速術」的歷史名稱，並註明它對施術者啟用 Hasted／世界物理更新減半；不把它當作指定敵人的獨立 Slow 法術。
+Speed 原採指南「降速術」的歷史名稱；2026-11-01 使用者確認那是舊手冊誤譯，改為「加速術」（UD-20261101-001）。它對施術者啟用 Hasted／世界物理更新減半，不是指定敵人的 Slow 法術。
 Lightning 與 Electrical Bolt、Resist Fire 與 Flameproof 以符文組合確認對應；保留遊戲原始英文名稱。
 Book of Truth 與遊戲 Book of Honesty 依 Ravenhurst 作者與八聖物語境對應為同一聖物，採指南「真實之書」，不把 Honesty 與 Truth 的一般語意合併。
 Paladin 選指南候選「聖騎士」，Ranger 採「巡林漢」；Shadow Beast 選「暗影獸」，避免與 Shadowlords 的「影魔」混在一起。

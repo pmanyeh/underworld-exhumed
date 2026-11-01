@@ -1124,7 +1124,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 6	173	spells	faca2b5a2278afeb1ead77344b8c78a1b89666aa1b7f8e45a719622102fdf943	恢復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
 6	174	spells	faca2b5a2278afeb1ead77344b8c78a1b89666aa1b7f8e45a719622102fdf943	恢復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
 6	175	spells	faca2b5a2278afeb1ead77344b8c78a1b89666aa1b7f8e45a719622102fdf943	恢復法力	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
-6	176	spells	c372fee9b4566b85a592ae6e98e571f3929c8e262cf2feff7acba63a65a50f14	降速術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	176	spells	c372fee9b4566b85a592ae6e98e571f3929c8e262cf2feff7acba63a65a50f14	加速術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）；2026-11-01 使用者確認 Speed 為加速術（UD-20261101-001）	
 6	177	spells	f0b359bf9ddc5349cd169dfac2f9d3e14a61c11e3be66eb329f4c916fbe75984	偵測怪物術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
 6	178	spells	f04e364fef1ef240cb1a97bd396ea9e8d6e75a29349bffaee4b34e28a4ca5b8f	封門術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
 6	179	spells	a1c427c03e96febb7cc6d4d65a6bea561534038c7486224724ffcaba733acf4a	除去陷阱術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
@@ -1154,7 +1154,7 @@ block	index	category	source_hash	target_zh_TW	status	context	notes	flags
 6	265	spells	f0b359bf9ddc5349cd169dfac2f9d3e14a61c11e3be66eb329f4c916fbe75984	偵測怪物術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
 6	266	spells	2bd0c750cee85017c052d0967e194695a64a3f119220e4fd24eaa034e4d643e7	恐懼術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
 6	267	spells	3b983aacf2e0626bc28ab3cbf1ba223970ad900e8467125ed405372fd90b5647	守護之符	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
-6	268	spells	c372fee9b4566b85a592ae6e98e571f3929c8e262cf2feff7acba63a65a50f14	降速術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
+6	268	spells	c372fee9b4566b85a592ae6e98e571f3929c8e262cf2feff7acba63a65a50f14	加速術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）；2026-11-01 使用者確認 Speed 為加速術（UD-20261101-001）	
 6	269	spells	32f782a89cf8691b16dbff4ebae8f84863ea9cd1899b8e6bc1c983e01efe0240	隱蔽術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
 6	270	spells	4cbe4ae9154d2b8ce3ad05bc9fd107420e66d7a62d465ccd5096ccd87cd7284d	夜視術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
 6	271	spells	008da498d50e685d3f97a5c2eadedfc7c08906260dc44915a736b46e9f13bb52	雷擊術	draft		p11-2a draft; Authority 譯名；冠詞、單複數與數量於組句時處理（P11.2）	
