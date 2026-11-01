@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds the Windows release of both games with their front page: a new folder and its ZIP,
 never over an old one. The folder holds Underworld.exe (launcher/), uw1port.exe and uw2port.exe
-with the DLLs they import, fonts/, licenses/, 說明.txt, MANIFEST.json, and the games' home
+with the DLLs they import, fonts/, licenses/, the three 說明 files, MANIFEST.json, and the games' home
 folders UW1/ and UW2/ with only their Chinese files (i18n/zh-TW): no settings, so every
 enhancement starts off, and no saves.
 
@@ -99,8 +99,10 @@ def main():
     for name in ['SDL3', 'libc++', 'libiconv', 'libwinpthread', 'freetype']:
         if (args.toolchain / 'share/licenses' / name).is_dir():
             shutil.copytree(args.toolchain / 'share/licenses' / name, out / 'licenses' / name)
-    readme = (repo / 'launcher/README.zh-TW.txt').read_text(encoding='utf-8')
-    (out / '說明.txt').write_text(readme.replace('@VERSION@', args.version), encoding='utf-8', newline='\r\n')
+    for source, name in (('README.zh-TW.txt', '說明.txt'), ('SETTINGS.zh-TW.txt', '說明_設定畫面.txt'),
+                         ('MT32.zh-TW.txt', '說明_MT-32音樂.txt')):
+        text = (repo / 'launcher' / source).read_text(encoding='utf-8')
+        (out / name).write_text(text.replace('@VERSION@', args.version), encoding='utf-8', newline='\r\n')
     (out / 'VERSION.txt').write_text(args.version + '\n', encoding='utf-8')
 
     git = shutil.which('git') or 'git'
