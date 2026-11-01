@@ -359,6 +359,8 @@ static const char help_text[] =
     "  --ail-log FILE         log every AIL call and driver service\n"
     "  --hw-log FILE          log every register write and MIDI byte the drivers make\n"
     "  --settings-list        print the settings screen's rows and exit\n"
+    "  --find-game            look for the game without a window: print its folder, remember it\n"
+    "                         in the home directory and exit 0, or exit 1 (the launcher's)\n"
     "  --no-recording         do not record this session (by default each session's inputs go\n"
     "                         to recordings/ in the home directory, the newest five kept, so\n"
     "                         that a crash can be replayed)\n"
@@ -470,6 +472,7 @@ int main(int argc, char *argv[])
     int cl_scale = 0, cl_aspect = 0, cl_integer = 0;   /* given on the command line: the settings file does not override them */
     const char *input_script = NULL;    /* --input-script: keys and mouse at set times (inscript.c) */
     static char spec_buf[16];
+    int find_game = 0;                  /* --find-game: the launcher asks where the game is */
 
     memset(&cfg, 0, sizeof cfg);
     cfg.title = "Ultima Underworld";
@@ -535,6 +538,7 @@ int main(int argc, char *argv[])
         else if (!strcmp(a, "--no-audio")) audio_device = 0;
         else if (!strcmp(a, "--no-recording")) recording = 0;
         else if (!strcmp(a, "--settings-list")) settings_list = 1;
+        else if (!strcmp(a, "--find-game")) find_game = 1;
         else if (!strcmp(a, "--ail-log") && i + 1 < argc) ail_log = argv[++i];
         else if (!strcmp(a, "--hw-log") && i + 1 < argc) hw_log = argv[++i];
         else if (!strcmp(a, "-v")) port_trace = 1;
@@ -579,6 +583,16 @@ int main(int argc, char *argv[])
     }
     /* --data may name a folder holding the game or GOG's game.gog, as the folder dialog may */
     if (data && port_game_in(data, home, data_buf, sizeof data_buf) == 0) data = data_buf;
+    if (find_game) {
+        /* the launcher's question (launcher/): the game found without a window or a dialog,
+           remembered as a player's run remembers it */
+        if (!data && !(data = find_data(home, 0, data_buf, sizeof data_buf))) return 1;
+        if (port_game_dir_ok(data)) return 1;
+        data = absolute(data, abs_buf, sizeof abs_buf);
+        port_config_set(home, "data", data);
+        printf("%s\n", data);
+        return 0;
+    }
     if (!data && !(data = find_data(home, interactive, data_buf, sizeof data_buf))) return 1;
     if (plat_files_init(data, home)) {
         fprintf(stderr, "uw1port: %s is not a directory (give the UW1 directory with --data)\n", data);
