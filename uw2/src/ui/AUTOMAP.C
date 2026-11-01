@@ -111,6 +111,7 @@ void far AutoMap(void)
         _input_addkey(KEY_ESC, 1, 2, (InputFn)newscr);
 #ifndef __TURBOC__
         if (ENHANCED(ENH_MODERN_KEYS)) {     /* port only: modern-keys' map keys */
+            _input_addkey('z', 1, 2, (InputFn)newscr);              /* Z closes the map, as UW1's */
             _input_addkey('s', 1, 2, (InputFn)port_map_key);
             _input_addkey('w', -1, 2, (InputFn)port_map_key);
             _input_addkey('c', 2, 2, (InputFn)port_map_key);

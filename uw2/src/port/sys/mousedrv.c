@@ -49,11 +49,20 @@ void mouse_look_speed(int pct)
     atomic_store(&look_pct, pct < 10 ? 10 : pct > 400 ? 400 : pct);
 }
 
+void kbd_byte(uint8_t sc);                  /* keyqueue.c */
+
 void mouse_event(const PlatPointer *ev)
 {
     int x = (int)(ev->x * 2.0f), y = (int)ev->y;
     int look = atomic_load(&look_on);
     float k = look ? (float)atomic_load(&look_pct) / 100.0f : 1.0f;
+    /* --enhance mouse-look: the middle button toggles it as the ` key does (the key's scan code,
+       through the keys' own path, so a recording has it as the key), as UW1's; the game has no
+       use for it */
+    if (ev->button == PLAT_BUTTON_MIDDLE && (ev->type == PLAT_POINTER_DOWN || ev->type == PLAT_POINTER_UP)) {
+        if (ev->type == PLAT_POINTER_DOWN && ENHANCED(ENH_MOUSE_LOOK)) { kbd_byte(0x29); kbd_byte(0xA9); }
+        return;
+    }
     /* --enhance mouse-wheel: the notches go to the game as keys (port/ui/keys.c); never a pointer event */
     if (ev->type == PLAT_POINTER_WHEEL) {
         if (ENHANCED(ENH_MOUSE_WHEEL)) port_wheel_push((int)ev->dy);

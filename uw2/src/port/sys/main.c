@@ -28,6 +28,7 @@ extern const struct cheat_game cheat_game;          /* src/port/sys/cheats.c: a 
 void port_cheat_menu_init(void);                    /* src/port/ui/cheat_menu.c */
 void port_cheat_settings(void);
 void port_settings_brightness(int replay);          /* src/port/sys/settab.c */
+void port_key_help_init(int mouse_lock, int recording);   /* src/port/ui/key_help.c */
 
 int uw2_main(int argc, char *argv[]);
 void borland_init(void);
@@ -563,6 +564,7 @@ int main(int argc, char *argv[])
     settings_init(home, port_settings, port_settings_count, "Ultima Underworld II");
     port_cheat_settings();              /* ui/cheat_menu.c: the Cheats tab, the enhancements set in play */
     port_settings_brightness(replay != NULL);
+    port_key_help_init(cfg.mouse_lock, rp_request == 1);   /* ui/key_help.c: the Keys tab */
     /* what this run really uses (the command line over the file) is what the screen shows and applies */
     port_settings_start(&cfg.fullscreen, cl_scale ? NULL : &cfg.scale, cl_aspect ? NULL : &cfg.aspect,
                         cl_integer ? NULL : &cfg.integer_scale);

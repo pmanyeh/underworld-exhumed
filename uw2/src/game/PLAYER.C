@@ -33,8 +33,7 @@
 #include "ui.h"
 #include "view3d.h"
 #ifndef __TURBOC__
-void far port_key_attack(int type);      /* ui/keys.c, port only */
-void far port_key_panel(int panel);
+void far port_key_panel(int panel);      /* ui/keys.c, port only */
 void far port_key_interact(int use);
 void far port_key_open_map(void);
 void far port_key_bag(int how);
@@ -193,16 +192,14 @@ void far init_player(void)
 #endif
 #ifndef __TURBOC__
     if (ENHANCED(ENH_MODERN_KEYS)) {   /* port only: UltimaHacks' keys (ui/keys.c), its input-mode masks */
-        _input_addkey(' ', 0, 1, (InputFn)port_key_attack);
-        _input_addkey('.', 3, 1, (InputFn)port_key_attack);
-        _input_addkey(';', 6, 1, (InputFn)port_key_attack);
-        _input_addkey('p', 9, 1, (InputFn)port_key_attack);
+        _input_addkey(' ', 7, 0x11, (InputFn)parse_playin);       /* jump, as j; no Space attack (as UW1's) */
         _input_addkey('r', 1, 1, (InputFn)port_key_panel);
         _input_addkey('f', 2, 1, (InputFn)port_key_panel);
         _input_addkey('q', 0, 1, (InputFn)port_key_interact);
         _input_addkey('e', 1, 1, (InputFn)port_key_interact);
         _input_addkey('z', 0, 1, (InputFn)port_key_open_map);
-        _input_addkey('c', 0, 1, (InputFn)port_key_bag);
+        _input_addkey('x', 0, 1, (InputFn)port_key_bag);           /* UltimaHacks' c; c draws the weapon */
+        _input_addkey('c', 0, 1, (InputFn)toggle_fightmode);       /* UW1's user's: fight mode on and off */
         _input_addkey('v', 1, 1, (InputFn)port_key_bag);
         _input_addkey('b', 2, 1, (InputFn)port_key_bag);
         _input_addkey('g', 0, 1, (InputFn)port_key_compass);
@@ -249,17 +246,8 @@ void far init_player(void)
     _input_addkey(KEY_F5, 2, 1, (InputFn)deal_with_icons);
     _input_addkey(KEY_F1, 1, 1, (InputFn)deal_with_icons);
     _input_addkey(KEY_F2, 0, 1, (InputFn)deal_with_icons);
-#ifndef __TURBOC__
-    if (!ENHANCED(ENH_MODERN_KEYS))     /* port only: modern-keys remembers the attack type */
-#endif
     _input_addkey('p', 9, 1, (InputFn)player_attack);
-#ifndef __TURBOC__
-    if (!ENHANCED(ENH_MODERN_KEYS))     /* port only: modern-keys remembers the attack type */
-#endif
     _input_addkey('.', 3, 1, (InputFn)player_attack);
-#ifndef __TURBOC__
-    if (!ENHANCED(ENH_MODERN_KEYS))     /* port only: modern-keys remembers the attack type */
-#endif
     _input_addkey(';', 6, 1, (InputFn)player_attack);
     _input_addkey(KEY_SHIFT | KEY_BACKTAB, KEY_SHIFT | KEY_BACKTAB, 7, (InputFn)keyboard_mouse);
     _input_addkey('\t', '\t', 7, (InputFn)keyboard_mouse);

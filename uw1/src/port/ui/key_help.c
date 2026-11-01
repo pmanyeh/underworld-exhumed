@@ -85,7 +85,7 @@ static const struct entry entries[] = {
     { LOOK, 0, "` or middle button", "Mouse-look: the mouse turns the view", "`（反引號）、中鍵", "滑鼠視角：滑鼠轉視角，點擊作用在準星" },
     { LOOK, 0, "", "and a click acts at the crosshair", NULL, NULL },
     { INVERT, 0, "", "(up and down inverted)", NULL, "（上下反轉）" },
-    { WHEEL, 0, "Wheel", "Skills, open bags, past [MORE]", "滾輪", "捲動技能、開著的袋子、跳過〔更多〕" },
+    { WHEEL, 0, "Wheel", "Skills, open bags, past [MORE]", "滾輪", "捲動技能、開著的袋子、翻過「[繼續]」" },
     { ERASE, 0, "Right button, Esc", "Put the map's eraser down", "右鍵、Esc", "放下地圖的橡皮擦" },
 
     { RUNES, 1, NULL, "Rune keys", NULL, "符文快捷鍵" },

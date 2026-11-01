@@ -16,6 +16,7 @@
 #include <stdatomic.h>
 #include <string.h>
 #include "port.h"
+#include "sys/enhance.h"
 
 #define D dseg062_62a6
 #define W(o) ((uint16_t)(D[(o)] | D[(o) + 1] << 8))
@@ -178,7 +179,10 @@ int key(void)
             continue;
         }
         if (W(0x1E0) == 0 && D[0x1EB + bx] != 0) continue;
-        D[0x1EB + bx]++;
+        /* Modern one-shot actions tell the first make (1) from repeats (>1), as UW1's: saturate
+           while modern-keys is on so a long hold cannot wrap into a new press. */
+        if (!ENHANCED(ENH_MODERN_KEYS) || D[0x1EB + bx] != 0xFF)
+            D[0x1EB + bx]++;
         if (D[0x1E2]) bx |= 0x80;
         ax = (uint16_t)(D[0x10 + bx] << 8 | (ax & 0xFF));
         modifiers();
