@@ -49,6 +49,7 @@ SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`
   enhance 加上 flask-numbers、auto-key、e-takes、mouse-wheel、no-wear、unknown-topic（同 UW1 測試版），home 其他 71 檔雜湊不變；說明.txt 已更新。
   2026-11-01 第七版（`9597750`：地圖中文註記、easy-erase、full-map）：EXE SHA-256 `507d6cd1fb4a99dd…`；enhance 加上 easy-erase、full-map，home 其他檔不變。
   2026-11-01 第八版（`b61f409`：god-mode、bright-view）：EXE SHA-256 `3f6cd1b45855d325…`；enhance 加上 god-mode、bright-view，bright-strength=9（同 UW1 測試版），home 其他檔不變。
+  2026-11-01 第九版（`6ed5a20`：現代按鍵、中鍵、按鍵說明、戰鬥數字與血條）：EXE SHA-256 `c148a3e53f85b1ca…`；enhance 加上 damage-numbers、enemy-health，home 其他檔不變。
   使用者已確認第一版回報的問題（創造人物對齊與屬性名、對話顏色、文字疊在地圖與過場）修正 OK。
 更新測試版時只換 EXE（先備份舊檔），不要動 `home\`。
 
