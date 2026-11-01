@@ -73,8 +73,11 @@ SHA-256 `da3cf146d732b222…`）、與 UW1 測試版相同的 DLL、`fonts/`、`
    `map_notes_config("UW2NOTES", 80)`；UW2 原版橡皮擦判定框在文字上方，easy-erase 往下延伸到文字）。
    god-mode＋返回／記住安全位置（`21c71db`，`port/ui/cheat_menu.h` 由 portgame.h 引入；測試指令 test-state）、
    bright-view＋增亮強度（`b61f409`，`port/presentation/bright_view.c`）。
-   還沒做：
-   damage-numbers、enemy-health、按鍵說明分頁（key_help）、modern-keys 的 Space 跳躍／C 戰鬥／X 關容器、滑鼠中鍵切換滑鼠視角。
+   modern-keys（Space 跳躍、C 戰鬥、X 關容器、單次觸發）、中鍵切換滑鼠視角、按鍵說明分頁（`ead22a8`；UW2 的 F 鍵：F1 戰鬥、F2 使用、
+   F3 撿起、F4 交談、F5 查看、F6 選項；對話 1～5）。damage-numbers、enemy-health（combat_text 移入 runtime；UW2 用既有的
+   `port_sprite_draw` 精靈掛鉤設定像素歸屬，`asmgame.h` 的 ASM_MEMORY_WRITE 觀察 frame buffer；英文模式另掛只畫戰鬥文字的畫面層；
+   測試指令 test-mobiles、combat SLOT N|miss|block|status、view SLOT）。**UW1 的 F11 功能已全部移植到 UW2。**
+   enhcheck keys 仍預期 UltimaHacks 的 Space 攻擊／X 慢走（UW1 自 f50151e 起也一樣過時），需在能建 symlink 的環境重錄 checks。
    unknown-topic、auto-key 尚未實機觸發（需要有 babl_ask 的 NPC／上鎖的門）；Nystul（slot 130）在城堡、對話有 babl_ask。
    本機 setcheck：Windows 不能建「rt-4:3_aspect」資料夾，roundtrip 有 5 項中斷（`.poc-tools/setcheck-safe-tempnames.py` 是繞法）。
 

@@ -25,6 +25,13 @@ int seg003_handles(uint16_t off);                 /* gfx/grcore.c */
 #define ASM_HAS_FALLBACK(seg) ((seg) == 0x0085)
 #define ASM_FALLBACK(seg, off) asm_seg003_fallback(off)
 
+/* Optional observer: separate display-only ownership of the 3D framebuffer (--enhance
+   damage-numbers and enemy-health, presentation/combat_text.c), as UW1's. */
+#include "presentation/combat_text.h"
+#define ASM_MEMORY_WRITE(q, n) do { \
+    if ((uintptr_t)(q) - combat_write_base < combat_write_size) combat_text_write((q), (n)); \
+} while (0)
+
 #define ASM_TRACE_ENV "UW2PORT_ASMTRACE"
 
 /* The code a module runs to generate and run the scaled sprite rows (SCALEBM.ASM): see

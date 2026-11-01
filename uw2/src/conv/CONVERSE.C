@@ -197,6 +197,7 @@ void far strt_converse(void)
     update_sprites();
     if ((convoWorkspace = get_workspace()) == 0) return;
 #ifndef __TURBOC__
+    combat_text_hide();                 /* the combat numbers and bars are the 3D view's */
     name_gloss_reset();                 /* each conversation glosses its names afresh */
 #endif
     set_random_walking_music(0);

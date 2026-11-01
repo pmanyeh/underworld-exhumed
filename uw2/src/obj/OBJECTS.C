@@ -243,6 +243,9 @@ struct Object far * far Obj_Alloc(char mobile)
    list. */
 void far Obj_Free(struct Object far *obj)
 {
+#ifndef __TURBOC__
+    port_combat_forget(obj);            /* port only: a freed creature's numbers and bar */
+#endif
     if (obj < (struct Object far *)objdata) {
         critptr++;
         *critptr = obj - critdata;

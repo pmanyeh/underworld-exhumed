@@ -181,6 +181,9 @@ void far init_gamedisp(void)
 
 void far clear_gamedisp(void)
 {
+#ifndef __TURBOC__
+    combat_text_hide();                 /* port only: the combat numbers and bars */
+#endif
     clear_gameinp();
     EndInventory();
 }

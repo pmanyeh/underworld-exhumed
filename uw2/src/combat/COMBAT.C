@@ -414,8 +414,12 @@ void far do_damage(int type)
     if (hitobj == 1 && player->easy)
         ddone >>= 1;
     result = damage_item(def, Obj_IntTMem(fromwho), targx, targy, ddone, type);
-    if (ddone == 0)
+    if (ddone == 0) {
+#ifndef __TURBOC__
+        port_combat_result(hitobj, fromwho, COMBAT_BLOCK);   /* port only: --enhance damage-numbers */
+#endif
         return;
+    }
     if (fromwho == -1)
         return;
     if (hitloc >= 4) {
@@ -473,6 +477,9 @@ char far do_miss(int hit)
     int item;
     int attitem;
 
+#ifndef __TURBOC__
+    port_combat_result(hitobj, fromwho, hit == 0 ? COMBAT_MISS : COMBAT_BLOCK);   /* port only */
+#endif
     if (hit == 0) {
         if (!hit_wall)
             play_effect_on_mobile(10, Obj_IntTMem(fromwho), 0);

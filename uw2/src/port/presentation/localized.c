@@ -10,6 +10,7 @@
 #include "presentation/hd_label.h"
 #include "presentation/caption.h"
 #include "presentation/flask_text.h"
+#include "presentation/combat_text.h"
 #include "presentation/map_note_overlay.h"
 #include "presentation/qty_dialog.h"
 #include "presentation/text_entry.h"
@@ -36,6 +37,7 @@ static const char *locale = "en", *i18n_file, *font_path;
 static const char *scroll_log, *i18n_trace;     /* tests: the HD scroll's and the lookups' JSONL */
 static int hd_scroll, locale_given;
 static char catalog[1200];
+static HdFont *english_font;            /* in English: the settings screen's, for the combat text */
 
 /* Box 0 is the message scroll (and the menu scroll a conversation's choices use), box 1 the
    conversation's; each with its style and the font files it resolved to. The presentation
@@ -132,10 +134,9 @@ int port_text_setup(const char *home, int interactive)
     if (!hd_scroll) {
         /* the settings screen in its own font, but the language's name in Chinese where a font
            for it is at hand, as UW1's */
-        static HdFont *settings_font;
         char where[1024];
-        if (!text_style_font_path(home, "jf-openhuninn-2.1.ttf", where, sizeof where) && !hd_font_init(&settings_font, where))
-            settings_text_start(settings_font, 0, 1);
+        if (!text_style_font_path(home, "jf-openhuninn-2.1.ttf", where, sizeof where) && !hd_font_init(&english_font, where))
+            settings_text_start(english_font, 0, 1);
         return 0;
     }
     text_style_program("uw2port");
@@ -206,6 +207,7 @@ static HdLabelFrame frame_labels;
 static CaptionFrame frame_caption;
 static FlaskFrame frame_flasks;
 static MapNoteFrame frame_notes;
+static CombatFrame frame_combat;
 static uint8_t frame_palette[768];
 static uint8_t frame_pixels[640 * 480];   /* the scan-out, for the labels' signatures */
 static int frame_w, frame_h;
@@ -223,6 +225,7 @@ static void text_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])
     scroll_text_read(&frame_text);
     caption_read(&frame_caption);
     flask_text_read(&frame_flasks);
+    combat_text_read(&frame_combat);
     memcpy(frame_palette, rgb6, sizeof frame_palette);
 }
 
@@ -239,6 +242,9 @@ static int text_draw(const PlatOverlay *frame, void *data)
     if (frame_flasks.active)
         drawn |= flask_text_draw(draw_font[0], frame, &frame_flasks,
                                  draw_style[0].border > 0.6f ? draw_style[0].border : 0.6f);
+    /* --enhance damage-numbers and enemy-health, over the 3D view */
+    if (!settings_open())
+        drawn |= combat_text_draw(draw_font[0], frame, &frame_combat, 0.6f);
     /* the bitmap UI's strings, each while the screen under it is as the game left it; the game's
        cursor, drawn by the HD layer, is no change to a label (a pixel's margin round its box) */
     if ((frame_labels.count || frame_notes.count) && frame_h == 200) {
@@ -282,9 +288,28 @@ static void text_pointer(const PlatPointer *ev)
     if (!qty_dialog_pointer(ev)) game_pointer(ev);
 }
 
+/* In English, with no HD text: only the combat numbers and bars, in the settings screen's font */
+static void combat_scanout(uint8_t *pixels, int *w, int *h, uint8_t rgb6[768])
+{
+    vga_scanout(pixels, w, h, rgb6);
+    combat_text_read(&frame_combat);
+}
+static int combat_draw(const PlatOverlay *frame, void *data)
+{
+    (void)data;
+    return settings_open() ? 0 : combat_text_draw(english_font, frame, &frame_combat, 0.6f);
+}
+
 void port_text_hooks(PlatHooks *hooks)
 {
-    if (!hd_scroll) return;
+    if (!hd_scroll) {
+        if (english_font) {
+            hooks->scanout = combat_scanout;
+            hooks->overlay = combat_draw;
+            hooks->overlay_data = NULL;
+        }
+        return;
+    }
     hooks->scanout = text_scanout;
     hooks->overlay = text_draw;
     hooks->overlay_data = NULL;

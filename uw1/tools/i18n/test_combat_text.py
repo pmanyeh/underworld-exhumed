@@ -46,7 +46,7 @@ def main():
                     '-I' + str(uw1.parent / 'exhume/runtime/port'), '-I' + str(out), *san, '-g', '-O1',
                     '-c', str(Path(__file__).with_name('combat_attack_test.c')), '-o', str(obj)], check=True)
     attack = out / ('attack' + ('-asan' if args.sanitize else '') + ('.exe' if os.name == 'nt' else ''))
-    subprocess.run([P.host_cc(), '-std=c11', '-I' + str(uw1 / 'src/port/presentation'), *san,
+    subprocess.run([P.host_cc(), '-std=c11', '-I' + str(uw1.parent / 'exhume/runtime/port'), *san,
                     str(obj), str(port_src('presentation/combat_text.c')), '-o', str(attack)], check=True)
     subprocess.run([str(attack)], check=True, env=env)
 

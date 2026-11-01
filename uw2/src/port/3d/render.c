@@ -12,6 +12,11 @@
 #include "view3d.h"
 #include "x86/asmrt.h"
 #include "3d/render.h"
+#include "ui.h"
+#include "i18n/phrases.h"
+#include "presentation/combat_text.h"
+
+extern int port_view_x, port_view_y, port_view_w, port_view_h;   /* sys/c3dentry.c's cPlaceFB */
 
 #define FD71_SEG (0x60B9u + PORT_LOAD_SEG)
 #define G370D (seg_370D - 8)
@@ -101,7 +106,9 @@ void cRender(void)
         if (getenv("UW2PORT_SPRITEHOOK")) port_set_sprite_hook(counting_hook);
     }
     port_render_framebuffer(&fb);
+    port_combat_render_begin(port_view_x, port_view_y, port_view_w, port_view_h);
     port_render_3d(&fb);
+    if (combat_write_size) combat_text_end();
 }
 
 /* RENDER_TAG: the objects of this frame's sprite opcodes, by the opcode's offset in the render
@@ -126,6 +133,101 @@ void port_render_tag(const void *object, const void *db)
 
 static uw_sprite_fn sprite_hook;
 
+/* --enhance damage-numbers and enemy-health, as UW1's (presentation/combat_text.c): a
+   creature's frame (do_uwcrit) owns the pixels it draws, each a mobile object's slot, in a
+   buffer beside the frame buffer (asmgame.h's ASM_MEMORY_WRITE); what is drawn later (walls,
+   objects, other creatures) takes the pixels it covers, so a creature hidden behind them shows
+   nothing. Neither the database nor the frame buffer changes. */
+static int combat_on(void) { return ENHANCED(ENH_DAMAGE_NUMBERS) || ENHANCED(ENH_ENEMY_HEALTH); }
+static int slot_of(const void *p)
+{
+    uintptr_t off = (uintptr_t)p - (uintptr_t)critdata;
+    if (off >= sizeof(struct Object) * NUM_MOBILE || off % sizeof(struct Object)) return 0;
+    return (int)(off / sizeof(struct Object));
+}
+
+/* in_scalebm's sprite: its opcode's tag (RENDER_TAG), a creature's slot when it is one */
+static void combat_sprite_owner(void)
+{
+    uint16_t after, op;
+    int i, kind;
+    if (!combat_on() || !combat_write_size) return;
+    after = rw(pSS, SP + 2);
+    kind = SI == 0xC85C ? 0 : 1;
+    op = (uint16_t)(after - (kind == 0 ? 8 : 12));
+    combat_text_owner(0);
+    if (kind == 0) return;              /* an object's picture: no creature */
+    for (i = 0; i < ntags; i++)
+        if (tags[i].at == op) {
+            const struct Object *o = tags[i].o;
+            if (OBJ_MAJOR(o) == MAJOR_CREATURE) combat_text_owner(slot_of(o));
+            return;
+        }
+}
+
+void port_combat_damage(const void *object, int damage)
+{
+    const struct Object *o = object;
+    int slot;
+    if (!combat_on() || !o || o == ThePlayer || damage <= 0 || (slot = slot_of(o)) < 2) return;
+    combat_text_observe(slot, OBJ_ITEM(o), o->hp);
+    /* Display time must not consume a recorded GAME_TIME() event. */
+    combat_text_event(slot, COMBAT_DAMAGE, damage < o->hp ? damage : o->hp, NULL, *Time);
+}
+
+/* Called only when an offensive melee, missile or spell animation starts. No damage event:
+   misses, blocks and god mode must still reveal the attacker. */
+void port_combat_attack(const void *object)
+{
+    const struct Object *o = object;
+    int slot;
+    if (!ENHANCED(ENH_ENEMY_HEALTH) || !o || (slot = slot_of(o)) < 2 ||
+        OBJ_MAJOR(o) != MAJOR_CREATURE || !o->hp || OBJ_GTARG(o) != 1) return;
+    combat_text_observe(slot, OBJ_ITEM(o), o->hp);
+    combat_text_engage(slot);
+}
+
+void port_combat_result(int target, int attacker, int kind)
+{
+    struct Object *o;
+    const char *text;
+    if (!ENHANCED(ENH_DAMAGE_NUMBERS) || attacker != 1) return;
+    /* A swing into empty space must never reuse COMBAT.C's previous hitobj. */
+    if (kind == COMBAT_MISS) target = 0;
+    else if (target <= 1 || target >= NUM_MOBILE || OBJ_MAJOR(Obj_IntTMem(target)) != MAJOR_CREATURE) return;
+    if (target) {
+        o = Obj_IntTMem(target);
+        combat_text_observe(target, OBJ_ITEM(o), o->hp);
+    }
+    text = kind == COMBAT_MISS ? (port_zh() ? port_zh_lit("combat.miss") : "Miss")
+                               : (port_zh() ? port_zh_lit("combat.block") : "Block");
+    combat_text_event(target, kind, 0, text, *Time);
+}
+
+void port_combat_forget(const void *object) { if (combat_on()) combat_text_forget(slot_of(object)); }
+
+/* cRender's frame: the creatures' hit points now, and the frame buffer's ownership from here */
+void port_combat_render_begin(int x, int y, int w, int h)
+{
+    int i;
+    if (!combat_on() || !in_game || scrnum != 0 || (inplist->mode & 4)) {   /* 4: a conversation */
+        combat_text_hide();
+        return;
+    }
+    if (PickUp) {                       /* a pick frame (pick_3d), not one shown */
+        combat_write_size = 0;
+        return;
+    }
+    for (i = 2; i < NUM_MOBILE; i++) {
+        const struct Object *o = Obj_IntTMem(i);
+        if (OBJ_MAJOR(o) == MAJOR_CREATURE)
+            combat_text_observe(i, OBJ_ITEM(o), o->hp);
+        else combat_text_forget(i);
+    }
+    combat_text_begin(port_mk_fp(W370D(0x958), 0), x, 199 - y + h - 1, w, h,
+                      ENHANCED(ENH_DAMAGE_NUMBERS), ENHANCED(ENH_ENEMY_HEALTH), *Time);
+}
+
 void port_set_sprite_hook(uw_sprite_fn fn)
 {
     sprite_hook = fn;
@@ -138,6 +240,8 @@ void port_set_sprite_hook(uw_sprite_fn fn)
    sprite is drawn as in DOS. */
 uint32_t port_sprite_draw(void)
 {
+    uint32_t drawn;
+    combat_sprite_owner();
     if (sprite_hook) {
         struct uw_sprite_draw d;
         uint16_t after = rw(pSS, SP + 2), op;
@@ -171,7 +275,9 @@ uint32_t port_sprite_draw(void)
         d.screen_h = (int16_t)W370D(0xB24);
         d.screen_w = (int16_t)W370D(0xB26);
         d.fb = render_fb;
-        if (sprite_hook(&d)) return 0;
+        if (sprite_hook(&d)) { combat_text_owner(0); return 0; }
     }
-    return asm_callf(ASM_JMP(0x0085, 0x0D1E), 0x065C + PORT_LOAD_SEG, 0x4080);
+    drawn = asm_callf(ASM_JMP(0x0085, 0x0D1E), 0x065C + PORT_LOAD_SEG, 0x4080);
+    combat_text_owner(0);               /* the next pixels are a wall's, or another sprite's */
+    return drawn;
 }

@@ -437,6 +437,9 @@ unsigned char far crit_attack(unsigned dist)
                 r -= mycst->attacks[i].prob;
             SET_SEQ(meptr, i + 3);
             SET_FRAME(meptr, 0);
+#ifndef __TURBOC__
+            port_combat_attack(meptr);  /* port only: --enhance enemy-health */
+#endif
         } else if (OBJ_ATKFRAME(meptr) < 0xF)
             SET_ATKFRAME(meptr, OBJ_ATKFRAME(meptr) + 1);
     }
@@ -510,6 +513,9 @@ unsigned char far crit_magik_attack(void)
             SET_SEQ(meptr, 6);
             SET_FRAME(meptr, 0);
             SET_CAST(meptr, rand() % 16 < 0xB ? 1 : 2);
+#ifndef __TURBOC__
+            port_combat_attack(meptr);  /* port only: --enhance enemy-health */
+#endif
         }
         return 1;
     }
@@ -529,6 +535,9 @@ unsigned char far crit_missile_attack(void)
             SET_SPEED(meptr, 0);
             SET_SEQ(meptr, 6);
             SET_FRAME(meptr, 0);
+#ifndef __TURBOC__
+            port_combat_attack(meptr);  /* port only: --enhance enemy-health */
+#endif
         }
         return 1;
     }
@@ -1484,6 +1493,7 @@ unsigned char far damage_critter(struct Object far *obj, unsigned char damage,
 
 #ifndef __TURBOC__
     if (port_god_protect(obj)) return 0;   /* port only: --enhance god-mode */
+    port_combat_damage(obj, damage);        /* port only: --enhance damage-numbers, enemy-health */
 #endif
     minor = OBJ_MINOR(obj);
     index = obj->id & ID_INCLASS;

@@ -105,6 +105,9 @@ void far port_map_key(int how);
 void far AutoMap(void)
 {
     char noauto;
+#ifndef __TURBOC__
+    combat_text_hide();                 /* the combat numbers and bars are the 3D view's */
+#endif
 
     noauto = !player->automap;
     if (!registered) {

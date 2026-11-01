@@ -42,8 +42,10 @@ void *cFrmtoRaw(void *data, unsigned char *pal, unsigned char mode)
 
 /* cPlaceFB(x, y, w, h): the frame's screen offset (0C7h - y) * 80 + x / 4, an 8-bit multiply
    (mul cl), into 370D:094E, then setup_frame_buf (GRENTRY.ASM's _7A8) for w by h. */
+int port_view_x, port_view_y, port_view_w, port_view_h;   /* for 3d/render.c's combat text */
 void cPlaceFB(int x, int y, int w, int h)
 {
+    port_view_x = x; port_view_y = y; port_view_w = w; port_view_h = h;
     uint16_t ax = (uint16_t)((uint8_t)(0xC7 - y) * 0x50);
     ax = (uint16_t)(ax + ((uint16_t)x >> 2));
     SETW(0x94E, ax);

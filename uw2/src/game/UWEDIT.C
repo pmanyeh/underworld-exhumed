@@ -374,6 +374,7 @@ void far reset_game(void)
 {
 #ifndef __TURBOC__
     port_god_reset();                       /* port only: --enhance god-mode */
+    combat_text_reset();                    /* and the combat numbers' creatures */
 #endif
     punt_all_digi_fx();
     load_digi_fx(1);

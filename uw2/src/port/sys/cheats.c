@@ -31,6 +31,7 @@
 #include "compat.h"
 #include "event.h"
 #include "gfx.h"
+#include "combat.h"
 #include "inv.h"
 #include "items.h"
 #include "map.h"
@@ -170,6 +171,83 @@ static const char *c_inv(int argc, char *argv[], int run)
     return NULL;
 }
 
+extern int16 hitobj, fromwho;           /* combat/COMBAT.C: the blow's target and attacker */
+char far do_miss(int hit);              /* combat/COMBAT.C */
+
+/* combat SLOT DAMAGE|miss|block|status: damage-numbers' and enemy-health's fixture, as UW1's:
+   the game's own damage_critter on the creature in that mobile slot, or COMBAT.C's do_miss as the
+   player's blow, or what the combat text shows of it */
+static const char *c_combat(int argc, char *argv[], int run)
+{
+    long slot, amount = 0;
+    int kind, saved_from, saved_hit, status;
+    struct Object far *o;
+    if (argc != 2 || cheat_num(argv[0], 2, 255, &slot)) return "a mobile slot 2..255 and damage 1..255, miss, block or status";
+    status = !strcmp(argv[1], "status");
+    kind = !strcmp(argv[1], "miss") ? COMBAT_MISS : !strcmp(argv[1], "block") ? COMBAT_BLOCK : COMBAT_DAMAGE;
+    if (!status && kind == COMBAT_DAMAGE && cheat_num(argv[1], 1, 255, &amount)) return "damage 1..255, miss, block or status";
+    if (!run) return NULL;
+    o = Obj_IntTMem((int)slot);
+    if (OBJ_MAJOR(o) != MAJOR_CREATURE || !o->hp) return "not a live creature";
+    if (status) {
+        CombatFrame frame;
+        int i, visible = 0, maximum = 0;
+        combat_text_read(&frame);
+        for (i = 0; i < frame.count; i++) if (frame.actors[i].slot == slot) {
+            visible = 1; maximum = frame.actors[i].maximum;
+        }
+        fprintf(stderr, "fixture: combat slot=%ld hp=%u visible=%d maximum=%d floats=%d\n",
+                slot, (unsigned)o->hp, visible, maximum, frame.floats);
+    } else if (kind == COMBAT_DAMAGE) damage_critter(o, (unsigned char)amount, ThePlayer);
+    else {
+        saved_from = fromwho; saved_hit = hitobj;
+        fromwho = 1; hitobj = (int)slot;
+        do_miss(kind == COMBAT_MISS ? 0 : 1);
+        fromwho = saved_from; hitobj = saved_hit;
+    }
+    editchng(2);
+    return NULL;
+}
+
+/* test-mobiles: the live creatures of the level, slot, item and tile (to aim the fixtures) */
+static const char *c_mobiles(int argc, char *argv[], int run)
+{
+    int i;
+    (void)argv;
+    if (argc) return "no arguments";
+    if (!run) return NULL;
+    for (i = 2; i < NUM_MOBILE; i++) {
+        struct Object far *o = Obj_IntTMem(i);
+        if (OBJ_MAJOR(o) == MAJOR_CREATURE && o->hp)
+            fprintf(stderr, "fixture: mobile slot=%d item=0x%03X hp=%u tile=%d,%d\n", i, OBJ_ITEM(o), (unsigned)o->hp,
+                    OBJ_HOMEX(o), OBJ_HOMEY(o));
+    }
+    return NULL;
+}
+
+/* view SLOT: turn the player to face the creature in that mobile slot (the camera fixture) */
+static const char *c_view(int argc, char *argv[], int run)
+{
+    long slot;
+    int dx, dy, distance;
+    struct Object far *o;
+    if (argc != 1 || cheat_num(argv[0], 2, 255, &slot)) return "a mobile slot 2..255";
+    if (!run) return NULL;
+    o = Obj_IntTMem((int)slot);
+    if (OBJ_MAJOR(o) != MAJOR_CREATURE || !o->hp) return "not a live creature";
+    dx = (OBJ_HOMEX(o) << 8) + (OBJ_FINEX(o) << 5) - PN.x;
+    dy = (OBJ_HOMEY(o) << 8) + (OBJ_FINEY(o) << 5) - PN.y;
+    if (!dx && !dy) return "camera and target coincide";
+    distance = cSqRt((int32)dx * dx + (int32)dy * dy);
+    PlayerHeading = PlayerFacing = (uint16)(0x4000 - cAtan2((int)((int32)dy * 32767 / distance),
+                                                            (int)((int32)dx * 32767 / distance)));
+    SET_HEADING(ThePlayer, (uint16)PlayerFacing >> 13);
+    SET_FINEHEAD(ThePlayer, (uint16)PlayerFacing >> 8);
+    PlayerPitch = 0;
+    editchng(2);
+    return NULL;
+}
+
 /* test-state: the level, hit points, position and god-mode's state (its fixture), as UW1's */
 static const char *c_state(int argc, char *argv[], int run)
 {
@@ -199,6 +277,9 @@ static const struct cheat_cmd cmds[] = {
     { "give", "ITEM [QTY [QUALITY]] [drop]", c_give },
     { "set", "FIELD VALUE", c_set },
     { "test-state", "", c_state },
+    { "test-mobiles", "", c_mobiles },
+    { "combat", "SLOT DAMAGE|miss|block|status (combat fixture)", c_combat },
+    { "view", "SLOT (camera fixture)", c_view },
     { "test-inv", "", c_inv },
     { "test-take", "ITEM [QTY] (e-takes fixture)", c_take },
 };

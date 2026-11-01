@@ -96,6 +96,9 @@ int far GetLevel(int level)
     int ok = 1;
     int flags = 2;
 
+#ifndef __TURBOC__
+    combat_text_reset();                /* port only: a new level's creatures */
+#endif
     SavePlayerInv(0);
     sq = GrSq;
     change_GrSq(-1, -1);
