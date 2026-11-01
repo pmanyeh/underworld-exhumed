@@ -876,6 +876,19 @@ void far DumpTheBag(struct Object far *bag, char to_player)
             strcat(text, ".\n");
         else
             strcat(text, " is empty.\n");
+#ifndef __TURBOC__
+        if (port_zh()) {
+            /* "You empty the <name>." / "The <name> is empty." in the locale's order, as UW1's */
+            PortZh zh;
+            const char *n = port_zh_name(bag, 0, 0);
+            port_zh_begin(&zh);
+            if (dumped)
+                port_zh_add(&zh, port_zh_lit("inv.dump"));
+            port_zh_add(&zh, n ? n : "UNNAMED");
+            port_zh_add(&zh, port_zh_lit(dumped ? "inv.dumped" : "inv.empty"));
+            scroll_print(zh.text);
+        } else
+#endif
         scroll_print(text);
     }
     editchng(2);

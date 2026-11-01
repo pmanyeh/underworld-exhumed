@@ -35,6 +35,9 @@ static const struct { const char *key, *zh; } phrases[] = {
     {"inv.your", "你的"},                          /* INVDATA.C: worn out */
     {"inv.destroyed", "壞掉了。\n"},
     {"inv.damaged", "受損了。\n"},
+    {"inv.dump", "你把"},                          /* USEITEMS.C's DumpTheBag: "你把<箱子>裡的東西倒了出來。" */
+    {"inv.dumped", "裡的東西倒了出來。\n"},
+    {"inv.empty", "是空的。\n"},                   /* "<箱子>是空的。", as UW1's */
     {"trap.on", "上的"},                             /* SKILLS.C: "<object>上的<trap>" */
     {"vend.price", "（%d 金幣）"},                    /* WORLDEV.C: a vending machine's price */
     {"cheat.applied", "密技設定已生效。\n"},        /* ui/cheat_menu.c, as UW1's */
@@ -128,6 +131,7 @@ static const struct { const char *english, *zh; } literals[] = {
     {"IV- ", "存檔四："},
     {"Mouse look enabled.\n", "滑鼠視角已開啟。\n"},   /* MOUSE.C, --enhance mouse-look */
     {"Mouse look disabled.\n", "滑鼠視角已關閉。\n"},
+    {"Relk.\n", "瑞爾克的。\n"},                   /* LOOK.C: Relk's bones, after "It looks to be that of " */
 };
 
 const char *port_zh_lit(const char *key)
