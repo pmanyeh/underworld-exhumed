@@ -64,12 +64,18 @@ void port_map_note_end(int level, const void *ptr, const char *ascii)
     if (zh && !strcmp(ascii, pending_marker) && map_notes_put(pending_id, level, n->x, n->y, zh))
         fputs("uw2port: map note: cannot keep the Chinese note\n", stderr);
 }
+/* a note without Chinese beside it: the castle's starting notes in Chinese, the rest as typed */
+static const char *shown(const MapNoteKey *k)
+{
+    const char *zh = port_zh_map_note(k->text);
+    return zh ? zh : k->text;
+}
 int port_map_note_draw(int level, const void *ptr)
 {
     const struct ATM *n = ptr;
     MapNoteKey k = key_of(n);
     const char *zh = map_notes_get(level, &k);
-    if (!zh && port_zh()) zh = k.text;
+    if (!zh && port_zh()) zh = shown(&k);
     return zh && map_note_overlay_add(zh, n->x, n->y);
 }
 int port_map_note_width(int level, const void *ptr, int fallback)
@@ -78,7 +84,7 @@ int port_map_note_width(int level, const void *ptr, int fallback)
     MapNoteKey k = key_of(n);
     const char *zh = map_notes_get(level, &k);
     HdLabel l;
-    if (!zh && port_zh()) zh = k.text;
+    if (!zh && port_zh()) zh = shown(&k);
     if (zh && !hd_label_build(&l, zh, n->x, n->y, 6, 0x4E, 0x13B, 5 * 64)) return l.right - l.left;
     return fallback;
 }

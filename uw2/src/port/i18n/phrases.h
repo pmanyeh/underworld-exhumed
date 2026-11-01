@@ -3,4 +3,5 @@
 #define UW1_PHRASES_H
 const char *port_zh_lit(const char *key);
 const char *port_zh_literal(const char *english);   /* a piece printed by itself: its translation, or 0 */
+const char *port_zh_map_note(const char *english);  /* one of the castle's starting map notes: its translation, or 0 */
 #endif

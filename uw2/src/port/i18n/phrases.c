@@ -134,6 +134,26 @@ static const struct { const char *english, *zh; } literals[] = {
     {"Relk.\n", "瑞爾克的。\n"},                   /* LOOK.C: Relk's bones, after "It looks to be that of " */
 };
 
+/* the castle's map notes from the new game's save (level 1's legend), drawn in Chinese and kept
+   in English in the save; leading spaces as the original's */
+static const struct { const char *english, *zh; } map_notes[] = {
+    {"A. MY QUARTERS", "A. 我的寢室"},
+    {"B. THRONE ROOM", "B. 王座廳"},
+    {"  C. IOLO", "  C. 伊歐洛"},
+    {"  D. DUPRE", "  D. 杜普雷"},
+    {"E. NELSON", "E. 尼爾森"},
+    {"F. NYSTUL", "F. 尼斯圖"},
+    {"G. GREAT HALL", "G. 大廳"},
+};
+
+const char *port_zh_map_note(const char *english)
+{
+    size_t i;
+    for (i = 0; i < sizeof map_notes / sizeof map_notes[0]; i++)
+        if (!strcmp(map_notes[i].english, english)) return map_notes[i].zh;
+    return 0;
+}
+
 const char *port_zh_lit(const char *key)
 {
     size_t i;
