@@ -24,7 +24,7 @@ UW1 已告一段落（0.6、tag `zh-tw-native-p13`）。新 Session 直接開始
   UW1 回歸（17 單元測試、16 session × 四模式）與搬移前逐一相同。主 repo 提交 `e08d8dc`。
 - UW2：`uw2/src/port/presentation/localized.c` 接線（`--locale`、`--i18n-file`、`--hd-scroll`、`--font`；測試 `--scroll-log`、`--i18n-trace`、`--shot-on-text N`），
   掛鉤在 GAMESTRN／SCROLL／SCROLLIO／BABL／CONVERSE。對話已顯示中文；英文與「載入 catalog」模式 12 session 與 DOS golden 逐檢查點一致，HD 模式存檔相同。
-- UW2 主表以 `l10n.py normalize` 補推導旗標 935 列（備份 `master.tsv.pre-normalize-20261031`）；catalog 9,543 筆，本機 `uw2/build/i18n/slice/catalog.uw2loc`（不提交）。
+- 2026-11-01 依使用者回報改「罩住城堡的巨大寶石」7 列（見 `P14_SLICE.md`「譯文修正」，備份 `master.tsv.pre-gem-20261101`）。UW2 主表以 `l10n.py normalize` 補推導旗標 935 列（備份 `master.tsv.pre-normalize-20261031`）；catalog 9,543 筆，本機 `uw2/build/i18n/slice/catalog.uw2loc`（不提交）。
 - 本機工具：`.poc-tools/handoff/env-uw2.sh`（UW2 環境，含 `PKG_CONFIG_DONT_DEFINE_PREFIX=1`，否則 pkgconf 把 prefix 改成相對路徑而找不到 mt32emu）、
   `.poc-tools/uw2-slice-check.py`（UW2 四模式）、`.poc-tools/uw2-shared-check.py`（UW1 units／replays，比對搬移前）。
   UW2 字型放 `uw2/tools/fonts/`（已加入 .gitignore，從 UW1 複製）。無視窗截 HD 畫面：`SDL_VIDEODRIVER=offscreen` 不加 `--hidden`，配 `--shot-on-text N --screenshot A --window-shot B`。
