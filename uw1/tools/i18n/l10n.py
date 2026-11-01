@@ -47,7 +47,8 @@ FLAGS = ("dynamic-template", "grammar-sensitive", "object-name", "control-code",
 DERIVED = ("dynamic-template", "object-name", "control-code")
 DYNAMIC_BLOCKS = (0x7C, 0x7D)
 # Same bounds as src/port/i18n/localization.c.
-MAGIC = b"UW1LOC1\0"
+MAGIC = b"UW1LOC1\0"          # the English itself, for development
+MAGIC_HASHED = b"UW1LOC2\0"   # its FNV-1a 64-bit hash: a catalog to give players holds none of the game's text
 MAX_ENTRIES, MAX_TARGET, MAX_CATALOG = 32768, 16384, 16 * 1024 * 1024
 HANDLING = ("direct", "template", "object-name", "grammar", "bitmap-ui", "input-token", "hardcoded",
             "needs-context", "debug-report", "empty", "unaddressable")
@@ -554,10 +555,21 @@ def packed_rows(rows, min_status="draft"):
 
 # ---------------------------------------------------------------- catalog
 
-def pack(rows, inventory, min_status="draft"):
-    """Deterministic UW1LOC1 catalog; same rows and data produce the same bytes.
-    The runtime's source check needs the English bytes, which come from the
-    player's STRINGS.PAK (never the master) and must match each source_hash."""
+def fnv1a64(data):
+    """The runtime's hash of a source string's CP437 bytes (localization.c)."""
+    h = 0xcbf29ce484222325
+    for b in data:
+        h = ((h ^ b) * 0x100000001b3) & 0xFFFFFFFFFFFFFFFF
+    return h
+
+
+def pack(rows, inventory, min_status="draft", hashed=True):
+    """Deterministic catalog; same rows and data produce the same bytes.
+    The runtime checks each entry against the English the game is about to show:
+    UW1LOC2 (hashed, the default) keeps the FNV-1a hash of that English, so the
+    catalog holds none of the game's text; UW1LOC1 keeps the English itself. The
+    English comes from the player's STRINGS.PAK (never the master) and must
+    match each source_hash."""
     entries, problems = [], []
     for row in packed_rows(rows, min_status):
         block, index = int(row["block"]), int(row["index"])
@@ -573,10 +585,13 @@ def pack(rows, inventory, min_status="draft"):
         raise DatasetError(["duplicate (block,index) in packed rows"])
     if not 0 < len(entries) <= MAX_ENTRIES:
         raise DatasetError([f"catalog must hold 1..{MAX_ENTRIES} entries, got {len(entries)}"])
-    result = bytearray(MAGIC + struct.pack("<I", len(entries)))
+    result = bytearray((MAGIC_HASHED if hashed else MAGIC) + struct.pack("<I", len(entries)))
     for block, index, source, target in entries:
-        result += struct.pack("<HHII", block, index, len(source), len(target))
-        result += source + b"\0" + target + b"\0"
+        if hashed:
+            result += struct.pack("<HHIQ", block, index, len(target), fnv1a64(source)) + target + b"\0"
+        else:
+            result += struct.pack("<HHII", block, index, len(source), len(target))
+            result += source + b"\0" + target + b"\0"
     if len(result) > MAX_CATALOG:
         raise DatasetError([f"catalog exceeds {MAX_CATALOG} bytes"])
     return bytes(result), len(entries)
@@ -985,12 +1000,13 @@ def cmd_build(args):
             print(p, file=sys.stderr)
         print(f"FAIL: catalog not built ({len(problems)} problems, {len(drift)} drift)")
         return 1
-    data, count = pack(master, inventory, args.min_status)
+    data, count = pack(master, inventory, args.min_status, hashed=not args.with_english)
     write_bytes(args.output, data)
     manifest = {"catalog_sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data), "entries": count,
                 "min_status": args.min_status,
                 "master_sha256": hashlib.sha256(Path(args.master).read_bytes()).hexdigest(),
-                "pak_sha256": inventory.pak_sha256, "format": MAGIC.rstrip(b"\0").decode()}
+                "pak_sha256": inventory.pak_sha256,
+                "format": (MAGIC if args.with_english else MAGIC_HASHED).rstrip(b"\0").decode()}
     if args.manifest:
         write_json(args.manifest, manifest)
     print(f"{count} entries, {len(data)} bytes, sha256 {manifest['catalog_sha256']} -> {args.output}")
@@ -1092,6 +1108,8 @@ def main(argv=None):
     p.add_argument("--output", type=Path, default=UW1 / "build/i18n/zh-TW.uwloc")
     p.add_argument("--manifest", type=Path)
     p.add_argument("--min-status", choices=list(PACKED), default="draft")
+    p.add_argument("--with-english", action="store_true",
+                   help="keep the English in the catalog (UW1LOC1), for development; never for players")
     p.set_defaults(run=cmd_build)
 
     p = sub.add_parser("coverage", help="coverage matrix (JSON + Markdown)")

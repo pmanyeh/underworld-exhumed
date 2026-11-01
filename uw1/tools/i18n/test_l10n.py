@@ -2,6 +2,7 @@
 from collections import Counter
 import hashlib
 import os
+import struct
 from pathlib import Path
 import subprocess
 import tempfile
@@ -169,7 +170,7 @@ class DatasetTests(unittest.TestCase):
         path = Path(self.tmp.name) / "p8-master.tsv"
         path.write_bytes(old)
         inv = Inventory.load(Path(os.environ["UW1_DATA"]) / "DATA/STRINGS.PAK")
-        data, count = pack(self.poc_rows(path), inv)
+        data, count = pack(self.poc_rows(path), inv, hashed=False)   # P8's format, UW1LOC1
         self.assertEqual((count, hashlib.sha256(data).hexdigest()), (52, P8_CATALOG_SHA256))
 
     def test_committed_master_holds_no_english(self):
@@ -330,9 +331,16 @@ class CatalogTests(unittest.TestCase):
             pack([row(1, 1, "乙", "blocked")], INV)
 
     def test_layout_matches_runtime_contract(self):
-        data, _ = pack([row(1, 0, "甲\n")], INV)
+        data, _ = pack([row(1, 0, "甲\n")], INV, hashed=False)
         self.assertEqual(data, l10n.MAGIC + b"\x01\0\0\0" + b"\x01\0\0\0\x07\0\0\0\x04\0\0\0"
                          + b"Plain.\n\0" + "甲\n".encode() + b"\0")
+
+    def test_hashed_layout_holds_no_english(self):
+        data, _ = pack([row(1, 0, "甲\n")], INV)
+        self.assertEqual(data, l10n.MAGIC_HASHED + b"\x01\0\0\0" + b"\x01\0\0\0\x04\0\0\0"
+                         + struct.pack("<Q", l10n.fnv1a64(b"Plain.\n")) + "甲\n".encode() + b"\0")
+        self.assertNotIn(b"Plain", data)
+        self.assertEqual(l10n.fnv1a64(b"a"), 0xaf63dc4c8601ec8c)     # FNV-1a 64's published value
 
 
 class TraceCoverageTests(unittest.TestCase):

@@ -13,7 +13,8 @@ import subprocess
 import tempfile
 import unittest
 
-from l10n import MAGIC, MASTER_FIELDS, DatasetError, check_master, load_master, pack as pack_rows, source_hash
+from l10n import (MAGIC, MAGIC_HASHED, MASTER_FIELDS, DatasetError, check_master, fnv1a64, load_master,
+                  pack as pack_rows, source_hash)
 from test_l10n import inventory as fixture_inventory
 
 UW1 = Path(__file__).resolve().parents[2]
@@ -24,6 +25,14 @@ def catalog(rows):
     data = MAGIC + struct.pack("<I", len(rows))
     for b, i, source, target in rows:
         data += struct.pack("<HHII", b, i, len(source), len(target)) + source + b"\0" + target + b"\0"
+    return data
+
+
+def catalog_hashed(rows):
+    """UW1LOC2: each entry's English as its FNV-1a hash, none of the text itself."""
+    data = MAGIC_HASHED + struct.pack("<I", len(rows))
+    for b, i, source, target in rows:
+        data += struct.pack("<HHIQ", b, i, len(target), fnv1a64(source)) + target + b"\0"
     return data
 
 
@@ -103,6 +112,23 @@ class RuntimeTests(unittest.TestCase):
             buffer, pointer = self.lookup(stand_in[row["block"], row["index"]], int(row["block"]), int(row["index"]))
             self.assertNotEqual(pointer, ctypes.addressof(buffer))
             self.assertEqual(ctypes.string_at(pointer), row["target_zh_TW"].encode())
+
+    def test_hashed_catalog_hits_and_drifts(self):
+        target = "你好，@SS1！".encode()
+        self.assertEqual(self.init(catalog_hashed([(3651, 3, b"Hello", target), (3651, 9, b"Bye", b"x")])), 0)
+        buffer, pointer = self.lookup()
+        self.assertEqual(ctypes.string_at(pointer), target)
+        for source, block, index in [(b"Hellp", 3651, 3), (b"Hello", 3651, 4), (b"Hello", 3651, 9)]:
+            buffer, pointer = self.lookup(source, block, index)
+            self.assertEqual(pointer, ctypes.addressof(buffer))
+
+    def test_hashed_catalog_rejects_damage(self):
+        good = catalog_hashed([(3651, 3, b"Hello", b"target")])
+        self.assertEqual(self.init(good), 0)
+        for bad in (good[:-1], good + b"\0", good[:-2] + b"\xff\0",
+                    catalog_hashed([(3651, 3, b"Hello", b"")]),
+                    catalog_hashed([(3651, 4, b"Hello", b"t"), (3651, 3, b"Hello", b"t")])):
+            self.assert_bad(bad)
 
     def test_missing_drift_and_dynamic_keys_return_pointer(self):
         self.assertEqual(self.init(), 0)
@@ -250,6 +276,10 @@ class PackerTests(unittest.TestCase):
     def test_pack_repeat_and_source_bytes_from_data(self):
         data, count = self.build([self.row])
         self.assertEqual((data, count), self.build([self.row]))
+        self.assertEqual(data[:12], MAGIC_HASHED + struct.pack("<I", 1))
+        self.assertNotIn(self.SOURCE.encode("cp437"), data)       # none of the game's text
+        self.assertIn(struct.pack("<Q", fnv1a64(self.SOURCE.encode("cp437"))), data)
+        data, _ = pack_rows([self.row], self.inventory, hashed=False)
         self.assertEqual(data[:12], MAGIC + struct.pack("<I", 1))
         self.assertIn(self.SOURCE.encode("cp437") + b"\0", data)
 

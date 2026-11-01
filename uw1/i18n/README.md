@@ -218,13 +218,17 @@ lookup 本身只讀取資料。平台 loop 可能在 game thread 仍存活時返
 格式使用固定 little-endian，不序列化任何 C struct / pointer：
 
 ```text
-8 bytes magic: UW1LOC1 + NUL
+8 bytes magic: UW1LOC2 + NUL
 uint32 entry count
 per entry, sorted by (block,index):
-  uint16 block, uint16 index, uint32 source_bytes, uint32 target_bytes
-  CP437 source bytes + NUL
+  uint16 block, uint16 index, uint32 target_bytes
+  uint64 FNV-1a 64-bit hash of the CP437 source bytes
   UTF-8 target bytes + NUL
 ```
+
+`l10n.py build` 預設輸出 `UW1LOC2`：只存英文原文的雜湊，執行時拿玩家自己遊戲裡即將顯示的英文算雜湊比對，
+所以要給玩家的 catalog 不含任何遊戲原文（2026-11-01 公開發布前改用）。開發時需要原文可加 `--with-english`，
+輸出舊格式 `UW1LOC1`（每筆在 target 前存 `uint32 source_bytes` 與 CP437 原文＋NUL）；runtime 兩種都讀。
 
 每筆原文最多 511 bytes、譯文最多 16,384 bytes；總數最多 32,768 筆、整檔最多 16 MiB
 （Phase 9 由 4,096 筆／4 MiB 放寬，足以容納全遊戲 10,984 個 entries）。
