@@ -24,14 +24,23 @@ def main():
         p.error('the output must be new')
     fonts = os.path.join(REPO, 'uw1', 'tools', 'fonts')
     with zipfile.ZipFile(a.zip) as src:
-        names = src.namelist()
+        # ditto writes names in UTF-8 without the ZIP's UTF-8 flag, so zipfile reads them as CP437:
+        # their real names, written back with the flag (Windows would show the CP437 reading too)
+        for info in src.infolist():
+            if not info.flag_bits & 0x800:
+                try:
+                    info.filename = info.filename.encode('cp437').decode('utf-8')
+                except UnicodeError:
+                    pass
+        names = [i.filename for i in src.infolist()]
         top = names[0].split('/')[0]
         if not all(n.startswith(top + '/') for n in names):
             p.error('the ZIP holds more than one top folder')
         add = {f'{top}/UW1/i18n/zh-TW/catalog.uw1loc': a.uw1_catalog,
                f'{top}/UW2/i18n/zh-TW/catalog.uw2loc': a.uw2_catalog,
-               f'{top}/fonts/jf-openhuninn-2.1.ttf': os.path.join(fonts, 'jf-openhuninn-2.1.ttf'),
-               f'{top}/licenses/jf-openhuninn-OFL.txt': os.path.join(fonts, 'jf-openhuninn-OFL.txt')}
+               f'{top}/fonts/jf-openhuninn-2.1.ttf': os.path.join(fonts, 'jf-openhuninn-2.1.ttf')}
+        if f'{top}/licenses/jf-openhuninn-OFL.txt' not in names:     # package_macos.py's, from git
+            add[f'{top}/licenses/jf-openhuninn-OFL.txt'] = os.path.join(fonts, 'jf-openhuninn-OFL.txt')
         clash = [n for n in add if n in names]
         if clash:
             p.error('already in the ZIP: ' + ', '.join(clash))
@@ -41,6 +50,7 @@ def main():
             if f'{top}/fonts/' not in names:
                 d = zipfile.ZipInfo(f'{top}/fonts/', date_time=src.infolist()[0].date_time)
                 d.external_attr = (0o40755 << 16) | 0x10
+                d.create_system = 3
                 out.writestr(d, b'')
             for arc, path in add.items():
                 info = zipfile.ZipInfo(arc, date_time=src.infolist()[0].date_time)
