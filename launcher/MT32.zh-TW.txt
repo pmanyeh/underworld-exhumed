@@ -15,10 +15,12 @@ ROM 檔有版權，本包沒有附上，請使用你自己的檔案（例如從�
 
 放在哪裡（擇一即可）
 --------------------
-1. 最簡單：把 ROM 檔直接放進本包最上層的資料夾（和 Underworld.exe 放在一起），兩款遊戲都會找到。
-2. 只給其中一款遊戲用：放進 UW1\roms 或 UW2\roms（自己建立 roms 資料夾）。
-3. 已經在 DOSBox Staging 用過 MT-32：放在 %LOCALAPPDATA%\DOSBox\mt32-roms 或 C:\mt32-rom-data 的 ROM 也會被找到。
-4. 在設定畫面（F11）「音效」頁的「MT-32 ROM」按 Enter，選擇放 ROM 的資料夾。
+1. Windows 最簡單：把 ROM 檔直接放進本包最上層的資料夾（和 Underworld.exe 放在一起），兩款遊戲都會找到。
+   Mac 最簡單：放進「~/Library/Audio/Sounds/MT32-Roms」資料夾（自己建立），兩款遊戲都會找到。
+2. 只給其中一款遊戲用：放進 UW1/roms 或 UW2/roms（在本包的 UW1、UW2 資料夾裡自己建立 roms 資料夾）。
+3. 已經在 DOSBox Staging 用過 MT-32：它的 ROM 資料夾也會被找到
+   （Windows：%LOCALAPPDATA%\DOSBox\mt32-roms 或 C:\mt32-rom-data；Mac：~/Library/Preferences/DOSBox/mt32-roms）。
+4. 在設定畫面（Windows 按 F11，Mac 按 Cmd+,）「音效」頁的「MT-32 ROM」按 Enter，選擇放 ROM 的資料夾。
 5. 把放 ROM 的資料夾直接拖曳到遊戲視窗上。
 找到後，「MT-32 ROM」會顯示「已找到」，資料夾位置會被記住。
 

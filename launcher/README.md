@@ -26,3 +26,18 @@ the fonts as a playtest folder's game does, and starts in Chinese with every enh
 Tests: `Underworld.exe --screenshot FILE.bmp` writes the page once both games are searched for and
 quits; with `--test-play 0` or `1` it first starts that game (which quits after four seconds) and
 waits for it.
+
+## macOS
+
+`.github/workflows/zh-release-macos.yml` builds both games and this page universal (arm64 and
+x86_64) on a Mac runner, and `package_macos.py` makes one app of the three programs,
+`Underworld.app` (Contents/MacOS: `underworld`, `uw1port`, `uw2port`; the libraries in
+Contents/Frameworks), signed ad hoc, with `開始遊戲.command` beside it. The script starts the
+page with `--base` set to the release's folder: macOS runs a downloaded app from a read-only copy
+elsewhere (App Translocation), where the page would not find the saves, the fonts or the Chinese
+files. The page finds the games in its own Contents/MacOS.
+
+The catalogs come from the player's game data and the font is not in git, so the artifact lacks
+them: `finish_release.py --zip ARTIFACT.zip --out FINAL.zip --uw1-catalog F --uw2-catalog F` adds
+them, copying every entry of the artifact byte for byte with its modes, so the signature and the
+script's execute bit stay as CI made them.

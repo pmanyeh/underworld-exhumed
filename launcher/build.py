@@ -2,7 +2,7 @@
 underworld.exe on Windows with UW1's icon. It needs SDL3 and FreeType through pkg-config, as the
 ports do (uw1/tools/libs searched first), and the C compiler in CC (default clang).
 
-    python3 launcher/build.py [--version TEXT]
+    python3 launcher/build.py [--version TEXT] [--arch ARCH ...]
 """
 import os, shlex, shutil, subprocess, sys
 
@@ -48,14 +48,18 @@ def resource(machine):
 
 
 def main():
-    version = 'dev'
-    if '--version' in sys.argv:
-        version = sys.argv[sys.argv.index('--version') + 1]
+    version, archs = 'dev', []
+    args = sys.argv[1:]
+    while args:
+        a = args.pop(0)
+        if a == '--version': version = args.pop(0)
+        elif a == '--arch': archs += ['-arch', args.pop(0)]     # macOS: --arch arm64 --arch x86_64, one universal program
+        else: sys.exit(f'launcher/build.py: unknown argument {a}')
     cc = os.environ.get('CC', 'clang')
     os.makedirs(OUT, exist_ok=True)
     win, machine = windows(cc)
     out = os.path.join(OUT, 'underworld.exe' if win else 'underworld')
-    cmd = [cc, '-O2', '-std=gnu11', '-Wall', '-Wextra', '-Wno-unused-parameter',
+    cmd = [cc, *archs, '-O2', '-std=gnu11', '-Wall', '-Wextra', '-Wno-unused-parameter',
            f'-DLAUNCHER_VERSION="{version}"', '-DHD_HAVE_FREETYPE', '-I', HERE, '-I', RT,
            '-I', os.path.join(RT, 'platform'),
            *pkg('--cflags'), *SOURCES, '-o', out, *pkg('--libs'), '-lm']

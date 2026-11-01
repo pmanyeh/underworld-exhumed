@@ -62,6 +62,8 @@ static Game games[2] = {
 static const char *const button_text[BUTTONS] = { "說明", "回報問題", "結束" };
 
 static char base[1024];         /* the release's folder, with its separator */
+static char programs[1024];     /* where uw1port and uw2port are: base, or on macOS the app's
+                                   Contents/MacOS, the three programs being one app */
 static uint8_t canvas[CANVAS_W * CANVAS_H * 4];
 static HdFont *font;
 static int selected = 0, hover_button = -1;
@@ -236,9 +238,9 @@ static void exe_path(const Game *g, char *out, size_t n)
 #ifdef _WIN32
     char name[64];
     snprintf(name, sizeof name, "%s.exe", g->exe);
-    path_in(out, n, base, name);
+    path_in(out, n, programs, name);
 #else
-    path_in(out, n, base, g->exe);
+    path_in(out, n, programs, g->exe);
 #endif
 }
 
@@ -479,8 +481,18 @@ static int button(SDL_Window *window, int b)
     if (b == B_QUIT) return 1;
     if (b == B_ISSUES) SDL_OpenURL(ISSUES_URL);
     if (b == B_HELP) {
+        /* a file URL, its path percent-encoded (macOS refuses one with spaces or Chinese in it) */
+        static const char hex[] = "0123456789ABCDEF";
+        const unsigned char *c;
+        size_t n = 0;
         path_in(p, sizeof p, base, "說明.txt");
-        snprintf(url, sizeof url, "file:///%s", p[0] == '/' ? p + 1 : p);
+        n = (size_t)snprintf(url, sizeof url, "file://%s", p[0] == '/' ? "" : "/");
+        for (c = (const unsigned char *)p; *c && n + 4 < sizeof url; c++)
+            if (*c == '\\') url[n++] = '/';
+            else if (*c >= 0x80 || *c == ' ' || *c == '%' || *c == '#' || *c == '?') {
+                url[n++] = '%'; url[n++] = hex[*c >> 4]; url[n++] = hex[*c & 15];
+            } else url[n++] = (char)*c;
+        url[n] = 0;
         if (!SDL_OpenURL(url))
             SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "說明", "說明.txt 在這個程式的資料夾裡。", window);
     }
@@ -489,10 +501,30 @@ static int button(SDL_Window *window, int b)
 
 /* ---------------------------------------------------------------- main */
 
-static void enter_base(void)
+/* The release's folder: given (--base, the macOS start script's), else the program's own; on macOS,
+   inside an app, the programs are its Contents/MacOS and the release's folder the one holding the
+   app. The current folder becomes the release's, where the games find fonts/. */
+static void enter_base(const char *given)
 {
     const char *b = SDL_GetBasePath();
+    char *r;
     SDL_strlcpy(base, b ? b : "./", sizeof base);
+    SDL_strlcpy(programs, base, sizeof programs);
+#ifdef __APPLE__
+    if ((r = strstr(programs, ".app/Contents/Resources/")) != NULL) {
+        strcpy(r + strlen(".app/Contents/"), "MacOS/");
+        SDL_strlcpy(base, programs, sizeof base);
+        r = strstr(base, ".app/Contents/");
+        while (r > base && r[-1] != '/') r--;   /* the app's own folder name */
+        *r = 0;
+    }
+#else
+    (void)r;
+#endif
+    if (given && *given) {
+        SDL_strlcpy(base, given, sizeof base);
+        if (base[strlen(base) - 1] != '/' && base[strlen(base) - 1] != '\\') SDL_strlcat(base, "/", sizeof base);
+    }
 #ifdef _WIN32
     {
         wchar_t w[1024];
@@ -510,18 +542,19 @@ int main(int argc, char *argv[])
     SDL_Texture *texture;
     const SDL_DisplayMode *mode;
     int quit = 0, dirty = 1, w = 1152, h = 688, i, shot = 0, searched, test_play = -1, launched = 0;
-    const char *shot_path = NULL;
+    const char *shot_path = NULL, *base_arg = NULL;
 
     /* a test's: --screenshot FILE writes the page once both games are searched for and quits;
        --test-play N first starts game N (0 or 1) and waits for it, the game quitting by itself */
     for (i = 1; i < argc; i++)
         if (!strcmp(argv[i], "--screenshot") && i + 1 < argc) shot_path = argv[++i];
         else if (!strcmp(argv[i], "--test-play") && i + 1 < argc) { test_play = atoi(argv[++i]) & 1; testing = 1; }
+        else if (!strcmp(argv[i], "--base") && i + 1 < argc) base_arg = argv[++i];
     if (!SDL_Init(SDL_INIT_VIDEO)) {
         fprintf(stderr, "underworld: %s\n", SDL_GetError());
         return 1;
     }
-    enter_base();
+    enter_base(base_arg);
     event_done = SDL_RegisterEvents(1);
     if (hd_font_init(&font, FONT_FILE)) {
         font = NULL;

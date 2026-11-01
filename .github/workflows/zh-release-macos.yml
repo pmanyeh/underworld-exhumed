@@ -1,0 +1,86 @@
+# The Chinese release's macOS package (launcher/README.md): both games and the front page, built
+# universal (arm64 and x86_64) into one app, Underworld.app, by launcher/package_macos.py, and kept
+# as a workflow artifact. Run by hand with the release's version. The catalogs and the font are
+# not in git: launcher/finish_release.py adds them to the artifact's ZIP afterwards, keeping the
+# app's bytes and signature (ad hoc; not notarised).
+name: zh-release-macos
+on:
+  # a push to the Chinese branch that touches the release builds it too (workflow_dispatch runs
+  # only a workflow on the default branch), at the input's default version
+  push:
+    branches: ["feature/zh-tw-native"]
+    paths: ["launcher/**", ".github/workflows/zh-release-macos.yml"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: the release's version, as on the front page (1.0)
+        required: true
+        default: "1.0"
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 75
+    env:
+      MACOSX_DEPLOYMENT_TARGET: "11.0"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          submodules: true
+      - name: Homebrew packages
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
+          HOMEBREW_NO_INSTALL_CLEANUP: "1"
+        run: brew install pkgconf ninja
+      - name: Cache the universal SDL3, libmt32emu and FreeType
+        uses: actions/cache@v6
+        with:
+          path: uw1/tools/libs
+          key: zh-release-libs-macos-universal-${{ hashFiles('exhume/tools/setup-libs.sh') }}
+      - name: Build the libraries for arm64 and x86_64, fetch Nuked OPL3 (both games share them)
+        env:
+          SETUP_LIBS: "sdl3 mt32emu freetype"
+          SETUP_MACOS_ARCHS: "arm64;x86_64"
+        run: |
+          sh exhume/tools/setup-libs.sh uw1/tools/libs
+          sh exhume/tools/setup-sound.sh uw1/tools/nuked-opl3
+          rm -rf uw2/tools/libs uw2/tools/nuked-opl3
+          cp -R uw1/tools/libs uw2/tools/libs
+          cp -R uw1/tools/nuked-opl3 uw2/tools/nuked-opl3
+      - name: Build both games
+        run: |
+          make -C uw1 port-release PORT_ARCHS="--arch arm64 --arch x86_64"
+          make -C uw2 port-release PORT_ARCHS="--arch arm64 --arch x86_64"
+      - name: Build the front page
+        run: python3 launcher/build.py --version "${{ inputs.version || '1.0' }}" --arch arm64 --arch x86_64
+      - name: Package
+        run: |
+          set -euo pipefail
+          uw1=$(find uw1/build -type f -name uw1port -path '*release*' | head -1)
+          uw2=$(find uw2/build -type f -name uw2port -path '*release*' | head -1)
+          echo "uw1: $uw1"; echo "uw2: $uw2"
+          test -n "$uw1" && test -n "$uw2"
+          python3 launcher/package_macos.py --version "${{ inputs.version || '1.0' }}" --uw1 "$uw1" --uw2 "$uw2" \
+            --launcher launcher/build/underworld --libs uw1/tools/libs
+      - name: Check the package
+        run: |
+          set -euo pipefail
+          mkdir check && cd check && unzip -q ../launcher/build/dist/Underworld-zhTW-*-macOS.zip
+          top=$(echo Underworld-zhTW-*-macOS); app="$top/Underworld.app"
+          for p in underworld uw1port uw2port; do
+            lipo -archs "$app/Contents/MacOS/$p" | grep -q x86_64
+            lipo -archs "$app/Contents/MacOS/$p" | grep -q arm64
+          done
+          codesign --verify --deep --strict "$app"
+          test -x "$top/開始遊戲.command"
+          if otool -L "$app"/Contents/MacOS/* "$app"/Contents/Frameworks/*.dylib | grep -E '/(opt|usr/local)/|/Users/'; then exit 1; fi
+          "$app/Contents/MacOS/uw1port" --help >/dev/null
+          "$app/Contents/MacOS/uw2port" --help >/dev/null
+          ls -R "$top" | head -60
+      - uses: actions/upload-artifact@v7
+        with:
+          name: macos
+          path: launcher/build/dist/Underworld-zhTW-*-macOS.zip
+          if-no-files-found: error
