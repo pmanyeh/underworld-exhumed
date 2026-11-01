@@ -21,7 +21,10 @@ REPO = os.path.dirname(HERE)
 
 
 def run(cmd):
-    return subprocess.run(cmd, capture_output=True, text=True, check=True).stdout
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode:
+        sys.exit(f'package_macos.py: {" ".join(cmd)}\n{r.stdout}{r.stderr}')
+    return r.stdout
 
 
 def deps(path):
@@ -117,7 +120,9 @@ def main():
                 run(['install_name_tool', '-delete_rpath', rp, e])
         if '@executable_path/../Frameworks' not in rpaths(e):
             run(['install_name_tool', '-add_rpath', '@executable_path/../Frameworks', e])
-    for f in libs + exes + [app]:                   # inside out; the app seals the rest
+    # inside out: the libraries, the games, then the app's own program, which codesign takes for the
+    # app's and checks the code beside it, and the app, which seals the rest
+    for f in libs + exes[1:] + exes[:1] + [app]:
         run(['codesign', '--force', '--sign', '-', f])
     for f in exes + libs:
         print(f'{os.path.relpath(f, stage)}: {run(["lipo", "-archs", f]).strip()}')
