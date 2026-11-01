@@ -462,6 +462,10 @@ struct Object far * far AskHowMany(struct Object far *obj)
     key = wdialog(msg, initial, result, 0, 3);
 #ifndef __TURBOC__
     qty_dialog_end();
+    /* port only: with split-all a left click takes the count in the entry, as Enter does
+       (the whole stack unless the player changed it), not just one */
+    if (key == 1 && ENHANCED(ENH_SPLIT_ALL))
+        key = 13;
 #endif
     if (key != 27 && key != 3) {
         if (key != 0 && key < 4) {
