@@ -59,6 +59,8 @@ static char far *note_copy(char *dst, char far *src)
 }
 #define NOTE_COPY(dst, src) note_copy(dst, src)
 #include "presentation/map_note_overlay.h"
+int port_full_map_step(int lev, int step);  /* port/ui/full_map.c: --enhance full-map, real levels */
+int port_full_map_depth(int lev);
 #else
 #define NOTE_COPY(dst, src) str_copy(dst, src)
 #endif
@@ -756,6 +758,16 @@ void far ManageDungeonMap(void)
         }
         mouse_show();
         break;
+#ifndef __TURBOC__
+    case 0xFC:                                  /* port only: --enhance full-map, real levels */
+        if ((level & 7) != 1 && port_full_map_step(level, -1) != level)
+            ChangeAutoMapLevel(port_full_map_step(level, -1));
+        break;
+    case 0xFB:
+        if ((level & 7) && port_full_map_step(level, 1) != level)
+            ChangeAutoMapLevel(port_full_map_step(level, 1));
+        break;
+#else
     case 0xFC:
         if ((level & 7) != 1)
             ChangeAutoMapLevel(level - 1);
@@ -764,9 +776,13 @@ void far ManageDungeonMap(void)
         if (level & 7)
             ChangeAutoMapLevel(level + 1);
         break;
+#endif
     case 0xFA:
         if (gem != -1) {
             lev = ((level - 1) & 7) + (gem << 3) + 1;
+#ifndef __TURBOC__
+            lev = port_full_map_depth(lev);
+#endif
             ChangeAutoMapLevel(lev);
         }
         break;
@@ -1120,13 +1136,14 @@ static const unsigned char adjacent_world[9][2] = {
 
 void far port_map_key(int how)
 {
-    if (how == 1 && (level & 7))
-        ChangeAutoMapLevel(level + 1);
-    else if (how == -1 && (level & 7) != 1)
-        ChangeAutoMapLevel(level - 1);
+    if (how == 1 && (level & 7) && port_full_map_step(level, 1) != level)
+        ChangeAutoMapLevel(port_full_map_step(level, 1));
+    else if (how == -1 && (level & 7) != 1 && port_full_map_step(level, -1) != level)
+        ChangeAutoMapLevel(port_full_map_step(level, -1));
     else if (how == 2 && level != PlayerLevel)
         ChangeAutoMapLevel(PlayerLevel);
     else if (how == 3 || how == 4)
-        ChangeAutoMapLevel((adjacent_world[(level - 1) >> 3][how - 3] << 3) + ((level - 1) & 7) + 1);
+        ChangeAutoMapLevel(port_full_map_depth((adjacent_world[(level - 1) >> 3][how - 3] << 3)
+                                               + ((level - 1) & 7) + 1));
 }
 #endif

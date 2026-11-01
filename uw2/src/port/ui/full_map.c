@@ -96,3 +96,45 @@ void port_full_map_end(void)
     port_set_rand_seed(saved_seed);
     active = 0;
 }
+
+/* Whether the map's arrows may turn to level lev: with full-map only the levels the game's
+   LEV.ARK holds, so a world's eight slots stop at its last level (Britannia has five), and
+   never 0x47, the map scraps' slot. Without full-map, every slot, as the original. */
+int port_full_map_has(int lev)
+{
+    static signed char known[NUM_LEVELS + 1];   /* 0 not asked, 1 a level, -1 none */
+    if (!ENHANCED(ENH_FULL_MAP))
+        return 1;
+    if (lev < 1 || lev > NUM_LEVELS || lev == 0x47)
+        return 0;
+    if (lev == PlayerLevel)
+        return 1;
+    if (!known[lev])
+        known[lev] = check_arc(1, "DATA\\", lev - 1) > 0 ? 1 : -1;
+    return known[lev] > 0;
+}
+
+/* The level the map's arrows turn to from lev, step +1 or -1 within its world: the next slot
+   as the original, or with full-map the next real level, skipping gaps (the void has no 70);
+   lev itself when there is none */
+int port_full_map_step(int lev, int step)
+{
+    int next = lev;
+    if (!ENHANCED(ENH_FULL_MAP))
+        return lev + step;
+    do {
+        next += step;
+        if (((next - 1) >> 3) != ((lev - 1) >> 3))
+            return lev;
+    } while (!port_full_map_has(next));
+    return next;
+}
+
+/* lev, or with full-map the deepest real level of its world above it: the gem's facets keep
+   the depth, which another world may not reach */
+int port_full_map_depth(int lev)
+{
+    while ((lev & 7) != 1 && !port_full_map_has(lev))
+        lev--;
+    return lev;
+}

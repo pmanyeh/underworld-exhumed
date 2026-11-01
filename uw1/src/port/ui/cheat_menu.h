@@ -20,4 +20,5 @@ int port_god_teleport_valid(int level, int x, int y);
 int port_full_map_begin(int level);
 void port_full_map_end(void);
 int port_full_map_byte(int x, int y);
+int port_full_map_has(int level);
 #endif

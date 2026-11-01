@@ -50,6 +50,13 @@ int port_full_map_begin(int level)
     saved_seed = port_rand_seed(); active = 1; return 1;
 }
 void port_full_map_end(void) { if (active) port_set_rand_seed(saved_seed); active = 0; }
+/* Whether the map's arrows may turn to level: with full-map only the eight levels of the Abyss
+   (and the void while the player is there), not the empty pages the original goes on to */
+int port_full_map_has(int level)
+{
+    if (!ENHANCED(ENH_FULL_MAP)) return 1;
+    return level >= 1 && (level <= 8 || level == PlayerLevel);
+}
 int port_full_map_byte(int x, int y)
 {
     if (x < 0 || x >= 64 || y < 0 || y >= 64) return 0;

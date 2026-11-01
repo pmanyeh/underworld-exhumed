@@ -655,7 +655,11 @@ void far ManageDungeonMap(void)
             ChangeAutoMapLevel(level - 1);
         break;
     case 0xFB:
-        if (level < 0x63)
+        if (level < 0x63
+#ifndef __TURBOC__
+            && port_full_map_has(level + 1)     /* port only: --enhance full-map, real levels */
+#endif
+            )
             ChangeAutoMapLevel(level + 1);
         break;
     }
@@ -830,7 +834,7 @@ void far automap_scr(void)
    (as the map's 0xFB button), W a level back (its 0xFC button), C the player's own level */
 void far port_map_key(int how)
 {
-    if (how == 1 && level < 0x63)
+    if (how == 1 && level < 0x63 && port_full_map_has(level + 1))
         ChangeAutoMapLevel(level + 1);
     else if (how == -1 && level > 1)
         ChangeAutoMapLevel(level - 1);
